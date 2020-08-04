@@ -55,9 +55,9 @@ sidebar-avatar: http://img.imaginingme.cn/avatar.jpeg      # use absolute URL, s
 #  owner: aircloud
 #  repo: hexo-aircloud-blog
 
-comment:
-   type: disqus
-   script: 'https://airclouds-blog.disqus.com/embed.js'
+# comment:
+#    type: disqus
+#    script: 'https://airclouds-blog.disqus.com/embed.js'
 
 donate:
   img: img/donate.jpg
