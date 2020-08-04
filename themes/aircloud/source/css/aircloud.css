@@ -217,6 +217,7 @@ body {
 }
 .search-field .search-container .search-input span:nth-child(1) {
   width: 40px;
+  cursor: pointer;
 }
 .search-field .search-container .search-input #begin-search {
   cursor: pointer;
