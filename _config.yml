@@ -5,7 +5,7 @@
 # Site
 title: ImaginingMe
 subtitle: DICHTEN == CONDENSARE
-author: AnitaK
+author: ImaginingMe
 language: zh
 timezone:
 
@@ -29,7 +29,7 @@ keyword: "frontend"
 # 一些社交平台地址，支持以下几种：
 # weibo_username:     
 # zhihu_username:     
-# github_username:    
+github_username: anitakym
 # twitter_username:   
 # facebook_username:  
 # linkedin_username:  
