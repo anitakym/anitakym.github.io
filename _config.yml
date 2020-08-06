@@ -37,7 +37,8 @@ github_username: anitakym
 # Build settings
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
-sidebar-avatar: http://img.imaginingme.cn/avatar.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
+# sidebar-avatar: http://img.imaginingme.cn/avatar.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: http://www.imaginingme.cn/img/avatar.jpeg
 
 # Friends
 # 友情链接

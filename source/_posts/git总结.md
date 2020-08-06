@@ -42,3 +42,11 @@ git remote show origin
 #### rebase/merge
 推rebase的经验，可以写一篇小论文了。。。
 rebase伴侣 => --force-with-lease
+
+
+#### git报错分析
+```
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/anitakym/blog.git' 
+```
+没有提交内容，要add和commit （引起该错误的原因是，目录中没有文件，空目录是不能提交上去的）
