@@ -1,6 +1,6 @@
 ---
 title: jenkins-对配置文件对变更进行跟踪管理
-date: 2020-08-06 17:01:40
+date: 2020-05-07 17:01:40
 tags:
     - jenkins&&travis
 ---
