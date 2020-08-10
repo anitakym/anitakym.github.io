@@ -58,3 +58,10 @@ https://www.npmjs.com/package/opn //opn链接，现已更名open
 ```
 
 PS: 一般情况下，我要打开静态资源，会起个静态资源服务，就OK了，http-server
+
+#### svg viewer
+可以看svg图片
+
+
+#### koroFileHeader
+团队注释规范，可以制定好规范，提供配置给团队成员使用

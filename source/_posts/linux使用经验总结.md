@@ -47,7 +47,7 @@ Ctrl + k
 </pre>
 
 #### top
-这个是个蛮重要的，一般机器情况看下这个基本上就知道了
+这个是个蛮重要的，一般机器情况看下这个基本上就知道了(Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况)
 
 - 改变画面更新频率
 　　l - 关闭或开启第一部分第一行 top 信息的表示
@@ -61,3 +61,30 @@ Ctrl + k
 　　q - 退出 top
 
 Mac上面，<strong>“活动监视器是”</strong>GUI的面板
+Windows,类似于任务管理器。
+
+
+
+#### nohup
+参考资料：https://developer.ibm.com/zh/tutorials/l-lpic1-103-5/
+
+#### curl
+curl - transfer a URL
+curl  is  a tool to transfer data from or to a server, using one of the supported protocols (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS,  IMAP, IMAPS,  LDAP,  LDAPS,  POP3,  POP3S,  RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP).
+cURL是一个多功能工具。当然，它可以下载网络内容，但同时它也能做更多别的事情。
+
+curl is powered by  libcurl  for  all  transfer-related  features.
+cURL 技术支持库是：libcurl。这就意味着你可以基于 cURL 编写整个程序，允许你基于 libcurl 库中编写图形环境的下载程序，访问它所有的功能。
+
+curl offers a busload of useful tricks like proxy support, user authentication, FTP upload, HTTP post, SSL connections, cookies, file  transfer  resume,  Metalink,  and more.
+cURL 宽泛的网络协议支持可能是其最大的卖点。cURL 支持访问 HTTP 和 HTTPS 协议，能够处理 FTP 传输。它支持 LDAP 协议，甚至支持 Samba 分享。实际上，你还可以用 cURL 收发邮件。
+
+cURL 也有一些简洁的安全特性。cURL 支持安装许多 SSL/TLS 库，也支持通过网络代理访问，包括 SOCKS。这意味着，你可以越过 Tor 来使用cURL。
+cURL 同样支持让数据发送变得更容易的 gzip 压缩技术。
+
+#### wget
+Wget - The non-interactive network downloader.
+
+
+#### netstat
+netstat -- show network status
