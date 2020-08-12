@@ -1,10 +1,11 @@
 ---
 title: HTTP相关问题
-date: 2020-08-11 18:43:51
+date: 2018-09-17 18:43:51
 tags:
   - HTTP
 ---
 
+## 状态码
 
 #### 502网关问题
 #### 415（unsupported media type）（content-type）
@@ -24,3 +25,81 @@ Java
 缓存相关的首部在与该响应一同发送时应该小心使用，因为 503 状态码通常应用于临时状况下，而此类响应一般不应该进行缓存。
 
 cite(https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/503)
+
+
+
+## 相关库
+
+### axios
+文档指南，各种用法（https://github.com/axios/axios#axios-api）
+#### Features（支持Promise API）
+- Make XMLHttpRequests from the browser(从浏览器中创建 XMLHttpRequests)
+- Make http requests from node.js(从 node.js 创建 http 请求)
+- Supports the Promise API(支持 Promise API)
+- Intercept request and response(拦截请求和响应)
+- Transform request and response data(转换请求数据和响应数据)
+- Cancel requests(取消请求)
+- Automatic transforms for JSON data(自动转换 JSON 数据)
+- Client side support for protecting against XSRF(客户端支持防御 XSRF)
+- 不支持IE（11及以下）
+
+#### Cancellation
+You can cancel a request using a cancel token.
+
+The axios cancel token API is based on the withdrawn cancelable promises proposal.
+
+You can create a cancel token using the CancelToken.source factory as shown below:
+```
+const CancelToken = axios.CancelToken;
+const source = CancelToken.source();
+
+axios.get('/user/12345', {
+  cancelToken: source.token
+}).catch(function (thrown) {
+  if (axios.isCancel(thrown)) {
+    console.log('Request canceled', thrown.message);
+  } else {
+    // handle error
+  }
+});
+
+axios.post('/user/12345', {
+  name: 'new name'
+}, {
+  cancelToken: source.token
+})
+
+// cancel the request (the message parameter is optional)
+source.cancel('Operation canceled by the user.');
+You can also create a cancel token by passing an executor function to the CancelToken constructor:
+
+const CancelToken = axios.CancelToken;
+let cancel;
+
+axios.get('/user/12345', {
+  cancelToken: new CancelToken(function executor(c) {
+    // An executor function receives a cancel function as a parameter
+    cancel = c;
+  })
+});
+
+// cancel the request
+cancel();
+```
+Note: you can cancel several requests with the same cancel token.
+
+* example
+```
+const CancelToken = axios.CancelToken
+const pending = []
+const defaultConfig = {}
+
+defaultConfig.cancelToken = new CancelToken(function executor(c) {
+  pending.push(c)
+})
+
+// 需要避免多次请求的时候执行下面代码
+while (pending.length > 0) {
+  pending.pop()('请求中断')
+}
+```
