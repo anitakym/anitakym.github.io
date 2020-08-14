@@ -18,3 +18,7 @@ name属性 给map一个名字用来查询，这个属性是必须的，值必须
   <area shape="circle" coords="200,250,25" href="another.htm" />
   <area shape="default" />
 </map>
+
+
+
+#### Deprecated Tags / Deprecated Attributes

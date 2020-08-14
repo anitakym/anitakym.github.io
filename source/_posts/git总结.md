@@ -1,7 +1,7 @@
 ---
 title: git总结
 date: 2020-05-18 18:04:56
-tags: 
+tags:
     - 工作经验总结系列
     - git系列
 ---
@@ -32,7 +32,11 @@ http://gitlab.staff.xdf.cn/seal/js/seal_basics_ui/settings/integrations
 
 
 #### git 清除本地无远端的分支（清除本地所有分支）
+* 强制删除所有分支
+`git branch |xargs git branch -D`
 
+* 本地修改过未提交的不会删除
+`git branch |xargs git branch -d`
 
 
 #### 迁了一次仓库，团队人员变迁，所以目前一些项目的文档和说明及package.json不是很准确
@@ -47,6 +51,6 @@ rebase伴侣 => --force-with-lease
 #### git报错分析
 ```
 error: src refspec master does not match any.
-error: failed to push some refs to 'https://github.com/anitakym/blog.git' 
+error: failed to push some refs to 'https://github.com/anitakym/blog.git'
 ```
 没有提交内容，要add和commit （引起该错误的原因是，目录中没有文件，空目录是不能提交上去的）
