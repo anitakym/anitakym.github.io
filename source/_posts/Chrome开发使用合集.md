@@ -37,3 +37,6 @@ same-site(两个都改成disabled)
 
 #### preserve-log
 ![](preservelog.png)
+
+
+#### 写点小插件
