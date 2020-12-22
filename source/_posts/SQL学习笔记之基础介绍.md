@@ -5,6 +5,62 @@ tags:
     - sql
 ---
 
+- TIPS
+	- TIOBE(https://www.tiobe.com/tiobe-index/)
+
+
+- 历史
+	- https://zh.wikipedia.org/wiki/SQL
+	- 在1970年代初，由IBM公司San Jose,California研究实验室的埃德加·科德发表将资料组成表格的应用原则（Codd's Relational Algebra）。
+	- 1974年，同一实验室的D.D.Chamberlin和R.F. Boyce对Codd's Relational Algebra在研制关系数据库管理系统System R中，研制出一套规范语言-SEQUEL（Structured English Query Language），并在1976年11月的IBM Journal of R&D上公布新版本的SQL（叫SEQUEL/2）。
+	- 1980年改名为SQL。
+	- 目前，所有主要的关系数据库管理系统支持某些形式的SQL，大部分数据库至少遵守ANSI SQL89标准。
+	- ANSI SQL92标准在交叉连接（cross join）和内部连接之上，新增加了外部连接，并支持在FROM子句中写连接表达式。支持集合的并运算、交运算。支持Case (SQL)表达式。支持CHECK约束。创建临时表。支持cursor。支持事务隔离。
+	- SQL99
+
+
+- 按功能划分
+	- DDL
+		- Data Definition Language
+		- 定义数据库对象
+			- 数据库
+			- 数据表和列
+		- 我们可以创建，修改和删除数据库和表的结构
+	- DML
+		- Data Manipulation Language
+		- 操作和数据库相关的记录
+			- 增，删，改数据表中的记录
+	- DCL
+		- Data Control Language
+		- 定义访问权限和安全级别
+	- DQL
+		- Data Query Language
+
+
+- 声明性语言
+	- 不需要制定具体的执行步骤
+- SQL语言定义了我们的需求
+- 不同的DBMS会按照指定的SQL帮我们提取想要的结果
+
+- RDBMS
+	- 实体关系模型（Entity-Relationship Model），简称E-R Model，是陈品山（Peter P.S Chen）博士于1976年提出的一套数据库的设计工具，他运用真实世界中事物与关系的观念，来解释数据库中的抽象的资料架构。实体关系模型利用图形的方式（实体-关系图（Entity-Relationship Diagram））来表示数据库的概念设计，有助于设计过程中的构思及沟通讨论。
+
+	- 设计—— ER图（Entity Relationship Diagram）实体——关系图
+		- 用来描述现实世界的概念模型
+		- 要素：实体——要管理的对象，属性——标识每个实体的属性，关系——对象之间的关系
+
+	- ER图评审通过，用SQL语句或者可视化管理工具创建数据表-
+
+- SQL大小写
+	- 表名，表别名，字段名，字段别名——小写
+	- SQL保留字，函数名，绑定变量——大写
+- 数据表的字段名——下划线命名
+
+
+
+
+
+
 - DBS
   - DataBase System，数据库系统
 	- 包括数据库、数据库管理系统以及数据库管理人员 DBA
