@@ -5,6 +5,53 @@ tags:
     - sql
 ---
 
+
+> 1946_ENIAC_Electronic Numerical Integrator And Computer_第一台通用电子计算机
+
+### 引入
+
+- I/O 是DBMS最容易出现瓶颈的地方
+	- 数据库操作中大量时间花在了I/O 上面
+  - 参考文档：https://docs.oracle.com/cd/B28359_01/server.111/b28274/iodesign.htm#PFGRF015
+- 降低CPU的计算量
+	- 在SQL语句中使用GROUP BY ，ORDER BY 等语句会消耗大量CPU计算资源
+  - 参考文档：https://use-the-index-luke.com/sql/sorting-grouping
+- 内存使用情况
+
+
+- EXISTS  / IN  查询
+
+```
+SELECT * FROM A WHERE cc IN (SELECT cc FROM B)
+SELECT * FROM A WHERE EXISTS IN (SELECT cc FROM B WHERE B.cc=A.cc)
+```
+
+- 有索引
+	- 表A比表B大，IN子查询的效率比EXISTS子查询效率高
+
+
+比如最大生命值大于 7000 的法师英雄都有谁，那么你会怎么做呢？
+```
+SELECT * FROM heros WHERE hp_max >= 7000 AND role = '法师'
+```
+
+
+ 7 天内的新增用户数有多少，该怎么做呢？
+
+```
+SELECT COUNT(*) as num FROM new_user WHERE TO_DAYS(NOW())-TO_DAYS(regist_time)<=7
+```
+
+- 基于数据的各种技术中也会用到 SQL
+	- OLTP（联机事务处理过程）
+	- OLAP（联机分析处理过程）
+	- RDBMS（对象关系型数据库管理系统）
+	- 在 NoSQL 的阵营上，如今也在使用类似 SQL 的操作，要知道，提出 NoSQL 这个概念的初衷就是远离 SQL，但如今人们更愿意把 NoSQL 定义为 Not Only SQL（不只是 SQL）
+	- 在 XML、JSON 等数据格式中，都存在着各种 SQL，比如用于 XML 的 SQL、用于 JSON 的 SQL 等
+	- 用于记录地理位置信息的 SQL、用于搜索的 SQL、用于时间序列数据的 SQL、用于流的 SQL 等
+
+
+### SQL
 - TIPS
 	- TIOBE(https://www.tiobe.com/tiobe-index/)
 
@@ -57,10 +104,7 @@ tags:
 - 数据表的字段名——下划线命名
 
 
-
-
-
-
+### 数据库管理系统
 - DBS
   - DataBase System，数据库系统
 	- 包括数据库、数据库管理系统以及数据库管理人员 DBA
