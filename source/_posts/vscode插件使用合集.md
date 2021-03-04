@@ -4,6 +4,12 @@ date: 2020-08-06 15:37:05
 tags:
     - 工具篇
 ---
+#### 写在前面
+调出——显示所有命令（cmd + shift + P）
+然后搜索 code
+选择 install code command in path 
+这样就可以在shell中直接通过code xxx 调起vscode 来
+
 
 #### vscode常用快捷键：
 - 显示所有命令（cmd + shift + P）
