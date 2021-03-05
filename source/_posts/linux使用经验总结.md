@@ -4,7 +4,21 @@ date: 2020-08-06 16:44:03
 tags:
     - Linux系统使用系列
 ---
+
+### 报错解决
+
+```
+touch h(1).txt
+```
+- -bash: syntax error near unexpected token `('
+- zsh: no matches found: 嘿嘿(1).txt
+因为括号的原因啦，需要转义，加\; 也可以加引号；
+
+
 > 一些和系统平台无关的command
+#### gzip
+平时构建出来的文件，想看看gzip之后大小
+```gzip xxx.js```
 
 #### tree
 ```

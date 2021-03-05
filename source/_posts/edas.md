@@ -2,10 +2,10 @@
 title: edas
 date: 2020-10-28 17:01:38
 tags:
-  - 王老师
+  - 朋友
   - 服务端
 ---
-> 问王老师干啥呢，edas升级呢（统一阿里云）
+> 问朋友干啥呢，edas升级呢（统一阿里云）
 > 问我们这边架构师，开源自建呢（我们统一腾讯云）
 
 edas(https://www.aliyun.com/product/edas?spm=5176.13910061.746114.1.5b51295eWIu9uZ)
