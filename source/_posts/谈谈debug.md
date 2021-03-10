@@ -5,6 +5,22 @@ tags:
     - debug+proxy篇
 ---
 
+
+#### vscode中debug
+#####  原理说明： vscode把debug功能的实现交付给插件完成的（vscode提供了Debug Adapter Protocol —— DAP）
+插件=>把调试和vscode的界面和交互结合
+vscode=》用户在界面的操作，vscode通过DAP唤起插件，插件完成最终的操作
+
+文档指路：
+https://microsoft.github.io/debug-adapter-protocol/
+https://code.visualstudio.com/api/extension-guides/debugger-extension
+
+
+##### 操作指南
+- cmd + shift + D 
+- 点击调试按钮，选择环境
+
+
 #### ndb-firekylin调试
 https://zhuanlan.zhihu.com/p/41315709
 
