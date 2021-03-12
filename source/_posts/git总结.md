@@ -54,3 +54,6 @@ error: src refspec master does not match any.
 error: failed to push some refs to 'https://github.com/anitakym/blog.git'
 ```
 没有提交内容，要add和commit （引起该错误的原因是，目录中没有文件，空目录是不能提交上去的）
+
+### 重写历史需注意
+https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2

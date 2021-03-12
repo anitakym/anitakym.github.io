@@ -30,3 +30,17 @@ brew -ls
 文本
 
 去掉首字母大写的即可
+
+#### 推荐app
+翻译类：
+Google DeepL translator
+极光词典（Mac和IOS都可以使用）
+工具类：
+magnet（https://magnet.crowdcafe.com/?utm_source=help）—— 分窗口软件
+shadowsocks
+charles（抓包）
+dash（查文档）
+vscode（代码编辑）
+Alfred（全局搜索）
+SwitchHosts（host配置）
+Notability（笔记）
