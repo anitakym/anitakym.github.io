@@ -11,4 +11,13 @@ tags:
 - https://electronjs.org/docs
 文档啦，关于看文档，这儿推荐一本书，叫《如何阅读一本书》，讲得就是如何阅读的，其实我们好多人的阅读能力还停留在小学六年级水平，看了这本书，还是大有裨益。
 - https://github.com/electron/electron-api-demos
-结合文档，跑一遍这个demo,对能做什么，做成什么样，就会有很直观的认知
+结合文档，跑一遍这个demo,对能做什么，做成什么样，就会有很直观的认知（electron官方出的）
+- electron fiddle https://www.electronjs.org/fiddle
+也是官方出的，可以试用功能，改代码查看功能，可以看看代码是否能在electron指定的版本上面运行
+- TIPS:
+  - webPreferences.nodeIntegration 这个选项的关闭还是开启需要注意（安全问题）_https://www.electronjs.org/docs/tutorial/security ,可以按照官方说明进行处理.
+      - ⚠️ Under no circumstances should you load and execute remote code with Node.js integration enabled. Instead, use only local files (packaged together with your application) to execute Node.js code. To display remote content, use the <webview> tag or BrowserView, make sure to disable the nodeIntegration and enable contextIsolation.
+  - 如果开启了nodeIntegration，用<script>引入jQuery就会有问题， jQuery内部会对require变量判断，和node的require冲突；所以只能
+    ```
+    window.$ = window.jQuery = require('./jquery-x.x.x.min)
+    ```

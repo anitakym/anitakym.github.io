@@ -102,3 +102,12 @@ Wget - The non-interactive network downloader.
 
 #### netstat
 netstat -- show network status
+
+
+#### alias
+自定义指令
+注意，如果使用了zsh,则改动bash的配置就不生效了,只需要处理下.zshrc文件即可
+```
+open -e .zshrc 
+source .zshrc
+```
