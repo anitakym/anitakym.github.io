@@ -19,5 +19,14 @@ tags:
       - ⚠️ Under no circumstances should you load and execute remote code with Node.js integration enabled. Instead, use only local files (packaged together with your application) to execute Node.js code. To display remote content, use the <webview> tag or BrowserView, make sure to disable the nodeIntegration and enable contextIsolation.
   - 如果开启了nodeIntegration，用<script>引入jQuery就会有问题， jQuery内部会对require变量判断，和node的require冲突；所以只能
     ```
-    window.$ = window.jQuery = require('./jquery-x.x.x.min)
+    window.$ = window.jQuery = require('./jquery-3.5.1.min)
     ```
+新版本不可  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+旧版本可以  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+```
+$.fn.jquery
+1.4.1
+$.fn.jquery
+VM338:1 Uncaught TypeError: Cannot read property 'jquery' of undefined
+    at <anonymous>:1:6
+```
