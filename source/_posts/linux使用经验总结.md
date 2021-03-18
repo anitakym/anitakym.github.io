@@ -4,6 +4,10 @@ date: 2020-08-06 16:44:03
 tags:
     - Linux系统使用系列
 ---
+### 学习参考资料
+https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md
+- the-art-of-command-line
+
 
 ### 报错解决
 

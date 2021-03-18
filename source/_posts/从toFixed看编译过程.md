@@ -7,7 +7,9 @@ tags:
 MDN文档指路：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 规范指路：https://tc39.es/ecma262/#sec-number.prototype.tofixed
 
+Number.prototype.toFixed()
 The toFixed() method formats a number using fixed-point notation.
+// toFixed() 方法使用定点表示法来格式化一个数值。
 
 ```
 var numObj = 12345.6789;
@@ -55,4 +57,10 @@ num.toFixed();
 改成上面三种形式皆可
 
 
-V8如何处理toFixed的呢
+### V8如何处理toFixed的呢
+```
+2.55 - 2.5
+// 0.04999999999999982
+```
+
+https://www.jianshu.com/p/361afb9c4d59
