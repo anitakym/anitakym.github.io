@@ -4,8 +4,30 @@ date: 2020-04-06 16:35:36
 tags:
     - MacOS
 ---
+> 写在开头：macOS是基于BSD Unix的，所以很多命令和Linux有细微的差别，如（ps, ls, tail, awk, sed）,比如我们```man ps```,会显示：BSD General Commands Manual。如果我们写跨平台的bash脚本的时候，需要注意一些命令，仔细的做好测试
+
+#### 查看版本信息
+sw_vers
+
+#### pbcopy/pbpaste
+```
+ls ~ | pbcopy
+pbcopy < test.txt
+curl xxx | pbcopy
+pbpaste >> test.txt
+```
+
+#### mdfind 对标spotlight
+```
+mdfind -onlyin ~/Documents xxx
+```
+#### mdls  list metadata (such as photo EXIF info)
+
+
 #### 命令行中打开finder
-open .
+```open .```
+//打开应用
+```open -a /Applications/Whatever.app```
 
 #### 文件名大小写区分
 windows 和 mac
@@ -22,6 +44,9 @@ https://www.npmjs.com/package/case-sensitive-paths-webpack-plugin
 #### brew
 brew -ls
 
+#### screencapture
+cmd+shift+3/4
+```screencapture --help```
 
 #### 关闭mac输入法首字母大写
 
@@ -44,3 +69,5 @@ vscode（代码编辑）
 Alfred（全局搜索）
 SwitchHosts（host配置）
 Notability（笔记）
+命令行：
+pandoc（文件格式转换）

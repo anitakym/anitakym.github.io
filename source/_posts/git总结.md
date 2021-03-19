@@ -64,3 +64,10 @@ https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%8
 curl -s <github_url> | vim -
 ```
 通过管道把 curl 命令的输出传给 VIM，以方便在 VIM 中查看较长的输出。
+
+
+### 好用的命令行工具
+tig(https://jonas.github.io/tig/)
+```
+brew install tig
+```

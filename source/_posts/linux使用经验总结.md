@@ -20,6 +20,11 @@ touch h(1).txt
 
 
 > 一些和系统平台无关的command
+
+#### !$，表示上一个命令行的最后一个参数。
+
+#### !!，表示上一个命令的完整命令
+
 #### gzip
 平时构建出来的文件，想看看gzip之后大小
 ```gzip xxx.js```
@@ -29,7 +34,13 @@ touch h(1).txt
 man tree
 ```
 mac 上想使用，用brew安装
+(比tree更好看的是 [exa](https://the.exa.website/install/macos))
 
+- 场景（查看项目里面的文件，排除node_modules）
+```
+tree - I "node_modules" -f | grep -C3 index.md
+```
+也可以用把结果输出后，用编辑器进行更复杂的搜索
 #### chmod
 ```
 chmod -R 777 
@@ -40,6 +51,12 @@ chmod -R 777
 ```
 cp -r /root/firekylin/www/static/pic /root/firekylin_1.x/www/static/pic 
 ```
+
+#### z
+文件夹跳转
+
+#### vidir
+可以批量修改文件名
 
 #### grep
 cat del2.log | grep  -oP "\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" > del3.log
@@ -115,3 +132,8 @@ netstat -- show network status
 open -e .zshrc 
 source .zshrc
 ```
+
+#### fx(https://github.com/antonmedv/fx)
+能够格式化JSON文本
+#### 日志
+tail/lnav
