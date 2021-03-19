@@ -30,3 +30,8 @@ $.fn.jquery
 VM338:1 Uncaught TypeError: Cannot read property 'jquery' of undefined
     at <anonymous>:1:6
 ```
+
+### 及时关注版本发布
+https://www.electronjs.org/releases/stable
+版本更新解决了什么问题
+比如对M1芯片的支持，big sur的支持等～

@@ -19,7 +19,8 @@ tags:
 
   - 同站（same-site） 和同源（same-origin）—— 同源策略对同一站点的限制: A,B 标签页同站非同源，依然无法通过 opener 来操作父标签页中的 DOM —— 受同源策略的限制
 
-
+#### chrome://chrome-urls/
+里面有Chrome urls的合集
 #### chrome canary
 
 

@@ -44,6 +44,10 @@ v10.10.0
 #### 一些基本操作
 node退出：ctrl+C(两次) ctrl+D(两次) .exit
 
+### 项目配置
+https://nodejs.org/api/report.html
+可以导出文件
+增加 --json >stats.json
 
 
 

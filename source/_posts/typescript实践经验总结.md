@@ -31,3 +31,13 @@ https://github.com/Microsoft/TypeScript/wiki/JSDoc-support-in-JavaScript
 @enum
 它们代表的意义与usejsdoc.org上面给出的通常是一致的或者是它的超集。 
 ```
+
+推荐相关文档：
+https://zhuanlan.zhihu.com/p/40322215
+https://labs.thisdot.co/blog/your-first-vue-3-app-using-typescript
+https://medium.com/vue-typescript/vue-3-with-typescript-setup-a-new-project-with-the-vue-cli-4ea806be7a91
+
+
+推荐TS入门：
+https://basarat.gitbook.io/typescript/getting-started
+https://jkchao.github.io/typescript-book-chinese/typings/types.html#%E4%BD%BF%E7%94%A8-types
