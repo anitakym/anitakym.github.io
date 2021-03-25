@@ -8,3 +8,9 @@ tags:
 ```
 npm list -g --depth 0 | grep @vue/cli
 ```
+
+### 问题处理
+(node:50731) ExperimentalWarning: Package name self resolution is an experimental feature. This feature could change at any time
+94% after seal[hardsource:a9cf9509] Could not freeze ./src/router/index.js: Cannot read property 'hash' of undefined
+98% after emitting
+

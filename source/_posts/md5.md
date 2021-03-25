@@ -87,3 +87,75 @@ https://code.visualstudio.com/Docs/languages/javascript#_automatic-type-acquisit
 如果想要关闭的话，可以设置里面 disableAutomaticTypeAcquisition
 
 这样我们可以看到类型定义，本身node_modules里面 spark-md5是没有类型声明的
+
+
+### 实例调试
+我们应用场景是对视频做checkmd5,每秒钟50M的样子～
+
+### 读取文件
+https://github.com/forsigner/browser-md5-file/blob/master/src/index.js
+```
+import SparkMD5 from 'spark-md5'
+
+export default class BMF {
+  md5(file, md5Fn, progressFn) {
+    this.aborted = false
+    this.progress = 0
+    let currentChunk = 0
+    const blobSlice =
+      File.prototype.slice ||
+      File.prototype.mozSlice ||
+      File.prototype.webkitSlice
+    const chunkSize = 2097152
+    const chunks = Math.ceil(file.size / chunkSize)
+    const spark = new SparkMD5.ArrayBuffer()
+    const reader = new FileReader()
+
+    loadNext()
+
+    reader.onloadend = e => {
+      spark.append(e.target.result) // Append array buffer
+      currentChunk++
+      this.progress = currentChunk / chunks
+
+      if (progressFn && typeof progressFn === 'function') {
+        progressFn(this.progress)
+      }
+
+      if (this.aborted) {
+        md5Fn('aborted')
+        return
+      }
+
+      if (currentChunk < chunks) {
+        loadNext()
+      } else {
+        md5Fn(null, spark.end())
+      }
+    }
+
+    function loadNext() {
+      const start = currentChunk * chunkSize
+      const end = start + chunkSize >= file.size ? file.size : start + chunkSize
+      reader.readAsArrayBuffer(blobSlice.call(file, start, end))
+    }
+  }
+
+  abort() {
+    this.aborted = true
+  }
+}
+
+```
+- FileReader(https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+最好直接看英文的，中文的翻译有点问题，而且内容更新不及时！！！
+<pre>
+FileReader can only access the contents of files that the user has explicitly selected, either using an HTML <input type="file"> element or by drag and drop. It cannot be used to read a file by pathname from the user's file system. To read files on the client's file system by pathname, use the File System Access API. To read server-side files, use standard Ajax solutions, with CORS permission if reading cross-domain.
+</pre>
+<pre>
+FileReader 对象允许 Web 应用程序异步读取存储在用户计算机上的文件（或原始数据缓冲区）的内容，使用 File 或 Blob 对象来指定要读取的文件或数据。
+
+文件对象可以从用户使用 <input> 元素选择文件后返回的 FileList 对象中获取，也可以从拖放操作的 DataTransfer 对象中获取，或者从 HTMLCanvasElement 上的 mozGetAsFile() API 中获取。
+
+FileReader 只能使用 HTML <input type="file"> 元素或通过拖放来访问用户已明确选择的文件内容。它不能用于从用户的文件系统中按路径名读取文件。要通过路径名读取客户端文件系统中的文件，请使用文件系统访问API。要读取服务器端文件，请使用标准的Ajax解决方案，如果跨域读取，请使用CORS权限。
+</pre>
