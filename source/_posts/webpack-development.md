@@ -37,3 +37,6 @@ undefined
 ### HardSourceWebpackPlugin
 4里面可以用来优化
 5里面直接放进去了
+
+现有问题：
+https://github.com/mzgoddard/hard-source-webpack-plugin/issues/416
