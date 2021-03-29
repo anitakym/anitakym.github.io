@@ -34,6 +34,17 @@ undefined
  ^
       File to import not found or unreadable: @/views/plan/publish/publish.scss.
 
+issues:
+https://github.com/teambit/bit/issues/1103
+
+<pre>
+webpack provides an advanced mechanism to resolve files. The sass-loader uses Sass's custom importer feature to pass all queries to the webpack resolving engine. Thus you can import your Sass modules from node_modules. Just prepend them with a ~ to tell webpack that this is not a relative import:
+
+@import "~bootstrap/dist/css/bootstrap";
+It's important to only prepend it with ~, because ~/ resolves to the home directory. webpack needs to distinguish between bootstrap and ~bootstrap because CSS and Sass files have no special syntax for importing relative files. Writing @import "file" is the same as @import "./file";
+
+</pre>
+
 ### HardSourceWebpackPlugin
 4里面可以用来优化
 5里面直接放进去了

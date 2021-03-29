@@ -52,7 +52,7 @@ ECMAScript5还新增了两个缩小数组的方法：reduce()和reduceRight()。
 诸如sort()、map()及reduce()这些可以接受回调函数的数组方法，都可以通过箭头函数语法简化编码过程并减少编码量。
 
 刘振涛. 深入理解ES6 (Chinese Edition) (Kindle Location 1196). Kindle Edition. 
-
+在线版本(https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
 
 ### 杂谈 
 
