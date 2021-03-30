@@ -41,3 +41,19 @@ cd ~/Library/Cache
 cd ~/Library/Application Support
 
 cd ~/Library/Logs
+
+### 公证
+现有软件，已用集团账号导出的证书进行了code signing —— 代码的开发者签名10.14
+
+https://support.apple.com/zh-cn/guide/mac-help/mh40616/mac 
+（给用户看的操作链接）
+
+https://support.apple.com/zh-cn/HT202491
+（高版本的系统还需要公证） Catalina 及以上版本
+
+2019的wwdc19 公证面面观
+公证就是关于在分发前识别和拦截恶意的Mac软件，而无需App Review团队或Mac App Store的参与。在去年推出。
+公证方法：
+https://oldj.net/article/2019/12/29/electron-builder-sign-and-notarize-for-macos/
+
+https://github.com/electron/electron-notarize
