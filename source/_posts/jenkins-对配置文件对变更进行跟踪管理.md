@@ -5,6 +5,15 @@ tags:
     - jenkins&&travis
 ---
 
+### 先聊聊Jenkins吧
+- jenkins pipeline脚本
+- 集成打包问题
+- CI/CD工具，Jenkins or Gitlab CI/CD or Github CI/CD
+- 历史趣事
+
+
+
+### 对配置文件对变更进行跟踪管理
 Job Configuration History
 对配置文件的变更进行跟踪管理
 
