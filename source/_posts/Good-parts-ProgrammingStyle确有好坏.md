@@ -23,5 +23,8 @@ Douglas Crockford
  - HTML5 made it worse instead of better
  - It is still better than everything else
 
+> Blame the victim
+
+> whose interest does the program represent? the browser got this right. every other platform for this wrong
 
 
