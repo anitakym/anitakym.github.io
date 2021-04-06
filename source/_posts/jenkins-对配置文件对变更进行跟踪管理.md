@@ -17,13 +17,13 @@ tags:
 Job Configuration History
 对配置文件的变更进行跟踪管理
 
+- 安装这个插件：
+在manage jenkins => manage plugins里面选择 available ，search Job Configuration History；选择安装并重新启动jenkins即可（PS，会有“仅在没有job的时候重新启动的选项”）
 
+- 使用
+在Jenkins=>job config history里面可以查看系统/job的config的变更
+也可以在具体的job里面查看当前配置的变更，可以快速回滚配置
+具体操作指南可见文档：(https://plugins.jenkins.io/jobConfigHistory/)
 
-https://blog.csdn.net/yihuliunian/article/details/90514353
-
-
-
-
-
-
+### node集成插件
 https://plugins.jenkins.io/nodejs/

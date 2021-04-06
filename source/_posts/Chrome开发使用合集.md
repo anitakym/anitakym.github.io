@@ -39,5 +39,6 @@ same-site(两个都改成disabled)
 #### preserve-log
 ![](preservelog.png)
 
-
+#### chrome devtools protocol
+https://chromedevtools.github.io/devtools-protocol/tot/Browser/
 #### 写点小插件
