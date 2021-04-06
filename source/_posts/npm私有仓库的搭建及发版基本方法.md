@@ -35,3 +35,17 @@ tips: 注意正式版本和发测试版本包的时候，发包规则的设定�
 
 
 ## 私仓的搭建（基于nexus）
+
+
+
+### npm发包
+1.注册账号
+2.package.json (name,version=>最少字段)
+3.main/module/files-需要发布的本地目录/
+
+
+tips:
+1.发npm包时候，源就是npm的;注意publish的源的设置
+2.推荐工具：nrm
+3.keyword方便搜索的
+
