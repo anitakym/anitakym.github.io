@@ -28,3 +28,10 @@ tags:
   - This phrase is an explanatory linking phrase, used to link two parts of a sentence together so that it is clear that the first statement is being explained by or contrasted with the second part.
 - This is essentially a basic form of dependency tracking that's commonly shared in Knockout.js, Meteor Tracker, and Vue.js and MobX. MobX is a state management pattern for React.
 
+### getters and setters
+
+essentially 本质上
+arbitrary values 任意值
+to assert whether your current implementation is correct 以确定您当前的实现是否正确
+access and assignments 访问和赋值
+And this class will have two methods, depend and notify 这个类会有两个方法，依赖和通知
