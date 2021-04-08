@@ -4,7 +4,7 @@ date: 2021-04-03 17:02:25
 tags:
 ---
 
-### intro
+## intro
 - ins and outs 来龙去脉
 - our agenda comprises of 议程包括
 - resemble 类似
@@ -30,8 +30,44 @@ tags:
 
 ### getters and setters
 
-essentially 本质上
-arbitrary values 任意值
-to assert whether your current implementation is correct 以确定您当前的实现是否正确
-access and assignments 访问和赋值
-And this class will have two methods, depend and notify 这个类会有两个方法，依赖和通知
+- essentially 本质上
+- arbitrary values 任意值
+- to assert whether your current implementation is correct 以确定您当前的实现是否正确
+- access and assignments 访问和赋值
+- And this class will have two methods, depend and notify 这个类会有两个方法，依赖和通知
+- associate 关联
+- go half through the time 时间过半
+- So the catch here is 所以这里的问题是
+- So this variable will always point to something that references this 所以这个变量将始终指向引用这个变量的东西
+
+### dependency tracker
+- That's the whole point, right? 这就是重点，对吧？
+- so we can just take the subscriber function and just invoke it 所以我们可以直接使用订阅者函数并调用它
+- That's pretty much it 这就差不多了
+- this wrapped update 封装的更新
+- we need to clean up stale dependencies 我们需要清理过时的依赖关系
+- This is not accounted for 没有考虑到的
+
+### mini observer
+- mutate a property 改变一个属性
+- fill in the blanks 填空
+- to this point 到此为止
+
+
+
+## intro writing plugins
+
+
+
+
+### writing a simple plugin
+
+
+
+### render functions
+
+
+
+
+### 
+(Essentially) A lightweight JavaScript data format to represent what the actual DOM should look like at a given point in time (本质上)一个轻量级的JavaScript数据格式来表示实际的DOM在一个给定的时间点应该是什么样子的。

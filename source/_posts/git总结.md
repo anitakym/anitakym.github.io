@@ -71,3 +71,7 @@ tig(https://jonas.github.io/tig/)
 ```
 brew install tig
 ```
+
+### 查看working tree的状态
+git-status - Show the working tree status
+切换分支的时候，注意查看
