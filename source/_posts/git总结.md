@@ -25,7 +25,7 @@ https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git.html
 
 
 gitlab continuous integration
-http://gitlab.staff.xdf.cn/seal/js/seal_basics_ui/settings/integrations
+/settings/integrations
 
 #### 分支名称自动补全
 指路：https://ohmyz.sh/（oh my zsh）
