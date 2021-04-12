@@ -3,14 +3,15 @@ title: SQLite
 date: 2021-03-29 11:36:14
 tags:
 ---
-文档指南：
+### 文档指南：
 https://www.sqlite.org/index.html
 
 
-文章推荐：
+### 文章推荐：
 https://antonz.org/sqlite-is-not-a-toy-database/?continueFlag=4468f03238b1209651088b2e0490953e
 
 
+### 详细讲诉
 - 在 Chrome、Safari 和 Firefox 等浏览器客户端中使用 WebSQL 时，会直接操作 SQLite。
 (https://developer.chrome.com/docs/devtools/storage/websql/)
 
@@ -40,4 +41,46 @@ SQLite 是在 2000 年发布的，到目前为止已经有 19 年了。一直采
 
 我今天讲了有关 SQLite 的内容。在使用 SQLite 的时候，需要注意 SQLite 有自己的方言，比如在进行表连接查询的时候不支持 RIGHT JOIN，需要将其转换成 LEFT JOIN 等。同时，我们在使用 execute() 方法的时候，尽量采用带有参数的 SQL 语句，以免被 SQL 注入攻击。
 
+### better-sqlite
+文档指路：https://github.com/JoshuaWise/better-sqlite3/tree/4dc52f1dce355fc5894edf0566f8fd3eb0af214f
 
+<pre>
+The fastest and simplest library for SQLite3 in Node.js.
+Node.js中最快、最简单的SQLite3库。
+
+Full transaction support
+完全的事务支持
+High performance, efficiency, and safety
+高性能、高效率和安全性
+Easy-to-use synchronous API (better concurrency than an asynchronous API... yes, you read that correctly)
+易于使用的同步API（比异步API有更好的并发性......是的，你没看错）
+Support for user-defined functions, aggregates, and extensions
+支持用户定义的函数、集合和扩展。
+64-bit integers (invisible until you need them)
+64位整数(在你需要之前是不可见的)
+Worker thread support (for large/slow queries)
+工作线程支持（用于大型/慢速查询）https://nodejs.org/api/worker_threads.html
+</pre>
+
+提供了benchmark(https://en.wikipedia.org/wiki/Benchmark_(computing))
+<pre>
+Benchmark
+To run the benchmark yourself:
+
+git clone https://github.com/JoshuaWise/better-sqlite3.git
+cd better-sqlite3
+npm install # if you're doing this as the root user, --unsafe-perm is required
+node benchmark
+</pre>
+
+### 延伸阅读
+- https://nodesource.com/blog/worker-threads-nodejs/
+- https://blog.insiderattack.net/deep-dive-into-worker-threads-in-node-js-e75e10546b11
+
+
+### 工具推荐
+navicat
+datagrip
+- 数据库建模
+PDMan (http://www.pdman.cn/#/)
+PD(PowerDesigner)
