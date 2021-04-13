@@ -57,3 +57,21 @@ https://support.apple.com/zh-cn/HT202491
 https://oldj.net/article/2019/12/29/electron-builder-sign-and-notarize-for-macos/
 
 https://github.com/electron/electron-notarize
+
+```
+// 公证操作执行命令：
+xcrun altool --notarize-app --primary-bundle-id "cn.xxx.xx.xxxx" --username "xxx@xxx.cn" --password "apppasswd" --asc-provider "providerNameXXX" -t osx --file xxx.dmg
+// 说明：
+// xxx.dmg 替换为要公证的文件名，执行命令和要公证的文件包（xxx.dmg）在同一目录下
+// cn.xxx.xx.xxxx 替换成应用到bundleid
+// providerNameXXX 是providerName，根据邮箱和密码查出来的
+xcrun altool --list-providers --username "xxx@xxx.cn" --password "apppasswd"
+// 结果如下，则上传成功：
+No errors uploading 'xxx.dmg'.
+RequestUUID = "一串字符串"
+// 公证成功会收到邮件：
+// 或者可以通过命令查公证状态：
+xcrun altool --notarization-info "RequestUUID" --username "xxx@xxx.cn" --password "apppasswd"
+公证成功后，安装APP，不会再有安全提示拦截（每次上线新版本前需进行公证）
+
+```

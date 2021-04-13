@@ -73,6 +73,28 @@ npm install # if you're doing this as the root user, --unsafe-perm is required
 node benchmark
 </pre>
 
+
+<pre>
+When is this library not appropriate?
+什么时候不适合使用这个库？
+
+In most cases, if you're attempting something that cannot be reasonably accomplished with better-sqlite3, it probably cannot be reasonably accomplished with SQLite3 in general. For example, if you're executing queries that take one second to complete, and you expect to have many concurrent users executing those queries, no amount of asynchronicity will save you from SQLite3's serialized nature. Fortunately, SQLite3 is very very fast. With proper indexing, we've been able to achieve upward of 2000 queries per second with 5-way-joins in a 60 GB database, where each query was handling 5–50 kilobytes of real data.
+在大多数情况下，如果你正在尝试一些不能用better-sqlite3合理完成的事情，那么一般情况下可能也不能用SQLite3合理完成。例如，如果你正在执行需要一秒钟才能完成的查询，并且你期望有许多并发用户执行这些查询，那么再多的异步性也无法将你从SQLite3的序列化特性中拯救出来。幸运的是，SQLite3的速度非常非常快。通过适当的索引，我们已经能够在一个60GB的数据库中用5路连接实现每秒高达2000次的查询，其中每个查询都要处理5-50kb的真实数据。
+
+If you have a performance problem, the most likely causes are inefficient queries, improper indexing, or a lack of WAL mode—not better-sqlite3 itself. However, there are some cases where better-sqlite3 could be inappropriate:
+如果你有性能问题，最有可能的原因是查询效率低下，索引不当，或者缺乏WAL模式，而不是better-sqlite3本身。然而，在某些情况下，better-sqlite3可能是不合适的。
+
+If you expect a high volume of concurrent reads each returning many megabytes of data (i.e., videos)
+如果你期望大量的并发读取，每个返回许多兆字节的数据（即视频）。
+If you expect a high volume of concurrent writes (i.e., a social media site)
+如果你期望有大量的并发写入（例如，一个社交媒体网站）。
+If your database's size is near the terabyte range
+如果您的数据库的大小接近TB的范围
+
+For these situations, you should probably use a full-fledged RDBMS such as PostgreSQL.
+对于这些情况，你可能应该使用一个成熟的RDBMS，如PostgreSQL。
+</pre>
+
 ### 延伸阅读
 - https://nodesource.com/blog/worker-threads-nodejs/
 - https://blog.insiderattack.net/deep-dive-into-worker-threads-in-node-js-e75e10546b11

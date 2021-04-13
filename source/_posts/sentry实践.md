@@ -69,7 +69,9 @@ Sentry.init({
 
 #### electron项目
 
-- @sentry/electron
+- @sentry/electron(https://docs.sentry.io/platforms/javascript/guides/electron/)
+  - @sentry/electron is the official Sentry SDK for Electron applications. It can capture JavaScript exceptions in the main process and renderers, as well as collect native crash reports (Minidumps).
+  - 可以捕获主进程和渲染器中的JavaScript异常，也可以收集本地崩溃报告（Minidumps）。
 - crashReporter
 ```
 import * as Sentry from '@sentry/electron';

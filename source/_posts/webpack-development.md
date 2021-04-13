@@ -51,3 +51,16 @@ It's important to only prepend it with ~, because ~/ resolves to the home direct
 
 现有问题：
 https://github.com/mzgoddard/hard-source-webpack-plugin/issues/416
+
+
+### 构建性能优化
+https://webpack.docschina.org/guides/build-performance/
+
+worker 池(worker pool) 
+thread-loader 可以将非常消耗资源的 loader 分流给一个 worker pool。
+
+Warning
+不要使用太多的 worker，因为 Node.js 的 runtime 和 loader 都有启动开销。最小化 worker 和 main process(主进程) 之间的模块传输。进程间通讯(IPC, inter process communication)是非常消耗资源的。
+需要谨慎使用～
+
+
