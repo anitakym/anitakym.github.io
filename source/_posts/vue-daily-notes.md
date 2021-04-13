@@ -61,9 +61,19 @@ https://cn.vuejs.org/v2/guide/installation.html
 - v-model 语法糖，简写 :value="message" @input="handleChange",本质上还是单向数据流(https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model)
 - .sync(可关注Vue3的差异)
 
-### 
+### 虚拟DOM
 - jquery(事件，DOM => 随着逻辑的复杂，会比较乱)
-- vue(事件，state，DOM) => Virtual DOM(state+template=>DOM树) => Virtual DOM Diff(O(n3))
+- vue(事件，state，DOM) => Virtual DOM(state+template=>DOM树) => Virtual DOM Diff(时间复杂度) 
+- 算法 => 时间复杂度，通用性
+- 同层级节点比较 => 移动节点 ｜ 删除新建 | 更新删除新建(无key) | 移动(有key) | 插入(有key) => 有key就有唯一标识符了，就可以把一些更新删除新建的问题改成了移动和插入的问题 => index的问题：如果是自定义的组件，简单的展示问题不大，但是list如果有删除添加排序，就会有问题
+
+### 组件更新的触发
+- 数据驱动
+- 没有特殊情况不要操作DOM！！！=> review代码的时候经常发现这个问题
+- 数据来源(单向的)
+  - 来自父元素的```属性```-外部数据(https://cn.vuejs.org/v2/guide/components-props.html#%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81)
+  - 来自组件自身的```状态```data-内部数据(https://cn.vuejs.org/v2/api/#data)
+  - 来自状态管理器-vuex|Vue.observable(https://cn.vuejs.org/v2/api/#Vue-observable)
 
 TIPS：
 - 调试
