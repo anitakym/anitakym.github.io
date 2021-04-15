@@ -128,6 +128,8 @@ vscode 里面，光标在哪一行，直接 cmd + c/x/v ,就可以复制/剪切�
 - html/code 光标放在需要折叠的区域 cmd + shift + P => fold
 - fold region ，可以添加 a comment with //#region at the start of the block and //#endregion at the end.
 创建折叠区域
+- cmd + k + 0，0是代码折叠级别,全部折叠，同理可以换用1，2，3  
+- cmd + k + j 展开所有代码块
 
 #### 快速注释
 - cmd + / 注释行
