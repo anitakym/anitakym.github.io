@@ -6,3 +6,6 @@ tags:
     - editor
 ---
 文档指路：http://docs.mathquill.com/en/latest/
+
+### 前置知识
+#### latex
