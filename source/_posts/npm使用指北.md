@@ -41,5 +41,9 @@ First I found which versions I had with brew info icu4c, then did brew switch ic
 重新官网下载了node,解决的
 https://nodejs.org/en/
 
+### npx
+可以通过npx,去执行cli命令，不需要额外的安装
+比如：
+npx create-next-app test-demo
 
 

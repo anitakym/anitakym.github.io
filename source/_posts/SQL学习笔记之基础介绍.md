@@ -156,3 +156,9 @@ SELECT COUNT(*) as num FROM new_user WHERE TO_DAYS(NOW())-TO_DAYS(regist_time)<=
 
 
 > NoSQL最早是想远离SQL，随着发展，越来越离不开SQL; NoSQL是对SQL很好的补充
+
+
+
+### 参考学习项目
+- mybatis-3
+  - MyBatis SQL mapper framework for Java —— mybatis.github.io/mybatis-3/
