@@ -209,4 +209,10 @@ xmms = X Multimedia System
 xrdb = X Resources DataBase 
 xwd = X Window Dump 
 yacc = yet another compiler compile
+
+</pre>
+
+<pre>
+EOF = end of file(https://en.wikipedia.org/wiki/End-of-file)
+RPC = Remote Procedure Call(Remote Procedure Call (RPC) is a protocol that provides the high-level communications paradigm used in the operating system.)
 </pre>

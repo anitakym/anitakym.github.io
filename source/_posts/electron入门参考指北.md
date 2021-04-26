@@ -7,7 +7,7 @@ tags:
 团队在electron方面的经验已经积累了2年多了，从较轻量级的客户端，到重量级的客户端；也不断有新同学想要学习或者加入相关项目的评审，这个时候回推荐一些相关的入门文档和demo,做个记录，之后可以直接扔链接了。
 
 
-### demo day1
+### learning-intro
 - https://electronjs.org/docs
 文档啦，关于看文档，这儿推荐一本书，叫《如何阅读一本书》，讲得就是如何阅读的，其实我们好多人的阅读能力还停留在小学六年级水平，看了这本书，还是大有裨益。
 - https://github.com/electron/electron-api-demos
@@ -45,3 +45,21 @@ on Windows: %USERPROFILE%\AppData\Roaming\{app name}\logs\{process type}.log
 https://www.electronjs.org/releases/stable
 版本更新解决了什么问题
 比如对M1芯片的支持，big sur的支持等～
+
+
+### 网络问题判断
+online
+offline
+网络状态不好有两种情况：
+1. 切断物理连接本身
+2. 网络本身有问题(如路由等具体问题)
+嗯呢，navigator.onLine不完全可靠，无法检测网络真实状态，只能判断是否是物理切断连接
+通用更可靠方案是：定时向服务器发起任意一个能够判断网络状态的请求，类似心跳连接
+
+Unfortunately, these events aren't fully reliable. If you need greater reliability, or if the API isn't implemented in the browser, you can use other signals to detect if you are offline including using service workers and responses from XMLHttpRequest.
+————————————————————————
+https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/Online_and_offline_events
+
+https://github.com/sindresorhus/is-online
+
+https://www.electronjs.org/docs/tutorial/online-offline-events

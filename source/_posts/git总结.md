@@ -75,3 +75,16 @@ brew install tig
 ### 查看working tree的状态
 git-status - Show the working tree status
 切换分支的时候，注意查看
+
+
+### gitk(the git repository browser)
+https://git-scm.com/docs/gitk/
+
+
+### .gitignore规则生效
+如果一旦纳入版本管理，可以先删除本地缓存，然后提交
+```
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
+```

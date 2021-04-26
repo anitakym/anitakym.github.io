@@ -16,3 +16,7 @@ tags:
 
 - 跨域问题，着重经验及对此类问题是否有探究和思考（ https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS）聊得有趣的可以更深入了解下计网的基础
 
+- https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0
+文档：
+> 这里记录的都是和处理边界情况有关的功能，即一些需要对 Vue 的规则做一些小调整的特殊情况。不过注意这些功能都是有劣势或危险的场景的。我们会在每个案例中注明，所以当你使用每个功能的时候请稍加留意。
+代码评审的注意下这部分提到的使用的界限
