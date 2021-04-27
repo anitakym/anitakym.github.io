@@ -56,6 +56,14 @@ cmd+shift+3/4
 
 去掉首字母大写的即可
 
+#### 查找系统安装字体
+brew install fontconfig
+fc-list :zang-zh
+fc-list : file family | grep \/Library
+
+搜索：字体册
+Font Book.app
+
 #### 推荐app
 翻译类：
 Google DeepL translator
@@ -71,3 +79,4 @@ SwitchHosts（host配置）
 Notability（笔记）
 命令行：
 pandoc（文件格式转换）
+
