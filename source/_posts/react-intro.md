@@ -7,6 +7,10 @@ tags:
 https://btholt.github.io/complete-intro-to-react-v5/intro
 
 
+
+
+## 实践项目中遇到的一些问题
+> 因为react相关项目是另外一个组负责，组间评审的时候，会看下项目，下面为遇到的一些问题
 ### creat-react-app
 https://github.com/facebook/create-react-app/issues/10161
 关于eslintcache文件产生的位置问题(4.0.1)

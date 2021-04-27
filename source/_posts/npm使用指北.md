@@ -46,4 +46,29 @@ https://nodejs.org/en/
 比如：
 npx create-next-app test-demo
 
+### yarn
+可以通过homebrew安装，也可以通过npm安装
+https://yarnpkg.com/getting-started
+yarn autoclean 功能可以试试
 
+https://gist.github.com/jonlabelle/c082700c1c249d986faecbd5abf7d65b
+https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc
+这篇文章提供npm和yarn的对比：
+官方也有简单的vs：
+https://classic.yarnpkg.com/en/docs/migrating-from-npm
+```
+npm install === yarn
+npm installl testpackage --save === yarn add testpackage
+npm uninstall testpackage --save === yarn remove testpackage
+npm install testpackage --save-dev === yarn add testpackage --dev
+npm update --save === yarn upgrade
+```
+```
+// 都一样的
+init | link | outdated | publish | run | cache clean | login | test
+```
+```
+// yarn 有npm没有的
+yarn licenses list
+yarn why lodash
+```

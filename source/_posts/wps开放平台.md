@@ -15,3 +15,8 @@ https://wwo.wps.cn/docs/front-end/introduction/quick-start
 
 前端部分参考：https://gitee.com/mose-x/wps-view-vue
 Java部分参考：https://gitee.com/mose-x/wps-view-java.git
+
+### 中台系统
+商业化其实还有待进一步深化
+
+开发对接的时候能明显感受到这个状况

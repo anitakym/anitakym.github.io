@@ -137,3 +137,17 @@ source .zshrc
 能够格式化JSON文本
 #### 日志
 tail/lnav
+
+### 具体场景
+####  查看目录下文件/文件夹个数
+```
+# 文件
+_posts git:(master) ✗ ls -l | grep "^-" | wc -l
+     149
+# 文件夹
+_posts git:(master) ✗ ls -l | grep "^d" | wc -l
+     135
+
+# 包括子文件夹
+ls -lR
+```

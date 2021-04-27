@@ -63,3 +63,33 @@ https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/Online_and_offl
 https://github.com/sindresorhus/is-online
 
 https://www.electronjs.org/docs/tutorial/online-offline-events
+
+
+### Preload
+webPreferences-preload
+(https://www.electronjs.org/docs/api/browser-window)
+
+
+### download
+我们项目中基于downloadItem实现的
+可以看看这个项目（@electron/get）的实现https://github.com/electron/get
+
+### 安装背景图
+如果想要背景清楚，可以用二倍图，文件命名符合规则即可生效
+<pre>
+Adopt the @2x Naming Convention
+When you create a high-resolution version of an image, follow this naming convention for the image pair:
+
+Standard: <ImageName>.<filename_extension>
+Example: circle.png
+
+High resolution: <ImageName>@2x.<filename_extension>
+Example: circle@2x.png
+
+The <ImageName> and <filename_extension> portions specify the name and extension for the file. The inclusion of the @2x modifier for the high-resolution image lets the system know that the image is the high-resolution variant of the standard image. The two component images should be in the same folder in the app’s sources. Ideally, package the image pairs into one file (see Package Multiple Versions of Image Resources into One File).
+</pre>
+
+
+### 可参考他人踩坑文档
+https://www.yuque.com/arvinxx-fe/electron
+本质还是项目中遇到问题，解决问题，有空了彻底解决问题
