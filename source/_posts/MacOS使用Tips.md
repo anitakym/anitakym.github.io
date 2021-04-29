@@ -56,6 +56,9 @@ cmd+shift+3/4
 
 去掉首字母大写的即可
 
+#### 浏览器中打开文件
+cmd + O
+选择文件即可
 #### 推荐app
 翻译类：
 Google DeepL translator

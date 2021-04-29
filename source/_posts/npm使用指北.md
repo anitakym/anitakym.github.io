@@ -44,7 +44,11 @@ https://nodejs.org/en/
 ### npx
 可以通过npx,去执行cli命令，不需要额外的安装
 比如：
+```
 npx create-next-app test-demo
+npx create-react-app test-app
+(If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app or yarn global remove create-react-app to ensure that npx always uses the latest version.)
+```
 
 ### yarn
 可以通过homebrew安装，也可以通过npm安装
