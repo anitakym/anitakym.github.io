@@ -25,6 +25,32 @@ tags:
 3.x 2014 - WiredTiger + 生态
 4.x 2018 - 分布式事务支持
 
+#### 闲话
+- 竞品：
+14年，微软推出了DocumentDB预览版，17年5月升级为Cosmos DB（包含多个数据模型，文档模型成为子集）
+MongoDB-易用性！ 稳定性（丢数据，安全，分布式处理能力）？
+DocumentDB-Leslie Lamport(对事务的处理，自动索引，PaaS服务)
+做成了Windows Azure的一个服务
+17年，提供了兼容MongoDB的API
+（17年1月，黑客大量袭击了默认安装的MongoDB）
+
+- 人
+DoubleCLick原创始人（Dwight Merriman, Kevin Ryan, Eliot Horowitz）
+原先想做一个云计算的服务的
+然后先搭一个数据库
+
+mongo - humongous - 海量数据库 - 面向集合，模式自由，文档型数据库（Accelerate development, address diverse data sets, and adapt quickly to change with a proven application data platform built around the database most wanted by developers 4 years running.）
+
+PS：SQL是IBM出来的
+
+10gen 在 2009年2月正式开源MongoDB的第一个版本
+
+商业上-资助用户组，对社区的支持，技术支持团队-nice（用户体验）
+
+13年更名 MongoDB公司
+
+
+
 ### advantage
 - 面向开发者的易用&&高效数据库
 - 对象模型（Objects=>Database）
