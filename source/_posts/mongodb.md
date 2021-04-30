@@ -8,6 +8,7 @@ tags:
 ### docs
 - https://docs.mongodb.com/guides/
 - https://university.mongodb.com/?tck=docs_landing
+- 中文社区-https://mongoing.com/
 
 ### intro
 - DB-Engines 排名
@@ -32,3 +33,5 @@ tags:
   - 多形性:同一个集合中，可以包含不同字段的文档对象
   - 动态性：线上修改数据模式，修改时应用与数据库均无需下线
   - 数据治理：支持使用JSON Schema来规范数据模式。在保证模式灵活动态的前提下，提供数据治理能力
+
+### 
