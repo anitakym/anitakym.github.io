@@ -151,3 +151,11 @@ _posts git:(master) ✗ ls -l | grep "^d" | wc -l
 # 包括子文件夹
 ls -lR
 ```
+
+### export
+Linux export 命令用于设置或显示环境变量。
+
+在 shell 中执行程序时，shell 会提供一组环境变量。export 可新增，修改或删除环境变量，供后续执行的程序使用。export 的效力仅限于该次登陆操作。
+```
+export [-fnp][变量名称]=[变量设置值]
+```

@@ -10,6 +10,7 @@ tags:
 - https://docs.mongodb.com/guides/
 - https://university.mongodb.com/?tck=docs_landing
 - 中文社区-https://mongoing.com/
+- 中文版手册-https://docs.mongoing.com/
 
 ### intro
 - DB-Engines 排名
@@ -81,15 +82,46 @@ PS：SQL是IBM出来的
 - version/os/package
 - https://docs.mongodb.com/manual/administration/install-community/
 ```
-# linux - 自己下载安装
-mkdir -p /data /data/db
-cd /data
-curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-4.2.1.tgz
-tar -xvf mongodb-linux-x86_64-rhel70-4.2.1.tgz
-export PATH=$PATH:/data/mongodb-linux-x86_64-rhel70-4.2.1/bin
-mongod --dbpath /data/db --port 27017 --logpath /data/db/mongod.log --fork –bind_ip 0.0.0.0
+
+# centos - 本地安装
+# 新建一个/etc/yum.repos.d/mongodb-org-4.2.repo，这样我们可以用yum来安装
+[mongodb-org-4.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+
+# 然后安装最近的稳定版本
+sudo yum install -y mongodb-org
+
+# 启动社区版
+# 默认会在/var/lib/mongo(data) /var/log/mongodb(log)，如果想要改到自己创建的目录，可以修改/etc/mongod.conf文件
+sudo chown -R mongod:mongod <directory> # 注意权限问题
+
+# 看用systemctl（较新版本Linux） 还是 service （较老版本），可以用"ps --no-headers -o comm 1"查，我这边centos7，用的是systemctl
+systemctl start mongod
+
+# 如果报错“Failed to start mongod.service: Unit mongod.service not found.”
+systemctl daemon-reload
+
+# 查看是否成功启动
+systemctl status mongod
+
+# 如果想随着系统reboot开启
+systemctl enable mongod
+
+# 关
+systemctl stop mongod
+
+# 重启
+systemctl restart mongod
+
+# 使用
+mongo
 
 # MacOS - 自己下载安装
+# https://docs.mongoing.com/install-mongodb/install-mongodb-community-edition/install-on-macos
 xcode-select --install
 brew tap mongodb/brew
 brew install mongodb-community@4.4 
@@ -110,8 +142,8 @@ Atlas免费测试账号：
 ```
 
 ```
-# 导入样本数据
-curl -O -k https://raw.githubusercontent.com/tapdata/geektimemongodb-course/master/aggregation/dump.tar.gz
+# mongorestore 
+curl -O -k https://xxx.xxx.com/dump.tar.gz
 tar -xvf dump.tar.gz
-mongorestore -h localhost:27017
+mongorestore /dump
 ```

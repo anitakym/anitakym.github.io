@@ -23,3 +23,16 @@ systemctl | service 命令
 
 华为云服务的帮助文档：
 https://support.huaweicloud.com/trouble-ecs/ecs_trouble_0306.html
+
+Init System
+
+To run and manage your mongod process, you will be using your operating system’s built-in init system. Recent versions of Linux tend to use systemd (which uses the systemctl command), while older versions of Linux tend to use System V init (which uses the service command).
+
+If you are unsure which init system your platform uses, run the following command:
+
+ps --no-headers -o comm 1
+
+Then select the appropriate tab below based on the result:
+
+systemd - select the systemd (systemctl) tab below.
+init - select the System V Init (service) tab below.

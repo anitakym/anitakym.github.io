@@ -54,4 +54,3 @@ https://btholt.github.io/complete-intro-to-containers/
 -   flimsy (feeable,weak)
 -   But I assure you a lot of very smart people have worked out the kinks and containers are the future of deploying code.但我向你保证，很多非常聪明的人已经解决了这些问题，容器是部署代码的未来。
 
-### chroot
