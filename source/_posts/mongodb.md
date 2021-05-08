@@ -147,3 +147,11 @@ curl -O -k https://xxx.xxx.com/dump.tar.gz
 tar -xvf dump.tar.gz
 mongorestore /dump
 ```
+
+### 查看工具
+- mongoDB compass(官方，免费，好用)
+- studio3T
+- NoSQL Booster
+
+grafana:
+https://grafana.com/grafana/dashboards/8339
