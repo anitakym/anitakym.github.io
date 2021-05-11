@@ -35,6 +35,17 @@ tags:
 chrome://flags/
 same-site(两个都改成disabled)
 </pre>
+<pre>
+SameSite by default cookies
+Treat cookies that don't specify a SameSite attribute as if they were SameSite=Lax. Sites must specify SameSite=None in order to enable third-party usage. – Mac, Windows, Linux, Chrome OS, Android
+
+#same-site-by-default-cookies
+Cookies without SameSite must be secure
+If enabled, cookies without SameSite restrictions must also be Secure. If a cookie without SameSite restrictions is set without the Secure attribute, it will be rejected. This flag only has an effect if "SameSite by default cookies" is also enabled. – Mac, Windows, Linux, Chrome OS, Android
+
+#cookies-without-same-site-must-be-secure
+
+</pre>
 
 #### preserve-log
 ![](preservelog.png)
