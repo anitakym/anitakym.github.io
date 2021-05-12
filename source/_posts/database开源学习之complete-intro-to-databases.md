@@ -56,12 +56,55 @@ db.pets.insertMany(
 ```
 
 3. Querying MongoDB
+mongodb compass,左下角，点击 _MONGOSH BETA 也能进入shell模式
+<pre>
+$gt - greater than
+$gte - greater than or equal to
+$lt - less than
+$lte - less than or equal to
+$eq - equals (usually not necessary)
+$ne - not equals
+$in - has the value in the array (MongoDB can store arrays and objects too!)
+$nin - does not have the value in the array
+</pre>
 ```
+# findone
 db.pets.findOne()
+db.pets.findOne({ index: 1337 });
+# find
+db.pets.find({ type: "dog" });
+it
+it
+# count , limit , and toArray
+db.pets.count({ type: "dog" }); // probably pretty big number
+db.pets.find({ type: "dog" }).limit(40);
+it; // after this the cursor will end
+db.pets.find({ type: "dog" }).limit(40).toArray();
+# query operators
+db.pets.count({ type: "cat", age: { $gt: 12 } });
+db.pets.find({
+  type: { $ne: "dog" },
+  name: "Fido",
+});
+# logical operators
+db.pets.find({
+  type: "bird",
+  $and: [{ age: { $gte: 4 } }, { age: { $lte: 8 } }],
+});
+# special operators , like $type $exists
+# sorts 1:ascending -1: descending
+db.pets.find({ type: "dog" }).sort({ age: -1 });
+# projections
+db.pets.find({ type: "dog" }, { name: 1, breed: 1 });
+db.pets.find({ type: "dog" }, { name: 1, breed: 1, _id: 0 });
+db.pets.find({ type: "dog" }, { name: true, breed: true, _id: false }); // note that true and false work too
+db.pets.find({ type: "dog" }, { _id: 0 });
 ```
-
 
 4. Updating MongoDB
+- insert,insertOne,insertMany
+- delete deleteMany deleteOne / update updateMany/updateOne
+
 5. Indexes in MongoDB
 6. Aggregation
 7. Write a Node.js app with MongoDB
