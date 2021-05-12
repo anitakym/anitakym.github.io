@@ -56,7 +56,6 @@ db.pets.insertMany(
 ```
 
 3. Querying MongoDB
-mongodb compass,左下角，点击 _MONGOSH BETA 也能进入shell模式
 <pre>
 $gt - greater than
 $gte - greater than or equal to
