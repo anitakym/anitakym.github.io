@@ -102,10 +102,50 @@ db.pets.find({ type: "dog" }, { _id: 0 });
 ```
 
 4. Updating MongoDB
-- insert,insertOne,insertMany
-- delete deleteMany deleteOne / update updateMany/updateOne
+- insert本质上是做了（insertOne,insertMany）的工作；但是one/many的好处是，如果我们给了错误的输入，他会报错并让我们修正
+- delete deleteMany deleteOne / update updateMany/updateOne 也同上
+- replaceOne 会删除在更新对象中省略的，但存在与原有文档中但任何字段
+```
+# updates 第一个对象是查询，第二个对象是更新对象
+db.pets.updateOne(
+  { type: "dog", name: "Luna", breed: "Havanese" },
+  { $set: { owner: "Brian Holt" } }
+);
+# 可用的更新操作符 https://docs.mongodb.com/manual/reference/operator/update/#id1
+db.pets.updateMany({ type: "dog" }, { $inc: { age: 1 } }); 
+# upsert - option 如果存在就更新，如果不存在，就创建一个新记录
+db.pets.updateOne(
+  {
+    type: "dog",
+    name: "Sudo",
+    breed: "Wheaten",
+  },
+  {
+    $set: {
+      type: "dog",
+      name: "Sudo",
+      breed: "Wheaten",
+      age: 5,
+      index: 10000,
+      owner: "Sarah Drasner",
+    },
+  },
+  {
+    upsert: true,
+  }
+);
+# deletes 工作原理和查找类似
+db.pets.deleteMany({ type: "reptile", breed: "Havanese" });
+# findAnd* （Update/Replace/Delete） 
+# bulkWrite 大规模写入
+
+```
 
 5. Indexes in MongoDB
+```
+
+```
+
 6. Aggregation
 7. Write a Node.js app with MongoDB
 8. MongoDB Ops
