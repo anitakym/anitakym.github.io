@@ -186,3 +186,18 @@ https://grafana.com/grafana/dashboards/8339
 ### 程序访问mongodb
 - python ```pip install pymongo```
 - mongoDB连接串 比如有—— mongodb://数据库服务器主机地址:端口号
+- 我们可以进行一系列操作（按文档），mongo-无模式
+- 更新用户 update_one 我们没有去数据库修改表结构
+- 代码量少
+
+
+### 聚合 
+- 做的是sql里面as ，groupby , leftjoin 的操作
+- aggregation framework - 计算框架
+- pipeline = [$stage1,$stage2, ...$stageN]
+- db.<COLLECTION>.aggregate(pipeline,{ options })
+- $match -过滤 WHERE | $ project -投影 SELECT AS | $sort -排序 ORDER BY | $group -分组 GROUP BY | $skip/$limit -结果限制 SKIP/LIMIT | $lookup -左外连接（关联） LEFT OUTER JOIN
+- 常见步骤中的运算符
+- 非常见步骤，mongo特有 $unwind - 展开数组 | $graphLookup - 图搜索 | $facet/$bucket - 分面搜索（电商常用）
+- OLTP | OLAP
+- 
