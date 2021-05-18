@@ -9,7 +9,7 @@ tags:
 
 
 #### main 属性
-
+如果不填的话，默认是找文件夹根目录下的index
 <pre>
 The main field is a module ID that is the primary entry point to your program. That is, if your package is named foo, and a user installs it, and then does require("foo"), then your main module’s exports object will be returned.
 
