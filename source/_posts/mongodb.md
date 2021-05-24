@@ -149,9 +149,40 @@ mongorestore /dump
 ```
 
 ### 查看工具
-- mongoDB compass(官方，免费，好用)
 - studio3T
 - NoSQL Booster
 
 grafana:
 https://grafana.com/grafana/dashboards/8339
+
+- mongoDB compass(官方，免费，好用)
+  - mongodb compass,左下角，点击 _MONGOSH BETA 也能进入shell模式
+  - documents 切换view的模式,Interactive Document Editor.Modify existing documents with greater confidence using the intuitive visual editor, or insert new documents and clone or delete existing ones in just a few clicks.
+  - schema 子文档的字段也能看，分析，compass特有功能;Visualize your Schema.MongoDB Compass analyzes your documents and displays rich structures within your collections through an intuitive GUI. It allows you to quickly visualize and explore your schema to understand the frequency, types and ranges of fields in your data set.
+  - 执行查询的时候;Visual Explain Plans.Know how queries are running through an easy-to-understand GUI that helps you identify and resolve performance issues.
+  - Performance Charts.Real-time server statistics let you view key server metrics and database operations. Drill down into database operations easily and understand your most active collections.
+  - Schema Validation.Create schema validation rules with a smart editor that auto-suggests rule components. See immediate results with a live preview and revise rules as needed. See Schema Validation in the MongoDB documentation for more information.
+  - Deployment Awareness;Replica set aware connections allow for continued use during replica set configuration changes and provides additional information of the connected cluster.
+  - Query History;Easily access and manage executed queries and save favorites for often executed queries.
+
+### 操作
+- find - 查询，类似于SELECT；返回的是游标；```$and:[] $or:[] ;正则 /^B/；```
+  - 查询条件和SQL的对照 ```a <= 1  {a:{$lte:1}}  ，a = 1 AND b = 1 {$and: [{a:1},{b:1}]}```
+  - $ 是mongo里面特殊的符号 查询逻辑运算符 $lt ，因为在mongo里面，需要要key:value
+  - 支持使用```field.sub_field   db.barcode.find({"volumes.pdfUrl": "www.baidu.com"}) ``` 
+  - 使用find搜索数组(注意存的类型是数组，还是数组stringfy之后的字符串)，数组子文档也可以搜 . $elemMatch
+  - 可以返回指定字段 Projection 投影
+  - .pretty()
+- remove 
+  - 需要配合查询条件使用
+- update
+  - 查询条件，更新字段
+  - {$set:{}} 各种操作方法
+- drop
+  - db.<collection>.drop() 集合中的全部文档和索引都会被删除
+  - 不要在生产上轻易操作
+  - db.dropDatabase() 数据库就删了
+
+### 程序访问mongodb
+- python ```pip install pymongo```
+- mongoDB连接串 比如有—— mongodb://数据库服务器主机地址:端口号
