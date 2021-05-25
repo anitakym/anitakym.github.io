@@ -167,6 +167,8 @@ https://grafana.com/grafana/dashboards/8339
 
 ### 操作
 - find - 查询，类似于SELECT；返回的是游标；```$and:[] $or:[] ;正则 /^B/；```
+  - 使用游标对象的API可以对全部结果进行遍历
+  - DBQuery.shellBatchSize
   - 查询条件和SQL的对照 ```a <= 1  {a:{$lte:1}}  ，a = 1 AND b = 1 {$and: [{a:1},{b:1}]}```
   - $ 是mongo里面特殊的符号 查询逻辑运算符 $lt ，因为在mongo里面，需要要key:value
   - 支持使用```field.sub_field   db.barcode.find({"volumes.pdfUrl": "www.baidu.com"}) ``` 
