@@ -12,6 +12,23 @@ tags:
 - 历史趣事
 
 
+#### 参数化构建
+- git parameter
+给git可选参数
+- choice parameter
+比如传入一些构建时需要的参数
+
+上面两个都需要下载对应的插件
+
+#### node环境
+- nodejs插件：
+在插件管理面搜nodejs,安装即可
+
+- 在系统管理->全局工具配置->nodejs
+新建一个nodejs环境
+
+- Provide Node & npm bin/ folder to PATH
+选择node版本
 
 ### 对配置文件对变更进行跟踪管理
 Job Configuration History
