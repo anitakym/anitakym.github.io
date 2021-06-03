@@ -45,3 +45,9 @@ Vue CLI 的核心目标是为基于 webpack 4 构建的预配置提供构建设�
 
 
 ## 相关Tips
+@vue/cli 
+如果你已经全局安装了旧版本的 vue-cli (1.x 或 2.x)，你需要先通过 npm uninstall vue-cli -g 或 yarn global remove vue-cli 卸载它。
+```
+vue --version
+npm update -g @vue/cli
+```
