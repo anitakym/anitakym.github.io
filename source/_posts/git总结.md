@@ -88,3 +88,8 @@ git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'
 ```
+
+### 导出某个项目的作者
+```
+"authors": "git log --format='%aN <%aE>' | sort -u > AUTHORS"
+```

@@ -49,6 +49,7 @@ npx create-next-app test-demo
 npx create-react-app test-app
 (If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app or yarn global remove create-react-app to ensure that npx always uses the latest version.)
 ```
+npx主要用于命令行寻址等辅助功能上
 
 ### yarn
 可以通过homebrew安装，也可以通过npm安装
@@ -76,3 +77,31 @@ init | link | outdated | publish | run | cache clean | login | test
 yarn licenses list
 yarn why lodash
 ```
+
+### node_modules/.bin
+```
+通过npm启动的脚本，会默认把node_modules/.bin加到PATH环境变量中
+https://docs.npmjs.com/cli/v7/commands/npm-run-script
+
+当某个模块配置了 bin 定义时，就会被安装的时候，自动软链了过去
+https://docs.npmjs.com/cli/v7/configuring-npm/package-json/#bin
+```
+
+### .npmrc
+可以先看下```npm config ls -l```
+https://docs.npmjs.com/cli/v7/configuring-npm/npmrc
+<pre>
+具体项目：
+registry 可以在这个里面设置
+
+可以设置
+package-lock=false
+koa就是这么设置的
+// 说明:如果设置为false，那么在安装时将忽略package-lock.json文件
+package-lock
+Default: true
+Type: Boolean
+If set to false, then ignore package-lock.json files when installing. This will also prevent writing package-lock.json if save is true.
+
+When package package-locks are disabled, automatic pruning of extraneous modules will also be disabled. To remove extraneous modules with package-locks disabled use npm prune.
+</pre>
