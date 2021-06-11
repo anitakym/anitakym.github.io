@@ -159,3 +159,37 @@ Linux export 命令用于设置或显示环境变量。
 ```
 export [-fnp][变量名称]=[变量设置值]
 ```
+
+### 基本操作
+```
+date | cal | df | free( free - Display amount of free and used memory in the system 显示内存使用情况的统计信息)
+[root@VM-12-3-centos ~]# free
+              total        used        free      shared  buff/cache   available
+Mem:        1882008      501288       80272         520     1300448     1196596
+[root@VM-12-3-centos ~]# df -Th
+Filesystem     Type      Size  Used Avail Use% Mounted on
+devtmpfs       devtmpfs  908M     0  908M   0% /dev
+tmpfs          tmpfs     919M   24K  919M   1% /dev/shm
+tmpfs          tmpfs     919M  496K  919M   1% /run
+tmpfs          tmpfs     919M     0  919M   0% /sys/fs/cgroup
+/dev/vda1      ext4       59G  5.9G   51G  11% /
+tmpfs          tmpfs     184M     0  184M   0% /run/user/0
+[root@VM-12-3-centos ~]# df -Th /data
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/vda1      ext4   59G  5.9G   51G  11% /
+
+# -h (--human) 方便阅读的数据单位格式
+# -T (--print-type) print file system typeq
+```
+free里面有个buffer(缓冲区)，例如打印场景；在Linux中，你会发现系统运行的时间越长，占用的内存就越多。这并不是说Linux用完了所有内存，而是Linux利用所有的可用内存尽可能地进行缓冲；
+卸载设备会将所有剩余的数据写入设备，以便能够将其安全地移除。如果在移除前没有先卸载，则存在数据并未完全写入该设备的可能性。
+### 存储介质
+mount：挂载文件系统
+umount：卸载文件系统
+fsck：检查和修复文件系统
+fdisk：操作分区
+mkfs：创建新的文件系统
+dd：转换和复制文件
+genisoimage（mkisofs）：创建ISO 9660映像文件
+wodim（cdrecord）：擦除和刻录光学存储介质
+md5sum：计算MD5校验和

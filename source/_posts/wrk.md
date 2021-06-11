@@ -25,3 +25,8 @@ wrk 'http://localhost:3333/?foo[bar]=baz' \
 kill $pid
 
 ```
+
+```
+brew install wrk
+wrk -v
+```
