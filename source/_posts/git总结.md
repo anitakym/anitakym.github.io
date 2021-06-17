@@ -89,7 +89,14 @@ git add .
 git commit -m 'update .gitignore'
 ```
 
+.gitignore 参考
+https://docs.github.com/en/github/getting-started-with-github/getting-started-with-git/ignoring-files
+
 ### 导出某个项目的作者
 ```
 "authors": "git log --format='%aN <%aE>' | sort -u > AUTHORS"
 ```
+
+
+### 新建项目
+rm -rf .git
