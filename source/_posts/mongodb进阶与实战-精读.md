@@ -92,3 +92,12 @@ $lookup（聚合操作）- 类似table join表链接的聚合操作符
 
 ## 操作
 可见另外一篇博文 - mongodb
+
+
+### 卸载
+```
+service mongod stop
+yum erase $(rpm -qa | grep mongodb-org)
+rm -rf /var/log/mongodb
+rm -rf /var/lib/mongo
+```
