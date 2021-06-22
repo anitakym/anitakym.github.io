@@ -52,4 +52,9 @@ If enabled, cookies without SameSite restrictions must also be Secure. If a cook
 
 #### chrome devtools protocol
 https://chromedevtools.github.io/devtools-protocol/tot/Browser/
+
+
+#### net-internals/dns
+chrome://net-internals/#dns
+刷DNS缓存
 #### 写点小插件

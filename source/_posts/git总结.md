@@ -100,3 +100,21 @@ https://docs.github.com/en/github/getting-started-with-github/getting-started-wi
 
 ### 新建项目
 rm -rf .git
+
+
+### 项目过大问题，或者误提交大文件
+```
+# 找出大文件
+git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g | tail -5
+# 找出对应文件位置名称，XXX为第一步查出来的第一列的hash
+git rev-list --objects --all | grep XXXXXXXXXXXX
+# 用filter-branch 清理文件
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch <your-file-name>'
+# 系列操作
+rm -rf .git/refs/original/
+git reflog expire --expire=now --all
+git fsck --full --unreachable
+git repack -A -d
+git gc --aggressive --prune=now
+git push --force [remote] master
+```

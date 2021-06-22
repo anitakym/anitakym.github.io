@@ -68,6 +68,8 @@ fc-list : file family | grep \/Library
 Font Book.app
 
 #### 推荐app
+可参考：https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md
+
 翻译类：
 Google DeepL translator
 极光词典（Mac和IOS都可以使用）
@@ -83,3 +85,6 @@ Notability（笔记）
 命令行：
 pandoc（文件格式转换）
 
+#### 文档手写签名
+用预览功能：
+打开PDF文档后，点击工具=>注解=>签名（管理签名），

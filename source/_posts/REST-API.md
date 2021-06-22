@@ -21,3 +21,8 @@ tags:
 具体见下面文章：
 https://dzone.com/articles/api-is-dead-long-live-the-apis
 中文翻译：https://time.geekbang.org/column/article/192032
+
+
+
+### 各家API查询
+https://www.programmableweb.com/apis/directory

@@ -45,3 +45,8 @@ $.fn.testfunc.defaults = {
 3. 插件函数要有默认值，绑定在$.fn.<pluginName>.defaults上；
 4. 调用时可传入设定值以便覆盖默认值
 5. 过滤特定元素
+
+
+### 一些jquery的项目
+- The No Hassle JavaScript Colorpicker（bgrins.github.io/spectrum/）
+- 

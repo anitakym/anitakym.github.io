@@ -100,6 +100,7 @@ Mac 的话，也可以构建任务流，这样就可以右键选择，里面“�
 - cmd + shift + d 运行和调试 debug
 - ctrl + shift + g 源代码管理器 git
 - cmd + shift + x 扩展 extensions
+- cursor 位置移动 —— On Mac: Ctrl + - ... navigate back / Ctrl + Shift + - ... navigate forward
 
 #### Emmet
 

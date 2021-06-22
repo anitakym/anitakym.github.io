@@ -71,3 +71,7 @@ PS: 一般情况下，我要打开静态资源，会起个静态资源服务，�
 
 #### koroFileHeader
 团队注释规范，可以制定好规范，提供配置给团队成员使用
+
+
+#### 插件推荐
+https://github.com/varHarrie/varharrie.github.io/issues/10
