@@ -40,30 +40,19 @@ Origin, Content-Type, Cookie, X-CSRF-TOKEN, Accept, Authorization, X-XSRF-TOKEN,
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 https://www.jianshu.com/p/75126f57e933
 
 具体手机端的配置见上面链接里面的文档
 
 
+#### 基本原理-手机端
+Charles - 代理软件 - SSL/流量控制/重发，修改请求等
+> 手机通过电脑进行网络访问，因而，电脑的host设置，对手机的请求也有效（移动端配置host要root权限）；离线发布时候，可以把请求直接映射到某个服务器
+
+- 手机和电脑同一网络环境
+- Charles - proxy - proxy settings - proxies 
+- 勾选 enable transparent http poxying ， 端口号设置
+- 手机代理设置： 端口号和电脑设置的保持一致
 
 
 
