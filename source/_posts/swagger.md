@@ -31,7 +31,15 @@ swagger：
 
 
 ### 目前团队使用的API-Management工具——YAPI
+#### EasyYapi - 可以导出http,rpc，call api 调用 API
+- Java端用：http://easyyapi.com/documents/index.html
+- https://github.com/tangcent/easy-yapi/blob/master/README.md
+- 对代码0入侵
+- （https://github.com/diwand/YapiIdeaUploadPlugin/wiki/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8）可做替代
+- IDEA插件
 
+#### apimock
+swaggerconfig配置类集成到 api-mock组件中，swagger生成的接口文件可以通过数据导入，导入到yapi中
 
 ### 其他
 - https://github.com/thx/rap2-delos 阿里妈妈出品，开源接口管理工具

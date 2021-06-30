@@ -63,6 +63,8 @@ inspect.custom = customInspectSymbol;
 ```
 
 #### nodemon
+基本介绍：nodemon用来监视node.js应用程序中的任何更改并自动重启服务
+- https://github.com/remy/nodemon
 nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 ```
 "dev": "./node_modules/.bin/nodemon bin/www",

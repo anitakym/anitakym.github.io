@@ -22,3 +22,5 @@ yum install python-pip
 python -m pip --version
 pip install --upgrade pip
 ```
+
+### 运维老师对sudo版本升级

@@ -3,6 +3,8 @@ title: pm2
 date: 2021-06-29 15:24:15
 tags:
 ---
+
+## 源码分析
 ### cluster
 ```
 // lib/God.js
@@ -91,3 +93,120 @@ module.exports = function ClusterMode(God) {
 
 ```
 我们还可以看下cluster mode的测试用例
+### God.js的依赖
+```
+var cluster       = require('cluster');
+var numCPUs       = require('os').cpus() ? require('os').cpus().length : 1;
+var path          = require('path');
+var EventEmitter2 = require('eventemitter2').EventEmitter2;
+var fs            = require('fs');
+var vizion        = require('vizion');
+var debug         = require('debug')('pm2:god');
+var Utility       = require('./Utility');
+var cst           = require('../constants.js');
+var timesLimit    = require('async/timesLimit');
+var Configuration = require('./Configuration.js');
+var semver        = require('semver');
+```
+#### semver
+```
+/**
+ * Override cluster module configuration
+ */
+if (semver.lt(process.version, '10.0.0')) {
+  cluster.setupMaster({
+    windowsHide: true,
+    exec : path.resolve(path.dirname(module.filename), 'ProcessContainerLegacy.js')
+  });
+}
+else {
+  cluster.setupMaster({
+    windowsHide: true,
+    exec : path.resolve(path.dirname(module.filename), 'ProcessContainer.js')
+  });
+}
+```
+显然，semver(1) -- The semantic versioner for npm，用作判断版本
+#### vizion
+- Git/Subversion/Mercurial repository metadata parser
+- Grab metadata for svn/git/hg repositories ```vizion.analyze```
+- Check if a local repository is up to date with its remote```vizion.isUpToDate```
+- Update the local repository to latest commit found on the remote for its current branch on fail it rollbacks to the latest commit```vizion.update```
+- Revert to a specified commit```revertTo```
+- ...等功能
+God.js中用到了analyze, 目标是：Discovers if your app is a svn/git/hg repository and shows metadata about it
+
+```
+
+/**
+ * Grab metadata for svn/git/hg repositories
+ */
+vizion.analyze({
+  folder : '/tmp/folder'
+}, function(err, meta) {
+  if (err) throw new Error(err);
+
+  /**
+   *
+   * meta = {
+   *   type        : 'git',
+   *   ahead       : false,
+   *   unstaged    : false,
+   *   branch      : 'development',
+   *   remotes     : [ 'http', 'http ssl', 'origin' ],
+   *   remote      : 'origin',
+   *   commment    : 'This is a comment',
+   *   update_time : Tue Oct 28 2014 14:33:30 GMT+0100 (CET),
+   *   url         : 'https://github.com/keymetrics/vizion.git',
+   *   revision    : 'f0a1d45936cf7a3c969e4caba96546fd23255796',
+   *   next_rev    : null,  // null if its latest in the branch
+   *   prev_rev    : '6d6932dac9c82f8a29ff40c1d5300569c24aa2c8'
+   * }
+   *
+   */
+});
+```
+```
+// God.js
+vizion.analyze({folder : current_path}, function recur_path(err, meta){
+    var proc = God.clusters_db[proc_id];
+
+    if (err)
+      debug(err.stack || err);
+
+    if (!proc ||
+        !proc.pm2_env ||
+        proc.pm2_env.status == cst.STOPPED_STATUS ||
+        proc.pm2_env.status == cst.STOPPING_STATUS ||
+        proc.pm2_env.status == cst.ERRORED_STATUS) {
+      return console.error('Cancelling versioning data parsing');
+    }
+
+    proc.pm2_env.vizion_running = false;
+
+    if (!err) {
+      proc.pm2_env.versioning = meta;
+      proc.pm2_env.versioning.repo_path = current_path;
+      God.notify('online', proc);
+    }
+    else if (err && current_path === last_path) {
+      proc.pm2_env.versioning = null;
+      God.notify('online', proc);
+    }
+    else {
+      last_path = current_path;
+      current_path = path.dirname(current_path);
+      proc.pm2_env.vizion_running = true;
+      vizion.analyze({folder : current_path}, recur_path);
+    }
+    return false;
+  });
+```
+
+
+## 项目使用
+### 日志配置
+- ecosystem file 
+ - merge_logs | log | log_Date_format
+ - pm2 install pm2-logrotate && pm2 set pm2-logrotate:retain 14
+ - scripts: pm2 start ecosystem.config.js --env xxx (dev + --watch)
