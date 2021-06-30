@@ -116,6 +116,8 @@ Sentry.init({
 })
 ```
 
+不同版本的sentry也提供了不同的方式，按照文档说明选择和更新即可
+
 - sourcemap 上传配置
 
 #### electron 项目
@@ -148,4 +150,9 @@ crashReporter.start({
 - https://github.com/youzan/raven-weapp
 
 
-### 
+### 基本操作
+DSN查询：
+project => settings => client keys
+
+1.定义日志异常上报方法
+2.区分环境（开发，测试，生产）
