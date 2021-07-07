@@ -66,10 +66,81 @@ NX（只在键不存在的情况下为它设置值） ｜ XX （只在键已经�
 
 
 ### 散列
-
+- 通过散列键，包相关联的多项数据存储到一个散列中
 - eg. 短网址生成程序
+- 无序
 #### HSET | HSETNX | HGET 
 ```HSET hash field value```
 #### HINCRBY
+没有提供减法操作，通过传负数增量来实现
 #### HINCRBYFLOAT
+counter
+#### HSTRLEN ｜ HEXISTS ｜ HDEL ｜ HLEN
+login session
+#### HMSET ｜ HMGET
+#### HKEYS ｜ HVALS ｜ HGETALL
+graph 
+文章存储
+### 字符串键和散列键比较
+#### 资源占用
+内存&&CPU —— 散列
+#### 支持的操作
+字符串：SETRANGE｜GETRANGE
 
+#### 过期时间
+字符串粒度更细，相比较
+
+### 列表
+- list
+- 线性有序结构
+
+#### LPUSH ｜ RPUSH ｜ LPUSHX ｜ RPUSHX
+- -X 只对已存在对列表执行推入操作
+#### LPOP | RPOP | RPOP ｜ RPOPLPUSH
+- FIFO 队列
+#### LLEN ｜ LINDEX ｜ LRANGE
+- 分页
+#### LSET ｜ LINSERT ｜ LTRIM ｜ LREM 
+- ToDo List
+#### BLPOP ｜ BRPOP ｜ BRPOPLPUSH
+- 有阻塞功能的消息队列
+
+### 集合
+- 非重复元素
+- 无序
+#### SADD | SREM | SMOVE | SMEMBERS | SCARD | SISMEMBER
+- unique count
+- tag
+- thumb
+- vote
+- social relationship
+#### SRANDMEMBER | SPOP
+- 抽奖
+
+#### SINTER | SINTERSTORE | SUNION | SUNIONSTORE | SDIFF | SDIFFSTORE
+- 共同关注
+- 反向索引构建商品筛选器
+
+### 有序集合
+- sorted set
+
+#### ZADD | ZREM | ZSCORE | ZINCRBY | ZCARD | ZRANK | ZREVERANK | ZRANGE | ZREVERANGE
+- ZADD - O(M*log(N))
+- 排行榜
+
+#### ZRANGEBYSCORE ｜ ZREVERAMGEBYSCORE ｜ ZUNIONSTORE ｜ ZINTERSTORE
+- 商品推荐
+
+#### ZRANGEBYLEX ｜ ZRVERANGEBYLEX ｜ ZLEXCOUNT ｜ ZERMRANGEBYLEX
+- 自动补全
+
+#### ZPOPMAX ｜ ZPOPMIN ｜ BZPOPMAX ｜ BZPOPMIN 
+
+### HyperLogLog
+
+- 概率算法，对大量元素进行计数，算出近似基数
+- 使用固定大小内存
+- PFMERGE - HyperLogLog-PFCOUNT
+- 可以用于去重
+- 基数统计：cardinality of a set is a measure of the "number of elements" of the set
+- standard error - 0.81%
