@@ -21,6 +21,37 @@ brew install cocoapods | brew upgrade cocoapods
 ```
 如果提示failed to link, brew link cocoapods
 
-2. 查UDID
+2. IOS设备开发调试
+- 普通调试，Xcode登录开发者帐号，进入项目，双击 xxx/ios/Runner.xcworkspace , 在Runner.xcodeproj Tab下，Targets/Runner , Signing & Capabilities , 里面的 Signing ： 1.勾选Automatically manage signing 2.Team选择登录的帐号的Team； 这样会自动给生成一个临时的签名； 设备插入电脑，就可以识别并安装了；
+- 记得关掉iPhone的同步功能，不然会显示设备busy
+- 查UDID
 设备连接到Mac电脑上
 点击设备，显示的信息最上方，可以点击内容切换信息；切到有UDID的，然后右键，选择拷贝UDID即可
+- ```flutter run --release ```,可以在ios设备上安装release包，这样不在连接情况下，也能使用
+
+3. andriod设备开发调试
+#### 真机调试
+- 连上android设备
+- 如果flutter doctor出现android方面的问题，可以打开android studio，点击preferences
+- 以SDK为关键词搜索，进入到Android SDK 设置的面板，这个时候就可以安装没有安装的SDK
+- 下面的问题，Android SDK 面板 - SDK platform里面选择对应版本安装
+```
+[!] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+    ✗ Android SDK file not found:
+      /Users/kuangyimin/Library/Android/sdk/platforms/android-30/android.jar.
+```
+
+- 下面的问题，按提示，Run `flutter doctor --android-licenses`
+```
+[!] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/macos#android-setup for
+      more details.
+```
+- 如果出现了这个问题，则可以在Android SDK 面板设置 "command line tools",勾选，然后安装
+```
+flutter doctor --android-licenses
+Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlSchema
+	at com.android.repository.api.SchemaModule$SchemaModuleVersion.<init>(SchemaModule.java:156)
+```
