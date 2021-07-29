@@ -193,3 +193,11 @@ dd：转换和复制文件
 genisoimage（mkisofs）：创建ISO 9660映像文件
 wodim（cdrecord）：擦除和刻录光学存储介质
 md5sum：计算MD5校验和
+
+
+### 定时任务
+```
+cron - 周期性执行
+at - 单一时刻执行一次任务
+
+```
