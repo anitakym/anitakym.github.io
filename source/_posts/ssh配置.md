@@ -3,6 +3,7 @@ title: ssh配置
 date: 2021-05-05 14:23:59
 tags:
 ---
+## ssh连接问题
 ssh之后连接会断，可以在服务器上面做配置：
 ```
 vim /etc/ssh/sshd_config
@@ -36,3 +37,10 @@ Then select the appropriate tab below based on the result:
 
 systemd - select the systemd (systemctl) tab below.
 init - select the System V Init (service) tab below.
+
+## 使用SSH连接到Github
+
+### github文档指南
+https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh
+
+这个文档强烈推荐，对于项目管理中的问题，给出了建议和最佳实践指南；可以当作解决问题的参考手册；

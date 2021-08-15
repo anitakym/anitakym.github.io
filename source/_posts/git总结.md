@@ -49,6 +49,10 @@ git remote show origin
 推 rebase 的经验，可以写一篇小论文了。。。
 rebase 伴侣 => --force-with-lease
 
+文档指南：
+重写历史的时候可以使用的命令及需要注意什么
+https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
+
 #### git 报错分析
 
 ```
