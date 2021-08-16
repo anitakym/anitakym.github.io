@@ -122,6 +122,8 @@ Error connecting to the service protocol: failed to connect to http://127.0.0.1:
 
 1. Error connecting to the service protocol: failed to connect to http://127.0.0.1:58661/xxxxx=/
    设备和电脑不在一个网络
+2. 问题原因，电脑开了系统代理；
+3. 解决方案，关掉系统代理，如果在当前 terminal 里面加了 export 语句，记得关掉，重新打开一个新的终端；
 
 #### IOS
 
