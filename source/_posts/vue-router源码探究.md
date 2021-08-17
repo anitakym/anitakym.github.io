@@ -4,6 +4,57 @@ date: 2021-08-09 14:02:29
 tags:
 ---
 
+## 路由管理
+
+- 前端应用中重要的机制-页面根据 URL 的变化进行切换
+- _Uniform Resource Locator_
+- 页面+状态（定位）
+- 根据状态渲染不同的组件
+
+### 核心逻辑简单实现
+
+```
+// 基于hash实现
+const MyRouter = ({ children }) => {
+  const routes = _.keyBy(
+    children.map((c) => c.props),
+    "path",
+  );
+  const [hash] = useHash();
+  const Page = routes[hash.replace("#", "")]?.component;
+  return Page ? <Page /> : "Not found.";
+};
+
+
+const Route = () => null;
+```
+
+```
+
+
+    <div className="sample-pages">
+      <div className="sider">
+        <a href="#page1">Page 1</a>
+        <a href="#page2">Page 2</a>
+        <a href="#page3">Page 3</a>
+        <a href="#page4">Page 4</a>
+      </div>
+      <div className="exp-15-page-container">
+        <MyRouter>
+          <Route path="page1" component={Page1} />
+          <Route path="page2" component={Page2} />
+          <Route path="page3" component={Page3} />
+          <Route path="page4" component={Page4} />
+        </MyRouter>
+      </div>
+    </>
+
+
+
+```
+
+## 源码探究
+
 ### 具体配置执行了什么
 
 - 拉下代码看下
@@ -287,3 +338,20 @@ export default class VueRouter {
 }
 
 ```
+
+## 其他
+
+### react router
+
+- https://reactrouter.com/web/guides/quick-start
+- 支持多端（web browser, react native）
+- react-router-dom
+- BrowserRouter | Link | Route | Switch
+
+### 应用场景
+
+#### 嵌套路由
+
+#### URL 中保存页面状态
+
+#### 权限控制
