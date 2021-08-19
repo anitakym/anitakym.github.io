@@ -37,7 +37,7 @@ brew install cocoapods | brew upgrade cocoapods
 
 3. andriod 设备开发调试
 
-#### 真机调试
+#### Andriod
 
 - 连上 android 设备
 - 如果 flutter doctor 出现 android 方面的问题，可以打开 android studio，点击 preferences
@@ -66,6 +66,43 @@ brew install cocoapods | brew upgrade cocoapods
 flutter doctor --android-licenses
 Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/annotation/XmlSchema
 	at com.android.repository.api.SchemaModule$SchemaModuleVersion.<init>(SchemaModule.java:156)
+```
+
+- 如果 flutter run 的时候提示这个问题，则可以按提示，去 Android Studio，搜 SDK，下载对应缺少的 SDK
+
+```
+Could not determine the dependencies of task ':launch_review:compileDebugAidl'.
+> Failed to install the following SDK components:
+      platforms;android-28 Android SDK Platform 28
+  Install the missing components using the SDK manager in Android Studio.
+```
+
+- 阿里云镜像配置
+
+```
+// 对照表
+// https://developer.aliyun.com/mvn/guide
+//
+buildscript {
+    repositories {
+        // google()
+        // jcenter()
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven {
+            url 'https://maven.aliyun.com/nexus/content/groups/public'
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.4'
+    }
+}
+
 ```
 
 ### 命令查询
