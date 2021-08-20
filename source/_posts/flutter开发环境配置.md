@@ -172,3 +172,6 @@ podfile:
 platform :ios, '9.0'
 https://guides.cocoapods.org/syntax/podfile.html#platform
 ```
+
+2. https://guides.cocoapods.org/syntax/podfile.html
+   podfile 的配置
