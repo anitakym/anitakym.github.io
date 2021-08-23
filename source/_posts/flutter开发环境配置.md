@@ -20,6 +20,7 @@ tags:
 ```
 
 ```
+# 清理旧版本,Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae. 
 brew cleanup -d -v
 brew install cocoapods | brew upgrade cocoapods
 ```
@@ -158,9 +159,9 @@ Error connecting to the service protocol: failed to connect to http://127.0.0.1:
 ```
 
 1. Error connecting to the service protocol: failed to connect to http://127.0.0.1:58661/xxxxx=/
-   设备和电脑不在一个网络
-2. 问题原因，电脑开了系统代理；
-3. 解决方案，关掉系统代理，如果在当前 terminal 里面加了 export 语句，记得关掉，重新打开一个新的终端；
+   
+2. 问题原因，电脑开了系统代理 | 设备和电脑不在一个网络；
+3. 解决方案，关掉系统代理，如果在当前 terminal 里面加了 export 语句，记得关掉，重新打开一个新的终端；如果是外接设备，可以把设备和电脑连接到同一个网络；
 
 #### IOS
 
