@@ -105,7 +105,9 @@ buildscript {
 }
 
 ```
-
+- 开模拟器的时候，如果报"The emulator process for AVD was killed"
+原因：没有足够的空间，可以关掉别的占内存的软件；删除虚拟机，重新安装，启动；
+show on Disk(可以看到安装的位置)
 ### 命令查询
 
 `flutter --help`
