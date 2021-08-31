@@ -31,6 +31,16 @@ sentry.conf.py
 
 config.example.yml ——
 
+如要修改时区
+
+```
+docker ps
+locate sentry.conf
+vim sentry.conf.py
+增加 SENTRY_DEFAULT_TIME_ZONE = 'Asia/Shanghai'
+docker restart sentry_onpremise_web_1
+```
+
 # Mail Server
 
 这里面需要申请一个公司的邮箱，配置到 mail.username 里面
@@ -116,7 +126,7 @@ Sentry.init({
 })
 ```
 
-不同版本的sentry也提供了不同的方式，按照文档说明选择和更新即可
+不同版本的 sentry 也提供了不同的方式，按照文档说明选择和更新即可
 
 - sourcemap 上传配置
 
@@ -149,10 +159,9 @@ crashReporter.start({
 
 - https://github.com/youzan/raven-weapp
 
-
 ### 基本操作
-DSN查询：
+
+DSN 查询：
 project => settings => client keys
 
-1.定义日志异常上报方法
-2.区分环境（开发，测试，生产）
+1.定义日志异常上报方法 2.区分环境（开发，测试，生产）
