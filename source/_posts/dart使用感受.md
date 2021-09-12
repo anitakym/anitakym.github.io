@@ -25,13 +25,25 @@ tags:
 
 ## Tips
 
--
+### 通用概念
+- 以main函数作为执行的入口
+- 类型安全，所有类型都是对象类型（继承自顶层类型Object）
+- 未初始化变量的值为null
 
-#### 特殊语法
+
+### comparison with Javascript
+#### if | assert ，dart中不能使用非布尔类型的值传入
+### 特殊语法
 - ```..```
 ```
 
 ``` 
 
 ## 深入语言
+
+### baiscs
 #### 基本的一些类型
+- num (int | double) 都是64位，后者符合IEEE 754标准
+- String UTF-16
+- const 适用于定义编译常量
+- final 适用于定义运行时常量
