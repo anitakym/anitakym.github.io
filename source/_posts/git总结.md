@@ -154,3 +154,14 @@ git commit --amend
 # 改完之后保存并退出
 git rebase --continue
 ```
+
+### 关联远端仓库
+```
+# 先查看下
+git remote -v
+# 再设置
+git remote remove origin
+git remote add origin xxx
+# 都可
+git remote set-url origin xxx
+```

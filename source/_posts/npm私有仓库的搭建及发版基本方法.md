@@ -49,3 +49,10 @@ tips:
 2.推荐工具：nrm
 3.keyword方便搜索的
 
+
+### nexus部署服务器磁盘空间不够处理
+
+1. 可以在Blob Stores里面看下磁盘占用情况，确认占用多的是哪些类型（jar or npm包 ？）
+2. 配置cleanup policies，在设置按钮的 Repository-Cleanup Polices选项下，选择 +Create Cleanup Policy，然后配置一个你认为没问题的策略，这个里面还可以preview，看看这个策略下，哪些会被删除；
+3. 进入Repository里面，根据1确认的 repositry，点击进去，在settings里面，修改Cleanup选项，刚刚配置的策略添加到applied里面即可；
+4. 点击system-tasks,点击 +Create task(type Admin-compact blob store)，可以选择手动触发，然后手动run一下，即进入清理模式；这个时候可以通过状态判断是否清理完成，我这边100多个G，大概running了1个多小时快2个小时才跑完；
