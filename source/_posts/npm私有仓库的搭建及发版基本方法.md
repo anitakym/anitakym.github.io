@@ -56,3 +56,11 @@ tips:
 2. 配置cleanup policies，在设置按钮的 Repository-Cleanup Polices选项下，选择 +Create Cleanup Policy，然后配置一个你认为没问题的策略，这个里面还可以preview，看看这个策略下，哪些会被删除；
 3. 进入Repository里面，根据1确认的 repositry，点击进去，在settings里面，修改Cleanup选项，刚刚配置的策略添加到applied里面即可；
 4. 点击system-tasks,点击 +Create task(type Admin-compact blob store)，可以选择手动触发，然后手动run一下，即进入清理模式；这个时候可以通过状态判断是否清理完成，我这边100多个G，大概running了1个多小时快2个小时才跑完；
+
+
+### nexus文档指路（sonatype）
+#### repository manager(注意根据自己搭建的版本选择文档)
+- https://guides.sonatype.com/repo3/quick-start-guides/proxying-maven-and-npm/
+- https://help.sonatype.com/repomanager3
+- https://help.sonatype.com/repomanager2
+

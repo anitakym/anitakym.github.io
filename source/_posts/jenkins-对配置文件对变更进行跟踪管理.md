@@ -44,3 +44,7 @@ Job Configuration History
 
 ### node集成插件
 https://plugins.jenkins.io/nodejs/
+
+### 拓展
+#### JenkinsX
+https://jenkins-x.io/docs/reference/pipeline-syntax-reference/
