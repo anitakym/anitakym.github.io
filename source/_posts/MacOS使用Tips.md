@@ -40,6 +40,7 @@ case-sensitive-paths-webpack-plugin
 
 https://www.npmjs.com/package/case-sensitive-paths-webpack-plugin
 
+(vue项目本身，文件和文件夹命名，都是kebab-case的，这样也直接避免了这个问题)
 
 #### brew
 brew -ls

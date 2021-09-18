@@ -48,3 +48,11 @@ https://jkchao.github.io/typescript-book-chinese/typings/types.html#%E4%BD%BF%E7
     - 更新及时，对应版本准确
 - 中文的话：
     - http://ts.xcatliu.com/
+
+
+## 项目总结
+
+### 接入的第三方插件
+#### sentry
+- sentry本身就有@sentry/types，被JavaScript 相关的 SDK依赖，所以没啥问题，安装之后，就支持了
+- https://getsentry.github.io/sentry-javascript/
