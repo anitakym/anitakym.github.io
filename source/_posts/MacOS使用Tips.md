@@ -47,6 +47,8 @@ brew -ls
 
 #### screencapture
 cmd+shift+3/4
+（3全屏，4选择器）
+cmd+shift+4+Space（窗口）
 ```screencapture --help```
 
 #### 关闭mac输入法首字母大写
@@ -56,6 +58,11 @@ cmd+shift+3/4
 文本
 
 去掉首字母大写的即可
+
+#### 共享目录访问
+1.打开finder
+2.cmd+K
+3.smb://xxxx/xxx
 
 #### 浏览器中打开文件
 cmd + O
@@ -81,7 +88,7 @@ charles（抓包）
 dash（查文档）
 vscode（代码编辑）
 Alfred（全局搜索）
-SwitchHosts（host配置）
+SwitchHosts（host配置）- 或者编辑/etc/hosts文件
 Notability（笔记）
 命令行：
 pandoc（文件格式转换）
@@ -89,3 +96,22 @@ pandoc（文件格式转换）
 #### 文档手写签名
 用预览功能：
 打开PDF文档后，点击工具=>注解=>签名（管理签名），
+
+#### 隔空投送
+- 修改本机名称：系统偏好设置=>共享，修改即可；
+
+
+#### 快捷键
+cmd + M 最小化窗口
+cmd + T 新Tab
+cmd + W 关闭窗口
+cmd + Q 退出程序
+cmd + Space 切换输入法
+cmd + 拖动非最前面窗口，可以避免拖动导致的激活
+cmd + Del 移到废纸篓
+ctrl + cmd + Space 输入emoji
+
+#### 活动监视器
+activity monitor （spotlight里面搜索）
+
+
