@@ -29,3 +29,9 @@ setTimeout(() => {
 即在上一个被load之前，就把上一批iframe标签remove了，这就导致了cancel（之所以快速点击按钮会让问题发生频繁，是因为每次点击会触发10个下载请求，这样会导致并发请求阻塞）
 stackoverflow上回答图片：
 ![](cancel.png)
+
+#### 我们可以看看被cancel的资源请求的状态：
+![](status1.png)
+
+#### 一个没被cancel的
+![](status2.png)
