@@ -43,3 +43,18 @@ https://leetcode-cn.com/problems/valid-phone-numbers/
 
 - 分析正则
 - 使用grep/awk/gawk都可
+```
+grep -P '^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$' file.txt
+awk '/^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$/' file.txt
+```
+### 194.转置文件
+https://leetcode-cn.com/problems/transpose-file/
+```
+# Read from the file file.txt and print its transposed content to stdout.
+columns=$(cat file.txt | head -n 1 | wc -w)
+for i in $(seq 1 $columns)
+do
+awk '{print $'''$i'''}' file.txt | xargs
+done
+
+```
