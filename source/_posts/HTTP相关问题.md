@@ -103,3 +103,14 @@ while (pending.length > 0) {
   pending.pop()('请求中断')
 }
 ```
+## CORS
+- Fetch/XMLHTTPRequest都遵循同源策略
+#### preflighted requests
+- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/OPTIONS
+- 浏览器发起的预检请求 - 为了防止对服务器数据产生副作用的请求方法，浏览器会用OPTIONS方法发起一个预检请求，获知服务器是否允许这个跨域请求，允许就发送真实请求，不允许，则阻止真实请求；
+- Method: OPTIONS
+```
+* It uses methods other than GET, HEAD or POST. Also, if POST is used to send request data with a Content-Type other than application/x-www-form-urlencoded, multipart/form-data, ortext/plain, e.g. if the POST request sends an XML payload to the server using application/xmlor text/xml, then the request is preflighted.
+* It sets custom headers in the request (e.g. the request uses a header such as X-PINGOTHER)
+
+```
