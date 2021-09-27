@@ -15,7 +15,11 @@ tags:
 ### 什么时候用？怎么用？
 
 ## 基础点
+### iframe
+- https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe
 
+### hack
+- 基于iframe的src,提供下载资源功能
 ### 通信
 #### postMessage
 - https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage
