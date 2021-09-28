@@ -165,3 +165,13 @@ DSN 查询：
 project => settings => client keys
 
 1.定义日志异常上报方法 2.区分环境（开发，测试，生产）
+
+## 问题处理
+### Vue
+
+```
+# 这段如果不加的话，写在.Vue文件里面的错误，就抛不到sentry上；但是写在.js文件里面抛的错误能到sentry上
+  Vue.config.errorHandler = err => {
+    Sentry.captureException(err)
+  }
+```
