@@ -49,3 +49,7 @@ permission_handler:
 ```
 
 #### 引导页
+
+## 问题处理
+### context.read in build()
+- https://stackoverflow.com/questions/62432759/why-cant-i-use-context-read-in-build-but-i-can-use-provider-of-with-listen
