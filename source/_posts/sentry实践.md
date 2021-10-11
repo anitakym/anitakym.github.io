@@ -183,3 +183,9 @@ project => settings => client keys
 - 真机调试，允许网络(局域网+蜂窝)+查找并连接到本地的网络设备（好），就可以了
 - https - DSN
 - 确保sentry初始化走通了
+
+
+### Linux
+- 服务器上下载sentry-cli包：
+- ```info sentry-cli Downloading from https://npm.taobao.org/mirrors/sentry-cli/1.69.1/sentry-cli-Linux-x86_64```有问题的话，则可以配置淘宝镜像的源
+- npm config set sentrycli_cdnurl https://npm.taobao.org/mirrors/sentry-cli

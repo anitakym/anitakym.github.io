@@ -13,5 +13,7 @@ tags:
 - https://developer.mozilla.org/zh-CN/docs/Web/CSS/page-break-after
 - break-after
 - https://developer.mozilla.org/zh-CN/docs/Web/CSS/break-after
+- inside用avoid，避免元素被分割，例如本项目中题目index|tag|icon等元素
+- after用always，在需要插入分页的地方使用
 
 #### orphans | windows
