@@ -51,3 +51,7 @@ Vue CLI 的核心目标是为基于 webpack 4 构建的预配置提供构建设�
 vue --version
 npm update -g @vue/cli
 ```
+
+### report
+https://cli.vuejs.org/zh/guide/cli-service.html#vue-cli-service-serve
+- options 里面有--report
