@@ -16,3 +16,8 @@ by default): (Use arrow keys)
 ```
 
 想到了若干年前，之前项目node-sass安装时候，网络的问题
+
+### 存在问题
+elementui的icon.scss
+里面的
+content的unicode会在loader sass-dart 处理过程中被转成  等字符，从而导致浏览器 接收css文件的时候如果编码方式有问题，会变成"î›»"，进而影响渲染；
