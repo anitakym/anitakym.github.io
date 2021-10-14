@@ -21,3 +21,19 @@ by default): (Use arrow keys)
 elementui的icon.scss
 里面的
 content的unicode会在loader sass-dart 处理过程中被转成  等字符，从而导致浏览器 接收css文件的时候如果编码方式有问题，会变成"î›»"，进而影响渲染；
+
+#### 解决方案
+issue讨论：https://github.com/PanJiaChen/vue-element-admin/issues/3526
+- "sass": "1.39.0",
+- @charset 'UTF-8';(src/styles/element-variables.scss)
+- (vue.config.js)
+```
+css: {
+    loaderOptions: {
+      sass: {
+        sassOptions: { outputStyle: 'expanded' }
+      }
+    }
+  },
+
+```

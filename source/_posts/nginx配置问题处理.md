@@ -90,3 +90,7 @@ location / {
 
 
 #### 正则匹配
+
+#### http server优先级
+
+线上出过一个问题，之前一直没生效的CXP的配置生效了；原因是server优先级高于http,修改了server里面的一些跨域的配置；
