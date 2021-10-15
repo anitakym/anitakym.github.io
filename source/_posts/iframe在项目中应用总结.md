@@ -23,3 +23,25 @@ tags:
 ### 通信
 #### postMessage
 - https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage
+
+### 线上问题处理
+#### CSP
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+- Specifies valid parents that may embed a page using <frame>, <iframe>, <object>, <embed>, or <applet>
+
+```
+# 不允许被嵌入
+Content-Security-Policy: frame-ancestors 'none'
+# 只允许被同源的页面嵌入
+Content-Security-Policy: frame-ancestors 'self'
+# 只允许被白名单内的页面嵌入
+Content-Security-Policy: frame-ancestors www.example.com
+
+# 不允许被嵌入
+X-Frame-Options: deny
+# 只允许被同源的页面嵌入
+X-Frame-Options: sameorigin
+
+```
