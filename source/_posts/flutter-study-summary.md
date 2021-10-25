@@ -11,7 +11,19 @@ tags:
 
 ### Basics
 - print 
-- 
+- 未初始化的变量的初始值为null
+- 1.12 => null-aware(?.  ??)
+- fn和js的差异主要在声明
+- Future ｜ Promise（JS）
+
+
+## Flutter
+### Basic
+- 命令式imperative｜声明式declarative UI（不管是原生还是Web，都经历了这样的过程）
+- 视图配置（like Widget）
+- create|run|import
+- import => material.dart(Material Design) | Cupertino(IOS风格Widget) | widgets.dart(基本窗口集)
+
 
 ## modules
 
