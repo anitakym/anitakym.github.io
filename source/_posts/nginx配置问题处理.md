@@ -94,3 +94,47 @@ location / {
 #### http server优先级
 
 线上出过一个问题，之前一直没生效的CXP的配置生效了；原因是server优先级高于http,修改了server里面的一些跨域的配置；
+
+## 应用场景
+### 本地起nginx代理解决资源跨域或者连本地服务调试（嵌入移动端的页面）问题
+```
+nginx -v # 查看本机是否安装nginx, 如果没有安装homebrew安装下；
+brew info nginx # 可获得nginx文件的配置位置
+cd /usr/local/etc/nginx
+code nginx.conf # 打开nginx配置文件
+# 增加nginx server 80 下面的配置，这样test.company.cn就会访问到本地我们起的http://127.0.0.1:8886服务上 
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+   log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+    server_names_hash_bucket_size 128;
+    client_header_buffer_size 32k;
+    large_client_header_buffers 4 32k;
+    client_body_buffer_size    8m;
+    server_tokens off;
+    ignore_invalid_headers   on;
+    recursive_error_pages    on;
+    server_name_in_redirect off;
+    sendfile        on;
+    tcp_nopush     on;
+    tcp_nodelay    on;
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+    server {
+        listen 80;
+        server_name test.company.cn;
+
+        location / {
+            proxy_pass http://127.0.0.1:8886;
+        }
+    }
+}
+# 修改系统hosts:
+127.0.0.1 test.company.cn
+127.0.0.1 localhost
+
+# 这样，在浏览器里面输入test.company.cn就可以访问我们本地起的服务 http://127.0.0.1:8886 了；
+```
