@@ -24,7 +24,32 @@ tags:
 - create|run|import
 - import => material.dart(Material Design) | Cupertino(IOS风格Widget) | widgets.dart(基本窗口集)
 
+### 资源
+- Android - resources
+- IOS - Images
+- flutter - Assets引用方法 - pubspec.yaml中声明
+- device Pixel Ratio
+```
+ldpi 0.75x | mdpi 1.0x | hdpi 1.5x | xhdpi 2.0x | xxhdpi 3.0x | xxxhdpi 4.0x
+```
+- images/xxx.png  | images/2.0x/xxx.png
+- IOS - Localizable.strings | Flutter - flutter_localization && intl && easy_localization
 
+### 依赖
+- Android - Gradle
+- IOS - Podfile
+- 仅在添加单平台相关的文件时候使用Podfile和Gradle文件
+- pub.dev
+- dart构建系统｜pub管理依赖
+
+### View 视图
+- Android - View
+- IOS - UIView
+- Widget
+
+### 布局
+- Android - XML
+- IOS - Storybook ｜ view controller
 ## modules
 
 ### Scaffold
