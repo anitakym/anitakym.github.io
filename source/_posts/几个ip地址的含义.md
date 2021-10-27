@@ -44,7 +44,8 @@ https://gist.github.com/zxhfighter/b9f4b4ef328cd8b433b0e9dc2f4af26d
 均为Mac
 
 127.0.0.1 起服务，同局域网的另外一台Mac无法访问-ERR_CONNECTION_REFUSED
-0.0.0.0 起服务，同局域网的另外一台Mac可以访问
+0.0.0.0 起服务，同局域网的另外一台Mac可以访问 # 注意，开启VPN的情况下，可能会导致访问出问题；
+
 
 ### mongo 安全事件
 https://www.jianshu.com/p/d34ff415fbb4
