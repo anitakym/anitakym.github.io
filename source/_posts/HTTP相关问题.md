@@ -105,6 +105,7 @@ while (pending.length > 0) {
 ```
 ## CORS
 - Fetch/XMLHTTPRequest都遵循同源策略
+- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS
 #### preflighted requests
 - https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/OPTIONS
 - 浏览器发起的预检请求 - 为了防止对服务器数据产生副作用的请求方法，浏览器会用OPTIONS方法发起一个预检请求，获知服务器是否允许这个跨域请求，允许就发送真实请求，不允许，则阻止真实请求；
@@ -112,5 +113,67 @@ while (pending.length > 0) {
 ```
 * It uses methods other than GET, HEAD or POST. Also, if POST is used to send request data with a Content-Type other than application/x-www-form-urlencoded, multipart/form-data, ortext/plain, e.g. if the POST request sends an XML payload to the server using application/xmlor text/xml, then the request is preflighted.
 * It sets custom headers in the request (e.g. the request uses a header such as X-PINGOTHER)
+```
+```
+跨域资源共享标准（ cross-origin sharing standard ）允许在下列场景中使用跨域 HTTP 请求：
+	•	前文提到的由 XMLHttpRequest 或 Fetch 发起的跨域 HTTP 请求。
+	•	Web 字体 (CSS 中通过 @font-face 使用跨域字体资源), 因此，网站就可以发布 TrueType 字体资源，并只允许已授权网站进行跨站调用。
+	•	WebGL 贴图
+	•	使用 drawImage 将 Images/video 画面绘制到 canvas
+```
 
+## GET 
+### URL长度
+- Http Get方法提交的数据大小长度并没有限制，HTTP协议规范没有对URL长度进行限制。这个限制是特定的浏览器及服务器对它的限制。
+```
+net::ERR_CONNECTION_RESET 200
+https://spectrum.imgix.net/communities/8f3cb70e-0b51-4c7b-8a69-3d27f1c16887/logo-grid.png.0.393240430324705?w=1280&h=384&dpr=2&q=100&expires=1573084800000&ixlib=js-1.4.1&s=74b9ab44b425ebcfd87e1e0b1af56d8b
+```
+#### 说明
+GET请求限制传递参数长度为2k，长度过长会重置连接（只有IE）
+下面就是对各种浏览器和服务器的最大处理能力做一些说明
+Microsoft Internet Explorer (Browser)
+IE浏览器对URL的最大限制为2083个字符，如果超过这个数字，提交按钮没有任何反应。Firefox (Browser)
+对于Firefox浏览器URL的长度限制为65,536个字符。
+Safari (Browser)
+URL最大长度限制为 80,000个字符。
+Opera (Browser)
+URL最大长度限制为190,000个字符。
+Google (chrome)
+URL最大长度限制为8182个字符。
+Apache (Server)
+能接受最大url长度为8,192个字符。
+Microsoft Internet Information Server(IIS)
+能接受最大url的长度为16,384个字符。
+
+### cacheable
+- https://developer.mozilla.org/en-US/docs/Glossary/Cacheabl
+```
+A cacheable response is an HTTP response that can be cached, that is stored to be retrieved and used later, saving a new request to the server. Not all HTTP responses can be cached, these are the following constraints for an HTTP response to be cached:
+	•	The method used in the request is itself cacheable, that is either a GET or a HEAD method. A response to a POST or PATCH request can also be cached if freshness is indicated and the Content-Location header is set, but this is rarely implemented. (For example, Firefox does not support it per https://bugzilla.mozilla.org/show_bug.cgi?id=109553.) Other methods, like PUT or DELETE are not cacheable and their result cannot be cached.
+	•	The status code of the response is known by the application caching, and it is considered cacheable. The following status code are cacheable: 200, 203, 204, 206, 300, 301, 404, 405, 410, 414, and 501.
+	•	There is no specific headers in the response, like Cache-Control, that prevents caching.
+Note that some non-cacheable requests/responses to a specific URI may invalidate previously cached responses on the same URI. For example, a PUT to pageX.html will invalidate all cached GET or HEAD requests to the same URI.
+When both, the method of the request and the status of the response, are cacheable, the response to the request can be cached:
+GET /pageX.html HTTP/1.1
+(…) 
+
+200 OK
+(…)
+
+
+A PUT request cannot be cached. Moreover, it invalidates cached data for request to the same URI done via HEAD or GET:
+PUT /pageX.html HTTP/1.1
+(…)
+
+200 OK
+(…)
+
+A specific Cache-Control header in the response can prevent caching:
+GET /pageX.html HTTP/1.1
+(…)
+
+200 OK
+Cache-Control: no-cache
+(…)
 ```

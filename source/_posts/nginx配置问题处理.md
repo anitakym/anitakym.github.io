@@ -75,9 +75,11 @@ ls
 ./nginx -s reload
 
 kill -QUIT 28761
-nohup /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+nohup /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf 
 tail -2000f nohup.out
 ps -ef|grep nginx
+# 日志
+# reload无效的时候
 ```
 
 #### 前端history路由模式

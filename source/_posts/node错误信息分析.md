@@ -39,7 +39,7 @@ Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上
 v10.10.0
 </pre>
 所以得升级node版本
-
+- hexo trouble shooting - https://hexo.io/docs/troubleshooting.html
 
 #### 一些基本操作
 node退出：ctrl+C(两次) ctrl+D(两次) .exit

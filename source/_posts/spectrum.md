@@ -41,3 +41,25 @@ spectrum/
 └── vulcan     # Worker server (search indexing; syncing with Algolia)
 
 </pre>
+
+## study
+#### resolutions
+```
+"resolutions": {
+    "immutable": "3.7.4",
+    "draft-js": "npm:draft-js-fork-mxstbr",
+    "jest-environment-node": "22.4.3",
+    "jest": "22.4.3",
+    "fbjs": "0.8.16",
+    "event-stream": "3.3.4"
+  },
+# 允许您覆盖特定嵌套依赖项的版本。 有关完整规范，请参见选择性版本解析 RFC。
+# https://github.com/yarnpkg/rfcs/blob/master/implemented/0000-selective-versions-resolutions.md
+# 注意，yarn install —flat 命令将会自动在 package.json 文件里加入 resolutions 字段
+```
+
+#### immutable-js 
+- https://immutable-js.com/
+
+#### draft.js
+- https://draftjs.org/

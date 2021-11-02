@@ -39,5 +39,18 @@ URI：wss|ws 表明协议
 - "Sec-WebSocket-Key" "Sec-WebSocket-Version"(Challenge，防止HTTP被识别为WebSocket)
 - 服务器返回一个"101 Switching Protocols"响应报文，"Sec-WebSocket-Accept"
 
+### case
+#### WebSocket is closed before the connection is established.
+
+If you go to http://jsbin.com/ekusep/6/edit and view the JavaScript console you'll see the 'WebSocket is closed before the connection is established' logged. I've tested this in Chrome.
+In this code what it means is that ws.close() was called (by user code) before the connection was even given a chance to be established.
+So, the cause of this error is if code attempts to close the WebSocket connection before it's had a chance to actually connect.
 ### 拓展理解
 - TCP Socket
+#### SSE - Server-Sent Events
+- https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events
+- 服务器推送信息
+- 服务器向客户端声明 - 接下来要发送的是流信息 streaming
+- 基于HTTP协议
+- IE/Edge不支持
+- 单向通道

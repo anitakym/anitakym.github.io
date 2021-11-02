@@ -194,3 +194,15 @@ git push origin --tags
 git push origin --delete v1.0.1
 
 ```
+
+### husky
+```
+"lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "pre-commit": "lint:staged"
+```

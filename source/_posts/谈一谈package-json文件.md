@@ -17,3 +17,7 @@ This should be a module ID relative to the root of your package folder.
 
 For most modules, it makes the most sense to have a main script and often not much else.
 </pre>
+
+#### 中文字符
+- Package.json 里面不要出现中文，不然会出现解析错误
+-项目标题不要大写字母，要全小写

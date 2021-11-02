@@ -16,3 +16,10 @@ https://developers.google.com/web/shows/ttt/series-2/es2015
 - 更新模式的变更
 - 不得不说的Babel
 
+### ES6总结
+- 模块化的基本语法
+- 开发环境配置
+- 关于JS众多模块化标准
+- Class 和普通构造函数有何区别
+- Promise 的基本使用和原理
+- ES6 常用功能
