@@ -15,10 +15,13 @@ HTTP是这个模式，问题在于同一时刻只能单方向动作；服务器�
 #### 轮询-polling
 问题： 消耗带宽和CPU资源
 
-### websocket
+### Websocket
 - HTML5规范出来的，RFC6455
 - 全双工，服务器和客户端可以随时发送数据
 - 二进制帧结构，语法语义与HTTP不兼容
+
+#### 协议
+#### API
 #### 服务发现
 URI：wss|ws 表明协议
 
@@ -27,6 +30,7 @@ URI：wss|ws 表明协议
 
 #### 应用场景
 实时通信
+客户端需要不断更新的部分
 
 #### 帧结构
 - 指路wiki:https://zh.wikipedia.org/wiki/WebSocket

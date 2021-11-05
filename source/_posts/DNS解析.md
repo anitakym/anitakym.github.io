@@ -23,3 +23,23 @@ https://cloud.tencent.com/document/product/302/3449
   - 隐性转发：用的是 iframe 框架技术、非重定向技术，效果为浏览器地址栏输入 http://a.com 回车，打开网站内容是目标地址 http://cloud.tencent.com/ 的网站内容，但地址栏显示当前地址 http://a.com 。
   - 显性转发：用的是301重定向技术，效果为浏览器地址栏输入 http://a.com 回车，打开网站内容是目标地址 http://cloud.tencent.com/ 的网站内容，且地址栏显示目标地址 http://cloud.tencent.com/。
   - 添加 URL 转发记录时，涉及到的两个域名已完成备案。未经备案的域名无法添加 URL 转发。
+
+  ### 传统DNS
+  - 域名缓存
+  - 域名转发
+  - 出口NAT（网络地址转换）
+  - 域名更新
+
+
+  ### HTTPDNS
+  #### 应用场景
+  - 手机端嵌入SDK
+  - 解决本地DNS服务缓存更新不及时的问题
+
+  #### 设计
+  - 缓存设计
+    - 客户端SDK，本地缓存，HTTPDNS服务器
+    - 缓存的过期，更新，不一致的问题
+    - 同步更新-Cache-Aside
+    - 异步更新-Refresh-Ahead （Guava Cache）
+  - 调度设计
