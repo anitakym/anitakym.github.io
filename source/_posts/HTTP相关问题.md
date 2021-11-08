@@ -40,7 +40,11 @@ Java
 
 cite(https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/503)
 
-
+#### 204
+- 204 No Content
+- 只需要返回成功与否，204可以节约多余的数据传输
+- DELETE ｜ 客户端上传端信息给服务器，不关心相应
+- http://clients1.google.com/generate_204
 
 ## 相关库
 

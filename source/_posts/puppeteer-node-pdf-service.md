@@ -25,3 +25,17 @@ https://github.com/puppeteer/puppeteer/blob/main/docs/api.md
 
 也有troubleShooting的文档：
 https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
+
+### History
+
+#### 几次技术改造
+
+- downloadCenter
+- 从接口获取模版渲染数据 -> 从mongodb获取
+- XX_report 进度状态原先由接口返回 -> 返回到mq
+- node服务本身 - 配合修改+日志+调试配置开关
+
+
+#### 部署和CI优化
+- 底层脚本
+- Jenkins可视化集成
