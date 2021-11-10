@@ -16,7 +16,10 @@ COPY $VERSION/xxx_target.zip /xxxx/xxx_target
 RUN  yum -y install  unzip ;  unzip xxx_target.zip ; /usr/bin/cp -r ./dependency/* /usr/share/fonts/ ; rm -f xxx_target.zip.zip 
 ENTRYPOINT pm2 start ecosystem.config.js --env production --no-daemon
 ```
-
+- 私有仓库是容器化部门构建的私有化仓库，基于harbor（https://github.com/goharbor）
+- 日志落到集团kibana上面(https://github.com/elastic/kibana)
+- 容器的性能和情况监控是在集团的grafana上面（https://github.com/grafana/grafana）
+- mq,rabbitmq
 ### 存在问题
 
 
