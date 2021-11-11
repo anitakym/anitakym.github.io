@@ -71,7 +71,7 @@ nodemon is a tool that helps develop node.js based applications by automatically
 "prd": "pm2 start bin/www",
 ```
 开发阶段，依赖于nodemon监测代码变动，自动重启node.js应用；
-生成环境，通过pm2，cluster模式，按cpu核数启动对应进程数（The cluster mode allows networked Node.js applications (http(s)/tcp/udp server) to be scaled across all CPUs available, without any code modifications.）
+生产环境，通过pm2，cluster模式，按cpu核数启动对应进程数（The cluster mode allows networked Node.js applications (http(s)/tcp/udp server) to be scaled across all CPUs available, without any code modifications.）
 The cluster module allows easy creation of child processes that all share server ports.
 #### koa-views
 ```
