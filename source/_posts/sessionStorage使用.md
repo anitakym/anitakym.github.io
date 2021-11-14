@@ -76,4 +76,8 @@ The syntax for removing all the localStorage items is as follows:
 // clear all items
 localStorage.clear();
 
-
+#### localStorage 的封装lib
+- store.js
+ - https://github.com/marcuswestin/store.js
+ - 浏览器兼容
+ - 对字符串的处理（项目里面，如果不系统处理，在直接使用API的时候，每个人需要都处理一遍）
