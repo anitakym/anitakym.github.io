@@ -6,7 +6,13 @@ tags:
 ---
 
 > 一般我看源码的tricks，找到core.js,一些精简的库，cmd+J,cmd+K,cmd+0（VSCode）;得到方法折叠，然后再一层层展开看结构；
+> jQuery 阶段性的选择，在那个阶段，解决了那个阶段的问题；
+> github彻底移除jquery - blog( why | how )
 
+## 设计理念
+### 回归增强
+- Regressive Enhancement
+- 为系统的特性设定基线，并应用到较老的设备和浏览器中
 ### dir
 - 3.1.0
 ```
