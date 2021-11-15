@@ -210,3 +210,44 @@ vizion.analyze({folder : current_path}, function recur_path(err, meta){
  - merge_logs | log | log_Date_format
  - pm2 install pm2-logrotate && pm2 set pm2-logrotate:retain 14
  - scripts: pm2 start ecosystem.config.js --env xxx (dev + --watch)
+
+
+ ## basic 介绍
+ ### pm2 list
+ #### uptime
+ 运行时间
+ #### restarts
+ 重启次数
+
+
+ ## 监控
+ ### pm2.IO
+ - 官方：keymetrics, 有免费的配额（You can now connect up to 4 servers or Node.js processes for free.）
+ - 免费的限制服务数量，且功能较少，里面还会有plus和enterprise版本的供选购
+ - https://pm2.keymetrics.io/docs/usage/docker-pm2-nodejs/
+ - https://app.pm2.io/
+ ```
+ # server
+ pm2 link xxx-sec-key xxx-pub-key
+ # docker
+ RUN npm install pm2 -g
+ ENV PM2_PUBLIC_KEY xxx
+ ENV PM2_SECRET_KEY xxx
+
+ CMD ["pm2-runtime", "app.js"]
+ # pm2 link
+ pm2 link -h
+
+  Usage: link [options] [secret] [public] [name]
+
+  link with the pm2 monitoring dashboard
+
+  Options:
+
+    --info-node [url]  set url info node
+    --ws               websocket mode
+    --axon             axon mode
+    -h, --help         output usage information
+ ```
+
+ 

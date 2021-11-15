@@ -53,6 +53,9 @@ rebase 伴侣 => --force-with-lease
 重写历史的时候可以使用的命令及需要注意什么
 https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
 
+- merge
+- https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%AB%98%E7%BA%A7%E5%90%88%E5%B9%B6
+
 #### git 报错分析
 
 ```
