@@ -43,3 +43,10 @@ https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 ```
 
 #### Jenkins可视化集成
+
+
+## 项目代码分析
+
+### module本身使用代码风格不是很清晰明确
+- https://github.com/chemdemo/chemdemo.github.io/issues/2
+- exports.xxx | module.exports = xxx
