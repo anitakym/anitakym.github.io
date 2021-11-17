@@ -48,3 +48,24 @@ https://plugins.jenkins.io/nodejs/
 ### 拓展
 #### JenkinsX
 https://jenkins-x.io/docs/reference/pipeline-syntax-reference/
+
+
+#### Android
+- active choices reactive parameter
+- groovy script
+
+#### job配置的导出导入
+- https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving/copying/renamingjobs
+- 同Jenkins可以直接copy from
+ - jenkins-cli.jar
+ - https://www.jenkins.io/doc/book/managing/cli/
+ ```
+ # manage jenkins | jenkins-cli | get-job
+ java -jar jenkins-cli.jar -s 【domain】 -auth 【account】:【pwd】 get-job 【job name】> 【job name】.xml
+ ```
+ ```
+➜  Downloads java -jar jenkins-cli.jar -s http://xxxxxx:xxxx/ -auth xxxxxx:1234 get-job seal-troy-frontend > seal-troy-frontend.xml
+➜  Downloads code seal-troy-frontend.xml 
+➜  Downloads java -jar jenkins-cli.jar -s http://xxxxxx:xxxx/ -auth xxxxxx:1234 create-job seal-troy-frontend-copy < seal-troy-frontend.xml
+ ```
+ 
