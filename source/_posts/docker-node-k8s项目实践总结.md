@@ -37,5 +37,10 @@ ENTRYPOINT pm2 start ecosystem.config.js --env production --no-daemon
 https://btholt.github.io/complete-intro-to-containers/
 
 
-
-
+## Others
+### harbor
+#### projects
+- 项目 ｜ 镜像仓库
+- docker pull xxx.xxx.xxx.cn/project-x/xxxserver:202107071844
+- 运维对我们项目的包优化了一个版本，增加了镜像大小 700M->1.12G，减少了下载的时间
+#### API 控制中心 devcenter

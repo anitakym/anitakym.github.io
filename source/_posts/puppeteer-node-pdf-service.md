@@ -50,3 +50,4 @@ https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 ### module本身使用代码风格不是很清晰明确
 - https://github.com/chemdemo/chemdemo.github.io/issues/2
 - exports.xxx | module.exports = xxx
+
