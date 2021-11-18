@@ -195,3 +195,7 @@ GET /pageX.html HTTP/1.1
 Cache-Control: no-cache
 (…)
 ```
+
+## HTTPS - SSL
+
+可见“升https”博文
