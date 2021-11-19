@@ -105,3 +105,20 @@ If set to false, then ignore package-lock.json files when installing. This will 
 
 When package package-locks are disabled, automatic pruning of extraneous modules will also be disabled. To remove extraneous modules with package-locks disabled use npm prune.
 </pre>
+
+### pnpm
+- https://pnpm.io/zh/motivation
+- pnpm - 依赖项将存储在一个内容可寻址的仓库中
+- npm - 依赖都会被提升到模块的根目录 - 扁平化结构
+- pnpm - 使用软链的方式将项目的直接依赖添加进模块文件夹的根目录。 
+```
+树形的问题：
+This approach had two serious issues:
+- frequently packages were creating too deep dependency trees, which caused long directory paths issue on Windows
+- packages were copy pasted several times when they were required in different dependencies
+To solve these issues, npm rethought the node_modules structure and came up with flattening. 
+```
+- 推荐阅读：https://www.kochan.io/ 这个里面写了几篇文章
+
+### difference
+- https://mp.weixin.qq.com/s?__biz=Mzg4MTYwMzY1Mw==&mid=2247496601&idx=1&sn=4c3bc00c37163e1dca152ebb8f723619&source=41#wechat_redirect

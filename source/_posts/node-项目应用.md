@@ -6,3 +6,7 @@ tags:
 ## basic
 ### Err
 #### EMFILE - Too many open files
+
+
+## recommend
+- https://zhuanlan.zhihu.com/p/101917567 - 语雀
