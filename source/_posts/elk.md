@@ -12,3 +12,5 @@ tags:
 - https://lucene.apache.org/core/6_6_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html
 - 引导demo
 - https://demo.elastic.co/cookie/index.html#/discover
+
+## filebeats配置
