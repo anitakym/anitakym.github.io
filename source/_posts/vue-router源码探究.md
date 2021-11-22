@@ -338,6 +338,29 @@ export default class VueRouter {
 }
 
 ```
+#### pushState
+```
+function pushState (url, replace) {
+  saveScrollPosition();
+  // try...catch the pushState call to get around Safari
+  // DOM Exception 18 where it limits to 100 pushState calls
+  var history = window.history;
+  try {
+    if (replace) {
+      history.replaceState({ key: _key }, '', url);
+    } else {
+      _key = genKey();
+      history.pushState({ key: _key }, '', url);
+    }
+  } catch (e) {
+    window.location[replace ? 'replace' : 'assign'](url);
+  }
+}
+
+function replaceState (url) {
+  pushState(url, true);
+}
+```
 
 ## 其他
 
@@ -355,3 +378,18 @@ export default class VueRouter {
 #### URL 中保存页面状态
 
 #### 权限控制
+
+#### window.history
+- https://html.spec.whatwg.org/multipage/history.html
+- browsing session
+```
+A browsing session is …. See whatwg/html issue #4782 and whatwg/html issue #5350 for defining browsing session. It is roughly analogous to a top-level browsing context except that it cannot be replaced due to a `Cross-Origin-Opener-Policy` header or navigation.
+
+A top-level browsing context has an associated browsing session which is a browsing session.
+
+The browsing session of an environment settings object environment is the result of running these steps:
+
+Assert: environment has a responsible document.
+
+Return environment's responsible document's browsing context's top-level browsing context's browsing session.
+```

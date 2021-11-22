@@ -19,3 +19,14 @@ tags:
 见其他博文
 ### yapi
 见其他博文
+
+### Tips
+#### .ejs
+- 使用时注意：
+```
+# if mockData里面有 单引号，则会报错，这个时候可以用正则进行替换成转义 ' => \\'
+<script>
+const mockDataObj = JSON.parse('<%- JSON.stringify(mockData) %>');
+</script>
+```
+- 所以使用时候要注意内容本身，是否会造成错误

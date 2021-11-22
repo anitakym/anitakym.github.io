@@ -81,3 +81,7 @@ localStorage.clear();
  - https://github.com/marcuswestin/store.js
  - 浏览器兼容
  - 对字符串的处理（项目里面，如果不系统处理，在直接使用API的时候，每个人需要都处理一遍）
+
+#### 移动端
+- Note: 从iOS 5.1之后，移动端的Safari将localStorage数据存储在cache文件中，在操作系统的要求下，会偶尔进行清除，特别是空间不足时。
+- http://dev-test.nemikor.com/web-storage/support-test/

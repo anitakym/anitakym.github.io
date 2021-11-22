@@ -6,8 +6,25 @@ tags:
 ### 涉及unicode的博文
 - dart-sass
 - iconfont使用经验总结
-
-
+- https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/#comments
+```
+Table of Contents
+1. The idea behind Unicode
+2. Basic Unicode terms
+2.1 Characters and code points
+2.2 Unicode planes
+2.3 Code units
+2.4 Surrogate pairs
+2.5 Combining marks
+3. Unicode in JavaScript
+3.1 Escape sequences
+3.2 String comparison
+3.3 String length
+3.4 Character positioning
+3.5 Regular expression match
+4. Summary
+```
+- 上面这篇讲解很详尽
 ### 零宽字符
 - Unicode 中还有一类格式字符，不可见，不可打印，主要作用于调整字符的显示格式，所以我们将其称为零宽字符。
 ```

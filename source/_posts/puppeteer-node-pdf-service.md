@@ -54,3 +54,56 @@ https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 ### process
 - beforeExit
 - 
+
+## 字体相关
+
+### 页眉页脚中文字体
+- https://www.npmjs.com/package/pdf-lib#embed-font-and-measure-text
+- https://github.com/Hopding/pdf-lib/issues/430
+- 额外引入一些特殊的中文字体，如果直接用pdf-lib，@pdf-lib/fontkit（旧版本） ，则需配合font-carrier进行字体精简
+- https://www.npmjs.com/package/pdfkit， pdfkit则不用，默认精简
+- @pdf-lib/fontkit - https://github.com/Hopding/fontkit , https://github.com/foliojs/fontkit
+```
+# https://www.npmjs.com/package/font-carrier
+案例三
+对中文字体精简
+
+var fontCarrier = require('font-carrier')
+var transFont = fontCarrier.transfer('./test/test.ttf')
+// 会自动根据当前的输入的文字过滤精简字体
+transFont.min('我是精简后的字体，我可以重复')
+transFont.output({
+  path: './min'
+})
+```
+```
+const fontkit = require('@pdf-lib/fontkit');
+doc.registerFontkit(fontkit); // 注册字体
+# 如果直接用的话，则默认无裁剪，会导致生成的PDF文件过大
+# 可以利用font-carrier解决
+const fontCarrier = require('font-carrier');
+const transFont = fontCarrier.transfer(`${dir}/font/pingfang.ttf`);
+transFont.min(headerFooter.title.join('') + extra + '.');
+const fontMinResult = transFont.output({
+    types:['ttf']
+  });
+  // 加载自定义字体
+const customFont = doc.embedFont(fontMinResult.ttf);
+```
+```
+# 较新版本支持subset
+const subset = font.createSubset();
+run.glyphs.forEach(function(glyph) {
+  subset.includeGlyph(glyph);
+});
+
+subset.encodeStream()
+      .pipe(fs.createWriteStream('subset.ttf'));
+```
+
+### 割字问题
+保证内容里面不想被切割的，为块装结构
+
+### echarts部分图丢失
+升级puppteer
+
