@@ -82,3 +82,7 @@ Use nesting to not repeat yourself when scoping of selectors is necessary, not t
 
 Supported by: http://youtu.be/fPAf8dN4G4w?t=26m17s and http://youtu.be/hou2wJCh3XE?t=4m11s
 ```
+
+### chrome 版本
+- https://omahaproxy.appspot.com/
+- https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html

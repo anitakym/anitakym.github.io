@@ -137,6 +137,8 @@ source .zshrc
 能够格式化JSON文本
 #### 日志
 tail/lnav
+- tail 默认最后10行
+- tail -f(循环读取)
 
 ### 具体场景
 ####  查看目录下文件/文件夹个数
@@ -201,6 +203,9 @@ cron - 周期性执行
 at - 单一时刻执行一次任务
 
 ```
+
+### /etc/init.d
+
 
 ## 名词解释
 > man XXX / xxx --help 

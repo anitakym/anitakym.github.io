@@ -13,4 +13,16 @@ tags:
 - 引导demo
 - https://demo.elastic.co/cookie/index.html#/discover
 
-## filebeats配置
+## filebeat配置
+
+- https://github.com/elastic/beats - The Beats are lightweight data shippers, written in Go
+- logstash-forwarder - THIS PROJECT IS REPLACED BY FILEBEAT(6年前，Commits on Nov 13, 2015)
+- filebeat - https://www.elastic.co/guide/en/beats/filebeat/current/index.html
+- https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
+
+## LogStash
+- https://github.com/elastic/logstash
+- Logstash is part of the Elastic Stack along with Beats, Elasticsearch and Kibana. Logstash is a server-side data processing pipeline that ingests data from a multitude of sources simultaneously, transforms it, and then sends it to your favorite "stash." (Ours is Elasticsearch, naturally.). Logstash has over 200 plugins, and you can write your own very easily as well.
+
+## CKafka
+- https://cloud.tencent.com/document/product/597/32743
