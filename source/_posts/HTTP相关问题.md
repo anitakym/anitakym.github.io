@@ -4,6 +4,11 @@ date: 2018-09-17 18:43:51
 tags:
   - HTTP
 ---
+
+## History
+
+
+
 ## TCP
 > 连接是两端的状态维护
 > 连接的断开比建立略微复杂，因为资源的constructor比destructor要简单（因为destructor要考虑所有资源的安全有序释放）
