@@ -40,3 +40,9 @@ Mac上：ERROR 2002 (HY000): Can’t connect to local MySQL server through socke
  which mysql 
  brew info mysql 
 ```
+
+#### ER_NOT_SUPPORTED_AUTH_MODE
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY '123456';
+```
