@@ -107,3 +107,8 @@ subset.encodeStream()
 ### echarts部分图丢失
 升级puppteer
 
+### ttf2woff2 (dep by font-carrier)
+- https://www.npmjs.com/package/ttf2woff2
+- This is a NodeJS wrapper for the Google WOFF2 project. If the C++ wrapper compilation fail, it fallbacks to an Emscripten build.
+- Convert TTF files to WOFF2 ones.
+

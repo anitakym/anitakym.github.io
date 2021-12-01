@@ -11,6 +11,7 @@ tags:
 #### SSL
 SSL (Secure Sockets Layer) and its successor, TLS (Transport Layer Security), are protocols for establishing authenticated and encrypted links between networked computers. Although the SSL protocol was deprecated with the release of TLS 1.0 in 1999, it is still common to refer to these related technologies as “SSL” or “SSL/TLS.” The most current version is TLS 1.3, defined in RFC 8446(https://tools.ietf.org/html/rfc8446) (August 2018).
 - 为互联网通信提供安全及数据完整性保障
+- SSL证书是CA对用户公钥的认证
 
 #### CA
 A certificate authority (CA), also sometimes referred to as a certification authority, is a company or organization that acts to validate the identities of entities (such as websites, email addresses, companies, or individual persons) and bind them to cryptographic keys through the issuance of electronic documents known as digital certificates. A digital certificate provides:

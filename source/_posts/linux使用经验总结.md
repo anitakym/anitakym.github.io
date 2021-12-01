@@ -122,7 +122,13 @@ Wget - The non-interactive network downloader.
 
 
 #### netstat
+```
 netstat -- show network status
+# 查看连接当前服务器的用户IP，前5名
+netstat -nat | awk '{print $5}' | awk -F ':' '{print $1}' | sort | uniq -c | sort -rn | head -n 5
+
+```
+
 
 
 #### alias

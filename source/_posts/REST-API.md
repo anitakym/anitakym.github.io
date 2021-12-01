@@ -4,6 +4,18 @@ date: 2021-04-27 16:51:14
 tags:
 ---
 
+### basic
+- 表述性状态转移
+- 一切看作资源
+- 资源 - CURD
+- 使用URI来定位资源
+- 使用HTTP动词来操作资源
+- 视图函数的URI不应该包含动词
+
+### 理论/实践
+- 内部API - 业务逻辑负责
+- 开放API - 标准REST
+
 
 ### 面临的挑战
 （David Mckenna）REST 面临的挑战：
@@ -48,3 +60,8 @@ https://www.programmableweb.com/apis/directory
 
 ### 面向对象设计5原则
 - SOLID
+
+
+## Django
+
+### 蓝图分离视图函数的缺陷
