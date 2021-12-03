@@ -53,3 +53,8 @@ X-Frame-Options: sameorigin
 - 如果是xxx.xxx.xxx/abc 会被重定向，nginx , 这样会有问题，请求https，会被转为http
 - Nginx 内部重定向规则会被启动，例如，当 URL 指向一个目录并且在最后没有包含“/”时，Nginx 内部会自动的做一个 301 重定向
 - 需要xxx.xxx.xxx/abc/ ，这样才能匹配到，从而不被重定向
+
+
+### 视频自动播放问题
+https://developer.chrome.com/blog/autoplay/#iframe-delegation
+如果是跨域的站点，又希望能自动播放，需要再加上这个属性
