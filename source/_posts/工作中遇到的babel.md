@@ -4,6 +4,20 @@ date: 2020-11-28 20:26:03
 tags:
 ---
 
+### why && what 
+- babel是JavaScript编译器
+- 解决代码对旧版本的兼容性问题
+
+### 初始化项目
+- @vue/cli 的话，可以直接走```@vue/cli-plugin-babel```
+- 没用脚手架构建工具的话： @babel/core - 核心库 @babel/cli - 命令行工具 @babel/preset-env - 默认的预设环境 | devDependencies
+- core-js - dependencies - 在运行时为老版本的浏览器提供不支持的API
+
+### .babelrc
+- 
+
+
+### 
 ### 官方文档
 https://babeljs.io/
 ### 场景：

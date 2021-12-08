@@ -122,3 +122,10 @@ To solve these issues, npm rethought the node_modules structure and came up with
 
 ### difference
 - https://mp.weixin.qq.com/s?__biz=Mzg4MTYwMzY1Mw==&mid=2247496601&idx=1&sn=4c3bc00c37163e1dca152ebb8f723619&source=41#wechat_redirect
+
+## 项目管理
+### init
+- ```npm init```
+
+### package.json
+见```谈一谈package-json文件```博文
