@@ -89,6 +89,14 @@ const fontMinResult = transFont.output({
   });
   // 加载自定义字体
 const customFont = doc.embedFont(fontMinResult.ttf);
+
+# 基于font subsetting来做
+const fontBytes = fs.readFileSync('./font/pingfang.ttf')
+const pdfDoc = await PDFDocument.create()
+pdfDoc.registerFontkit(fontkit)
+const font = await pdfDoc.embedFont(fontBytes, { subset: true });
+# 这个目前版本会有问题，出来的文件除了adobe能正常读取，其余软件显示乱码
+
 ```
 ```
 # 较新版本支持subset
@@ -99,6 +107,7 @@ run.glyphs.forEach(function(glyph) {
 
 subset.encodeStream()
       .pipe(fs.createWriteStream('subset.ttf'));
+# 但是sub
 ```
 
 ### 割字问题
@@ -112,3 +121,14 @@ subset.encodeStream()
 - This is a NodeJS wrapper for the Google WOFF2 project. If the C++ wrapper compilation fail, it fallbacks to an Emscripten build.
 - Convert TTF files to WOFF2 ones.
 
+### truetype | type1
+
+- TrueType是苹果和微软联合提出的一种新型数学字形描述，既可以作打印字体，又可以用作屏幕显示
+- OpenType，封装格式和truetype兼容，轮廓格式是Postscript
+- Type1 ,在Opentype出现前，Adobe的印刷字体封装格式，使用PS曲线
+- Type0. Postscript里的复合字体
+- 字体构成
+    - 轮廓格式（TT/PS） —— 记载字符的形状（矢量）
+    - 封装格式（SFNT/Type 1）—— 封装成一个文件的方法
+    - 编码方式（Unicode/CID） —— 决定字体里字符的内部编号、Unicode 以及轮廓的对应关系
+- 书本推荐：Fonts & Encodings - 作者: Yannis Haralambous
