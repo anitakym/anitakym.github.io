@@ -119,6 +119,8 @@ This approach had two serious issues:
 To solve these issues, npm rethought the node_modules structure and came up with flattening. 
 ```
 - 推荐阅读：https://www.kochan.io/ 这个里面写了几篇文章
+- vue-next用pnpm,还在preinstall里面加了验证
+- vite - only allow pnpm
 
 ### difference
 - https://mp.weixin.qq.com/s?__biz=Mzg4MTYwMzY1Mw==&mid=2247496601&idx=1&sn=4c3bc00c37163e1dca152ebb8f723619&source=41#wechat_redirect

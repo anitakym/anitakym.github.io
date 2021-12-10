@@ -153,3 +153,13 @@ https://burkeholland.gitbook.io/vs-code-can-do-that/
 - You can make some tweaks to the visual components of the editor to increase the available space and improve legibility.你可以对编辑器的视觉组件进行一些调整，增加可用空间，提高可读性。
 
 - Here are a few more keyboard shortcuts to add to your repertoire( a list or supply of dramas, operas, pieces, or parts that a company or person is prepared to perform).
+
+## ts
+
+### ts 支持，但是目前首行报错
+vetur.experimental.templateInterpolationService
+
+### <script setup>
+如果使用了<script setup>
+用 Volar
+禁掉 Vetur

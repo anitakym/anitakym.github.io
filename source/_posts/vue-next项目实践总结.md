@@ -23,3 +23,10 @@ if (process.env.NODE_ENV === 'development') {
 }
 ```
 这个是cli初始化项目时候带的
+
+## basic
+> 其实都是文档上写了的
+#### 单文件组件<script setup>
+- 普通的 <script> 只在组件被首次引入的时候执行一次
+- <script setup> 中的代码会在每次组件实例被创建的时候执行
+- 顶层的绑定会被暴露给模版
