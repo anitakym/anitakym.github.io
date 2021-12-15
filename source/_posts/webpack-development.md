@@ -64,3 +64,8 @@ Warning
 需要谨慎使用～
 
 
+### chokidar
+- https://www.npmjs.com/package/chokidar
+- Minimal and efficient cross-platform file watching library
+- webpack-dev-server 的依赖
+- 比如说这个博客，基于hexo,hexo-fs也依赖chokidar
