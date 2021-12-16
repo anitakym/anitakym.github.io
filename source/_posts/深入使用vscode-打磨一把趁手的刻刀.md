@@ -163,3 +163,6 @@ vetur.experimental.templateInterpolationService
 如果使用了<script setup>
 用 Volar
 禁掉 Vetur
+
+- https://github.com/vuejs/rfcs/blob/script-setup/active-rfcs/0000-script-setup.md
+- https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md 里面搜索 <script setup>
