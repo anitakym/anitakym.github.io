@@ -41,3 +41,31 @@ gitignore
 PORT = 3003
 HOST = '127.0.0.1'
 
+
+## Framework
+### ice
+- 可视化页面构建
+- https://github.com/alibaba/ice
+- 时效性较强页面
+- 后端路由服务
+- 产出 - 当前布局与内容的DSL（JSON）
+- 组件间的通信 - 将不同组件通过自定义的钩子hook起来
+```
+class FetchData extends Components {
+  state = {
+    data: {},
+  }
+  componentDidMount() {
+    const { componentApi } = this.props
+    api.get(componentApi)
+      .then((response) => {
+        this.setState({
+          data: response,
+        })
+      })
+  }
+  render() {
+    return <WrappedComponent {..props} data={this.state.data} />
+  }
+}
+```
