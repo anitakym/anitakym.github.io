@@ -87,3 +87,11 @@ emconsole.xxx.cn
 进入到gitlab各个项目下面，npm start
 
 ```
+
+## prometheus
+- 我们这边机器的监控是运维团队基于prometheus做的
+- 目前Prometheus是按照k8s集群部署的, 每一个K8s集群都由独立的Prometheus来监控, (Prometheus部署在当前集群中)
+- https://prometheus.io/docs/introduction/overview/
+- 各个node运行node_exporter供prometheus采集数据，运行consul客户端注册节点信息向consul服务端，prometheus server从consul服务端获取所有的node节点，通过prometheus-es-adapter将数据持久化到es。配置alertmanager告警规则触发告警，监控指标图表通过grafana来查看
+- jdk	｜ go ｜node-exporter ｜ prometheus-es-adapter	｜prometheus ｜ alertmanager｜ consul ｜elasticsearch ｜ kibana ｜grafana	
+- 基于Prometheus 和 thanos 进一步增加了异常检测机制.  基于机器学习对阈值进行动态检测
