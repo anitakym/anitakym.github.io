@@ -45,3 +45,20 @@ Babel 7.0 版本的重大变更包括：
 - 深度优先遍历
 - path
 #### 生成阶段
+
+
+
+## cases
+### vue2.x的项目
+- 要使用 ```<script setup>``` 的语法，所以引用了插件 
+- https://github.com/antfu/unplugin-vue2-script-setup.git
+- https://github.com/antfu/unplugin-vue2-script-setup/blob/main/src/core/transformScriptSetup.ts
+- 处理script setup语法支持的时候
+```
+import generate from '@babel/generator'
+return {
+    ast,
+    code: generate(ast).code,
+  }
+
+```

@@ -8,7 +8,8 @@ tags:
 ## React - Usages
 - https://github.com/camsong/blog/issues/5
 
-
+- react-app-rewired 插件支持
+- creat-react-app , webpack css-loader 里面 modules 进行设置
 
 ## Vue - Usages
 - https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95

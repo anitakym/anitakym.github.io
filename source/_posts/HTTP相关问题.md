@@ -51,6 +51,15 @@ cite(https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/503)
 - DELETE ｜ 客户端上传端信息给服务器，不关心相应
 - http://clients1.google.com/generate_204
 
+#### 414
+- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/414
+- 414 URI Too Long
+```
+当客户端误将 POST 请求当作 GET 请求时，会带有一个较长的查询字符串(query)；
+当客户端堕入重定向循环黑洞时，例如，指向自身后缀的重定向URI前缀(a redirected URI prefix that points to a suffix of itself)；
+当客户端对服务器进行攻击，试图寻找潜在的漏洞时。
+```
+
 ## 相关库
 
 ### axios
