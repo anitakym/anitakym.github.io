@@ -159,3 +159,5 @@ FileReader 对象允许 Web 应用程序异步读取存储在用户计算机上�
 
 FileReader 只能使用 HTML <input type="file"> 元素或通过拖放来访问用户已明确选择的文件内容。它不能用于从用户的文件系统中按路径名读取文件。要通过路径名读取客户端文件系统中的文件，请使用文件系统访问API。要读取服务器端文件，请使用标准的Ajax解决方案，如果跨域读取，请使用CORS权限。
 </pre>
+
+- https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsDataURL
