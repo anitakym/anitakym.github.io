@@ -69,3 +69,5 @@ class FetchData extends Components {
   }
 }
 ```
+## lazy loadable
+React.lazy and Suspense are not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we recommend Loadable Components. It has a nice guide for bundle splitting with server-side rendering.
