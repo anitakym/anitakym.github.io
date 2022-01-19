@@ -36,9 +36,9 @@ brew install cocoapods | brew upgrade cocoapods
   点击设备，显示的信息最上方，可以点击内容切换信息；切到有 UDID 的，然后右键，选择拷贝 UDID 即可
 - `flutter run --release `,可以在 ios 设备上安装 release 包，这样不在连接情况下，也能使用
 
-3. andriod 设备开发调试
+3. android 设备开发调试
 
-#### Andriod
+#### Android
 
 - 连上 android 设备
 - 如果 flutter doctor 出现 android 方面的问题，可以打开 android studio，点击 preferences
