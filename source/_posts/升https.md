@@ -38,3 +38,15 @@ Allowing the snippet to request over HTTP opens the door for attacks like the re
 
 More guidance and details in Eric Mills’ guide to CDNs & HTTPS and digitalgov.gov’s writeup on secure analytics hosting.
 ```
+
+### cases
+```
+curl https://xxxx.xxx.cn
+curl: (60) SSL: no alternative certificate subject name matches target host name 'xxxx.xxx.cn'
+More details here: https://curl.haxx.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
+```
+进入Chrome看，可以点击小锁，看具体的证书信息
