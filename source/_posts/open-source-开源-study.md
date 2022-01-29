@@ -6,6 +6,9 @@ tags:
 ### 推荐站点
 https://snyk.io/advisor/
 
+### Workshop
+- https://slides.com/kentcdodds/write-oss
+- 有如何写一个open source software 相关资源
 ### CI(持续继承)
 - https://www.travis-ci.org/
 - circleci.com

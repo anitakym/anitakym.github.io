@@ -131,3 +131,7 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 ### chalk
 - https://www.npmjs.com/package/chalk
 - 调试时候可以用，这样比较显眼
+
+### 网关
+- https://mp.weixin.qq.com/s/nWKCX1INkP7uKGONzW7CPg
+- 大规模 Node.js 网关的架构设计与工程实践

@@ -69,3 +69,15 @@ https://jenkins-x.io/docs/reference/pipeline-syntax-reference/
 ➜  Downloads java -jar jenkins-cli.jar -s http://xxxxxx:xxxx/ -auth xxxxxx:1234 create-job seal-troy-frontend-copy < seal-troy-frontend.xml
  ```
  
+ #### jenkins 版本的升级和回退需要注意
+ 因为插件是依赖于Jenkins的版本的，所以如果回退Jenkins版本，可能会导致依赖于更高版本的已装插件的不可用；
+ - case ，multijob插件，然后基于这个创建了一个jobA, Jenkins版本被回退到不支持multijob的版本，这个时候，表现为 jobA无法搜索到，但是去服务器上面查，能查到项目的workspace和jobs的配置文件，拿着xml配置文件create-job的时候，
+ ```
+ ERROR: Unexpected exception occurred while performing create-job command.
+com.thoughtworks.xstream.mapper.CannotResolveClassException: com.tikal.jenkins.plugins.multijob.MultiJobProject
+ ```
+ 就发现，哦multijob这儿出问题
+ ```
+ This plugin is a MultiJob plugin.
+Warning: This plugin has dependencies on other plugins that require Jenkins 2.289.1 or newer. Jenkins will refuse to load the dependencies requiring a newer version of Jenkins, and in turn loading this plugin will fail.
+ ```

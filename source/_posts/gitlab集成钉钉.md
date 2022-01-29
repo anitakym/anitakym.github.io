@@ -17,3 +17,7 @@ tags:
 
 Tips:
 1. 如果想要进一步加强控制，可以起个服务，做控制和中转处理
+
+## gitlab 相关
+### changes
+- 2-up | swipe | onion skin 

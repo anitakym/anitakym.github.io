@@ -35,3 +35,30 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
 }
 ```
 Web调用原生提供的openPage的方法，中间会闪黑屏，Android的查问题，发现这个问题；
+
+## 单位
+- dp：Density-independent pixels
+- 以160PPI屏幕为标准，则1dp=1px
+- dp*ppi/160 = px
+- sp：Scale-independent pixels
+- 以160PPI屏幕为标准，当字体大小为 100%时， 1sp=1px
+- sp*ppi/160 = px
+- 建议文字用sp单位，非文字用dp单位
+- dp,sp 让物理感官上面的高度呈现不会因为设备的分辨率而受影响
+```
+ <TextView
+            android:id="@+id/tv_content"
+            style="@style/widget_font_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="8dp"
+            android:text="@string/home_ai_speech_tip"
+            android:textColor="@color/widget_color_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+```

@@ -89,26 +89,26 @@ ldpi 0.75x | mdpi 1.0x | hdpi 1.5x | xhdpi 2.0x | xxhdpi 3.0x | xxxhdpi 4.0x
 - 镜像按需配置（科学上网之后可忽略 
 - bash or zsh 配置（PATH ｜ storage_base_url && hosted_url）
 - ```PUB_HOSTED_URL https://pub.flutter-io.cn | FLUTTER_STORAGE_BASE_URL https://storage.flutter-io.cn```
-- Andriod Studio 也可进行环境变量配置 - 按需
+- Android Studio 也可进行环境变量配置 - 按需
 - Xcode - 安装&&命令行工具配置&&许可协议
 - IOS模拟器（Window > Scale）
 - 热加载-r｜热重启-R
 - Android Studio（按官方文档操作就行） - 机器上设置好硬件加速（VM acceleration）
 - Android Studio安装Flutter和Dart插件（perferences 选 plugins，搜对应关键词）
-- Android Studio - Andriod SDK 下载对应的（preferences 搜 Android SDK），View - VSC里面可视化版本控制
+- Android Studio - Android SDK 下载对应的（preferences 搜 Android SDK），View - VSC里面可视化版本控制
 - emulator -avd xxx (bash or zsh里面可配置好 emulator 路径)
 
 ## 真机
 ### IOS 
 - homebrew - 安装相关库
 - worksapce - 进行设置（bundle id 确保唯一 - 不然自动签名会失败）
-### Andriod
+### Android
 - 设备上启用开发人员选项和USB调试
 - ```flutter devices```
 
 ## IDE
 ### VS code
-- Andriod无法直接调试
+- Android无法直接调试
 ### Android Studio
 
 ## Hybrid

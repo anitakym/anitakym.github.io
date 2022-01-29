@@ -116,6 +116,12 @@ subset.encodeStream()
 ### echarts部分图丢失
 升级puppteer
 
+
+### 开源字体
+- 思源 - 是由Google和Adobe合作开发的。Google将其命名为Noto SansCJK，作为Google的Noto字体家族的成员。Adobe则命名为Source Han Sans，作为Adobe的Source字体家族的一员。Adobe拥有字体设计的版权。发布的字体文件则可以不受限制的免费使用。
+- 打印用的字体就是思源，跑在linux机器上
+- 这个属于 sans-serif
+- 黑体字属于“无衬线体”（Sans-serif），而宋体字属于“有衬线体”（Serif）
 ### ttf2woff2 (dep by font-carrier)
 - https://www.npmjs.com/package/ttf2woff2
 - This is a NodeJS wrapper for the Google WOFF2 project. If the C++ wrapper compilation fail, it fallbacks to an Emscripten build.

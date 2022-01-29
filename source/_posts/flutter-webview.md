@@ -26,7 +26,7 @@ https://pub.dev/packages/webview_flutter
 #### HTTP
 - iOS默认会白屏
 - android9.0以上版本也会限制访问
-- info.list | AndriodManifest.xml
+- info.list | AndroidManifest.xml
 
 #### mode
 - When building your application in release mode, Flutter apps can be compiled for armeabi-v7a (ARM 32-bit), arm64-v8a (ARM 64-bit), and x86-64 (x86 64-bit). Flutter does not currently support building for x86 Android.

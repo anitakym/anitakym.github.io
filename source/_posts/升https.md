@@ -25,3 +25,28 @@ CA机构，是承担公钥合法性检验的第三方权威机构，负责指定
 ![](ca-diagram-b.png)
 
 cite(https://www.ssl.com/faqs/what-is-a-certificate-authority/)
+
+### protocol-relative url的问题
+- https://www.paulirish.com/2010/the-protocol-relative-url/
+- 尽量避免使用
+```
+Update 2014.12.17:
+
+Now that SSL is encouraged for everyone and doesn’t have performance concerns, this technique is now an anti-pattern. If the asset you need is available on SSL, then always use the https:// asset.
+
+Allowing the snippet to request over HTTP opens the door for attacks like the recent Github Man-on-the-side attack. It’s always safe to request HTTPS assets even if your site is on HTTP, however the reverse is not true.
+
+More guidance and details in Eric Mills’ guide to CDNs & HTTPS and digitalgov.gov’s writeup on secure analytics hosting.
+```
+
+### cases
+```
+curl https://xxxx.xxx.cn
+curl: (60) SSL: no alternative certificate subject name matches target host name 'xxxx.xxx.cn'
+More details here: https://curl.haxx.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
+```
+进入Chrome看，可以点击小锁，看具体的证书信息
