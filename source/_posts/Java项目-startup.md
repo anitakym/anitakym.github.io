@@ -57,3 +57,17 @@ tags:
 ### Tips
 
 - 如果非结构化数据不涉及查询，聚合等操作，可以用 MySQL 的 JSON 字段替换 MongoDB document（分布式事务处理｜）
+
+
+### Java API Design Best Practices
+- Jonathan Giles
+- API design theory | practical advice
+- effective java 3rd edition - joshua bloch
+- API - 开发者 - 达成目标
+- 抽象层面 - 更好的抽象
+- API的使用者 ｜ 使用者的目的
+- API Characteristics
+ - Understandable
+  - 使用者能马上知道
+  - 接口文档
+ - 
