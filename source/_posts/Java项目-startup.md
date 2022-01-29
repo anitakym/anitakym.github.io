@@ -68,6 +68,9 @@ tags:
 - API的使用者 ｜ 使用者的目的
 - API Characteristics
  - Understandable
-  - 使用者能马上知道
-  - 接口文档
- - 
+  - 使用者能看了能马上知道这个接口干什么的, 接口文档也是必须的
+  - 面向对象的设计
+  - entry points
+ - Consistency 
+
+
