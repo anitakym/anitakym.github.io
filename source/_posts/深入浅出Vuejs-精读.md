@@ -26,7 +26,7 @@ tags:
   - 渐进式框架 - 把框架分层 - 核心是视图层渲染 + 组件机制 + 路由机制 + 状态管理 + 构建工具
 - 单文件组件 - 很棒的一个feature（https://cn.vuejs.org/v2/guide/single-file-components.html）
 - The fate of destruction is also the joy of rebirth - 1.x
-- Your effor to remain what your are is what limits you - 2.x - Masamune Shirow, Ghost in the Shell
+- Your effort to remain what your are is what limits you - 2.x - Masamune Shirow, Ghost in the Shell
   - 引入虚拟DOM
   - 支持JSX和TS
   - 支持流式服务端渲染
