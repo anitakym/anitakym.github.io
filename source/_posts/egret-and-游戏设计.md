@@ -12,3 +12,7 @@ tags:
 - https://www.egret.com/about
 - Egret Engine 是一款使用 TypeScript 编写的 HTML5 游戏引擎，包含渲染、声音、用户交互、资源管理等诸多功能，解决了 HTML5 性能、碎片化问题，应用于 2D 游戏、3D 游戏开发，及移动端交互式应用构建，拥有完善的跨平台运行能力。 现在 Egret Engine 及其它工具已全部整合到 Egret Launcher，请大家直接下载安装开启您的游戏项目创作。
 ```
+
+
+### 教学游戏
+- http://gk.link/a/1195n

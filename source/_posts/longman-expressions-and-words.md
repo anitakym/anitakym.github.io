@@ -20,3 +20,21 @@ tags:
 
 ## Documentries
 - Die gefährlichsten Schulwege der Welt - The Most Dangerous Ways to School
+
+## Word List
+- sundries
+- grove
+## Sundries
+#### KSA
+knowledge，skills，abilities framework
+人力资源管理模型-知识和技能
+
+#### 剑南诗稿
+汝果欲学诗，工夫在诗外
+
+#### parallel text
+平行文本，相同话题的
+
+#### 张载
+- 横渠四句-为天地立心，为生民立命，为往圣继绝学，为万世开太平
+- 心中苟有所开，即便札记。不则还塞之矣
