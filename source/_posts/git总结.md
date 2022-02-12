@@ -112,7 +112,7 @@ https://docs.github.com/en/github/getting-started-with-github/getting-started-wi
 ```
 "authors": "git log --format='%aN <%aE>' | sort -u > AUTHORS"
 ```
-
+git shortlog -s -n
 ### 新建项目
 
 rm -rf .git
