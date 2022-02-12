@@ -23,6 +23,8 @@ tags:
 - 7g - 40-100-101 - model number
 - 14g - 40-100-102 - model number
 - 18g - 40-100-103 - model number
+- 8g - 40-100-106 - model number
+- 16g - 40-100-107 - model number
 
 
 ### 使用注意

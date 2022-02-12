@@ -58,8 +58,20 @@ tags:
 
 - 如果非结构化数据不涉及查询，聚合等操作，可以用 MySQL 的 JSON 字段替换 MongoDB document（分布式事务处理｜）
 
+### rules
+- 把简单的问题尽可能交给工具完成
+- 简单 
+ - 1、代码格式化 包引用
+ - 2、编码规范规约（安装阿里的代码规约插件），右键菜单点击编码规范扫描 
+ - 3、安装FindBugs插件，用FindBugs查找bug 
+ - 4、安装SonarLint插件，右键菜单选Analyze with SonarLint
+ - 5、安装Sequence Diagram 插件，可以从controller层点右键查看调用路径
+- 中等： 1、根据模块业务查看代码逻辑，确认代码正确 2、根据代码确认完成功能开发
+- 复杂： 查看代码符合的设计原则，是否符合整体架构逻辑【原则是复杂的问题简单化】 设计原则：单一职责、开闭、接口隔离、里氏替换、迪米特、依赖倒置
+
 
 ### Java API Design Best Practices
+- https://static001.geekbang.org/con/33/pdf/3939125782/file/1%E3%80%81jgiles+-+API+Best+Practices+-+v2+-+qcon.pdf
 - Jonathan Giles
 - API design theory | practical advice
 - effective java 3rd edition - joshua bloch
@@ -71,6 +83,18 @@ tags:
   - 使用者能看了能马上知道这个接口干什么的, 接口文档也是必须的
   - 面向对象的设计
   - entry points
- - Consistency 
+ - Consistency
+  - null 的处理要严格符合文档里面写的
+- restrained
+- evolvable
+- documentation
+- there is no magical process to api Design
+- api design is an art , and like art, becomes easier with practice
 
 
+### APIs are the thing that gets us to the thing
+- "Computers aren't the thing. They’re the thing that gets you to the thing."
+ -- Joe MacMillan (Halt and Catch Fire)
+- We have always assumed that applications are the thing
+- The real “thing” is delivering solutions through capabilities
+- APIs will always be a thing
