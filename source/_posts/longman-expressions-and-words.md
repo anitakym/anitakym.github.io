@@ -40,3 +40,39 @@ knowledge，skills，abilities framework
 #### 张载
 - 横渠四句-为天地立心，为生民立命，为往圣继绝学，为万世开太平
 - 心中苟有所开，即便札记。不则还塞之矣
+
+#### proactive | reactive
+
+#### pro- re-
+- progress
+- regress
+- https://www.etymonline.com/
+
+#### settle for | settle
+
+#### specification
+- a detailed description of the design and materials used to make sth
+
+#### thin air
+- nowhere to be found in a giant void; nihility;nothingness; nullity;void; the state of nonexistence;
+- conjure a career from thin air
+
+#### empathy | sympathy
+- 共情｜同情
+
+#### software metrics | software measurements
+
+#### 语言学习的目的是交流
+
+#### curiostiy killed the cat
+- Inquisitiveness can lead one into dangerous situations.
+- Curiostiy killed the cat, but satisfaction brought it back.
+- keen as mustard
+- wasabi
+
+#### ship the milestone
+
+#### driveless | autonomous
+
+
+#### communicator
