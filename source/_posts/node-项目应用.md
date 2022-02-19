@@ -140,3 +140,4 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 - consul 测试环境 ip+端口号
 - cluster IP + 80 线上环境
 - 没有用域名做代理，当然会存在cluster ip更换的问题，不过相对稳定
+- 

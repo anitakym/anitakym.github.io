@@ -76,3 +76,5 @@ knowledge，skills，abilities framework
 
 
 #### communicator
+
+# Word Power Made Easy

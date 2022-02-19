@@ -40,7 +40,8 @@ vim sentry.conf.py
 增加 SENTRY_DEFAULT_TIME_ZONE = 'Asia/Shanghai'
 docker restart sentry_onpremise_web_1
 ```
-
+#### update - https://github.com/getsentry/self-hosted
+- self-hosted 私有化部署已更新为这个项目
 # Mail Server
 
 这里面需要申请一个公司的邮箱，配置到 mail.username 里面
@@ -106,6 +107,9 @@ sentry 上传 sourcemap 配置
 
 - 可以用@sentry/webpack-plugin
 - sentry cli(https://docs.sentry.io/platforms/javascript/sourcemaps/uploading/)
+- .sentryclic - release | urlPrefix
+
+- auth token
 
 #### web 项目
 
@@ -166,6 +170,17 @@ project => settings => client keys
 
 1.定义日志异常上报方法 2.区分环境（开发，测试，生产）
 
+### 手动上报
+- .captureException
+- .captureMessage
+
+### 更多信息
+- .configScope
+- scope.setUser | scope.setExtra
+
+### 目前配置工作流
+- new Alert - 邮件提醒 （这部分如果想连钉钉也可以，原来要dingding插件，现在直接配置里面都能关联）
+- 我这边看问题 - 提 issue ，link  到gitlab, gitlab issue 走 webhooks 到钉钉群里
 ## 问题处理
 ### Vue
 
@@ -189,3 +204,8 @@ project => settings => client keys
 - 服务器上下载sentry-cli包：
 - ```info sentry-cli Downloading from https://npm.taobao.org/mirrors/sentry-cli/1.69.1/sentry-cli-Linux-x86_64```有问题的话，则可以配置淘宝镜像的源
 - npm config set sentrycli_cdnurl https://npm.taobao.org/mirrors/sentry-cli
+
+# basic 原理
+
+- issues
+- event - fingerprint
