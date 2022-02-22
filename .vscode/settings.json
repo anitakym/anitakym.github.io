@@ -6,5 +6,6 @@
     "titleBar.inactiveForeground": "#15202b99",
     "sash.hoverBorder": "#65c89b"
   },
-  "peacock.color": "#42b883"
+  "peacock.color": "#42b883",
+  "editor.formatOnSave": false
 }

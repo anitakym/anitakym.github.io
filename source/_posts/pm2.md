@@ -250,4 +250,11 @@ vizion.analyze({folder : current_path}, function recur_path(err, meta){
     -h, --help         output usage information
  ```
 
- 
+ ### Launch PM2 in no deamon
+
+Make sure you kill any PM2 instance before starting PM2 in no deamon mode (pm2 kill).
+
+Launching PM2 without daemonizing itself:
+
+pm2 start app.js --no-daemon
+There is also the CLI pm2-runtime installed by default at PM2 installation, that is a drop-in replacement of the Node.js binary.
