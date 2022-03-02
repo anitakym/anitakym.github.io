@@ -3,6 +3,19 @@ title: node-项目应用
 date: 2021-04-30 23:26:27
 tags:
 ---
+
+> 事件驱动学习; 很多东西，不同阶段再去听去看，会有不同收获，因为基础认知不同，才能理解到一些细节
+### 三句basic 说明
+- Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+- As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications. 
+- Almost no function in Node.js directly performs I/O, so the process never blocks except when the I/O is performed using synchronous methods of Node.js standard library. 
+
+### usage
+- web应用场景
+- SSR-搜索引擎优化，首屏速度
+- 前后端同构（PDF预览打印场景
+- 构建工具（早期的 gulp,webpack，后面不用说了，奏是这个生态）
+- Backend for Frontend(HTTP, RPC调用)
 ## basic
 ### Err
 #### EMFILE - Too many open files
