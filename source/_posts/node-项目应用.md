@@ -17,10 +17,34 @@ tags:
 - 构建工具（早期的 gulp,webpack，后面不用说了，奏是这个生态）
 - Backend for Frontend(HTTP, RPC调用)
 ## basic
+
+### global
+- https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame
+- setImmediate
+
+### __filename | __dirname
 ### Err
 #### EMFILE - Too many open files
 
 ### Process
+- argv
+- env
+- kill 
+- exit
+- hrtime
+- cpuUsage
+- memoryUsage
+
+### Module
+#### browser
+- <script />
+- 脚本加载顺序 
+- 脚本之间逻辑调用，借助全局变量
+
+#### commonJS
+- 也影响了browser端
+
+
 #### Doc
 - http://nodejs.cn/api/process.html
 #### Details
@@ -154,3 +178,6 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 - cluster IP + 80 线上环境
 - 没有用域名做代理，当然会存在cluster ip更换的问题，不过相对稳定
 - 
+
+### windows 
+系统属性里面的环境变量设置

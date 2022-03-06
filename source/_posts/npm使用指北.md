@@ -14,6 +14,17 @@ npm list -g --depth 0 | grep @vue/cli
 94% after seal[hardsource:a9cf9509] Could not freeze ./src/router/index.js: Cannot read property 'hash' of undefined
 98% after emitting
 
+### error
+```
+UNMET PEER DEPENDENCY webpack@4.x.x || 5.x.x
+
+npm ERR! peer dep missing: webpack@4.x.x || 5.x.x, required by webpack-cli@4.9.2
+npm ERR! peer dep missing: webpack@4.x.x || 5.x.x, required by @webpack-cli/configtest@1.1.1
+npm ERR! extraneous: which@2.0.2 /Users/xxxxx/node_modules/cross-spawn/node_modules/which
+```
+#### peer dep
+- https://blog.domenic.me/peer-dependencies/
+
 ### n
 n升级到lts的时候出了问题
 

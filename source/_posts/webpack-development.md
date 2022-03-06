@@ -69,3 +69,11 @@ Warning
 - Minimal and efficient cross-platform file watching library
 - webpack-dev-server 的依赖
 - 比如说这个博客，基于hexo,hexo-fs也依赖chokidar
+
+### webpack-cli
+#### 命令行工具cli
+- 可以在处理node时候，模块这部分，命令行编译
+- npx webpack [command] [options]
+- 可以免安装
+- 注意webpack版本和对应的用法
+- ```npx webpack --no-devtool --mode development --target node14.5```
