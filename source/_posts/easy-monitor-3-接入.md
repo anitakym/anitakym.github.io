@@ -109,3 +109,6 @@ connect ECONNREFUSED 127.0.0.1:8443, POST http://127.0.0.1:8443/xapi/upload_from
 ```
 - 这个里面的server，就从xprofilerConsole来，所以正式环境部署的时候，要给到能连通的url
 - 分析策略，看给的各个应用服务的流程图，分析原因
+
+### log_dir
+性能分析文件会比较大，不要放在会影响memory的位置
