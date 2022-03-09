@@ -102,7 +102,7 @@ emconsole.xxx.cn
 connect ECONNREFUSED 127.0.0.1:8443, POST http://127.0.0.1:8443/xapi/upload_from_xtransit?fileId=4&fileType=heapsnapshot&nonce=74904800742&timestamp=1646389590491&signature=a331a7a4fe28cdd275bfa0df3d937d9e4ca40c6a -1 (connected: false, keepalive socket: false, socketHandledRequests: 1, socketHandledResponses: 0) headers: {}
 ```
 
-- config.xprofilerConsole = 'http://xxx.xxx.xxx.xxx:8443';
+- config.xprofilerConsole = 'xxx';
 - 这部分会提供给应用端，在调用转储的时候，应用端上传文件时候会请求 
 ```
   const url = `${server}/xapi/upload_from_xtransit?${qs.stringify({ fileId, fileType, nonce, timestamp, signature })}`;
