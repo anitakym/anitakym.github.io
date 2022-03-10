@@ -13,3 +13,5 @@ node的benchmark写的还是非常值得学习的
 - ```redis-benchmark -h [目标机的IP] -p [目标机的redis端口号] -a [目标机redis密码,可省略] –q```
 - 精简测试｜pipeline测试｜随机key测试
 - QPS（request per second）的情况
+
+

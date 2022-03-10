@@ -10,3 +10,10 @@ tags:
 ### PEP 8 -- Style Guide for Python Code
 - https://www.python.org/dev/peps/pep-0008/
 - flake8 ```pip install flake8```
+
+## 推荐
+### Jupyter Notebook
+- vscode 插件
+- https://github.com/jupyter/notebook
+- The Jupyter notebook is a web-based notebook environment for interactive computing.
+- https://jupyter-notebook.readthedocs.io/en/stable/
