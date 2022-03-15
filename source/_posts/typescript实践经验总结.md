@@ -228,13 +228,30 @@ type Flags = PatchFlags | ShapeFlags
 #### 泛型约束
 - 
 
-#### 映射
+### 映射
 - 映射是一个泛型类，接受两种类型：为映射使用的键的类型，以及在映射中存储的对象的类型
 - Map - get | set
 
 
-#### declare
+### declare
 - https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html
+#### declare module 'xxx'
+- 声明一个全局模块
+- 解决查找模块路径的问题
+```
+# env.d.ts
 
+/// <reference types="vite/client" />
+
+declare module '*.vue' {
+  import type { DefineComponent } from 'vue'
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
+  const component: DefineComponent<{}, {}, any>
+  export default component
+}
+```
+- 环境声明 - *.d.ts文件, 里面每个根级别的声明需要以declare作为前缀
+
+### 当你安装TypeScript时，会顺带安装一个lib.d.ts声明文件。这个文件包含JavaScript运行时及DOM（Document Object Model，文档对象模型）中存在的各种常见的JavaScript环境声明。● 它自动包含在TypeScript项目的编译上下文中。● 它能让你快速开始书写经过类型检查的JavaScript代码。
 ## tsconfig
 - strictNullCheck 建议设置true，如果有需要都允许的地方，可以使用联合类型
