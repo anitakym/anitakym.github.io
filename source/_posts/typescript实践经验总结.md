@@ -231,5 +231,10 @@ type Flags = PatchFlags | ShapeFlags
 #### 映射
 - 映射是一个泛型类，接受两种类型：为映射使用的键的类型，以及在映射中存储的对象的类型
 - Map - get | set
+
+
+#### declare
+- https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html
+
 ## tsconfig
 - strictNullCheck 建议设置true，如果有需要都允许的地方，可以使用联合类型
