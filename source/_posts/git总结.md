@@ -210,6 +210,15 @@ git push origin --delete v1.0.1
   "pre-commit": "lint:staged"
 ```
 
+## .git
+```
+# v8 - README.md
+For fetching all branches, add the following into your remote
+configuration in `.git/config`:
+
+        fetch = +refs/branch-heads/*:refs/remotes/branch-heads/*
+        fetch = +refs/tags/*:refs/tags/*
+```
 ## 工具
 ### sourcetree
 #### 搜索某个人提交

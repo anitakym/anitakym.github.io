@@ -23,7 +23,13 @@ npm help config // 查询config具体用法
 npm config set registry http://xxxxx/repository/npmjs.org/
 npm config get registry
 ```
+```
+package.json
+包在npm私有仓库中的的完整路径, 指明tgz包的版本，安装指定版本的npm包
+  "_resolved": "http:/xxx/repository/npmjs.org/xxxx/-/xxxx-1.1.9.tgz",
+也就是包_resolved字段里面那个值，我们发布了包之后，在管理端也能看到地址
 
+```
 #### nrm
 文档指路：https://www.npmjs.com/package/nr
 
