@@ -3,6 +3,9 @@ title: monorepo
 date: 2022-03-18 17:46:25
 tags:
 ---
+
+> https://static.frontendmasters.com/resources/2020-10-15-js-typescript-monorepos/js-ts-monorepos.pdf
+> https://github.com/mike-north/js-ts-monorepos/
 ## v3
 ```
 ## Project Structure
@@ -23,3 +26,7 @@ We also recommend installing [ni](https://github.com/antfu/ni) to help switching
 
 ## spectrum
 - Install yarn: We use yarn to handle our JavaScript dependencies. (plain npm doesn't work due to our monorepo setup) See the yarn documentation for instructions on installing it.
+
+
+## xstate
+- https://github.com/statelyai/xstate

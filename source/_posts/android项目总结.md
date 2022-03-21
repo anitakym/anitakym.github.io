@@ -62,3 +62,12 @@ Web调用原生提供的openPage的方法，中间会闪黑屏，Android的查�
             app:layout_constraintTop_toTopOf="parent" />
 
 ```
+## 混淆
+- build process
+## 加固
+- apk文件
+- 爱加密移动APP安全加固系统
+- https://www.ijiami.cn/AppProtect/
+### 问题处理
+- .so , https://developer.android.com/ndk/guides/abis?hl=zh-cn
+- 加固之后，之前处理webview的包，需要再加个插件，解决加固之后的问题

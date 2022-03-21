@@ -255,3 +255,8 @@ declare module '*.vue' {
 ### 当你安装TypeScript时，会顺带安装一个lib.d.ts声明文件。这个文件包含JavaScript运行时及DOM（Document Object Model，文档对象模型）中存在的各种常见的JavaScript环境声明。● 它自动包含在TypeScript项目的编译上下文中。● 它能让你快速开始书写经过类型检查的JavaScript代码。
 ## tsconfig
 - strictNullCheck 建议设置true，如果有需要都允许的地方，可以使用联合类型
+
+
+## sources
+- https://drive.google.com/file/d/170oHzpLNeprUa-TMmOAnSU4caEFDSb3e/view
+- https://github.com/mike-works/typescript-fundamentals/tree/v2#dependencies

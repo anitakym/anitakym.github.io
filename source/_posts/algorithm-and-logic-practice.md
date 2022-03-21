@@ -3,6 +3,31 @@ title: algorithm-and-logic-practice
 date: 2021-09-26 15:26:11
 tags:
 ---
+
+## Course in JS
+- http://btholt.github.io/four-semesters-of-cs/
+- https://btholt.github.io/four-semesters-of-cs-part-two/
+- 包括了 
+```
+Big O
+Recursion
+Bubble Sort
+Insertion Sort
+Merge Sort
+Quick Sort
+Set | Map | Stack | Queue - Data Structures - Interfaces
+Array List | Linked List | Binary Search Tree | AVL Tree | Hash Table - Data Structures - Implementations
+Map | Reduce | Filter - functional programming 
+Bloom Filters
+Tree Traversals
+Pathfinding
+Graphs
+Generating a Maze
+Tries
+Searching for an Element in an Array
+Heap Sort
+Radix Sort
+```
 ## 随便写写
 #### 水仙花数
 

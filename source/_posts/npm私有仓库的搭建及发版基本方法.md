@@ -63,6 +63,13 @@ tips:
 3. 进入Repository里面，根据1确认的 repositry，点击进去，在settings里面，修改Cleanup选项，刚刚配置的策略添加到applied里面即可；
 4. 点击system-tasks,点击 +Create task(type Admin-compact blob store)，可以选择手动触发，然后手动run一下，即进入清理模式；这个时候可以通过状态判断是否清理完成，我这边100多个G，大概running了1个多小时快2个小时才跑完；
 
+#### error
+```
+javax.servlet.ServletException: com.orientechnologies.orient.core.exception.OLowDiskSpaceException: Error occurred while executing a write operation to database 'component' due to limited free space on the disk (3898 MB). The database is now working in read-only mode. Please close the database (or stop OrientDB), make room on your hard drive and then reopen the database. The minimal required space is 4096 MB. Required space is now set to 4096MB (you can change it by setting parameter storage.diskCache.diskFreeSpaceLimit) . DB name="component"
+```
+- 跑task清理
+- {安装目录}/bin/nexus.vmoptions - storage.diskCache.diskFreeSpaceLimit = 2048
+
 
 ### nexus文档指路（sonatype）
 #### repository manager(注意根据自己搭建的版本选择文档)
