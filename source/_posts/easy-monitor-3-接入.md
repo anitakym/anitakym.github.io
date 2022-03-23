@@ -112,3 +112,14 @@ connect ECONNREFUSED 127.0.0.1:8443, POST http://127.0.0.1:8443/xapi/upload_from
 
 ### log_dir
 性能分析文件会比较大，尽量不要放在会太影响memory的位置
+
+
+### 一次内存泄漏问题排查
+
+- 基于puppeteer的一个转svg的node服务
+- 做压力测的时候，间隔时间gc,gc之后内存会往上涨
+- 借助easy-monitor3, 堆快照，发现TCP -> Socket -> WebSocket 是泄漏点
+- Search具体的，发现是WS
+- 在package-lock里面搜ws ,发现被puppeteer依赖
+- 这个时候查处理puppeteer部分的代码，发现有代码处理逻辑上，会错误的建立connect（对API使用有问题）
+- 让处理了下这部分代码，解决问题
