@@ -80,6 +80,7 @@ for rx in range(sh.nrows):
 ```
 npm install xlsx // https://www.npmjs.com/package/xlsx
 ```
+- https://docs.sheetjs.com/
 
 
 

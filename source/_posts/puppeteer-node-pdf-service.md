@@ -57,6 +57,42 @@ https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 
 ## 字体相关
 
+### 字体的一些基础知识
+#### Windows
+- https://docs.microsoft.com/en-us/typography/
+ -https://en.wikipedia.org/wiki/List_of_typefaces_included_with_Microsoft_Windows
+- 微软雅黑-vista开始提供的，win8之后，加入了light,默认win平台可以设置这个，效果最好；
+- Arial | Tahoma 等无衬线字体，西文选择
+#### Mac
+- https://en.wikipedia.org/wiki/List_of_typefaces_included_with_macOS
+---------旧一点
+- 华文黑体，华文细黑 10.6之前简体中文默认系统字体
+- 黑体 10.6之后
+- 冬青黑体 - 专业印刷字体，小字号清晰
+- Time New Roman - 西文衬线，Safari默认
+- Helvetica，Helvetica Neue - 可以看看history，有意思，苹果重金购买
+--------- 新一点
+- PingFang SC - 苹果为中文用户提供的 - 极细｜。。。｜中粗 - 6个
+- San Francisco - Capitan 上最新发布的
+#### linux
+- 文泉驿微米黑 - 简体中文
+
+
+### 默认声明
+- 尽量用英文，中文也写保险一点
+- 英文放在中文前面，这样不影响中文
+- `font-family: Helvetica, Tahoma, Arial;` 
+- `font-family: "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";`
+- `font-family: Helvetica, Tahoma, Arial, "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";`
+- `font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";`
+- `font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;` - 补充字体族
+- 可以参考各个类型网站的写法
+- 如果字体名称中间有空格，或者中文的，加上引号
+- 版权问题 - 思源黑体，我们打印就用的这个
+
+### 一些参考
+- https://github.com/zenozeng/fonts.css
+- https://github.com/sofish/typo.css - 好久以前的，可以看一眼
 ### 页眉页脚中文字体
 - https://www.npmjs.com/package/pdf-lib#embed-font-and-measure-text
 - https://github.com/Hopding/pdf-lib/issues/430
