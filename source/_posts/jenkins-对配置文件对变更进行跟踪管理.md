@@ -22,14 +22,13 @@ tags:
 
 #### node环境
 - nodejs插件：
-在插件管理面搜nodejs,安装即可
+在插件管理面搜nodejs,安装即可（https://plugins.jenkins.io/nodejs/）
 
 - 在系统管理->全局工具配置->nodejs
 新建一个nodejs环境
 
 - Provide Node & npm bin/ folder to PATH
 选择node版本
-
 ### 对配置文件对变更进行跟踪管理
 Job Configuration History
 对配置文件的变更进行跟踪管理

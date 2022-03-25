@@ -56,11 +56,25 @@ Charles - 代理软件 - SSL/流量控制/重发，修改请求等
 
 
 #### https请求抓取
+- 原理，Charles对客户端伪装成服务器，对服务器伪装成客户端
+- Help -> 添加Charles的根证书
 设备上下载完证书，点击证书，如果提示到设置里面安装，则可以在设置里面全局搜索：“证书”｜“安装证书”，就可以找到安装的地方了；
+- 问题解决：https://blog.csdn.net/liushaofang/article/details/106421834
 
 
-
-
+#### host
+- Tools 
+- Map Remote Settings
+- 选择enable map remote
+- Add 
+- (记得选择 Preserve host in header fields)
+```
+502 Bad Gateway
+The proxy server received an invalid response from an upstream server. Sorry for the inconvenience.
+Please report this message and include the following information to us.
+Thank you very much!
+如果不选择，会有相关报错
+```
 
 
 

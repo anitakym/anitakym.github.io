@@ -54,16 +54,23 @@ https://github.com/mzgoddard/hard-source-webpack-plugin/issues/416
 
 
 ### 构建性能优化
-https://webpack.docschina.org/guides/build-performance/
+#### official - doc
+- https://webpack.docschina.org/guides/build-performance/
 
-worker 池(worker pool) 
-thread-loader 可以将非常消耗资源的 loader 分流给一个 worker pool。
+> 将 Node.js 更新到最新版本，也有助于提高性能。除此之外，将你的 package 管理工具（例如 npm 或者 yarn）更新到最新版本，也有助于提高性能。较新的版本能够建立更高效的模块树以及提高解析速度。 - doc
+- loader | bootstrap | 解析 ｜ dll | smaller = faster | worker pool | 持久化缓存 ｜ 自定义的plugin和loader分析
 
-Warning
-不要使用太多的 worker，因为 Node.js 的 runtime 和 loader 都有启动开销。最小化 worker 和 main process(主进程) 之间的模块传输。进程间通讯(IPC, inter process communication)是非常消耗资源的。
-需要谨慎使用～
+#### Warning
+- worker 池(worker pool) 
+- thread-loader 可以将非常消耗资源的 loader 分流给一个 worker pool。
 
+- 不要使用太多的 worker，因为 Node.js 的 runtime 和 loader 都有启动开销。最小化 worker 和 main process(主进程) 之间的模块传输。进程间通讯(IPC, inter process communication)是非常消耗资源的。需要谨慎使用～
 
+#### 通用 ｜ 开发 ｜生产
+- 不同环境的优化
+
+#### reference
+- http://webpack.wuhaolin.cn/4%E4%BC%98%E5%8C%96/
 ### chokidar
 - https://www.npmjs.com/package/chokidar
 - Minimal and efficient cross-platform file watching library
@@ -77,3 +84,18 @@ Warning
 - 可以免安装
 - 注意webpack版本和对应的用法
 - ```npx webpack --no-devtool --mode development --target node14.5```
+
+
+## build process - JavaScript Bundler
+#### Rollup
+- https://github.com/rollup/rollup
+- https://rollupjs.org/guide/en/#tools - 和其他工具的集成
+#### microbundle
+#### snowpack
+#### Parcel
+- 简单好用
+
+
+## source
+- https://docs.google.com/presentation/d/1hFtMCMo62DgOIc-9OwgaVwPZHwv1cgMELArHcMbXlSI
+- https://github.com/thelarkinn/webpack-workshop-2018

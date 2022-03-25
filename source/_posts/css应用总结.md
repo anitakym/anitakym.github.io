@@ -57,3 +57,18 @@ outline不占据空间，绘制于元素内容周围。
 #### calc()
 - https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc()
 - 应用在嵌入到IOS，Android的应用的服务项前端页面
+
+
+#### white-space
+- 富文本相关的录入和渲染，英语学科对 
+`white-space: pre-wrap; work-break:work-break; text-align:justify;`
+- 这个会在Safari`text-align:justify;` 不生效； Safari 只设置 `text-align:justify;`才能生效；
+- https://developer.mozilla.org/zh-CN/docs/Web/CSS/white-space
+
+
+#### hover 
+- https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover
+- 媒体查询，可以判断hover的可用性
+- https://caniuse.com/?search=hover
+- can i use - See full reference on MDN Web Docs. As of Safari for iOS 7.1.2, tapping a clickable element causes the element to enter the :hover state. The element will remain in the :hover state until a different element has entered the :hover state.
+- js - window.matchMedia('(any-hover: hover)');

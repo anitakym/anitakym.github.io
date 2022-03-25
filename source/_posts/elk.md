@@ -20,6 +20,10 @@ tags:
 - filebeat - https://www.elastic.co/guide/en/beats/filebeat/current/index.html
 - https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html
 
+### 问题
+- 日志不活跃，filebeat关闭连接
+- filebeat配置有问题，导致收集路径错了，修改配置，重启下，索引创建，就能看到日志了
+
 ## LogStash
 - https://github.com/elastic/logstash
 - Logstash is part of the Elastic Stack along with Beats, Elasticsearch and Kibana. Logstash is a server-side data processing pipeline that ingests data from a multitude of sources simultaneously, transforms it, and then sends it to your favorite "stash." (Ours is Elasticsearch, naturally.). Logstash has over 200 plugins, and you can write your own very easily as well.

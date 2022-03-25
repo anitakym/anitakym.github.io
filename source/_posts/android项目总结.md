@@ -18,7 +18,8 @@ build => rebuild
 x5内核	原生webview
 内核版本	统一Blink内核(基于chromium)	4.4以下WebKit，4.4以上chromium
 
-
+### 调试
+- https://github.com/google/ios-webkit-debug-proxy
 ## Code-Review-Fix
 ### 闪黑屏
 ```
@@ -62,3 +63,13 @@ Web调用原生提供的openPage的方法，中间会闪黑屏，Android的查�
             app:layout_constraintTop_toTopOf="parent" />
 
 ```
+## 混淆
+- build process
+## 加固
+- apk文件
+- 爱加密移动APP安全加固系统
+- https://www.ijiami.cn/AppProtect/
+### 问题处理
+- .so , https://developer.android.com/ndk/guides/abis?hl=zh-cn
+- 加固之后，之前处理webview的包，需要再加个插件，解决加固之后的问题
+- 如果有注解的包，可能在加固之后容易有问题，需要做好处理
