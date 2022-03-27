@@ -37,3 +37,19 @@ tags:
 
 ### 腾讯云互动直播
 - https://cloud.tencent.com/solution/ilvb
+
+## 原生端和JS的通信
+- JavaScriptCore 桥阶层 - 翻译
+- RN对通信做了封装
+
+### 从RN向JS传递原生信息
+- 调用原生模块获取信息
+- 页面初始props
+- 原生端发送事件进行信息传递
+- 原生端设置JS全局变量
+
+```
+通信效率 | 时机问题 | 多入口场景 | 影响调试
+```
+
+### JavaScriptCore

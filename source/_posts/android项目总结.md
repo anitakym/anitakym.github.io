@@ -3,6 +3,7 @@ title: android项目总结
 date: 2021-11-01 16:14:13
 tags:
 ---
+
 ## 环境配置
 ### Error 
 #### Gradle sync failed: Could not install Gradle distribution from 'https://services.gradle.org/distributions/gradle-6.7.1-all.zip'. (40 s 221 ms)
