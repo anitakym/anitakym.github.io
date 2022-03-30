@@ -40,6 +40,7 @@ tags:
 1.4.1 编辑器 / IDE 31
 
 1.4.2 node-gyp 36
+- https://github.com/nodejs/node-gyp#installation
 
 1.4.3 其他构建工具 54
 

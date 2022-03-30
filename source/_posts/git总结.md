@@ -158,6 +158,10 @@ git commit --amend
 git rebase --continue
 ```
 
+### commit message
+```
+https://www.npmjs.com/package/@commitlint/config-conventional#type-enum
+```
 ### 关联远端仓库
 ```
 # 先查看下
