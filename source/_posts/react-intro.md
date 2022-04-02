@@ -72,3 +72,17 @@ class FetchData extends Components {
 ```
 ## lazy loadable
 React.lazy and Suspense are not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we recommend Loadable Components. It has a nice guide for bundle splitting with server-side rendering.
+
+## stric mode
+- Suggested: We strongly suggest you enable Strict Mode in your Next.js application to better prepare your application for the future of React.
+- 还是建议使用的，如果是新项目的话，能更好的适应React后续的发展
+- 16.3引入的，且对生产环境毫无影响，能在console中打印有用的警告信息
+- https://github.com/facebook/react/issues/17786 - 一个有意思的issue
+
+
+## reportWebVitals
+- web-vitals
+- https://www.npmjs.com/package/web-vitals
+- https://zhuanlan.zhihu.com/p/149662237
+- https://blog.chromium.org/2020/05/introducing-web-vitals-essential-metrics.html
+- essential metrics for a healthy site

@@ -74,3 +74,8 @@ Web调用原生提供的openPage的方法，中间会闪黑屏，Android的查�
 - .so , https://developer.android.com/ndk/guides/abis?hl=zh-cn
 - 加固之后，之前处理webview的包，需要再加个插件，解决加固之后的问题
 - 如果有注解的包，可能在加固之后容易有问题，需要做好处理
+
+### activity - launchmode - singletask
+android:launchMode="singleTask"
+停机维护页面,和服务端约定接口状态，给出弹窗
+改成singleTask，类似于web的单例模式，这样只有唯一一个弹框了
