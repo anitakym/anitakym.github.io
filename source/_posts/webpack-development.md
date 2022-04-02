@@ -99,3 +99,35 @@ https://github.com/mzgoddard/hard-source-webpack-plugin/issues/416
 ## source
 - https://docs.google.com/presentation/d/1hFtMCMo62DgOIc-9OwgaVwPZHwv1cgMELArHcMbXlSI
 - https://github.com/thelarkinn/webpack-workshop-2018
+
+## create-react-app
+### after eject
+#### lint
+```
+Parsing error: [BABEL] /Users/kuangyimin/Documents/公司/新东方/进行项目/yy/react-playground/scripts/build.js: Using `babel-preset-react-app` requires that you specify `NODE_ENV` or `BABEL_ENV` environment variables. Valid values are "development", "test", and "production". Instead, received: undefined.
+
+所以需要指定下
+NODE_ENV=development BABEL_ENV=development eslint . --ext .js,.jsx,.ts,.tsx src
+```
+
+
+#### test
+    "test": "node scripts/test.js",
+- 注意node版本
+```
+因为test的原因，node版本需要大于14.17.0
+不然
+```
+ import { PatternPrompt, printPatternCaret, printRestoredPatternCaret } from 'jest-watcher';
+                            ^^^^^^^^^^^^^^^^^
+    SyntaxError: Named export 'printPatternCaret' not found. The requested module 'jest-watcher' is a CommonJS module, which may not support all module.exports as named exports.
+    CommonJS modules can always be imported via the default export, for example using:
+
+    import pkg from 'jest-watcher';
+    const { PatternPrompt, printPatternCaret, printRestoredPatternCaret } = pkg;
+```
+- https://github.com/facebook/create-react-app/issues/11792
+
+```
+#### less
+- github.com/DocSpring/craco-less

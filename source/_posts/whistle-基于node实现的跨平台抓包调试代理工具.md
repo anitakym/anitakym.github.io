@@ -71,3 +71,10 @@ chrome://extensions/
 w2 stop
 w2 start
 ```
+
+### 真机调试
+- https://github.com/liriliri/whistle.chii
+- 原理和weinre差不多
+```
+与传统的Web Inspector的使用场景不同， Weinre的使用场景如下图， 调试的页面在手机上， 调试工具在PC的chrome， 二者通过网络连接通信。
+```
