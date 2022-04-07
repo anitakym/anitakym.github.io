@@ -56,5 +56,6 @@ So, the cause of this error is if code attempts to close the WebSocket connectio
 - 服务器推送信息
 - 服务器向客户端声明 - 接下来要发送的是流信息 streaming
 - 基于HTTP协议
-- IE/Edge不支持
+- IE/Edge低版本不支持
 - 单向通道
+- https://caniuse.com/eventsource

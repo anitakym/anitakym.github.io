@@ -85,3 +85,8 @@ localStorage.clear();
 #### 移动端
 - Note: 从iOS 5.1之后，移动端的Safari将localStorage数据存储在cache文件中，在操作系统的要求下，会偶尔进行清除，特别是空间不足时。
 - http://dev-test.nemikor.com/web-storage/support-test/
+
+
+#### localstorage
+- 同域跨页面通信可以借助localstorage的storage事件的监听，做一些处理；
+- https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute

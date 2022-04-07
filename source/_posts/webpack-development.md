@@ -131,3 +131,51 @@ NODE_ENV=development BABEL_ENV=development eslint . --ext .js,.jsx,.ts,.tsx src
 ```
 #### less
 - github.com/DocSpring/craco-less
+
+
+#### better-scripts
+```
+Executing script: build_diy
+
+to be executed: react-app-rewired build 
+false process.argv.includes('--analyze')
+当前环境为生产环境
+Creating an optimized production build...
+
+  `@babel/polyfill` is deprecated. Please, use required parts of `core-js`
+  and `regenerator-runtime/runtime` separately
+
+Treating warnings as errors because process.env.CI = true.
+Most CI servers set it automatically.
+
+Failed to compile.
+
+src/component-diy/layout/index.js
+  Line 9:1:  `@/component/QuestionTools` import should occur after import of `api/ajax-project`  import/order
+
+src/component/QuestionTools/components/SingleQuestion/index.js
+  Line 213:8:  JSX props should not use functions  react/jsx-no-bind
+  Line 231:8:  JSX props should not use functions  react/jsx-no-bind
+
+src/component/QuestionTypes/GapFillingQuestion/index.js
+  Line 87:5:  JSX props should not use functions  react/jsx-no-bind
+  Line 97:6:  JSX props should not use functions  react/jsx-no-bind
+
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! seal_react_backend_new@0.1.0 build:diy: `better-npm-run build_diy`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the seal_react_backend_new@0.1.0 build:diy script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+```
+```
+"build_prod": {
+      "command": "CI=false&&react-app-rewired build",
+      "env": {
+        "REACT_APP_BUILD_TYPE": "online"
+      }
+    },
+```
+CI设置为false，避免把warning当成error处理，导致构建直接退出
