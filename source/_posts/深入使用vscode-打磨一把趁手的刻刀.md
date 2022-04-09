@@ -140,6 +140,9 @@ vscode 里面，光标在哪一行，直接 cmd + c/x/v ,就可以复制/剪切�
 #### 选中word
 - cmd + d
 
+#### editor切换tab
+cmd + option + <- | -> 
+
 ## Words
 
 https://burkeholland.gitbook.io/vs-code-can-do-that/

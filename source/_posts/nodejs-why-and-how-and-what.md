@@ -36,8 +36,9 @@ tags:
 - call stack 调用栈 | try catch 如果不在包裹内，则无法捕捉
 - 事件循环 - setTimeout | 注意捕捉范围
 ### 事件循环
-
-
+- event loop
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+- https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop
 ### Promise
 - 当前事件循环得不到的结果，未来的事件循环会给到结果
 - 状态机 - pending | fulfilled/resolved | rejected

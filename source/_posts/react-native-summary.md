@@ -53,3 +53,16 @@ tags:
 ```
 
 ### JavaScriptCore
+
+
+## Core - Basic 
+### Component
+
+
+### Style
+
+
+### State
+- state - page里面会“动”的数据
+- state - 初选 ｜ 确定 ｜ 声明 ｜ 更新
+- 一件事情一个状态 & 重复状态去除 & 可计算的不是新状态
