@@ -42,3 +42,8 @@ ctx.fillRect(10, 10, 150, 100);
 如上，就是Chrome("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36")浏览器,当超过这个阈值后，绘画当方框无法显示出来。
 
 - 走势图高级绘图板的开发（画线图形算法，橡皮擦（兼容全系浏览器））—— 数据多的时候，保持性能。
+
+### canvas - font - 字体字号设置
+- https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#font
+- https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html#css-fonts
+- 可以按CSS的写法规范去设置

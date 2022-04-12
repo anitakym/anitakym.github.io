@@ -43,3 +43,8 @@ https://cloud.tencent.com/document/product/302/3449
     - 同步更新-Cache-Aside
     - 异步更新-Refresh-Ahead （Guava Cache）
   - 调度设计
+
+
+ #### dig
+ 查DNS的问题
+ 一般做了CDN缓存，可以用这个看看，或者新上的域名，运维配置有没有问题；

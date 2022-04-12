@@ -103,6 +103,7 @@ Windows,类似于任务管理器。
 #### nohup
 参考资料：https://developer.ibm.com/zh/tutorials/l-lpic1-103-5/
 
+
 #### curl
 curl - transfer a URL
 curl  is  a tool to transfer data from or to a server, using one of the supported protocols (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS,  IMAP, IMAPS,  LDAP,  LDAPS,  POP3,  POP3S,  RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP).

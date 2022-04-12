@@ -76,8 +76,13 @@ Thank you very much!
 如果不选择，会有相关报错
 ```
 
+## http://proxy.man/ssl
+#### 电脑端
+- https://proxyman.io
+#### 手机端：
+- ip + 端口号 进行wifi代理配置
 
+- 安装证书 http://proxy.man/ssl
 
-
-
+- 设置里面搜索 => 可信
 
