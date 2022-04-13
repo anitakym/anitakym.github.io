@@ -81,6 +81,16 @@ Ctrl + k
 删除一整行
 </pre>
 
+
+#### Network Time Proctocol - NTP
+- 如果系统时间存在误差，可以起Cron任务，配置NTP服务，定时同步
+```
+rpm -q ntp
+yum -y install ntp
+systemctl enable ntpd
+systemctl start ntpd
+```
+
 #### top
 这个是个蛮重要的，一般机器情况看下这个基本上就知道了(Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况)
 

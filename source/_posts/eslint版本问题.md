@@ -35,3 +35,6 @@ Module Warning (from ./node_modules/thread-loader/dist/cjs.js):
 Cannot read property 'range' of null
 
 ```
+
+#### eslint版本问题
+- 如果是在Linux机器上，16.x的node版本，安装之前用低版本
