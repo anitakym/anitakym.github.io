@@ -213,6 +213,12 @@ git push origin --delete v1.0.1
   },
   "pre-commit": "lint:staged"
 ```
+### yorkie
+- "githooks management forked from husky"
+- "authors": [
+    "Typicode <typicode@gmail.com>",
+    "Evan You"
+  ],
 
 ## .git
 ```
