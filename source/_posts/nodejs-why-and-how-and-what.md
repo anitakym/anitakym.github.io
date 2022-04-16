@@ -39,9 +39,11 @@ tags:
 - event loop
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 - https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop
+- 理解调用栈
 ### Promise
+#### What
 - 当前事件循环得不到的结果，未来的事件循环会给到结果
-- 状态机 - pending | fulfilled/resolved | rejected
+- 状态机 - pending => fulfilled/resolved | rejected
 - .then | .catch
 - rejected状态后无.catch的Promise，会造成browser｜node环境的全局错误
 - 回调函数的执行结果 - throw｜ return -> rejected | resolved
