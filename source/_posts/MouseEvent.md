@@ -39,3 +39,19 @@ The Y coordinate of the mouse pointer relative to the whole document.
 The X coordinate of the mouse pointer in global (screen) coordinates.
 - MouseEvent.screenY Read only
 The Y coordinate of the mouse pointer in global (screen) coordinates.
+
+## KeyboardEvent
+- https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
+- 键盘事件是由焦点系统控制的，一般来说，操作系统也会提供一套焦点系统，但是现代浏览器一般都选择在自己的系统内覆盖原本的焦点系统
+- 焦点系统认为整个 UI 系统中，有且仅有一个“聚焦”的元素，所有的键盘事件的目标元素都是这个聚焦元素
+- 浏览器也提供的API来处理焦点，focus,blur
+- 键盘事件为了跟 pointer 设备保持一致，也规定了从外向内传播的捕获过程
+```
+Note: KeyboardEvent events just indicate what interaction the user had with a key on the keyboard at a low level, providing no contextual meaning to that interaction. When you need to handle text input, use the input event instead. Keyboard events may not be fired if the user is using an alternate means of entering text, such as a handwriting system on a tablet or graphics tablet.
+```
+- key | code    keyCode ()
+
+## FocusEvent
+- https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent
+- https://javascript.info/focus-blur
+- https://w3c.github.io/uievents/#events-focusevent-doc-focus
