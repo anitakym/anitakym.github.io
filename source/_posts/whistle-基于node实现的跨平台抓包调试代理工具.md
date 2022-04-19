@@ -88,3 +88,15 @@ iphone｜ipad
 3. 数据线连接手机和电脑，信任设备
 4. 在手机Safari中打开需要调试的页面，在电脑上点击菜单栏的“开发”，选择手机，选择具体打开的页面
 5. 如果是APP里面的Webview，可以让iOS开发的老师提供可以debug的包（XXX的IOS端已开启，现在的包都是可以调试的），同Safari，只要进入APP需要调试的页面，在电脑打开Safari浏览器，选择页面，即可调试真机器上的页面；
+
+#### andriod
+
+1.设备连上电脑，选择信任
+2.设备里面的APP确保 WebView.setWebContentsDebuggingEnabled(true),xxx调试版本已经设置
+3.打开chrome://inspect/#devices
+都可以console里面打印performance信息，但是GPU的Chrome远程调试的时候performance也不提供
+
+如果要查看CPU使用率
+打开控制台之后：cmd + P => Mac
+输入：> show performance monitor
+即可查看
