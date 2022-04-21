@@ -148,3 +148,45 @@ Server: Tengine/2.2.3
 
 新项目：接口server
 Server: openresty/1.15.8.3
+
+### 301
+```
+curl -i 'https://xxxx/qqq/thursday/xxxx'
+HTTP/1.1 200 Connection established
+
+HTTP/1.1 301 Moved Permanently
+Server: nginx
+Date: Thu, 21 Apr 2022 08:55:36 GMT
+Content-Type: text/html
+Content-Length: 169
+Connection: keep-alive
+Location: http://xxxx/qqq/thursday/xxxx/
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
+Cache-Control: no-cache
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.18.0</center>
+</body>
+</html>
+
+```
+- 因为测试环境，前端多个项目配置了一个规则，规则这么配置的
+```
+location ~* ^/(qqq|xxx|xxxe|)/(env1|env2|env3|env4)/?(\w*) {
+                root /neworiental/latest/;
+                add_header 'Access-Control-Allow-Origin' '*';
+                add_header 'Access-Control-Allow-Credentials' 'true';
+                add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+                add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+                add_header 'Cache-Control' 'no-cache';
+                index index.html; 
+                try_files $uri $uri/ /$1/$2/$3/index.html;
+        }
+```
+- 这个时候，如果https://xxxx/qqq/thursday/xxxx 后面不加“/”，不是 https://xxxx/qqq/thursday/xxxx/ 的话，则会被重定向，因为nginx匹配规则有问题

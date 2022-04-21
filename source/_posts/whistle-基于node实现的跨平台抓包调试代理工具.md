@@ -100,3 +100,6 @@ iphone｜ipad
 打开控制台之后：cmd + P => Mac
 输入：> show performance monitor
 即可查看
+- https://developer.chrome.com/docs/devtools/evaluate-performance/reference/
+- https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
+- https://codepen.io/shospodarets/pen/QOQvyz - GPU渲染可用demo

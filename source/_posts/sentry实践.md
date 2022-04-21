@@ -185,10 +185,11 @@ project => settings => client keys
 ### Vue
 
 ```
-# 这段如果不加的话，写在.Vue文件里面的错误，就抛不到sentry上；但是写在.js文件里面抛的错误能到sentry上
+# 这段如果不加的话，写在.Vue文件里面的错误，就抛不到sentry上；但是写在.js文件里面抛的错误能到sentry上(当引用的是sentry/browser这个SDK的时候)
   Vue.config.errorHandler = err => {
     Sentry.captureException(err)
   }
+# 直接引用 sentry/vue的话，就可以不需要再引用上面的了，因为已经处理了
 ```
 
 ### Flutter
@@ -209,3 +210,8 @@ project => settings => client keys
 
 - issues
 - event - fingerprint
+
+## search
+- https://docs.sentry.io/product/discover-queries/query-builder/
+- https://docs.sentry.io/product/sentry-basics/search/
+- 支持wildcard匹配

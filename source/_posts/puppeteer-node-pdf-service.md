@@ -174,3 +174,22 @@ subset.encodeStream()
     - 封装格式（SFNT/Type 1）—— 封装成一个文件的方法
     - 编码方式（Unicode/CID） —— 决定字体里字符的内部编号、Unicode 以及轮廓的对应关系
 - 书本推荐：Fonts & Encodings - 作者: Yannis Haralambous
+
+
+## C端下载文件
+
+### web端
+- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition
+- 我们文件制作完成会上传腾讯云CDN
+- C端下载的话，注意content-disposition （看下response里面这部分的值）
+- 腾讯云支持query传参设定response里面的content-disposition的值
+```
+https://cloud.tencent.com/document/product/436/57420
+获取对象访问 URL
+功能说明
+查询对象访问的 URL，该接口不会判断对象是否真实存在。
+
+说明：
+如何使生成的对象URL在浏览器中打开是预览，而不是下载：在获取的url后拼接参数 response-content-disposition=inline
+如何使生成的对象URL在浏览器中打开是下载，而不是预览：在获取的url后拼接参数 response-content-disposition=attachment
+```
