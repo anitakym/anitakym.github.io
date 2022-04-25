@@ -229,6 +229,13 @@ configuration in `.git/config`:
         fetch = +refs/branch-heads/*:refs/remotes/branch-heads/*
         fetch = +refs/tags/*:refs/tags/*
 ```
+
+## git branch 
+- https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF
+- git branch -vv
+
+## Divergent history
+git log --oneline --decorate --graph --all
 ## 工具
 ### sourcetree
 #### 搜索某个人提交

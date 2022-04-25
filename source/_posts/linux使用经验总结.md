@@ -128,6 +128,16 @@ cURL 宽泛的网络协议支持可能是其最大的卖点。cURL 支持访问 
 cURL 也有一些简洁的安全特性。cURL 支持安装许多 SSL/TLS 库，也支持通过网络代理访问，包括 SOCKS。这意味着，你可以越过 Tor 来使用cURL。
 cURL 同样支持让数据发送变得更容易的 gzip 压缩技术。
 
+#### fx
+- https://github.com/antonmedv/fx
+```
+fx data.json
+# 不展开
+curl ... | fx # 点击可展开，可搜索 .xxx.xxx
+# 全部展开
+curl ... | fx .
+```
+- 查问题的时候，能方便看到json数据
 #### wget
 Wget - The non-interactive network downloader.
 

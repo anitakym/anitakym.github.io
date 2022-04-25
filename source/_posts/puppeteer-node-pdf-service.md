@@ -70,12 +70,15 @@ https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 - 黑体 10.6之后
 - 冬青黑体 - 专业印刷字体，小字号清晰
 - Time New Roman - 西文衬线，Safari默认
-- Helvetica，Helvetica Neue - 可以看看history，有意思，苹果重金购买
+- Helvetica，Helvetica Neue - 可以看看history，有意思，苹果重金购买（在根号这个字符的渲染上，这个接近微软雅黑的，没有横线）
 --------- 新一点
 - PingFang SC - 苹果为中文用户提供的 - 极细｜。。。｜中粗 - 6个
 - San Francisco - Capitan 上最新发布的
+- 可以看看苹果官网针对不同地区设置的字体
+
 #### linux
 - 文泉驿微米黑 - 简体中文
+- 思源黑体，（在根号这个字符的渲染上，这个接近Helvetica的，没有横线）
 
 
 ### 默认声明

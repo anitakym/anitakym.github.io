@@ -79,3 +79,7 @@ Web调用原生提供的openPage的方法，中间会闪黑屏，Android的查�
 android:launchMode="singleTask"
 停机维护页面,和服务端约定接口状态，给出弹窗
 改成singleTask，类似于web的单例模式，这样只有唯一一个弹框了
+
+### user-agent 大赏
+#### 小米平板
+- Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/89.0.4389.116 Safari/534.24 Device/nabu Model/21051182C XiaoMi/MiuiBrowser/14.6.62
