@@ -260,3 +260,12 @@ declare module '*.vue' {
 ## sources
 - https://drive.google.com/file/d/170oHzpLNeprUa-TMmOAnSU4caEFDSb3e/view
 - https://github.com/mike-works/typescript-fundamentals/tree/v2#dependencies
+
+
+## why
+> 用typescript的原因，是一种思维模式上面的减负；想应该想的，一些语言特性里面的遗留问题，不需要再想
+```
+undefined == null // true 
+undefined === null // false
+```
+https://github.com/lodash/lodash.git

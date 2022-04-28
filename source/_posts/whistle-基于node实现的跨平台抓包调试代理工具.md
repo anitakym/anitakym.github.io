@@ -78,7 +78,17 @@ w2 start
 ```
 与传统的Web Inspector的使用场景不同， Weinre的使用场景如下图， 调试的页面在手机上， 调试工具在PC的chrome， 二者通过网络连接通信。
 ```
+```
+# chii
+npm i chii -g
+chii start -p
+按说明，在项目中引入target.js
+# https 的前端页面
+可以把chii部署到自己的放置前端服务的服务器上,这样我们就有了https的域名，及调试的服务了
+或者借助whistle，代理搞定一切
+```
 
+- https://juejin.cn/post/6844903592424374285#heading-2
 #### Safari
 Mac
 iphone｜ipad

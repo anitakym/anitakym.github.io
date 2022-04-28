@@ -86,3 +86,6 @@ Thank you very much!
 
 - 设置里面搜索 => 可信
 
+### postman
+- 可发可抓
+- https://learning.postman.com/docs/sending-requests/capturing-request-data/capturing-http-requests/
