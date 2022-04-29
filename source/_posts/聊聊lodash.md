@@ -53,3 +53,44 @@ const template = _.template(source, { interpolate: /<%=([\s\S]+?)%>/g, variable:
 ```
 里面变量替换加渲染，默认的是基于loadash的template使用的
 https://lodash.com/docs/4.17.15#template
+
+
+### 类型判断
+- 里面提供了一些类型判断的方法
+- 哈哈哈，但是呢，还有一个项目
+- https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
+- 可见下面的is系列-在lodash里面grep is
+```
+isArguments.js
+isArrayBuffer.js
+isArrayLike.js
+isArrayLikeObject.js
+isBoolean.js
+isBuffer.js
+isDate.js
+isElement.js
+isEmpty.js
+isEqualWith.js
+isError.js
+isFunction.js
+isLength.js
+isMap.js
+isMatch.js
+isMatchWith.js
+isNative.js
+isNil.js
+isNull.js
+isNumber.js
+isObject.js
+isObjectLike.js
+isPlainObject.js
+isRegExp.js
+isSet.js
+isString.js
+isSymbol.js
+isTypedArray.js
+isUndefined.js
+isWeakMap.js
+isWeakSet.js
+```
+- 同样，可以看看You-Dont-Need-Lodash-Underscore里面给出的原生方法可以给到的实现
