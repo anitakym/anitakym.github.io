@@ -46,3 +46,5 @@ electron
 electron-builder
 electron-webpack
 ```
+
+### 截屏功能

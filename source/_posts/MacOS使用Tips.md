@@ -120,3 +120,19 @@ activity monitor （spotlight里面搜索）
 - window上： 运行-> cmd -> ifconfig -> 得到本机在局域网到ip
 - window上： 右键文件夹-> 属性 ->共享-> 高级 -> 共享此文件夹 -> 确定
 - Mac 上: 在 Finder 到前往里面选择’连接服务器’, 输入 smb://10.200.170.52（你获得的windows电脑的ip）,点连接， 然后输入windows的管理员的名称和密码即可（在windows的设置->账户信息里面可以查到）。
+
+
+## windows - 公司无线edu
+- 网络和共享中心-设置新的连接和网络-手动连接到无线网络
+- 网络名一定得为EDU，不然搜索不到
+- 网络名-EDU + 安全类型-WPA2-企业 —— 加密类型AES
+- 下一步 - 更改连接设置
+- 安全 - 设置 - 取消掉通过高验证证书来验证服务器的身份｜ 取消自动用Windows的账号登录
+- 安全 - 高级设置 - 802.1X设置 - 选择“指定身份验证模式（P）”
+```
+https://baike.baidu.com/item/WPA2/4913331
+WPA2 = IEEE 802.11i = IEEE 802.1X/EAP + WEP(选择性项目)/TKIP/CCMP
+
+大多数企业和许多新的住宅 Wi-Fi 产品都支持 WPA2。截止到 2006 年 03 月，WPA2 已经成为一种强制性的标准。WPA2 需要采用高级加密标准 (AES) 的芯片组来支持。
+WPA2 有两种风格：WPA2 个人版和 WPA2 企业版。WPA2 企业版需要一台具有 IEEE 802.1X 功能的 RADIUS (远程用户拨号认证系统) 服务器。没有 RADIUS 服务器的 SOHO 用户可以使用 WPA2 个人版，其口令长度为 20 个以上的随机字符，或者使用 McAfee 无线安全或者 Witopia Secure MyWiFi 等托管的 RADIUS 服务。
+```

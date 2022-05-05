@@ -43,6 +43,7 @@ cd ~/Library/Application Support
 cd ~/Library/Logs
 
 ### 公证
+- https://kilianvalkhof.com/2019/electron/notarizing-your-electron-application/
 现有软件，已用集团账号导出的证书进行了code signing —— 代码的开发者签名10.14
 
 https://support.apple.com/zh-cn/guide/mac-help/mh40616/mac 
@@ -87,7 +88,7 @@ xcrun altool --notarization-info "RequestUUID" --username "xxx@xxx.cn" --passwor
 ### McAfee(Win)
 - McAfee 我们当时遇到的问题是，集团给员工配置的电脑，会安装McAfee ，程序会McAfee 被删除。
 - 目前解决方案：
-1. 如果时集团配备的电脑自带的McAfee 软件，问题已解决，可以通过集团统一配置白名单，放行内部软件;
+1. 如果时集团配备的电脑自带的McAfee 软件，问题已解决，可以通过集团统一配置白名单，放行内部软件;
 2. 如果自己装的McAfee 软件，则有关闭实时扫描的权限，可以关闭实时扫描，避免误杀；
 - 集团那边收到的信息是，软件触发了自适应威胁防护清理，因为软件的信誉低于配置的清理阈值；
 - McAfee 关于误杀的问题，需要我们这边提供软件的英文操作说明，然后进行审核；
@@ -101,3 +102,39 @@ xcrun altool --notarization-info "RequestUUID" --username "xxx@xxx.cn" --passwor
 ```
 - 软件如果嵌入网页，尽量https，http请求很容易被判定为高风险
 - 我们这边本地没有部署TIE服务器
+
+#### windows - pfx签名
+- https://www.electron.build/code-signing.html
+- 按照build的官方文档操作即可
+- 因为我们是一个仓库，通过配置参数，打包不同的客户端，使用同一个pfx签名，所以配置到打包配置文件里面
+- 在build/xxx/config.js里面加上
+```
+win: {
+    icon: "build/xxx/icon.ico",
+    target: [
+      {
+        target: "nsis",
+        arch: [
+          "ia32"
+        ]
+      }
+    ],
+    // 新增下面
+    certificateFile: './codesign.pfx',
+    certificatePassword: 'xxxxxxxxxx'
+  },
+
+```
+有个安全性的问题
+一旦Windows进行提权的操作，可能会被误认为有危险性
+```
++    "requestedExecutionLevel": "requireAdministrator",
+     
+     "nsis": {
+-    "oneClick": true
++    "oneClick": false,
++    "perMachine": false,
++    "allowToChangeInstallationDirectory": true
+   },
+
+```

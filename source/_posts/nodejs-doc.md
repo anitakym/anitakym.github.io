@@ -12,12 +12,5 @@ http://nodejs.cn/api/path.html
 
 ### 项目经验
 node服务项目
-
-
-
-
-
-
-
 electron项目
 
