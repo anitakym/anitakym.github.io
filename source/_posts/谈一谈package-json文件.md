@@ -28,3 +28,11 @@ For most modules, it makes the most sense to have a main script and often not mu
 #### 中文字符
 - Package.json 里面不要出现中文，不然会出现解析错误
 -项目标题不要大写字母，要全小写
+
+
+### json
+- https://www.json.org/json-zh.html
+```
+A value can be a string in double quotes, or a number, or true or false or null, or an object or an array. These structures can be nested.
+```
+- 注意double quotes,双引号

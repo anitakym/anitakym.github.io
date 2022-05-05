@@ -78,3 +78,19 @@ knowledge，skills，abilities framework
 #### communicator
 
 # Word Power Made Easy
+
+
+# Songs
+## let it go
+- versus
+- chords
+- bridge
+
+# travel
+### taking a taxi
+- pick up | drop off | pull over
+- phrasel verbs
+- move over | move to the side | out of the way
+- parking lot | basement parking
+- make a u-turn | turn around
+- 
