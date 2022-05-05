@@ -7,15 +7,15 @@ tags:
 https://github.com/node-ffi-napi/node-ffi-napi
 
 ### 历史进展
-ffi
-ffi-napi
-1、这个项目太老了。NODE_MODULE_VERSION只支持到64,超过编译就报错，不管是node-gyp或者electron rebuild。
+- ffi
+- ffi-napi - A foreign function interface (FFI) for Node.js, N-API style
+1、ffi（不支持node12及以上）这个项目太老了。NODE_MODULE_VERSION只支持到64,超过编译就报错，不管是node-gyp或者electron rebuild。
 也就是说只要nodejs超过v12，则node-ffi编译就会报错，提示各种函数类型参数等不正确，只能node<v12来编译。。。
 2、node：https://nodejs.org/zh-cn/download/releases/
 electron:https://github.com/nodejs/node/blob/master/doc/abi_version_registry.json
-大家伙可以看上边连接来对应两者的NODE_MODULE_VERSION,版本不相等则无法在electron调用node-ffi。
-3、c模式的dll可以使用node-ffi，缺点nodejs不支持v12及以上，停更了。
-4、c++模式的dll，有高人提供了ffi-napi且支持到nodejs v12.，但v12版本也很低(对应electron v5 现在稳定是v9)
+对应两者的NODE_MODULE_VERSION,版本不相等则无法在electron调用node-ffi。
+3、c模式的dll可以使用node-ffi，缺点nodejs不支持v12及以上，停更了
+4、c++模式的dll，node-ffi-napi， 支持到nodejs v14.x - 可以看提交记录message
 
 ### 概述
 <pre>

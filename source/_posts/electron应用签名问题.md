@@ -138,3 +138,27 @@ win: {
    },
 
 ```
+
+### 清除缓存功能
+
+
+## 运维问题
+> 沉淀了两份文档，一份给运营一份给开发，还有Windows的一些操作指南
+● 先做预判，快速有个问题处理导向
+● 一定解决问题，不管通过什么方式
+● 注意问题记录，积累经验和话术
+### installer intergrity check has failed - 下载包不完整
+
+### 安装进度栏卡死 - 彻底卸载之前文件 - %appdata%
+
+### 系统问题，可以选择兼容性处理，右键属性-兼容性-以兼容模式运行这个程序
+
+
+### 安装完没有能创建快捷方式 - %appdata% -> 到安装目录，发送桌面快捷方式
+
+
+### 白屏 - 浏览器能打开里面嵌入到网页 - 确认是网络问题后
+- 控制面板 -> internet选项 -> 连接 -> 局域网设置
+
+### win7系统.net Framework版本过低
+- 登录Microsoft网站https://dotnet.microsoft.com/download/dotnet-framework，下载.net Framework最新版本（推荐.NET Framework 4.8 (recommended)），安装
