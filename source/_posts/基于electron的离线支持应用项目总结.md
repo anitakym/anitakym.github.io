@@ -55,3 +55,32 @@ electron-webpack
 This executable rebuilds native Node.js modules against the version of Node.js that your Electron project is using. This allows you to use native Node.js modules in Electron apps without your system version of Node.js matching exactly (which is often not the case, and sometimes not even possible).
 该可执行文件将根据您的Electron项目使用的Node.js版本重建本机Node.js模块。这使您可以在Electron应用程序中使用本机Node.js模块，而无需与系统版本的Node.js完全匹配
 - 可配置到script中
+
+### Arch
+
+#### 主进程
+- browser window（浏览器窗口，加载网页，注入JSSDK，挂window上面）
+- electron updater （客户端更新）
+- 客户端监控 - sentry
+
+#### 渲染进程
+- JSSDK （暴露给嵌入的页面）
+
+
+### 功能模块
+#### 文件下载
+- 网页向客户端提出下载的请求
+- 客户端提供了下载的功能，由客户端向服务的请求数据，完成下载，并回调给网页进度和状态
+- https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
+- JSSDK的注入是通过preload scripts
+
+
+### 网页端
+- babel 是可以配置 electron兼容的
+- https://babeljs.io/docs/en/options#targets
+"@babel/preset-env",
+      {
+        "targets": {
+          "electron": "9",
+        }
+      }
