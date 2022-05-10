@@ -203,3 +203,7 @@ https://grafana.com/grafana/dashboards/8339
 - 非常见步骤，mongo特有 $unwind - 展开数组 | $graphLookup - 图搜索 | $facet/$bucket - 分面搜索（电商常用）
 - OLTP | OLAP
 - 
+
+##  Client-Side Field Level Encryption
+- MongoDB 的客户端字段级加密功能
+- https://mp.weixin.qq.com/s/X7JKiK59iu9i7iacWnjsJg

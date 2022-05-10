@@ -40,6 +40,7 @@ tags:
 - wkwebview - 内存紧张，wkwebview会被回收，所以一些历史页面我们回不去
 
 #### wxs
+- https://www.zhihu.com/question/64732764/answer/316980141
 - wxs不依赖于运行时的基础库版本 - 可以在所有小程序版本里面运行
 - 运行在View线程里
 - 提高View层运行效率
