@@ -98,3 +98,14 @@ tags:
 - We have always assumed that applications are the thing
 - The real “thing” is delivering solutions through capabilities
 - APIs will always be a thing
+
+
+## 线上项目debug
+- arthas
+```
+2022-05-11 16:52:53.396 ERROR http-nio-8188-exec-26 com.xx.xxx.account.util.JwtUtil (JwtUtil.java:40)-
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2022-04-30T09:41:22Z. Current time: 2022-05-11T16:52:53Z, a difference of 976291396 milliseconds.  Allowed clock skew: 0 milliseconds.
+at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:385)
+```
+- http://arthas.gitee.io/
+- https://github.com/alibaba/arthas

@@ -27,3 +27,9 @@ tags:
 - caniuse
 - https://github.com/browserslist/browserslist
 
+### caniuse
+```
+Browserslist: caniuse-lite is outdated. Please run:
+npx browserslist@latest --update-db
+Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+```
