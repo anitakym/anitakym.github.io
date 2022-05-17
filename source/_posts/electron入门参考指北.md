@@ -6,6 +6,19 @@ tags:
 ---
 团队在electron方面的经验已经积累了2年多了，从较轻量级的客户端，到重量级的客户端；也不断有新同学想要学习或者加入相关项目的评审，这个时候回推荐一些相关的入门文档和demo,做个记录，之后可以直接扔链接了。
 
+### 安装网络问题
+```
+RequestError: socket hang up
+    at ClientRequest.<anonymous> 
+    at Object.onceWrapper (events.js:483:26)
+    at ClientRequest.emit (events.js:388:22)
+    at ClientRequest.origin.emit 
+    at TLSSocket.socketOnEnd (_http_client.js:499:9)
+    at TLSSocket.emit (events.js:388:22)
+    at endReadableNT (internal/streams/readable.js:1336:12)
+    at processTicksAndRejections (internal/process/task_queues.js:82:21)
+```
+- 保证网络即可
 
 ### learning-intro
 - https://electronjs.org/docs
@@ -93,3 +106,17 @@ The <ImageName> and <filename_extension> portions specify the name and extension
 ### 可参考他人踩坑文档
 https://www.yuque.com/arvinxx-fe/electron
 本质还是项目中遇到问题，解决问题，有空了彻底解决问题
+
+
+### app-builder
+- https://www.npmjs.com/package/app-builder-bin
+
+```
+app-builder
+Generic helper tool to build app in a distributable formats. Used by electron-builder but applicable not only for building Electron applications
+```
+- https://github.com/electron-userland/electron-builder
+```
+和node的版本有关 - 16.X的时候
+reify:app-builder-bin: timing reifyNode:node_modules/typescript Completed in 6782ms
+```
