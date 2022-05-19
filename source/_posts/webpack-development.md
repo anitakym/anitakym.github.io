@@ -76,6 +76,7 @@ https://github.com/mzgoddard/hard-source-webpack-plugin/issues/416
 - Minimal and efficient cross-platform file watching library
 - webpack-dev-server 的依赖
 - 比如说这个博客，基于hexo,hexo-fs也依赖chokidar
+- chokidar中有个依赖-fsevents
 
 ### webpack-cli
 #### 命令行工具cli

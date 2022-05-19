@@ -68,3 +68,9 @@ font-style: normal;
 4. 使用方式：
    直接在根据 class 名称(选择 Font Class,然后点复制代码)引用即可，名称可在 iconfont.css 查看，如果觉得名称有问题，可以在 iconfont 网站上面修改，然后更新 font 文件夹。
    `<i class="el-icon-third-share" />`
+
+## 同类平台
+FontAwesome（https://fontawesome.com/icons）
+ionicons（https://ionicons.com/）
+
+

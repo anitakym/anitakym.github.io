@@ -120,3 +120,24 @@ Generic helper tool to build app in a distributable formats. Used by electron-bu
 和node的版本有关 - 16.X的时候
 reify:app-builder-bin: timing reifyNode:node_modules/typescript Completed in 6782ms
 ```
+
+## feature
+#### -webkit-app-region
+- https://github.com/electron/electron/issues/1354
+- https://www.electronjs.org/zh/docs/latest/api/frameless-window
+- 父元素设置了，子元素不想，可以重新设置下子元素的这个属性
+
+#### window
+- 适时显示窗口
+- 不规则窗口的设置
+- 点击穿透透明区域 - trick
+- 多窗口资源竞争问题 （渲染进程通信 - node-fs.watch - token令牌来控制文件读写）
+- 模态窗口
+
+#### Mac｜win
+- process.versions.electron
+- nativeTheme.shouldUseDarkColors
+
+#### webContents
+- 监听页面事件
+- 页面加载时间 ｜ 页面跳转事件
