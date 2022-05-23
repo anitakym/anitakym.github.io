@@ -286,15 +286,7 @@ ping :Send ICMP ECHO_Request to network hosts
 reboot: Restart your computer
 sudo:Superuser do
  
-/bin = BINaries 
-/dev = DEVices 
-/etc = ETCetera 
-/lib = LIBrary 
-/proc = PROCesses 
-/sbin = Superuser BINaries 
-/tmp = TeMPorary 
-/usr = Unix Shared Resources 
-/var = VARiable ? 
+
 FIFO = First In, First Out 
 GRUB = GRand Unified Bootloader 
 IFS = Internal Field Seperators 

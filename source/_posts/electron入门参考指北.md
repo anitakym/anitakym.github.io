@@ -140,4 +140,12 @@ reify:app-builder-bin: timing reifyNode:node_modules/typescript Completed in 678
 
 #### webContents
 - 监听页面事件
-- 页面加载时间 ｜ 页面跳转事件
+- 页面加载时间 ｜ 页面跳转事件-navigate|redirect
+- webFrame - 访问和控制子页面的对象
+- getFoucusedWebContents
+
+#### Canvas|Svg
+- Canvas - 较小的画布上绘制大量元素，较强的频繁重绘能力 - 当绘制元素超出画布大小之后，绘制工作不再占用渲染资源
+- Svg - 大型渲染区域绘制少量元素，或者需要复杂事件交互逻辑的图形
+- Canvas - 线条变粗且颜色变淡的现象 - 计算机最小1px - 解决方案，宽度增加或者减少0.5个像素
+- PixiJS库
