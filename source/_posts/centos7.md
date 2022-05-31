@@ -271,9 +271,19 @@ firewall-cmd --zone=public --add-service=http
 # default 设置为drop
 firewall-cmd --zone=trusted --add-source=xxx.xxx.xxx.xx/24
 ```
-## SLB
-- 负载均衡
-- 访问流量-转发策略-后台服务器
-- 承载高并发，提高性能，高可靠性，后端服务冗灾
-- 内网的负载均衡一般没啥费用
-- 多可用区｜单可用区
+
+## 文件系统
+#### 基本
+- 装载 - 分区 - 格式化 => 文件系统
+- c6 - ext4,ext3,ext2   c7 - xfs  c7-ecs-ext4
+- xfs - 扩展性支持能力高于ext4
+
+#### 云盘
+- ECS存储空间
+- 数据隔离
+- 提升性能
+
+- /dev/vda ext4 /系统目录
+- /dev/vd* xfs /应用目录
+- fdisk /dev/vdb
+- mount 

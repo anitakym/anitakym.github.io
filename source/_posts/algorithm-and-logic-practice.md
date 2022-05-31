@@ -103,3 +103,5 @@ function isValid(s: string): boolean {
 
 ### 232 225 栈和队列的彼此实现
 
+
+### adjacency Matrix
