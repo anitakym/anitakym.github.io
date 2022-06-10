@@ -46,7 +46,10 @@ tags:
 - 状态机 - pending => fulfilled/resolved | rejected
 - .then | .catch
 - rejected状态后无.catch的Promise，会造成browser｜node环境的全局错误
-- 回调函数的执行结果 - throw｜ return -> rejected | resolved
+- 执行then，catch之后会返回一个新的Promise，该Promise的最终状态根据回调函数的执行结果决定
+- 回调函数：throw -> Promise状态是： rejected | return -> resolved
+- 如果回调函数return了一个Promise，这个Promise会和回调函数return的Promise状态保持一致
+- Promise.all  并发异步，catch拿第一个error的
 ### async/await
 - async function 是 Promise的语法糖封装
 - 以同步的方式写异步
