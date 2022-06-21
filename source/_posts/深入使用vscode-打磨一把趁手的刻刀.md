@@ -27,6 +27,12 @@ git clone https://github.com/burkeholland/workshop-vs-code-can-do-that
 
 ```
 code .
+
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
+code --diff file file
+code --goto file:line[:char]
+code --verbose
+
 ```
 
 需要先：
