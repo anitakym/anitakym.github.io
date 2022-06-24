@@ -42,11 +42,11 @@ Mac 的话，也可以构建任务流，这样就可以右键选择，里面“�
 
 - Mac 里面 Cmd 是主要的控制键，Windows 里面 Ctrl 是主要的控制键
 - 一些常用的快捷键(写成 Mac 的，Windows 的换控制键为 Ctrl 即可)
-  - sidebar 的切换(Cmd + B)
-  - 打开命令面板(Cmd + shift + P)
-  - 打开文件面板(Cmd + P)
-  - 打开设置(Cmd + ,)
-  - 集成终端视图切换(Ctrl + `) => (私人换了，一般应该是Cmd + `)
+- sidebar 的切换(Cmd + B)
+- 打开命令面板(Cmd + shift + P)
+- 打开文件面板(Cmd + P)
+- 打开设置(Cmd + ,)
+- 集成终端视图切换(Ctrl + `) => (私人换了，一般应该是Cmd + `)
 
 ### 定制编辑器
 
@@ -55,33 +55,33 @@ Mac 的话，也可以构建任务流，这样就可以右键选择，里面“�
 (Cmd/Ctrl + Shift + P)
 
 - "Preferences: Color Theme".
-  拖到最底下，可以下载想要安装的主题（颜色主题）
+拖到最底下，可以下载想要安装的主题（颜色主题）
 
 - "Preferences: File Icon Theme"
-  material 比较清晰，可以区分 workspace 和 file(icon 主题)
+material 比较清晰，可以区分 workspace 和 file(icon 主题)
 
 - FiraCode/Hasklig/Monoid
 
-  - https://github.com/tonsky/FiraCode
-  - https://github.com/i-tu/Hasklig
+- https://github.com/tonsky/FiraCode
+- https://github.com/i-tu/Hasklig
 
 - font ligatures
-  - 有些字体支持 "字体连字"。这些符号代表我们在编程中使用的复合符号。如果你正在使用的字体支持它们，你可以通过勾选 "Editor.Font Ligatures"框来打开它们。
+- 有些字体支持 "字体连字"。这些符号代表我们在编程中使用的复合符号。如果你正在使用的字体支持它们，你可以通过勾选 "Editor.Font Ligatures"框来打开它们。
 
 #### 编辑器调整
 
 - minimap(缩略图),其实不太好用，可以关掉
 
-  - Settings(Cmd+,) => 搜索 Minimap => 取消 enable 的选择
+- Settings(Cmd+,) => 搜索 Minimap => 取消 enable 的选择
 
 - sidebar 位置调整
 
-  - 在 cmd + shift + p
-  - 输入 toggle sidebar position
+- 在 cmd + shift + p
+- 输入 toggle sidebar position
 
 - open enditors (打开的编辑器)
-  - 其实我们可以通过 cmd + p 快速搜索文件，所以这部分如果想关掉，可以 Settings(Cmd+,) => 搜索 Explorer › Open Editors: Visible
-    “打开编辑器”窗格中显示的编辑器的数量。将其设置为 0 将隐藏“打开编辑器”窗格 => 还有别的设置，可以更细粒度的控制这部分
+- 其实我们可以通过 cmd + p 快速搜索文件，所以这部分如果想关掉，可以 Settings(Cmd+,) => 搜索 Explorer › Open Editors: Visible
+  “打开编辑器”窗格中显示的编辑器的数量。将其设置为 0 将隐藏“打开编辑器”窗格 => 还有别的设置，可以更细粒度的控制这部分
 
 #### 设置部分改成默认打开为 json
 
@@ -92,8 +92,8 @@ Mac 的话，也可以构建任务流，这样就可以右键选择，里面“�
 
 - cmd + shift + P => peacock:enter a color
 - settings 增加这两行，这样看起来颜色没那么鲜艳:
-  "peacock.affectActivityBar": false
-  "peacock.affectStatusBar": false
+"peacock.affectActivityBar": false
+"peacock.affectStatusBar": false
 
 ### 生产力提高技巧
 
@@ -101,7 +101,7 @@ Mac 的话，也可以构建任务流，这样就可以右键选择，里面“�
 
 - cmd + 0 焦点到 sidebar
 - cmd + 1 焦点到编辑器
-  下面几个都是英文首字母：
+下面几个都是英文首字母：
 - cmd + shift + e 资源管理器 explorer
 - cmd + shift + d 运行和调试 debug
 - ctrl + shift + g 源代码管理器 git
@@ -135,7 +135,7 @@ vscode 里面，光标在哪一行，直接 cmd + c/x/v ,就可以复制/剪切�
 
 - html/code 光标放在需要折叠的区域 cmd + shift + P => fold
 - fold region ，可以添加 a comment with //#region at the start of the block and //#endregion at the end.
-  创建折叠区域
+创建折叠区域
 - cmd + k + 0，0 是代码折叠级别,全部折叠，同理可以换用 1，2，3
 - cmd + k + j 展开所有代码块
 
@@ -154,13 +154,13 @@ cmd + option + <- | ->
 https://burkeholland.gitbook.io/vs-code-can-do-that/
 
 - That denotes that these are separate workspaces, not folders. Other icon themes will not make this distinction as you can see below in Chalice Icons.
-  这表示这些是独立的工作空间，而不是文件夹。其他图标主题不会做出这种区分，你可以在下面的 Chalice Icons 中看到。
+这表示这些是独立的工作空间，而不是文件夹。其他图标主题不会做出这种区分，你可以在下面的 Chalice Icons 中看到。
 
 - prerequisite | BrE priːˈrɛkwɪzɪt, AmE priˈrɛkwəzət |
-  A. noun
-  先决条件
-  ▸ to be a prerequisite for sth;
-  是某事的前提
+A. noun
+先决条件
+▸ to be a prerequisite for sth;
+是某事的前提
 
 - You can make some tweaks to the visual components of the editor to increase the available space and improve legibility.你可以对编辑器的视觉组件进行一些调整，增加可用空间，提高可读性。
 
@@ -178,3 +178,9 @@ vetur.experimental.templateInterpolationService
 
 - https://github.com/vuejs/rfcs/blob/script-setup/active-rfcs/0000-script-setup.md
 - https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md 里面搜索 <script setup>
+
+
+### ligatures
+https://worldofzero.com/posts/enable-font-ligatures-vscode/
+https://marketplace.visualstudio.com/items?itemName=sdras.night-owl
+https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons
