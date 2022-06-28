@@ -21,6 +21,9 @@ tags:
 ## nextjs
 - https://nextjs.org/docs/advanced-features/react-18/server-components
 - xxx.server.tsx | next.config.js 
+- https://www.nextjs.cn/docs/getting-started
+#### 应用场景
+- 比较适合宣传页等的mobile站的场景
 
 ## mdxjs.com
 

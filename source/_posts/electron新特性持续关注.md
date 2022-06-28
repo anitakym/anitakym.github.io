@@ -17,3 +17,7 @@ Electron13新特性
 - IPC通信（和Renderer Process）
 - electron API
 
+
+
+## 竞品
+- https://tauri.app/v1/guides/ - Rust

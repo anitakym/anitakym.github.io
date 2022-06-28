@@ -78,3 +78,23 @@ tags:
 
 
 ### 自定义组件
+
+
+
+
+
+## notes
+- 支付框不会触发App的onHide
+- 转发和分享到朋友圈会执行App的onHide
+
+
+## 微信清除web缓存
+- Android
+```
+按提示来就行，如果不支持切换X5内核，此方法不通
+1.http://debugx5.qq.com
+2.http://debugtbs.qq.com/
+3.debugmm.qq.com/?forcex5=true 
+
+我的 - 微信
+```
