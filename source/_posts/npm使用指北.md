@@ -62,6 +62,13 @@ npx create-react-app test-app
 ```
 npx主要用于命令行寻址等辅助功能上
 
+- 可以和degit(https://www.npmjs.com/package/degit)配合着使用，比如：https://github.com/antfu/vitesse/blob/main/README.zh-CN.md
+```
+npx degit antfu/vitesse my-vitesse-app
+cd my-vitesse-app
+pnpm i # 如果你没装过 pnpm, 可以先运行: npm install -g pnpm
+```
+
 ### yarn
 可以通过homebrew安装，也可以通过npm安装
 https://yarnpkg.com/getting-started

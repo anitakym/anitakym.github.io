@@ -12,3 +12,6 @@ tags:
 发送给数据库的query
 从数据库返回给API的result set
 ```
+
+### 携程基于GraphQL的BFF实践
+https://mp.weixin.qq.com/s/q05JeUZ0mfjhhCshhhPNtw

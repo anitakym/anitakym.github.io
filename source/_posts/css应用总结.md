@@ -72,3 +72,15 @@ outline不占据空间，绘制于元素内容周围。
 - https://caniuse.com/?search=hover
 - can i use - See full reference on MDN Web Docs. As of Safari for iOS 7.1.2, tapping a clickable element causes the element to enter the :hover state. The element will remain in the :hover state until a different element has entered the :hover state.
 - js - window.matchMedia('(any-hover: hover)');
+
+
+## unocss
+- https://antfu.me/posts/reimagine-atomic-css-zh 
+- 基本上上面这篇看完了就知道了
+- 原子化CSS
+```
+John Polacek 在 文章 Let’s Define Exactly What Atomic CSS is 中写道：
+Atomic CSS is the approach to CSS architecture that favors small, single-purpose classes with names based on visual function.
+译文：
+原子化 CSS 是一种 CSS 的架构方式，它倾向于小巧且用途单一的 class，并且会以视觉效果进行命名。
+```
