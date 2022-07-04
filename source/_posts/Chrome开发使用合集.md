@@ -45,6 +45,10 @@ If enabled, cookies without SameSite restrictions must also be Secure. If a cook
 
 #cookies-without-same-site-must-be-secure
 
+# 当一个页面嵌入iframe里面，这个时候，里面set-cookie的行为，会受到安全策略的影响
+# 场景，growingio的热力图
+![](https://img.imaginingme.cn/This%20Set-Cookie%20header%20didn%27t%20specify.png)
+
 </pre>
 
 #### preserve-log
