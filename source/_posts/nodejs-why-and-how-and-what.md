@@ -115,8 +115,9 @@ Express - http服务框架
 
 
 ## basic
-
+### globals
 #### process
+-  A swiss army knife global. An Object that contains all the context you need about the current program being executed. Things from env vars, to what machine you're on.
 ```
 当 Node.js 进程收到信号时，则将触发信号事件。 
 Linux supports the standard signals listed below.  The second
