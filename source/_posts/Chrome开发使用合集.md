@@ -50,7 +50,7 @@ If enabled, cookies without SameSite restrictions must also be Secure. If a cook
 ![](https://img.imaginingme.cn/This%20Set-Cookie%20header%20didn%27t%20specify.png)
 
 </pre>
-
+- https://web.dev/schemeful-samesite/?utm_source=devtools
 #### preserve-log
 ![](preservelog.png)
 

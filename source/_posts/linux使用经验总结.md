@@ -438,3 +438,9 @@ yacc = yet another compiler compile
 EOF = end of file(https://en.wikipedia.org/wiki/End-of-file)
 RPC = Remote Procedure Call(Remote Procedure Call (RPC) is a protocol that provides the high-level communications paradigm used in the operating system.)
 </pre>
+
+
+#### rpm
+- https://rpm.org/about.html
+- RPM软件包管理器（RPM）是一个强大的命令行驱动的软件包管理系统，能够安装、卸载、验证、查询和更新计算机软件包。
+- Install on RPM-based Linux (CentOS, Fedora, OpenSuse, Red Hat)

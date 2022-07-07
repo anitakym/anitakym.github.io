@@ -287,3 +287,4 @@ firewall-cmd --zone=trusted --add-source=xxx.xxx.xxx.xx/24
 - /dev/vd* xfs /应用目录
 - fdisk /dev/vdb
 - mount 
+
