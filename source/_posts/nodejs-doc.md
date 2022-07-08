@@ -14,3 +14,8 @@ http://nodejs.cn/api/path.html
 node服务项目
 electron项目
 
+### globals
+- https://nodejs.org/api/globals.html
+
+### Module
+- https://nodejs.org/api/packages.html

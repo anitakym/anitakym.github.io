@@ -5,6 +5,9 @@ tags:
 ---
 
 ## 环境配置
+
+### doc
+- https://developer.android.com/studio/releases/platforms#9.0
 ### Error 
 #### Gradle sync failed: Could not install Gradle distribution from 'https://services.gradle.org/distributions/gradle-6.7.1-all.zip'. (40 s 221 ms)
 - ping了下这个域名 -> ping: cannot resolve https://services.gradle.org/distributions/gradle-6.7.1-all.zip: Unknown host
