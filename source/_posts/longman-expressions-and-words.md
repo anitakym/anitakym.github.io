@@ -94,3 +94,9 @@ knowledge，skills，abilities framework
 - parking lot | basement parking
 - make a u-turn | turn around
 - 
+
+## class
+#### restaurant
+- booth (sit at a booth)
+- a table for 
+- patio
