@@ -7,3 +7,4 @@ public/
 .deploy*/
 .cloudbaserc.json
 cloudbaserc.json
+package-lock.json
