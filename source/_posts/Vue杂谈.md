@@ -26,3 +26,7 @@ tags:
 - 实现一个全选功能，看看对数据驱动思维的理解程度，具体到API层面，可以利用computed（get, set）来实现，还能利用好这个API的缓存优化特性；
 
 - 逻辑完备性 - 条件渲染处理数据有无场景
+
+
+## retiring 系列
+- vue-resource - 可以看看官方发的文章，为什么要retiring it
