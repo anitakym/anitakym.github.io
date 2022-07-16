@@ -6,7 +6,7 @@ tags:
 ## history
 Unix（FreeBSD） - 贝尔实验室
 Minix - 安德鲁
-Linux - Linus Torvalds - (Redhat -> Centos | Ubuntu )
+Linux - Linus Benedict Torvalds - (Redhat -> Centos | Ubuntu )
 
 ## 使用率
 

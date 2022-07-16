@@ -100,3 +100,20 @@ knowledge，skills，abilities framework
 - booth (sit at a booth)
 - a table for 
 - patio
+
+
+### songs
+#### songs
+- in the end - Linkin Park
+- let it go - Lopez
+- somebody to love - Queen
+- the sound of silence - Simon & Garfunkel
+
+## channel
+### nts
+
+
+### dan
+- solving math exercises live
+- studio
+- 
