@@ -109,6 +109,14 @@ knowledge，skills，abilities framework
 - somebody to love - Queen
 - the sound of silence - Simon & Garfunkel
 
+### Idiom
+```
+have ants in your pants
+behind closed doors
+behind the scenes
+under the table
+deliver the goods
+```
 ## channel
 ### nts
 
@@ -117,3 +125,4 @@ knowledge，skills，abilities framework
 - solving math exercises live
 - studio
 - 
+
