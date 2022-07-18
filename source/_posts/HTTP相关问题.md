@@ -213,3 +213,8 @@ Cache-Control: no-cache
 ## HTTPS - SSL
 
 可见“升https”博文
+
+### Connection
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Keep-Alive
+- (HTTP/2 does not use the Connection header field to indicate
+   connection-specific header fields)

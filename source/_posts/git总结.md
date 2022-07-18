@@ -240,3 +240,4 @@ git log --oneline --decorate --graph --all
 ### sourcetree
 #### 搜索某个人提交
 View - Search View - User
+git log --author=="xxxx"

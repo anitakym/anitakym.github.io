@@ -26,6 +26,7 @@ https://github.com/puppeteer/puppeteer/blob/main/docs/api.md
 也有troubleShooting的文档：
 https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 
+基于 -  DevTools Protocol 
 ## History
 
 ### 几次技术改造
@@ -196,3 +197,20 @@ https://cloud.tencent.com/document/product/436/57420
 如何使生成的对象URL在浏览器中打开是预览，而不是下载：在获取的url后拼接参数 response-content-disposition=inline
 如何使生成的对象URL在浏览器中打开是下载，而不是预览：在获取的url后拼接参数 response-content-disposition=attachment
 ```
+
+#### --no-sandbox
+- 如果服务端root权限下运行
+- running as root without --no-sandbox is not supported
+- linux 里面使用Chrome也是这个道理，都会有这个权限问题
+
+#### iframe
+- 等待加载完成 - page.waitFor(提供各种模式)
+```
+It's generally recommended to not wait for a number of seconds, but instead use Page.waitForSelector(), Page.waitForXPath() or Page.waitForFunction() to wait for exactly the conditions you want.
+```
+## Others
+#### 如果需要打印PPT呢？
+- 模拟翻页操作
+- 每次翻页之后，获取需要打印的DOM - this.page.evaluate(domStr => document.body.innerHTML = domStr, content);
+- https://pptr.dev/api/puppeteer.page.evaluate/
+- 后台打印可用超管账号（增加中间件）

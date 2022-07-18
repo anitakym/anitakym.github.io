@@ -78,6 +78,17 @@ https://github.com/sindresorhus/is-online
 https://www.electronjs.org/docs/tutorial/online-offline-events
 
 
+### sentry - error
+- Error: EBUSY: resource busy or locked
+```
+The main reason you are seeing this error is due to a program putting a lock on the folder for whatever reason. Testing the command while closing programs one at a time can help resolve the issue and let you know which program is the culprit.
+One issue people were having was with anti-malware on windows. You can read through this thread here:
+https://github.com/npm/npm/issues/13461
+In case link stops working here was the most upvoted comment:
+In Windows 10 64-bit OS, I have resolved this issue by uninstalling Anti-Malware software. - 卸载杀毒软件
+Another way you can trigger this error is if you are running an npm run [command] while cd'd into the directory that its altering. This happened to me where I closed every program and it didn't work, but realized I was inside the dist folder which needed to be removed and rebuilt. This triggered the Error: EBUSY: resource busy or locked, rmdir error in PowerShell and can be reproduced every time.
+```
+
 ### Preload
 webPreferences-preload
 (https://www.electronjs.org/docs/api/browser-window)

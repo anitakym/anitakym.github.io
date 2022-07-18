@@ -79,7 +79,7 @@ Font Book.app
 可参考：https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md
 
 翻译类：
-Google DeepL translator
+Google DeepL translator - https://www.deepl.com/app/thanks
 极光词典（Mac和IOS都可以使用）
 工具类：
 magnet（https://magnet.crowdcafe.com/?utm_source=help）—— 分窗口软件

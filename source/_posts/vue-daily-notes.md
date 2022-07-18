@@ -86,3 +86,30 @@ var vm = new Vue({...})
 
 
 ### 
+
+## API
+
+### 组件基础
+#### 动态组件
+- 有的需求会想要在两个组件间来回切换，比如 Tab 界面
+- 当使用 <component :is="..."> 来在多个组件间作切换时，组件会在被切换掉后卸载。我们可以通过 <KeepAlive> 组件强制不活跃的组件仍然保持“存活”的状态
+### options API
+#### options: State
+- 一个返回组件实例初始响应式状态的函数
+- data : A function that returns the initial reactive state for the component instance.
+- 定义为一个函数而不是对象 => 因为对象会互相影响
+- https://staging-cn.vuejs.org/api/options-state.html#data
+```
+interface ComponentOptions {
+  data?(
+    this: ComponentPublicInstance,
+    vm: ComponentPublicInstance
+  ): object
+}
+```
+
+
+### 内置组件
+#### KeepAlive
+- https://staging-cn.vuejs.org/guide/built-ins/keep-alive.html#basic-usage
+- 可以用include正则匹配
