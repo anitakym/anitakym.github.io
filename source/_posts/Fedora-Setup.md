@@ -26,3 +26,22 @@ tags:
 
 ### Documents
 - https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/Preface/
+
+
+### network
+```
+client:
+tar xzvf xxx-x64-linux.tar.gz
+cd xxx-x64-linux
+./xxx(abbr)
+
+profiles 
+download from a url
+
+system:
+network proxy
+manual
+
+http proxy 127.0.0.1 xxxx(port)
+https proxy 127.0.0.1 xxxx(port)
+```
