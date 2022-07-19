@@ -51,6 +51,11 @@ If enabled, cookies without SameSite restrictions must also be Secure. If a cook
 
 </pre>
 - https://web.dev/schemeful-samesite/?utm_source=devtools
+
+#### 如果cookie写入有问题
+- 可以点开set-cookie里面，三角形感叹号里面的提示，一般就是浏览器不让set的原因
+- https://angel.co/today/stories/chrome-83-arrives-with-redesigned-security-settings-third-party-cookies-blocked-in-incognito-21796
+- 83开始，隐私模式下，第三方cookie是被block的
 #### preserve-log
 ![](preservelog.png)
 

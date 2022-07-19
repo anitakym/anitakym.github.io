@@ -109,3 +109,14 @@ at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:385)
 ```
 - http://arthas.gitee.io/
 - https://github.com/alibaba/arthas
+
+
+
+## 安全
+- 紧急漏洞
+涉及应用
+Jackson - Jackson-databind 反序列化漏洞(CVE-2021-20190)
+log4j - Apache Log4j 远程代码执行漏洞(CVE-2021-44228、CVE-2021-45046)
+FastJSON - FastJSON＜=1.2.80 反序列化漏洞
+XStream - XStream 远程代码执行漏洞(CVE-2021-29505)
+Saltstack - SaltStack 未授权访问漏洞(CVE-2021-21996、CVE-2021-22004、CVE-2021-31607)

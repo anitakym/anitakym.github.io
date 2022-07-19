@@ -15,3 +15,6 @@ tags:
 需要比较长解释的，就单独新一个链接
 Event-Loop事件循环
 垃圾回收
+
+
+https://v8.dev/blog/math-random

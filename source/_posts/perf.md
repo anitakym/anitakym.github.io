@@ -31,3 +31,30 @@ centos
 yum install perf
 
 perf top 可以实时查看当前系统进程函数占用率情况
+
+### debug
+```
+python id
+
+获取的都不是真实内存
+
+
+id(object)
+Return the “identity” of an object. This is an integer which is guaranteed to be unique and constant for this object during its lifetime. Two objects with non-overlapping lifetimes may have the same id() value.
+CPython implementation detail: This is the address of the object in memory.
+Raises an auditing event builtins.id with argument id.
+```
+https://medium.com/fhinkel/debug-v8-in-node-js-core-with-gdb-cc753f1f32
+
+
+js取不到的，用chrome的heap snapshot，能看到一个等价的地址，但不是真实的内存地址
+
+js不提供对内存的直接访问，debug工具也只提供到vm的虚拟内存空间，想要取到底层的进程虚拟内存空间，只有用gdb去调试引擎源代码
+
+https://www.v2ex.com/t/210556  -  JavaScript 堆内存分析新工具 OneHeap
+
+https://v8.dev/docs
+
+javascript heap snapshot
+
+https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots
