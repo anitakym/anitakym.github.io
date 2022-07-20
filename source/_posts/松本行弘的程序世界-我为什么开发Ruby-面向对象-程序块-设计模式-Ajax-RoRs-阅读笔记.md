@@ -44,7 +44,14 @@ tags:
 
 
 ## Ajax
-
+- https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX
+- https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest
+- 90年代末 - MS Outlook =>IE (XMLHttp) | 其他浏览器XMLHttpRequest => 使浏览器能从JavaScript中发出Http请求
+- 2005 => Jesse James Garrentt => https://courses.cs.washington.edu/courses/cse490h/07sp/readings/ajax_adaptive_path.pdf => 本质：用XHR获取数据，然后修改当前页面
+- 创建XHR对象 - 告诉该对象要请求什么信息，设置成功或错误处理程序，然后实际地发送请求（new | open | onload | onerror | send）
+#### fetch - 新的API
+- 基于promise
+- https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API
 
 ## Ruby on Rails
 ### MVC 和 Ruby on Rails

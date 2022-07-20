@@ -21,12 +21,23 @@ tags:
 
 #### chrome://chrome-urls/
 里面有Chrome urls的合集
+
+#### 开发者工具
+- developers.google.cn/web/tools/chrome-devtools/javascript/breakpoints
+- developers.google.cn/web/tools/chrome-devtools/javascript/reference
+
+#### 查看调用堆栈
+- 显示不断进行的函数调用顺序
+- 底部
+- 第一个运行的函数
 #### chrome canary
 
 
 #### Disable cache
 只有在开发者工具打开的时候，才会生效; 鼠标上去可以看到提示：disable cache（while devtools is open）
 
+#### 搜索
+- ctrl/cmd + P 搜索特定文件
 
 #### samesite问题
 服务端利用cookies写入一些信息，
