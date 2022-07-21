@@ -24,3 +24,11 @@ pip install --upgrade pip
 ```
 
 ### 运维老师对sudo版本升级
+
+
+### Fedora - 36
+```
+Ansible is updated to Ansible 5. Playbooks may behave differently. Users are encouraged to read the upstream Porting Guide for further information.
+
+Additionally, Ansible is now shipped as multiple packages: ansible-core (the engine) and a curated set of Ansible collections (ansible-collection-*). The command dnf install ansible will install ansible-core as well as the Ansible collections included in the upstream Ansible releases. You can also choose to dnf install ansible-core and then manually install collections from the individual packages or with the ansible-galaxy command.
+```

@@ -52,3 +52,9 @@ https proxy 127.0.0.1 xxxx(port)
 
 ### 字体显示问题
 - 先是系统语言设置为了英文，这种情况下的中文渲染不是简体字，切换为中文系统语言，保留之前英文的文件夹命名
+
+#### rpm
+- https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/RPM/
+
+#### wayland
+- https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/Wayland/
