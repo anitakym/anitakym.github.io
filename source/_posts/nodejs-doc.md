@@ -19,3 +19,24 @@ electron项目
 
 ### Module
 - https://nodejs.org/api/packages.html
+
+
+
+### querystring
+- https://nodejs.org/dist/latest-v16.x/docs/api/querystring.html
+```
+/**
+ * The `querystring` module provides utilities for parsing and formatting URL
+ * query strings. It can be accessed using:
+ *
+ * ```js
+ * const querystring = require('querystring');
+ * ```
+ *
+ * The `querystring` API is considered Legacy. While it is still maintained,
+ * new code should use the `URLSearchParams` API instead.
+ * @deprecated Legacy
+ * @see [source](https://github.com/nodejs/node/blob/v18.0.0/lib/querystring.js)
+ */
+```
+- https://nodejs.org/dist/latest-v16.x/docs/api/url.html#class-urlsearchparams
