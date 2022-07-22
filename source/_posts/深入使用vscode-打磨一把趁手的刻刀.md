@@ -184,3 +184,7 @@ vetur.experimental.templateInterpolationService
 https://worldofzero.com/posts/enable-font-ligatures-vscode/
 https://marketplace.visualstudio.com/items?itemName=sdras.night-owl
 https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons
+
+
+#### debug
+F5进入debug模式

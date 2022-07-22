@@ -17,3 +17,7 @@ tags:
 - https://github.com/jupyter/notebook
 - The Jupyter notebook is a web-based notebook environment for interactive computing.
 - https://jupyter-notebook.readthedocs.io/en/stable/
+
+## lib
+#### contextlib
+- https://pymotw.com/3/contextlib/index.html
