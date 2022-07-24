@@ -14,3 +14,14 @@ Jeff Morrison
 
 
 #### log
+
+
+
+## others
+
+#### jasmine - 基于BDD
+- behavior-driven development
+- 行为驱动测试 - 通过用自然语言书写非程序员可读的测试用例
+- observable
+- reducer - 纯函数 - 好测试
+- 一个命令行就可以生成spec - angular

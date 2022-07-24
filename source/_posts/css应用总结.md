@@ -84,3 +84,11 @@ Atomic CSS is the approach to CSS architecture that favors small, single-purpose
 译文：
 原子化 CSS 是一种 CSS 的架构方式，它倾向于小巧且用途单一的 class，并且会以视觉效果进行命名。
 ```
+
+#### querySelector | querySelectorAll
+- 如果选择器是一个ID，并且这个ID错误使用多次，返回第一个匹配该ID的元素
+- CSS伪类不会返回任何元素，selectors API
+
+#### object-fit/object-position
+- css3
+- https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit

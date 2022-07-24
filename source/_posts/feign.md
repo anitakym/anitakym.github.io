@@ -14,10 +14,6 @@ https://github.com/OpenFeign/feign
 
 为什么要使用feign呢？
 
-
-
-
-
 #### feign的扩展：
 
 提高扩展性，使用者可以不修改框架源码的情况下，为框架扩展新的功能（类似于插件模式）
@@ -53,3 +49,26 @@ public class ResponseErrorDecoder implements ErrorDecoder {
   }
 }
 ```
+
+
+
+### other cases
+#### A
+hystrix - https://github.com/Netflix/Hystrix
+降级方案 - 系统之间feign调用
+
+#### B
+- sentinel - 资源|规则 - 流量控制-自由选择控制的角度，灵活组合，从而达到想要的效果 -熔断降级-降低调用链路中的不稳定资源 - 系统负载保护
+- sentinel(面向分布式服务架构的流量控制组件) - 适配feign
+```
+feign.sentinel.enable=true
+error
+NoSuchMethodErrorfeign.RequestTemplate.path（）Ljava / lang / String;
+版本不匹配 - spring-cloud-starter-alibaba-sentinel feign-core
+解决 - 添加流量规则
+Method：http://service-name/path
+```
+
+#### C
+okhttp3性能 > httpclient
+feign底层 更换为 okhttp3

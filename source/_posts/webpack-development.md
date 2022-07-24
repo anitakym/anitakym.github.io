@@ -180,3 +180,5 @@ npm ERR! This is probably not a problem with npm. There is likely additional log
     },
 ```
 CI设置为false，避免把warning当成error处理，导致构建直接退出
+
+#### lint需要再配置

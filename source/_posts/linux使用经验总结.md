@@ -444,3 +444,10 @@ RPC = Remote Procedure Call(Remote Procedure Call (RPC) is a protocol that provi
 - https://rpm.org/about.html
 - RPM软件包管理器（RPM）是一个强大的命令行驱动的软件包管理系统，能够安装、卸载、验证、查询和更新计算机软件包。
 - Install on RPM-based Linux (CentOS, Fedora, OpenSuse, Red Hat)
+
+#### dump
+- 备份文件系统
+- Fedora - https://installati.one/fedora/34/dump/
+
+#### lsbrelease
+- https://refspecs.linuxfoundation.org/LSB_3.0.0/LSB-PDA/LSB-PDA/lsbrelease.html

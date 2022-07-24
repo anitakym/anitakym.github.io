@@ -23,3 +23,7 @@ https://developers.google.com/web/shows/ttt/series-2/es2015
 - Class 和普通构造函数有何区别
 - Promise 的基本使用和原理
 - ES6 常用功能
+
+#### Set
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set
+- 可以模拟并|交|差|子 集

@@ -7,8 +7,14 @@ tags:
 https://btholt.github.io/complete-intro-to-react-v4/
 https://btholt.github.io/complete-intro-to-react-v5/
 
-
-
+## basic
+- 声明式UI，组件化
+- 解决应用的主要问题|用户界面的问题（工作量）
+- 2015.8 - facebook F8
+- react - UI库
+- 定义（代码偏向声明式）一次用户界面，用在多个地方
+- 状态（state） => 自动反应，更新界面
+- 只维护应用的状态
 
 ## 实践项目中遇到的一些问题
 > 因为react相关项目是另外一个组负责，组间评审的时候，会看下项目，下面为遇到的一些问题

@@ -21,3 +21,8 @@ Electron13新特性
 
 ## 竞品
 - https://tauri.app/v1/guides/ - Rust
+
+### electron-to-chromium
+- This repository provides a mapping of Electron versions to the Chromium version that it uses.
+- 提供version Mapping
+- https://www.npmjs.com/package/electron-to-chromium

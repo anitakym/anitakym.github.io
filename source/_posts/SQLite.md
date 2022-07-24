@@ -106,3 +106,7 @@ datagrip
 - 数据库建模
 PDMan (http://www.pdman.cn/#/)
 PD(PowerDesigner)
+
+## sqlite testing
+www.sqlite.org/testing.html
+很好的一篇讲sqlite在测试方面做的工作

@@ -197,6 +197,11 @@ $.fn.testfunc.defaults = {
 4. 调用时可传入设定值以便覆盖默认值
 5. 过滤特定元素
 
+#### 事件
+- https://api.jquery.com/click/
+- click 如果事件处理函数里面有延迟执行，可能会被浏览器拦截
+
+#### 动画
 
 ### 一些jquery的项目
 - The No Hassle JavaScript Colorpicker（bgrins.github.io/spectrum/）

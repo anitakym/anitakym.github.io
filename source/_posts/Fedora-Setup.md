@@ -32,16 +32,21 @@ tar xzvf xxx-x64-linux.tar.gz
 cd xxx-x64-linux
 ./xxx(abbr)
 
+if clash
 profiles 
 download from a url
+allow LAN
+system proxy
+start with linux
 
 system:
 network proxy
 manual
 
-http proxy 127.0.0.1 xxxx(port)
-https proxy 127.0.0.1 xxxx(port)
+http proxy LAN xxxx(port)
+https proxy LAN xxxx(port)
 ```
+
 ### keymapping
 - 哈哈，这个很重要，能避免mac和fedora使用时候，ctrl和cmd键的人工大脑切换，提高效率，降低切换成本
 - sudo dnf install gnome-tweaks
