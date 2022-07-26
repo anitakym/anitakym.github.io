@@ -18,3 +18,8 @@ Event-Loop事件循环
 
 
 https://v8.dev/blog/math-random
+
+
+### others
+- Any application that can be written in JavaScript, will eventually be written in JavaScript. - Jeff Atwood
+- The strength of JavaScript is that you can do anything. The weakness is that you will. - Reg Braithwaite

@@ -162,3 +162,4 @@ SELECT COUNT(*) as num FROM new_user WHERE TO_DAYS(NOW())-TO_DAYS(regist_time)<=
 ### 参考学习项目
 - mybatis-3
   - MyBatis SQL mapper framework for Java —— mybatis.github.io/mybatis-3/
+	- 数据持久化

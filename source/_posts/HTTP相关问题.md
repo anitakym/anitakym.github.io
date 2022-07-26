@@ -218,3 +218,74 @@ Cache-Control: no-cache
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Keep-Alive
 - (HTTP/2 does not use the Connection header field to indicate
    connection-specific header fields)
+
+
+## JSON
+```
+JS object notation
+
+轻量级的数据交换格式
+相对于xml非常轻
+
+字符串是JSON的表现形式
+
+符合JSON格式的字符串叫JSON字符串
+
+XML
+
+JSON 易于阅读，解析，网络传输效率高，跨语言交换数据
+
+把语言写的东西做成服务，调用服务提供数据
+
+import json
+
+json.loads(json_Str)
+
+Json字符串对应到python
+字典
+
+JSON object,array
+
+数组其实就是一个集合
+
+由字符串到某个语言下的数据结构（反序列化）
+
+Json			python
+object	dict
+array			list
+string	str
+number 	int
+number	float
+true			True
+false		False
+null			None
+
+一种语言是其它语言的语法糖
+很多是C的语法糖
+语言就是一种工具
+
+序列化
+Json.dumps()
+
+终端其实看不大出来是不是字符串
+
+
+序列化之后直接存到mysql不太好，还是要弄成对象数据结构存，nosql(mongo) 可以存序列化之后的
+
+JSON 对象 （放在js中是成立的，但是放在python中，是没有的）
+JSON
+JSON 字符串
+
+JSON 也是ecmascirpt的一个实现
+
+
+
+
+A              					JSON                 				B
+A语言的数据类型		JSON数据类型（中间数据类型）	B语言的数据类型
+
+JSON有自己的数据类型，虽然它和javascirpt的数据类型有些相似
+
+REST服务的标准格式（JSON）
+
+```

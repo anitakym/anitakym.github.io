@@ -3,6 +3,14 @@ title: unicode综述
 date: 2021-11-10 15:59:58
 tags:
 ---
+> a computing industry standard for providing a unique code point a number for each character - wikipedia
+- code point
+- 从0开始编号， U+0000=null,共计109499个符号
+- unicode 只规定了每个字符的码点，到底用什么样的字节序表示这个码点，就涉及到编码方法
+
+- 编码方法
+UTF-32
+UTF-8
 ### 涉及unicode的博文
 - dart-sass
 - iconfont使用经验总结
