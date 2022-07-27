@@ -33,3 +33,10 @@ tags:
 
 ## CKafka
 - https://cloud.tencent.com/document/product/597/32743
+
+## keyword
+https://www.elastic.co/guide/en/elasticsearch/reference/6.7/query-dsl-query-string-query.html#query-dsl-query-string-query
+
+devtools
+GET xxx/_mapping
+可以看keyword抓取的字符数限制

@@ -4,6 +4,12 @@ date: 2021-10-25 23:39:14
 tags:
 ---
 
+> notion 2022-7.22 除编辑器部分，切回原生开发（这种重交互的应用，长期看来，性能是核心指标）
+- 2020 rn 20-22 kotlin/swift + webview 22.7->从webview逐渐切回到原生
+- https://www.notion.so/releases/2022-07-20
+- https://twitter.com/jitl/status/1530326516013342723?s=20&t=xT0gfWhFvs0yNvc1GQ3sTQ
+- https://mp.weixin.qq.com/s/Jzqx3DWLlowszESQfBJZ9A （搞不定移动端性能，全球爆火的Notion从Hybrid转向了Native）
+
 ## concept
 ### view为中心
 
