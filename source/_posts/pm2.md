@@ -258,3 +258,11 @@ Launching PM2 without daemonizing itself:
 
 pm2 start app.js --no-daemon
 There is also the CLI pm2-runtime installed by default at PM2 installation, that is a drop-in replacement of the Node.js binary.
+
+## doc
+### options
+#### --watch
+Restart application on changes
+```
+
+```
