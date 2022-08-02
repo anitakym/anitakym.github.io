@@ -92,3 +92,12 @@ Atomic CSS is the approach to CSS architecture that favors small, single-purpose
 #### object-fit/object-position
 - css3
 - https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit
+
+
+#### em | rem
+- em相对于父元素，rem相对于根元素
+- r - root
+
+- 子元素字体大小的em是相对于父元素字体大小
+- 元素的width/height/padding/margin用em的话是相对于该元素的font-size
+- rem是全部的长度都相对于根元素(一般为<html>)

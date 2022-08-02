@@ -460,3 +460,6 @@ expression     operator   operand
 右结合
 
  
+转义字符 - 特殊的字符
+- 无法“看见”的字符
+- 与语言本身语法有冲突的字符

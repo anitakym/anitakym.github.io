@@ -44,6 +44,10 @@ https://www.npmjs.com/package/case-sensitive-paths-webpack-plugin
 
 #### brew
 brew -ls
+brew - 下载不带界面的命令行的工具和第三方库
+brew cask - 下载带界面的应用软件
+brew install curl
+brew cask install chrome 
 
 #### screencapture
 cmd+shift+3/4

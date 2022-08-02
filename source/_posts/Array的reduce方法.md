@@ -58,3 +58,19 @@ ECMAScript5还新增了两个缩小数组的方法：reduce()和reduceRight()。
 
 > 函数式编程的一个重要洞见就是，大部分操作都可以归结成列表转换，其中，最核心的列表转换就是 map、filter 和 reduce
 > python中的正则表达参考了Perl，而内置函数lambada,map,reduce,filter等参考了lisp
+
+
+### flat
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+```
+var arr = [1, 2, [3, 4]];
+
+// 展开一层数组
+arr.flat();
+// 等效于
+arr.reduce((acc, val) => acc.concat(val), []);
+// [1, 2, 3, 4]
+
+// 使用扩展运算符 ...
+const flattened = arr => [].concat(...arr);
+```

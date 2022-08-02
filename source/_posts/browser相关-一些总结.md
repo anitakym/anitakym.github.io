@@ -33,3 +33,8 @@ Browserslist: caniuse-lite is outdated. Please run:
 npx browserslist@latest --update-db
 Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 ```
+
+### favicon - favorite icon -website icon - page icon - urlicon
+- `<link rel="icon" href="/favicon.ico">`
+## 性能
+- 10年前的 - yslow - https://github.com/marcelduran/yslow - http://yslow.org/

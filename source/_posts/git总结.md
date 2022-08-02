@@ -241,3 +241,7 @@ git log --oneline --decorate --graph --all
 #### 搜索某个人提交
 View - Search View - User
 git log --author=="xxxx"
+
+
+### github
+快捷键： t , w  快速进入搜索

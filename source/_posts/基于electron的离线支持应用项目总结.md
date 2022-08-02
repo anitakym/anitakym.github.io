@@ -16,6 +16,8 @@ npm run start
 
 
 ● electron-mocha
+- https://mochajs.org/
+- https://github.com/mochajs/mocha
 
 ● electron-prebuilt
   ○ npm地址： https://www.npmjs.com/package/electron-prebuilt

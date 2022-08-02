@@ -116,6 +116,7 @@ Windows,类似于任务管理器。
 
 #### curl
 curl - transfer a URL
+curl(CommandLine Uniform Resource Locator)
 curl  is  a tool to transfer data from or to a server, using one of the supported protocols (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS,  IMAP, IMAPS,  LDAP,  LDAPS,  POP3,  POP3S,  RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP).
 cURL是一个多功能工具。当然，它可以下载网络内容，但同时它也能做更多别的事情。
 
@@ -451,3 +452,12 @@ RPC = Remote Procedure Call(Remote Procedure Call (RPC) is a protocol that provi
 
 #### lsbrelease
 - https://refspecs.linuxfoundation.org/LSB_3.0.0/LSB-PDA/LSB-PDA/lsbrelease.html
+
+
+#### telnet
+- 协议
+- TCP/IP协议族中的一员
+- Internet远程登陆服务的标准协议和主要方式
+
+#### netcat
+nc -l port

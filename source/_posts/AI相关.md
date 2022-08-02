@@ -8,3 +8,9 @@ tags:
 
 
 ## 阅读相关
+
+
+
+## 手淘端上AI大规模应用与实践 - QConf
+- https://qcon.infoq.cn/2019/shanghai/track/635
+- https://developer.aliyun.com/article/782665

@@ -11,6 +11,7 @@ tags:
 #### 版本
 - 内核版本 www.kernel.org (次版本号奇数-开发版，偶数-稳定版)（主.次.末）
 - 发行版本 redhat enterprise linux - 运维收费|  fedora - 社区免费 | centos - community enterprise operating system - 结合前两者 ｜ debian - 界面 ｜ ubuntu(基于debian) - 界面
+- /etc/redhat-release
 
 #### virtualbox - SDN的时候可太熟了
 - oracle

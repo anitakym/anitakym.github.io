@@ -3,6 +3,11 @@ title: XSS
 date: 2022-07-14 09:38:22
 tags:
 ---
+## baiscs
+- Cross_Site_Scripting
+- 
+
+
 - 安全组建议 - 整站过滤
 ```
 一些cases：

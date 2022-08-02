@@ -9,8 +9,12 @@ tags:
 - unicode 只规定了每个字符的码点，到底用什么样的字节序表示这个码点，就涉及到编码方法
 
 - 编码方法
-UTF-32
-UTF-8
+UTF-32 - 4个字节表示一个字符，完全对应unicode编码（a => 0x00000061 查找效率高，时间复杂度O(1),浪费空间，比相同ASCII编码文件大四倍）
+UTF-8 - 变长的编码方法
+
+- JavaScript采用unicode字符，但支持一种编码方法USC-2（UTF-16）
+- 由于JS只能处理USC-2编码，所以字符在这门语言中都是2个字节（四个字节的字符会当作两个双字节的字符处理）
+- ES6增强了对Unicode的支持（Array.from(string).length, '好' === '\u597D'）
 ### 涉及unicode的博文
 - dart-sass
 - iconfont使用经验总结

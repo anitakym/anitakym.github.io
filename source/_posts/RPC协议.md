@@ -40,3 +40,6 @@ tags:
 - 配置 - listener ｜ endpoint ｜ cluster ｜ route
 - 注册治理中心
 - 未来服务治理的趋势 - Service Mesh(基于Envoy)
+
+#### 注册治理中心
+- https://mp.weixin.qq.com/s/IhPfssotldNWn9GF4Dx6qg - 腾讯注册中心演进及性能优化实践
