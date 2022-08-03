@@ -31,3 +31,10 @@ https://pub.dev/packages/webview_flutter
 #### mode
 - When building your application in release mode, Flutter apps can be compiled for armeabi-v7a (ARM 32-bit), arm64-v8a (ARM 64-bit), and x86-64 (x86 64-bit). Flutter does not currently support building for x86 Android.
 - https://flutter.dev/docs/deployment/android#what-are-the-supported-target-architectures
+
+
+
+### h5对接第三方，webview版本低会导致的问题
+#### cases
+- padStart 支持
+- 

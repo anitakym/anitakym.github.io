@@ -177,7 +177,11 @@ project => settings => client keys
 ### 更多信息
 - .configScope
 - scope.setUser | scope.setExtra
-
+```
+sentryConfigureScope({
+	tags: { xxx: xxx }
+})
+```
 ### 目前配置工作流
 - new Alert - 邮件提醒 （这部分如果想连钉钉也可以，原来要dingding插件，现在直接配置里面都能关联）
 - 我这边看问题 - 提 issue ，link  到gitlab, gitlab issue 走 webhooks 到钉钉群里
@@ -211,7 +215,13 @@ project => settings => client keys
 - issues
 - event - fingerprint
 
+## python
+- 可购买服务
+- 可私有化部署
 ## search
 - https://docs.sentry.io/product/discover-queries/query-builder/
 - https://docs.sentry.io/product/sentry-basics/search/
 - 支持wildcard匹配
+
+## clickhouse
+- https://github.com/ClickHouse/ClickHouse
