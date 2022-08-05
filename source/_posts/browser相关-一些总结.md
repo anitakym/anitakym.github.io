@@ -9,6 +9,8 @@ tags:
 - loupe
 ### DTD
 
+### 占有率
+- https://gs.statcounter.com/browser-market-share/ 
 
 
 ## 问题处理
