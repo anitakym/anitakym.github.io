@@ -4,6 +4,13 @@ date: 2021-03-04 12:12:00
 tags:
     - node
 ---
+## latest
+- corepack - https://github.com/nodejs/corepack
+- undici WG - https://github.com/nodejs/undici
+- diagnostics WG - 门槛更低的诊断能力
+- Node-API WG - 现代化，API稳定的Addon API
+- strategic-initiatives - https://github.com/nodejs/node/blob/main/doc/contributing/strategic-initiatives.md
+- https://nodejs.org/calendar
 ## nodejs-path
 ### 文档指北：
 https://nodejs.org/api/path.html#path_path
