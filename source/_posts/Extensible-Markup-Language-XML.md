@@ -25,6 +25,11 @@ head标记中第一行要包含字符集（charset）的声明,告诉浏览器�
 
 ```
 <meta charset="utf-8"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+```
+```
+指定文件兼容性模式
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 ```
 
 #### HTML5(降低标记markup，简化调用->不用加type了)

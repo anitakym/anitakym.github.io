@@ -41,3 +41,10 @@ https://chromium-review.googlesource.com/c/v8/v8/+/3660253
 Unhandled
 Unexpected end of input
 在EvalError: Possible side-effect in debug-evaluate 之后
+
+
+### sourcemap 上传问题
+- https://docs.sentry.io/platforms/javascript/guides/vue/sourcemaps/troubleshooting_js/
+- sentry-cli 上传的时候
+- 先排除本身map的问题，及上传的问题（可以通过本地看map的解析及上传log日志里面的信息，sentry管理端上面的文件确认）
+- 确保路径的匹配，按照上面的文档
