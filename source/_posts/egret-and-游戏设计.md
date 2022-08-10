@@ -16,3 +16,29 @@ tags:
 
 ### 教学游戏
 - http://gk.link/a/1195n
+
+
+
+
+
+## others
+### oasis
+- https://github.com/oasis-engine/engine
+### 2048
+- 游戏：逻辑，技术，架构，创意，美术
+- UI（V） 动画效果逻辑 游戏主逻辑（C） 支撑逻辑 游戏数据（M）
+- 1.加载各项资源（board（Array）， score） 
+```
+grid-container position：relative grid-cell position:absolute
+在main.js里面：
+ $().ready(){} ——加载 
+function newgame() { 
+  //初始化棋盘格 init()——两个for循环，创建grid-cell-x-y 
+  .css()控制位置,具体的实现可以调用support.js里面的函数。 //在随机两个格子生成数字 number-cell —— var board 遍历数组 updateBoardView（）
+  number-cell是动态定位，pos:absolute
+  数字的生成也可以带一点动画，这个可以将方法写在动画的控制逻辑
+}
+```
+- 2.游戏循环 基于时间的游戏循环 基于玩家响应的循环（JS事件响应机制）
+- 3.交互细节 canMoveLeft() 左边是否没有数字 左边数字是否和自己相等 遍历
+- 交互逻辑调试

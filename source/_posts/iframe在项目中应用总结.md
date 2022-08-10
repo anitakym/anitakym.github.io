@@ -58,3 +58,8 @@ X-Frame-Options: sameorigin
 ### 视频自动播放问题
 https://developer.chrome.com/blog/autoplay/#iframe-delegation
 如果是跨域的站点，又希望能自动播放，需要再加上这个属性
+
+## 一些其它的结局方案
+### 微前端框架
+- qiankun
+- https://juejin.cn/post/6938207400457404430

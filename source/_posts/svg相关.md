@@ -9,3 +9,7 @@ tags:
 - https://zhuanlan.zhihu.com/p/383245453
 - https://www.animejs.cn/
 - http://snapsvg.io/
+
+
+## 剖析 lottie-web 动画实现原理 - 网易云音乐
+- https://juejin.cn/post/6914835547588395022

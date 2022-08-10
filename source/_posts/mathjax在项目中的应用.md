@@ -27,3 +27,8 @@ tags:
 部分mathjax渲染的数学公式，只有停在了某个视区，且点击触发，才能够显示出来；
 
 原因，还是渲染的部分收到了外层结构的影响，overflow-x:auto; overflow-y:hidden;
+
+
+### 公式渲染分提供html和svg
+- 注意 - 如果有截图的需求（html2canvas）- 使用svg做公式渲染慎重，会有问题
+- https://github.com/cisen/blog/issues/880

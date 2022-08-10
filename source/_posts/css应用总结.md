@@ -101,3 +101,38 @@ Atomic CSS is the approach to CSS architecture that favors small, single-purpose
 - 子元素字体大小的em是相对于父元素字体大小
 - 元素的width/height/padding/margin用em的话是相对于该元素的font-size
 - rem是全部的长度都相对于根元素(一般为<html>)
+
+#### BFC 
+```
+Block Formatting Context
+- https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
+- 页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素, 反之也如此
+- 因为BFC内部的元素和外部的元素绝对不会互相影响，因此， 当BFC外部存在浮动时，它不应该影响BFC内部Box的布局，BFC会通过变窄，而不与浮动有重叠。同样的，当BFC内部有浮动时，为了不影响外部元素的布局，BFC计算高度时会包括浮动的高度。避免margin 重叠也是这样的一个道理。
+clear:both BFC/haslayout
+zoom:1(IE6/IE7)
+.clearfix:after { content:"; display:block; height:0; overflow:hidden; clear:both; }
+.clearfix{ *zoom:!; }
+.clearfix 应用在包含浮动子元素的父级元素上
+```
+
+#### 定位
+```
+内凹圆角
+学会组合，拆解图形
+linear-gradient()
+径向渐变
+relative/absolute
+限制定位 ab:  left:0 top:0
+限制层级
+限制超越overflow
+overflow：hidden 不能限制ab 但是加了relative，可以了
+relative、fixed 限制z-index层级
+relative，定位特性 相对自身定位 无侵入定位：自定义拖拽
+top/bottom left/right 绝对定位是拉伸 相对定位是斗争（top,left）
+relative 提高层叠上下文
+dom流后面覆盖前面
+position：relative(提高层级)
+relative z-index :auto->不限制内部absolute层叠问题
+IE6，7下，容易出现层级覆盖bug
+relative的最小化影响原则
+```

@@ -120,3 +120,11 @@ log4j - Apache Log4j 远程代码执行漏洞(CVE-2021-44228、CVE-2021-45046)
 FastJSON - FastJSON＜=1.2.80 反序列化漏洞
 XStream - XStream 远程代码执行漏洞(CVE-2021-29505)
 Saltstack - SaltStack 未授权访问漏洞(CVE-2021-21996、CVE-2021-22004、CVE-2021-31607)
+
+### binlog
+二进制日志（binnary log）以事件形式记录了对MySQL数据库执行更改的所有操作
+- 二进制日志索引文件 ｜ 二进制日志文件
+- binlog消息分发服务（收敛binlog消息）
+- https://github.com/pingcap/tidb-binlog
+- https://docs.pingcap.com/zh/tidb/dev/tidb-binlog-overview
+- canal 基于 MySQL 数据库binlog增量日志解析，提供增量数据订阅和消费
