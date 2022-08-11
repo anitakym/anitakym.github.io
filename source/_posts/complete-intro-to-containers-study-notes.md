@@ -157,6 +157,7 @@ yes | tr \\n x | head -c 1048576000 | grep n # 这将加速消耗 ~1GB 的内存
 ####   Networking with Docker
 ### Multi Container Projects (多容器项目)
 ####   Docker Compose
+docker-compose up -d=>在后台运行
 ####   Kubernetes
 ####   Kompose
 ### OCI (Non-Docker) Containers （OCI(非Docker)容器）

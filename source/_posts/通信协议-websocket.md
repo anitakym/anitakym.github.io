@@ -34,7 +34,9 @@ HTTP是这个模式，问题在于同一时刻只能单方向动作；服务器�
 - 二进制帧结构，语法语义与HTTP不兼容
 
 #### 协议
+- IETF 
 #### API
+- W3C
 #### 服务发现
 URI：wss|ws 表明协议
 
@@ -54,14 +56,19 @@ URI：wss|ws 表明协议
 #### handshake
 - "Connection:Upgrade" "Upgrade:websocket" (HTTP 协议升级)
 - "Sec-WebSocket-Key" "Sec-WebSocket-Version"(Challenge，防止HTTP被识别为WebSocket)
-- 服务器返回一个"101 Switching Protocols"响应报文，"Sec-WebSocket-Accept"
-
+- 服务器返回一个"101 Switching Protocols"响应报文，"Sec-WebSocket-Accept"-由服务器对前面客户端发送的Sec-WebSocket-Key进行确认和加密后的结果，相当于一次验证，以帮助客户端确信对方是真实可用的WebSocket服务器
+- https://www.yuque.com/fe9/basic/101
 ### case
 #### WebSocket is closed before the connection is established.
 
 If you go to http://jsbin.com/ekusep/6/edit and view the JavaScript console you'll see the 'WebSocket is closed before the connection is established' logged. I've tested this in Chrome.
 In this code what it means is that ws.close() was called (by user code) before the connection was even given a chance to be established.
 So, the cause of this error is if code attempts to close the WebSocket connection before it's had a chance to actually connect.
+
+#### send()
+- 消息类型
+- 字符串 ｜ Blob ｜ ArrayBuffer
+- binaryType - 初始值为blob,可以设置为arraybuffer
 ### 拓展理解
 - TCP Socket
 #### SSE - Server-Sent Events

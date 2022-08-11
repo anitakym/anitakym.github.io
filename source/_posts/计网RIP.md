@@ -56,5 +56,13 @@ router(config-if)#ip rip triggered
 ```
 
 		
+### open system interconnection reference model (OSI) vs TCP/IP
+- TCP/IP
+- 应用程序 - 操作系统 - 设备驱动网络接口
+- 应用层 - HTTP DNS FTP SSH TELNET
 
-
+### 以太网
+Robert Metcalfe | Xerox Alto
+论文 - 以太网：本地计算机网络的分布式交换
+网卡 
+Mac地址

@@ -209,6 +209,8 @@ GET /pageX.html HTTP/1.1
 Cache-Control: no-cache
 (…)
 ```
+- 206 - https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/206 - Partial Content
+- The 206 (Partial Content) status code indicates that the server is successfully fulfilling a range request for the target resource by transferring one or more parts of the selected representation that correspond to the satisfiable ranges found in the request's Range header field (Section 3.1).
 
 ## HTTPS - SSL
 
