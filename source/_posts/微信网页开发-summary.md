@@ -3,6 +3,10 @@ title: 微信网页开发-summary
 date: 2022-04-28 14:53:26
 tags:
 ---
+> 2015年初，微信发布了一整套网页开发工具包，称之为 JS-SDK，开放了拍摄、录音、语音识别、二维码、地图、支付、分享、卡券等几十个API.​JS-SDK是对之前的 WeixinJSBridge 的一个包装，以及新能力的释放，并且由对内开放转为了对所有开发者开放
+
+- https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%E5%8F%B2
+- 上面是 - 小程序技术发展史
 
 - https://fjc0k.github.io/vtils/
 

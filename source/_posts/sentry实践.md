@@ -163,6 +163,7 @@ crashReporter.start({
 
 - https://github.com/youzan/raven-weapp
 
+- 可以直接接JS的SDK
 ### 基本操作
 
 DSN 查询：
