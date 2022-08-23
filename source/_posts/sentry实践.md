@@ -161,9 +161,11 @@ crashReporter.start({
 
 - https://github.com/lizhiyao/sentry-miniapp
 
-- https://github.com/youzan/raven-weapp
+- https://github.com/youzan/raven-weapp (旧)
 
-- 可以直接接JS的SDK
+- 可以直接接JS的sentry SDK
+
+- 现在基本上文档上面都有 migration （从 raven-xxx 到 sentry-xxx）
 ### 基本操作
 
 DSN 查询：
