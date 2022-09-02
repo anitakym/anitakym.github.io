@@ -149,3 +149,13 @@ To solve these issues, npm rethought the node_modules structure and came up with
 
 ### package.json
 见```谈一谈package-json文件```博文
+
+
+### 技术选型
+- https://npmtrends.com/
+- 可以看trends参考
+
+
+### npm-cache
+- https://docs.npmjs.com/cli/v8/commands/npm-cache
+- clean: Delete all data out of the cache folder. Note that this is typically unnecessary, as npm's cache is self-healing and resistant to data corruption issues.

@@ -179,7 +179,7 @@ https://grafana.com/grafana/dashboards/8339
   - 需要配合查询条件使用
 - update
   - 查询条件，更新字段
-  - {$set:{}} 各种操作方法
+  - {$set:} 各种操作方法
 - drop
   - db.<collection>.drop() 集合中的全部文档和索引都会被删除
   - 不要在生产上轻易操作
@@ -200,7 +200,7 @@ https://grafana.com/grafana/dashboards/8339
 - db.<COLLECTION>.aggregate(pipeline,{ options })
 - $match -过滤 WHERE | $ project -投影 SELECT AS | $sort -排序 ORDER BY | $group -分组 GROUP BY | $skip/$limit -结果限制 SKIP/LIMIT | $lookup -左外连接（关联） LEFT OUTER JOIN
 - 常见步骤中的运算符
-- 非常见步骤，mongo特有 $unwind - 展开数组 | $graphLookup - 图搜索 | $facet/$bucket - 分面搜索（电商常用）
+- 非常见步骤，mongo特有 $unwind - 展开数组 | $graphLookup - 图搜索 | $facet/$bucket - 分面搜索（电商常用）
 - OLTP | OLAP
 - 
 
