@@ -178,3 +178,15 @@ db.pets.deleteMany({ type: "reptile", breed: "Havanese" });
 7. Redis Ops
 ## Conclusion
 1. Conclusion
+
+
+
+
+
+## PostgreSQL vs mysql
+
+postgis
+instagram - python + PostgreSQL
+
+
+## PostgreSQL vs oracle

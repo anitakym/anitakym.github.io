@@ -66,22 +66,27 @@ SELECT COUNT(*) as num FROM new_user WHERE TO_DAYS(NOW())-TO_DAYS(regist_time)<=
 	- SQL99
 
 
-- 按功能划分
+- 按功能划分（语句分类）
 	- DDL
 		- Data Definition Language
+		- 数据定义
 		- 定义数据库对象
 			- 数据库
 			- 数据表和列
 		- 我们可以创建，修改和删除数据库和表的结构
 	- DML
 		- Data Manipulation Language
+		- 数据操控
 		- 操作和数据库相关的记录
-			- 增，删，改数据表中的记录
+		- 增，删，改数据表中的记录
+		- INSERT UPDATE DELETE
 	- DCL
 		- Data Control Language
 		- 定义访问权限和安全级别
 	- DQL
 		- Data Query Language
+		- 数据查询
+		- SELECT
 
 
 - 声明性语言

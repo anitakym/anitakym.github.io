@@ -7,3 +7,9 @@ tags:
 
 ## reference
 https://github.com/google/zx
+
+
+
+#### bash
+- https://zhuanlan.zhihu.com/p/353435902?utm_medium=social&utm_oi=1084230223444353024
+- vscode编辑器配置
