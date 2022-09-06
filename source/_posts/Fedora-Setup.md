@@ -63,3 +63,4 @@ https proxy LAN xxxx(port)
 
 #### wayland
 - https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/Wayland/
+- 先是系统语言设置为了英文，这种情况下的中文渲染不是简体字，切换为中文系统语言，保留之前英文的文件夹命名
