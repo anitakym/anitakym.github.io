@@ -86,3 +86,11 @@ This executable rebuilds native Node.js modules against the version of Node.js t
           "electron": "9",
         }
       }
+
+
+
+## sentry 
+
+#### EXCEPTION_ACCESS_VIOLATION_READ
+https://source.chromium.org/chromium#chromium/src/v8/src/deoptimizer.cc&sq=package:chromium&l=680
+https://github.com/electron/electron/issues/3241

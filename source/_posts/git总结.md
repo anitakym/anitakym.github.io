@@ -245,3 +245,7 @@ git log --author=="xxxx"
 
 ### github
 快捷键： t , w  快速进入搜索
+
+### resolving Deltas
+- https://stackoverflow.com/questions/4689844/what-is-git-actually-doing-when-it-says-it-is-resolving-deltas
+- 解压和校验整个 repo 数据库
