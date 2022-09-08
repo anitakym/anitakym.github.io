@@ -8,7 +8,13 @@ tags:
 ## reference
 https://github.com/google/zx
 
-
+### shebang
+unix - # => sharp, hash or mesh
+unix - ! => bang
+```
+#!interpreter [optional-arg]
+#!/usr/bin/env zx
+```
 
 #### bash
 - https://zhuanlan.zhihu.com/p/353435902?utm_medium=social&utm_oi=1084230223444353024
