@@ -80,6 +80,7 @@ hidden（boolean）
 spellcheck
 
 tabindex(-1)
+allow focusing on any element: tabindex
 
 - 增加的主体结构元素
 
