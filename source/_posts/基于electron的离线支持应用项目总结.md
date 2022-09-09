@@ -94,3 +94,8 @@ This executable rebuilds native Node.js modules against the version of Node.js t
 #### EXCEPTION_ACCESS_VIOLATION_READ
 https://source.chromium.org/chromium#chromium/src/v8/src/deoptimizer.cc&sq=package:chromium&l=680
 https://github.com/electron/electron/issues/3241
+
+
+### 其他产品
+- 语雀的客户端(https://www.yuque.com/download)
+- https://www.yuque.com/seeconf/2022/kr8mdw  - 开发的分享 - 如何打造高质量的基于electron的客户端

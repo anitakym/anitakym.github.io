@@ -21,7 +21,8 @@ tags:
 - 使用的时候知道什么日志什么意思，接入第三方的日志收集的时候，能对得上就行
 - egg-logrotator
 - 日志同步写入内存，异步每隔一段时间(默认 1 秒)刷盘
-
+### 核心思想
+- https://www.yuque.com/antfe/featured/gf0y3y
 
 ## Hapi
 - https://hapi.dev/

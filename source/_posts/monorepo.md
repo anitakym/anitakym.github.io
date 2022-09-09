@@ -30,3 +30,7 @@ We also recommend installing [ni](https://github.com/antfu/ni) to help switching
 
 ## xstate
 - https://github.com/statelyai/xstate
+
+
+## notesnook 开源的笔记软件 - 对标evernote
+- https://github.com/streetwriters/notesnook
