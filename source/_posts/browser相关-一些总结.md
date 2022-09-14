@@ -40,3 +40,9 @@ Why you should do it regularly: https://github.com/browserslist/browserslist#bro
 - `<link rel="icon" href="/favicon.ico">`
 ## 性能
 - 10年前的 - yslow - https://github.com/marcelduran/yslow - http://yslow.org/
+
+
+### 浏览器兼容性真机测试
+- https://live.browserstack.com/
+- browser stack
+- 不方便的点可能是没有一些国产浏览器的选项
