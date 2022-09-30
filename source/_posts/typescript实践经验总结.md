@@ -269,3 +269,11 @@ undefined == null // true
 undefined === null // false
 ```
 https://github.com/lodash/lodash.git
+
+#### 注释
+```
+TypeScript 的 3.7 版本引入了 @ts-nocheck 注释，可以增加在 TypeScript 文件的头部来禁用语义检查。我们没有使用这个注释，因为它之前不支持.ts/.tsx 文件，但它也可以在迁移过程中成为一个很好的中间阶段助手。
+
+TypeScript 的 3.9 版本引入了 @ts-expect-error 注释。当一行以 @ts-expect-error 注释作为前缀时，TypeScript 将禁止报告该错误。如果没有错误，TypeScript 会报告 @ts-expect-error 是不必要的。在 Airbnb 代码库，我们使用了 @ts-expect-error 而不是 @ts-ignore 。
+https://medium.com/airbnb-engineering/ts-migrate-a-tool-for-migrating-to-typescript-at-scale-cd23bfeb5cc​​​
+```
