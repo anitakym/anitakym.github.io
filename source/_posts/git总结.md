@@ -172,7 +172,12 @@ git remote add origin xxx
 # 都可
 git remote set-url origin xxx
 ```
-
+注意区分上面的概念
+```
+用git remote add <name> <url>添加一个远程仓库，其中name可以任意指定（对应上面的origin部分）
+不额外添加远程仓库，而是给现有的远程仓库添加额外的URL。使用git remote set-url -add <name> <url>，给已有的名为name的远程仓库添加一个远程地址
+```
+上面两个操作，对应pull，push的时候，操作不一样，因为pull，push的时候需要指定repo
 ### tag
 文档指路：https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE、
 ```

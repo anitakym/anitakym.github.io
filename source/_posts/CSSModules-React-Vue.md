@@ -15,3 +15,14 @@ tags:
 - https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95
 - 看上面文档来就行
 - 现在项目脚手架默认生成配置用的是scoped CSS
+
+## CSS moudles
+- 原理：class名 hash值
+- https://github.com/css-modules/css-modules
+```
+Webpack's css-loader in module mode replaces every local-scoped identifier with a global unique name (hashed from module name and local identifier by default) and exports the used identifier.
+```
+composition 组合 compose 嵌套
+- BEM
+Block  Element  Modifier => 模块名 节点名 节点状态 => name local hash:base64
+- 公用样式｜局部化

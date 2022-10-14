@@ -136,3 +136,16 @@ relative z-index :auto->不限制内部absolute层叠问题
 IE6，7下，容易出现层级覆盖bug
 relative的最小化影响原则
 ```
+
+### ifc / bfc / 盒模型
+- https://zhuanlan.zhihu.com/p/110617108
+
+### @charset @import
+- https://developer.mozilla.org/en-US/docs/Web/CSS/@import
+- https://developer.mozilla.org/en-US/docs/Web/CSS/@charset
+```
+Imported rules must come before all other types of rules, except @charset rules and layer creating @layer statements. The @import rule is not a nested statement. Therefore, it cannot be used inside conditional group at-rules.
+```
+
+### CSS模块化
+class名 + hash值

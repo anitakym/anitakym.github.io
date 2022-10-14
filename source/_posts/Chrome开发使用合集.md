@@ -77,4 +77,3 @@ https://chromedevtools.github.io/devtools-protocol/tot/Browser/
 #### net-internals/dns
 chrome://net-internals/#dns
 刷DNS缓存
-#### 写点小插件
