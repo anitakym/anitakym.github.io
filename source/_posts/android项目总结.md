@@ -86,3 +86,6 @@ android:launchMode="singleTask"
 ### user-agent 大赏
 #### 小米平板
 - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/89.0.4389.116 Safari/534.24 Device/nabu Model/21051182C XiaoMi/MiuiBrowser/14.6.62
+
+### 屏幕分辨率问题
+- 锁放大缩小
