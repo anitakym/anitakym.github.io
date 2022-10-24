@@ -5,6 +5,7 @@ tags:
 ---
 > 官网指路：https://www.ansible.com/
 
+- https://docs.ansible.com/
 Devops平台: 解决一线研发交付团队的实际问题
 Gitlab/Github : 解决配置管理问题 - 代码管理平台
 Jenkins： 解决集成打包问题 - 集成与编译系统

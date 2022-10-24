@@ -123,3 +123,7 @@ connect ECONNREFUSED 127.0.0.1:8443, POST http://127.0.0.1:8443/xapi/upload_from
 - 在package-lock里面搜ws ,发现被puppeteer依赖
 - 这个时候查处理puppeteer部分的代码，发现有代码处理逻辑上，会错误的建立connect（对API使用有问题）
 - 让处理了下这部分代码，解决问题
+
+
+### docker + k8s
+- https://www.yuque.com/hyj1991/easy-monitor/advance_docker

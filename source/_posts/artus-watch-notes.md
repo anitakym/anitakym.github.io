@@ -33,3 +33,18 @@ Core Specification
 5. 请求处理模型
 6. 异常处理
 ```
+
+
+
+
+## midway 设计模式
+- https://www.midwayjs.org/docs/aspect
+```
+拦截器
+自执行代码
+流程控制
+服务工厂
+数据订阅
+数据源管理
+重试机制
+```
