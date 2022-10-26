@@ -41,7 +41,7 @@ SQLite 是在 2000 年发布的，到目前为止已经有 19 年了。一直采
 
 我今天讲了有关 SQLite 的内容。在使用 SQLite 的时候，需要注意 SQLite 有自己的方言，比如在进行表连接查询的时候不支持 RIGHT JOIN，需要将其转换成 LEFT JOIN 等。同时，我们在使用 execute() 方法的时候，尽量采用带有参数的 SQL 语句，以免被 SQL 注入攻击。
 
-### better-sqlite
+### better-sqlite3
 文档指路：https://github.com/JoshuaWise/better-sqlite3/tree/4dc52f1dce355fc5894edf0566f8fd3eb0af214f
 
 <pre>
@@ -95,6 +95,11 @@ For these situations, you should probably use a full-fledged RDBMS such as Postg
 对于这些情况，你可能应该使用一个成熟的RDBMS，如PostgreSQL。
 </pre>
 
+#### nodejs
+- Node.js 中安装 SQLite 需要安装两个模块：SQLite3 和 SQLite
+- sqlite3 是支持 SQLite 的标准Node.js模块
+- SQLite 模块是在这个基础上将 SQLite3 模块的异步 API 封装成 Promise 规范，易于使用 - A wrapper library written in Typescript with ZERO dependencies that adds ES6 promises and SQL-based migrations API to sqlite3 (docs).
+
 ### 延伸阅读
 - https://nodesource.com/blog/worker-threads-nodejs/
 - https://blog.insiderattack.net/deep-dive-into-worker-threads-in-node-js-e75e10546b11
@@ -110,3 +115,8 @@ PD(PowerDesigner)
 ## sqlite testing
 www.sqlite.org/testing.html
 很好的一篇讲sqlite在测试方面做的工作
+
+#### mac or windows 图形化界面管理工具
+- sqlpro studio - https://www.sqlprostudio.com/ - Mac/Windows都可，收费
+- sqliteexpert - https://www.sqliteexpert.com/ - windows平台，personal版本免费，专业版收费
+- db browser for SQLite
