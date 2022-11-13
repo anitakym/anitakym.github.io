@@ -190,3 +190,11 @@ location ~* ^/(qqq|xxx|xxxe|)/(env1|env2|env3|env4)/?(\w*) {
         }
 ```
 - 这个时候，如果https://xxxx/qqq/thursday/xxxx 后面不加“/”，不是 https://xxxx/qqq/thursday/xxxx/ 的话，则会被重定向，因为nginx匹配规则有问题
+
+
+## 配置实践
+- 入口 html 文件设置 no-cache，其他资源文件设置 max-age 的缓存方式
+- best-practice
+
+#### 参考阅读
+- https://mp.weixin.qq.com/s/0P8_lnVf2_zMzIBJ20qajA

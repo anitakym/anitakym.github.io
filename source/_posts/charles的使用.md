@@ -89,3 +89,8 @@ Thank you very much!
 ### postman
 - 可发可抓
 - https://learning.postman.com/docs/sending-requests/capturing-request-data/capturing-http-requests/
+
+
+### 参考阅读
+- https://mp.weixin.qq.com/s?__biz=Mzg3OTYzMDkzMg==&mid=2247492108&idx=1&sn=525ad9bf283055d39d3c528ab1c94419&chksm=cf032d37f874a421d64bcc10e70393c8a90f97a26e4b9c4e71fd0311748e49032c6494f9bad5&token=965494574&lang=zh_CN#rd
+- 用 Charles 断点调试 HTTPS 请求，原理揭秘

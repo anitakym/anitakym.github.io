@@ -208,6 +208,11 @@ https://cloud.tencent.com/document/product/436/57420
 ```
 It's generally recommended to not wait for a number of seconds, but instead use Page.waitForSelector(), Page.waitForXPath() or Page.waitForFunction() to wait for exactly the conditions you want.
 ```
+
+### chromium下载
+- https://storage.googleapis.com/chromium-browser-snapshots/
+- extract-zip
+
 ## Others
 #### 如果需要打印PPT呢？
 - 模拟翻页操作
