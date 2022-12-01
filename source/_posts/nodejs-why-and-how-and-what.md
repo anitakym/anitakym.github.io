@@ -40,6 +40,8 @@ tags:
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 - https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop
 - 理解调用栈
+(理解好浏览器和node环境的差异，为什么需要eventloop，为什么node端的是更精细化的设计)
+- browser (https://github.com/luokuning/blogs/issues/1 - Object.observe为什么要被移除)
 ### Promise
 #### What
 - 当前事件循环得不到的结果，未来的事件循环会给到结果
