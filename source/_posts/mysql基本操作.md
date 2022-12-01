@@ -5,6 +5,33 @@ tags:
     - mysql
 ---
 
+### 客户端/服务端
+- MySQL数据库实例 - 代表着MySQL服务器程序的进程
+- mysqld - 启动的MySQL服务器进程的默认名称
+- mysql - 客户端进程的默认名称
+### 安装
+- 安装目录
+```
+macos(类unix)
+/usr/local/mysql
+win
+C:\Program Files\MySQL\MySQL Server 8.0
+```
+
+### bin目录下的可执行文件
+- 将该bin目录的路径加入到环境变量PATH中
+
+### 启动MySQL服务器程序
+- unix里启动服务器程序
+- mysqld
+- mysqld_safe
+- mysql.server
+- mysqld_multi
+
+### 启动MySQL客户端程序
+- mysql | mysqldump | mysqlcheck | mysqladmin ...
+- `mysql>` 客户端提示符
+- 断开客户端与服务器的连接并且关闭客户端（quit， exit，\q）
 
 ### 重启服务：
 ```service mysqld restart```
@@ -72,3 +99,17 @@ ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY '123456';
 - 设置最大位数和小数位数 FLOAT（M，D） DOUBLE（M，D）
 - M表示该小数最多需要的十进制有效数字个数，D表示该小数的小数点后的十进制数字个数
 - M和D都是可选的，如果省略了，它们的值按照机器支持的最大值来存储
+
+
+### binlog
+- binlog日志文件 
+- 前四个字节固定的： 0xfe626963
+- 由若干个事件构成的
+- 事件1 - 格式描述事件format description event
+- 事件 - event header | event data
+- 基于语句statement和基于行row的binlog
+
+
+## 数据库管理工具
+- MySQL workbench
+- dbeaver - https://github.com/dbeaver/dbeaver

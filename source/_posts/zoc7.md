@@ -15,3 +15,9 @@ options=>edit session profile
 #### 增加自定义的输入命令，比如我的通用的密码
 User buttons: 里面 可以add
 ![](zoc72.png)
+
+
+## 其他
+windterm
+tabby - https://tabby.sh/
+warp - https://www.warp.dev/

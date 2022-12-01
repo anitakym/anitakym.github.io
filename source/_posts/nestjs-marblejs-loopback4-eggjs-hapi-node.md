@@ -24,6 +24,10 @@ tags:
 ### 核心思想
 - https://www.yuque.com/antfe/featured/gf0y3y
 
+### 约定式开发 - 配置项内部约定 - 需查询文档配置
+
+
+
 ## Hapi
 - https://hapi.dev/
 - 可靠，安全，可读
