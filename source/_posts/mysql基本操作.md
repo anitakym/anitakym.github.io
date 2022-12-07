@@ -113,3 +113,7 @@ ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY '123456';
 ## 数据库管理工具
 - MySQL workbench
 - dbeaver - https://github.com/dbeaver/dbeaver
+```
+mac
+https://formulae.brew.sh/cask/dbeaver-community
+```
