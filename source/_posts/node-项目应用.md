@@ -185,3 +185,6 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 ## node - test框架推荐
 - ava这个框架
 
+## preventing-sql-injection-in-node-js
+- https://stackoverflow.com/questions/15778572/preventing-sql-injection-in-node-js
+- https://github.com/mysqljs/mysql#escaping-query-values
