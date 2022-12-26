@@ -90,6 +90,41 @@ Thank you very much!
 - 可发可抓
 - https://learning.postman.com/docs/sending-requests/capturing-request-data/capturing-http-requests/
 
+## Proxy
+- macos proxy -> 设置为系统代理
+- switchyomega 指定网页的代理服务为Charles（把端口改成 proxy settings 里面显示的端口）
+- switchomega -> auto switch
+- ssl proxying (https - 证书里的公钥加密请求，私钥加密响应数据) - 抓明文数据，把证书换成Charles的 - ssl proxying settings - help-ssl proxying-install charles root certificate
+- breakpoints(修改内容，然后再execute)
+- start throttle ｜ throttle settings
+- web interface settings - 通过web网页控制，用于远程的时候，比较方便
+- external proxy settings - 设置转发的代理服务器，这样Charles抓包之后会再转发给别的代理服务器，用于科学上网也需要代理服务器的场景
+
+
+## Tools
+- no cache -> 会用本地的缓存，但是每次都协商
+- block cookies
+- map remote
+- map local - 线上调试本地代码（替换静态资源）
+- mirror - 把响应内容保存在本地 可配合map local 使用
+- rewrite
+- block list - 模拟请求失败
+- allow list
+- DNS spoofing - 类似于修改hosts，终端生效可以通过 export https_proxy=127.0.0.1:8888 export http_proxy=127.0.0.1:8888 , 当然ping 不会走代理，终端去代理可以用 unset https_proxy http_proxy
+- client process - 在notes里面显示发送请求的客户端进程
+- compose new - 有点像postman了；右键compose也可以编辑发送
+- repeat - 重发请求（advanced repeat）- 用来测试接口
+
+## View
+- 左下角 - filter
+- Focused hosts
+- 右键focus
+- highlight rules - 类似于 chrome devtools里面的has0response-header filter
+
+## Edit
+- find - 搜索功能
+## preferences
+- Charles窗口永远放在上面
 
 ### 参考阅读
 - https://mp.weixin.qq.com/s?__biz=Mzg3OTYzMDkzMg==&mid=2247492108&idx=1&sn=525ad9bf283055d39d3c528ab1c94419&chksm=cf032d37f874a421d64bcc10e70393c8a90f97a26e4b9c4e71fd0311748e49032c6494f9bad5&token=965494574&lang=zh_CN#rd
