@@ -393,3 +393,8 @@ Assert: environment has a responsible document.
 
 Return environment's responsible document's browsing context's top-level browsing context's browsing session.
 ```
+
+### location.pathname
+
+
+### popstate
