@@ -80,7 +80,11 @@ LoadBalancer：使用云提供商的负载均衡器向外部暴露服务。 外�
 
 ExternalName：通过返回 CNAME 和对应值，可以将服务映射到 externalName 字段的内容（例如，foo.bar.example.com）。 无需创建任何类型代理。
 ```
+#### Pod对象
+- 凡是调度，网络，存储，以及安全相关的属性基本上都是Pod级别的
 
+#### 容器 - 隔离与限制
+- 容器是一个“单进程”模型
 ## Others
 ```
 把eBay的一些核心应用从物理机迁移到容器

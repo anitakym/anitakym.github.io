@@ -86,6 +86,7 @@ PIDs + mounts(like storage and volumes, network stack)
 ####   cgroups - 物理资源隔离限制
 我们还有一个问题，每个隔离的环境都可以访问服务器所有的资源。环境之间的物理组件没有做隔离。
 Google在建立基础设施的时候，也遇到了这个问题，于是提出了cgroup;这个隔离环境只能得到这么多的CPU，内存，一旦用完了，就不会再得到更多了。
+- Linux Cgroups - Linux Control Group - 限制一个进程组能够使用的资源上限（CPU，内存，磁盘，网络带宽）
 ```
 # 在unshare'd环境之外，我们先安装下需要的工具
 apt-get install -y cgroup-tools htop
@@ -216,3 +217,6 @@ PS：把材料放到github,也是因为文本材料的错误不可能完全无�
 -   As you may have divined, containers give us many of the security and resource-management features of VMs but without the cost of having to run a whole other operating system. It instead usings chroot, namespace, and cgroup to separate a group of processes from each other. 
 -   flimsy (feeable,weak)
 -   But I assure you a lot of very smart people have worked out the kinks and containers are the future of deploying code.但我向你保证，很多非常聪明的人已经解决了这些问题，容器是部署代码的未来。
+
+- 容器技术的核心 - 通过约束和修改进程的动态表现，从而为其创造出一个边界
+- 在Linux内核中，很多资源和对象是不能被namespace化的，比如时间

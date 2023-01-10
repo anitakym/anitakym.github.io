@@ -30,3 +30,6 @@ if (process.env.NODE_ENV === 'development') {
 - 普通的 <script> 只在组件被首次引入的时候执行一次
 - <script setup> 中的代码会在每次组件实例被创建的时候执行
 - 顶层的绑定会被暴露给模版
+
+v3
+1-7 12 14
