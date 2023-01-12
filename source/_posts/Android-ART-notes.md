@@ -3,14 +3,15 @@ title: Android-ART-notes
 date: 2023-01-11 17:39:21
 tags:
 ---
+## history
 Dalvik
 - 使用解释  JIT
 
-ART(4.4-5.0)
+ART(4.4Kitkat-5.0Lollipop) Android RunTime
 - gc优化
-- AOT
+- AOT(Ahead-of-time)
 
-ART（7.0）
+ART（7.0Nougat）
 - 三种执行方式并存，引入speed profile
 
 ### overview
