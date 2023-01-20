@@ -53,17 +53,21 @@ tags:
 - 如果回调函数return了一个Promise，这个Promise会和回调函数return的Promise状态保持一致
 - Promise.all  并发异步，catch拿第一个error的
 ### async/await
-- async function 是 Promise的语法糖封装
-- 以同步的方式写异步
+- async function 是 Promise的语法糖封装(console出来可以验证)
+- 以同步的方式写异步-异步编程终极方案
+- 以同步的写法获取Promise的执行结果            
 - try-catch可以获取await得到的错误
 - Event Loop -> 逻辑思维上的转变
+- 并行异步任务 -> +Promise.all
 
 ### http
 - http服务 -> 解析请求报文 && 返回对应的返回报文
+- IncomingMessage - Class - doc
 #### Express
 Express - http服务框架
 - 核心功能 && 解决的问题 -> what - 路由&&(req&&res简化)&&middleware | why
 - middleware - 组织流程代码 ｜ 异步会打破express的洋葱模型
+- https://www.npmjs.com/package/express
 #### Koa
 - (req&&res简化) - 更简单明了
 - async - 在异步情况下，也符合洋葱模型
@@ -89,7 +93,7 @@ Express - http服务框架
  - 半双工通信
  - 全双工通信
 - 二进制协议
- - 更小的数据包提及
+ - 更小的数据包体积
  - 更快的编解码速率
 
 - https://github.com/tars-node 
@@ -110,6 +114,7 @@ Express - http服务框架
  - 应用层协议需要有标记包号的字段
  - 需要有标记包长的字段（粘包，不完整包）
  - 错误处理
+- netty - java的rpc通信
 ## source code
 #### 内置模块
 - os.js - internalBinding - node_os.cc - libuv

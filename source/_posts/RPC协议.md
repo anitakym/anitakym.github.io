@@ -31,7 +31,7 @@ tags:
 - 压缩效率很高
 
 ### 网络传输
-- Java - Netty(高效的基于异步IO的网络传输框架)
+- Java - Netty(高效的基于异步IO的网络传输框架) - 见netty-summary
 - 服务方法 - 单向RPC ｜ 服务端流式RPC ｜ 客户端流失RPC ｜ 双向流式RPC
 
 ### 服务发现(Discovery Service)与治理
