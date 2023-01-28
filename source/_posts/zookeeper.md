@@ -4,6 +4,11 @@ date: 2021-08-13 15:08:33
 tags:
 ---
 
+- 经典概念 + 实践 => 逐渐加深的理解
+- 理解经典的API，而不是层出不穷的Framework
+- source code - reading - understanding - 聚焦眼前的问题 - 带着问题阅读
+- 记录 - 输出 - 加深理解
+
 ### 文档
 
 https://zookeeper.apache.org/doc/current/zookeeperOver.html

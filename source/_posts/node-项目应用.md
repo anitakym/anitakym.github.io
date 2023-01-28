@@ -14,6 +14,17 @@ tags:
 - web应用场景
 - SSR-搜索引擎优化，首屏速度
 - 前后端同构（PDF预览打印场景
+```
+前后端同构
+浏览器端 && nodejs端 => 同构代码
+ReactDomServer.renderToString()
+VueServerRenderer.renderToString()
+R&V最大难题在于数据部分
+
+同构的core
+- 注重职责分离
+
+```
 - 构建工具（早期的 gulp,webpack，后面不用说了，奏是这个生态）
 - Backend for Frontend(HTTP, RPC调用)
 ## basic
@@ -191,4 +202,12 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 
 
 ## problems - BFF
+
+
+## cases
+### BFF
+- Java服务提供数据 - RPC通信
+- 模版渲染
+- API服务 - restful（易读，快速启动，数据聚合劣势）- github的v3 API的实现
+- API服务 - GraphQL（专注数据聚合，返回前端需要的）
 

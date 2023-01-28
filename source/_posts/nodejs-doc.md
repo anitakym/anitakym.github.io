@@ -49,3 +49,20 @@ electron项目
 - https://nodejs.org/dist/latest-v16.x/docs/api/url.html#class-urlsearchparams
 
 ### 基础架构（原理）
+
+
+### api
+#### vm
+- https://nodejs.org/api/vm.html
+- https://www.youtube.com/watch?v=u81pS05W1JY
+- https://pwnisher.gitlab.io/nodejs/sandbox/2019/02/21/sandboxing-nodejs-is-hard.html
+用这个实现基于ES6模版字符串语法语法的模版引擎
+- 通过VM模块编译JS形成函数
+    - include子模版
+    - XSS过滤、模版helper函数
+
+### npm
+#### easy_sock
+
+
+#### https://www.npmjs.com/package/protocol-buffers

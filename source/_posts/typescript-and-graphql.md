@@ -15,3 +15,11 @@ tags:
 
 ### 携程基于GraphQL的BFF实践
 https://mp.weixin.qq.com/s/q05JeUZ0mfjhhCshhhPNtw
+
+## GraphQL
+- Facebook
+- 自定义查询数据
+
+
+#### frameworks
+- koa-graphql

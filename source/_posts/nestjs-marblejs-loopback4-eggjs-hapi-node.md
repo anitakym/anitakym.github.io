@@ -114,3 +114,10 @@ Add negative test on registering plugin twice without `once`
 #3631
 When event data is an error, field name is error
 ```
+
+#### serverless
+- 通过屏蔽细节，让业务开发更容易
+- 把能在多个业务复用的东西下沉，屏蔽细节
+- 好的框架 - 把复杂的，通用的东西下沉（less化），实现渐进式
+
+- 云函数（渐进式，serverless -> 屏蔽服务器细节）
