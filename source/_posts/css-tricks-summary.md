@@ -20,6 +20,7 @@ screen - 屏幕 | page - 网页区域 | client - 浏览器可视区域 | offset 
 - 变量（offset偏移量）随着鼠标移动而改变，offset控制伪元素的绝对定位
 - 伪元素的background实现放大镜显示内容
 - https://codepen.io/JowayYoung/pen/oNbGzPy
+- https://github.com/JowayYoung/idea-css
 
 #### 滚动渐变背景
 - event.target.scrollTop
@@ -40,4 +41,3 @@ https://css-tricks.com/css-dappled-light-effect/
 - https://cubic-bezier.com/
 - https://xluos.github.io/demo/flexbox/
 - https://gs.statcounter.com/
-- https://github.com/JowayYoung/idea-css
