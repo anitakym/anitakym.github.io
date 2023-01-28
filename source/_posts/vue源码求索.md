@@ -13,3 +13,8 @@ tags:
 
 
 #### package.json篇
+
+## 工具函数
+- https://github.com/vuejs/vue/blob/dev/dist/vue.js#L14-L379
+- https://github1s.com/vuejs/vue/blob/dev/src/shared/util.js
+- https://juejin.cn/post/7024276020731592741#heading-0

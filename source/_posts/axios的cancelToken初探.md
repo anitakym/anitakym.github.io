@@ -113,5 +113,12 @@ axios.interceptors.request.use(function (config) {
 }, null, { runWhen: onGetCall });
 ```
 
+#### core
+- cancelToken - config 
+- if cancelToken
+- 在 promise 链式调用的 dispatchRequest 抛出错误，在 adapter 中 request.abort() 取消请求，使 promise 走向 rejected，被用户捕获取消信息
 ### OPML
 https://en.wikipedia.org/wiki/OPML
+
+### source code
+- https://github.com/axios/axios/blob/main/lib/utils.js

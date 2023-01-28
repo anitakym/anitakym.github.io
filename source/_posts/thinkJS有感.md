@@ -9,8 +9,8 @@ tags:
 #### split(/\s*,\s*/)
 
 #### symbol && string
-
-
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator
+- Symbol.iterator为每一个对象定义了默认的迭代器。该迭代器可以被 for...of 循环使用 
 
 ## docker
 - https://zhuanlan.zhihu.com/p/37082611

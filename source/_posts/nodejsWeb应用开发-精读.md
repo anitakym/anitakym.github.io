@@ -258,3 +258,6 @@ nightwatch
 ## 框架介绍
 - https://eggjs.org/zh-cn/intro/index.html
 - 可以看看egg的设计原则
+
+### koa-compose
+- https://www.npmjs.com/package/koa-compose
