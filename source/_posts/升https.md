@@ -50,3 +50,15 @@ establish a secure connection to it. To learn more about this situation and
 how to fix it, please visit the web page mentioned above.
 ```
 进入Chrome看，可以点击小锁，看具体的证书信息
+
+### SSL证书生成
+- 17年开始，如果不是https,chrome会被标记不安全 苹果要求都是https；不用https，很容易被运营商劫持
+- 证书的安全级别 证书的更新
+- 七牛云（一年1900） 阿里云 腾讯云
+- 拿到证书，scp上传到服务器上
+```
+mv ssl /www/
+/nginx/conf.d server部分配置ssl
+# 运维，安全
+help.aliyun.com
+```

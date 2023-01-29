@@ -3,6 +3,14 @@ title: ReactHooks
 date: 2021-07-27 10:32:27
 tags:
 ---
+
+### react组件的演化
+- 组件复用方式
+- （类组件-class）
+- （Mixin）
+- (高阶组件-HOC) - 装饰器模式
+- （Hooks）
+
 ## 基础
 ### React Router
 - 
@@ -23,3 +31,4 @@ If you're using React Router, you should never import anything directly from the
 - https://reactjs.org/docs/refs-and-the-dom.html
 - https://reactjs.org/docs/hooks-reference.html#useref
 - https://reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node
+

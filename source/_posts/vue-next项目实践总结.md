@@ -3,6 +3,39 @@ title: vue-next项目实践总结
 date: 2021-04-27 15:50:15
 tags:
 ---
+> 起源Nov.2018 VueConf TO (Evan You) - Vue 3.0 Updates (faster,smaller,more maintainable,easier to target native)
+```
+尽可能兼容2.0 的API
+之前Virtual DOM会有蛮多运行时开销的
+生成更易被JS引擎优化的代码
+
+判断原生还是组件
+Component path fast
+
+生成虚拟node的时候，函数尽量一致
+优化slots生成
+2.0 基于ES5的 getter，setter 进行 
+
+Lazy by default
+直接暴露给用户this 
+API不动
+
+Vue本身runtime更小
+
+按需引入
+
+最最基本的代码在10KB左右
+降低源码阅读难度
+
+Vetur
+Vue hooks
+
+框架做js计算-》浏览器主线程block-》无法响应用户事件
+
+16ms（一frames）
+明年下半年发布
+```
+
 > 在一个业务简单，逻辑清晰的项目里面，Vue-next作为开发框架
 https://v3.cn.vuejs.org/guide/introduction.html
 

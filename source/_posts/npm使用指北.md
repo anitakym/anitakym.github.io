@@ -159,3 +159,7 @@ To solve these issues, npm rethought the node_modules structure and came up with
 ### npm-cache
 - https://docs.npmjs.com/cli/v8/commands/npm-cache
 - clean: Delete all data out of the cache folder. Note that this is typically unnecessary, as npm's cache is self-healing and resistant to data corruption issues.
+
+### --verbose 
+- 在较慢的网络上, 最好使用 --verbose 标志来显示下载进度: `npm install --verbose electron`
+- 在运行 npm install electron 时，有些用户会偶尔遇到安装问题。在大多数情况下，这些错误都是由网络问题导致，而不是因为 electron npm 包的问题。 如 ELIFECYCLE、EAI_AGAIN、ECONNRESET 和 ETIMEDOUT 等错误都是此类网络问题的标志。 最佳的解决方法是尝试切换网络，或是稍后再尝试安装

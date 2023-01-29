@@ -7,6 +7,10 @@ tags:
 ### 几个迁移的案例
 https://developers.google.com/web/updates/2021/01/puppeteer-typescript
 
+### ROI 
+- 团队迁移成本
+（开发思维，开发生态，项目处理，接口及声明文件的维护）
+
 
 ### redaxios
 https://www.tslang.cn/docs/handbook/type-checking-javascript-files.html
@@ -146,91 +150,6 @@ type Puppy = {
 // https://stackoverflow.com/questions/37233735/typescript-interfaces-vs-types/52682220#52682220
 
 ```
-
-## Usage
-- JavaScript - 动态弱类型 - 不会在变量的类型它们的调用者之间建立结构化的契约
-
-- before ES标准（静态类型检查）,TS 是解决问题的最佳方案
-
-- 静态类型检查器: Flow/Hegel（https://github.com/JSMonk/hegel）/Ternjs(2019停止更新-https://github.com/ternjs/tern)
-
-### Class
-#### constructor
-- 见ES6的feature
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
-- 在类构造函数中，不能在调用super()之前引用this - cite  JavaScript高级程序设计（第四版）
-- 如果在派生类中显式定义了构造函数，则要么必须在其中调用super()，要么必须在其中返回一个对象 - cite  JavaScript高级程序设计（第四版）
-- Just as in JavaScript, if you have a base class, you’ll need to call super(); in your constructor body before using any this. members
-```
-constructor关键字用于在类定义块内部创建类的构造函数。
-方法名constructor会告诉解释器在使用new操作符创建类的新实例时，应该调用这个函数。
-构造函数的定义不是必需的，不定义构造函数相当于将构造函数定义为空函数。 
-- cite  JavaScript高级程序设计（第四版）
-```
-#### TS 
-- constructor
-```
-// 可以使用构造器来定义成员变量，即在类中拥有一个成员，并在构造器中初始化它
-// 本写法采用了展开参数的形式，如果需要检查参数或者处理参数，则更合适
-private start: number = 0
-private end: number = 0
-constructor(start: number, end: number) {
-  this.start = start
-  this.end = end
-}
-
-// typescript为上面的处理方法提供了一个简写
-// 可以在成员中加一个修饰符前缀，它会在类上自动声明，并且从构造器中复制过去
-// 写法简洁，适用于只是为私有字段赋值的场景；
-constructor(private start: number, private end: number)
-
-
-```
-#### 把类当做接口使用
-- 类定义会创建两个东西：类的实例类型和一个构造函数。 因为类可以创建出类型，所以你能够在允许使用接口的地方使用类。
-
-
-> 很多JavaScript框架（特别是React）已经抛弃混入模式，转向了组合模式（把方法提取到独立的类和辅助对象中，然后把它们组合起来，但不使用继承）。这反映了那个众所周知的软件设计原则：“组合胜过继承（composition over inheritance）。”这个设计原则被很多人遵循，在代码设计中能提供极大的灵活性。 __ JavaScript高级程序设计（第四版）
-
-### 联合类型
-- type | type
-- 确保使用typeof检查
-- 如果类型过多，考虑设计上是否可以分解为更小的函数
-
-### 交叉类型
-- 可以让我们安全的使用extends 模式
-- 适用于类，接口，泛型和基本类型
-
-### 类型别名
-- 语法技巧，提高代码可读性
-- 大型项目，提高代码一致性
-```
-type Flags = PatchFlags | ShapeFlags
-```
-### ...
-- 使用展开运算符，可以对一个或多个输入类型的属性自动执行浅拷贝
-- 解构对象 - rest
-- rest参数 ｜ rest属性
-
-### 装饰器 && AOP
-
-### Mixin
-
-### 泛型
-- 将相同的代码用于不同的类型
-- String Stack, Number Stack ... ?
-- TypeScript提供了创建泛型的能力
-- 泛型是一种类型，通过占位符来代表要使用的类型
-- 具体使用什么类型，要由调用该泛型的代码决定。泛型包含在< >内，出现在类名、方法名等的后面
-- <T>语法告诉TypeScript，这个类中任何地方出现的T都指代传入的类型
-- 当我们为泛型指定类型后，TypeScript会限制其不能改变
-
-#### 泛型约束
-- 
-
-### 映射
-- 映射是一个泛型类，接受两种类型：为映射使用的键的类型，以及在映射中存储的对象的类型
-- Map - get | set
 
 
 ### declare

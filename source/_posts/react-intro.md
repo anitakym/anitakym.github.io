@@ -93,3 +93,31 @@ React.lazy and Suspense are not yet available for server-side rendering. If you 
 - https://blog.chromium.org/2020/05/introducing-web-vitals-essential-metrics.html
 - essential metrics for a healthy site
 - https://create-react-app.dev/docs/measuring-performance/
+
+### conf
+```
+React conf 2018
+
+Sophie Alpert
+
+1.25M developer
+
+Renewable energy
+
+Make it easier to build great UIs.
+
+Code splitting
+
+1.simplify hard stuff(suspense)
+2.performance(time slicing)
+2.developer tooling(profiler)
+
+What still sucks
+Reusing logic--Wrapper hell
+Giant components
+Confusing classes(hard for humans,machines,hot roloading)
+```
+
+#### readings
+- https://blog.oyanglul.us/javascript/react-cookbook-mini
+- https://blog.oyanglul.us/javascript/understand-prototype

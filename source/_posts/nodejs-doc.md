@@ -66,3 +66,14 @@ electron项目
 
 
 #### https://www.npmjs.com/package/protocol-buffers
+
+### slides - ryan dahl 的一系列在conf里面的演讲，不同阶段，可以去YTB上面看
+- nodejs ry@tinyclouds 2009 - 最初的设计，为什么这么设计
+- https://www.slideshare.net/JSFestUA/js-fest-2019-ryan-dahl-deno-a-new-way-to-javascript
+
+#### perf_hooks
+perf_hooks
+解决这个报warining的问题
+先新建一个项目，引入perf_hooks,没有任何问题
+看了不同版本的代码，发现引入的问题，升级了版本即可
+http://nodejs.cn/api/perf_hooks.html

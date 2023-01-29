@@ -15,6 +15,7 @@ https://maven.apache.org/
 ### 构建工具，依赖管理
 maven排在Java生态的第一，Gradle用于Android
 #### 基于XML格式的文件描述依赖配置
+- https://maven.apache.org/pom.html#What_is_the_POM
 - POM（Project Object Model）
 - pom.xml 
   - groupId,artifactId,version - 坐标

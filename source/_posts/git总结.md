@@ -254,3 +254,31 @@ git log --author=="xxxx"
 ### resolving Deltas
 - https://stackoverflow.com/questions/4689844/what-is-git-actually-doing-when-it-says-it-is-resolving-deltas
 - 解压和校验整个 repo 数据库
+
+### tfs
+- tfs 删除仓库,版本控制,先把自己添加到用户里面，再给自己加上删除的权限，就可以删除了
+
+#### 不想cd到具体目录，但是想查信息
+```git -C "/Users/xxxx/Development/Projects/xxx/xxxx" status === git --work-dir="/Users/xxxx/Development/Projects/xxx/xxxx" --git-dir="/Users/xxxxx```
+
+#### git prune
+error: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+
+git prune && git gc # Remove loose objects
+git fsck --lost-found
+
+#### sourcetree 里面我这边自动开了推送所有的tags
+```
+--tags
+All refs under refs/tags are pushed, in addition to refspecs explicitly listed on the command line.
+```
+`git push --tags`
+推送所有tags
+
+`git help tag`
+`git help push`
+npm list -g --depth 0
+
+## 推荐阅读
+- https://github.com/nnja/advanced-git

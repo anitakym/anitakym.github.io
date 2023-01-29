@@ -138,6 +138,7 @@ relative的最小化影响原则
 ```
 
 ### ifc / bfc / 盒模型
+- 格式化上下文 - 决定渲染区域内节点的排版，关系和互相作用的渲染规则
 - https://zhuanlan.zhihu.com/p/110617108
 
 ### @charset @import
@@ -149,3 +150,30 @@ Imported rules must come before all other types of rules, except @charset rules 
 
 ### CSS模块化
 class名 + hash值
+
+
+### CSS Hack
+- IE8以下
+```
+<!--[if IE]>
+	<style>
+	.zzz {
+	}
+	</style>
+	<![endif]-->
+```
+- Avoid CSS Expressions
+
+#### 微观现象
+- 换行编写行内元素，排版会出现5px空隙
+- 行内元素统一以底边垂直对齐
+- 排版若一行无法完成则换行接着排版
+
+#### 文档流
+- 节点参与浮动布局后，自身脱流但其文本不脱流
+- 节点参与定位布局后，自身及其文本一起脱流
+
+#### z-index
+- 层叠上下文指盒模型在三维空间Z轴中的表现行为
+- z-index只在声明定位的节点中起效
+- 节点在Z轴的层叠顺序根据z-index、层叠上下文和层叠等级共同决定

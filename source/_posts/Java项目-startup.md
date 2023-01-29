@@ -72,6 +72,7 @@ tags:
 
 ### Java API Design Best Practices
 - https://static001.geekbang.org/con/33/pdf/3939125782/file/1%E3%80%81jgiles+-+API+Best+Practices+-+v2+-+qcon.pdf
+- https://java.jonathangiles.net/
 - Jonathan Giles
 - API design theory | practical advice
 - effective java 3rd edition - joshua bloch
@@ -128,3 +129,7 @@ Saltstack - SaltStack 未授权访问漏洞(CVE-2021-21996、CVE-2021-22004、CV
 - https://github.com/pingcap/tidb-binlog
 - https://docs.pingcap.com/zh/tidb/dev/tidb-binlog-overview
 - canal 基于 MySQL 数据库binlog增量日志解析，提供增量数据订阅和消费
+
+#### 配置应用配置
+- Run/Debug Configurations - override parameters 
+- configuration - environment - program arguments - --eureka.client.serviceUrl.defaultZone=xxxx/eureka/ --eureka.client.register-with-eureka=false

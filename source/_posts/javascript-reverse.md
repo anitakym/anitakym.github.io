@@ -17,3 +17,18 @@ tags:
 - 具体可以看MDN的文档
 
 ## callback
+
+## 立即执行函数
+```
+    const width = 512
+      const height = 512
+      ;(async function () {
+        const program = await doodle.load('./lib/fragment.glsl')
+        doodle.useProgram(program)
+        doodle.uniforms.resolution = [width, height]
+        doodle.render()
+      })()
+```
+- ; 如果少了，就会报错
+- `{(intermediate value)(intermediate value)} is not a function`
+- 立即执行函数前面需要分号

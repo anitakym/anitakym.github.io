@@ -464,3 +464,6 @@ RPC = Remote Procedure Call(Remote Procedure Call (RPC) is a protocol that provi
 
 #### netcat
 nc -l port
+
+#### 查目录名称
+- ls -l | grep ^d | awkj 'console.log($9)'

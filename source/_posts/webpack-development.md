@@ -182,3 +182,8 @@ npm ERR! This is probably not a problem with npm. There is likely additional log
 CI设置为false，避免把warning当成error处理，导致构建直接退出
 
 #### lint需要再配置
+
+#### mini-css-extract-plugin Conflicting order
+- 分离并打包CSS到单独文件
+- https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250
+- https://stackoverflow.com/questions/51971857/mini-css-extract-plugin-warning-in-chunk-chunkname-mini-css-extract-plugin-con/67579319#67579319

@@ -10,7 +10,7 @@ tags:
 ## history
 ### compare
 - 比较了下NW.js
-- https://github.com/nwjs/nw.js
+- https://github.com/nwjs/nw.js (钉钉早期桌面端使用过)
 - 瞅着还一直有tags打，现在是v0.58.0
 
 ### 

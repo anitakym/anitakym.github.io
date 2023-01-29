@@ -42,3 +42,7 @@ function newgame() {
 - 2.游戏循环 基于时间的游戏循环 基于玩家响应的循环（JS事件响应机制）
 - 3.交互细节 canMoveLeft() 左边是否没有数字 左边数字是否和自己相等 遍历
 - 交互逻辑调试
+
+#### webAssembly在白鹭引擎中的实践
+- 需要提高JS运行效率
+- https://zhuanlan.zhihu.com/p/30513129
