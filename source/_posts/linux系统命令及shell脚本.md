@@ -24,3 +24,6 @@ tags:
 #### root
 - root 账户用于管理系统
 - 
+
+#### mkpaswd
+如果找不到这个命令，可能是没有安装expect包（yum -y install expect）

@@ -122,3 +122,18 @@ https://en.wikipedia.org/wiki/OPML
 
 ### source code
 - https://github.com/axios/axios/blob/main/lib/utils.js
+
+
+### XMLHttpRequest 对象
+- https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState
+
+
+//这篇文章非常好
+- https://medium.com/datadriveninvestor/aborting-cancelling-requests-with-fetch-or-axios-db2e93825a36
+- https://mp.weixin.qq.com/s/2ADjfJPge391xpdikM08qQ - 由一个bug引发对axios的刨根问底
+
+
+#### withCredentials
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials
+
+The XMLHttpRequest.withCredentials property is a Boolean that indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. Setting withCredentials has no effect on same-site requests.

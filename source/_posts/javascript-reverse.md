@@ -32,3 +32,16 @@ tags:
 - ; 如果少了，就会报错
 - `{(intermediate value)(intermediate value)} is not a function`
 - 立即执行函数前面需要分号
+
+
+#### ReferenceError
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError
+- 报错合集:The ReferenceError object represents an error when a non-existent variable is referenced.
+- 当一个不存在的变量被引用时发生的错误
+```
+function foo () {
+  console.log(bar)
+  let bar = 3
+}
+foo()
+```

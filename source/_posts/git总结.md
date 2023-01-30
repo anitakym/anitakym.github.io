@@ -280,5 +280,8 @@ All refs under refs/tags are pushed, in addition to refspecs explicitly listed o
 `git help push`
 npm list -g --depth 0
 
+#### GitStats - git history statistics generator
+https://gitstats.sourceforge.net/
+
 ## 推荐阅读
 - https://github.com/nnja/advanced-git

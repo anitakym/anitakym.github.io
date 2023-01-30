@@ -66,3 +66,9 @@ if (process.env.NODE_ENV === 'development') {
 
 v3
 1-7 12 14
+
+
+## 其他
+- 字体问题
+- https://www.zhangxinxu.com/wordpress/2018/02/js-detect-suppot-font-family/
+- 检测系统是否带目标字体，如果不带，引导用户安装

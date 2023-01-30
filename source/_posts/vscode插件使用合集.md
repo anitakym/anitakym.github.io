@@ -4,6 +4,9 @@ date: 2020-08-06 15:37:05
 tags:
     - 工具篇
 ---
+### 当扩展很慢的时候
+- Developer：show running extensions (发现哪些导致慢)
+- https://code.visualstudio.com/updates/v1_32#_bundling-extensions-with-webpack?wt.mc_id=devto-blog-jopapa  - 官方提供了打包功能
 #### 写在前面
 调出——显示所有命令（cmd + shift + P）
 然后搜索 code

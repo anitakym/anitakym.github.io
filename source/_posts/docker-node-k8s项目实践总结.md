@@ -92,3 +92,6 @@ ExternalName：通过返回 CNAME 和对应值，可以将服务映射到 extern
 2. 对于平台，我们用一套平台kubernetes来管理所有的应用，对于硬件资源的利用率得以提高。
 所以容器化后，带来的好处是，开发效率的提高，资源利用率的提高。
 ```
+
+### aws配置
+- https://github.com/docker/hub-feedback/issues/1318#issuecomment-396429154 pull images的时候如果403

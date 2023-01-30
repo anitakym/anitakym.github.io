@@ -62,3 +62,14 @@ mv ssl /www/
 # 运维，安全
 help.aliyun.com
 ```
+
+### https | http
+#### ajax-using-https-on-an-http-page
+- https://stackoverflow.com/questions/1105934/ajax-using-https-on-an-http-page
+#### how-can-i-make-an-http-request-from-an-https-website
+- https://stackoverflow.com/questions/53211319/how-can-i-make-an-http-request-from-an-https-website
+
+
+#### cookies set不了的问题
+- https://stackoverflow.com/questions/62578201/how-to-fix-this-set-cookie-was-blocked-due-to-user-preferences-in-chrome-sta
+- https://angel.co/today/stories/chrome-83-arrives-with-redesigned-security-settings-third-party-cookies-blocked-in-incognito-21796
