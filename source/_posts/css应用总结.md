@@ -178,6 +178,34 @@ class名 + hash值
 - z-index只在声明定位的节点中起效
 - 节点在Z轴的层叠顺序根据z-index、层叠上下文和层叠等级共同决定
 
+#### clearfix
+- https://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use
+
+#### 布局
+
+### 函数
+#### 颜色函数
+- rgb | rgba | hsl | hsla | color 
+#### 属性函数
+- attr | var
+
+#### 数字函数
+- clamp ｜ counter ｜ counters ｜ calc | max | min
+
+#### 背景函数
+- url | element | image-set | linear-gradient | radial-gradient | conic-gradient | repeating-linear-gradient | repeating-radial-gradient | repeating-conic-gradient
+
+#### 滤镜函数
+- blur ｜ brightness ｜ contrast ｜ drop-shadow ｜ grayscale ｜ hue-rotate | invert | opacity | saturate | sepial 
+
+#### 图形函数
+- circle ｜ ellipse ｜ inset ｜ path ｜ polygon 
+
+#### 变换函数
+- matrix ｜ perspective ｜ rotate ｜ scale ｜ skew ｜ translate
+
+#### 缓动函数
+- cubic-bezier ｜ steps
 ## 其他
 #### 声音波形
 - https://wavesurfer-js.org/
