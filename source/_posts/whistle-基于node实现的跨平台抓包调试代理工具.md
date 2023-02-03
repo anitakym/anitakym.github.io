@@ -113,3 +113,11 @@ iphone｜ipad
 - https://developer.chrome.com/docs/devtools/evaluate-performance/reference/
 - https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
 - https://codepen.io/shospodarets/pen/QOQvyz - GPU渲染可用demo
+
+#### vconsole
+- https://www.npmjs.com/package/vconsole
+
+#### source - overrides
+- sources - overrides - select folders for overrides(选择本地空文件夹目录)
+- 在page中修改代码，cmd+S保存
+- devTools - more tools - changes

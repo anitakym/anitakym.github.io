@@ -92,3 +92,18 @@ https://chromedevtools.github.io/devtools-protocol/
 #### console
 - .table 和 .dir 可根据场景，选择打印，方便观察
 - %d %o %s %c 占位符- 字符串替换 - 增加样式，格式
+
+#### sourcemap
+- mappings => 映射 https://www.murzwin.com/base64vlq.html
+
+#### performance
+- frames帧线程
+- main主线程，JS执行｜html/css解析，完成绘制
+- raster 完成某个layer或者tile的绘制
+- https://googlechrome.github.io/devtools-samples/jank/
+- FPS | CPU | NET - 概览分析，看性能节点
+
+#### lighthouse
+- LCP - 加载性能
+- FID - 交互性
+- CLS - 视觉稳定性

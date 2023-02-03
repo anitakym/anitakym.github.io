@@ -105,7 +105,7 @@ Thank you very much!
 - no cache -> 会用本地的缓存，但是每次都协商
 - block cookies
 - map remote
-- map local - 线上调试本地代码（替换静态资源）
+- map local - 线上调试本地代码（替换静态资源） 或者mock数据（map local | local path）
 - mirror - 把响应内容保存在本地 可配合map local 使用
 - rewrite
 - block list - 模拟请求失败
