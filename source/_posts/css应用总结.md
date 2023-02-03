@@ -186,12 +186,18 @@ class名 + hash值
 ### 函数
 #### 颜色函数
 - rgb | rgba | hsl | hsla | color 
+- RGB色彩模式 - A透明度（rgba声明的透明度不会应用到子节点中，而opacity声明的透明度会应用到子节点）- 基于笛卡尔坐标系
+- 普通颜色可以用HEX色彩模式（16进制色彩模式）
+- HSL色彩模式是工业界的色彩标准（色相，饱和度，亮度）
+- HSL是将RGB中的点在圆柱坐标系中标记出来的表示法
 #### 属性函数
 - attr | var
+- While attr() is supported for effectively all browsers for the content property, CSS Values and Units Level 5 adds the ability to use attr() on any CSS property, and to use it for non-string values (e.g. numbers, colors).
 
 #### 数字函数
 - clamp ｜ counter ｜ counters ｜ calc | max | min
-
+- calc - 每个运算符号必须使用空格间隔，可混合不同计量单位动态计算
+- 解决路由切换时滚动条导致的网页抖动（`padding-right: calc(100vw - 100%)`）
 #### 背景函数
 - url | element | image-set | linear-gradient | radial-gradient | conic-gradient | repeating-linear-gradient | repeating-radial-gradient | repeating-conic-gradient
 
@@ -206,6 +212,20 @@ class名 + hash值
 
 #### 缓动函数
 - cubic-bezier ｜ steps
+
+#### 图形函数
+- clip-path - 创建一个只有节点的部分区域可显示的剪切区域 - 只能裁剪折线形成的图形，曲线不行
+
+### 变量
+#### --var | var()
+- 自定义属性（--var）
+- 函数var()用于引用自定义属性
+
+#### API
+- elem.style.getPropertyValue()
+- elem.style.setProperty()
+- elem.style.removeProperty()
+
 ## 其他
 #### 声音波形
 - https://wavesurfer-js.org/

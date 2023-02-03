@@ -76,3 +76,19 @@ DevTools=>Devices=>Target build/build.js
 #### ndb
 ndb
 https://chromedevtools.github.io/devtools-protocol/
+
+#### 平台｜环境｜工具｜方法
+- 浏览器，hybrid，nodejs,小程序，electron
+- local| online
+- chrome devtools | charles | spy-debugger | whistle | vConsole
+- console | breakpoint | sourceMap | proxy
+
+## chrome
+#### 动态修改样式
+- .cls
+- computed -> 跳转到styles
+- 强制激活伪类 - 选中具有伪类的元素 点击:hov
+- 强制激活伪类 - DOM树右键菜单，选择Force State
+#### console
+- .table 和 .dir 可根据场景，选择打印，方便观察
+- %d %o %s %c 占位符- 字符串替换 - 增加样式，格式
