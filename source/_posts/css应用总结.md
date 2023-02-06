@@ -225,6 +225,62 @@ class名 + hash值
 - elem.style.getPropertyValue()
 - elem.style.setProperty()
 - elem.style.removeProperty()
+### background ｜ mask
+#### 属性连写
+- color | image | repeat | attachment | position |｜ size | origin | clip | blend-mode
+- margin padding border outline mask font transition animation
+- position/size
+- clip - 镂空文本
+#### 渐变
+- line-gradient
+- radial-gradient
+- conic-gradient
+- repeating-*
+
+#### mask
+- https://www.canvasapi.cn/CanvasRenderingContext2D/globalCompositeOperation
+
+
+#### filter:grayscale(1)
+- <html style="filter:grayscale(1)"> - 把当前节点及后代节点声明为100%的灰度模式
+- 节点声明不为none的filter时，如果自身及后代节点声明了position:absolute/fixed，则为其创建一个新容器，使这些定位节点其定位基准相对新容器进行
+- 所以不要在body或者主要节点中声明filter，html是合适的
+- html是最顶层的容器，即使创建了新的定位基准节点，不会对自身及后代节点产生不符合预期的影响
+
+#### transform
+- flat | perserve-3d
+- tarnslate | scale | skew | rotate | matrix | perspective - 视距效果
+- GPU硬件加速模式 - transform：translate3d() | translateZ() ， webkit内核中，translate3d() 明显； 问题解决-will-change（还会有别的问题），减少translate3d() 节点数量
+
+#### 1px
+- 移动端某些设备看着粗
+- 使用伪元素的边框去当作节点边框，声明border为1px,宽高声明成200%，再声明transform:scale(.5)
+
+#### 内容翻转
+- transform:scale()为负值
+
+#### 过渡
+- transition-property 。。。
+- 缓动函数 - 贝塞尔曲线 - https://cubic-bezier.com/
+
+#### 选择器
+```
++：相邻同胞选择器
+~：通用同胞选择器
+:not()：非指定条件的元素
+:hover：鼠标悬浮的元素
+:focus：输入聚焦的表单元素
+:valid：输入合法的表单元素
+:invalid：输入非法的表单元素
+:checked：选项选中的表单元素
+:placeholder-shown：占位显示的表单元素
+:nth-child(n)：元素中指定顺序索引的元素
+```
+#### 动画
+- 状态
+- 关键帧动画 ｜ 逐帧动画 - GIF
+- 关键帧动画必须通过animation与@keyframes声明
+- 逐帧动画只能通过animation-timing-function:steps()声明
 
 ## 其他
 #### 声音波形

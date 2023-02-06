@@ -31,9 +31,10 @@ https://css-tricks.com/css-dappled-light-effect/
 
 
 
+#### 自动打字效果
+- https://codepen.io/JowayYoung
 
-
-
+#### 用CSS实现切换和表单效果
 ## tools
 - https://codepen.io/
 - https://caniuse.com/
