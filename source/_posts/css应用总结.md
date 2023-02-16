@@ -282,6 +282,19 @@ class名 + hash值
 - 关键帧动画必须通过animation与@keyframes声明
 - 逐帧动画只能通过animation-timing-function:steps()声明
 
+#### 表单控件
+```
+模块切换   ~  :checked  nth-child(n) 
+选中状态   :hover
+输入状态，校验内容  :focus  :valid  :invalid
+判断输入框是否存在内容  +  :not()  placeholder-shown
+```
+```
+placeholder：占位，在未输入内容时显示提示文本
+pattern：正则，在输入内容时触发正则验证
+:valid：作用于输入合法的表单节点
+:invalid：作用于输入非法的表单节点
+```
 ## 其他
 #### 声音波形
 - https://wavesurfer-js.org/

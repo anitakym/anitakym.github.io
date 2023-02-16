@@ -40,6 +40,12 @@ The X coordinate of the mouse pointer in global (screen) coordinates.
 - MouseEvent.screenY Read only
 The Y coordinate of the mouse pointer in global (screen) coordinates.
 
+#### concept
+ screenX/screenY：相对屏幕区域左上角定位，若发生滚动行为，则相对该区域定位
+ pageX/pageY：相对网页区域左上角定位
+ clientX/clientY：相对浏览器可视区域左上角定位
+ offsetX/offsetY：相对父节点区域左上角定位，若无父节点则相对<html>或<body>定位
+
 ## KeyboardEvent
 - https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
 - 键盘事件是由焦点系统控制的，一般来说，操作系统也会提供一套焦点系统，但是现代浏览器一般都选择在自己的系统内覆盖原本的焦点系统
