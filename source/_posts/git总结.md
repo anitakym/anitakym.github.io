@@ -283,5 +283,8 @@ npm list -g --depth 0
 #### GitStats - git history statistics generator
 https://gitstats.sourceforge.net/
 
+#### git fetch -p
+- 清除已删除的远程分支
+
 ## 推荐阅读
 - https://github.com/nnja/advanced-git

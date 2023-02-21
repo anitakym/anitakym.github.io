@@ -56,3 +56,7 @@ role="presentation" width="100%">
 
 - 参考
   - TheBetter.Email/resources
+
+  ### API
+  - https://developer.mozilla.org/zh-CN/docs/Web/API/Document/createDocumentFragment
+  - createDocumentFragment

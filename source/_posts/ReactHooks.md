@@ -19,6 +19,7 @@ If you're using React Router, you should never import anything directly from the
 ```
 - web用react-router-dom，react native 用react-router-native
 - connected-react-router - https://www.npmjs.com/package/connected-react-router - A Redux binding for React Router v4 and v5
+- connected-react-router - Synchronize router state with redux store through uni-directional flow (i.e. history -> store -> router -> components).
 - https://reactrouter.com/docs/en/v6/upgrading/v5 - withRouter 的使用变更，可以用hooks代替
 
 
