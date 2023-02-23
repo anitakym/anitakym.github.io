@@ -120,7 +120,16 @@ vuepress
 - git submodule
 - 包管理工具
 - 协助分组（organization，child project）
-
+```
+/ 下载子模块
+$ git submodule update --init --recursive
+```
+```
+.gitmodules
+[submodule "XXXX"]
+	path = XXXX
+	url = https://github.com/xxx/XXXX.git
+```
 
 
 

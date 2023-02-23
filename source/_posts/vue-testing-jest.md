@@ -29,6 +29,7 @@ Jest默认commonjs方式导入的
 `npm i cross-env -D`
 - 解决ESM不支持的问题，可以用这个，使用Jest最新的原生支持ESM的特性
 - `"jtest": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",`
+- https://www.npmjs.com/package/cross-env
 
 #### eslintrc.js
 env - jest:true
