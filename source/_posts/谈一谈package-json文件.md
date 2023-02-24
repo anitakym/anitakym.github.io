@@ -98,3 +98,8 @@ Then, as a main JavaScript file we will ensure failing to bind to the native add
 ```
 - 这样就确保任何失败都不会影响模块的安装 - 通过覆盖默认的安装脚本来做到这一点，无论编译器给出什么结果，都以0代码退出
 - 然后，绑定时通过捕捉异常回退到Emscripten
+
+
+### files
+- 如果不写的话，所有文件都会被打包进去
+- 写的话，就是当我们的包作为依赖包被安装时候，被包括的条目
