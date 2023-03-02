@@ -4,6 +4,15 @@ date: 2021-03-04 12:12:00
 tags:
     - node
 ---
+
+### centos 安装
+- rpm
+- yum (install | clean all) 如果版本安装有问题，记得按照官方distribution的文档里面写的，做好处理，不然会被缓存影响
+- 或者直接通过nvm安装
+- centos7不支持nodejs18的安装，会提示依赖有问题，具体可见github上面的issue
+
+
+
 ## latest
 - corepack - https://github.com/nodejs/corepack
 - undici WG - https://github.com/nodejs/undici
