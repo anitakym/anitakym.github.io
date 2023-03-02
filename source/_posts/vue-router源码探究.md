@@ -370,7 +370,24 @@ function replaceState (url) {
 - 支持多端（web browser, react native）
 - react-router-dom
 - BrowserRouter | Link | Route | Switch
+```
+The react-router package is the heart of React Router and provides all the core functionality for both react-router-dom and react-router-native.
 
+If you're using React Router, you should never import anything directly from the react-router package, but you should have everything you need in either react-router-dom or react-router-native. Both of those packages re-export everything from react-router.
+
+If you'd like to extend React Router and you know what you're doing, you should add react-router as a peer dependency, not a regular dependency in your package.
+
+react-router包是React Router的核心，为react-router-dom和react-router-native提供所有核心功能。
+
+如果你正在使用 React Router，你不应该直接从 react-router 包中导入任何东西，但你应该在 react-router-dom 或 react-router-native 中拥有你需要的一切。这两个包都从 react-router 重新导出了所有东西。
+
+如果你想扩展 React Router，并且你知道你在做什么，你应该把 react-router 作为peer dependency，而不是在你的包中作为regular dependency。
+```
+- react-router-config
+```
+import { renderRoutes } from 'react-router-config';//renderRoutes 读取路由配置转化为 Route 标签
+renderRoutes 这个方法只渲染一层路由
+```
 ### 应用场景
 
 #### 嵌套路由

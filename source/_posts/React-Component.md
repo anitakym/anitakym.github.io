@@ -68,3 +68,19 @@ export const ClassComponent = 1;
 #### 函数组件自定义hooks
 
 #### HOC高阶组件
+
+
+
+
+### reconciliation
+- React渲染机制 - reconciliation过程
+- props或state改变 - render函数返回不同的元素树 - 新旧DOM树diff - 针对差异的地方进行更新 - 渲染为真实的DOM树
+- shouldComponentUpadate - 合理利用 - 避免不必要的reconciliation过程 - 类组件！- PureComponent - （props或state改变时进行浅层比较）
+- memo - 函数组件 - 只进行了props的浅比较
+
+
+### diff（不同React版本，也是持续优化中）
+- 永远只比较同层节点 ｜ 不同的两个节点产生不同的树 ｜ 通过key值指定哪些元素是相同的 - O(n)
+- 执行的具体流程（元素类型是否相同）
+- 遍历子节点列表的情况（子节点是否有key）
+- 选择key值策略 - 不需要全局统一，但必须列表

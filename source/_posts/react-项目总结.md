@@ -56,3 +56,7 @@ This package includes scripts and configuration used by Create React App.
 Please refer to its documentation:
 ```
 
+#### better-scroll
+
+
+#### react-lazyload

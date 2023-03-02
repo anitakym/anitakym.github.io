@@ -96,6 +96,3 @@ fs.readFile('./element.js',(e,data)=>{
 })
 
 ```
-
-### reconciliation
-- 

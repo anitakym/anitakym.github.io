@@ -26,3 +26,10 @@ composition 组合 compose 嵌套
 - BEM
 Block  Element  Modifier => 模块名 节点名 节点状态 => name local hash:base64
 - 公用样式｜局部化
+
+### styled-components
+- Visual primitives for the component age.
+Use the best bits of ES6 and CSS to style your apps without stress
+- 适合React - all in js
+- https://github.com/styled-components/awesome-styled-components
+- 如果要用iconfont的话，需要处理iconfont对应的文件
