@@ -8,8 +8,44 @@ tags:
 ### centos 安装
 - rpm
 - yum (install | clean all) 如果版本安装有问题，记得按照官方distribution的文档里面写的，做好处理，不然会被缓存影响
-- 或者直接通过nvm安装
+- 或者直接通过nvm安装 - https://github.com/nvm-sh/nvm/tree/v0.39.3
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
 - centos7不支持nodejs18的安装，会提示依赖有问题，具体可见github上面的issue
+```
+机器版本：
+CentOS Linux release 7.9.2009 (Core)
+用户issue：
+https://github.com/nodejs/node/issues/43246
+官方支持声明：
+Supported CentOS versions:
+* CentOS 7 (64-bit) WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+
+* CentOS 8 (64-bit)
+* CentOS 8 Stream (64-bit)
+
+因已知及潜在兼容性问题，和官方支持声明，所以安装16+版本，提供nvm进行切换
+
+安装：
+走rpm装18的时候的报错
+
+curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
+Error: Package: 2:nodejs-18.14.2-1nodesource.x86_64 (nodesource)
+           Requires: libstdc++.so.6(GLIBCXX_3.4.21)(64bit)
+Error: Package: 2:nodejs-18.14.2-1nodesource.x86_64 (nodesource)
+           Requires: libm.so.6(GLIBC_2.27)(64bit)
+Error: Package: 2:nodejs-18.14.2-1nodesource.x86_64 (nodesource)
+           Requires: libstdc++.so.6(GLIBCXX_3.4.20)(64bit)
+Error: Package: 2:nodejs-18.14.2-1nodesource.x86_64 (nodesource)
+           Requires: libstdc++.so.6(CXXABI_1.3.9)(64bit)
+Error: Package: 2:nodejs-18.14.2-1nodesource.x86_64 (nodesource)
+           Requires: libc.so.6(GLIBC_2.28)(64bit)
+ You could try using --skip-broken to work around the problem
+ You could try running: rpm -Va --nofiles --nodigest
+```
 
 
 
