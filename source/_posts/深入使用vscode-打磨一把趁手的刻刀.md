@@ -188,3 +188,7 @@ https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-ico
 
 #### debug
 F5进入debug模式
+
+### 查找，正则
+- 先开启正则模式
+- .* 匹配任意数量任意字符
