@@ -53,3 +53,14 @@ env - jest:true
 - observable
 - reducer - 纯函数 - 好测试
 - 一个命令行就可以生成spec - angular
+
+## configuring Jest
+#### cra
+- create react app reject 之后，transform的option
+```
+"transform": {
+  "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
+  "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+  "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+},
+```
