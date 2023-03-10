@@ -124,3 +124,5 @@ Confusing classes(hard for humans,machines,hot roloading)
 #### readings
 - https://blog.oyanglul.us/javascript/react-cookbook-mini
 - https://blog.oyanglul.us/javascript/understand-prototype
+
+## 原理
