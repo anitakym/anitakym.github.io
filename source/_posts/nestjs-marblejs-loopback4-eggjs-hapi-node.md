@@ -10,8 +10,11 @@ tags:
 - https://medium.com/monstar-lab-bangladesh-engineering/why-i-choose-nestjs-over-other-node-js-frameworks-6cdbd083ae67
 - https://zhuanlan.zhihu.com/p/389639059 - great!!!
 - they have cats !!
-
-
+- 用于构建高效、可伸缩的服务端应用程序的渐进式 Node.js 框架
+- NestJS 的设计理念本身就是一个框架适配器，其主要功能是代理中间件和处理器到适当的特定库应用中，从而达到框架的独立性
+- TS  +  OOP（面向对象编程）FP（函数式编程） FRP（函数式响应编程）
+- 模块加载方面使用 IoC 模式：模块容器 - 依赖注入(通过装饰器和元数据实现)
+- 配套功能：鉴权、文档、微服务、CLI 工具
 
 ## Egg
 
@@ -23,6 +26,9 @@ tags:
 - 日志同步写入内存，异步每隔一段时间(默认 1 秒)刷盘
 ### 核心思想
 - https://www.yuque.com/antfe/featured/gf0y3y
+- 为企业级框架和应用而生
+- Classify
+- 内置集群：使用 Cluster，自带进程守护、多进程以及进程间通讯等功能
 
 ### 约定式开发 - 配置项内部约定 - 需查询文档配置
 

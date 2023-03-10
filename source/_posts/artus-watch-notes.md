@@ -48,3 +48,4 @@ Core Specification
 数据源管理
 重试机制
 ```
+- IoC

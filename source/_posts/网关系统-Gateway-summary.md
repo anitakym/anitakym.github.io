@@ -20,3 +20,22 @@ tags:
 #### 功能
 - 流量网关 - 安全（黑白名单），分流（负载均衡）
 - 业务网关 - 用户（认证，鉴权），服务稳定性（降级，容灾，分流），业务属性灰度（AB test），代理（资源代理，缓存 - 成本高），统一前置（日志，数据校验）
+
+#### 网关基础服务
+- 资源分发｜API分发
+- 资源缓存模块
+- AB TEST模块
+- 通用日志模块
+
+#### 统一用户中心系统
+- 用户登录，认证等
+- 权限系统（RBAC） - 优先级高
+
+#### 物料系统
+- DevOps相关
+
+### frameworks
+- Nginx+Lua：Open Resty、Abtesting Gateway
+- Java：Spring Cloud Gateway
+- Go：Janus、Grpc-Gateway
+- Node.js：Express Gateway、MicroGateway

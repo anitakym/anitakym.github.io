@@ -14,6 +14,14 @@ One master and several worker processes; worker processes run under an unprivile
 （在进程之上，master进程用来管理进程池，监控进程，自动恢复发生异常的worker，保持进程池的稳定和服务能力）
 cite: https://time.geekbang.org/column/article/117492
 </pre>
+#### nginx - 作为web代理服务器 - 负载均衡，流量切换 - lua的脚本支持
+```
+- 对session和cookie的处理较弱
+- 支持的协议有限（http）
+- lua脚本的变更和nginx配置的修改需要重新启动，无法热更新
+- 无可视化配置页面
+```
+- 可以作为流量网关，nginx层流量代理，负载均衡到Gateway做业务层的转发处理
 
 #### nginx 怎么找
 1. ps -ef | grep nginx (ps:显示系统进程)
