@@ -6,4 +6,7 @@ tags:
 ### doc
 - https://docs.nestjs.cn/
 
+#### @nestjs/cli
+new | generate
 
+monorepo | multirepo
