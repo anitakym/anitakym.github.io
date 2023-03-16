@@ -10,3 +10,7 @@ tags:
 new | generate
 
 monorepo | multirepo
+
+## 内置框架选择
+- fastify - 基准测试 - 性能 - like QPS
+- 

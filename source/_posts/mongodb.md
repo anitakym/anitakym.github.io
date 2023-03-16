@@ -207,3 +207,7 @@ https://grafana.com/grafana/dashboards/8339
 ##  Client-Side Field Level Encryption
 - MongoDB 的客户端字段级加密功能
 - https://mp.weixin.qq.com/s/X7JKiK59iu9i7iacWnjsJg
+
+### js脚本执行
+- mongodb compass 的命令行暂时不支持load
+- mongosh 可以，执行load()

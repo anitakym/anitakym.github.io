@@ -19,5 +19,7 @@ User buttons: 里面 可以add
 
 ## 其他
 windterm
-tabby - https://tabby.sh/
+tabby - https://tabby.sh/ - 有点问题，连公司的，特别卡
 warp - https://www.warp.dev/
+
+zen_term macos平台，目前很好用，但是收费
