@@ -22,4 +22,4 @@ windterm
 tabby - https://tabby.sh/ - 有点问题，连公司的，特别卡
 warp - https://www.warp.dev/
 
-zen_term macos平台，目前很好用，但是收费
+zen term macos平台，目前很好用，但是收费，可以使用lite版本的 - 不卡顿
