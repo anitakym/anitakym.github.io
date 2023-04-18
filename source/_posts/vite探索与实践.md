@@ -7,3 +7,8 @@ https://www.yuque.com/vueconf/mkwv0c/ud1un9
 
 #### 依赖预构建 - 开发环境
 - .vite 目录下
+
+### others
+#### vite-node
+- Vite as Node runtime.
+- The engine powers Vitest and Nuxt 3 Dev SSR.

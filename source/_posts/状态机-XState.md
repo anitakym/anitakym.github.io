@@ -9,3 +9,7 @@ tags:
 - https://xstate.js.org/docs/zh/ 
 - https://stately.ai/viz
 - https://static.frontendmasters.com/resources/2020-05-14-state-machines-xstate/state-machine-xstate.pdf
+
+
+### cases
+- SCXML（State Chart XML）- xstate -

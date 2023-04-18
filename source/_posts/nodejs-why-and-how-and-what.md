@@ -244,6 +244,51 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 #### 观察者模式
 - EventEmitter（node-process）
 - DOM addEventListener
+```
+在 Node.js 中，EventEmitter 是一个用于处理事件的模块。它提供了一种基于观察者模式的异步编程方式，可以在需要时触发事件和处理事件。以下是一些使用 EventEmitter 的常见场景：
+
+数据库连接：当使用 Node.js 连接到数据库时，可以使用 EventEmitter 来处理成功或失败的情况，并确保连接正确关闭。
+
+网络编程：在编写网络应用程序时，使用 EventEmitter 可以轻松地管理套接字和客户端连接，并处理相关的事件，例如数据传输、断开连接等。
+
+文件系统：Node.js 的文件系统模块也使用 EventEmitter 来通知进程有关文件操作的事件（如读取、写入、删除等）。
+
+自定义事件：通过继承 EventEmitter 类并添加自己的方法和属性，可以创建自己的类，并发出自定义事件来实现各种功能。
+
+总之，EventEmitter 在 Node.js 中非常常用，几乎在任何需要处理异步事件的场景中都可能会用到。无论是处理数据库连接、网络编程还是文件系统操作，使用 EventEmitter 都可以帮助我们轻松地管理异步事件，保持代码的模块化和可读性。
+
+观察者模式是一种设计模式，用于处理对象间的一对多依赖关系，并在对象状态发生变化时自动通知所有依赖项。在观察者模式中，被观察的对象称作主题（Subject），而观察它的对象称为观察者（Observer）。
+
+观察者模式的主要思想是，当主题对象状态发生变化时，它会通知所有已注册的观察者对象，并调用它们的更新方法来执行相应的操作。这使得主题和观察者可以解耦，避免了紧密耦合的代码结构，也提高了系统的可扩展性和可维护性。
+
+观察者模式通常包括以下角色：
+
+主题（Subject）：被观察的对象，它包含了观察者需要监视的状态以及注册和删除观察者的方法。
+
+观察者（Observer）：观察主题对象的状态，并在状态发生变化时执行相应的操作。
+
+具体主题（Concrete Subject）：具体的被观察对象，它维护了一个观察者列表，并且负责通知所有已注册的观察者。
+
+具体观察者（Concrete Observer）：具体的观察者对象，实现了更新方法，并定义了在主题状态发生变化时所执行的操作。
+
+观察者模式可以应用于许多场景，例如GUI事件处理、文档自动保存、股票市场监控等。它可以帮助我们实现松耦合的代码结构，并提高系统的可扩展性和可维护性。
+
+RxJS (Reactive Extensions for JavaScript) is a library for reactive programming using Observables to handle asynchronous and event-based workflows in JavaScript. It provides operators for transforming, filtering, combining, and querying data streams, as well as utilities for managing subscriptions and handling errors. RxJS is commonly used in front-end web development with frameworks such as Angular or React.
+RxJS 的使用场景主要是处理复杂的异步和事件驱动场景，例如：
+
+处理 HTTP 请求：RxJS 的 Observable 类型可以方便地处理 HTTP 请求和响应，并使用操作符进行数据转换、筛选和组合。
+
+处理用户界面输入：RxJS 可以处理用户界面上的各种事件（如点击、滚动、输入等），并将它们转换成 Observable 流，使得开发者可以方便地编写响应式代码。
+
+处理 WebSocket 数据流：RxJS 可以轻松处理 WebSocket 数据流，并基于数据流执行各种操作，例如过滤、聚合、映射等。
+
+处理复杂的状态管理：RxJS 可以用于处理复杂的状态管理场景，例如 Redux 和 NgRx 中的数据流管理和副作用管理。
+
+处理数据可视化：RxJS 可以用于实现数据可视化和动画效果，例如基于数据流控制图表的更新和动画过渡效果。
+
+总之，RxJS 主要适用于需要处理异步和事件驱动场景的项目，尤其是在需要对数据进行转换、组合和筛选时。
+
+```
 
 #### 外观模式
 - jQuery（解决兼容性问题）

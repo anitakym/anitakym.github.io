@@ -97,3 +97,8 @@ android:launchMode="singleTask"
 - 第三方口语测评部分机型无法使用
 - 真机复现 -> 发现第三方口语测评SDK调用时报错，查出受另一SDK影响，因为都需要收音的资源，麦克风被占用了，所以上报的录音结果多次为0
 - 但是第三方口语测评SDK没有报错
+
+
+### bugly
+- Javascript的异常捕获功能
+- https://bugly.qq.com/docs/user-guide/advance-features-android/?v=1.0.0#javascript

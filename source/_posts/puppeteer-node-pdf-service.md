@@ -219,3 +219,17 @@ It's generally recommended to not wait for a number of seconds, but instead use 
 - 每次翻页之后，获取需要打印的DOM - this.page.evaluate(domStr => document.body.innerHTML = domStr, content);
 - https://pptr.dev/api/puppeteer.page.evaluate/
 - 后台打印可用超管账号（增加中间件）
+
+### TTF, OTF, WOFF, EOT & SVG
+- WOFF 最小，最适合web
+- SVG Safari低版本支持
+- TTF 苹果微软，兼容性最好
+- OTF Adobe微软
+- EOT 微软
+
+### WOFF (Web Open Font Format) 
+- 本质上是 metadata + 基于 SFNT 的字体（如 TTF、OTF 或其他开放字体格式）
+- 由 Mozilla 基金会、微软和 Opera 软件公司合作推出
+- WOFF 字体均经过 WOFF 的编码工具压缩，文件大小一般比 TTF 小 40%，加载速度更快，以更好的嵌入网页中
+- metadata 允许在字体文件中包含许可数据，以解决版权问题
+- WOFF2 格式在原有的基础上提升了 30% 的压缩率
