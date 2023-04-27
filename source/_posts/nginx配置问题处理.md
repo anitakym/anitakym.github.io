@@ -48,7 +48,23 @@ root
 ln -s /root/firekylin/nginx.conf /etc/nginx/conf.d/firekylin.conf
 ```
 nginx.conf里面：
+```
+ln -s是一个Linux/Unix命令，用于创建软链接（Symbolic Link或称为Symlink）。软链接是一种类似于Windows系统中快捷方式的文件，它指向另一个文件或目录。其中，源文件或目录可以是绝对路径或相对路径，也可以是一个完整的URL。软链接可以跨越不同的文件系统，而硬链接只能在同一文件系统中使用。
 
+软链接的用途：
+
+- 简化文件路径名称
+- 提高文件管理的灵活性与安全性
+- 简化开发与维护工作
+
+软链接的语法为：
+
+```
+ln -s source_file link_file
+```
+
+其中，source_file是源文件或目录的路径，link_file是链接文件的路径。执行此命令后，link_file将指向source_file，并且可以作为source_file的别名在系统中使用。
+```
 
 <pre>
 ~   #波浪线表示执行一个正则匹配，区分大小写

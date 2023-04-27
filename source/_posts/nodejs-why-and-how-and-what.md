@@ -25,6 +25,7 @@ tags:
 ### 非阻塞I/O
 - Input/Output 系统的输入和输出
 - 阻塞？ 系统接收输入到再输出期间，能否接收其它输入
+（与阻塞 I/O系统相比，非阻塞 I/O系统提高了 CPU的利用率，可以执行更多的任务，使用更少的时间）
 
 ### callback
 - func格式规范 - error-first！！！ | node-style callback

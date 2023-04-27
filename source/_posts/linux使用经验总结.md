@@ -467,3 +467,14 @@ nc -l port
 
 #### 查目录名称
 - ls -l | grep ^d | awkj 'console.log($9)'
+
+
+#### kill pkill
+结束指定进程：kill [进程ID]
+按进程名结束进程：killall [进程名]
+需要注意的是，kill命令默认发送的是SIGTERM信号，也可以使用“-9”选项发送SIGKILL信号，但是SIGKILL信号不会给进程机会执行清理工作，直接终止进程可能会导致数据丢失等问题。
+
+pkill命令则更加方便一些，它允许你使用进程名或者其他属性来选择要结束的进程，比如：
+结束指定进程名的进程：pkill [进程名]
+结束指定用户的所有进程：pkill -u [用户名]
+需要注意的是，pkill使用的也是SIGTERM信号，同样可以使用“-9”选项发送SIGKILL信号。
