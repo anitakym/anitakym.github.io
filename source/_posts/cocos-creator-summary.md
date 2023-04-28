@@ -71,3 +71,13 @@ API 实现层：这个层次实现了 gfx 抽象层中各个接口的具体实�
 资源管理：gfx 还提供了一套资源管理机制，让开发者可以方便地管理渲染所需的资源，如纹理、缓冲区、渲染目标等。这一部分也会处理资源生命周期和内存管理等问题。
 
 通过 gfx，Cocos Creator 3.x 在底层实现了一套高效、跨平台的渲染系统。从而使开发者可以专注于游戏逻辑的开发，而无需关心不同平台的底层实现细节。
+
+
+### 发布
+
+#### 小程序
+- https://developers.weixin.qq.com/minigame/dev/guide/game-engine/cocos-laya-egret.html
+- 物理静音键问题
+
+### web audio
+- https://mp.weixin.qq.com/s/8DCFok78lzqgCrp_w5rEmw

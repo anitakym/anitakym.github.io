@@ -126,3 +126,6 @@ iOS	JavaScriptCore	WKWebView
 
 ## 小程序宿主环境 - 渲染层和逻辑层
 - https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/framework.html#%E6%B8%B2%E6%9F%93%E5%B1%82%E5%92%8C%E9%80%BB%E8%BE%91%E5%B1%82
+
+### 设计原理
+- https://juejin.cn/post/6844903669389852685

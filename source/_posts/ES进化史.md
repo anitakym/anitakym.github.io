@@ -27,3 +27,6 @@ https://developers.google.com/web/shows/ttt/series-2/es2015
 #### Set
 - https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set
 - 可以模拟并|交|差|子 集
+
+###
+https://caniuse.com/?search=Object.fromEntries
