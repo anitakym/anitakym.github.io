@@ -127,5 +127,5 @@ theme: aircloud
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
  type: git
- repo: your repo url
+ repo: https://github.com/anitakym/anitakym.github.io.git
  branch: master
