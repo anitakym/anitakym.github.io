@@ -128,4 +128,4 @@ theme: aircloud
 deploy:
  type: git
  repo: https://github.com/anitakym/anitakym.github.io.git
- branch: master
+ branch: deploy
