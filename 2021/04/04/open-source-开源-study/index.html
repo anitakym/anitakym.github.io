@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        open-source-开源-study - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E7%AB%99%E7%82%B9"><span class="toc-text">推荐站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Workshop"><span class="toc-text">Workshop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CI-%E6%8C%81%E7%BB%AD%E7%BB%A7%E6%89%BF"><span class="toc-text">CI(持续继承)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4-precommmit-aftercommit"><span class="toc-text">提交(precommmit,aftercommit)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E9%83%A8%E7%BD%B2%EF%BC%88Jenkins%EF%BC%8Ctravis-ci%EF%BC%89"><span class="toc-text">构建部署（Jenkins，travis-ci）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%EF%BC%88%E6%9E%84%E5%BB%BA%E5%89%8D-%E5%8D%95%E6%B5%8B%EF%BC%8C%E6%9E%84%E5%BB%BA%E5%90%8E-%E5%8A%9F%E8%83%BD%EF%BC%89"><span class="toc-text">测试（构建前-单测，构建后-功能）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%EF%BC%88%E6%96%B0%E5%A2%9E%EF%BC%8C%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%9B%9E%E6%BB%9A%EF%BC%89"><span class="toc-text">版本控制（新增，备份，回滚）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E6%B5%8B"><span class="toc-text">单测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3"><span class="toc-text">文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#issue-%EF%BC%88bug-or-feature%E9%9C%80%E6%B1%82%EF%BC%89"><span class="toc-text">issue （bug or feature需求）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%86%E7%B1%BB"><span class="toc-text">前端开源项目分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6%EF%BC%88%E8%8B%A5%E4%B8%BA%E8%87%AA%E7%94%B1%E6%95%85%EF%BC%89"><span class="toc-text">自由软件（若为自由故）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E7%BB%84%E7%BB%87"><span class="toc-text">项目结构组织</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%88%E6%9D%83%E5%8D%8F%E8%AE%AE"><span class="toc-text">授权协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="toc-text">版本控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BE%E5%8C%BA"><span class="toc-text">社区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E9%9B%86%E6%88%90"><span class="toc-text">自动集成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA"><span class="toc-text">构建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3-1"><span class="toc-text">文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BA%90%E7%A0%81"><span class="toc-text">源码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-text">结构设计原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%A6%BB%E5%8E%9F%E5%88%99"><span class="toc-text">分离原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="toc-text">子系统</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E5%B9%BF"><span class="toc-text">推广</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%98%E7%BD%91"><span class="toc-text">官网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BA%E5%9D%9B%E7%A4%BE%E5%8C%BA"><span class="toc-text">论坛社区</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8F%8D%E9%A6%88%E5%92%8C%E5%A4%84%E7%90%86PR"><span class="toc-text">解决反馈和处理PR</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BC%9A%E8%AE%AE"><span class="toc-text">技术会议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%B2%89%E6%B7%80"><span class="toc-text">文档沉淀</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#blog-%E4%B8%93%E6%A0%8F"><span class="toc-text">blog&#x2F;专栏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%95%E7%A8%BF"><span class="toc-text">投稿</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        open-source-开源-study
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-04 16:19:44</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="推荐站点"><a href="#推荐站点" class="headerlink" title="推荐站点"></a>推荐站点</h3><p><a target="_blank" rel="noopener" href="https://snyk.io/advisor/">https://snyk.io/advisor/</a></p>
+<h3 id="Workshop"><a href="#Workshop" class="headerlink" title="Workshop"></a>Workshop</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://slides.com/kentcdodds/write-oss">https://slides.com/kentcdodds/write-oss</a></li>
+<li>有如何写一个open source software 相关资源<h3 id="CI-持续继承"><a href="#CI-持续继承" class="headerlink" title="CI(持续继承)"></a>CI(持续继承)</h3></li>
+<li><a target="_blank" rel="noopener" href="https://www.travis-ci.org/">https://www.travis-ci.org/</a></li>
+<li>circleci.com</li>
+</ul>
+<h4 id="提交-precommmit-aftercommit"><a href="#提交-precommmit-aftercommit" class="headerlink" title="提交(precommmit,aftercommit)"></a>提交(precommmit,aftercommit)</h4><h4 id="构建部署（Jenkins，travis-ci）"><a href="#构建部署（Jenkins，travis-ci）" class="headerlink" title="构建部署（Jenkins，travis-ci）"></a>构建部署（Jenkins，travis-ci）</h4><h4 id="测试（构建前-单测，构建后-功能）"><a href="#测试（构建前-单测，构建后-功能）" class="headerlink" title="测试（构建前-单测，构建后-功能）"></a>测试（构建前-单测，构建后-功能）</h4><h4 id="版本控制（新增，备份，回滚）"><a href="#版本控制（新增，备份，回滚）" class="headerlink" title="版本控制（新增，备份，回滚）"></a>版本控制（新增，备份，回滚）</h4><h3 id="单测"><a href="#单测" class="headerlink" title="单测"></a>单测</h3><ul>
+<li>覆盖率<br>codecov.io<br>coveralls.io</li>
+</ul>
+<h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><p>github.io<br>gitee.io（网络问题，可以作为镜像站点试试）<br><a target="_blank" rel="noopener" href="http://www.netlify.com/">www.netlify.com</a><br>vuepress</p>
+<h3 id="issue-（bug-or-feature需求）"><a href="#issue-（bug-or-feature需求）" class="headerlink" title="issue （bug or feature需求）"></a>issue （bug or feature需求）</h3><ul>
+<li>让用户按照模版提issue</li>
+<li>利用插件提高issue管理效率：<ul>
+<li>github.com/apps/close-issue-app</li>
+<li>issue-helper<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-issue-helper">https://github.com/vuejs/vue-issue-helper</a></li>
+<li>(<a target="_blank" rel="noopener" href="https://vuecomponent.github.io/issue-helper/?lang=zh)%E2%80%94%E2%80%94ant-design-vue%E6%8F%90%E4%BE%9B%E7%9A%84%E6%8F%90issue%E7%9A%84%E6%A8%A1%E7%89%88%E7%95%8C%E9%9D%A2">https://vuecomponent.github.io/issue-helper/?lang=zh)——ant-design-vue提供的提issue的模版界面</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/dessant/lock-threads">https://github.com/dessant/lock-threads</a> —— 锁死不活跃的issue，用户不能再回复了</li>
+</ul>
+</li>
+</ul>
+<h3 id="前端开源项目分类"><a href="#前端开源项目分类" class="headerlink" title="前端开源项目分类"></a>前端开源项目分类</h3><ul>
+<li>CMS/blog Framework (hexo, ghost)</li>
+<li>JavaScript Library/Framework (vue, react, jquery)</li>
+<li>Plugin (bootstrap, vuex, vue-router)</li>
+<li>utility(lodash, commander.js, underscore)</li>
+</ul>
+<h3 id="自由软件（若为自由故）"><a href="#自由软件（若为自由故）" class="headerlink" title="自由软件（若为自由故）"></a>自由软件（若为自由故）</h3><h3 id="项目结构组织"><a href="#项目结构组织" class="headerlink" title="项目结构组织"></a>项目结构组织</h3><h4 id="授权协议"><a href="#授权协议" class="headerlink" title="授权协议"></a>授权协议</h4><ul>
+<li>LGPL/GPL/BSD/MIT/Apache</li>
+</ul>
+<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><blockquote>
+<p>让开发者能快速上手<br>提供docker环境</p>
+</blockquote>
+<ul>
+<li>开发者环境</li>
+<li>依赖环境</li>
+<li>部署环境</li>
+</ul>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p>类似于ElementUI，example就很完整全面</p>
+<ul>
+<li>API演示</li>
+<li>扩展演示</li>
+<li>基本用法/高级用法</li>
+</ul>
+<h4 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h4><p>开发/Beta/Release<br>详细可见博文：软件版本</p>
+<h4 id="社区"><a href="#社区" class="headerlink" title="社区"></a>社区</h4><ul>
+<li>bug反馈</li>
+<li>特性讨论</li>
+<li>扩展插件</li>
+</ul>
+<h4 id="自动集成"><a href="#自动集成" class="headerlink" title="自动集成"></a>自动集成</h4><ul>
+<li>自动部署</li>
+<li>自动测试</li>
+<li>环境检查</li>
+<li>跨浏览器测试</li>
+</ul>
+<h4 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h4><blockquote>
+<p>脚本 + 这一套工具也需要开放给开发者</p>
+</blockquote>
+<ul>
+<li>编译工具</li>
+<li>冗余文件清理</li>
+<li>格式化</li>
+<li>版本文档更新</li>
+<li>合并压缩优化</li>
+<li>发布</li>
+</ul>
+<h4 id="文档-1"><a href="#文档-1" class="headerlink" title="文档"></a>文档</h4><ul>
+<li>API说明</li>
+<li>README</li>
+<li>多语言支持</li>
+<li>快速上手</li>
+<li>最佳实践</li>
+<li>开发者文档</li>
+<li>注释doc工具</li>
+</ul>
+<h4 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h4><ul>
+<li>模块组织方式</li>
+<li>代码规范 - code of conduct</li>
+<li>提交格式</li>
+<li>语法检查 - lint工具</li>
+</ul>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><ul>
+<li>命令行测试</li>
+<li>浏览器测试</li>
+<li>测试覆盖率</li>
+</ul>
+<h3 id="结构设计原则"><a href="#结构设计原则" class="headerlink" title="结构设计原则"></a>结构设计原则</h3><h4 id="分离原则"><a href="#分离原则" class="headerlink" title="分离原则"></a>分离原则</h4><ul>
+<li>源码</li>
+<li>调试编译-debug</li>
+<li>编译部署</li>
+</ul>
+<h4 id="子系统"><a href="#子系统" class="headerlink" title="子系统"></a>子系统</h4><ul>
+<li>git submodule</li>
+<li>包管理工具</li>
+<li>协助分组（organization，child project）<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/</span> <span class="comment">下载子模块</span></span><br><span class="line"><span class="comment">$</span> <span class="comment">git</span> <span class="comment">submodule</span> <span class="comment">update</span> --<span class="comment">init</span> --<span class="comment">recursive</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.gitmodules</span><br><span class="line">[submodule <span class="string">&quot;XXXX&quot;</span>]</span><br><span class="line">    path = XXXX</span><br><span class="line">    url = https:<span class="regexp">//gi</span>thub.com<span class="regexp">/xxx/</span>XXXX.git</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h3 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><ul>
+<li>在线站点</li>
+<li>友情链接赞助</li>
+</ul>
+<h4 id="论坛社区"><a href="#论坛社区" class="headerlink" title="论坛社区"></a>论坛社区</h4><ul>
+<li>BBS</li>
+<li>问答社区</li>
+</ul>
+<h3 id="解决反馈和处理PR"><a href="#解决反馈和处理PR" class="headerlink" title="解决反馈和处理PR"></a>解决反馈和处理PR</h3><h4 id="技术会议"><a href="#技术会议" class="headerlink" title="技术会议"></a>技术会议</h4><h4 id="文档沉淀"><a href="#文档沉淀" class="headerlink" title="文档沉淀"></a>文档沉淀</h4><ul>
+<li>wiki/issues/pages</li>
+</ul>
+<h4 id="blog-专栏"><a href="#blog-专栏" class="headerlink" title="blog/专栏"></a>blog/专栏</h4><h4 id="投稿"><a href="#投稿" class="headerlink" title="投稿"></a>投稿</h4><p>公众号/技术社区</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

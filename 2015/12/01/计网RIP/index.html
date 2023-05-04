@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        计网RIP - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#RIP%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0%E2%80%94-RIP%E4%BB%8B%E7%BB%8D"><span class="toc-text">RIP路由协议概述— RIP介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RIPv1%E5%92%8CRIPv2%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8C%85%E7%BB%93%E6%9E%84"><span class="toc-text">RIPv1和RIPv2的数据包结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="toc-text">配置：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#open-system-interconnection-reference-model-OSI-vs-TCP-IP"><span class="toc-text">open system interconnection reference model (OSI) vs TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91"><span class="toc-text">以太网</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        计网RIP
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2015-12-01 18:25:12</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#很久以前系列" title="很久以前系列">很久以前系列</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#ComputerNetwork" title="ComputerNetwork">ComputerNetwork</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>前段时间计算机网络实验课，老师说最后考的主要是RIP这部分，所以原理多看了看。
+    </p>
+</blockquote>
+<p>RIP，全称是路由信息协议，是TCP/IP环境下开发出的第一款内部网关路由协议。1988年被写入RFC1058。<br>有类、距离矢量动态路由协议。</p>
+<p>    回忆有类和无类的概念：</p>
+<pre><code>- 有类代表这个网络是按照主类进行计算，路由的传递不携带子网掩码，不能进行VLSM和CIDR：RIPv1
+- 无类代表这个网络不是按照主类进行计算，路由的传递携带子网掩码，可以进行VLSM和CIDR：RIPv2</code></pre>
+<p>距离矢量代表这个网络是按照传闻进行计算，每个路由器只知道目的网段的距离，路由的传递不携带结构信息，最短距离基于传闻：RIP、EIGRP、BGP      </p>
+<p>链路状态代表这个网络是按照结构进行计算，区域内每个路由器都知道本域内的结构信息，最短距离基于SPF运算：OSPF
+      </p>
+<h3 id="RIP路由协议概述—-RIP介绍"><a href="#RIP路由协议概述—-RIP介绍" class="headerlink" title="RIP路由协议概述— RIP介绍"></a>RIP路由协议概述— RIP介绍</h3><ul>
+<li>通过UDP进行封装，端口为520。      </li>
+<li>数据包分为两种：request和response，周期性更新。- 管理距离为120，metric为跳数，16跳不可达。</li>
+<li>RIP公有的计时器有三个：update、invalid、flush<ul>
+<li>update：更新计时器，30s，RIP进程开始时计时，到期发送整个路由表（除水平分割内容外），永远持续。</li>
+<li>invalid：失效计时器，180s，当相邻路由器发送的更新表项中存在这个路由条目时开始计时，到期显示possibly down，再次收到这个条目时重置</li>
+<li>flush：刷新计时器，240s，当相邻路由器发送的更新表项中存在这个路由条目时开始计时，到期删除路由，再次收到这个条目时重置</li>
+</ul>
+</li>
+<li>RIP的防环机制有六个：水平分割、最大跳数、路由毒化、毒性逆转、抑制更新计时器、触发更新<ul>
+<li>水平分割：从某个接口收到的路由信息，不会从这个接口再发出去</li>
+<li>最大跳数：无论如何，RIP的路由条目在16跳时，就认为不可达</li>
+<li>路由毒化：一旦得知网段发生断连，则将网段路由条目的跳数记为16跳</li>
+<li>毒性逆转：当得到一个16跳的路由条目，就马上从收到的端口发回该16跳的条目</li>
+<li>抑制更新计时器：一个条目失效后，如果从原更新源出现了该条目更新，则抑制180s</li>
+<li>触发更新：一个条目发生变化后，无视周期性更新，直接将变化后的条目发出</li>
+</ul>
+</li>
+</ul>
+<h3 id="RIPv1和RIPv2的数据包结构"><a href="#RIPv1和RIPv2的数据包结构" class="headerlink" title="RIPv1和RIPv2的数据包结构"></a>RIPv1和RIPv2的数据包结构</h3><pre><code>- 不连续子网
+- 兼容
+- RIPv1使用广播更新，地址为255.255.255.255，自动边界汇总，不可关闭；
+- RIPv2使用组播更新，地址为224.0.0.9，自动边界汇总，可以关闭。</code></pre>
+<p>      在很多非以太网络中，链路的带宽不高，路由的周期性更新会对数据的传递造成较大影响，所以希望降低更新对链路的影响。</p>
+<p><strong>解决的办法：</strong></p>
+<ul>
+<li>增加周期性更新的更新计时器</li>
+<li>设置触发更新<h3 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">router(config)#interface serial0/0</span><br><span class="line">router(config-if)#ip<span class="built_in"> rip </span>triggered</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="open-system-interconnection-reference-model-OSI-vs-TCP-IP"><a href="#open-system-interconnection-reference-model-OSI-vs-TCP-IP" class="headerlink" title="open system interconnection reference model (OSI) vs TCP/IP"></a>open system interconnection reference model (OSI) vs TCP/IP</h3><ul>
+<li>TCP/IP</li>
+<li>应用程序 - 操作系统 - 设备驱动网络接口</li>
+<li>应用层 - HTTP DNS FTP SSH TELNET</li>
+</ul>
+<h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><p>Robert Metcalfe | Xerox Alto<br>论文 - 以太网：本地计算机网络的分布式交换<br>网卡<br>Mac地址</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

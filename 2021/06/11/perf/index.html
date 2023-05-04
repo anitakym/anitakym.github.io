@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        perf - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#debug"><span class="toc-text">debug</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        perf
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-06-11 16:33:58</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>node的项目</p>
+<p>监控 &amp;&amp; 压测<br>客户端监控<br>监控和日志，找出问题共性</p>
+<p>性能问题排查：<br>cpu 负载 —— top<br>java 的话，jstack 查看CPU使用率比较高的线程正在执行什么操作<br>pidstat,vmstat,mpstat查看CPU的运行队列，阻塞进程数，上下文切换的数量<br>perf 排查哪些系统调用or操作消耗了更多的CPU时间<br>jmap dump 出内存信息，使用类似MAT工具来分析，排查内存泄漏问题<br>pmap ,GDB 查看堆外内存都有哪些数据，排查堆外内存泄漏的问题</p>
+<p>perf 对系统内核线程进行分析时，内核线程依然还在正常运行中，所以这种方法也被称为动态追踪技术。</p>
+<p>动态追踪技术，通过探针机制，来采集内核或者应用程序的运行信息，从而可以不用修改内核和应用程序的代码，就获得丰富的信息，帮你分析、定位想要排查的问题。</p>
+<p>perf 简单的静态跟踪机制; 可以通过 perf ，来自定义动态事件（perf probe），只关注真正感兴趣的事件</p>
+<p>Molnar</p>
+<p><a target="_blank" rel="noopener" href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/tools/perf">https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/tools/perf</a></p>
+<p>centos<br>yum install perf</p>
+<p>perf top 可以实时查看当前系统进程函数占用率情况</p>
+<h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">python id</span><br><span class="line"></span><br><span class="line">获取的都不是真实内存</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">id(<span class="keyword">object</span>)</span><br><span class="line"><span class="keyword">Return</span> the “<span class="keyword">identity</span>” <span class="keyword">of</span> an <span class="keyword">object</span>. This <span class="keyword">is</span> an <span class="type">integer</span> which <span class="keyword">is</span> guaranteed <span class="keyword">to</span> be <span class="keyword">unique</span> <span class="keyword">and</span> <span class="keyword">constant</span> <span class="keyword">for</span> this <span class="keyword">object</span> during its lifetime. Two objects <span class="keyword">with</span> non-overlapping lifetimes may have the same id() <span class="keyword">value</span>.</span><br><span class="line">CPython implementation detail: This <span class="keyword">is</span> the address <span class="keyword">of</span> the <span class="keyword">object</span> <span class="keyword">in</span> memory.</span><br><span class="line">Raises an auditing event builtins.id <span class="keyword">with</span> argument id.</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://medium.com/fhinkel/debug-v8-in-node-js-core-with-gdb-cc753f1f32">https://medium.com/fhinkel/debug-v8-in-node-js-core-with-gdb-cc753f1f32</a></p>
+<p>js取不到的，用chrome的heap snapshot，能看到一个等价的地址，但不是真实的内存地址</p>
+<p>js不提供对内存的直接访问，debug工具也只提供到vm的虚拟内存空间，想要取到底层的进程虚拟内存空间，只有用gdb去调试引擎源代码</p>
+<p><a target="_blank" rel="noopener" href="https://www.v2ex.com/t/210556">https://www.v2ex.com/t/210556</a>  -  JavaScript 堆内存分析新工具 OneHeap</p>
+<p><a target="_blank" rel="noopener" href="https://v8.dev/docs">https://v8.dev/docs</a></p>
+<p>javascript heap snapshot</p>
+<p><a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots">https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots</a></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        松本行弘的程序世界-高速和并行-安全-时间-数据持久化-阅读笔记 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E9%80%9F%E6%89%A7%E8%A1%8C%E5%92%8C%E5%B9%B6%E8%A1%8C%E5%A4%84%E7%90%86"><span class="toc-text">高速执行和并行处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A9%E7%A8%8B%E5%BA%8F%E9%AB%98%E9%80%9F%E6%89%A7%E8%A1%8C"><span class="toc-text">让程序高速执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B"><span class="toc-text">并行编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Actor"><span class="toc-text">Actor</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-text">程序安全性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%BC%8F%E6%B4%9E%E4%B8%8E%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-text">程序的漏洞与攻击方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E5%BC%82%E5%B8%B8%E8%BF%9B%E8%A1%8C%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-text">用异常进行错误处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-text">关于时间的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%A4%84%E7%90%86%E6%97%B6%E5%88%BB%E4%B8%8E%E6%97%B6%E9%97%B4"><span class="toc-text">用程序处理时刻与时间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E7%9A%84%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-text">关于数据的持久化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">持久化数据的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BF%9D%E6%8C%81"><span class="toc-text">对象的保持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EXML%E7%9A%84%E8%80%83%E5%AF%9F"><span class="toc-text">关于XML的考察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%81%E6%A8%A1%E5%9E%8B%E4%B8%8E%E9%98%9F%E5%88%97%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">锁模型与队列模型的比较</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E6%AD%A2%E8%B5%84%E6%BA%90%E7%AB%9E%E4%BA%89%E7%9A%84%E6%89%8B%E6%AE%B5"><span class="toc-text">防止资源竞争的手段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%81%E6%A8%A1%E5%9E%8B"><span class="toc-text">锁模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E6%A8%A1%E5%9E%8B"><span class="toc-text">队列模型</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        松本行弘的程序世界-高速和并行-安全-时间-数据持久化-阅读笔记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-29 14:47:59</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="高速执行和并行处理"><a href="#高速执行和并行处理" class="headerlink" title="高速执行和并行处理"></a>高速执行和并行处理</h2><h3 id="让程序高速执行"><a href="#让程序高速执行" class="headerlink" title="让程序高速执行"></a>让程序高速执行</h3><h3 id="并行编程"><a href="#并行编程" class="headerlink" title="并行编程"></a>并行编程</h3><h3 id="Actor"><a href="#Actor" class="headerlink" title="Actor"></a>Actor</h3><h2 id="程序安全性"><a href="#程序安全性" class="headerlink" title="程序安全性"></a>程序安全性</h2><h3 id="程序的漏洞与攻击方法"><a href="#程序的漏洞与攻击方法" class="headerlink" title="程序的漏洞与攻击方法"></a>程序的漏洞与攻击方法</h3><h3 id="用异常进行错误处理"><a href="#用异常进行错误处理" class="headerlink" title="用异常进行错误处理"></a>用异常进行错误处理</h3><h2 id="关于时间的处理"><a href="#关于时间的处理" class="headerlink" title="关于时间的处理"></a>关于时间的处理</h2><h3 id="用程序处理时刻与时间"><a href="#用程序处理时刻与时间" class="headerlink" title="用程序处理时刻与时间"></a>用程序处理时刻与时间</h3><h2 id="关于数据的持久化"><a href="#关于数据的持久化" class="headerlink" title="关于数据的持久化"></a>关于数据的持久化</h2><h3 id="持久化数据的方法"><a href="#持久化数据的方法" class="headerlink" title="持久化数据的方法"></a>持久化数据的方法</h3><h3 id="对象的保持"><a href="#对象的保持" class="headerlink" title="对象的保持"></a>对象的保持</h3><h3 id="关于XML的考察"><a href="#关于XML的考察" class="headerlink" title="关于XML的考察"></a>关于XML的考察</h3><h3 id="锁模型与队列模型的比较"><a href="#锁模型与队列模型的比较" class="headerlink" title="锁模型与队列模型的比较"></a>锁模型与队列模型的比较</h3><ul>
+<li>与线程相关的程序-debug难</li>
+<li>因为时机不同，有时发生，有时不发生</li>
+<li>资源访问-方法调用，变量引用等处理<h4 id="防止资源竞争的手段"><a href="#防止资源竞争的手段" class="headerlink" title="防止资源竞争的手段"></a>防止资源竞争的手段</h4></li>
+<li>使用锁的锁模型</li>
+<li>使用队列的队列模型</li>
+</ul>
+<h4 id="锁模型"><a href="#锁模型" class="headerlink" title="锁模型"></a>锁模型</h4><ul>
+<li>竞争足够少-较高性能</li>
+</ul>
+<h4 id="队列模型"><a href="#队列模型" class="headerlink" title="队列模型"></a>队列模型</h4><ul>
+<li>比锁模型更容易贯彻</li>
+<li>很少会因为线程增多而带来性能低下的恶果</li>
+<li>Erlang-采用了与队列模型本质上等价的消息存储</li>
+<li>今后，多核或具有扩展性的队列模型获取会成为主流</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

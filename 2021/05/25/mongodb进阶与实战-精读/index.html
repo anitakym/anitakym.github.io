@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        mongodb进阶与实战-精读 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E9%97%A8"><span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F-%E5%88%86%E5%B1%82%E6%9D%A5%E6%8F%8F%E8%BF%B0%E7%8E%B0%E5%AE%9E%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-text">系统-分层来描述现实中的模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BSON%EF%BC%88%E4%B8%80%E7%A7%8D%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%89%88%E6%9C%AC%E7%9A%84JSON%E6%89%A9%E5%B1%95%EF%BC%89"><span class="toc-text">BSON（一种二进制版本的JSON扩展）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%A8%A1%E5%BC%8F"><span class="toc-text">动态模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Feature"><span class="toc-text">Feature</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E5%A4%87%E7%9A%84%E7%B4%A2%E5%BC%95"><span class="toc-text">完备的索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%A8%E5%B9%B3%E5%8F%B0"><span class="toc-text">跨平台</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#aggregation%E5%BE%88%E5%BC%BA%E5%A4%A7"><span class="toc-text">aggregation很强大</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#replication-set-%E5%89%AF%E6%9C%AC%E9%9B%86"><span class="toc-text">replication set 副本集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Advantage"><span class="toc-text">Advantage</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%93%E7%94%A8"><span class="toc-text">易用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E6%80%A7%E8%83%BD"><span class="toc-text">高性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E5%8F%AF%E9%9D%A0"><span class="toc-text">高可靠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E5%8F%AF%E6%89%A9%E5%B1%95"><span class="toc-text">高可扩展</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BE%E5%8C%BA%E6%94%AF%E6%8C%81"><span class="toc-text">社区支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Difficult"><span class="toc-text">Difficult</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%AF%94SQL%E6%A8%A1%E5%9E%8B"><span class="toc-text">类比SQL模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%AF%94"><span class="toc-text">类比</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E5%BC%82"><span class="toc-text">差异</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BBSQL%E8%AF%AD%E5%8F%A5"><span class="toc-text">类SQL语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%A8%8B%E5%BA%8F"><span class="toc-text">包含的二进制程序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongo-shell"><span class="toc-text">mongo shell</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-text">操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD"><span class="toc-text">卸载</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        mongodb进阶与实战-精读
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-05-25 14:11:28</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="系统-分层来描述现实中的模型"><a href="#系统-分层来描述现实中的模型" class="headerlink" title="系统-分层来描述现实中的模型"></a>系统-分层来描述现实中的模型</h3><ul>
+<li>物理层-存储介质 ｜ 操作系统/FS-文件系统EXT4/XFS ｜ 数据库-数据表/行/文档 ｜ 应用程序-类/对象</li>
+<li>自下而上，上层用更简单易表述的模型来隐藏下层的复杂性</li>
+<li>数据库系统屏蔽来磁盘文件的存取压缩细节，给应用程序展示了一些通用的数据模型</li>
+<li>处理SQL数据模型 - ORM框架（hibernate等）</li>
+<li>基于JSON的文档模型更契合面向对象的设计准则</li>
+</ul>
+<h3 id="BSON（一种二进制版本的JSON扩展）"><a href="#BSON（一种二进制版本的JSON扩展）" class="headerlink" title="BSON（一种二进制版本的JSON扩展）"></a>BSON（一种二进制版本的JSON扩展）</h3><ul>
+<li>易用性扩展（增加日期，二进制的支持）</li>
+</ul>
+<h3 id="动态模式"><a href="#动态模式" class="headerlink" title="动态模式"></a>动态模式</h3><ul>
+<li>所有读写都是基于一种内部隐含的模式，模式采取按需变更而非提前声明</li>
+</ul>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><h4 id="完备的索引"><a href="#完备的索引" class="headerlink" title="完备的索引"></a>完备的索引</h4><ul>
+<li>设计思路和一般关系型数据库差不多</li>
+<li>特殊应用场景支持：地理空间，文本检索，TTL<h4 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h4></li>
+<li>C++ write</li>
+<li>3.4之后不再支持32-bit X86</li>
+<li>提供了多种语言实现的驱动-Java/C/C++/C#/Python/NodeJS</li>
+</ul>
+<h4 id="aggregation很强大"><a href="#aggregation很强大" class="headerlink" title="aggregation很强大"></a>aggregation很强大</h4><ul>
+<li>以文档化模型为基础设计，适合非结构化数据</li>
+<li>pipline/stage</li>
+</ul>
+<h4 id="replication-set-副本集"><a href="#replication-set-副本集" class="headerlink" title="replication set 副本集"></a>replication set 副本集</h4><ul>
+<li>类似MySQL的Master/Slave复制架构</li>
+<li>海量数据处理-原生支持分布式计算能力</li>
+</ul>
+<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><h4 id="易用"><a href="#易用" class="headerlink" title="易用"></a>易用</h4><ul>
+<li>变更文档结构无需执行DDL变更语句，方便业务平滑升级</li>
+</ul>
+<h4 id="高性能"><a href="#高性能" class="headerlink" title="高性能"></a>高性能</h4><ul>
+<li>3.0-WiredTiger存储引擎（基于内存的二级缓存提供了高速读取数据的能力，根据磁盘I/O特点做了缓冲式写入）</li>
+</ul>
+<h4 id="高可靠"><a href="#高可靠" class="headerlink" title="高可靠"></a>高可靠</h4><ul>
+<li>单个MongoDB节点-开启Journal机制实现断电保护</li>
+<li>集群节点-副本集架构（节点宕机，秒级切换）</li>
+</ul>
+<h4 id="高可扩展"><a href="#高可扩展" class="headerlink" title="高可扩展"></a>高可扩展</h4><ul>
+<li>分片的集群架构</li>
+</ul>
+<h4 id="社区支持"><a href="#社区支持" class="headerlink" title="社区支持"></a>社区支持</h4><h3 id="Difficult"><a href="#Difficult" class="headerlink" title="Difficult"></a>Difficult</h3><ul>
+<li>关系型数据库思维转变，关注段放在系统未来的扩展能力，专注做好表设计，访问模式和性能的权衡</li>
+<li>事务-4.0之后支持（一致性要求高-金融交易类）</li>
+</ul>
+<h3 id="类比SQL模型"><a href="#类比SQL模型" class="headerlink" title="类比SQL模型"></a>类比SQL模型</h3><h4 id="类比"><a href="#类比" class="headerlink" title="类比"></a>类比</h4><p>database（数据库）- 逻辑上名称的空间<br>collection （集合） - SQL中的表<br>document（文档）- 相当于数据表中的一行<br>field（字段）- 文档中的一个属性，相当于column（列）<br>index（索引）- 独立的检索式数据结构<br>_id - 相当于SQL中的primary key<br>view（视图） - 看作虚拟的集合，3.4版本中开始提供，通过聚合管道技术实现<br>$lookup（聚合操作）- 类似table join表链接的聚合操作符</p>
+<h4 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h4><ul>
+<li>半结构化（用的字段无需声明，支持多级嵌套，数组等灵活的数据类型）+弱关系（没有外键约束，也没有强大的表连接能力）</li>
+</ul>
+<h4 id="类SQL语句"><a href="#类SQL语句" class="headerlink" title="类SQL语句"></a>类SQL语句</h4><ul>
+<li>ANSQL</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h4 id="包含的二进制程序"><a href="#包含的二进制程序" class="headerlink" title="包含的二进制程序"></a>包含的二进制程序</h4><ul>
+<li>mongod-数据库服务启动程序</li>
+<li>mongo-数据库客户端shell程序</li>
+<li>mongostat-数据库性能监控工具</li>
+<li>mongotop-热点表监控工具</li>
+<li>mongodump-数据库逻辑备份工具</li>
+<li>mongorestore-数据库逻辑恢复工具</li>
+<li>mongoexport-数据库导出工具</li>
+<li>mongoimport-数据库导入工具</li>
+<li>bsondump-BSON格式转换工具</li>
+<li>mongofiles-GridFS文件工具</li>
+</ul>
+<h3 id="mongo-shell"><a href="#mongo-shell" class="headerlink" title="mongo shell"></a>mongo shell</h3><ul>
+<li>mongodb是用来SpiderMonkey作为内部JavaScript引擎,3.2之前用的V8</li>
+<li>–eval 非交互式</li>
+</ul>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>可见另外一篇博文 - mongodb</p>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">service mongod stop</span><br><span class="line">yum erase $(rpm -qa | grep mongodb-org)</span><br><span class="line">rm -rf /var/log/mongodb</span><br><span class="line">rm -rf /var/<span class="class"><span class="keyword">lib</span>/<span class="title">mongo</span></span></span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

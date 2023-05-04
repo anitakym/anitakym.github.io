@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        深入理解typescript - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#typescript-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%E4%B8%8E%E4%BB%A3%E7%A0%81%E7%BA%A6%E5%AE%9A"><span class="toc-text">typescript 代码风格指南与代码约定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E7%B1%BB%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-text">强类型语言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%B1%E7%B1%BB%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-text">弱类型语言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81-%EF%BD%9C-%E5%8A%A8%E6%80%81-%E7%B1%BB%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-text">静态 ｜ 动态 类型语言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#typescript"><span class="toc-text">typescript</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#advantage"><span class="toc-text">advantage</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ts-vs-es6-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">ts vs es6 数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3"><span class="toc-text">类型注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3"><span class="toc-text">类与接口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Class"><span class="toc-text">Class</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#constructor-NaN"><span class="toc-text">constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TS"><span class="toc-text">TS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%8A%E7%B1%BB%E5%BD%93%E5%81%9A%E6%8E%A5%E5%8F%A3%E4%BD%BF%E7%94%A8"><span class="toc-text">把类当做接口使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="toc-text">联合类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E7%B1%BB%E5%9E%8B"><span class="toc-text">交叉类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="toc-text">类型别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%A6"><span class="toc-text">…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8-amp-amp-AOP"><span class="toc-text">装饰器 &amp;&amp; AOP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mixin"><span class="toc-text">Mixin</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-text">泛型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E4%BC%98%E5%8A%BF"><span class="toc-text">泛型优势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F"><span class="toc-text">泛型约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5%E6%9C%BA%E5%88%B6"><span class="toc-text">类型检查机制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84"><span class="toc-text">映射</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E7%A8%8B"><span class="toc-text">工程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#babel"><span class="toc-text">babel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9"><span class="toc-text">工具选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tslint-vs-eslint"><span class="toc-text">tslint vs eslint</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#babel-eslint-vs-typescript-eslint"><span class="toc-text">babel-eslint vs typescript-eslint</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E4%BD%93%E7%B3%BB"><span class="toc-text">工具体系</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        深入理解typescript
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-05-25 17:51:09</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="typescript-代码风格指南与代码约定"><a href="#typescript-代码风格指南与代码约定" class="headerlink" title="typescript 代码风格指南与代码约定"></a>typescript 代码风格指南与代码约定</h3><h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><ul>
+<li><p>JavaScript - 动态弱类型 - 不会在变量的类型它们的调用者之间建立结构化的契约</p>
+</li>
+<li><p>before ES标准（静态类型检查）,TS 是解决问题的最佳方案</p>
+</li>
+<li><p>静态类型检查器: Flow/Hegel（<a target="_blank" rel="noopener" href="https://github.com/JSMonk/hegel%EF%BC%89/Ternjs(2019%E5%81%9C%E6%AD%A2%E6%9B%B4%E6%96%B0-https://github.com/ternjs/tern)">https://github.com/JSMonk/hegel）/Ternjs(2019停止更新-https://github.com/ternjs/tern)</a></p>
+<h4 id="强类型语言"><a href="#强类型语言" class="headerlink" title="强类型语言"></a>强类型语言</h4></li>
+<li><p>Liskov,Zilles 1974 - 在强类型语言中，当一个对象从调用函数传递到被调用函数时，其类型必须与被调用函数中声明的类型兼容</p>
+</li>
+<li><p>强类型语言不允许改变变量的数据类型，除非进行强制类型抓换</p>
+</li>
+<li><p>不允许程序在发生错误后继续执行</p>
+</li>
+</ul>
+<h4 id="弱类型语言"><a href="#弱类型语言" class="headerlink" title="弱类型语言"></a>弱类型语言</h4><ul>
+<li>变量可以被赋予不同的数据类型</li>
+</ul>
+<h4 id="静态-｜-动态-类型语言"><a href="#静态-｜-动态-类型语言" class="headerlink" title="静态 ｜ 动态 类型语言"></a>静态 ｜ 动态 类型语言</h4><ul>
+<li>在什么阶段确定所有变了的类型</li>
+<li>编译阶段 ｜ 执行阶段</li>
+</ul>
+<h4 id="typescript"><a href="#typescript" class="headerlink" title="typescript"></a>typescript</h4><ul>
+<li>拥有类型系统的JavaScript的超集</li>
+<li>可以编译成pure JavaScript</li>
+<li>类型检查｜语言扩展｜工具属性</li>
+</ul>
+<h4 id="advantage"><a href="#advantage" class="headerlink" title="advantage"></a>advantage</h4><ul>
+<li>接口定义代替文档</li>
+<li>IDE提效（开发）降本（维护）</li>
+<li>类型思维</li>
+</ul>
+<h4 id="ts-vs-es6-数据类型"><a href="#ts-vs-es6-数据类型" class="headerlink" title="ts vs es6 数据类型"></a>ts vs es6 数据类型</h4><ul>
+<li>common - Boolean｜Number｜String|Array|Function|Object|Symbol|undefined|null</li>
+<li><ul>
+<li>void | any | never | 元祖 ｜ 枚举 ｜ 高级类型<h4 id="类型注解"><a href="#类型注解" class="headerlink" title="类型注解"></a>类型注解</h4></li>
+</ul>
+</li>
+<li>相当于强类型语言中的类型声明</li>
+<li>（变量/函数）:type</li>
+</ul>
+<h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><ul>
+<li>解决if else (可读性和可维护性差的问题)</li>
+<li>一组有名字的常量集合<h4 id="类与接口"><a href="#类与接口" class="headerlink" title="类与接口"></a>类与接口</h4></li>
+<li>interface （implements）class</li>
+<li>class (extends - public|private|protected) interface</li>
+<li>class（extends）class</li>
+<li>interface （extends）interface<h3 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h3><h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4></li>
+<li>见ES6的feature</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor</a></li>
+<li>在类构造函数中，不能在调用super()之前引用this - cite  JavaScript高级程序设计（第四版）</li>
+<li>如果在派生类中显式定义了构造函数，则要么必须在其中调用super()，要么必须在其中返回一个对象 - cite  JavaScript高级程序设计（第四版）</li>
+<li>Just as in JavaScript, if you have a base class, you’ll need to call super(); in your constructor body before using any this. members<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">constructor</span>关键字用于在类定义块内部创建类的构造函数。</span></span><br><span class="line"><span class="function">方法名<span class="title">constructor</span>会告诉解释器在使用<span class="title">new</span>操作符创建类的新实例时，应该调用这个函数。</span></span><br><span class="line"><span class="function">构造函数的定义不是必需的，不定义构造函数相当于将构造函数定义为空函数。 </span></span><br><span class="line"><span class="function">- <span class="title">cite</span>  <span class="title">JavaScript</span>高级程序设计（第四版）</span></span><br></pre></td></tr></table></figure>
+<h4 id="TS"><a href="#TS" class="headerlink" title="TS"></a>TS</h4></li>
+<li>constructor<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以使用构造器来定义成员变量，即在类中拥有一个成员，并在构造器中初始化它</span></span><br><span class="line"><span class="comment">// 本写法采用了展开参数的形式，如果需要检查参数或者处理参数，则更合适</span></span><br><span class="line"><span class="keyword">private</span> start: number = <span class="number">0</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">end</span>: number = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">constructor</span><span class="params">(start: number, <span class="keyword">end</span>: number)</span> <span class="comment">&#123;</span></span></span><br><span class="line"><span class="function"><span class="comment">  this.start = start</span></span></span><br><span class="line"><span class="function"><span class="comment">  this.end = end</span></span></span><br><span class="line"><span class="function"><span class="comment">&#125;</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">// typescript为上面的处理方法提供了一个简写</span></span></span><br><span class="line"><span class="function"><span class="comment">// 可以在成员中加一个修饰符前缀，它会在类上自动声明，并且从构造器中复制过去</span></span></span><br><span class="line"><span class="function"><span class="comment">// 写法简洁，适用于只是为私有字段赋值的场景；</span></span></span><br><span class="line"><span class="function"><span class="title">constructor</span><span class="params">(<span class="keyword">private</span> start: number, <span class="keyword">private</span> <span class="keyword">end</span>: number)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
+<h4 id="把类当做接口使用"><a href="#把类当做接口使用" class="headerlink" title="把类当做接口使用"></a>把类当做接口使用</h4></li>
+<li>类定义会创建两个东西：类的实例类型和一个构造函数。 因为类可以创建出类型，所以你能够在允许使用接口的地方使用类。</li>
+</ul>
+<blockquote>
+<p>很多JavaScript框架（特别是React）已经抛弃混入模式，转向了组合模式（把方法提取到独立的类和辅助对象中，然后把它们组合起来，但不使用继承）。这反映了那个众所周知的软件设计原则：“组合胜过继承（composition over inheritance）。”这个设计原则被很多人遵循，在代码设计中能提供极大的灵活性。 __ JavaScript高级程序设计（第四版）</p>
+</blockquote>
+<h3 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h3><ul>
+<li>type | type</li>
+<li>确保使用typeof检查</li>
+<li>如果类型过多，考虑设计上是否可以分解为更小的函数</li>
+</ul>
+<h3 id="交叉类型"><a href="#交叉类型" class="headerlink" title="交叉类型"></a>交叉类型</h3><ul>
+<li>可以让我们安全的使用extends 模式</li>
+<li>适用于类，接口，泛型和基本类型</li>
+</ul>
+<h3 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h3><ul>
+<li>语法技巧，提高代码可读性</li>
+<li>大型项目，提高代码一致性<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="type">Flags </span>= PatchFlags | ShapeFlags</span><br></pre></td></tr></table></figure>
+<h3 id="…"><a href="#…" class="headerlink" title="…"></a>…</h3></li>
+<li>使用展开运算符，可以对一个或多个输入类型的属性自动执行浅拷贝</li>
+<li>解构对象 - rest</li>
+<li>rest参数 ｜ rest属性</li>
+</ul>
+<h3 id="装饰器-amp-amp-AOP"><a href="#装饰器-amp-amp-AOP" class="headerlink" title="装饰器 &amp;&amp; AOP"></a>装饰器 &amp;&amp; AOP</h3><h3 id="Mixin"><a href="#Mixin" class="headerlink" title="Mixin"></a>Mixin</h3><h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h4><ul>
+<li>不预先确定的数据类型，具体的类型在使用的时候才能确定</li>
+<li>将相同的代码用于不同的类型</li>
+<li>String Stack, Number Stack … ?</li>
+<li>TypeScript提供了创建泛型的能力</li>
+<li>泛型是一种类型，通过占位符来代表要使用的类型</li>
+<li>具体使用什么类型，要由调用该泛型的代码决定。泛型包含在&lt; &gt;内，出现在类名、方法名等的后面</li>
+<li><T>语法告诉TypeScript，这个类中任何地方出现的T都指代传入的类型</li>
+<li>当我们为泛型指定类型后，TypeScript会限制其不能改变</li>
+</ul>
+<h4 id="泛型优势"><a href="#泛型优势" class="headerlink" title="泛型优势"></a>泛型优势</h4><ul>
+<li>可扩展性-函数或类可以轻松支持多种数据类型</li>
+<li>可读性 - 不用写多条函数重载｜冗长的联合类型声明</li>
+<li>灵活控制类型之间的约束</li>
+</ul>
+<h4 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束</h4><h4 id="类型检查机制"><a href="#类型检查机制" class="headerlink" title="类型检查机制"></a>类型检查机制</h4><ul>
+<li>TypeScript在做类型检查时，秉承的原则及表现出的行为</li>
+<li>作用（提高开发效率）</li>
+<li>类型推断（基础｜最佳通用｜上下文）</li>
+<li>类型兼容性（当一个类型A可以被赋值给另一个类型B的时候，我们可以说B兼容A）（B兼容A： B = A ）（结构之间兼容-成员少的兼容成员多的；函数之间兼容-参数多的兼容参数少的）</li>
+<li>类型保护（typescript能够在特定区块中保证变量属于某种确定的类型，可以在此区块中放心引用此类型的属性，或者调用此类型的方法）</li>
+</ul>
+<h3 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h3><ul>
+<li>映射是一个泛型类，接受两种类型：为映射使用的键的类型，以及在映射中存储的对象的类型</li>
+<li>Map - get | set</li>
+</ul>
+<h2 id="工程"><a href="#工程" class="headerlink" title="工程"></a>工程</h2><ul>
+<li>typescript模块解析策略（classic｜node）</li>
+<li>awesome-typescirpt-loader(比ts-loader更适合与babel集成，使用babel的转义和缓存；不需要安装额外的插件，就可以把类型检查放在独立进程中进行）<h4 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h4></li>
+<li>babel7</li>
+<li>之前和之后是两个处理路径<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ts - tsc - js - babel - js</span><br><span class="line">ts - babel - js (tsc -<span class="built_in"> type </span>checking)</span><br></pre></td></tr></table></figure>
+<h4 id="工具选择"><a href="#工具选择" class="headerlink" title="工具选择"></a>工具选择</h4></li>
+<li>1.tsc + ts-loader</li>
+<li>2.babel + @babel/preset-typescript(可配合tsc做类型检查)</li>
+<li>1.2不要混用</li>
+</ul>
+<h4 id="tslint-vs-eslint"><a href="#tslint-vs-eslint" class="headerlink" title="tslint vs eslint"></a>tslint vs eslint</h4><ul>
+<li>typescript官方转eslint</li>
+<li>why : 1.tslint执行规则的方式存在一些架构问题，从而影响了性能，而修复这些问题会破坏现有的规则 2.eslint的性能更好，并且社区用户通常有eslint的配置规则（Vue|react），没有tslint的规则</li>
+<li>typescript（类型检查｜语言转换｜语法错误）</li>
+<li>eslint(代码风格｜语法错误)</li>
+</ul>
+<h4 id="babel-eslint-vs-typescript-eslint"><a href="#babel-eslint-vs-typescript-eslint" class="headerlink" title="babel-eslint vs typescript-eslint"></a>babel-eslint vs typescript-eslint</h4><ul>
+<li>两者底层机制不一样，不要一起使用；babel体系使用babel-eslint,否则可以使用typescript-eslint</li>
+<li>babel-eslint支持typescript没有额外的语法检查，抛弃typescript，不支持类型检查</li>
+<li>typescript-eslint基于typescript的AST，支持创建基于类型信息的规则（tsconfig.json）</li>
+</ul>
+<h4 id="工具体系"><a href="#工具体系" class="headerlink" title="工具体系"></a>工具体系</h4><ul>
+<li>编译工具（ts-loader | @babel/preset-typescript）</li>
+<li>代码检查工具（eslint+typescript-eslint | babel-eslint）</li>
+<li>单元测试工具（ts-jest | babel-jest）</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        feign - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E8%A6%81%E6%8E%A5%E5%85%A5%E7%A5%9E%E7%AD%96%E5%9F%8B%E7%82%B9%EF%BC%8C%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8E%A5%E5%85%A5%E7%9A%84%E8%AF%9D%EF%BC%8CAPI%E6%8E%A5%E5%85%A5%E9%83%A8%E5%88%86%EF%BC%8C%E4%BD%BF%E7%94%A8feign-api%E6%96%B9%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-text">最近要接入神策埋点，数据采集接入的话，API接入部分，使用feign api方式调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97%EF%BC%9A"><span class="toc-text">文档指南：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#feign%E7%9A%84%E6%89%A9%E5%B1%95%EF%BC%9A"><span class="toc-text">feign的扩展：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#other-cases"><span class="toc-text">other cases</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A"><span class="toc-text">A</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B"><span class="toc-text">B</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C"><span class="toc-text">C</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        feign
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-15 11:35:27</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h4 id="最近要接入神策埋点，数据采集接入的话，API接入部分，使用feign-api方式调用"><a href="#最近要接入神策埋点，数据采集接入的话，API接入部分，使用feign-api方式调用" class="headerlink" title="最近要接入神策埋点，数据采集接入的话，API接入部分，使用feign api方式调用"></a>最近要接入神策埋点，数据采集接入的话，API接入部分，使用feign api方式调用</h4><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">How does Feign work?</span><br><span class="line">Feign works <span class="keyword">by</span> processing annotations <span class="keyword">into</span> <span class="keyword">a</span> templatized request. Arguments are applied <span class="built_in">to</span> these templates <span class="keyword">in</span> <span class="keyword">a</span> straightforward fashion <span class="keyword">before</span> output. Although Feign is limited <span class="built_in">to</span> supporting <span class="keyword">text</span>-based APIs, <span class="keyword">it</span> dramatically simplifies <span class="keyword">system</span> aspects such <span class="keyword">as</span> replaying requests. Furthermore, Feign makes <span class="keyword">it</span> easy <span class="built_in">to</span> unit test your conversions knowing this.</span><br></pre></td></tr></table></figure>
+<h4 id="文档指南："><a href="#文档指南：" class="headerlink" title="文档指南："></a>文档指南：</h4><p><a target="_blank" rel="noopener" href="https://github.com/OpenFeign/feign">https://github.com/OpenFeign/feign</a></p>
+<p>为什么要使用feign呢？</p>
+<h4 id="feign的扩展："><a href="#feign的扩展：" class="headerlink" title="feign的扩展："></a>feign的扩展：</h4><p>提高扩展性，使用者可以不修改框架源码的情况下，为框架扩展新的功能（类似于插件模式）<br>feign 是一个 HTTP 客户端框架，我们可以在不修改框架源码的情况下，用如下方式来扩展我们自己的编解码方式、日志、拦截器等。</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Feign feign = Feign.builder()</span><br><span class="line">        .logger(<span class="keyword">new</span> <span class="type">CustomizedLogger</span>())</span><br><span class="line">        .encoder(<span class="keyword">new</span> <span class="type">FormEncoder</span>(<span class="keyword">new</span> <span class="type">JacksonEncoder</span>()))</span><br><span class="line">        .decoder(<span class="keyword">new</span> <span class="type">JacksonDecoder</span>())</span><br><span class="line">        .errorDecoder(<span class="keyword">new</span> <span class="type">ResponseErrorDecoder</span>())</span><br><span class="line">        .requestInterceptor(<span class="keyword">new</span> <span class="type">RequestHeadersInterceptor</span>()).build();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RequestHeadersInterceptor</span> <span class="keyword"><span class="keyword">implements</span> <span class="type">RequestInterceptor</span></span> </span>&#123;  </span><br><span class="line">  @Override</span><br><span class="line">  <span class="keyword">public</span> void apply(RequestTemplate template) &#123;</span><br><span class="line">    template.header(<span class="string">&quot;appId&quot;</span>, <span class="string">&quot;...&quot;</span>);</span><br><span class="line">    template.header(<span class="string">&quot;version&quot;</span>, <span class="string">&quot;...&quot;</span>);</span><br><span class="line">    template.header(<span class="string">&quot;timestamp&quot;</span>, <span class="string">&quot;...&quot;</span>);</span><br><span class="line">    template.header(<span class="string">&quot;token&quot;</span>, <span class="string">&quot;...&quot;</span>);</span><br><span class="line">    template.header(<span class="string">&quot;idempotent-token&quot;</span>, <span class="string">&quot;...&quot;</span>);</span><br><span class="line">    template.header(<span class="string">&quot;sequence-id&quot;</span>, <span class="string">&quot;...&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomizedLogger</span> <span class="keyword"><span class="keyword">extends</span> <span class="type">feign</span></span>.<span class="title">Logger</span> </span>&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResponseErrorDecoder</span> <span class="keyword"><span class="keyword">implements</span> <span class="type">ErrorDecoder</span></span> </span>&#123;</span><br><span class="line">  @Override</span><br><span class="line">  <span class="keyword">public</span> Exception decode(<span class="keyword">String</span> methodKey, Response response) &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="other-cases"><a href="#other-cases" class="headerlink" title="other cases"></a>other cases</h3><h4 id="A"><a href="#A" class="headerlink" title="A"></a>A</h4><p>hystrix - <a target="_blank" rel="noopener" href="https://github.com/Netflix/Hystrix">https://github.com/Netflix/Hystrix</a><br>降级方案 - 系统之间feign调用</p>
+<h4 id="B"><a href="#B" class="headerlink" title="B"></a>B</h4><ul>
+<li>sentinel - 资源|规则 - 流量控制-自由选择控制的角度，灵活组合，从而达到想要的效果 -熔断降级-降低调用链路中的不稳定资源 - 系统负载保护</li>
+<li>sentinel(面向分布式服务架构的流量控制组件) - 适配feign<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">feign.sentinel.enable=<span class="keyword">true</span></span><br><span class="line">error</span><br><span class="line">NoSuchMethodErrorfeign.RequestTemplate.path（）Ljava / lang / String;</span><br><span class="line">版本不匹配 - spring-cloud-starter-alibaba-sentinel feign-core</span><br><span class="line">解决 - 添加流量规则</span><br><span class="line"><span class="function"><span class="keyword">Method</span>：<span class="title">http</span>:</span><span class="comment">//service-name/path</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="C"><a href="#C" class="headerlink" title="C"></a>C</h4><p>okhttp3性能 &gt; httpclient<br>feign底层 更换为 okhttp3</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        docker-node-k8s项目实践总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D"><span class="toc-text">项目介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E5%92%8C%E5%90%8E%E5%8F%B0%E6%A8%A1%E5%BC%8F"><span class="toc-text">前台和后台模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="toc-text">存在问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-text">做的优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E4%BE%BF%E8%81%8A%E8%81%8A"><span class="toc-text">随便聊聊</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Others"><span class="toc-text">Others</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#harbor"><span class="toc-text">harbor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#projects"><span class="toc-text">projects</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#API-%E6%8E%A7%E5%88%B6%E4%B8%AD%E5%BF%83-devcenter"><span class="toc-text">API 控制中心 devcenter</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#baiscs"><span class="toc-text">baiscs</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cluster-ip"><span class="toc-text">cluster ip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pod%E5%AF%B9%E8%B1%A1"><span class="toc-text">Pod对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8-%E9%9A%94%E7%A6%BB%E4%B8%8E%E9%99%90%E5%88%B6"><span class="toc-text">容器 - 隔离与限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Others-1"><span class="toc-text">Others</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#aws%E9%85%8D%E7%BD%AE"><span class="toc-text">aws配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90%E7%9B%91%E6%8E%A7%E5%B7%A5%E5%85%B7"><span class="toc-text">系统资源监控工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dumb-init"><span class="toc-text">dumb-init</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%96%E9%83%A8%E4%BB%A3%E7%90%86%E8%BF%9B%E8%A1%8C%E7%9B%91%E6%B5%8B%E5%92%8C%E7%BC%93%E5%AD%98"><span class="toc-text">使用外部代理进行监测和缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#child-process"><span class="toc-text">child_process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cluster"><span class="toc-text">cluster</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        docker-node-k8s项目实践总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-03 12:21:24</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>docker - 容器技术 - 在当前操作系统内运行一个专用的操作系统环境<br>保持环境的一致性（开发，生产）<br>kubernetes - 容器编排系统 - 管理多个Docker容器（管理Docker的生命周期和扩展Docker容器的规模）<br>特性和API会过时，但通用的概念不会;概念及特定语言的相关框架的实现;对内核的扩展，包含一些现成的模块和功能</p>
+</blockquote>
+<h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#FROM xxx.xxx.xxx.cn/pub/nodejs:12.2.0_new</span></span><br><span class="line">FROM xxx.xxx.xxx.cn<span class="regexp">/pub/</span>nodejs:<span class="number">12.2</span>.<span class="number">0</span>_update</span><br><span class="line">ARG VERSION</span><br><span class="line">WORKDIR <span class="regexp">/xxx/</span>xxx_target</span><br><span class="line">COPY <span class="variable">$VERSION</span><span class="regexp">/xxx_target.zip /</span>xxxx/xxx_target</span><br><span class="line"></span><br><span class="line">RUN  yum -y install  unzip ;  unzip xxx_target.zip ; <span class="regexp">/usr/</span>bin<span class="regexp">/cp -r ./</span>dependency<span class="regexp">/* /u</span>sr<span class="regexp">/share/</span>fonts/ ; rm -f xxx_target.zip.zip </span><br><span class="line">ENTRYPOINT pm2 start ecosystem.config.js --env production --no-daemon</span><br></pre></td></tr></table></figure>
+<ul>
+<li>unzip xxx_target.zip生成的流水线是：拉取gitlab代码，git pull &amp;&amp; npm i &amp;&amp; npm run ts:build</li>
+<li>私有仓库是容器化部门构建的私有化仓库，基于harbor（<a target="_blank" rel="noopener" href="https://github.com/goharbor%EF%BC%89">https://github.com/goharbor）</a></li>
+<li>日志落到集团kibana上面(<a target="_blank" rel="noopener" href="https://github.com/elastic/kibana">https://github.com/elastic/kibana</a>)</li>
+<li>容器的性能和情况监控是在集团的grafana上面（<a target="_blank" rel="noopener" href="https://github.com/grafana/grafana%EF%BC%89">https://github.com/grafana/grafana）</a></li>
+<li>mq,rabbitmq - 上部署的web管理端可以查看情况</li>
+<li>最开始消费者是虚拟机和pod都有，我们根据ip段区分</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md">https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md</a></li>
+<li><code>pm2 --no-daemon</code>命令表示以非守护进程的方式启动pm2进程。在这种方式下，pm2进程会被启动在前台，并会将日志输出到控制台，同时终端窗口关闭后pm2进程也会随之退出。这种方式通常用于调试以及在Docker等容器环境下运行pm2进程。如果要停止以非守护进程的方式启动的pm2进程，只需要在终端窗口中按下 <code>Ctrl+C</code> 即可</li>
+<li>Docker 要求内部服务进程在前台模式下运行<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 如果在进程管理器中运行 <span class="module-access"><span class="module"><span class="identifier">Node</span>.</span></span>js 应用程序而不使用前台模式，进程管理器会不断启动新的进程。这是因为进程管理器无法监控后台进程的运行状况，因此它无法保证在某个进程失败时立即启动另一个进程。相反，在前台模式下，进程管理器可以检测到进程是否崩溃并立即启动另一个进程，从而保持应用程序的可用性。因此，在使用 systemd、supervisord 等进程管理器时，建议始终将 <span class="module-access"><span class="module"><span class="identifier">Node</span>.</span></span>js 应用程序配置为前台模式运行。</span><br><span class="line">- 在使用 pm2 进行 <span class="module-access"><span class="module"><span class="identifier">Node</span>.</span></span>js 应用程序的进程管理时，并不要求应用程序必须以前台模式运行。相反，pm2 会将 <span class="module-access"><span class="module"><span class="identifier">Node</span>.</span></span>js 应用程序从前台模式转换为后台模式并启动进程，以便进程管理器可以在应用程序崩溃时根据需要自动重启应用程序。这样，即使某个进程崩溃，pm2 也可以自动将其重启，从而保持应用程序的可用性。因此，在使用 pm2 时，可以将 <span class="module-access"><span class="module"><span class="identifier">Node</span>.</span></span>js 应用程序设置为后台模式运行，以提高系统的稳定性。</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Docker 在运行容器时会启动一个 <span class="keyword">init</span> 进程，这个进程负责容器内的进程管理和信号转发，这个 <span class="keyword">init</span> 进程的子进程就是我们在容器内启动的服务进程。在默认情况下，Docker 要求容器内的服务进程必须以前台模式运行，也就是说，服务进程必须在前台运行，并将进程的标准输入、标准输出和标准错误输出流与 Docker 主机的标准输入输出流进行绑定。这样，Docker 主机就可以通过控制台来进行服务进程的操作和监控，比如查看进程输出信息、向服务进程发送中断信号等。</span><br><span class="line"></span><br><span class="line">如果服务进程以后台模式运行，也就是不在前台运行，那么这个服务进程的标准输入、标准输出和标准错误输出流就无法与 Docker 主机的标准输入输出流绑定在一起，这样 Docker 主机就无法进行服务进程的管理和监控，也就无法对服务进程进行重启、停止等操作，这对于容器的运维和管理带来了很大的挑战，因此 Docker 要求服务进程必须在前台模式下运行。</span><br></pre></td></tr></table></figure>
+<h3 id="前台和后台模式"><a href="#前台和后台模式" class="headerlink" title="前台和后台模式"></a>前台和后台模式</h3></li>
+<li>后台守护进程和前台进程<br>Node.js 在 Linux/Unix 系统中可以运行在前台和后台两种模式下。在前台模式下，Node.js 进程直接运行在当前终端会话中，并且输出日志信息到终端。在后台模式下，Node.js 进程运行在后台，并且它的输出通常被重定向到文件或其他设备上。<br>下面是一个使用两种模式运行 Node.js 的示例：<br>在前台模式下运行 Node.js：<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">app</span>.js</span><br></pre></td></tr></table></figure>
+在后台模式下运行 Node.js：<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nohup <span class="keyword">node</span> <span class="title">app</span>.js &gt; app.log &amp;</span><br></pre></td></tr></table></figure>
+在以上的命令中，使用了 <code>nohup</code> 命令来运行 Node.js 进程，并且将输出日志到命名为 <code>app.log</code> 的文件中。同时，使用 <code>&amp;</code> 符号使 Node.js 进程在后台运行。<br>需要注意的是，在生产环境中，通常会使用像 PM2 或者 Supervisord 这样的进程管理工具来管理 Node.js 应用程序，并确保它们在后台运行时能够自动重启、监控和处理错误。<h3 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h3></li>
+</ul>
+<h3 id="做的优化"><a href="#做的优化" class="headerlink" title="做的优化"></a>做的优化</h3><h3 id="随便聊聊"><a href="#随便聊聊" class="headerlink" title="随便聊聊"></a>随便聊聊</h3><p>之前看了阿里巴巴云原生的一篇访谈博文（<a target="_blank" rel="noopener" href="https://juejin.cn/post/6951283312824418311%EF%BC%89%EF%BC%9A">https://juejin.cn/post/6951283312824418311）：</a><br>里面Nacos联合创始人做了一个类比：Nacos之于微服务的地位，就跟Etcd之于k8s的地位一样</p>
+<p>翻译内容笔记来自于下面开源链接：<br><a target="_blank" rel="noopener" href="https://btholt.github.io/complete-intro-to-containers/">https://btholt.github.io/complete-intro-to-containers/</a></p>
+<h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><h3 id="harbor"><a href="#harbor" class="headerlink" title="harbor"></a>harbor</h3><h4 id="projects"><a href="#projects" class="headerlink" title="projects"></a>projects</h4><ul>
+<li>项目 ｜ 镜像仓库</li>
+<li>docker pull xxx.xxx.xxx.cn/project-x/xxxserver:202107071844</li>
+<li>运维对我们项目的包优化了一个版本，增加了镜像大小 700M-&gt;1.12G，减少了下载的时间<h4 id="API-控制中心-devcenter"><a href="#API-控制中心-devcenter" class="headerlink" title="API 控制中心 devcenter"></a>API 控制中心 devcenter</h4></li>
+</ul>
+<h2 id="baiscs"><a href="#baiscs" class="headerlink" title="baiscs"></a>baiscs</h2><h4 id="cluster-ip"><a href="#cluster-ip" class="headerlink" title="cluster ip"></a>cluster ip</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/concepts/services-networking/service/">https://kubernetes.io/docs/concepts/services-networking/service/</a><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Kubernetes assigns this<span class="built_in"> Service </span>an<span class="built_in"> IP address </span>(sometimes called the <span class="string">&quot;cluster IP&quot;</span>), which is used by the<span class="built_in"> Service </span>proxies (see Virtual IPs <span class="keyword">and</span><span class="built_in"> service </span>proxies below).</span><br></pre></td></tr></table></figure></li>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies">https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies</a><blockquote>
+<p>ClusterIP: Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within the cluster. This is the default ServiceType.</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">举个例子，考虑一个图片处理后端，它运行了 3 个副本。这些副本是可互换的 —— 前端不需要关心它们调用了哪个后端副本。 然而组成这一组后端程序的 Pod 实际上可能会发生变化， 前端客户端不应该也没必要知道，而且也不需要跟踪这一组后端的状态。</span><br><span class="line"></span><br><span class="line">Service 定义的抽象能够解耦这种关联。</span><br><span class="line"></span><br><span class="line">Kubernetes 为该服务分配一个<span class="built_in"> IP </span>地址（有时称为 “集群 IP”），该<span class="built_in"> IP </span>地址由服务代理使用。</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">发布服务（服务类型)</span><br><span class="line">对一些应用的某些部分（如前端），可能希望将其暴露给 Kubernetes 集群外部的<span class="built_in"> IP </span>地址。</span><br><span class="line"></span><br><span class="line">Kubernetes ServiceTypes 允许指定你所需要的<span class="built_in"> Service </span>类型，默认是 ClusterIP。</span><br><span class="line"></span><br><span class="line">Type 的取值以及行为如下：</span><br><span class="line"></span><br><span class="line">ClusterIP：通过集群的内部<span class="built_in"> IP </span>暴露服务，选择该值时服务只能够在集群内部访问。 这也是默认的 ServiceType。</span><br><span class="line"></span><br><span class="line">NodePort：通过每个节点上的<span class="built_in"> IP </span>和静态端口（NodePort）暴露服务。 NodePort 服务会路由到自动创建的 ClusterIP 服务。 通过请求 &lt;节点 IP&gt;:&lt;节点端口&gt;，你可以从集群的外部访问一个 NodePort 服务。</span><br><span class="line"></span><br><span class="line">LoadBalancer：使用云提供商的负载均衡器向外部暴露服务。 外部负载均衡器可以将流量路由到自动创建的 NodePort 服务和 ClusterIP 服务上。</span><br><span class="line"></span><br><span class="line">ExternalName：通过返回 CNAME 和对应值，可以将服务映射到 externalName 字段的内容（例如，foo.bar.example.com）。 无需创建任何类型代理。</span><br></pre></td></tr></table></figure>
+<h4 id="Pod对象"><a href="#Pod对象" class="headerlink" title="Pod对象"></a>Pod对象</h4></li>
+<li>凡是调度，网络，存储，以及安全相关的属性基本上都是Pod级别的</li>
+</ul>
+<h4 id="容器-隔离与限制"><a href="#容器-隔离与限制" class="headerlink" title="容器 - 隔离与限制"></a>容器 - 隔离与限制</h4><ul>
+<li>容器是一个“单进程”模型<h2 id="Others-1"><a href="#Others-1" class="headerlink" title="Others"></a>Others</h2><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">把eBay的一些核心应用从物理机迁移到容器</span><br><span class="line"><span class="number">1</span>，对于应用，它容器化之后，发布和部署更加方便，特别是在扩容的时候更快了。</span><br><span class="line"><span class="number">2.</span> 对于平台，我们用一套平台kubernetes来管理所有的应用，对于硬件资源的利用率得以提高。</span><br><span class="line">所以容器化后，带来的好处是，开发效率的提高，资源利用率的提高。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="aws配置"><a href="#aws配置" class="headerlink" title="aws配置"></a>aws配置</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/docker/hub-feedback/issues/1318#issuecomment-396429154">https://github.com/docker/hub-feedback/issues/1318#issuecomment-396429154</a> pull images的时候如果403</li>
+</ul>
+<h3 id="系统资源监控工具"><a href="#系统资源监控工具" class="headerlink" title="系统资源监控工具"></a>系统资源监控工具</h3><p>brew install htop</p>
+<h3 id="dumb-init"><a href="#dumb-init" class="headerlink" title="dumb-init"></a>dumb-init</h3><p>dumb-init是一个简单的init系统，用于管理容器内的多个进程。它主要解决了在Docker和Kubernetes等容器环境中管理进程的问题。</p>
+<p>在容器中，通常会运行多个进程，例如一个Web服务器和一个后台守护进程。如果不使用dumb-init这样的init系统，当容器的入口点进程（entrypoint）退出时，容器中的所有进程都将被杀死，而无法进行正常的清理操作。</p>
+<p>dumb-init可以作为容器中的入口点进程，并作为所有其他进程的父进程。当子进程退出时，dumb-init会重新注册SIGTERM和SIGINT信号，并将其发送给所有子进程，以便它们能够优雅地退出。</p>
+<p>dumb-init还可以设置最大进程数、ulimit参数等，以帮助管理容器内的进程。</p>
+<p>Dockerfile</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RUN curl -L -o <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>dumb-init https:<span class="regexp">//gi</span>thub.com<span class="regexp">/Yelp/</span>dumb-init<span class="regexp">/releases/</span>download<span class="regexp">/v1.2.2/</span>dumb-init_1.<span class="number">2.2</span>_amd64</span><br><span class="line">RUN chmod +x <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>dumb-init</span><br><span class="line">ENTRYPOINT [<span class="string">&quot;dumb-init&quot;</span>, <span class="string">&quot;--&quot;</span>]</span><br><span class="line">CMD [<span class="string">&quot;/path/to/your/program&quot;</span>, <span class="string">&quot;-arg1&quot;</span>, <span class="string">&quot;-arg2&quot;</span>, ...]</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用外部代理进行监测和缓存"><a href="#使用外部代理进行监测和缓存" class="headerlink" title="使用外部代理进行监测和缓存"></a>使用外部代理进行监测和缓存</h3><ul>
+<li>虽然nodejs服务器可以作为 HTTP服务器或 HTTP2服务器使用，但建议 将你的服务器放在 HTTP代理（如 Nginx）或 HTTP2代理（如 Envoy）后面。这样你就可以管理缓存，将日志文件集中化、标准化，并与你的监控系 统集成，以监测nodejs应用的健康和性能。</li>
+</ul>
+<h3 id="child-process"><a href="#child-process" class="headerlink" title="child_process"></a>child_process</h3><h3 id="cluster"><a href="#cluster" class="headerlink" title="cluster"></a>cluster</h3>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

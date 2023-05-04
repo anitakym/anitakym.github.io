@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        消息队列 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E6%BA%90-Popular"><span class="toc-text">开源&#x2F;Popular</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rabbitmq"><span class="toc-text">rabbitmq</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rabbitmq%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%9F%A5%E7%9C%8B"><span class="toc-text">rabbitmq服务器上查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#web-%E7%AE%A1%E7%90%86%E7%AB%AF"><span class="toc-text">web 管理端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nacos-%E5%AF%B9rabbitmq%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-text">nacos 对rabbitmq的配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E7%9A%84%E6%B6%88%E6%81%AF%E4%B8%AD%E5%BF%83%E4%B9%9F%E9%9B%86%E6%88%90%E5%88%B0%E4%BA%86%E5%86%85%E9%83%A8%E7%AE%A1%E7%90%86%E7%AB%AF"><span class="toc-text">自己的消息中心也集成到了内部管理端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E6%88%90RabbitMQ%E7%BB%9F%E4%B8%80%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6%E6%96%B9%E6%A1%88"><span class="toc-text">集成RabbitMQ统一发送接收方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%9B%A2%E9%98%9F%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-text">项目团队使用情况</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka"><span class="toc-text">Kafka</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rocketmq"><span class="toc-text">rocketmq</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%BC%82%E6%AD%A5%E6%B6%88%E6%81%AF%E6%8F%90%E5%8D%87%E6%80%A7%E8%83%BD"><span class="toc-text">基于异步消息提升性能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wiki%E6%8C%87%E8%B7%AF"><span class="toc-text">wiki指路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A-%E8%AE%BE%E8%AE%A1-%E6%BC%94%E8%BF%9B"><span class="toc-text">名词解释-设计&#x2F;演进</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-text">主题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E6%A8%A1%E5%9E%8B"><span class="toc-text">队列模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E5%B8%83-%E8%AE%A2%E9%98%85%E6%A8%A1%E5%9E%8B%EF%BC%88publish-subscribe-pattern%EF%BC%89"><span class="toc-text">发布-订阅模型（publish-subscribe pattern）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%94%81%E4%BF%9D%E6%8A%A4%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%8D%8F%E8%B0%83%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B"><span class="toc-text">使用锁保护共享数据，协调异步线程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pulsar"><span class="toc-text">Pulsar</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pulsar-node-%E5%9D%91%E4%B8%80%E4%B8%AA"><span class="toc-text">pulsar - node - 坑一个</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Errors"><span class="toc-text">Errors</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3ERROR%EF%BC%8C%E6%8A%8Acentos%E7%9A%84%E7%8E%AF%E5%A2%83%E5%A4%84%E7%90%86%E5%A5%BD"><span class="toc-text">根本解决ERROR，把centos的环境处理好</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#consumer"><span class="toc-text">consumer</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#There-are-two-main-ways-of-using-the-consumer"><span class="toc-text">There are two main ways of using the consumer:</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        消息队列
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-27 16:42:22</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>系统间通信的需求 -&gt; 消息队列； 最早的中间件之一； 官方文档都很不错；</p>
+</blockquote>
+<h2 id="开源-Popular"><a href="#开源-Popular" class="headerlink" title="开源/Popular"></a>开源/Popular</h2><h3 id="rabbitmq"><a href="#rabbitmq" class="headerlink" title="rabbitmq"></a>rabbitmq</h3><p>我们这边用的是私有化部署的rabbitmq<br>文档指路：<a target="_blank" rel="noopener" href="https://www.rabbitmq.com/getstarted.html">https://www.rabbitmq.com/getstarted.html</a></p>
+<p>比较传统的消息中间件：</p>
+<ul>
+<li>处理和响应消息的方式是destructive的，一旦消息被成功处理，就会从broker上删除</li>
+</ul>
+<h4 id="rabbitmq服务器上查看"><a href="#rabbitmq服务器上查看" class="headerlink" title="rabbitmq服务器上查看"></a>rabbitmq服务器上查看</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">whereis</span> <span class="string">rabbitmq</span></span><br><span class="line"><span class="meta">rabbitmq-plugins</span> <span class="string">list</span></span><br><span class="line"><span class="attr">rabbitmqctl</span> <span class="string">list_users</span></span><br></pre></td></tr></table></figure>
+<h4 id="web-管理端"><a href="#web-管理端" class="headerlink" title="web 管理端"></a>web 管理端</h4><ul>
+<li>admin-Users 配置对应的user - Can access virtual hosts</li>
+</ul>
+<h4 id="nacos-对rabbitmq的配置"><a href="#nacos-对rabbitmq的配置" class="headerlink" title="nacos 对rabbitmq的配置"></a>nacos 对rabbitmq的配置</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rabbitmq:</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">$&#123;rabbitmq.host&#125;</span></span><br><span class="line">  <span class="attr">port:</span> <span class="string">$&#123;rabbitmq.port&#125;</span></span><br><span class="line">  <span class="attr">username:</span> <span class="string">$&#123;rabbitmq.username&#125;</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">$&#123;rabbitmq.password&#125;</span></span><br><span class="line">  <span class="attr">virtual-host:</span> <span class="string">homework</span></span><br><span class="line">  <span class="attr">listener:</span></span><br><span class="line">    <span class="attr">direct:</span></span><br><span class="line">      <span class="attr">acknowledge-mode:</span> <span class="string">auto</span></span><br><span class="line">      <span class="attr">retry:</span></span><br><span class="line">        <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">max-attempts:</span> <span class="number">5</span></span><br><span class="line">        <span class="attr">initial-interval:</span> <span class="number">2000</span></span><br><span class="line">    <span class="attr">simple:</span></span><br><span class="line">      <span class="attr">retry:</span></span><br><span class="line">        <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">max-attempts:</span> <span class="number">4</span></span><br><span class="line">        <span class="attr">initial-interval:</span> <span class="number">2000</span></span><br><span class="line">      <span class="attr">prefetch:</span> <span class="number">1</span></span><br><span class="line">      <span class="attr">acknowledge-mode:</span> <span class="string">auto</span></span><br></pre></td></tr></table></figure>
+<h4 id="自己的消息中心也集成到了内部管理端"><a href="#自己的消息中心也集成到了内部管理端" class="headerlink" title="自己的消息中心也集成到了内部管理端"></a>自己的消息中心也集成到了内部管理端</h4><h4 id="集成RabbitMQ统一发送接收方案"><a href="#集成RabbitMQ统一发送接收方案" class="headerlink" title="集成RabbitMQ统一发送接收方案"></a>集成RabbitMQ统一发送接收方案</h4><ul>
+<li>rabbitmq - 支持非常灵活的路由配置 - 在生产者producer和队列queue之间增加了一个exchange模块<h4 id="项目团队使用情况"><a href="#项目团队使用情况" class="headerlink" title="项目团队使用情况"></a>项目团队使用情况</h4></li>
+<li>nest(<a target="_blank" rel="noopener" href="https://github.com/nestjs/nest">https://github.com/nestjs/nest</a>) <ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/nestjsx/nestjs-amqp">https://github.com/nestjsx/nestjs-amqp</a> </li>
+<li><a target="_blank" rel="noopener" href="https://docs.nestjs.com/microservices/rabbitmq">https://docs.nestjs.com/microservices/rabbitmq</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>java团队<ul>
+<li>利用rabbitmq提供相关离线操作，及高并发削峰</li>
+<li>skywalking - skywalking/agent/config/apm-trace-ignore-plugin.config + trace.ignore_path=RabbitMQ/**</li>
+</ul>
+</li>
+</ul>
+<h3 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h3><p>Java团队也用这个</p>
+<ul>
+<li>Partition（分区）<h3 id="rocketmq"><a href="#rocketmq" class="headerlink" title="rocketmq"></a>rocketmq</h3>之前被推过一个内部的微服务开发框架，用的是rocketMQ<br>文档指路：<a target="_blank" rel="noopener" href="http://rocketmq.apache.org/docs/quick-start/">http://rocketmq.apache.org/docs/quick-start/</a></li>
+<li>每个Topic包含多个队列，通过多个队列来实现多实例并行生产和消费</li>
+<li>Subscriber-Consumer Group</li>
+</ul>
+<h2 id="基于异步消息提升性能"><a href="#基于异步消息提升性能" class="headerlink" title="基于异步消息提升性能"></a>基于异步消息提升性能</h2><h3 id="wiki指路"><a href="#wiki指路" class="headerlink" title="wiki指路"></a>wiki指路</h3><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97">https://zh.wikipedia.org/wiki/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97</a></p>
+<h3 id="名词解释-设计-演进"><a href="#名词解释-设计-演进" class="headerlink" title="名词解释-设计/演进"></a>名词解释-设计/演进</h3><h4 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h4><h4 id="队列模型"><a href="#队列模型" class="headerlink" title="队列模型"></a>队列模型</h4><ul>
+<li><p>Queue(FIFO-Linear List,具体实现-链表or数组)</p>
+</li>
+<li><p>Producer-Consumer</p>
+<h4 id="发布-订阅模型（publish-subscribe-pattern）"><a href="#发布-订阅模型（publish-subscribe-pattern）" class="headerlink" title="发布-订阅模型（publish-subscribe pattern）"></a>发布-订阅模型（publish-subscribe pattern）</h4></li>
+<li><p>Publisher发布者（消息的发送方）-Subscriber订阅者（消息的接收方）</p>
+</li>
+<li><p>Topic(服务端存放消息的容器)</p>
+</li>
+<li><p>发布者将消息发送到主题中，订阅者在接收消息之前需要先“订阅主题”</p>
+</li>
+<li><p>订阅既是一个动作，也是主题在消费时的一个逻辑副本</p>
+</li>
+<li><p>每份订阅中，订阅者都可以接收到主题的所有消息</p>
+</li>
+<li><p>RabbitMQ用的是队列模型，但是可以实现发布订阅功能（解决了多个消费者的问题-Exchange模块）</p>
+</li>
+<li><p>RocketMQ和Kafka用是发布-订阅模型（业务模型比较像，但是具体实现不一样）</p>
+</li>
+</ul>
+<h4 id="使用锁保护共享数据，协调异步线程"><a href="#使用锁保护共享数据，协调异步线程" class="headerlink" title="使用锁保护共享数据，协调异步线程"></a>使用锁保护共享数据，协调异步线程</h4><h2 id="Pulsar"><a href="#Pulsar" class="headerlink" title="Pulsar"></a>Pulsar</h2><ul>
+<li><p>最早yahoo开发</p>
+</li>
+<li><p>存储计算分离设计（设计思路）</p>
+<h3 id="pulsar-node-坑一个"><a href="#pulsar-node-坑一个" class="headerlink" title="pulsar - node - 坑一个"></a>pulsar - node - 坑一个</h3></li>
+<li><p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/en/client-libraries-cpp/#install-rpm">https://pulsar.apache.org/docs/en/client-libraries-cpp/#install-rpm</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/en/client-libraries-node/">https://pulsar.apache.org/docs/en/client-libraries-node/</a></p>
+</li>
+<li><p>安装pulsar-client之前需要安装C++的client library</p>
+<h4 id="Errors"><a href="#Errors" class="headerlink" title="Errors"></a>Errors</h4><p>但是呢，我们现在安装<code>$ npm install pulsar-client</code>的时候，报错</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">install</span> response status <span class="number">404</span> Not Found <span class="literal">on</span> https://pulsar.apache.org/docs/en/client-libraries-cpp/libpulsar-v<span class="number">1</span>.<span class="number">6</span>.<span class="number">2</span>-node-v<span class="number">72</span>-linux-x<span class="number">64</span>.tar.gz</span><br></pre></td></tr></table></figure>
+<p>node-pre-gyp下载二进制文件的路径，优先来源于对应模块的镜像地址，该镜像地址通过配置’npm_config_’ + 模块名 + ‘_binary_host_mirror’来实现自定义；在没有定义镜像地址的情况下，读取模块package.json中的binary属性信息。</p>
+</li>
+</ul>
+<p>这个时候如果有libpulsar-v1.6.2-node-v72-linux-x64.tar.gz这个文件，就可以配置个host，打到自己服务器，提供这个资源，如果没有，就看看之前安装过的，图快的话node_modules弄过来；</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># node_modules如果物理机上有，压缩下，拿过来就行</span></span><br><span class="line"><span class="attr">tar</span> <span class="string">-czvf node_modules.tar.gz node_modules</span></span><br><span class="line"><span class="attr">tar</span> <span class="string">-xvf node_modules.tar.gz</span></span><br><span class="line"><span class="attr">中间的周转是用cos进行存储的，wget拿</span></span><br><span class="line"><span class="comment"># 如果在image里面，可以</span></span><br><span class="line"><span class="attr">docker</span> <span class="string">images # 拿到id</span></span><br><span class="line"><span class="attr">docker</span> <span class="string">run -it --entrypoint sh &quot;id&quot;</span></span><br><span class="line"><span class="attr">yum</span> <span class="string">install lrzsz</span></span><br><span class="line"><span class="attr">sz</span> <span class="string">node_modules.tar.gz</span></span><br><span class="line"><span class="comment"># 也同样用cos进行存储的，wget拿</span></span><br></pre></td></tr></table></figure>
+
+<p>这个报错是因为找不到libpulsar.so.2.8.1文件，所以按这个<a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/en/client-libraries-cpp/#install-rpm%E5%AE%89%E8%A3%85%E4%B8%8B%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%AC%E7%9A%84%E5%8D%B3%E5%8F%AF%EF%BC%9B">https://pulsar.apache.org/docs/en/client-libraries-cpp/#install-rpm安装下对应版本的即可；</a><br>find -name libpulsar.so.2.8.1<br>看看能不能找到，找到了位置不对的话，<code>ln -s  /path/to/lib**.so   /usr/lib</code> ,<code>sudo ldconfig</code><br><code>Note If you get the error that libpulsar.so: cannot open shared object file: No such file or directory when starting Pulsar client, you may need to run ldconfig first.</code><br>find </p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Error: libpulsar.so<span class="number">.2</span><span class="number">.8</span><span class="number">.1</span>: cannot open <span class="keyword">shared</span> object file: No such file <span class="keyword">or</span> directory</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at Object.Module._extensions..node (<span class="built_in">int</span>ernal/modules/cjs/loader.js:<span class="number">1208</span>:<span class="number">18</span>)</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at Module.load (<span class="built_in">int</span>ernal/modules/cjs/loader.js:<span class="number">1002</span>:<span class="number">32</span>)</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at Function.Module._load (<span class="built_in">int</span>ernal/modules/cjs/loader.js:<span class="number">901</span>:<span class="number">14</span>)</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at Module.require (<span class="built_in">int</span>ernal/modules/cjs/loader.js:<span class="number">1044</span>:<span class="number">19</span>)</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at Module.Hook._require.Module.require (/usr/local/lib/node_modules/pm2/node_modules/require-<span class="keyword">in</span>-the-middle/index.js:<span class="number">80</span>:<span class="number">39</span>)</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at require (<span class="built_in">int</span>ernal/modules/cjs/helpers.js:<span class="number">77</span>:<span class="number">18</span>)</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at bindings (/neworiental/nodejs/seal_svg_server<span class="number">-1</span>/node_modules/bindings/bindings.js:<span class="number">112</span>:<span class="number">48</span>)</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at Object.&lt;anonymous&gt; (/neworiental/nodejs/seal_svg_server<span class="number">-1</span>/node_modules/pulsar-client/index.js:<span class="number">20</span>:<span class="number">42</span>)</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at Module._compile (<span class="built_in">int</span>ernal/modules/cjs/loader.js:<span class="number">1158</span>:<span class="number">30</span>)</span><br><span class="line"><span class="number">26</span>|htmlToSvg  |     at Module._compile (/neworiental/nodejs/seal_svg_server<span class="number">-1</span>/node_modules/pirates/lib/index.js:<span class="number">99</span>:<span class="number">24</span>)</span><br><span class="line">PM2           | App name:htmlToSvg id:<span class="number">26</span> disconnected</span><br><span class="line">PM2           | App [htmlToSvg:<span class="number">26</span>] exited with code [<span class="number">0</span>] via signal [SIGINT]</span><br><span class="line">PM2           | App [htmlToSvg:<span class="number">26</span>] starting <span class="keyword">in</span> -cluster mode-</span><br><span class="line">PM2           | App [htmlToSvg:<span class="number">26</span>] online</span><br></pre></td></tr></table></figure>
+<p>上面的是想办法弄编好的，如果实在没有，就走node-gyp去编了，根据报错一步步解决即可</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/330468774">https://zhuanlan.zhihu.com/p/330468774</a></li>
+</ul>
+<h4 id="根本解决ERROR，把centos的环境处理好"><a href="#根本解决ERROR，把centos的环境处理好" class="headerlink" title="根本解决ERROR，把centos的环境处理好"></a>根本解决ERROR，把centos的环境处理好</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1.就node-pre-gyp不行的话，因为找不到已经预编译好的符合要求的版本嘛，就走本地编译</span><br><span class="line">2.node-gyp本地编译的时候,mac注意配置下PULSAR_CPP_DIR 即可</span><br><span class="line">- <span class="built_in">export</span> PULSAR_CPP_DIR=<span class="string">&quot;/usr/local/Cellar/libpulsar/2.9.1_1&quot;</span></span><br><span class="line">- brew安装的，也是注意下环境变量的配置，保证位置找对了</span><br><span class="line"><span class="built_in">export</span> CPLUS_INCLUDE_PATH=<span class="string">&quot;<span class="subst">$(brew --prefix)</span>/include&quot;</span>\nexport LIBRARY_PATH=<span class="string">&quot;<span class="subst">$(brew --prefix)</span>/lib&quot;</span></span><br><span class="line"><span class="built_in">export</span> CPLUS_INCLUDE_PATH=<span class="string">&quot;<span class="variable">$CPLUS_INCLUDE_PATH</span>:<span class="subst">$(brew --prefix)</span>/include&quot;</span></span><br><span class="line"><span class="built_in">export</span> LIBRARY_PATH=<span class="string">&quot;<span class="variable">$LIBRARY_PATH</span>:<span class="subst">$(brew --prefix)</span>/lib&quot;</span></span><br><span class="line">3.node-gyp本地编译的时候,linux服务器注意准备好文档中写的requirement,然后就可以编译了，看报什么错，就解决什么错就行 (https://pulsar.apache.org/docs/zh-CN/next/client-libraries-cpp/<span class="comment">#%E5%AE%89%E8%A3%85-rpm - 这个里面提示了nodejs需要预先安装什么)</span></span><br><span class="line">注意点1：yum -y install gcc automake autoconf libtool make</span><br><span class="line">yum -y install gcc-c++</span><br><span class="line">注意点2:</span><br><span class="line">client-devel</span><br><span class="line">client</span><br><span class="line">这两个都要安装，rpm -ivh apache-pulsar-client*.rpm 一个一个的，运行两遍就行；确保都安装了；</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果确定了要的预编译包，也可以自己编译好了，然后打gz的包，发布到我们自己的文档对象存储上，然后在pulsar-client的安装脚本里面，把地址改下就行</p>
+<h3 id="consumer"><a href="#consumer" class="headerlink" title="consumer"></a>consumer</h3><h4 id="There-are-two-main-ways-of-using-the-consumer"><a href="#There-are-two-main-ways-of-using-the-consumer" class="headerlink" title="There are two main ways of using the consumer:"></a>There are two main ways of using the consumer:</h4></li>
+<li><p>Blocking style: synchronously calling receive(msg).</p>
+</li>
+<li><p>Non-blocking (event based) style: using a message listener.</p>
+</li>
+<li><p>但是这部分node的封装有点问题，listener模式下，如果把receiverQueueSize设置为0，会报错，提示应该更明确的，让非阻塞模式下就不要使用这个了；</p>
+</li>
+<li><p>receiverQueueSize    设置 consumer 接收队列的大小，即在应用程序调用 receive 之前允许堆积的消息数。 A value higher than the default of 1000 could increase consumer throughput, though at the expense of more memory utilization.</p>
+</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

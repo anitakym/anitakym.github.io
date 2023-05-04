@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        为团队构建一个脚手架生成工具 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#scaffolding-%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-text">scaffolding - 脚手架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%A2%E9%98%9F%E5%9F%BA%E7%A1%80%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%9A%84%E5%BB%BA%E8%AE%BE"><span class="toc-text">团队基础工程化的建设</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E8%8C%83"><span class="toc-text">规范</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A6%E5%AE%9A"><span class="toc-text">约定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC"><span class="toc-text">代码风格</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-text">自动化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%93%E5%8C%85"><span class="toc-text">打包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#npm"><span class="toc-text">npm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cli%E7%9B%B8%E5%85%B3"><span class="toc-text">cli相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#haoma"><span class="toc-text">haoma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vite"><span class="toc-text">vite</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#minify"><span class="toc-text">minify</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#esbuild-minify"><span class="toc-text">esbuild - minify</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#terser-minify"><span class="toc-text">terser - minify</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#terser-vs-rebuild"><span class="toc-text">terser vs rebuild</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concept"><span class="toc-text">concept</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#basics"><span class="toc-text">basics</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#lib-output"><span class="toc-text">lib - output</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dotenv"><span class="toc-text">dotenv</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#yaml"><span class="toc-text">yaml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cross-env-%E6%8C%87%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E6%9D%A5%E4%BD%BF%E7%94%A8%E5%AF%B9%E5%BA%94%E7%8E%AF%E5%A2%83%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%98%E9%87%8F"><span class="toc-text">cross-env - 指定运行环境来使用对应环境的配置变量</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        为团队构建一个脚手架生成工具
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-08-06 18:25:36</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>vite真的好用，no more <del>~</del> update 2022.02</p>
+</blockquote>
+<h2 id="scaffolding-脚手架"><a href="#scaffolding-脚手架" class="headerlink" title="scaffolding - 脚手架"></a>scaffolding - 脚手架</h2><ul>
+<li>build process | code formatting | linting | testing |  type checking</li>
+<li>code style - PR中，可以直接关掉，最初加上规则就行，后续不需要花更多时间讨论</li>
+<li><a target="_blank" rel="noopener" href="https://btholt.github.io/project-fox-game-site/">https://btholt.github.io/project-fox-game-site/</a> - 里面有完整构建一个项目的流程，一些抽象出来的概念，可参考<h2 id="团队基础工程化的建设"><a href="#团队基础工程化的建设" class="headerlink" title="团队基础工程化的建设"></a>团队基础工程化的建设</h2></li>
+<li>模块化</li>
+<li>组件化</li>
+<li>规范化</li>
+<li>自动化</li>
+</ul>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><h4 id="约定"><a href="#约定" class="headerlink" title="约定"></a>约定</h4><ul>
+<li><p>命名</p>
+<h4 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h4></li>
+<li><p>符号书写风格（缩进，括号，运算符，空格，空行，引号，逗号，分号）</p>
+</li>
+<li><p>语法风格（变量命名，逻辑结构，函数签名）</p>
+</li>
+<li><p>函数参数个数｜行最大字符数｜函数长度｜函数逻辑复杂度｜JS文件长度控制</p>
+</li>
+<li><p>eslint - devDependencies</p>
+</li>
+<li><p>scripts里面定义检查范围</p>
+</li>
+<li><p>.eslintrc.js 设置检查规则</p>
+</li>
+<li><p>具体可见<code>eslint版本问题</code>博文</p>
+</li>
+</ul>
+<h3 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h3><h4 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h4><ul>
+<li><p>requireJS,seaJS ｜ AMD,CMD规范</p>
+</li>
+<li><p>nodeJS - 开发环境工具脚本 ｜ 代码检查&amp;&amp;文件编译&amp;&amp;依赖管理&amp;&amp;内容打包&amp;&amp;单元测试&amp;&amp;持续集成 ｜ 代码可维护性</p>
+</li>
+</ul>
+<h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><ul>
+<li>见npm博文(npm使用指北)</li>
+</ul>
+<p>Vue为主的团队<br>PC+移动<br>node<br>electron</p>
+<p>1.业务项目<br>2.核心逻辑业务（UI/utils）<br>3.node项目<br>4.electron项目</p>
+<ul>
+<li><p>vue相关项目——业务型<br>@vue/cli<br>文档指导型（the standard build toolchain for Vue applications - 2018， evan you）<br>vite —— 后续探索 （webpack本身拖拉机的特质，vite超跑）</p>
+</li>
+<li><p>node项目</p>
+</li>
+</ul>
+<ul>
+<li>electron项目</li>
+</ul>
+<h2 id="cli相关"><a href="#cli相关" class="headerlink" title="cli相关"></a>cli相关</h2><ul>
+<li>推荐command line interface guidelines：<a target="_blank" rel="noopener" href="https://clig.dev/">https://clig.dev/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/meow">https://www.npmjs.com/package/meow</a></li>
+</ul>
+<h2 id="haoma"><a href="#haoma" class="headerlink" title="haoma"></a>haoma</h2><h2 id="vite"><a href="#vite" class="headerlink" title="vite"></a>vite</h2><h3 id="minify"><a href="#minify" class="headerlink" title="minify"></a>minify</h3><h4 id="esbuild-minify"><a href="#esbuild-minify" class="headerlink" title="esbuild - minify"></a>esbuild - minify</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://esbuild.github.io/api/#minify">https://esbuild.github.io/api/#minify</a></li>
+</ul>
+<h4 id="terser-minify"><a href="#terser-minify" class="headerlink" title="terser - minify"></a>terser - minify</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://terser.org/docs/api-reference#minify-options">https://terser.org/docs/api-reference#minify-options</a></li>
+</ul>
+<h4 id="terser-vs-rebuild"><a href="#terser-vs-rebuild" class="headerlink" title="terser vs rebuild"></a>terser vs rebuild</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://vitejs.cn/config/#build-minify">https://vitejs.cn/config/#build-minify</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/privatenumber/minification-benchmarks">https://github.com/privatenumber/minification-benchmarks</a></li>
+</ul>
+<h3 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h3><ul>
+<li>JS库 - 隐藏复杂浏览器差异</li>
+<li>JS框架 - 使复杂强大的应用开发过程易于管理</li>
+</ul>
+<h2 id="basics"><a href="#basics" class="headerlink" title="basics"></a>basics</h2><h4 id="lib-output"><a href="#lib-output" class="headerlink" title="lib - output"></a>lib - output</h4><ul>
+<li>匿名函数自调用，函数定义，函数表达式  xx.js =&gt; ;(function func() { })(); | (function func() { }()); - 没有差别，括号在里面可以算是分组运算符</li>
+<li>Return the result of evaluating Expression. This may be of type Reference</li>
+<li>This algorithm does not apply GetValue to the result of evaluating Expression</li>
+<li>AST 结果</li>
+</ul>
+<h3 id="dotenv"><a href="#dotenv" class="headerlink" title="dotenv"></a>dotenv</h3><p>从一个 .env 文件中加载环境变量到 process.env 对象中。</p>
+<p>在开发环境中，我们通常需要在应用程序中使用各种敏感信息，例如数据库连接字符串、API 密钥等。<br>将这些敏感信息直接硬编码到源代码中是不安全的，可能导致泄漏或被恶意攻击者利用。<br>因此，我们通常会使用环境变量来存储这些信息，并在应用程序中引用它们。</p>
+<p>而 dotenv 库则提供了一种更方便的方式来加载环境变量。它可以自动从一个名为 .env 的文件中读取环境变量，并将其添加到 process.env 对象中。<br>这样，我们就可以以类似于硬编码的方式使用环境变量，同时又能保护这些敏感信息不被泄露或恶意利用。</p>
+<h4 id="yaml"><a href="#yaml" class="headerlink" title="yaml"></a>yaml</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/yaml">https://www.npmjs.com/package/yaml</a><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import &#123; parse &#125; <span class="keyword">from</span> <span class="string">&#x27;yaml&#x27;</span></span><br><span class="line">const path = require(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line">const fs = require(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="builtin-name">export</span> const getEnv = () =&gt; &#123;</span><br><span class="line">  return process.env.RUNNING_ENV</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="builtin-name">export</span> const getConfig = () =&gt; &#123;</span><br><span class="line">  const environment = getEnv()</span><br><span class="line">  const yamlPath = path.join(process.cwd(), `./.config/.<span class="variable">$&#123;environment&#125;</span>.yaml`)</span><br><span class="line">  const file = fs.readFileSync(yamlPath, <span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">  const<span class="built_in"> config </span>= parse(file)</span><br><span class="line">  return config</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="cross-env-指定运行环境来使用对应环境的配置变量"><a href="#cross-env-指定运行环境来使用对应环境的配置变量" class="headerlink" title="cross-env - 指定运行环境来使用对应环境的配置变量"></a>cross-env - 指定运行环境来使用对应环境的配置变量</h4>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

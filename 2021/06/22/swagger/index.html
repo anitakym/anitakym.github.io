@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        swagger - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%EF%BC%9A"><span class="toc-text">接口文档：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%AE%9A%E4%B9%89%E6%96%B9%E5%BC%8F%E4%B8%BB%E8%A6%81%E6%9C%89%E4%B8%A4%E7%A7%8D%EF%BC%9A"><span class="toc-text">接口定义方式主要有两种：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E9%98%85%E8%AF%BB%EF%BC%9A"><span class="toc-text">推荐阅读：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#history"><span class="toc-text">history</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#uses"><span class="toc-text">uses</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%89%8D%E5%9B%A2%E9%98%9F%E4%BD%BF%E7%94%A8%E7%9A%84API-Management%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94YAPI"><span class="toc-text">目前团队使用的API-Management工具——YAPI</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#EasyYapi-%E5%8F%AF%E4%BB%A5%E5%AF%BC%E5%87%BAhttp-rpc%EF%BC%8Ccall-api-%E8%B0%83%E7%94%A8-API"><span class="toc-text">EasyYapi - 可以导出http,rpc，call api 调用 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#apimock"><span class="toc-text">apimock</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        swagger
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-06-22 15:13:04</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="接口文档："><a href="#接口文档：" class="headerlink" title="接口文档："></a>接口文档：</h3><p>详细地描述了后端接口的访问方式和参数说明</p>
+<h3 id="接口定义方式主要有两种："><a href="#接口定义方式主要有两种：" class="headerlink" title="接口定义方式主要有两种："></a>接口定义方式主要有两种：</h3><ul>
+<li>Swagger等，RESTFUL API；</li>
+<li>protobuf，跨语言的接口定义；<ul>
+<li>（<a target="_blank" rel="noopener" href="https://github.com/protocolbuffers/protobuf/tree/master/java%EF%BC%89">https://github.com/protocolbuffers/protobuf/tree/master/java）</a></li>
+<li>（<a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers/%EF%BC%89">https://developers.google.com/protocol-buffers/）</a></li>
+<li>（<a target="_blank" rel="noopener" href="https://opensource.com/article/19/10/protobuf-data-interchange%EF%BC%89">https://opensource.com/article/19/10/protobuf-data-interchange）</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="推荐阅读："><a href="#推荐阅读：" class="headerlink" title="推荐阅读："></a>推荐阅读：</h3><p><a target="_blank" rel="noopener" href="https://swagger.io/">https://swagger.io/</a><br><a target="_blank" rel="noopener" href="https://swagger.io/tools/open-source/">https://swagger.io/tools/open-source/</a></p>
+<p>swagger：</p>
+<h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><ul>
+<li>SmartBear Software</li>
+<li>RESTFUL API工具</li>
+<li>设计，构建，记录，使用</li>
+<li>openAPI Initiative</li>
+</ul>
+<h4 id="uses"><a href="#uses" class="headerlink" title="uses"></a>uses</h4><ul>
+<li>项目中接口展现</li>
+<li>接口更新</li>
+<li>直接接口调用</li>
+</ul>
+<h3 id="目前团队使用的API-Management工具——YAPI"><a href="#目前团队使用的API-Management工具——YAPI" class="headerlink" title="目前团队使用的API-Management工具——YAPI"></a>目前团队使用的API-Management工具——YAPI</h3><h4 id="EasyYapi-可以导出http-rpc，call-api-调用-API"><a href="#EasyYapi-可以导出http-rpc，call-api-调用-API" class="headerlink" title="EasyYapi - 可以导出http,rpc，call api 调用 API"></a>EasyYapi - 可以导出http,rpc，call api 调用 API</h4><ul>
+<li>Java端用：<a target="_blank" rel="noopener" href="http://easyyapi.com/documents/index.html">http://easyyapi.com/documents/index.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tangcent/easy-yapi/blob/master/README.md">https://github.com/tangcent/easy-yapi/blob/master/README.md</a></li>
+<li>对代码0入侵</li>
+<li>（<a target="_blank" rel="noopener" href="https://github.com/diwand/YapiIdeaUploadPlugin/wiki/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%EF%BC%89%E5%8F%AF%E5%81%9A%E6%9B%BF%E4%BB%A3">https://github.com/diwand/YapiIdeaUploadPlugin/wiki/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8）可做替代</a></li>
+<li>IDEA插件</li>
+</ul>
+<h4 id="apimock"><a href="#apimock" class="headerlink" title="apimock"></a>apimock</h4><p>swaggerconfig配置类集成到 api-mock组件中，swagger生成的接口文件可以通过数据导入，导入到yapi中</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/thx/rap2-delos">https://github.com/thx/rap2-delos</a> 阿里妈妈出品，开源接口管理工具<ul>
+<li>接口文档管理</li>
+<li>Mock</li>
+<li>导出</li>
+</ul>
+</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

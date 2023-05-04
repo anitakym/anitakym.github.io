@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        iconfont使用经验总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80"><span class="toc-text">地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97%E5%8F%8A%E5%8E%9F%E7%90%86%E8%AF%B4%E6%98%8E"><span class="toc-text">操作指南及原理说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#why"><span class="toc-text">why</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-text">官方文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tips"><span class="toc-text">tips</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#trick"><span class="toc-text">trick</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97"><span class="toc-text">操作指南</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E7%B1%BB%E5%B9%B3%E5%8F%B0"><span class="toc-text">同类平台</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        iconfont使用经验总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-06-22 15:33:36</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p><a target="_blank" rel="noopener" href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
+<p>Tips:</p>
+<ul>
+<li>做好权限管理，如果有人员变更，保证项目仓库的维护的及时</li>
+<li>写好操作指南-团队文档</li>
+</ul>
+<h3 id="操作指南及原理说明"><a href="#操作指南及原理说明" class="headerlink" title="操作指南及原理说明"></a>操作指南及原理说明</h3><h4 id="why"><a href="#why" class="headerlink" title="why"></a>why</h4><ul>
+<li>不同浏览器不同版本，支持的字体格式不一样；</li>
+<li>我们可以设计一些图标占字体的坑，从而可以像操作字一样操作图标（矢量的）</li>
+<li>使用 - 1.font-face声明字体 2.定义使用iconfont的样式 3. <i class="iconfont">&amp;#x0032</i> （unicode） 4.:before :after等伪元素 content:”\0032”; （16进制）</li>
+<li>注意设备跨域问题的兼容</li>
+<li>-webkit-font-smoothing: antialiased; （解决字体图标存在半个像素的锯齿，在浏览器渲染时为一个像素，从而看起来加粗）</li>
+<li>ie使用16进制unicode的时候加；号</li>
+</ul>
+<h4 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h4><p><a target="_blank" rel="noopener" href="https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8cf4382a&amp;helptype=code">https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8cf4382a&amp;helptype=code</a></p>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><p>切记单色</p>
+<h4 id="trick"><a href="#trick" class="headerlink" title="trick"></a>trick</h4><p>如果想要有渐变色什么的，可以背景色设置，然后字弄成透明的</p>
+<h4 id="操作指南"><a href="#操作指南" class="headerlink" title="操作指南"></a>操作指南</h4><ol>
+<li><p>为开发成员增加项目权限</p>
+</li>
+<li><p>位置</p>
+</li>
+</ol>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">项目中引用位置：</span><br><span class="line">src/main.js</span><br><span class="line">=&gt; import &#x27;@/assets/font/iconfont.css&#x27;</span><br><span class="line">文件存放位置：</span><br><span class="line">src/assets/font</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>修改方式：</li>
+</ol>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 从iconfont下载代码（<span class="keyword">Font</span> class=&gt;下载至本地），替换原有src/assets/<span class="keyword">font</span>文件夹</span><br><span class="line"><span class="number">2</span>. 然后修改iconfont.css文件，在第<span class="number">18</span>行增加下面代码：</span><br><span class="line"></span><br><span class="line">[class^=<span class="string">&quot;el-icon-third&quot;</span>],</span><br><span class="line">[class*=<span class="string">&quot; el-icon-third&quot;</span>]</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">font</span>-family: <span class="string">&quot;iconfont&quot;</span> !important<span class="comment">;</span></span><br><span class="line"><span class="keyword">font</span>-size: <span class="number">16</span>px<span class="comment">;</span></span><br><span class="line"><span class="keyword">font</span>-style: normal<span class="comment">;</span></span><br><span class="line">-webkit-<span class="keyword">font</span>-smoothing: antialiased<span class="comment">;</span></span><br><span class="line">-moz-osx-<span class="keyword">font</span>-smoothing: grayscale<span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>使用方式：<br>直接在根据 class 名称(选择 Font Class,然后点复制代码)引用即可，名称可在 iconfont.css 查看，如果觉得名称有问题，可以在 iconfont 网站上面修改，然后更新 font 文件夹。<br><code>&lt;i class=&quot;el-icon-third-share&quot; /&gt;</code></li>
+</ol>
+<h2 id="同类平台"><a href="#同类平台" class="headerlink" title="同类平台"></a>同类平台</h2><p>FontAwesome（<a target="_blank" rel="noopener" href="https://fontawesome.com/icons%EF%BC%89">https://fontawesome.com/icons）</a><br>ionicons（<a target="_blank" rel="noopener" href="https://ionicons.com/%EF%BC%89">https://ionicons.com/）</a></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

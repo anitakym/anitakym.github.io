@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        谈谈SEO - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#robots-txt"><span class="toc-text">robots.txt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#noindex"><span class="toc-text">noindex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Google"><span class="toc-text">Google</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tips"><span class="toc-text">tips</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mobile"><span class="toc-text">mobile</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#amp"><span class="toc-text">amp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#https"><span class="toc-text">https</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        谈谈SEO
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-03-16 16:32:09</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>之前做的若干内部系统，不和搜索引擎打交道，尽量避免被收录，在nginx配置上面，可以增加避免的文件</p>
+</blockquote>
+<h3 id="robots-txt"><a href="#robots-txt" class="headerlink" title="robots.txt"></a>robots.txt</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/advanced/robots/intro?hl=zh-cn">https://developers.google.com/search/docs/advanced/robots/intro?hl=zh-cn</a><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">robots</span><span class="selector-class">.txt</span> 文件规定了搜索引擎抓取工具可以访问您网站上的哪些网址。 此文件主要用于避免您的网站收到过多请求；它并不是一种阻止 <span class="selector-tag">Google</span> 抓取某个网页的机制。若想阻止 <span class="selector-tag">Google</span> 访问某个网页，请使用 <span class="selector-tag">noindex</span> 禁止将其编入索引，或使用密码保护该网页。</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">警告：如果您不想让自己的网页显示在 <span class="selector-tag">Google</span> 搜索结果中，请不要将 <span class="selector-tag">robots</span><span class="selector-class">.txt</span> 文件用作隐藏网页的方法。</span><br><span class="line"></span><br><span class="line">如果其他网页通过使用说明性文字指向您的网页，<span class="selector-tag">Google</span> 在不访问您网页的情况下仍能将其网址编入索引。如果您想从搜索结果中屏蔽自己的网页，请改用其他方法，例如使用密码保护或 <span class="selector-tag">noindex</span>。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="noindex"><a href="#noindex" class="headerlink" title="noindex"></a>noindex</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/advanced/crawling/block-indexing?hl=zh-cn">https://developers.google.com/search/docs/advanced/crawling/block-indexing?hl=zh-cn</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">您可以通过在 HTTP 响应中包含 noindex 元标记或标头，阻止网页或其他资源显示在 Google 搜索中。当 Googlebot 下次抓取该网页并发现该标记或标头时，Google 就会完全阻止该网页出现在 Google 搜索结果中，不论是否有其他网站链接到该网页。</span><br></pre></td></tr></table></figure>
+<h3 id="Google"><a href="#Google" class="headerlink" title="Google"></a>Google</h3></li>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/search">https://developers.google.com/search</a></li>
+<li><a target="_blank" rel="noopener" href="https://seo.co/local-seo/">https://seo.co/local-seo/</a></li>
+<li><a target="_blank" rel="noopener" href="https://moz.com/products/local">https://moz.com/products/local</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.google.com/business/">https://www.google.com/business/</a></li>
+<li><a target="_blank" rel="noopener" href="https://trends.google.com/trends/?geo=HK">https://trends.google.com/trends/?geo=HK</a></li>
+<li><a target="_blank" rel="noopener" href="https://ads.google.com/home/tools/keyword-planner/">https://ads.google.com/home/tools/keyword-planner/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.semrush.com/">https://www.semrush.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.wordtracker.com/">https://www.wordtracker.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.spyfu.com/">https://www.spyfu.com/</a></li>
+</ul>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><ul>
+<li>去掉不好的link - <a target="_blank" rel="noopener" href="https://support.google.com/webmasters/answer/2648487?hl=en">https://support.google.com/webmasters/answer/2648487?hl=en</a></li>
+<li><code>&lt;rel=&#39;nofollow&#39;&gt;</code></li>
+<li>花钱</li>
+<li>metadata (title | description | keyword)</li>
+<li>facebook opengraph | twitter cards | pinterest rich pins - 去developer都可以查到文档</li>
+<li>结构化的数据</li>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/advanced/structured-data">https://developers.google.com/search/docs/advanced/structured-data</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/advanced/structured-data/breadcrumb">https://developers.google.com/search/docs/advanced/structured-data/breadcrumb</a></li>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/advanced/structured-data/course">https://developers.google.com/search/docs/advanced/structured-data/course</a></li>
+</ul>
+<h4 id="mobile"><a href="#mobile" class="headerlink" title="mobile"></a>mobile</h4><ul>
+<li>manifest.json</li>
+<li>meta - viewport | fullscreen | balck status bar | home screen title</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/cubiq/add-to-homescreen">https://github.com/cubiq/add-to-homescreen</a></li>
+<li>homescreen icons - add-to-homescreen</li>
+</ul>
+<h4 id="amp"><a href="#amp" class="headerlink" title="amp"></a>amp</h4><ul>
+<li>AMP is a web component framework to easily create user-first experiences for the web.</li>
+<li><a target="_blank" rel="noopener" href="https://amp.dev/">https://amp.dev/</a></li>
+</ul>
+<h4 id="https"><a href="#https" class="headerlink" title="https"></a>https</h4><p>当然</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

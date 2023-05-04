@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Android-ART-notes - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#history"><span class="toc-text">history</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#overview"><span class="toc-text">overview</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E5%87%BA%E6%9D%A5%E7%9A%84"><span class="toc-text">对象如何分配出来的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1lifecycle"><span class="toc-text">对象lifecycle</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%AE%A1%E7%90%86-%E5%86%B3%E5%AE%9A%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%92%8C%E8%A1%8C%E4%B8%BA"><span class="toc-text">类管理 - 决定一个对象的大小和行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%AE%A1%E7%90%86-%E5%9F%BA%E7%B1%BBObject%E7%9A%84%E7%A7%98%E5%AF%86"><span class="toc-text">类管理 - 基类Object的秘密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-text">内存分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6"><span class="toc-text">内存回收</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C"><span class="toc-text">执行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%BA%E4%BA%86%E4%BF%9D%E8%AF%81%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%BA%E5%88%B6"><span class="toc-text">虚拟机为了保证代码执行提供的机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E6%89%A7%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">虚拟机的执行方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%88%E7%AE%A1%E7%90%86-%E5%BC%80%E5%A7%8B%E5%92%8C%E7%BB%93%E6%9D%9F"><span class="toc-text">栈管理 - 开始和结束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-text">异常处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E9%AB%98%E6%95%88%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="toc-text">多线程 - 高效的执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="toc-text">同步机制</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Android-ART-notes
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-01-11 17:39:21</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>Dalvik</p>
+<ul>
+<li>使用解释  JIT</li>
+</ul>
+<p>ART(4.4Kitkat-5.0Lollipop) Android RunTime</p>
+<ul>
+<li>gc优化</li>
+<li>AOT(Ahead-of-time)</li>
+</ul>
+<p>ART（7.0Nougat）</p>
+<ul>
+<li>三种执行方式并存，引入speed profile</li>
+</ul>
+<h3 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h3><ul>
+<li>compiler&amp;interpreter<ul>
+<li>解释器</li>
+<li>JIT</li>
+<li>AOT</li>
+</ul>
+</li>
+<li>runtime<ul>
+<li>内存管理</li>
+<li>类管理</li>
+<li>intrinsic</li>
+<li>异常</li>
+<li>String</li>
+<li>调试</li>
+<li>线程</li>
+<li>JNI</li>
+<li>monitor</li>
+</ul>
+</li>
+</ul>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="对象如何分配出来的"><a href="#对象如何分配出来的" class="headerlink" title="对象如何分配出来的"></a>对象如何分配出来的</h3><p>who = 类的管理<br>from where = 内存分配<br>to where = 内存回收</p>
+<h3 id="对象lifecycle"><a href="#对象lifecycle" class="headerlink" title="对象lifecycle"></a>对象lifecycle</h3><ul>
+<li>对象分配<ul>
+<li>分配多大 - 类</li>
+<li>怎么分配 - 内存管理</li>
+</ul>
+</li>
+<li>对象使用<ul>
+<li>执行类的方法</li>
+<li>访问对象成员</li>
+</ul>
+</li>
+<li>对象销毁<ul>
+<li>内存回收 - GC &amp;&amp; 清理</li>
+</ul>
+</li>
+</ul>
+<h4 id="类管理-决定一个对象的大小和行为"><a href="#类管理-决定一个对象的大小和行为" class="headerlink" title="类管理 - 决定一个对象的大小和行为"></a>类管理 - 决定一个对象的大小和行为</h4><ul>
+<li><p>类主要描述的是一个对象的内存布局和函数信息</p>
+</li>
+<li><p>内存布局： 类成员的大小、类型和排布</p>
+</li>
+<li><p>函数信息： 主要是虚表的信息-某个函数定义在当前类函数表的第几个位置；因为java是支持继承的，因此类的捏成布局和函数虚表需要做继承链全展开以后才能真正确认（这也是动态性的来源）</p>
+<h4 id="类管理-基类Object的秘密"><a href="#类管理-基类Object的秘密" class="headerlink" title="类管理 - 基类Object的秘密"></a>类管理 - 基类Object的秘密</h4></li>
+<li><p>类加载</p>
+<ul>
+<li>一个类分配的对象大小，是由继承链决定的</li>
+<li>Java的类，是在第一次使用的时候，才会进行加载</li>
+</ul>
+</li>
+<li><p>内存布局</p>
+</li>
+<li><p>双亲继承</p>
+<ul>
+<li>本质上，双亲委派就是认为划定的一个规矩，保证系统内同一个类的一致性</li>
+</ul>
+</li>
+<li><p>合理的继承抽象的好处</p>
+<ul>
+<li>合理的抽象，不是因为图方便直接放在顶层基类上，这就是好处<h4 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h4></li>
+</ul>
+</li>
+<li><p>分配器 - APP的java对象内存分配是托管到VM来处理的，并不会直接向操作系统去申请，实际上对OS内存的占用和内存布局，是VM控制的（预留-扩展）</p>
+</li>
+<li><p>不同分配器的特点</p>
+</li>
+<li><p>典型场景</p>
+<ul>
+<li>bitmap在Android高版本，被隐藏到了native，不直接使用虚拟堆；内存一样，量小，方便快捷，但是大块儿的内存用起来慢，要从大池子里取，集中管理</li>
+</ul>
+</li>
+<li><p>内存碎片</p>
+<ul>
+<li>ART内存分配的根本原理，给使用者在最优范围内找到一块大小符合的连续内存</li>
+<li>希望可用内存尽可能连续</li>
+</ul>
+</li>
+</ul>
+<h4 id="内存回收"><a href="#内存回收" class="headerlink" title="内存回收"></a>内存回收</h4><ul>
+<li>GC（垃圾回收garbage collection），要定期查找系统内不用的对象，并且释放占用的内存</li>
+<li>RC（引用计数reference counting），指的是对一个对象引用进行计数，多一个引用者，就+1，少一个，-1，为0就释放；典型的如IOS的swift就使用RC进行内存管理</li>
+<li>RC的问题和解决</li>
+<li>ART的引用<ul>
+<li>强引用：直接持有的</li>
+<li>软引用：内存不够时候会回收</li>
+<li>弱引用：只要触发GC就会被回收</li>
+</ul>
+</li>
+<li>触发GC的条件<ul>
+<li>想要不被预期外的GC导致卡顿，可以考虑适当预留内存</li>
+<li>大小有上限可预期的情况，new一个大数组，比分配一大堆到容器里面要好</li>
+</ul>
+</li>
+<li>apple内存少的原因之一</li>
+<li>GC的方式<ul>
+<li>GC roots的概念</li>
+</ul>
+</li>
+<li>tracing GC<ul>
+<li>从roots遍历，所有mark的对象是有holder的，释放掉没有holder的object</li>
+</ul>
+</li>
+<li>copying GC<ul>
+<li>从roots遍历，把有用的对象拷贝到另一个区域，然后集中释放掉当前区域的内存</li>
+</ul>
+</li>
+<li>ART的做法<ul>
+<li>前台GC ｜ 后台GC</li>
+</ul>
+</li>
+<li>内存友好的代码</li>
+<li>回收之后<ul>
+<li>finalize方法一般用来跟随对象的生命周期，清理掉绑定的native资源</li>
+<li>一个对象的finalize方法只会执行一次，再次激活之后的对象是不会出发finalize的<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><h3 id="虚拟机为了保证代码执行提供的机制"><a href="#虚拟机为了保证代码执行提供的机制" class="headerlink" title="虚拟机为了保证代码执行提供的机制"></a>虚拟机为了保证代码执行提供的机制</h3><h4 id="虚拟机的执行方式"><a href="#虚拟机的执行方式" class="headerlink" title="虚拟机的执行方式"></a>虚拟机的执行方式</h4></li>
+</ul>
+</li>
+<li>解释执行-dex code</li>
+<li>JIT-profile-JIT compile-JIT code</li>
+<li>AOT- speed-profile -dex2oat-AOT code<ul>
+<li>在程序运行之前，对APK中的函数进行编译</li>
+<li>和程序是否运行无关</li>
+<li>编译的范围不是以函数为单位，以dex为单位</li>
+<li>结果会持久化</li>
+</ul>
+</li>
+<li>延迟绑定（绑定的越迟，动态性越好，性能越差）<h4 id="栈管理-开始和结束"><a href="#栈管理-开始和结束" class="headerlink" title="栈管理 - 开始和结束"></a>栈管理 - 开始和结束</h4></li>
+<li>ART对于解释执行和编译后指令采用不同的策略<ul>
+<li>对于解释执行-栈托管到虚拟机完成</li>
+<li>对于编译后的-压栈处理和native代码是一样的，遵从对应指令集的约定</li>
+</ul>
+</li>
+<li>不同执行方式之间的切换<ul>
+<li>对于AOT，JIT到解释执行，或者反之的调用，ART采用trampoline-bridge机制来进行切换</li>
+</ul>
+</li>
+<li>总结<ul>
+<li>压栈-出栈的速度不同，解释执行的速度慢</li>
+<li>解释执行的栈结构是托管的，编译执行的栈结构是遵从虚拟机规则的</li>
+<li>解释执行传递参数有额外的空间成本，编译执行没有</li>
+<li>不同执行方式之间调用切换采用trampoline/bridge进行<h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4></li>
+</ul>
+</li>
+<li>当拿到一个异常的时候，会逐级回栈<ul>
+<li>回一级栈看看要不要</li>
+<li>不要就跳出<h3 id="多线程-高效的执行"><a href="#多线程-高效的执行" class="headerlink" title="多线程 - 高效的执行"></a>多线程 - 高效的执行</h3></li>
+</ul>
+</li>
+<li>synchronize<ul>
+<li>JAVA 引入sync机制，让我们加解锁很方便</li>
+</ul>
+</li>
+</ul>
+<h3 id="同步机制"><a href="#同步机制" class="headerlink" title="同步机制"></a>同步机制</h3><ul>
+<li><p>monitor：如果我们对一个对象是用了sync，这个对象就会生成一个lock，保留在这个shadow monitor指向的内存地址中</p>
+</li>
+<li><p>胖瘦锁切换</p>
+</li>
+<li><p>深入理解Android-Java虚拟机ART</p>
+</li>
+<li><p>虚拟机设计与实现-以JVM为例</p>
+</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

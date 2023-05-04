@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        缓存面面观 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#basic"><span class="toc-text">basic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E7%BC%93%E5%AD%98"><span class="toc-text">HTTP缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%B1%E6%95%88%E7%AD%96%E7%95%A5%E5%88%92%E5%88%86"><span class="toc-text">失效策略划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3"><span class="toc-text">文档</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="toc-text">浏览器缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E7%85%A7%E7%BC%93%E5%AD%98%E4%BD%8D%E7%BD%AE"><span class="toc-text">按照缓存位置:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%9E%8B%E7%BC%93%E5%AD%98"><span class="toc-text">存储型缓存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-text">问题解决</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        缓存面面观
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-06 17:42:30</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>相关文章“浏览器基础梳理”</p>
+</blockquote>
+<h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2><h3 id="HTTP缓存"><a href="#HTTP缓存" class="headerlink" title="HTTP缓存"></a>HTTP缓存</h3><h4 id="失效策略划分"><a href="#失效策略划分" class="headerlink" title="失效策略划分"></a>失效策略划分</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">强缓存</span><br><span class="line">协商缓存</span><br></pre></td></tr></table></figure>
+<h4 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching">https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching</a></li>
+<li><a target="_blank" rel="noopener" href="https://web.dev/http-cache/">https://web.dev/http-cache/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html">https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</a><h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><h4 id="按照缓存位置"><a href="#按照缓存位置" class="headerlink" title="按照缓存位置:"></a>按照缓存位置:</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Service Worker <span class="keyword">Cache</span></span><br><span class="line"><span class="keyword">Memory</span> <span class="keyword">Cache</span></span><br><span class="line">Disk <span class="keyword">Cache</span></span><br><span class="line">Push <span class="keyword">Cache</span></span><br></pre></td></tr></table></figure>
+<h4 id="存储型缓存"><a href="#存储型缓存" class="headerlink" title="存储型缓存"></a>存储型缓存</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Cookie</span></span><br><span class="line"><span class="attribute">Web Storage</span></span><br><span class="line"><span class="attribute">IndexedDB</span></span><br></pre></td></tr></table></figure>
+<h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3>参考链接：<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MjM5ODYwMjI2MA==&amp;mid=2649747766&amp;idx=1&amp;sn=4850153cd1664f79915d00b1791de5c0&amp;chksm=bed3624d89a4eb5bdb228808e44941a538c635528a67bfeb8b8be36e39d2a2c22e10aa2db28b&amp;mpshare=1&amp;scene=1&amp;srcid=0716mA1OP9VZdNF0Zq3hSscz&amp;sharer_sharetime=1594887512158&amp;sharer_shareid=7125c06b0fe98b972a022497973e5fc5&amp;key=e7bdc15d285ac0a93882c4919aa1bed8f1e686207f3e7877441b3471d89ac61967ecf2a599a619fa59e86f83ccfe19bad1d8aec829b993e354415c1dc788cfda66af09b42b510554144b91685231d8f5&amp;ascene=0&amp;uin=MjY2OTI1MDMyOQ==&amp;devicetype=iMac+MacBookAir6,1+OSX+OSX+10.13.4+build(17E199)&amp;version=11020012&amp;lang=zh_CN&amp;exportkey=A/N7Zh6M+4H4dmKmzcRcgyk=&amp;pass_ticket=W+ABhlERzXA5PqTmfy2KtphIUZPCtutAm8G9hQotQsGVIZOdyO+wRISlM4qrnv20&amp;wx_header=0">https://mp.weixin.qq.com/s?__biz=MjM5ODYwMjI2MA==&amp;mid=2649747766&amp;idx=1&amp;sn=4850153cd1664f79915d00b1791de5c0&amp;chksm=bed3624d89a4eb5bdb228808e44941a538c635528a67bfeb8b8be36e39d2a2c22e10aa2db28b&amp;mpshare=1&amp;scene=1&amp;srcid=0716mA1OP9VZdNF0Zq3hSscz&amp;sharer_sharetime=1594887512158&amp;sharer_shareid=7125c06b0fe98b972a022497973e5fc5&amp;key=e7bdc15d285ac0a93882c4919aa1bed8f1e686207f3e7877441b3471d89ac61967ecf2a599a619fa59e86f83ccfe19bad1d8aec829b993e354415c1dc788cfda66af09b42b510554144b91685231d8f5&amp;ascene=0&amp;uin=MjY2OTI1MDMyOQ%3D%3D&amp;devicetype=iMac+MacBookAir6%2C1+OSX+OSX+10.13.4+build(17E199)&amp;version=11020012&amp;lang=zh_CN&amp;exportkey=A%2FN7Zh6M%2B4H4dmKmzcRcgyk%3D&amp;pass_ticket=W%2BABhlERzXA5PqTmfy2KtphIUZPCtutAm8G9hQotQsGVIZOdyO%2BwRISlM4qrnv20&amp;wx_header=0</a></li>
+</ul>
+<p>HTTP 协议针对这个问题的解决方案，就是客户端缓存。从 HTTP/1.0 到 1.1、再到 2.0 版本的演进中，逐步形成了现在被称为“状态缓存”、“强制缓存”（或简称为“强缓存”）和“协商缓存”这三种 HTTP 缓存机制。这其中的状态缓存，是指不经过服务器，客户端直接根据缓存信息来判断目标网站的状态。以前只有 301/Moved Permanently（永久重定向）这一种；后来在RFC6797中增加了HSTS（HTTP Strict Transport Security）机制，用来避免依赖 301/302 跳转 HTTPS 时，可能产生的降级中间人劫持问题</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

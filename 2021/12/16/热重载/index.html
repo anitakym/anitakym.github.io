@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        热重载 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue"><span class="toc-text">Vue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hot-reload-flutter"><span class="toc-text">hot reload - flutter</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        热重载
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-12-16 10:12:11</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://vue-loader-v14.vuejs.org/zh-cn/features/hot-reload.html">https://vue-loader-v14.vuejs.org/zh-cn/features/hot-reload.html</a></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">状态保留规则</span><br><span class="line">当编辑一个组件的 &lt;template&gt; 时，这个组件实例将就地重新渲染，并保留当前所有的私有状态。能够做到这一点是因为模板被编译成了新的无副作用的渲染函数。</span><br><span class="line"></span><br><span class="line">当编辑一个组件的 &lt;script&gt; 时，这个组件实例将就地销毁并重新创建。(应用中其它组件的状态将会被保留) 是因为 &lt;script&gt; 可能包含带有副作用的生命周期钩子，所以将重新渲染替换为重新加载是必须的，这样做可以确保组件行为的一致性。这也意味着，如果你的组件带有全局副作用，则整个页面将会被重新加载。</span><br><span class="line"></span><br><span class="line">&lt;style&gt; 会通过 vue-style-loader 自行热重载，所以它不会影响应用的状态。</span><br><span class="line"></span><br><span class="line">用法</span><br><span class="line">当使用脚手架工具 vue-cli 时，热重载是开箱即用的。</span><br><span class="line"></span><br><span class="line">当手动设置你的工程时，热重载会在你启动 webpack-dev-server --hot 服务时自动开启。</span><br><span class="line"></span><br><span class="line">高阶用户可能希望移步 vue-loader 内部使用的 vue-hot-reload-api 继续查阅。</span><br><span class="line">- https:<span class="regexp">//gi</span>thub.com<span class="regexp">/vuejs/</span>vue-hot-reload-api<span class="regexp">/blob/m</span>aster<span class="regexp">/src/i</span>ndex.js</span><br><span class="line"></span><br><span class="line">关闭热重载</span><br><span class="line">热重载默认是开启的，除非遇到以下情况：</span><br><span class="line"></span><br><span class="line">webpack 的 target 的值是 node (服务端渲染)</span><br><span class="line">webpack 会压缩代码</span><br><span class="line">process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span></span><br><span class="line">你可以设置 hotReload: false 选项来显式关闭热重载：</span><br><span class="line"></span><br><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">      loader: <span class="string">&#x27;vue-loader&#x27;</span>,</span><br><span class="line">      options: &#123;</span><br><span class="line">        hotReload: false <span class="regexp">//</span> 关闭热重载</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>webpack-dev-server</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://webpack.js.org/concepts/hot-module-replacement/#root">https://webpack.js.org/concepts/hot-module-replacement/#root</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://webpack.docschina.org/concepts/hot-module-replacement/">https://webpack.docschina.org/concepts/hot-module-replacement/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://webpack.docschina.org/guides/hot-module-replacement/">https://webpack.docschina.org/guides/hot-module-replacement/</a></p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">模块热替换(hot module replacement)</span><br><span class="line">这一切是如何运行的？How It Works</span><br><span class="line">在应用程序中In <span class="keyword">the</span> Application</span><br><span class="line">在 compiler 中In <span class="keyword">the</span> Compiler</span><br><span class="line">在模块中In <span class="keyword">a</span> Module</span><br><span class="line">在 runtime 中In <span class="keyword">the</span> Runtime</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">从 <span class="selector-tag">webpack-dev-server</span> <span class="selector-tag">v4</span><span class="selector-class">.0</span><span class="selector-class">.0</span> 开始，热模块替换是默认开启的。</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">devServer</span>: &#123;</span><br><span class="line">      <span class="attribute">static</span>: <span class="string">&#x27;./dist&#x27;</span>,</span><br><span class="line">     hot: true,</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">vue-cli-service serve</span><br><span class="line">用法：vue-cli-service serve [options] [entry]</span><br><span class="line"></span><br><span class="line">选项：</span><br><span class="line"></span><br><span class="line">  --open    在服务器启动时打开浏览器</span><br><span class="line">  --copy    在服务器启动时将 URL 复制到剪切版</span><br><span class="line">  --mode    指定环境模式 (默认值：development)</span><br><span class="line">  --host    指定 host (默认值：0.0.0.0)</span><br><span class="line">  --port    指定<span class="built_in"> port </span>(默认值：8080)</span><br><span class="line">  --https   使用 https (默认值：<span class="literal">false</span>)</span><br><span class="line">vue-cli-service serve 命令会启动一个开发服务器 (基于 webpack-dev-server) 并附带开箱即用的模块热重载 (Hot-Module-Replacement)。</span><br><span class="line">除了通过命令行参数，你也可以使用 vue.config.js 里的 devServer 字段配置开发服务器。</span><br><span class="line">命令行参数 [entry] 将被指定为唯一入口，而非额外的追加入口。尝试使用 [entry] 覆盖 config.pages 中的 entry 将可能引发错误。</span><br><span class="line">const<span class="built_in"> server </span>= new WebpackDevServer(Object.assign(&#123;</span><br><span class="line">      historyApiFallback: &#123;</span><br><span class="line">        disableDotRule: <span class="literal">true</span>,</span><br><span class="line">        htmlAcceptHeaders: [</span><br><span class="line">          <span class="string">&#x27;text/html&#x27;</span>,</span><br><span class="line">          <span class="string">&#x27;application/xhtml+xml&#x27;</span></span><br><span class="line">        ],</span><br><span class="line">        rewrites: genHistoryApiFallbackRewrites(options.publicPath, options.pages)</span><br><span class="line">      &#125;,</span><br><span class="line">      hot: !isProduction</span><br><span class="line">    &#125;, </span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://webpack.docschina.org/guides/hot-module-replacement/#other-code-and-frameworks">https://webpack.docschina.org/guides/hot-module-replacement/#other-code-and-frameworks</a></p>
+<h2 id="hot-reload-flutter"><a href="#hot-reload-flutter" class="headerlink" title="hot reload - flutter"></a>hot reload - flutter</h2></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        ecs-and-cvm - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91"><span class="toc-text">阿里云</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%8ECDN-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-text">网络与CDN - 负载均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3"><span class="toc-text">文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TIPS"><span class="toc-text">TIPS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-ECS"><span class="toc-text">云服务器 - ECS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3-1"><span class="toc-text">文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic"><span class="toc-text">Basic</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-text">创建</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%8F%B0Tips"><span class="toc-text">控制台Tips</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECS%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9"><span class="toc-text">ECS节点选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E5%9E%8B"><span class="toc-text">选型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VPC"><span class="toc-text">VPC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EIP"><span class="toc-text">EIP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECS%E5%BC%B9%E6%80%A7%E7%BD%91%E5%8D%A1"><span class="toc-text">ECS弹性网卡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAT%E7%BD%91%E5%85%B3"><span class="toc-text">NAT网关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECS%E9%85%8D%E7%BD%AE"><span class="toc-text">ECS配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECS%E5%BF%AB%E7%85%A7"><span class="toc-text">ECS快照</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECS%E9%95%9C%E5%83%8F"><span class="toc-text">ECS镜像</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91"><span class="toc-text">腾讯云</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NAT"><span class="toc-text">NAT</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tengine"><span class="toc-text">Tengine</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SLB"><span class="toc-text">SLB</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#LB-%E8%BD%AE%E8%AF%A2%E5%8D%8F%E8%AE%AE"><span class="toc-text">LB - 轮询协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E5%A4%87%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%84"><span class="toc-text">主备服务器组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%84"><span class="toc-text">虚拟服务器组</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9"><span class="toc-text">弹性伸缩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#feature"><span class="toc-text">feature</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%B8%E7%BC%A9%E7%BB%84"><span class="toc-text">伸缩组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-text">任务管理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GRE%E9%9A%A7%E9%81%93"><span class="toc-text">GRE隧道</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Basic-1"><span class="toc-text">Basic</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E6%9E%B6%E6%9E%84"><span class="toc-text">云架构</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        ecs-and-cvm
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-10-06 13:52:27</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>17年到现在，团队在阿里云和腾讯云之间切换了几回（各种原因），现对于使用过的产品做下梳理；</p>
+</blockquote>
+<h1 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h1><h2 id="网络与CDN-负载均衡"><a href="#网络与CDN-负载均衡" class="headerlink" title="网络与CDN - 负载均衡"></a>网络与CDN - 负载均衡</h2><h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/196874.html">https://help.aliyun.com/document_detail/196874.html</a></li>
+<li></li>
+</ul>
+<h3 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h3><ul>
+<li>计费 ｜ 可用区（单｜多）</li>
+</ul>
+<h2 id="云服务器-ECS"><a href="#云服务器-ECS" class="headerlink" title="云服务器 - ECS"></a>云服务器 - ECS</h2><h3 id="文档-1"><a href="#文档-1" class="headerlink" title="文档"></a>文档</h3><h3 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h3><ul>
+<li>Elastic Compute Service</li>
+<li>基于虚拟化资源池</li>
+<li>多线BGP<ul>
+<li>border gateway protocol 边界网关协议 - 配置在路由上</li>
+<li>三网（跨运营商）</li>
+<li>解决不同网络之间的差异</li>
+<li>动态｜静态BGP - <a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/179417">https://developer.aliyun.com/article/179417</a></li>
+</ul>
+</li>
+<li>专线</li>
+</ul>
+<h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><ul>
+<li>地域 - 可用区</li>
+<li>“不同地域的实例之间内网互不相通；选择靠近您客户的地域，可降低网络时延、提高您客户的访问速度”</li>
+<li>用户所在地 </li>
+<li>相关别的产品也买在相同可用区</li>
+<li>数据备份，冗余，异地多活</li>
+</ul>
+<h2 id="控制台Tips"><a href="#控制台Tips" class="headerlink" title="控制台Tips"></a>控制台Tips</h2><ul>
+<li>APP｜Web</li>
+<li>Web全功能，也在不断改进体验 - console域下</li>
+<li>善用站点提供的搜索功能</li>
+<li>公司账号 - 费用和工单 - 按量计费｜包年包月</li>
+<li>腾讯云我们是比较大的用户，会有专门的客服QQ群，回复还是非常及时的（不同支持时效收费也不一样，和每年消费的额度到达某个额度也相关，各部分服务的折扣也和消费额度相关）</li>
+</ul>
+<h2 id="ECS节点选择"><a href="#ECS节点选择" class="headerlink" title="ECS节点选择"></a>ECS节点选择</h2><ul>
+<li>目标用户所在地</li>
+<li>购买的各种服务之间注意关系</li>
+<li>数据冗余</li>
+</ul>
+<h2 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h2><ul>
+<li>公网带宽（注意根据需求计算）</li>
+<li>会本身有类型分类，根据指引选择 - 个人</li>
+<li>企业有定制的<h2 id="VPC"><a href="#VPC" class="headerlink" title="VPC"></a>VPC</h2></li>
+<li>经典网络 - 所有ECS直接建立在传统网络层之上</li>
+<li>VPC - 加入逻辑隔离私有网络 - 安全性提升</li>
+<li>VPC - natGateway|Router|Switch - 自定义</li>
+<li>企业网络 - 需要接入专线到XX云机房 - VPC提供了可能</li>
+</ul>
+<h2 id="EIP"><a href="#EIP" class="headerlink" title="EIP"></a>EIP</h2><ul>
+<li>eth0 内网IP eth1 公网IP</li>
+<li>弹性公网IP ｜ ECS公网IP - 和实例绑定在一起的</li>
+<li>弹性公网IP - 支持在ECS上面弹性绑定和解绑</li>
+<li>ECS ｜ EIP - 关系</li>
+<li>弹性公网IP支持的协议 - TCP｜UDP｜ICMP</li>
+</ul>
+<h2 id="ECS弹性网卡"><a href="#ECS弹性网卡" class="headerlink" title="ECS弹性网卡"></a>ECS弹性网卡</h2><ul>
+<li>随时可以实现分离的虚拟网卡</li>
+<li>vCPU &gt;= 4</li>
+<li>适合搭建高可用集群</li>
+<li>低成本故障转移</li>
+<li>精细化网络管理</li>
+<li>不同配置支持的可增加的弹性网卡的数量不一样</li>
+</ul>
+<h2 id="NAT网关"><a href="#NAT网关" class="headerlink" title="NAT网关"></a>NAT网关</h2><ul>
+<li>公司采用的就是这种</li>
+<li>具体可见腾讯云文档</li>
+<li>不用每一个服务器，绑定一个vpc公网；通过统一得公网地址做限制策略，便于管理，也比每一个公网地址绑定省钱 <h2 id="ECS配置"><a href="#ECS配置" class="headerlink" title="ECS配置"></a>ECS配置</h2></li>
+<li>密钥对 ｜ 密码</li>
+<li>密钥对生成 - ssh-keygen - 公钥配置到服务器</li>
+<li>登录 ssh -i ~/.ssh/id_rsa <a href="mailto:&#x72;&#111;&#111;&#116;&#x40;&#120;&#120;&#x78;&#46;&#120;&#120;&#x78;&#46;&#x78;&#120;&#120;&#46;&#120;&#x78;&#120;">&#x72;&#111;&#111;&#116;&#x40;&#120;&#120;&#x78;&#46;&#120;&#120;&#x78;&#46;&#x78;&#120;&#120;&#46;&#120;&#x78;&#120;</a></li>
+<li>如果ssh登录有问题，可以通过远程连接</li>
+</ul>
+<h2 id="ECS快照"><a href="#ECS快照" class="headerlink" title="ECS快照"></a>ECS快照</h2><ul>
+<li>手动 ｜ 自动</li>
+<li>增量快照机制（第一次快照全量，后续增量）</li>
+<li>快照会影响磁盘I/O - 所以处理场景和时机要把握好</li>
+<li>自动快照执行前清理不必要数据 - 定时任务清理日志等</li>
+<li>快照OSS资源包 - 容量选择 - 看下Used大小</li>
+<li>备份周期</li>
+</ul>
+<h2 id="ECS镜像"><a href="#ECS镜像" class="headerlink" title="ECS镜像"></a>ECS镜像</h2><ul>
+<li>镜像源快速生成ECS实例</li>
+<li>创建自定义镜像</li>
+<li>快照可以生成自定义镜像</li>
+</ul>
+<h1 id="腾讯云"><a href="#腾讯云" class="headerlink" title="腾讯云"></a>腾讯云</h1><h3 id="NAT"><a href="#NAT" class="headerlink" title="NAT"></a>NAT</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/552/12951">https://cloud.tencent.com/document/product/552/12951</a><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1></li>
+</ul>
+<h2 id="Tengine"><a href="#Tengine" class="headerlink" title="Tengine"></a>Tengine</h2><ul>
+<li>配置nginx的时候走这个</li>
+<li><a target="_blank" rel="noopener" href="http://tengine.taobao.org/">http://tengine.taobao.org/</a></li>
+</ul>
+<h2 id="SLB"><a href="#SLB" class="headerlink" title="SLB"></a>SLB</h2><ul>
+<li>负载均衡</li>
+<li>访问流量-转发策略-后台服务器</li>
+<li>承载高并发，提高性能，高可靠性，后端服务冗灾</li>
+<li>内网的负载均衡一般没啥费用</li>
+<li>多可用区｜单可用区</li>
+</ul>
+<h4 id="LB-轮询协议"><a href="#LB-轮询协议" class="headerlink" title="LB - 轮询协议"></a>LB - 轮询协议</h4><ul>
+<li>前端协议[端口] + 后端协议[端口]</li>
+<li>轮询｜加权轮询｜加权+最小连接数</li>
+<li>会话保持-基于ip （按照源ip,分配给对应服务器） ｜ 用户登录等场景</li>
+<li>TCP协议 - 会话保持 - 基于ip</li>
+<li>HTTP协议 - 会话保持 - 基于Cookie</li>
+</ul>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><ul>
+<li>基本配置</li>
+<li>健康检查配置<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">健康检查</span><br><span class="line">- 基于TCP</span><br><span class="line">- 基于HTTP</span><br><span class="line">仅七层监听器（HTTP<span class="regexp">/HTTPS）支持配置访问日志（Access Log），四层监听器（TCP/</span>UDP/TCP SSL）不支持</span><br><span class="line">腾讯云监听器（https:<span class="regexp">//</span>cloud.tencent.com<span class="regexp">/document/</span>product<span class="regexp">/214/</span><span class="number">1255</span>）</span><br><span class="line">监听器的配置规则如下：</span><br><span class="line">在同一个负载均衡中，一个负载均衡端口只能对应一种协议，</span><br><span class="line">支持 HTTP、UDP、TCP、HTTPS 协议，内网型只支持 UDP、TCP 协议，</span><br><span class="line">当创建 HTTPS 协议监听器时，不支持批量创建。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="主备服务器组"><a href="#主备服务器组" class="headerlink" title="主备服务器组"></a>主备服务器组</h4><h4 id="虚拟服务器组"><a href="#虚拟服务器组" class="headerlink" title="虚拟服务器组"></a>虚拟服务器组</h4><h2 id="弹性伸缩"><a href="#弹性伸缩" class="headerlink" title="弹性伸缩"></a>弹性伸缩</h2><ul>
+<li>自动调整弹性计算资源的大小，满足业务需求的变化</li>
+<li>LB + 云监控（自动控制资源数）<h4 id="feature"><a href="#feature" class="headerlink" title="feature"></a>feature</h4></li>
+<li>自动化资源配置</li>
+<li>性能问题还是要先看性能瓶颈在哪儿</li>
+<li>模式 - 定时模式｜动态模式-基于云监控性能指标 ｜ 固定数量模式 ｜ 自定义模式 ｜ 健康模式 ｜ 多模并行模式</li>
+<li>自定义模式 - 自己监控平台</li>
+<li>开通服务 - 创建伸缩组 - 设置触发任务</li>
+</ul>
+<h4 id="伸缩组"><a href="#伸缩组" class="headerlink" title="伸缩组"></a>伸缩组</h4><ul>
+<li>配置 - 最大，最小实例数</li>
+</ul>
+<h4 id="任务管理"><a href="#任务管理" class="headerlink" title="任务管理"></a>任务管理</h4><ul>
+<li>定时任务｜</li>
+</ul>
+<h2 id="GRE隧道"><a href="#GRE隧道" class="headerlink" title="GRE隧道"></a>GRE隧道</h2><h4 id="Basic-1"><a href="#Basic-1" class="headerlink" title="Basic"></a>Basic</h4><ul>
+<li>Generic Routing Encapsulation 通用路由封装</li>
+<li>把两个不同的VPC网络通过建立一条虚拟隧道的方式连接到一起</li>
+<li>本质上还是通过公网连接的<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//www.sdnlab.com/gre-tunnel-experiment/</span></span><br><span class="line"><span class="symbol">GRE</span>(通用路由协议封装）是由Cisco和Net-smiths等公司于<span class="number">1994</span>年提交给IETF的，标号为RFC1701和RFC1702。GRE规定了如何用一种网络协议去封装另一种网络协议的方法。GRE的隧道由两端的源<span class="built_in">IP</span>地址和目的<span class="built_in">IP</span>地址来定义，允许用户使用<span class="built_in">IP</span>包封装<span class="built_in">IP</span>、IPX、AppleTalk包，并支持全部的路由协议（如RIP2、OSPF等）。通过GRE，用户可以利用公共<span class="built_in">IP</span>网络连接IPX网络、AppleTalk网络，还可以使用保留地址进行网络互连，或者对公网隐藏企业网的<span class="built_in">IP</span>地址。</span><br></pre></td></tr></table></figure></li>
+<li><code>ip r</code> 查看本机路由表 <code>ip route add|del</code> <code>ip tunnel add</code> - 新建隧道 <code>ip link set xxx up</code></li>
+<li>GRE报文封装 - GRE报文解开</li>
+<li>网段配置规划<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10.0.0.0</span>/<span class="number">8</span></span><br><span class="line"><span class="number">172.16.0.0</span>/<span class="number">12</span></span><br><span class="line"><span class="number">192.168.0.0</span>/<span class="number">16</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">lsmod</span> <span class="string">| grep ip_gre</span></span><br><span class="line"><span class="attr">modprobe</span> <span class="string">ip_gre</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="云架构"><a href="#云架构" class="headerlink" title="云架构"></a>云架构</h2><ul>
+<li>ECS + RDS + Memcached 基础架构</li>
+<li>ECS + 云盘 -&gt; 云存储storage(oss)</li>
+<li>入口 -&gt; （不同节点分流（DNS -&gt; 根据不同地区的用户打到不同节点）+ CDN）</li>
+<li>高并发 - 冗灾 &amp;&amp; 负载均衡 + 数据库-读写分离 + memcached集群</li>
+<li>多VPC - 不同地域之间 - 阿里云VPC专线 </li>
+<li>混合云 - 安全性｜可控性｜可弹性 - IDC托管 + 公有云服务的优势</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

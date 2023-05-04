@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        spectrum - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E5%92%8C%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="toc-text">项目结构和技术栈</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#study"><span class="toc-text">study</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#resolutions"><span class="toc-text">resolutions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#immutable-js"><span class="toc-text">immutable-js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#draft-js"><span class="toc-text">draft.js</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        spectrum
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-11-21 15:52:20</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#websocket" title="websocket">websocket</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#源码学习系列" title="源码学习系列">源码学习系列</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>spectrum 是一个 online community 的开源项目，里面的技术栈可以参考习</p>
+</blockquote>
+<h4 id="项目结构和技术栈"><a href="#项目结构和技术栈" class="headerlink" title="项目结构和技术栈"></a>项目结构和技术栈</h4><p>摘自官方README.md</p>
+<pre>
+Codebase
+Technologies
+With the ground rules out of the way, let's talk about the coarse architecture of this mono repo:
+
+Full-stack JavaScript: We use Node.js to power our servers, and React to power our frontend apps. Almost all of the code you'll touch in this codebase will be JavaScript.
+Background Jobs: We leverage background jobs (powered by bull and Redis) a lot. These jobs are handled by a handful of small worker servers, each with its own purpose.
+Here is a list of all the big technologies we use:
+
+RethinkDB: Data storage
+Redis: Background jobs and caching
+GraphQL: API, powered by the entire Apollo toolchain
+Flowtype: Type-safe JavaScript
+PassportJS: Authentication
+React: Frontend React app
+Folder structure
+spectrum/
+├── api        # API server
+├── athena     # Worker server (notifications and general processing)
+├── chronos    # Worker server (cron jobs)
+├── desktop    # desktop apps (build with electron)
+├── docs
+├── email-templates
+├── hermes     # Worker server (email sending)
+├── hyperion   # Rendering server
+├── mercury    # Worker server (reputation)
+├── public     # Public files used on the frontend
+├── shared     # Shared JavaScript code
+├── src        # Frontend SPA
+└── vulcan     # Worker server (search indexing; syncing with Algolia)
+
+</pre>
+
+<h2 id="study"><a href="#study" class="headerlink" title="study"></a>study</h2><h4 id="resolutions"><a href="#resolutions" class="headerlink" title="resolutions"></a>resolutions</h4><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;resolutions&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;immutable&quot;</span>: <span class="string">&quot;3.7.4&quot;</span>,</span><br><span class="line">    <span class="string">&quot;draft-js&quot;</span>: <span class="string">&quot;npm:draft-js-fork-mxstbr&quot;</span>,</span><br><span class="line">    <span class="string">&quot;jest-environment-node&quot;</span>: <span class="string">&quot;22.4.3&quot;</span>,</span><br><span class="line">    <span class="string">&quot;jest&quot;</span>: <span class="string">&quot;22.4.3&quot;</span>,</span><br><span class="line">    <span class="string">&quot;fbjs&quot;</span>: <span class="string">&quot;0.8.16&quot;</span>,</span><br><span class="line">    <span class="string">&quot;event-stream&quot;</span>: <span class="string">&quot;3.3.4&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line"><span class="meta"># 允许您覆盖特定嵌套依赖项的版本。 有关完整规范，请参见选择性版本解析 RFC。</span></span><br><span class="line"><span class="meta"># https://github.com/yarnpkg/rfcs/blob/master/implemented/0000-selective-versions-resolutions.md</span></span><br><span class="line"><span class="meta"># 注意，yarn install —flat 命令将会自动在 package.json 文件里加入 resolutions 字段</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="immutable-js"><a href="#immutable-js" class="headerlink" title="immutable-js"></a>immutable-js</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://immutable-js.com/">https://immutable-js.com/</a></li>
+</ul>
+<h4 id="draft-js"><a href="#draft-js" class="headerlink" title="draft.js"></a>draft.js</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://draftjs.org/">https://draftjs.org/</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

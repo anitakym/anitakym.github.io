@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        React-PureComponent - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#changelog"><span class="toc-text">changelog</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8F%90%E4%BE%9B%E8%BF%99%E4%B8%AA"><span class="toc-text">为什么提供这个</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sophiebits-commented-on-6-Jul-2016"><span class="toc-text">sophiebits commented on 6 Jul 2016</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#doc"><span class="toc-text">doc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%98%85%E8%AF%BB"><span class="toc-text">参考阅读</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        React-PureComponent
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-12-15 10:21:31</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>当我们在React中，搜React.pureComponent时，<br><a target="_blank" rel="noopener" href="https://github.com/facebook/react/pull/7195">https://github.com/facebook/react/pull/7195</a></p>
+</blockquote>
+<h3 id="changelog"><a href="#changelog" class="headerlink" title="changelog"></a>changelog</h3><p>以下两处</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## 15.3.0 (July 29, 2016)</span></span><br><span class="line"></span><br><span class="line"><span class="section">### React</span></span><br><span class="line"><span class="bullet">-</span> Add <span class="code">`React.PureComponent`</span> - a new base class to extend, replacing <span class="code">`react-addons-pure-render-mixin`</span> now that mixins don&#x27;t work with ES2015 classes. ([<span class="string">@sophiebits</span>](<span class="link">https://github.com/sophiebits</span>) in [<span class="string">#7195</span>](<span class="link">https://github.com/facebook/react/pull/7195</span>))</span><br><span class="line"></span><br><span class="line"><span class="section">## 16.1.0 (November 9, 2017)</span></span><br><span class="line"><span class="section">### React Test Renderer and Test Utils</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">*</span> Handle <span class="code">`forceUpdate()`</span> and <span class="code">`React.PureComponent`</span> correctly. ([<span class="string">@koba04</span>](<span class="link">https://github.com/koba04</span>) in [<span class="string">#11440</span>](<span class="link">https://github.com/facebook/react/pull/11440</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="为什么提供这个"><a href="#为什么提供这个" class="headerlink" title="为什么提供这个"></a>为什么提供这个</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/react/pull/7195">https://github.com/facebook/react/pull/7195</a></li>
+</ul>
+<h4 id="sophiebits-commented-on-6-Jul-2016"><a href="#sophiebits-commented-on-6-Jul-2016" class="headerlink" title="sophiebits commented on 6 Jul 2016"></a>sophiebits commented on 6 Jul 2016</h4><p>This provides an easy way to indicate that components should only rerender when given new props, like PureRenderMixin. If you rely on mutation in your React components, you can continue to use React.Component.</p>
+<p>Inheriting from React.PureComponent indicates to React that your component doesn’t need to rerender when the props are unchanged. We’ll compare the old and new props before each render and short-circuit if they’re unchanged. It’s like an automatic shouldComponentUpdate.</p>
+<h2 id="doc"><a href="#doc" class="headerlink" title="doc"></a>doc</h2><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">React.PureComponent</span><br><span class="line">React.PureComponent 与 React.Component 很相似。两者的区别在于 React.Component 并未实现 shouldComponentUpdate()，而 React.PureComponent 中以浅层对比 prop 和 <span class="keyword">state</span> 的方式来实现了该函数。</span><br><span class="line"></span><br><span class="line">如果赋予 React 组件相同的 props 和 <span class="keyword">state</span>，render() 函数会渲染相同的内容，那么在某些情况下使用 React.PureComponent 可提高性能。</span><br><span class="line"></span><br><span class="line">注意</span><br><span class="line"></span><br><span class="line">React.PureComponent 中的 shouldComponentUpdate() 仅作对象的浅层比较。如果对象中包含复杂的数据结构，则有可能因为无法检查深层的差别，产生错误的比对结果。仅在你的 props 和 <span class="keyword">state</span> 较为简单时，才使用 React.PureComponent，或者在深层数据结构发生变化时调用 forceUpdate() 来确保组件被正确地更新。你也可以考虑使用 immutable 对象加速嵌套数据的比较。</span><br><span class="line"></span><br><span class="line">此外，React.PureComponent 中的 shouldComponentUpdate() 将跳过所有子组件树的 prop 更新。因此，请确保所有子组件也都是“纯”的组件。</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考阅读"><a href="#参考阅读" class="headerlink" title="参考阅读"></a>参考阅读</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://reactjs.org/blog/2016/07/13/mixins-considered-harmful.html">https://reactjs.org/blog/2016/07/13/mixins-considered-harmful.html</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

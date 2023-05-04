@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        npm私有仓库的搭建及发版基本方法 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E4%BB%93%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">私仓的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BA%90%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-text">源的配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nrm"><span class="toc-text">nrm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nexus%E9%85%8D%E7%BD%AE"><span class="toc-text">nexus配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E5%8C%85%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="toc-text">发包版本控制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E4%BB%93%E7%9A%84%E6%90%AD%E5%BB%BA%EF%BC%88%E5%9F%BA%E4%BA%8Enexus%EF%BC%89"><span class="toc-text">私仓的搭建（基于nexus）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#npm%E5%8F%91%E5%8C%85"><span class="toc-text">npm发包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nexus%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E4%B8%8D%E5%A4%9F%E5%A4%84%E7%90%86"><span class="toc-text">nexus部署服务器磁盘空间不够处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#error"><span class="toc-text">error</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nexus%E6%96%87%E6%A1%A3%E6%8C%87%E8%B7%AF%EF%BC%88sonatype%EF%BC%89"><span class="toc-text">nexus文档指路（sonatype）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#repository-manager-%E6%B3%A8%E6%84%8F%E6%A0%B9%E6%8D%AE%E8%87%AA%E5%B7%B1%E6%90%AD%E5%BB%BA%E7%9A%84%E7%89%88%E6%9C%AC%E9%80%89%E6%8B%A9%E6%96%87%E6%A1%A3"><span class="toc-text">repository manager(注意根据自己搭建的版本选择文档)</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        npm私有仓库的搭建及发版基本方法
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-04-13 17:02:58</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#工作经验总结系列" title="工作经验总结系列">工作经验总结系列</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>让运维老师帮忙用Nexus搭了我们NPM私仓库，严格说，给我们提供了NPM的支持</p>
+</blockquote>
+<p>私仓——使用需要配置源，个人电脑使用推荐nrm</p>
+<h2 id="私仓的使用"><a href="#私仓的使用" class="headerlink" title="私仓的使用"></a>私仓的使用</h2><h4 id="源的配置"><a href="#源的配置" class="headerlink" title="源的配置"></a>源的配置</h4><p>写到脚本里面：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm --registry http:<span class="regexp">//</span>xxxxx<span class="regexp">/repository/</span>npmjs.org/</span><br><span class="line"><span class="string">&quot;setup&quot;</span>: <span class="string">&quot;npm install --force --registry http://xxxxx/repository/npmjs.org&quot;</span>,</span><br></pre></td></tr></table></figure>
+<p>设置全局：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm help <span class="built_in">config</span> <span class="comment">// 查询config具体用法</span></span><br><span class="line">npm <span class="built_in">config</span> <span class="built_in">set</span> registry http:<span class="comment">//xxxxx/repository/npmjs.org/</span></span><br><span class="line">npm <span class="built_in">config</span> <span class="built_in">get</span> registry</span><br></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package.json</span><br><span class="line">包在<span class="built_in">npm</span>私有仓库中的的完整路径, 指明tgz包的版本，安装指定版本的<span class="built_in">npm</span>包</span><br><span class="line">  <span class="string">&quot;_resolved&quot;</span>: <span class="string">&quot;http:/xxx/repository/npmjs.org/xxxx/-/xxxx-1.1.9.tgz&quot;</span>,</span><br><span class="line">也就是包_resolved字段里面那个值，我们发布了包之后，在管理端也能看到地址</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="nrm"><a href="#nrm" class="headerlink" title="nrm"></a>nrm</h4><p>文档指路：<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/nr">https://www.npmjs.com/package/nr</a></p>
+<h4 id="nexus配置"><a href="#nexus配置" class="headerlink" title="nexus配置"></a>nexus配置</h4><p>获取包的源和发布包的源可以在nexus里面配置</p>
+<h4 id="发包版本控制"><a href="#发包版本控制" class="headerlink" title="发包版本控制"></a>发包版本控制</h4><p>tips: 注意正式版本和发测试版本包的时候，发包规则的设定，可以用npm publish –tags=beta来发测试版本</p>
+<h2 id="私仓的搭建（基于nexus）"><a href="#私仓的搭建（基于nexus）" class="headerlink" title="私仓的搭建（基于nexus）"></a>私仓的搭建（基于nexus）</h2><h3 id="npm发包"><a href="#npm发包" class="headerlink" title="npm发包"></a>npm发包</h3><p>1.注册账号<br>2.package.json (name,version=&gt;最少字段)<br>3.main/module/files-需要发布的本地目录/</p>
+<p>tips:<br>1.发npm包时候，源就是npm的;注意publish的源的设置<br>2.推荐工具：nrm<br>3.keyword方便搜索的</p>
+<h3 id="nexus部署服务器磁盘空间不够处理"><a href="#nexus部署服务器磁盘空间不够处理" class="headerlink" title="nexus部署服务器磁盘空间不够处理"></a>nexus部署服务器磁盘空间不够处理</h3><ol>
+<li>可以在Blob Stores里面看下磁盘占用情况，确认占用多的是哪些类型（jar or npm包 ？）</li>
+<li>配置cleanup policies，在设置按钮的 Repository-Cleanup Polices选项下，选择 +Create Cleanup Policy，然后配置一个你认为没问题的策略，这个里面还可以preview，看看这个策略下，哪些会被删除；</li>
+<li>进入Repository里面，根据1确认的 repositry，点击进去，在settings里面，修改Cleanup选项，刚刚配置的策略添加到applied里面即可；</li>
+<li>点击system-tasks,点击 +Create task(type Admin-compact blob store)，可以选择手动触发，然后手动run一下，即进入清理模式；这个时候可以通过状态判断是否清理完成，我这边100多个G，大概running了1个多小时快2个小时才跑完；</li>
+</ol>
+<h4 id="error"><a href="#error" class="headerlink" title="error"></a>error</h4><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javax.servlet.ServletException: com.orientechnologies.orient.core.<span class="keyword">exception</span>.OLowDiskSpaceException: Error occurred <span class="keyword">while</span> executing a <span class="keyword">write</span> operation <span class="keyword">to</span> <span class="keyword">database</span> <span class="string">&#x27;component&#x27;</span> due <span class="keyword">to</span> limited free space <span class="keyword">on</span> the disk (<span class="number">3898</span> MB). The <span class="keyword">database</span> <span class="keyword">is</span> now working <span class="keyword">in</span> <span class="keyword">read</span>-<span class="keyword">only</span> mode. Please <span class="keyword">close</span> the <span class="keyword">database</span> (<span class="keyword">or</span> stop OrientDB), make room <span class="keyword">on</span> your hard drive <span class="keyword">and</span> <span class="keyword">then</span> reopen the <span class="keyword">database</span>. The minimal required space <span class="keyword">is</span> <span class="number">4096</span> MB. Required space <span class="keyword">is</span> now <span class="keyword">set</span> <span class="keyword">to</span> <span class="number">4096</span>MB (you can change it <span class="keyword">by</span> setting parameter <span class="keyword">storage</span>.diskCache.diskFreeSpaceLimit) . DB <span class="type">name</span>=&quot;component&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>跑task清理</li>
+<li>{安装目录}/bin/nexus.vmoptions - storage.diskCache.diskFreeSpaceLimit = 2048</li>
+</ul>
+<h3 id="nexus文档指路（sonatype）"><a href="#nexus文档指路（sonatype）" class="headerlink" title="nexus文档指路（sonatype）"></a>nexus文档指路（sonatype）</h3><h4 id="repository-manager-注意根据自己搭建的版本选择文档"><a href="#repository-manager-注意根据自己搭建的版本选择文档" class="headerlink" title="repository manager(注意根据自己搭建的版本选择文档)"></a>repository manager(注意根据自己搭建的版本选择文档)</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://guides.sonatype.com/repo3/quick-start-guides/proxying-maven-and-npm/">https://guides.sonatype.com/repo3/quick-start-guides/proxying-maven-and-npm/</a></li>
+<li><a target="_blank" rel="noopener" href="https://help.sonatype.com/repomanager3">https://help.sonatype.com/repomanager3</a></li>
+<li><a target="_blank" rel="noopener" href="https://help.sonatype.com/repomanager2">https://help.sonatype.com/repomanager2</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

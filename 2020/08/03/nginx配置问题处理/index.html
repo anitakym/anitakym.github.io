@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        nginx配置问题处理 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx-%E4%BD%9C%E4%B8%BAweb%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%EF%BC%8C%E6%B5%81%E9%87%8F%E5%88%87%E6%8D%A2-lua%E7%9A%84%E8%84%9A%E6%9C%AC%E6%94%AF%E6%8C%81"><span class="toc-text">nginx - 作为web代理服务器 - 负载均衡，流量切换 - lua的脚本支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx-%E6%80%8E%E4%B9%88%E6%89%BE"><span class="toc-text">nginx 怎么找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx-403"><span class="toc-text">nginx 403</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#firekylin-nginx"><span class="toc-text">firekylin nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kill-nginx-%E6%9C%8D%E5%8A%A1"><span class="toc-text">kill nginx 服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%AB%AFhistory%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F"><span class="toc-text">前端history路由模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D"><span class="toc-text">正则匹配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http-server%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">http server优先级</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E8%B5%B7nginx%E4%BB%A3%E7%90%86%E8%A7%A3%E5%86%B3%E8%B5%84%E6%BA%90%E8%B7%A8%E5%9F%9F%E6%88%96%E8%80%85%E8%BF%9E%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E8%B0%83%E8%AF%95%EF%BC%88%E5%B5%8C%E5%85%A5%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E9%A1%B5%E9%9D%A2%EF%BC%89%E9%97%AE%E9%A2%98"><span class="toc-text">本地起nginx代理解决资源跨域或者连本地服务调试（嵌入移动端的页面）问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tengine"><span class="toc-text">tengine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#301"><span class="toc-text">301</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%AE%9E%E8%B7%B5"><span class="toc-text">配置实践</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%98%85%E8%AF%BB"><span class="toc-text">参考阅读</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        nginx配置问题处理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-08-03 16:46:32</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#nginx" title="nginx">nginx</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>nginx（Engine X） 高性能的web服务器<br>  排名指路：<a target="_blank" rel="noopener" href="https://w3techs.com/technologies/cross/web_server/ranking">https://w3techs.com/technologies/cross/web_server/ranking</a><br>  官网指路：<a target="_blank" rel="noopener" href="http://nginx.org/en/">http://nginx.org/en/</a></p>
+</blockquote>
+<pre>
+轻量级： CPU，内存占用少（工作模式：进程池 + 单线程 => 消除了进程，线程切换的成本）
+One master and several worker processes; worker processes run under an unprivileged user;
+（在进程之上，master进程用来管理进程池，监控进程，自动恢复发生异常的worker，保持进程池的稳定和服务能力）
+cite: https://time.geekbang.org/column/article/117492
+</pre>
+<h4 id="nginx-作为web代理服务器-负载均衡，流量切换-lua的脚本支持"><a href="#nginx-作为web代理服务器-负载均衡，流量切换-lua的脚本支持" class="headerlink" title="nginx - 作为web代理服务器 - 负载均衡，流量切换 - lua的脚本支持"></a>nginx - 作为web代理服务器 - 负载均衡，流量切换 - lua的脚本支持</h4><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>对session和cookie的处理较弱</span><br><span class="line"><span class="bullet">- </span>支持的协议有限（http）</span><br><span class="line"><span class="bullet">- </span>lua脚本的变更和nginx配置的修改需要重新启动，无法热更新</span><br><span class="line"><span class="bullet">- </span>无可视化配置页面</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以作为流量网关，nginx层流量代理，负载均衡到Gateway做业务层的转发处理</li>
+</ul>
+<h4 id="nginx-怎么找"><a href="#nginx-怎么找" class="headerlink" title="nginx 怎么找"></a>nginx 怎么找</h4><ol>
+<li>ps -ef | grep nginx (ps:显示系统进程)</li>
+<li>whereis nginx 软件安装路径(whereis – locate programs;The whereis utility checks the standard binary directories for the specified programs, printing out the paths of any it finds.The path searched is the string returned by the sysctl(8) utility for the ``user.cs_path’’ string)</li>
+<li>which nginx 运行文件所在路径(which – locate a program file in the user’s path;The which utility takes a list of command names and searches the path for each executable file that would be run had these commands actually been invoked.)</li>
+<li>cd / &amp;&amp; find - name ‘nginx.conf’<br>nginx.conf =&gt; 基本的<br>vhost =&gt; 应用的</li>
+</ol>
+<h4 id="nginx-403"><a href="#nginx-403" class="headerlink" title="nginx 403"></a>nginx 403</h4><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">chmod</span> -R <span class="number">777</span></span><br><span class="line">ps aux | <span class="keyword">grep</span> <span class="string">&quot;nginx: worker process&quot;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre>
+nginx 
+root
+</pre>
+
+<p><code>vim nginx.conf</code>把 user  改成 root,即可;</p>
+<h4 id="firekylin-nginx"><a href="#firekylin-nginx" class="headerlink" title="firekylin nginx"></a>firekylin nginx</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="regexp">/root/</span>firekylin<span class="regexp">/nginx.conf /</span>etc<span class="regexp">/nginx/</span>conf.d/firekylin.conf</span><br></pre></td></tr></table></figure>
+<p>nginx.conf里面：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ln -s是一个Linux/Unix命令，用于创建软链接（Symbolic Link或称为Symlink）。软链接是一种类似于Windows系统中快捷方式的文件，它指向另一个文件或目录。其中，源文件或目录可以是绝对路径或相对路径，也可以是一个完整的URL。软链接可以跨越不同的文件系统，而硬链接只能在同一文件系统中使用。</span><br><span class="line"></span><br><span class="line">软链接的用途：</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>简化文件路径名称</span><br><span class="line"><span class="bullet">- </span>提高文件管理的灵活性与安全性</span><br><span class="line"><span class="bullet">- </span>简化开发与维护工作</span><br><span class="line"></span><br><span class="line">软链接的语法为：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>ln -s source_file link_file</p>
+<figure class="highlight mercury"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">其中，<span class="meta">source_file</span>是源文件或目录的路径，link_file是链接文件的路径。执行此命令后，link_file将指向<span class="meta">source_file</span>，并且可以作为<span class="meta">source_file</span>的别名在系统中使用。</span><br></pre></td></tr></table></figure>
+
+<pre>
+~   #波浪线表示执行一个正则匹配，区分大小写
+
+# location ~ /static/ {
+# etag  on;
+# expires  max;
+# } 
+</pre>
+
+<p>把     </p>
+<pre>
+# etag  on;
+# expires  max;
+</pre>
+
+<p>都注释了，还是403</p>
+<p>把<code>location ~ /static/ &#123;&#125;</code><br>也注释了，就生效了</p>
+<p>文档指路：<a target="_blank" rel="noopener" href="http://nginx.org/en/docs/beginners_guide.html">http://nginx.org/en/docs/beginners_guide.html</a></p>
+<h4 id="kill-nginx-服务"><a href="#kill-nginx-服务" class="headerlink" title="kill nginx 服务"></a>kill nginx 服务</h4><p>nohup = No HangUP</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep nginx</span><br><span class="line">cd <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin</span><br><span class="line">ls</span><br><span class="line">./nginx -t</span><br><span class="line">./nginx -s reload</span><br><span class="line"></span><br><span class="line">kill -QUIT <span class="number">28761</span></span><br><span class="line">nohup <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin<span class="regexp">/nginx -c /u</span>sr<span class="regexp">/local/</span>nginx<span class="regexp">/conf/</span>nginx.conf </span><br><span class="line">tail -<span class="number">2000</span>f nohup.out</span><br><span class="line">ps -ef|grep nginx</span><br><span class="line"><span class="comment"># 日志</span></span><br><span class="line"><span class="comment"># reload无效的时候</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="前端history路由模式"><a href="#前端history路由模式" class="headerlink" title="前端history路由模式"></a>前端history路由模式</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  try_files <span class="variable">$uri</span> <span class="variable">$uri</span><span class="regexp">/ /i</span>ndex.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h4><h4 id="http-server优先级"><a href="#http-server优先级" class="headerlink" title="http server优先级"></a>http server优先级</h4><p>线上出过一个问题，之前一直没生效的CXP的配置生效了；原因是server优先级高于http,修改了server里面的一些跨域的配置；</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="本地起nginx代理解决资源跨域或者连本地服务调试（嵌入移动端的页面）问题"><a href="#本地起nginx代理解决资源跨域或者连本地服务调试（嵌入移动端的页面）问题" class="headerlink" title="本地起nginx代理解决资源跨域或者连本地服务调试（嵌入移动端的页面）问题"></a>本地起nginx代理解决资源跨域或者连本地服务调试（嵌入移动端的页面）问题</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nginx</span> <span class="string">-v # 查看本机是否安装nginx, 如果没有安装homebrew安装下；</span></span><br><span class="line"><span class="attr">brew</span> <span class="string">info nginx # 可获得nginx文件的配置位置</span></span><br><span class="line"><span class="attr">cd</span> <span class="string">/usr/local/etc/nginx</span></span><br><span class="line"><span class="attr">code</span> <span class="string">nginx.conf # 打开nginx配置文件</span></span><br><span class="line"><span class="comment"># 增加nginx server 80 下面的配置，这样test.company.cn就会访问到本地我们起的http://127.0.0.1:8886服务上 </span></span><br><span class="line"><span class="attr">http</span> <span class="string">&#123;</span></span><br><span class="line">    <span class="attr">include</span>       <span class="string">mime.types;</span></span><br><span class="line">    <span class="attr">default_type</span>  <span class="string">application/octet-stream;</span></span><br><span class="line"></span><br><span class="line">   <span class="attr">log_format</span>  <span class="string">main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span></span><br><span class="line">                      <span class="meta">&#x27;$status</span> <span class="string">$body_bytes_sent &quot;$http_referer&quot; &#x27;</span></span><br><span class="line">                      <span class="meta">&#x27;&quot;$http_user_agent&quot;</span> <span class="string">&quot;$http_x_forwarded_for&quot;&#x27;;</span></span><br><span class="line">    <span class="attr">server_names_hash_bucket_size</span> <span class="string">128;</span></span><br><span class="line">    <span class="attr">client_header_buffer_size</span> <span class="string">32k;</span></span><br><span class="line">    <span class="attr">large_client_header_buffers</span> <span class="string">4 32k;</span></span><br><span class="line">    <span class="attr">client_body_buffer_size</span>    <span class="string">8m;</span></span><br><span class="line">    <span class="attr">server_tokens</span> <span class="string">off;</span></span><br><span class="line">    <span class="attr">ignore_invalid_headers</span>   <span class="string">on;</span></span><br><span class="line">    <span class="attr">recursive_error_pages</span>    <span class="string">on;</span></span><br><span class="line">    <span class="attr">server_name_in_redirect</span> <span class="string">off;</span></span><br><span class="line">    <span class="attr">sendfile</span>        <span class="string">on;</span></span><br><span class="line">    <span class="attr">tcp_nopush</span>     <span class="string">on;</span></span><br><span class="line">    <span class="attr">tcp_nodelay</span>    <span class="string">on;</span></span><br><span class="line"><span class="comment">    #keepalive_timeout  0;</span></span><br><span class="line">    <span class="attr">keepalive_timeout</span>  <span class="string">65;</span></span><br><span class="line">    <span class="attr">server</span> <span class="string">&#123;</span></span><br><span class="line">        <span class="attr">listen</span> <span class="string">80;</span></span><br><span class="line">        <span class="attr">server_name</span> <span class="string">test.company.cn;</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">location</span> <span class="string">/ &#123;</span></span><br><span class="line">            <span class="attr">proxy_pass</span> <span class="string">http://127.0.0.1:8886;</span></span><br><span class="line">        <span class="attr">&#125;</span></span><br><span class="line">    <span class="attr">&#125;</span></span><br><span class="line"><span class="attr">&#125;</span></span><br><span class="line"><span class="comment"># 修改系统hosts:</span></span><br><span class="line"><span class="meta">127.0.0.1</span> <span class="string">test.company.cn</span></span><br><span class="line"><span class="meta">127.0.0.1</span> <span class="string">localhost</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这样，在浏览器里面输入test.company.cn就可以访问我们本地起的服务 http://127.0.0.1:8886 了；</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="tengine"><a href="#tengine" class="headerlink" title="tengine"></a>tengine</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://tengine.taobao.org/">http://tengine.taobao.org/</a><br>旧项目，接口server<br>Server: Tengine/2.2.3</li>
+</ul>
+<p>新项目：接口server<br>Server: openresty/1.15.8.3</p>
+<h3 id="301"><a href="#301" class="headerlink" title="301"></a>301</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">curl</span> -i &#x27;https://xxxx/qqq/thursday/xxxx&#x27;</span><br><span class="line"><span class="attribute">HTTP</span>/<span class="number">1</span>.<span class="number">1</span> <span class="number">200</span> Connection established</span><br><span class="line"></span><br><span class="line"><span class="attribute">HTTP</span>/<span class="number">1</span>.<span class="number">1</span> <span class="number">301</span> Moved Permanently</span><br><span class="line"><span class="attribute">Server</span>: nginx</span><br><span class="line"><span class="attribute">Date</span>: Thu, <span class="number">21</span> Apr <span class="number">2022</span> <span class="number">08</span>:<span class="number">55</span>:<span class="number">36</span> GMT</span><br><span class="line"><span class="attribute">Content</span>-Type: text/html</span><br><span class="line"><span class="attribute">Content</span>-Length: <span class="number">169</span></span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Location</span>: http://xxxx/qqq/thursday/xxxx/</span><br><span class="line"><span class="attribute">Access</span>-Control-<span class="literal">Allow</span>-Origin: *</span><br><span class="line"><span class="attribute">Access</span>-Control-<span class="literal">Allow</span>-Credentials: true</span><br><span class="line"><span class="attribute">Access</span>-Control-<span class="literal">Allow</span>-Methods: GET, POST, OPTIONS</span><br><span class="line"><span class="attribute">Access</span>-Control-<span class="literal">Allow</span>-Headers: DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type</span><br><span class="line"><span class="attribute">Cache</span>-Control: no-cache</span><br><span class="line"></span><br><span class="line"><span class="section">&lt;html&gt;</span></span><br><span class="line"><span class="section">&lt;head&gt;</span><span class="section">&lt;title&gt;</span><span class="attribute">301</span> Moved Permanently&lt;/title&gt;&lt;/head&gt;</span><br><span class="line"><span class="section">&lt;body&gt;</span></span><br><span class="line"><span class="section">&lt;center&gt;</span><span class="section">&lt;h1&gt;</span><span class="attribute">301</span> Moved Permanently&lt;/h<span class="number">1</span>&gt;&lt;/center&gt;</span><br><span class="line"><span class="section">&lt;hr&gt;</span><span class="section">&lt;center&gt;</span><span class="attribute">nginx</span>/<span class="number">1</span>.<span class="number">18</span>.<span class="number">0</span>&lt;/center&gt;</span><br><span class="line"><span class="section">&lt;/body&gt;</span></span><br><span class="line"><span class="section">&lt;/html&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>因为测试环境，前端多个项目配置了一个规则，规则这么配置的<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> <span class="regexp">~* ^/(qqq|xxx|xxxe|)/(env1|env2|env3|env4)/?(\w*)</span> &#123;</span><br><span class="line">                <span class="attribute">root</span> /neworiental/latest/;</span><br><span class="line">                <span class="attribute">add_header</span> <span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span> <span class="string">&#x27;*&#x27;</span>;</span><br><span class="line">                <span class="attribute">add_header</span> <span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span> <span class="string">&#x27;true&#x27;</span>;</span><br><span class="line">                <span class="attribute">add_header</span> <span class="string">&#x27;Access-Control-Allow-Methods&#x27;</span> <span class="string">&#x27;GET, POST, OPTIONS&#x27;</span>;</span><br><span class="line">                <span class="attribute">add_header</span> <span class="string">&#x27;Access-Control-Allow-Headers&#x27;</span> <span class="string">&#x27;DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type&#x27;</span>;</span><br><span class="line">                <span class="attribute">add_header</span> <span class="string">&#x27;Cache-Control&#x27;</span> <span class="string">&#x27;no-cache&#x27;</span>;</span><br><span class="line">                <span class="attribute">index</span> index.html; </span><br><span class="line">                <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /<span class="variable">$1</span>/<span class="variable">$2</span>/<span class="variable">$3</span>/index.html;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></li>
+<li>这个时候，如果<a target="_blank" rel="noopener" href="https://xxxx/qqq/thursday/xxxx">https://xxxx/qqq/thursday/xxxx</a> 后面不加“/”，不是 <a target="_blank" rel="noopener" href="https://xxxx/qqq/thursday/xxxx/">https://xxxx/qqq/thursday/xxxx/</a> 的话，则会被重定向，因为nginx匹配规则有问题</li>
+</ul>
+<h2 id="配置实践"><a href="#配置实践" class="headerlink" title="配置实践"></a>配置实践</h2><ul>
+<li>入口 html 文件设置 no-cache，其他资源文件设置 max-age 的缓存方式</li>
+<li>best-practice</li>
+</ul>
+<h4 id="参考阅读"><a href="#参考阅读" class="headerlink" title="参考阅读"></a>参考阅读</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/0P8_lnVf2_zMzIBJ20qajA">https://mp.weixin.qq.com/s/0P8_lnVf2_zMzIBJ20qajA</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
