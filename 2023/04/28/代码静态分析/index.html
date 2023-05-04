@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-text">腾讯云静态分析</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-text">腾讯云静态分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Dart-Analyzer"><span class="toc-text">Dart Analyzer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#typescript"><span class="toc-text">typescript</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tools"><span class="toc-text">tools</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E-AST-%E7%9A%84%E4%BB%A3%E7%A0%81%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">基于 AST 的代码处理工具工作流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parsing%EF%BC%88%E8%A7%A3%E6%9E%90%EF%BC%89"><span class="toc-text">Parsing（解析）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Traversing%EF%BC%88%E9%81%8D%E5%8E%86%EF%BC%89"><span class="toc-text">Traversing（遍历）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transforming%EF%BC%88%E4%BF%AE%E6%94%B9%EF%BC%89"><span class="toc-text">Transforming（修改）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Printing%EF%BC%88%E8%BE%93%E5%87%BA%EF%BC%89"><span class="toc-text">Printing（输出）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8-Parser"><span class="toc-text">编译器 Parser</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cases"><span class="toc-text">cases</span></a>
 </div>
     
 </div>
@@ -142,7 +142,30 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/Tencent/CodeAnalysis">https://github.com/Tencent/CodeAnalysis</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/Tencent/CodeAnalysis/blob/main/README_ZH.md">https://github.com/Tencent/CodeAnalysis/blob/main/README_ZH.md</a></li>
 </ul>
-
+<h4 id="Dart-Analyzer"><a href="#Dart-Analyzer" class="headerlink" title="Dart Analyzer"></a>Dart Analyzer</h4><ul>
+<li>Flutter针对Android Studio和VS Code开发的插件，使用Android Studio或者VS Code进行开发，不需要配置就可以看到Dart Analyzer工具提供的静态分析结果</li>
+<li>Dart Analyzer工具会使用默认的analysis_options.yaml文件中的内容执行代码静态分析</li>
+</ul>
+<h4 id="typescript"><a href="#typescript" class="headerlink" title="typescript"></a>typescript</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://jkchao.github.io/typescript-book-chinese/compiler/scanner.html#%E8%A7%A3%E6%9E%90%E5%99%A8%E5%AF%B9%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8">https://jkchao.github.io/typescript-book-chinese/compiler/scanner.html#%E8%A7%A3%E6%9E%90%E5%99%A8%E5%AF%B9%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8</a><h4 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h4></li>
+<li><a target="_blank" rel="noopener" href="https://www.softwaresecured.com/">https://www.softwaresecured.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.veracode.com/products/binary-static-analysis-sast">https://www.veracode.com/products/binary-static-analysis-sast</a></li>
+<li><a target="_blank" rel="noopener" href="https://embold.io/">https://embold.io/</a></li>
+<li><a target="_blank" rel="noopener" href="https://deepscan.io/">https://deepscan.io/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.codacy.com/">https://www.codacy.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.sonarsource.com/products/sonarqube/">https://www.sonarsource.com/products/sonarqube/</a></li>
+<li><a target="_blank" rel="noopener" href="https://deepsource.com/">https://deepsource.com/</a></li>
+</ul>
+<h3 id="基于-AST-的代码处理工具工作流程"><a href="#基于-AST-的代码处理工具工作流程" class="headerlink" title="基于 AST 的代码处理工具工作流程"></a>基于 AST 的代码处理工具工作流程</h3><h4 id="Parsing（解析）"><a href="#Parsing（解析）" class="headerlink" title="Parsing（解析）"></a>Parsing（解析）</h4><p>这个过程由编译器实现，会经过词法分析和语法分析两个过程，生成 AST</p>
+<h4 id="Traversing（遍历）"><a href="#Traversing（遍历）" class="headerlink" title="Traversing（遍历）"></a>Traversing（遍历）</h4><p>深度优先遍历 AST ，访问树上各个节点的信息</p>
+<h4 id="Transforming（修改）"><a href="#Transforming（修改）" class="headerlink" title="Transforming（修改）"></a>Transforming（修改）</h4><p>在遍历的过程中可对节点信息进行修改/转化，生成新的 AST</p>
+<h4 id="Printing（输出）"><a href="#Printing（输出）" class="headerlink" title="Printing（输出）"></a>Printing（输出）</h4><p>将转化后新的 AST 输出成新的代码块</p>
+<h3 id="编译器-Parser"><a href="#编译器-Parser" class="headerlink" title="编译器 Parser"></a>编译器 Parser</h3><ul>
+<li>Parser 的 API 可以帮助我们完成代码的词法分析与语法分析，并返回对应的 AST 对象</li>
+<li>JS Parser： esprima、 acorn、 espree、@babel/parser。</li>
+<li>TS Parser：typescript (<a target="_blank" rel="noopener" href="https://github.com/microsoft/TypeScript/">https://github.com/microsoft/TypeScript/</a>)</li>
+</ul>
+<h2 id="cases"><a href="#cases" class="headerlink" title="cases"></a>cases</h2>
         
             <div class="donate-container">
     <div class="donate-button">
