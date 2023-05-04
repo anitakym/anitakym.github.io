@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        React-Component - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6"><span class="toc-text">类组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E5%BA%95%E5%B1%82%E5%8F%AA%E9%9C%80%E5%AE%9E%E4%BE%8B%E5%8C%96%E4%B8%80%E6%AC%A1%EF%BC%8C%E5%AE%9E%E4%BE%8B%E4%B8%AD%E4%BF%9D%E5%AD%98%E4%BA%86%E7%BB%84%E4%BB%B6%E7%9A%84state%E7%AD%89%E7%8A%B6%E6%80%81%EF%BC%8C%E6%9B%B4%E6%96%B0%E5%8F%AA%E8%A6%81%E8%B0%83%E7%94%A8render%E6%96%B9%E6%B3%95%E5%92%8C%E5%AF%B9%E5%BA%94%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8D%B3%E5%8F%AF"><span class="toc-text">类组件底层只需实例化一次，实例中保存了组件的state等状态，更新只要调用render方法和对应的生命周期即可</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react-reconciler-src-ReactFiberClassComponent-js"><span class="toc-text">react-reconciler&#x2F;src&#x2F;ReactFiberClassComponent.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6"><span class="toc-text">函数组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E4%B8%AD%EF%BC%8C%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E6%98%AF%E6%96%B0%E7%9A%84%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%EF%BC%8C%E9%87%8C%E9%9D%A2%E7%9A%84%E5%8F%98%E9%87%8F%E4%BC%9A%E9%87%8D%E6%96%B0%E5%A3%B0%E6%98%8E"><span class="toc-text">函数组件中，每次更新是新的函数执行，里面的变量会重新声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react-reconciler-src-ReactFiberHooks-js"><span class="toc-text">react-reconciler&#x2F;src&#x2F;ReactFiberHooks.js</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#references"><span class="toc-text">references</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#getderivedstatefromprops"><span class="toc-text">getderivedstatefromprops</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fiber-tag"><span class="toc-text">fiber tag</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-text">组件通信方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E5%BC%BA%E5%8C%96%E6%96%B9%E5%BC%8F"><span class="toc-text">组件的强化方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E7%BB%A7%E6%89%BF"><span class="toc-text">类组件继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E8%87%AA%E5%AE%9A%E4%B9%89hooks"><span class="toc-text">函数组件自定义hooks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HOC%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6"><span class="toc-text">HOC高阶组件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reconciliation"><span class="toc-text">reconciliation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#diff%EF%BC%88%E4%B8%8D%E5%90%8CReact%E7%89%88%E6%9C%AC%EF%BC%8C%E4%B9%9F%E6%98%AF%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%B8%AD%EF%BC%89"><span class="toc-text">diff（不同React版本，也是持续优化中）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOC-%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6"><span class="toc-text">HOC - 高阶组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why"><span class="toc-text">Why</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%A6%E6%88%AA%E9%97%AE%E9%A2%98"><span class="toc-text">拦截问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#props%E4%B8%AD%E6%B7%B7%E5%85%A5%E9%9C%80%E8%A6%81%E7%9A%84"><span class="toc-text">props中混入需要的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E6%8E%A7%E7%BB%84%E4%BB%B6%E7%9A%84%E5%86%85%E9%83%A8%E7%8A%B6%E6%80%81%EF%BC%8C%E8%B5%8B%E8%83%BD%E7%BB%84%E4%BB%B6"><span class="toc-text">监控组件的内部状态，赋能组件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#what"><span class="toc-text">what</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E4%BB%A3%E7%90%86"><span class="toc-text">属性代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E7%BB%A7%E6%89%BF"><span class="toc-text">反向继承</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#how"><span class="toc-text">how</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E5%8C%96props"><span class="toc-text">强化props</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E6%B8%B2%E6%9F%93"><span class="toc-text">控制渲染</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD"><span class="toc-text">动态加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E8%B5%8B%E8%83%BD"><span class="toc-text">组件赋能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tips"><span class="toc-text">tips</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cases"><span class="toc-text">cases</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        React-Component
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-02-17 17:27:34</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="类组件"><a href="#类组件" class="headerlink" title="类组件"></a>类组件</h2><h4 id="类组件底层只需实例化一次，实例中保存了组件的state等状态，更新只要调用render方法和对应的生命周期即可"><a href="#类组件底层只需实例化一次，实例中保存了组件的state等状态，更新只要调用render方法和对应的生命周期即可" class="headerlink" title="类组件底层只需实例化一次，实例中保存了组件的state等状态，更新只要调用render方法和对应的生命周期即可"></a>类组件底层只需实例化一次，实例中保存了组件的state等状态，更新只要调用render方法和对应的生命周期即可</h4><h4 id="react-reconciler-src-ReactFiberClassComponent-js"><a href="#react-reconciler-src-ReactFiberClassComponent-js" class="headerlink" title="react-reconciler/src/ReactFiberClassComponent.js"></a>react-reconciler/src/ReactFiberClassComponent.js</h4><ul>
+<li>constructClassInstance<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">export &#123;</span><br><span class="line"><span class="built_in">  adoptClassInstance,</span></span><br><span class="line"><span class="built_in">  constructClassInstance,</span></span><br><span class="line"><span class="built_in">  mountClassInstance,</span></span><br><span class="line"><span class="built_in">  resumeMountClassInstance,</span></span><br><span class="line"><span class="built_in">  updateClassInstance,</span></span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>在 class 组件中，除了继承 React.Component ，底层还加入了 updater 对象，组件中调用的 setState 和 forceUpdate 本质上是调用了 updater 对象上的 enqueueSetState 和 enqueueForceUpdate 方法</p>
+<ul>
+<li>react/src/ReactBaseClasses.js</li>
+</ul>
+<h2 id="函数组件"><a href="#函数组件" class="headerlink" title="函数组件"></a>函数组件</h2><h4 id="函数组件中，每次更新是新的函数执行，里面的变量会重新声明"><a href="#函数组件中，每次更新是新的函数执行，里面的变量会重新声明" class="headerlink" title="函数组件中，每次更新是新的函数执行，里面的变量会重新声明"></a>函数组件中，每次更新是新的函数执行，里面的变量会重新声明</h4><h4 id="react-reconciler-src-ReactFiberHooks-js"><a href="#react-reconciler-src-ReactFiberHooks-js" class="headerlink" title="react-reconciler/src/ReactFiberHooks.js"></a>react-reconciler/src/ReactFiberHooks.js</h4><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export <span class="keyword">function</span> <span class="title">renderWithHooks&lt;Props,</span> SecondArg&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="references"><a href="#references" class="headerlink" title="references"></a>references</h3><h4 id="getderivedstatefromprops"><a href="#getderivedstatefromprops" class="headerlink" title="getderivedstatefromprops"></a>getderivedstatefromprops</h4><p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops">https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops</a></p>
+<h4 id="fiber-tag"><a href="#fiber-tag" class="headerlink" title="fiber tag"></a>fiber tag</h4><p>react-reconciler/src/ReactFiber.js<br>react-reconciler/src/ReactWorkTags.js</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export <span class="keyword">const</span> FunctionComponent = <span class="number">0</span>;</span><br><span class="line">export <span class="keyword">const</span> ClassComponent = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="组件通信方式"><a href="#组件通信方式" class="headerlink" title="组件通信方式"></a>组件通信方式</h3><ul>
+<li>props callback - 父组件通过props将信息传递给子组件，子组件可以通过执行props中的回调函数callback来触发父组件的方法</li>
+<li>ref</li>
+<li>react-redux | react-mobx 等状态管理工具</li>
+<li>context 上下文</li>
+<li>@event bus -&gt; 适合用React做基础构建的小程序 - Taro<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">问题：</span><br><span class="line"><span class="bullet">- </span>需要手动绑定和解绑</span><br><span class="line"><span class="bullet">- </span>后期难以维护，组件之间状态未知</span><br><span class="line"><span class="bullet">- </span>违背了React数据的流向的大原则</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="组件的强化方式"><a href="#组件的强化方式" class="headerlink" title="组件的强化方式"></a>组件的强化方式</h3><h4 id="类组件继承"><a href="#类组件继承" class="headerlink" title="类组件继承"></a>类组件继承</h4><ul>
+<li>state和声明周期会被继承后的组件修改</li>
+</ul>
+<h4 id="函数组件自定义hooks"><a href="#函数组件自定义hooks" class="headerlink" title="函数组件自定义hooks"></a>函数组件自定义hooks</h4><h4 id="HOC高阶组件"><a href="#HOC高阶组件" class="headerlink" title="HOC高阶组件"></a>HOC高阶组件</h4><h3 id="reconciliation"><a href="#reconciliation" class="headerlink" title="reconciliation"></a>reconciliation</h3><ul>
+<li>React渲染机制 - reconciliation过程</li>
+<li>props或state改变 - render函数返回不同的元素树 - 新旧DOM树diff - 针对差异的地方进行更新 - 渲染为真实的DOM树</li>
+<li>shouldComponentUpadate - 合理利用 - 避免不必要的reconciliation过程 - 类组件！- PureComponent - （props或state改变时进行浅层比较）</li>
+<li>memo - 函数组件 - 只进行了props的浅比较</li>
+</ul>
+<h3 id="diff（不同React版本，也是持续优化中）"><a href="#diff（不同React版本，也是持续优化中）" class="headerlink" title="diff（不同React版本，也是持续优化中）"></a>diff（不同React版本，也是持续优化中）</h3><ul>
+<li>永远只比较同层节点 ｜ 不同的两个节点产生不同的树 ｜ 通过key值指定哪些元素是相同的 - O(n)</li>
+<li>执行的具体流程（元素类型是否相同）</li>
+<li>遍历子节点列表的情况（子节点是否有key）</li>
+<li>选择key值策略 - 不需要全局统一，但必须列表</li>
+</ul>
+<h2 id="HOC-高阶组件"><a href="#HOC-高阶组件" class="headerlink" title="HOC - 高阶组件"></a>HOC - 高阶组件</h2><h3 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h3><blockquote>
+<p>解决大量的代码复用，逻辑复用问题</p>
+</blockquote>
+<h4 id="拦截问题"><a href="#拦截问题" class="headerlink" title="拦截问题"></a>拦截问题</h4><ul>
+<li>对渲染的控制(例如权限控制是否渲染)</li>
+<li>dva - dynamic - 懒加载/动态加载组件</li>
+</ul>
+<h4 id="props中混入需要的"><a href="#props中混入需要的" class="headerlink" title="props中混入需要的"></a>props中混入需要的</h4><ul>
+<li>withRoute  - HOC 把改变路由的 history 对象混入 props 中</li>
+</ul>
+<h4 id="监控组件的内部状态，赋能组件"><a href="#监控组件的内部状态，赋能组件" class="headerlink" title="监控组件的内部状态，赋能组件"></a>监控组件的内部状态，赋能组件</h4><ul>
+<li>监控组件内的事件</li>
+<li>增加额外生命周期</li>
+</ul>
+<h3 id="what"><a href="#what" class="headerlink" title="what"></a>what</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
+<li>高阶组件是以组件作为参数，返回组件的函数。返回的组件把传进去的组件进行功能强化</li>
+</ul>
+<h4 id="属性代理"><a href="#属性代理" class="headerlink" title="属性代理"></a>属性代理</h4><ul>
+<li>用组件包裹一层代理组件，在代理组件上，可以做一些，对源组件的强化操作</li>
+<li>返回的是一个新组件，被包裹的原始组件，将在新的组件里被挂载</li>
+</ul>
+<h4 id="反向继承"><a href="#反向继承" class="headerlink" title="反向继承"></a>反向继承</h4><ul>
+<li>包装后的组件继承了原始组件本身，所以无须再去挂载业务组件</li>
+</ul>
+<h3 id="how"><a href="#how" class="headerlink" title="how"></a>how</h3><h4 id="强化props"><a href="#强化props" class="headerlink" title="强化props"></a>强化props</h4><h4 id="控制渲染"><a href="#控制渲染" class="headerlink" title="控制渲染"></a>控制渲染</h4><ul>
+<li>渲染劫持 - HOC 反向继承模式，可以通过 super.render() 得到 render 之后的内容，利用这一点，可以做渲染劫持 ，还可以修改 render 之后的 React element 对象<h4 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h4></li>
+<li>dva 中 dynamic 就是配合 import ，实现组件的动态加载的，而且每次切换路由，都会有 Loading 效果<h4 id="组件赋能"><a href="#组件赋能" class="headerlink" title="组件赋能"></a>组件赋能</h4></li>
+<li>ref获取实例</li>
+<li>事件监控</li>
+</ul>
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><ul>
+<li>谨慎修改原型链</li>
+<li>不要在函数组件内部&amp;&amp;类组件render函数中使用</li>
+<li>多个HOC嵌套，应该留意一下HOC的顺序，还要分析出要各个 HOC 之间是否有依赖关系</li>
+<li>类组件，可以用装饰器模式，对类组件进行包装</li>
+<li>属性代理 HOC 本质上返回了一个新的 component ，那么如果给原来的 component 绑定一些静态属性方法，如果不处理，新的 component 上就会丢失这些静态属性方法 - （手动继承 or hoist-non-react-statics）</li>
+</ul>
+<h3 id="cases"><a href="#cases" class="headerlink" title="cases"></a>cases</h3><ul>
+<li>管理后台，权限隔离</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

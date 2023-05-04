@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        HTTP相关问题 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#History"><span class="toc-text">History</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP"><span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-text">结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-text">状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#502%E7%BD%91%E5%85%B3%E9%97%AE%E9%A2%98"><span class="toc-text">502网关问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#415%EF%BC%88unsupported-media-type%EF%BC%89%EF%BC%88content-type%EF%BC%89"><span class="toc-text">415（unsupported media type）（content-type）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#503-service-unavailable"><span class="toc-text">503 service unavailable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204"><span class="toc-text">204</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#414"><span class="toc-text">414</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%BA%93"><span class="toc-text">相关库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#axios"><span class="toc-text">axios</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Features%EF%BC%88%E6%94%AF%E6%8C%81Promise-API%EF%BC%89"><span class="toc-text">Features（支持Promise API）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cancellation"><span class="toc-text">Cancellation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CORS"><span class="toc-text">CORS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#preflighted-requests"><span class="toc-text">preflighted requests</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET"><span class="toc-text">GET</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#URL%E9%95%BF%E5%BA%A6"><span class="toc-text">URL长度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-text">说明</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cacheable"><span class="toc-text">cacheable</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS-SSL"><span class="toc-text">HTTPS - SSL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Connection"><span class="toc-text">Connection</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-text">JSON</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        HTTP相关问题
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-09-17 18:43:51</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#HTTP" title="HTTP">HTTP</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><blockquote>
+<p>连接是两端的状态维护<br>连接的断开比建立略微复杂，因为资源的constructor比destructor要简单（因为destructor要考虑所有资源的安全有序释放）</p>
+</blockquote>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>报文：</p>
+<ul>
+<li>请求行 （POST /good HTTP/1.1）</li>
+<li>请求首部</li>
+<li>请求的正文实体</li>
+</ul>
+<p>HTTP请求的报文好了之后，浏览器或者移动端APP会把它交给传输层</p>
+<ul>
+<li>Socket</li>
+<li>浏览器 ｜ 移动端-HTTP客户端工具</li>
+<li>HTTP 基于TCP，面向连接的方式发送请求，基于Stream二进制流的方式传送，到了TCP层，会把二进制流变成一个报文段发送给服务器</li>
+<li>TCP头｜IP头<h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2></li>
+</ul>
+<h4 id="502网关问题"><a href="#502网关问题" class="headerlink" title="502网关问题"></a>502网关问题</h4><h4 id="415（unsupported-media-type）（content-type）"><a href="#415（unsupported-media-type）（content-type）" class="headerlink" title="415（unsupported media type）（content-type）"></a>415（unsupported media type）（content-type）</h4><p>415 Unsupported Media Type 是一种HTTP协议的错误状态代码，表示服务器由于不支持其有效载荷的格式，从而拒绝接受客户端的请求。</p>
+<p>格式问题的出现有可能源于客户端在 Content-Type 或 Content-Encoding 首部中指定的格式，也可能源于直接对负载数据进行检测的结果。</p>
+<p>Java</p>
+<p>500 内部报错</p>
+<h4 id="503-service-unavailable"><a href="#503-service-unavailable" class="headerlink" title="503 service unavailable"></a>503 service unavailable</h4><p>服务端错误状态码，表示服务器尚未处于可以接受请求的状态</p>
+<p>通常造成这种情况的原因是由于服务器停机维护或者已超载。注意在发送该响应的时候，应该同时发送一个对用户友好的页面来解释问题发生的原因。该种响应应该用于临时状况下，与之同时，在可行的情况下，应该在 Retry-After 首部字段中包含服务恢复的预期时间。<br>缓存相关的首部在与该响应一同发送时应该小心使用，因为 503 状态码通常应用于临时状况下，而此类响应一般不应该进行缓存。</p>
+<p>cite(<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/503">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/503</a>)</p>
+<h4 id="204"><a href="#204" class="headerlink" title="204"></a>204</h4><ul>
+<li>204 No Content</li>
+<li>只需要返回成功与否，204可以节约多余的数据传输</li>
+<li>DELETE ｜ 客户端上传端信息给服务器，不关心相应</li>
+<li><a target="_blank" rel="noopener" href="http://clients1.google.com/generate_204">http://clients1.google.com/generate_204</a></li>
+</ul>
+<h4 id="414"><a href="#414" class="headerlink" title="414"></a>414</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/414">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/414</a></li>
+<li>414 URI Too Long<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当客户端误将 POST 请求当作 <span class="builtin-name">GET</span> 请求时，会带有一个较长的查询字符串(query)；</span><br><span class="line">当客户端堕入重定向循环黑洞时，例如，指向自身后缀的重定向URI前缀(a redirected URI<span class="built_in"> prefix </span>that points <span class="keyword">to</span> a suffix of itself)；</span><br><span class="line">当客户端对服务器进行攻击，试图寻找潜在的漏洞时。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="相关库"><a href="#相关库" class="headerlink" title="相关库"></a>相关库</h2><h3 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h3><p>文档指南，各种用法（<a target="_blank" rel="noopener" href="https://github.com/axios/axios#axios-api%EF%BC%89">https://github.com/axios/axios#axios-api）</a></p>
+<h4 id="Features（支持Promise-API）"><a href="#Features（支持Promise-API）" class="headerlink" title="Features（支持Promise API）"></a>Features（支持Promise API）</h4><ul>
+<li>Make XMLHttpRequests from the browser(从浏览器中创建 XMLHttpRequests)</li>
+<li>Make http requests from node.js(从 node.js 创建 http 请求)</li>
+<li>Supports the Promise API(支持 Promise API)</li>
+<li>Intercept request and response(拦截请求和响应)</li>
+<li>Transform request and response data(转换请求数据和响应数据)</li>
+<li>Cancel requests(取消请求)</li>
+<li>Automatic transforms for JSON data(自动转换 JSON 数据)</li>
+<li>Client side support for protecting against XSRF(客户端支持防御 XSRF)</li>
+<li>不支持IE（11及以下）</li>
+</ul>
+<h4 id="Cancellation"><a href="#Cancellation" class="headerlink" title="Cancellation"></a>Cancellation</h4><p>You can cancel a request using a cancel token.</p>
+<p>The axios cancel token API is based on the withdrawn cancelable promises proposal.</p>
+<p>You can create a cancel token using the CancelToken.source factory as shown below:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CancelToken = axios.CancelToken;</span><br><span class="line"><span class="keyword">const</span> source = CancelToken.source();</span><br><span class="line"></span><br><span class="line">axios.get(<span class="string">&#x27;/user/12345&#x27;</span>, &#123;</span><br><span class="line">  cancelToken: source.token</span><br><span class="line">&#125;).<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> (<span class="params">thrown</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (axios.isCancel(thrown)) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;Request canceled&#x27;</span>, thrown.message);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// handle error</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">axios.post(<span class="string">&#x27;/user/12345&#x27;</span>, &#123;</span><br><span class="line">  name: <span class="string">&#x27;new name&#x27;</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">  cancelToken: source.token</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// cancel the request (the message parameter is optional)</span></span><br><span class="line">source.cancel(<span class="string">&#x27;Operation canceled by the user.&#x27;</span>);</span><br><span class="line">You can also create a cancel token by passing an executor <span class="function"><span class="keyword">function</span> <span class="title">to</span> <span class="title">the</span> <span class="title">CancelToken</span> <span class="title">constructor</span>:</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">const</span> <span class="title">CancelToken</span> = <span class="title">axios</span>.<span class="title">CancelToken</span></span>;</span><br><span class="line">let cancel;</span><br><span class="line"></span><br><span class="line">axios.get(<span class="string">&#x27;/user/12345&#x27;</span>, &#123;</span><br><span class="line">  cancelToken: <span class="keyword">new</span> CancelToken(<span class="function"><span class="keyword">function</span> <span class="title">executor</span>(<span class="params">c</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// An executor function receives a cancel function as a parameter</span></span><br><span class="line">    cancel = c;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// cancel the request</span></span><br><span class="line">cancel();</span><br></pre></td></tr></table></figure>
+<p>Note: you can cancel several requests with the same cancel token.</p>
+<ul>
+<li>example<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CancelToken = axios.CancelToken</span><br><span class="line"><span class="keyword">const</span> pending = []</span><br><span class="line"><span class="keyword">const</span> defaultConfig = &#123;&#125;</span><br><span class="line"></span><br><span class="line">defaultConfig.cancelToken = <span class="keyword">new</span> CancelToken(<span class="function"><span class="keyword">function</span> <span class="title">executor</span><span class="params">(c)</span> </span>&#123;</span><br><span class="line">  pending.push(c)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要避免多次请求的时候执行下面代码</span></span><br><span class="line"><span class="keyword">while</span> (pending.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  pending.pop()(<span class="string">&#x27;请求中断&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2></li>
+</ul>
+<ul>
+<li>Fetch/XMLHTTPRequest都遵循同源策略</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS</a><h4 id="preflighted-requests"><a href="#preflighted-requests" class="headerlink" title="preflighted requests"></a>preflighted requests</h4></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/OPTIONS">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/OPTIONS</a></li>
+<li>浏览器发起的预检请求 - 为了防止对服务器数据产生副作用的请求方法，浏览器会用OPTIONS方法发起一个预检请求，获知服务器是否允许这个跨域请求，允许就发送真实请求，不允许，则阻止真实请求；</li>
+<li>Method: OPTIONS<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* It uses methods other than GET, HEAD <span class="keyword">or</span> POST. Also, <span class="keyword">if</span> POST is used <span class="built_in">to</span> <span class="built_in">send</span> request data <span class="keyword">with</span> <span class="keyword">a</span> Content-Type other than application/x-www-form-urlencoded, multipart/form-data, ortext/plain, e.g. <span class="keyword">if</span> <span class="keyword">the</span> POST request sends <span class="keyword">an</span> XML payload <span class="built_in">to</span> <span class="keyword">the</span> server <span class="keyword">using</span> application/xmlor <span class="keyword">text</span>/xml, <span class="keyword">then</span> <span class="keyword">the</span> request is preflighted.</span><br><span class="line">* It sets custom headers <span class="keyword">in</span> <span class="keyword">the</span> request (e.g. <span class="keyword">the</span> request uses <span class="keyword">a</span> header such <span class="keyword">as</span> X-PINGOTHER)</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">跨域资源共享标准（ <span class="selector-tag">cross-origin</span> <span class="selector-tag">sharing</span> <span class="selector-tag">standard</span> ）允许在下列场景中使用跨域 <span class="selector-tag">HTTP</span> 请求：</span><br><span class="line">    •    前文提到的由 <span class="selector-tag">XMLHttpRequest</span> 或 <span class="selector-tag">Fetch</span> 发起的跨域 <span class="selector-tag">HTTP</span> 请求。</span><br><span class="line">    •    <span class="selector-tag">Web</span> 字体 (CSS 中通过 <span class="variable">@font-face</span> 使用跨域字体资源), 因此，网站就可以发布 <span class="selector-tag">TrueType</span> 字体资源，并只允许已授权网站进行跨站调用。</span><br><span class="line">    •    <span class="selector-tag">WebGL</span> 贴图</span><br><span class="line">    •    使用 <span class="selector-tag">drawImage</span> 将 <span class="selector-tag">Images</span>/<span class="selector-tag">video</span> 画面绘制到 <span class="selector-tag">canvas</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h2><h3 id="URL长度"><a href="#URL长度" class="headerlink" title="URL长度"></a>URL长度</h3><ul>
+<li>Http Get方法提交的数据大小长度并没有限制，HTTP协议规范没有对URL长度进行限制。这个限制是特定的浏览器及服务器对它的限制。<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>::ERR_CONNECTION_RESET <span class="number">200</span></span><br><span class="line"><span class="attribute">https</span>://spectrum.imgix.net/communities/<span class="number">8</span>f<span class="number">3</span>cb<span class="number">70</span>e-<span class="number">0</span>b<span class="number">51</span>-<span class="number">4</span>c<span class="number">7</span>b-<span class="number">8</span>a<span class="number">69</span>-<span class="number">3</span>d<span class="number">27</span>f<span class="number">1</span>c<span class="number">16887</span>/logo-grid.png.<span class="number">0</span>.<span class="number">393240430324705</span>?w=<span class="number">1280</span>&amp;h=<span class="number">384</span>&amp;dpr=<span class="number">2</span>&amp;q=<span class="number">100</span>&amp;expires=<span class="number">1573084800000</span>&amp;ixlib=js-<span class="number">1</span>.<span class="number">4</span>.<span class="number">1</span>&amp;s=<span class="number">74</span>b<span class="number">9</span>ab<span class="number">44</span>b<span class="number">425</span>ebcfd<span class="number">87</span>e<span class="number">1</span>e<span class="number">0</span>b<span class="number">1</span>af<span class="number">56</span>d<span class="number">8</span>b</span><br></pre></td></tr></table></figure>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4>GET请求限制传递参数长度为2k，长度过长会重置连接（只有IE）<br>下面就是对各种浏览器和服务器的最大处理能力做一些说明<br>Microsoft Internet Explorer (Browser)<br>IE浏览器对URL的最大限制为2083个字符，如果超过这个数字，提交按钮没有任何反应。Firefox (Browser)<br>对于Firefox浏览器URL的长度限制为65,536个字符。<br>Safari (Browser)<br>URL最大长度限制为 80,000个字符。<br>Opera (Browser)<br>URL最大长度限制为190,000个字符。<br>Google (chrome)<br>URL最大长度限制为8182个字符。<br>Apache (Server)<br>能接受最大url长度为8,192个字符。<br>Microsoft Internet Information Server(IIS)<br>能接受最大url的长度为16,384个字符。</li>
+</ul>
+<h3 id="cacheable"><a href="#cacheable" class="headerlink" title="cacheable"></a>cacheable</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Cacheabl">https://developer.mozilla.org/en-US/docs/Glossary/Cacheabl</a><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">A cacheable response is an HTTP response that can be cached, that is stored to be retrieved and used later, saving a new request to the server. Not all HTTP responses can be cached, these are the following constraints for an HTTP response to be cached:</span><br><span class="line">    •    The method used in the request is itself cacheable, that is either a GET or a HEAD method. A response to a POST or PATCH request can also be cached if freshness is indicated and the Content-Location header is <span class="keyword">set</span>, but this <span class="keyword">is</span> rarely implemented. (<span class="keyword">For</span> example, Firefox does <span class="keyword">not</span> support it per https://bugzilla.mozilla.org/show_bug.cgi?<span class="keyword">id</span>=<span class="number">109553.</span>) Other methods, <span class="keyword">like</span> PUT <span class="keyword">or</span> <span class="keyword">DELETE</span> <span class="keyword">are</span> <span class="keyword">not</span> cacheable <span class="keyword">and</span> their <span class="keyword">result</span> cannot be cached.</span><br><span class="line">    •    The <span class="keyword">status</span> code <span class="keyword">of</span> the response <span class="keyword">is</span> known <span class="keyword">by</span> the application <span class="keyword">caching</span>, <span class="keyword">and</span> it <span class="keyword">is</span> considered cacheable. The <span class="keyword">following</span> <span class="keyword">status</span> code <span class="keyword">are</span> cacheable: <span class="number">200</span>, <span class="number">203</span>, <span class="number">204</span>, <span class="number">206</span>, <span class="number">300</span>, <span class="number">301</span>, <span class="number">404</span>, <span class="number">405</span>, <span class="number">410</span>, <span class="number">414</span>, <span class="keyword">and</span> <span class="number">501.</span></span><br><span class="line">    •    There <span class="keyword">is</span> <span class="keyword">no</span> specific headers <span class="keyword">in</span> the response, <span class="keyword">like</span> <span class="keyword">Cache</span>-Control, that prevents caching.</span><br><span class="line">Note that <span class="keyword">some</span> non-cacheable requests/responses <span class="keyword">to</span> a specific URI may <span class="keyword">invalidate</span> previously cached responses <span class="keyword">on</span> the same URI. <span class="keyword">For</span> example, a PUT <span class="keyword">to</span> pageX.html will <span class="keyword">invalidate</span> <span class="keyword">all</span> cached <span class="keyword">GET</span> <span class="keyword">or</span> <span class="keyword">HEAD</span> requests <span class="keyword">to</span> the same URI.</span><br><span class="line"><span class="keyword">When</span> <span class="keyword">both</span>, the method <span class="keyword">of</span> the request <span class="keyword">and</span> the <span class="keyword">status</span> <span class="keyword">of</span> the response, <span class="keyword">are</span> cacheable, the response <span class="keyword">to</span> the request can be cached:</span><br><span class="line"><span class="keyword">GET</span> /pageX.html <span class="keyword">HTTP</span>/<span class="number">1.1</span></span><br><span class="line">(…) </span><br><span class="line"></span><br><span class="line"><span class="number">200</span> OK</span><br><span class="line">(…)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A PUT request cannot be cached. Moreover, it invalidates cached <span class="keyword">data</span> <span class="keyword">for</span> request <span class="keyword">to</span> the same URI done via <span class="keyword">HEAD</span> <span class="keyword">or</span> <span class="keyword">GET</span>:</span><br><span class="line">PUT /pageX.html <span class="keyword">HTTP</span>/<span class="number">1.1</span></span><br><span class="line">(…)</span><br><span class="line"></span><br><span class="line"><span class="number">200</span> OK</span><br><span class="line">(…)</span><br><span class="line"></span><br><span class="line">A specific <span class="keyword">Cache</span>-Control header <span class="keyword">in</span> the response can prevent <span class="keyword">caching</span>:</span><br><span class="line"><span class="keyword">GET</span> /pageX.html <span class="keyword">HTTP</span>/<span class="number">1.1</span></span><br><span class="line">(…)</span><br><span class="line"></span><br><span class="line"><span class="number">200</span> OK</span><br><span class="line"><span class="keyword">Cache</span>-Control: <span class="keyword">no</span>-<span class="keyword">cache</span></span><br><span class="line">(…)</span><br></pre></td></tr></table></figure></li>
+<li>206 - <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/206">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/206</a> - Partial Content</li>
+<li>The 206 (Partial Content) status code indicates that the server is successfully fulfilling a range request for the target resource by transferring one or more parts of the selected representation that correspond to the satisfiable ranges found in the request’s Range header field (Section 3.1).</li>
+</ul>
+<h2 id="HTTPS-SSL"><a href="#HTTPS-SSL" class="headerlink" title="HTTPS - SSL"></a>HTTPS - SSL</h2><p>可见“升https”博文</p>
+<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Keep-Alive">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Keep-Alive</a></li>
+<li>(HTTP/2 does not use the Connection header field to indicate<br> connection-specific header fields)</li>
+</ul>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">JS <span class="keyword">object</span> notation</span><br><span class="line"></span><br><span class="line">轻量级的数据交换格式</span><br><span class="line">相对于<span class="type">xml</span>非常轻</span><br><span class="line"></span><br><span class="line">字符串是<span class="type">JSON</span>的表现形式</span><br><span class="line"></span><br><span class="line">符合<span class="type">JSON</span>格式的字符串叫<span class="type">JSON</span>字符串</span><br><span class="line"></span><br><span class="line"><span class="type">XML</span></span><br><span class="line"></span><br><span class="line"><span class="type">JSON</span> 易于阅读，解析，网络传输效率高，跨语言交换数据</span><br><span class="line"></span><br><span class="line">把语言写的东西做成服务，调用服务提供数据</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="type">json</span></span><br><span class="line"></span><br><span class="line"><span class="type">json</span>.loads(json_Str)</span><br><span class="line"></span><br><span class="line"><span class="type">Json</span>字符串对应到python</span><br><span class="line">字典</span><br><span class="line"></span><br><span class="line"><span class="type">JSON</span> <span class="keyword">object</span>,<span class="keyword">array</span></span><br><span class="line"></span><br><span class="line">数组其实就是一个集合</span><br><span class="line"></span><br><span class="line">由字符串到某个语言下的数据结构（反序列化）</span><br><span class="line"></span><br><span class="line"><span class="type">Json</span>            python</span><br><span class="line"><span class="keyword">object</span>    dict</span><br><span class="line"><span class="keyword">array</span>            list</span><br><span class="line">string    str</span><br><span class="line">number     <span class="type">int</span></span><br><span class="line">number    <span class="type">float</span></span><br><span class="line"><span class="keyword">true</span>            <span class="keyword">True</span></span><br><span class="line"><span class="keyword">false</span>        <span class="keyword">False</span></span><br><span class="line"><span class="keyword">null</span>            <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">一种语言是其它语言的语法糖</span><br><span class="line">很多是C的语法糖</span><br><span class="line">语言就是一种工具</span><br><span class="line"></span><br><span class="line">序列化</span><br><span class="line"><span class="type">Json</span>.dumps()</span><br><span class="line"></span><br><span class="line">终端其实看不大出来是不是字符串</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">序列化之后直接存到mysql不太好，还是要弄成对象数据结构存，nosql(mongo) 可以存序列化之后的</span><br><span class="line"></span><br><span class="line"><span class="type">JSON</span> 对象 （放在js中是成立的，但是放在python中，是没有的）</span><br><span class="line"><span class="type">JSON</span></span><br><span class="line"><span class="type">JSON</span> 字符串</span><br><span class="line"></span><br><span class="line"><span class="type">JSON</span> 也是ecmascirpt的一个实现</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A                                  <span class="type">JSON</span>                                 B</span><br><span class="line">A语言的数据类型        <span class="type">JSON</span>数据类型（中间数据类型）    B语言的数据类型</span><br><span class="line"></span><br><span class="line"><span class="type">JSON</span>有自己的数据类型，虽然它和javascirpt的数据类型有些相似</span><br><span class="line"></span><br><span class="line">REST服务的标准格式（<span class="type">JSON</span>）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

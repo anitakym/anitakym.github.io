@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        函数的表示 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        函数的表示
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-10-09 14:05:09</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#函数" title="函数">函数</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#SICP-Py" title="SICP-Py">SICP-Py</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>参考资料：<br>1.函数图解（SICP-1.2.6 ）<br>2.<a target="_blank" rel="noopener" href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976">https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976</a><br>3.<a target="_blank" rel="noopener" href="https://medium.com/@jamesjefferyuk/javascript-what-are-pure-functions-4d4d5392d49c">https://medium.com/@jamesjefferyuk/javascript-what-are-pure-functions-4d4d5392d49c</a></p>
+</blockquote>
+<p>纯函数（Pure functions）：</p>
+<p>Functions have some input (their arguments) and return some output (the result of applying them).<br>具有一些输入（参数）以及返回一些输出（调用结果）的函数。</p>
+<ul>
+<li>Given the same input, will always return the same output.</li>
+<li>Produces no side effects.</li>
+</ul>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">Math</span>.</span></span>abs<span class="number">(-2)</span></span><br></pre></td></tr></table></figure>
+
+<p>可以描述为接受输入并产生输出的小型机器</p>
+<p>使用纯函数的好处：</p>
+<blockquote>
+<p>One of the major benefits of using pure functions is they are immediately testable. They will always produce the same result if you pass in the same arguments.</p>
+</blockquote>
+<p>非纯函数（Non-pure functions）：<br>In addition to returning a value, applying a non-pure function can generate side effects, which make some change to the state of the interpreter or computer. A common side effect is to generate additional output beyond the return value, using the print function.</p>
+<p>除了返回一个值之外，调用非纯函数会产生副作用，这会改变解释器或计算机的 一些状态。一个普遍的副作用就是在返回值之外生成额外的输出</p>
+<p>Side effects include, but are not limited to:</p>
+<ul>
+<li>Making a HTTP request</li>
+<li>Mutating data</li>
+<li>Printing to a screen or console</li>
+<li>DOM Query/Manipulation</li>
+<li>Math.random()</li>
+<li>Getting the current time</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.<span class="built_in">random</span>()</span><br><span class="line">console.<span class="built_in">log</span>(<span class="number">1</span>)</span><br><span class="line">console.<span class="built_in">log</span>(console.<span class="built_in">log</span>(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>调用console.log的嵌套表达式，会凸显出它的非纯特性</p>
+<p>签名（Signatures）：<br>A description of the arguments that a function can take is called the function’s signature.<br>函数的可接受参数的描述叫做函数的签名。</p>
+<pre>
+Math.abs(number)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs
+console.log(...)
+https://developer.mozilla.org/zh-CN/docs/Web/API/Console/log
+
+</pre>
+
+<blockquote>
+<p>借助抽象，不关系底层的具体计算过程，在根高层次shanghai思考问题； 函数是最基本的一种代码抽象方式</p>
+</blockquote>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

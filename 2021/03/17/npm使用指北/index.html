@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        npm使用指北 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-text">问题处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#error"><span class="toc-text">error</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#peer-dep"><span class="toc-text">peer dep</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#n"><span class="toc-text">n</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npx"><span class="toc-text">npx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yarn"><span class="toc-text">yarn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-modules-bin"><span class="toc-text">node_modules&#x2F;.bin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npmrc"><span class="toc-text">.npmrc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pnpm"><span class="toc-text">pnpm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#peerDependencies"><span class="toc-text">peerDependencies</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#difference"><span class="toc-text">difference</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86"><span class="toc-text">项目管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#init"><span class="toc-text">init</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#package-json"><span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="toc-text">技术选型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-cache"><span class="toc-text">npm-cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%93verbose"><span class="toc-text">–verbose </span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        npm使用指北
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-17 14:48:34</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>查看全局安装的包的版本</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> <span class="keyword">list</span> -g --depth <span class="number">0</span> | grep @vue/cli</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题处理"><a href="#问题处理" class="headerlink" title="问题处理"></a>问题处理</h3><p>(node:50731) ExperimentalWarning: Package name self resolution is an experimental feature. This feature could change at any time<br>94% after seal[hardsource:a9cf9509] Could not freeze ./src/router/index.js: Cannot read property ‘hash’ of undefined<br>98% after emitting</p>
+<h3 id="error"><a href="#error" class="headerlink" title="error"></a>error</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UNMET<span class="built_in"> PEER </span>DEPENDENCY webpack@4.x.x || 5.x.x</span><br><span class="line"></span><br><span class="line">npm ERR!<span class="built_in"> peer </span>dep missing: webpack@4.x.x || 5.x.x, required by webpack-cli@4.9.2</span><br><span class="line">npm ERR!<span class="built_in"> peer </span>dep missing: webpack@4.x.x || 5.x.x, required by @webpack-cli/configtest@1.1.1</span><br><span class="line">npm ERR! extraneous: which@2.0.2 /Users/xxxxx/node_modules/cross-spawn/node_modules/which</span><br></pre></td></tr></table></figure>
+<h4 id="peer-dep"><a href="#peer-dep" class="headerlink" title="peer dep"></a>peer dep</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.domenic.me/peer-dependencies/">https://blog.domenic.me/peer-dependencies/</a></li>
+</ul>
+<h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>n升级到lts的时候出了问题</p>
+<p>node -v<br>dyld: initializer function 0x0 not in mapped image for /usr/local/bin/node</p>
+<p>brew uninstall –force node<br>brew uninstall icu4c &amp;&amp; brew install icu4c<br>brew unlink icu4c &amp;&amp; brew link icu4c –force<br>brew install node</p>
+<p>I recently encountered a similar issue (after doing brew switch node 9.8.0 to downgrade to a previous version of node)</p>
+<p>dyld: Library not loaded:<br>/usr/local/opt/icu4c/lib/libicui18n.60.dylib<br>  Referenced from: /usr/local/bin/node<br>  Reason: image not found<br>Abort trap: 6<br>The issue is that node is picky about which version of icu4c it’s looking for, and the version I had installed (62) was higher than node was expecting.</p>
+<p>To fix, I made sure I had version 60 of icu4c selected.</p>
+<p>First I found which versions I had with brew info icu4c, then did brew switch icu4c 60.2 to select the one node was expecting.</p>
+<p>重新官网下载了node,解决的<br><a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+<h3 id="npx"><a href="#npx" class="headerlink" title="npx"></a>npx</h3><p>可以通过npx,去执行cli命令，不需要额外的安装<br>比如：</p>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npx </span><span class="built_in">create-next-app</span> <span class="string">test-demo</span></span><br><span class="line"><span class="string">npx </span><span class="built_in">create-react-app</span> <span class="string">test-app</span></span><br><span class="line"><span class="string">(</span><span class="string">If </span><span class="string">you&#x27;</span><span class="string">ve </span><span class="string">previously </span><span class="string">installed </span><span class="built_in">create-react-app</span> <span class="string">globally </span><span class="string">via </span><span class="string">npm </span><span class="string">install </span>-g <span class="built_in">create-react-app,</span> <span class="string">we </span><span class="string">recommend </span><span class="string">you </span><span class="string">uninstall </span><span class="string">the </span><span class="string">package </span><span class="string">using </span><span class="string">npm </span><span class="string">uninstall </span>-g <span class="built_in">create-react-app</span> <span class="string">or </span><span class="string">yarn </span><span class="string">global </span><span class="string">remove </span><span class="built_in">create-react-app</span> <span class="string">to </span><span class="string">ensure </span><span class="string">that </span><span class="string">npx </span><span class="string">always </span><span class="string">uses </span><span class="string">the </span><span class="string">latest </span><span class="string">version.</span>)</span><br></pre></td></tr></table></figure>
+<p>npx主要用于命令行寻址等辅助功能上</p>
+<ul>
+<li>可以和degit(<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/degit)%E9%85%8D%E5%90%88%E7%9D%80%E4%BD%BF%E7%94%A8%EF%BC%8C%E6%AF%94%E5%A6%82%EF%BC%9Ahttps://github.com/antfu/vitesse/blob/main/README.zh-CN.md">https://www.npmjs.com/package/degit)配合着使用，比如：https://github.com/antfu/vitesse/blob/main/README.zh-CN.md</a><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx degit antfu/vitesse <span class="keyword">my</span>-vitesse-app</span><br><span class="line">cd <span class="keyword">my</span>-vitesse-app</span><br><span class="line">pnpm i <span class="comment"># 如果你没装过 pnpm, 可以先运行: npm install -g pnpm</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h3><p>可以通过homebrew安装，也可以通过npm安装<br><a target="_blank" rel="noopener" href="https://yarnpkg.com/getting-started">https://yarnpkg.com/getting-started</a><br>yarn autoclean 功能可以试试</p>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/jonlabelle/c082700c1c249d986faecbd5abf7d65b">https://gist.github.com/jonlabelle/c082700c1c249d986faecbd5abf7d65b</a><br><a target="_blank" rel="noopener" href="https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc">https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc</a><br>这篇文章提供npm和yarn的对比：<br>官方也有简单的vs：<br><a target="_blank" rel="noopener" href="https://classic.yarnpkg.com/en/docs/migrating-from-npm">https://classic.yarnpkg.com/en/docs/migrating-from-npm</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> === yarn</span><br><span class="line">npm installl testpackage <span class="comment">--save === yarn add testpackage</span></span><br><span class="line">npm <span class="keyword">uninstall</span> testpackage <span class="comment">--save === yarn remove testpackage</span></span><br><span class="line">npm <span class="keyword">install</span> testpackage <span class="comment">--save-dev === yarn add testpackage --dev</span></span><br><span class="line">npm <span class="keyword">update</span> <span class="comment">--save === yarn upgrade</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 都一样的</span><br><span class="line">init | link | outdated | publish | run | cache clean | login | test</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// yarn 有npm没有的</span></span><br><span class="line">yarn licenses <span class="built_in">list</span></span><br><span class="line">yarn why lodash</span><br></pre></td></tr></table></figure>
+
+<h3 id="node-modules-bin"><a href="#node-modules-bin" class="headerlink" title="node_modules/.bin"></a>node_modules/.bin</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">通过npm启动的脚本，会默认把node_modules/.bin加到PATH环境变量中</span><br><span class="line">https:<span class="regexp">//</span>docs.npmjs.com<span class="regexp">/cli/</span>v7<span class="regexp">/commands/</span>npm-run-script</span><br><span class="line"></span><br><span class="line">当某个模块配置了 bin 定义时，就会被安装的时候，自动软链了过去</span><br><span class="line">https:<span class="regexp">//</span>docs.npmjs.com<span class="regexp">/cli/</span>v7<span class="regexp">/configuring-npm/</span>package-json/<span class="comment">#bin</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="npmrc"><a href="#npmrc" class="headerlink" title=".npmrc"></a>.npmrc</h3><p>可以先看下<code>npm config ls -l</code><br><a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v7/configuring-npm/npmrc">https://docs.npmjs.com/cli/v7/configuring-npm/npmrc</a></p>
+<pre>
+具体项目：
+registry 可以在这个里面设置
+
+可以设置
+package-lock=false
+koa就是这么设置的
+// 说明:如果设置为false，那么在安装时将忽略package-lock.json文件
+package-lock
+Default: true
+Type: Boolean
+If set to false, then ignore package-lock.json files when installing. This will also prevent writing package-lock.json if save is true.
+
+When package package-locks are disabled, automatic pruning of extraneous modules will also be disabled. To remove extraneous modules with package-locks disabled use npm prune.
+</pre>
+
+<h3 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://pnpm.io/zh/motivation">https://pnpm.io/zh/motivation</a></li>
+<li>pnpm - 依赖项将存储在一个内容可寻址的仓库中</li>
+<li>npm - 依赖都会被提升到模块的根目录 - 扁平化结构</li>
+<li>pnpm - 使用软链的方式将项目的直接依赖添加进模块文件夹的根目录。 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">树形的问题：</span><br><span class="line">This approach had <span class="literal">two</span> serious issues:</span><br><span class="line">- frequently packages were creating too deep dependency trees, which caused <span class="keyword">long</span> <span class="built_in">directory</span> paths issue <span class="keyword">on</span> <span class="title">Windows</span></span><br><span class="line">- packages were copy pasted several times when they were required <span class="keyword">in</span> different dependencies</span><br><span class="line">To solve these issues, npm rethought <span class="keyword">the</span> node_modules structure <span class="keyword">and</span> came up <span class="keyword">with</span> flattening. </span><br></pre></td></tr></table></figure></li>
+<li>推荐阅读：<a target="_blank" rel="noopener" href="https://www.kochan.io/">https://www.kochan.io/</a> 这个里面写了几篇文章</li>
+<li>vue-next用pnpm,还在preinstall里面加了验证</li>
+<li>vite - only allow pnpm<h4 id="peerDependencies"><a href="#peerDependencies" class="headerlink" title="peerDependencies"></a>peerDependencies</h4></li>
+<li>npm中 ： <a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v9/configuring-npm/package-json#peerdependencies">https://docs.npmjs.com/cli/v9/configuring-npm/package-json#peerdependencies</a></li>
+<li>pnpm: <a target="_blank" rel="noopener" href="https://pnpm.io/zh/how-peers-are-resolved">https://pnpm.io/zh/how-peers-are-resolved</a><h3 id="difference"><a href="#difference" class="headerlink" title="difference"></a>difference</h3></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4MTYwMzY1Mw==&amp;mid=2247496601&amp;idx=1&amp;sn=4c3bc00c37163e1dca152ebb8f723619&amp;source=41#wechat_redirect">https://mp.weixin.qq.com/s?__biz=Mzg4MTYwMzY1Mw==&amp;mid=2247496601&amp;idx=1&amp;sn=4c3bc00c37163e1dca152ebb8f723619&amp;source=41#wechat_redirect</a></li>
+</ul>
+<h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><ul>
+<li><code>npm init</code></li>
+</ul>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>见<code>谈一谈package-json文件</code>博文</p>
+<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://npmtrends.com/">https://npmtrends.com/</a></li>
+<li>可以看trends参考</li>
+</ul>
+<h3 id="npm-cache"><a href="#npm-cache" class="headerlink" title="npm-cache"></a>npm-cache</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v8/commands/npm-cache">https://docs.npmjs.com/cli/v8/commands/npm-cache</a></li>
+<li>clean: Delete all data out of the cache folder. Note that this is typically unnecessary, as npm’s cache is self-healing and resistant to data corruption issues.</li>
+</ul>
+<h3 id="–verbose"><a href="#–verbose" class="headerlink" title="–verbose "></a>–verbose </h3><ul>
+<li>在较慢的网络上, 最好使用 –verbose 标志来显示下载进度: <code>npm install --verbose electron</code></li>
+<li>在运行 npm install electron 时，有些用户会偶尔遇到安装问题。在大多数情况下，这些错误都是由网络问题导致，而不是因为 electron npm 包的问题。 如 ELIFECYCLE、EAI_AGAIN、ECONNRESET 和 ETIMEDOUT 等错误都是此类网络问题的标志。 最佳的解决方法是尝试切换网络，或是稍后再尝试安装</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

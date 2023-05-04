@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        浏览器基础梳理 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93"><span class="toc-text">渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90"><span class="toc-text">资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8"><span class="toc-text">安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie"><span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D"><span class="toc-text">域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setcookie"><span class="toc-text">setcookie</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-performance"><span class="toc-text">web performance</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#performance-now"><span class="toc-text">performance.now()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#link"><span class="toc-text">link</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Xpath"><span class="toc-text">Xpath</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#browserlist"><span class="toc-text">browserlist</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#form"><span class="toc-text">form</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-APIs"><span class="toc-text">web APIs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM"><span class="toc-text">DOM</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        浏览器基础梳理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-09-17 22:48:55</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><ul>
+<li>DOM｜CSSOM =&gt; Object Model</li>
+<li>Render Tree</li>
+<li>Script会阻塞渲染进程，因为里面的内容会改变Render Tree</li>
+<li>css的link标签在head中，在渲染body里面内容时候，已经知道了样式应该怎么渲染（提升性能），body出来之前把样式定了</li>
+<li>script标签在body最底部，不然会阻塞后面标签内容的渲染</li>
+<li>window监听的load事件，页面全部资源加载完之后（图片，视频也包括），才执行</li>
+<li>document监听的DOMContentLoaded事件，DOM加载完成后就可以执行了</li>
+<li>nodejs做的PDF渲染服务，puppeteer，headless browser 里面提供的几个回调状态（不同加载和渲染状态）（TO BE COMP）</li>
+<li>懒加载（img =&gt; src（小图的地址） | data-realsrc（真正大图的地址）, 在最后的script标签里面（真正要用图的时候），再执行拉取资源替换图片的操作）</li>
+<li>DOM查询缓存（构建list），合并DOM插入（document.createDocumentFragment）-通用处理策略</li>
+<li>事件节流（咱有个timeOutId,监听事件的时候呢，如果id有，就clear掉，如果没有，就赋值个定时器）</li>
+</ul>
+<h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><ul>
+<li>压缩，合并｜分离<ul>
+<li>构建工具处理这部分的plugin-模式，类型，经验总结（TO BE COMP）</li>
+</ul>
+</li>
+<li>缓存 – 浏览器缓存策略<ul>
+<li>文件命名</li>
+</ul>
+</li>
+<li>CDN - 域名CDN加速</li>
+</ul>
+<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><ul>
+<li>signature</li>
+<li>DNS劫持（找运营商）</li>
+<li>上https</li>
+<li>456（集团接口正则匹配拦截）- 题目内容（公式加密转码后还是被误拦截了）</li>
+<li>集团安全组（端扫描）</li>
+<li>http only cookie, 防止XSS攻击，获取cookie处理</li>
+<li>注意输入内容的控制（前端替换，后端替换），数据库maybe会报错（反解之后）；长度控制（约定，在设计数据库字段时候对类型的设计）；</li>
+<li>核心流程滑块+短信验证（XSRF）</li>
+</ul>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>如果不设置有效期，默认存在内存，退出浏览器即没有了<br>设置之后，存在了本地存储里面，退出浏览器再重新登录，可以不用重新登录；</p>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><ul>
+<li>www or not</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/Choosing_between_www_and_non-www_URLs">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/Choosing_between_www_and_non-www_URLs</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.hyperarts.com/blog/www-vs-non-www-for-your-canonical-domain-url-which-is-best-and-why/">http://www.hyperarts.com/blog/www-vs-non-www-for-your-canonical-domain-url-which-is-best-and-why/</a></li>
+</ul>
+<h3 id="setcookie"><a href="#setcookie" class="headerlink" title="setcookie"></a>setcookie</h3><p>如果请求的接口和origin不是一个域名<br>那么，设置的时候，需要加上； secure; same-site=none;来允许跨域请求，这样才能set上<br>要支持多个前端域名都可以访问，不过接口是其中一个域名，所以set-cookie的时候要增加这个配置</p>
+<p>如果是Safari浏览器的一些版本，则这么设置就不可以了，除非修改浏览器配置；出于安全策略考虑，就保持一个根域，请求的origin和接口的域；如果需要使用cookie的情况下。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://bugs.webkit.org/show_bug.cgi?id=198181">https://bugs.webkit.org/show_bug.cgi?id=198181</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/GoogleChromeLabs/samesite-examples">https://github.com/GoogleChromeLabs/samesite-examples</a></li>
+<li><a target="_blank" rel="noopener" href="https://web.dev/samesite-cookie-recipes/">https://web.dev/samesite-cookie-recipes/</a> - 说明了same-site属性的一些当下的情况和解决方案<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Require Secure <span class="keyword">with</span> SameSite=<span class="keyword">None</span></span><br><span class="line">Flag: chrome://flags/#cookies-<span class="keyword">without</span>-same-site-must-be-secure</span><br><span class="line">Chrome Status entry: Reject insecure SameSite=<span class="keyword">None</span> cookies</span><br><span class="line">Turn <span class="keyword">on</span> this flag along <span class="keyword">with</span> the previous flag <span class="keyword">to</span> have Chrome enforce the need <span class="keyword">for</span> <span class="keyword">any</span> SameSite=<span class="keyword">None</span> cookie <span class="keyword">to</span> <span class="keyword">also</span> specify the Secure <span class="keyword">attribute</span>.</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="web-performance"><a href="#web-performance" class="headerlink" title="web performance"></a>web performance</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://speakerdeck.com/stevekinney">https://speakerdeck.com/stevekinney</a></li>
+<li><a target="_blank" rel="noopener" href="https://web.dev/i18n/zh/tbt/">https://web.dev/i18n/zh/tbt/</a> - TBT的概念 - Total Blocking Time 总阻塞时间 (TBT)<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">总阻塞时间 <span class="comment">(TBT)</span> 是测量加载响应度的重要实验室指标，因为该项指标有助于量化在页面交互性变为可靠前，不可交互程度的严重性，较低的 TBT 有助于确保页面的可用性。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="performance-now"><a href="#performance-now" class="headerlink" title="performance.now()"></a>performance.now()</h4><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Performance/now">https://developer.mozilla.org/zh-CN/docs/Web/API/Performance/now</a><br>oasis deltaTime计算</p>
+<h4 id="link"><a href="#link" class="headerlink" title="link"></a>link</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/kaosini/article/details/42495471">https://blog.csdn.net/kaosini/article/details/42495471</a>   比较早的一个说前端性能监控的文章，顺了下相关概念</li>
+</ul>
+<h4 id="Xpath"><a href="#Xpath" class="headerlink" title="Xpath"></a>Xpath</h4><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/XPath">https://developer.mozilla.org/en-US/docs/Web/XPath</a></p>
+<h4 id="browserlist"><a href="#browserlist" class="headerlink" title="browserlist"></a>browserlist</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/browserslist/browserslist">https://github.com/browserslist/browserslist</a></li>
+</ul>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h4 id="form"><a href="#form" class="headerlink" title="form"></a>form</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form</a><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">enctype</span><br><span class="line"><span class="keyword">If</span> the value of the method attribute is post, enctype is the MIME<span class="built_in"> type </span>of the form submission. Possible values:</span><br><span class="line"></span><br><span class="line">application/x-www-form-urlencoded: The<span class="built_in"> default </span>value.</span><br><span class="line">发送前编码所有字符 - 空格转为加号，特殊符号转为ASCII HEX值</span><br><span class="line">multipart/form-data: Use this <span class="keyword">if</span> the form contains &lt;input&gt; elements with <span class="attribute">type</span>=file.</span><br><span class="line">不对字符编码</span><br><span class="line">text/plain: Introduced by HTML5 <span class="keyword">for</span> debugging purposes.</span><br><span class="line">空格转换为加号，但不对特殊字符编码</span><br><span class="line">This value can be overridden by formenctype attributes on &lt;button&gt;, &lt;input <span class="attribute">type</span>=<span class="string">&quot;submit&quot;</span>&gt;, <span class="keyword">or</span> &lt;input <span class="attribute">type</span>=<span class="string">&quot;image&quot;</span>&gt; element</span><br></pre></td></tr></table></figure></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/enctype">https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/enctype</a></li>
+</ul>
+<h2 id="web-APIs"><a href="#web-APIs" class="headerlink" title="web APIs"></a>web APIs</h2><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model</a><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The Document <span class="built_in">Object</span> Model (DOM) <span class="keyword">is</span> the data representation <span class="keyword">of</span> the objects <span class="literal">that</span> comprise the structure <span class="keyword">and</span> content <span class="keyword">of</span> a <span class="built_in">document</span> <span class="literal">on</span> the web. This guide will introduce the DOM, look at how the DOM represents an HTML <span class="built_in">document</span> <span class="keyword">in</span> memory <span class="keyword">and</span> how <span class="keyword">to</span> use APIs <span class="keyword">to</span> create web content <span class="keyword">and</span> applications.</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

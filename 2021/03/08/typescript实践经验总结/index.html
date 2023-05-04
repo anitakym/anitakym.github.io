@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        typescript实践经验总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E8%BF%81%E7%A7%BB%E7%9A%84%E6%A1%88%E4%BE%8B"><span class="toc-text">几个迁移的案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ROI"><span class="toc-text">ROI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redaxios"><span class="toc-text">redaxios</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3%EF%BC%9A"><span class="toc-text">推荐相关文档：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90TS%E5%85%A5%E9%97%A8%EF%BC%9A"><span class="toc-text">推荐TS入门：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90"><span class="toc-text">教程推荐</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-text">项目总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%92%E4%BB%B6"><span class="toc-text">接入的第三方插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sentry"><span class="toc-text">sentry</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#type-vs-interface"><span class="toc-text">type vs interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#declare"><span class="toc-text">declare</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#declare-module-%E2%80%98xxx%E2%80%99"><span class="toc-text">declare module ‘xxx’</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E4%BD%A0%E5%AE%89%E8%A3%85TypeScript%E6%97%B6%EF%BC%8C%E4%BC%9A%E9%A1%BA%E5%B8%A6%E5%AE%89%E8%A3%85%E4%B8%80%E4%B8%AAlib-d-ts%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E3%80%82%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%ABJavaScript%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8F%8ADOM%EF%BC%88Document-Object-Model%EF%BC%8C%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%EF%BC%89%E4%B8%AD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%90%84%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84JavaScript%E7%8E%AF%E5%A2%83%E5%A3%B0%E6%98%8E%E3%80%82%E2%97%8F-%E5%AE%83%E8%87%AA%E5%8A%A8%E5%8C%85%E5%90%AB%E5%9C%A8TypeScript%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%BC%96%E8%AF%91%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E3%80%82%E2%97%8F-%E5%AE%83%E8%83%BD%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B%E4%B9%A6%E5%86%99%E7%BB%8F%E8%BF%87%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5%E7%9A%84JavaScript%E4%BB%A3%E7%A0%81%E3%80%82"><span class="toc-text">当你安装TypeScript时，会顺带安装一个lib.d.ts声明文件。这个文件包含JavaScript运行时及DOM（Document Object Model，文档对象模型）中存在的各种常见的JavaScript环境声明。● 它自动包含在TypeScript项目的编译上下文中。● 它能让你快速开始书写经过类型检查的JavaScript代码。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tsconfig"><span class="toc-text">tsconfig</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sources"><span class="toc-text">sources</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#why"><span class="toc-text">why</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-text">注释</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        typescript实践经验总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-08 12:07:02</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>多看下生成的JS，从而看看处理的逻辑（使用不同的ES标准进行编译）</p>
+</blockquote>
+<h3 id="几个迁移的案例"><a href="#几个迁移的案例" class="headerlink" title="几个迁移的案例"></a>几个迁移的案例</h3><p><a target="_blank" rel="noopener" href="https://developers.google.com/web/updates/2021/01/puppeteer-typescript">https://developers.google.com/web/updates/2021/01/puppeteer-typescript</a></p>
+<h3 id="ROI"><a href="#ROI" class="headerlink" title="ROI"></a>ROI</h3><ul>
+<li>团队迁移成本<br>（开发思维，开发生态，项目处理，接口及声明文件的维护）</li>
+</ul>
+<h3 id="redaxios"><a href="#redaxios" class="headerlink" title="redaxios"></a>redaxios</h3><p><a target="_blank" rel="noopener" href="https://www.tslang.cn/docs/handbook/type-checking-javascript-files.html">https://www.tslang.cn/docs/handbook/type-checking-javascript-files.html</a><br><a target="_blank" rel="noopener" href="https://github.com/Microsoft/TypeScript/wiki/JSDoc-support-in-JavaScript">https://github.com/Microsoft/TypeScript/wiki/JSDoc-support-in-JavaScript</a><br>使用JSDoc注解</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html</span></span><br><span class="line">支持的<span class="selector-tag">JSDoc</span></span><br><span class="line">下面的列表列出了当前所支持的<span class="selector-tag">JSDoc</span>注解，你可以用它们在<span class="selector-tag">JavaScript</span>文件里添加类型信息。</span><br><span class="line"></span><br><span class="line">注意，没有在下面列出的标记（例如@<span class="selector-tag">async</span>）都是还不支持的。</span><br><span class="line"></span><br><span class="line">@<span class="selector-tag">type</span></span><br><span class="line">@<span class="selector-tag">param</span> (or <span class="variable">@arg</span> or <span class="variable">@argument</span>)</span><br><span class="line">@<span class="selector-tag">returns</span> (or <span class="variable">@return</span>)</span><br><span class="line">@<span class="selector-tag">typedef</span></span><br><span class="line">@<span class="selector-tag">callback</span></span><br><span class="line">@<span class="selector-tag">template</span></span><br><span class="line">@<span class="selector-tag">class</span> (or <span class="variable">@constructor</span>)</span><br><span class="line">@<span class="selector-tag">this</span></span><br><span class="line">@<span class="selector-tag">extends</span> (or <span class="variable">@augments</span>)</span><br><span class="line">@<span class="selector-tag">enum</span></span><br><span class="line">它们代表的意义与<span class="selector-tag">usejsdoc</span><span class="selector-class">.org</span>上面给出的通常是一致的或者是它的超集。 </span><br></pre></td></tr></table></figure>
+
+<h3 id="推荐相关文档："><a href="#推荐相关文档：" class="headerlink" title="推荐相关文档："></a>推荐相关文档：</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/40322215">https://zhuanlan.zhihu.com/p/40322215</a><br><a target="_blank" rel="noopener" href="https://labs.thisdot.co/blog/your-first-vue-3-app-using-typescript">https://labs.thisdot.co/blog/your-first-vue-3-app-using-typescript</a><br><a target="_blank" rel="noopener" href="https://medium.com/vue-typescript/vue-3-with-typescript-setup-a-new-project-with-the-vue-cli-4ea806be7a91">https://medium.com/vue-typescript/vue-3-with-typescript-setup-a-new-project-with-the-vue-cli-4ea806be7a91</a></p>
+<h3 id="推荐TS入门："><a href="#推荐TS入门：" class="headerlink" title="推荐TS入门："></a>推荐TS入门：</h3><p><a target="_blank" rel="noopener" href="https://basarat.gitbook.io/typescript/getting-started">https://basarat.gitbook.io/typescript/getting-started</a><br><a target="_blank" rel="noopener" href="https://jkchao.github.io/typescript-book-chinese/typings/types.html#%E4%BD%BF%E7%94%A8-types">https://jkchao.github.io/typescript-book-chinese/typings/types.html#%E4%BD%BF%E7%94%A8-types</a></p>
+<h3 id="教程推荐"><a href="#教程推荐" class="headerlink" title="教程推荐"></a>教程推荐</h3><ul>
+<li>英文OK的还是官方文档<ul>
+<li><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/basic-types.html">https://www.typescriptlang.org/docs/handbook/basic-types.html</a></li>
+<li>更新及时，对应版本准确</li>
+</ul>
+</li>
+<li>中文的话：<ul>
+<li><a target="_blank" rel="noopener" href="http://ts.xcatliu.com/">http://ts.xcatliu.com/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h2><h3 id="接入的第三方插件"><a href="#接入的第三方插件" class="headerlink" title="接入的第三方插件"></a>接入的第三方插件</h3><h4 id="sentry"><a href="#sentry" class="headerlink" title="sentry"></a>sentry</h4><ul>
+<li>sentry本身就有@sentry/types，被JavaScript 相关的 SDK依赖，所以没啥问题，安装之后，就支持了</li>
+<li><a target="_blank" rel="noopener" href="https://getsentry.github.io/sentry-javascript/">https://getsentry.github.io/sentry-javascript/</a></li>
+</ul>
+<h3 id="type-vs-interface"><a href="#type-vs-interface" class="headerlink" title="type vs interface"></a>type vs interface</h3><p>官方example</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// There are two main tools to declare the shape of an</span></span><br><span class="line"><span class="comment">// object: interfaces and type aliases.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// They are very similar, and for the most common cases</span></span><br><span class="line"><span class="comment">// act the same.</span></span><br><span class="line"></span><br><span class="line">type BirdType = &#123;</span><br><span class="line">  wings: <span class="number">2</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="symbol">BirdInterface</span> &#123;</span><br><span class="line">  wings: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bird1: BirdType = &#123; wings: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> bird2: BirdInterface = &#123; wings: <span class="number">2</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Because TypeScript is a structural type system,</span></span><br><span class="line"><span class="comment">// it&#x27;s possible to intermix their use too.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bird3: BirdInterface = bird1;</span><br><span class="line"></span><br><span class="line"><span class="comment">// They both support extending other interfaces and types.</span></span><br><span class="line"><span class="comment">// Type aliases do this via intersection types, while</span></span><br><span class="line"><span class="comment">// interfaces have a keyword.</span></span><br><span class="line"></span><br><span class="line">type Owl = &#123; nocturnal: <span class="literal">true</span> &#125; &amp; BirdType;</span><br><span class="line">type Robin = &#123; nocturnal: <span class="literal">false</span> &#125; &amp; BirdInterface;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="symbol">Peacock</span> <span class="symbol">extends</span> <span class="symbol">BirdType</span> &#123;</span><br><span class="line">  colourful: <span class="literal">true</span>;</span><br><span class="line">  flies: <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="symbol">Chicken</span> <span class="symbol">extends</span> <span class="symbol">BirdInterface</span> &#123;</span><br><span class="line">  colourful: <span class="literal">false</span>;</span><br><span class="line">  flies: <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let owl: Owl = &#123; wings: <span class="number">2</span>, nocturnal: <span class="literal">true</span> &#125;;</span><br><span class="line">let chicken: Chicken = &#123; wings: <span class="number">2</span>, colourful: <span class="literal">false</span>, flies: <span class="literal">false</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// That said, we recommend you use interfaces over type</span></span><br><span class="line"><span class="comment">// aliases. Specifically, because you will get better error</span></span><br><span class="line"><span class="comment">// messages. If you hover over the following errors, you can</span></span><br><span class="line"><span class="comment">// see how TypeScript can provide terser and more focused</span></span><br><span class="line"><span class="comment">// messages when working with interfaces like Chicken.</span></span><br><span class="line"></span><br><span class="line">owl = chicken;</span><br><span class="line">chicken = owl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// One major difference between type aliases vs interfaces</span></span><br><span class="line"><span class="comment">// are that interfaces are open and type aliases are closed.</span></span><br><span class="line"><span class="comment">// This means you can extend an interface by declaring it</span></span><br><span class="line"><span class="comment">// a second time.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="symbol">Kitten</span> &#123;</span><br><span class="line">  purrs: <span class="built_in">bool</span>ean;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="symbol">Kitten</span> &#123;</span><br><span class="line">  colour: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// In the other case a type cannot be changed outside of</span></span><br><span class="line"><span class="comment">// its declaration.</span></span><br><span class="line"></span><br><span class="line">type Puppy = &#123;</span><br><span class="line">  color: <span class="built_in">string</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">type Puppy = &#123;</span><br><span class="line">  toys: number;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Depending on your goals, this difference could be a</span></span><br><span class="line"><span class="comment">// positive or a negative. However for publicly exposed</span></span><br><span class="line"><span class="comment">// types, it&#x27;s a better call to make them an interface.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// One of the best resources for seeing all of the edge</span></span><br><span class="line"><span class="comment">// cases around types vs interfaces, this stack overflow</span></span><br><span class="line"><span class="comment">// thread is a good place to start:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://stackoverflow.com/questions/37233735/typescript-interfaces-vs-types/52682220#52682220</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="declare"><a href="#declare" class="headerlink" title="declare"></a>declare</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html">https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html</a><h4 id="declare-module-‘xxx’"><a href="#declare-module-‘xxx’" class="headerlink" title="declare module ‘xxx’"></a>declare module ‘xxx’</h4></li>
+<li>声明一个全局模块</li>
+<li>解决查找模块路径的问题<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># env.d.ts</span><br><span class="line"></span><br><span class="line">/// &lt;reference <span class="keyword">types</span>=&quot;vite/client&quot; /&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> module <span class="string">&#x27;*.vue&#x27;</span> &#123;</span><br><span class="line">  <span class="keyword">import</span> <span class="keyword">type</span> &#123; DefineComponent &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line">  // eslint-<span class="keyword">disable</span>-next-<span class="type">line</span> @typescript-eslint/<span class="keyword">no</span>-explicit-<span class="keyword">any</span>, @typescript-eslint/ban-<span class="keyword">types</span></span><br><span class="line">  const component: DefineComponent&lt;&#123;&#125;, &#123;&#125;, <span class="keyword">any</span>&gt;</span><br><span class="line">  export <span class="keyword">default</span> component</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>环境声明 - *.d.ts文件, 里面每个根级别的声明需要以declare作为前缀</li>
+</ul>
+<h3 id="当你安装TypeScript时，会顺带安装一个lib-d-ts声明文件。这个文件包含JavaScript运行时及DOM（Document-Object-Model，文档对象模型）中存在的各种常见的JavaScript环境声明。●-它自动包含在TypeScript项目的编译上下文中。●-它能让你快速开始书写经过类型检查的JavaScript代码。"><a href="#当你安装TypeScript时，会顺带安装一个lib-d-ts声明文件。这个文件包含JavaScript运行时及DOM（Document-Object-Model，文档对象模型）中存在的各种常见的JavaScript环境声明。●-它自动包含在TypeScript项目的编译上下文中。●-它能让你快速开始书写经过类型检查的JavaScript代码。" class="headerlink" title="当你安装TypeScript时，会顺带安装一个lib.d.ts声明文件。这个文件包含JavaScript运行时及DOM（Document Object Model，文档对象模型）中存在的各种常见的JavaScript环境声明。● 它自动包含在TypeScript项目的编译上下文中。● 它能让你快速开始书写经过类型检查的JavaScript代码。"></a>当你安装TypeScript时，会顺带安装一个lib.d.ts声明文件。这个文件包含JavaScript运行时及DOM（Document Object Model，文档对象模型）中存在的各种常见的JavaScript环境声明。● 它自动包含在TypeScript项目的编译上下文中。● 它能让你快速开始书写经过类型检查的JavaScript代码。</h3><h2 id="tsconfig"><a href="#tsconfig" class="headerlink" title="tsconfig"></a>tsconfig</h2><ul>
+<li>strictNullCheck 建议设置true，如果有需要都允许的地方，可以使用联合类型</li>
+</ul>
+<h2 id="sources"><a href="#sources" class="headerlink" title="sources"></a>sources</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/170oHzpLNeprUa-TMmOAnSU4caEFDSb3e/view">https://drive.google.com/file/d/170oHzpLNeprUa-TMmOAnSU4caEFDSb3e/view</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mike-works/typescript-fundamentals/tree/v2#dependencies">https://github.com/mike-works/typescript-fundamentals/tree/v2#dependencies</a></li>
+</ul>
+<h2 id="why"><a href="#why" class="headerlink" title="why"></a>why</h2><blockquote>
+<p>用typescript的原因，是一种思维模式上面的减负；想应该想的，一些语言特性里面的遗留问题，不需要再想</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">undefined</span> <span class="string">==</span> <span class="literal">null</span> <span class="string">//</span> <span class="literal">true</span> </span><br><span class="line"><span class="string">undefined</span> <span class="string">===</span> <span class="literal">null</span> <span class="string">//</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/lodash/lodash.git">https://github.com/lodash/lodash.git</a></p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TypeScript 的 <span class="number">3.7</span> 版本引入了 <span class="meta">@ts</span>-nocheck 注释，可以增加在 TypeScript 文件的头部来禁用语义检查。我们没有使用这个注释，因为它之前不支持.ts/.tsx 文件，但它也可以在迁移过程中成为一个很好的中间阶段助手。</span><br><span class="line"></span><br><span class="line">TypeScript 的 <span class="number">3.9</span> 版本引入了 <span class="meta">@ts</span>-<span class="keyword">expect</span>-error 注释。当一行以 <span class="meta">@ts</span>-<span class="keyword">expect</span>-error 注释作为前缀时，TypeScript 将禁止报告该错误。如果没有错误，TypeScript 会报告 <span class="meta">@ts</span>-<span class="keyword">expect</span>-error 是不必要的。在 Airbnb 代码库，我们使用了 <span class="meta">@ts</span>-<span class="keyword">expect</span>-error 而不是 <span class="meta">@ts</span>-ignore 。</span><br><span class="line">https:<span class="comment">//medium.com/airbnb-engineering/ts-migrate-a-tool-for-migrating-to-typescript-at-scale-cd23bfeb5cc​​​</span></span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

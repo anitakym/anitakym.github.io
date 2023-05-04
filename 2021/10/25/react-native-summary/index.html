@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        react-native-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#concept"><span class="toc-text">concept</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#view%E4%B8%BA%E4%B8%AD%E5%BF%83"><span class="toc-text">view为中心</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#basic"><span class="toc-text">basic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E6%92%AD"><span class="toc-text">直播</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#preview-view"><span class="toc-text">preview view</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#player-view"><span class="toc-text">player view</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RN-API"><span class="toc-text">RN API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#API%E8%AE%BE%E8%AE%A1%E9%A3%8E%E6%A0%BC"><span class="toc-text">API设计风格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="toc-text">配置管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86"><span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E4%BD%9C%E7%AE%A1%E7%90%86"><span class="toc-text">动作管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">事件管理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RN-Layout"><span class="toc-text">RN Layout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%92%E5%8A%A8%E7%9B%B4%E6%92%AD"><span class="toc-text">腾讯云互动直播</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E7%AB%AF%E5%92%8CJS%E7%9A%84%E9%80%9A%E4%BF%A1"><span class="toc-text">原生端和JS的通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8ERN%E5%90%91JS%E4%BC%A0%E9%80%92%E5%8E%9F%E7%94%9F%E4%BF%A1%E6%81%AF"><span class="toc-text">从RN向JS传递原生信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScriptCore"><span class="toc-text">JavaScriptCore</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Core-Basic"><span class="toc-text">Core - Basic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Component"><span class="toc-text">Component</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Style"><span class="toc-text">Style</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#State"><span class="toc-text">State</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fast-refresh"><span class="toc-text">fast refresh</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rn-lib"><span class="toc-text">rn - lib</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#podspec"><span class="toc-text">.podspec</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        react-native-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-10-25 23:39:14</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>notion 2022-7.22 除编辑器部分，切回原生开发（这种重交互的应用，长期看来，性能是核心指标）</p>
+</blockquote>
+<ul>
+<li>2020 rn 20-22 kotlin/swift + webview 22.7-&gt;从webview逐渐切回到原生</li>
+<li><a target="_blank" rel="noopener" href="https://www.notion.so/releases/2022-07-20">https://www.notion.so/releases/2022-07-20</a></li>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/jitl/status/1530326516013342723?s=20&amp;t=xT0gfWhFvs0yNvc1GQ3sTQ">https://twitter.com/jitl/status/1530326516013342723?s=20&amp;t=xT0gfWhFvs0yNvc1GQ3sTQ</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Jzqx3DWLlowszESQfBJZ9A">https://mp.weixin.qq.com/s/Jzqx3DWLlowszESQfBJZ9A</a> （搞不定移动端性能，全球爆火的Notion从Hybrid转向了Native）</li>
+</ul>
+<h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><h3 id="view为中心"><a href="#view为中心" class="headerlink" title="view为中心"></a>view为中心</h3><h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2><ul>
+<li>create</li>
+<li>run-ios | run android</li>
+<li>import</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="直播"><a href="#直播" class="headerlink" title="直播"></a>直播</h2><h3 id="preview-view"><a href="#preview-view" class="headerlink" title="preview view"></a>preview view</h3><h3 id="player-view"><a href="#player-view" class="headerlink" title="player view"></a>player view</h3><h3 id="RN-API"><a href="#RN-API" class="headerlink" title="RN API"></a>RN API</h3><h4 id="API设计风格"><a href="#API设计风格" class="headerlink" title="API设计风格"></a>API设计风格</h4><h4 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h4><h4 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h4><h4 id="动作管理"><a href="#动作管理" class="headerlink" title="动作管理"></a>动作管理</h4><h4 id="事件管理"><a href="#事件管理" class="headerlink" title="事件管理"></a>事件管理</h4><h3 id="RN-Layout"><a href="#RN-Layout" class="headerlink" title="RN Layout"></a>RN Layout</h3><ul>
+<li>Flex Box</li>
+<li>Streaming View Hierarchy<ul>
+<li>AspectFrameLayout</li>
+<li>CameraPreviewFrameView</li>
+<li>GLSurfaceView</li>
+<li>Focus View</li>
+</ul>
+</li>
+</ul>
+<h3 id="腾讯云互动直播"><a href="#腾讯云互动直播" class="headerlink" title="腾讯云互动直播"></a>腾讯云互动直播</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/solution/ilvb">https://cloud.tencent.com/solution/ilvb</a></li>
+</ul>
+<h2 id="原生端和JS的通信"><a href="#原生端和JS的通信" class="headerlink" title="原生端和JS的通信"></a>原生端和JS的通信</h2><ul>
+<li>JavaScriptCore 桥阶层 - 翻译</li>
+<li>RN对通信做了封装</li>
+</ul>
+<h3 id="从RN向JS传递原生信息"><a href="#从RN向JS传递原生信息" class="headerlink" title="从RN向JS传递原生信息"></a>从RN向JS传递原生信息</h3><ul>
+<li>调用原生模块获取信息</li>
+<li>页面初始props</li>
+<li>原生端发送事件进行信息传递</li>
+<li>原生端设置JS全局变量</li>
+</ul>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通信效率 |<span class="string"> 时机问题 </span>|<span class="string"> 多入口场景 </span>|<span class="string"> 影响调试</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="JavaScriptCore"><a href="#JavaScriptCore" class="headerlink" title="JavaScriptCore"></a>JavaScriptCore</h3><h2 id="Core-Basic"><a href="#Core-Basic" class="headerlink" title="Core - Basic"></a>Core - Basic</h2><h3 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h3><h3 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h3><h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><ul>
+<li>state - page里面会“动”的数据</li>
+<li>state - 初选 ｜ 确定 ｜ 声明 ｜ 更新</li>
+<li>一件事情一个状态 &amp; 重复状态去除 &amp; 可计算的不是新状态</li>
+</ul>
+<h3 id="fast-refresh"><a href="#fast-refresh" class="headerlink" title="fast refresh"></a>fast refresh</h3><ul>
+<li>快速刷新 =&gt; <a target="_blank" rel="noopener" href="https://reactnative.dev/blog/2019/09/18/version-0.61#fast-refresh">https://reactnative.dev/blog/2019/09/18/version-0.61#fast-refresh</a></li>
+<li><code>&#123;&#125; !== &#123;&#125;</code></li>
+<li>基础的模块替换功能 - 组件级别的强制刷新</li>
+<li>复用组件和状态<ul>
+<li>编译时-修改组件的注册方式</li>
+<li>运行时-“代理”的方式管理新旧组件的切换</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="rn-lib"><a href="#rn-lib" class="headerlink" title="rn - lib"></a>rn - lib</h2><ul>
+<li>可腾讯云文档里面搜，他们支持的sdk</li>
+<li>bonree也支持<h4 id="podspec"><a href="#podspec" class="headerlink" title=".podspec"></a>.podspec</h4></li>
+<li>CocoaPods</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        CSSModules-React-Vue - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Usages"><span class="toc-text">React - Usages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-Usages"><span class="toc-text">Vue - Usages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-moudles"><span class="toc-text">CSS moudles</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#styled-components"><span class="toc-text">styled-components</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-text">CSS模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-CSS%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-text">React CSS模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS-module"><span class="toc-text">CSS module</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS-module%E4%BD%BF%E7%94%A8tips"><span class="toc-text">CSS module使用tips</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS-in-JS"><span class="toc-text">CSS in JS</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        CSSModules-React-Vue
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-29 18:25:57</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>最近做新项目，涉及多个团队，查问题的时候用上了我的样式搜索定位大法，诶，搜不到，哦，原来搜的关键词不准确，拉了代码瞅瞅，React组用了 CSS Modules</p>
+</blockquote>
+<h2 id="React-Usages"><a href="#React-Usages" class="headerlink" title="React - Usages"></a>React - Usages</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/camsong/blog/issues/5">https://github.com/camsong/blog/issues/5</a></p>
+</li>
+<li><p>react-app-rewired 插件支持</p>
+</li>
+<li><p>creat-react-app , webpack css-loader 里面 modules 进行设置</p>
+</li>
+</ul>
+<h2 id="Vue-Usages"><a href="#Vue-Usages" class="headerlink" title="Vue - Usages"></a>Vue - Usages</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95">https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95</a></li>
+<li>看上面文档来就行</li>
+<li>现在项目脚手架默认生成配置用的是scoped CSS</li>
+</ul>
+<h2 id="CSS-moudles"><a href="#CSS-moudles" class="headerlink" title="CSS moudles"></a>CSS moudles</h2><ul>
+<li>原理：class名 hash值</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/css-modules/css-modules">https://github.com/css-modules/css-modules</a><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Webpack&#x27;s css-loader in module mode replaces every local-scoped identifier <span class="keyword">with</span> a <span class="keyword">global</span> <span class="keyword">unique</span> <span class="keyword">name</span> (hashed <span class="keyword">from</span> <span class="keyword">module</span> <span class="keyword">name</span> <span class="keyword">and</span> <span class="keyword">local</span> identifier <span class="keyword">by</span> <span class="keyword">default</span>) <span class="keyword">and</span> exports the used identifier.</span><br></pre></td></tr></table></figure>
+composition 组合 compose 嵌套</li>
+<li>BEM<br>Block  Element  Modifier =&gt; 模块名 节点名 节点状态 =&gt; name local hash:base64</li>
+<li>公用样式｜局部化</li>
+</ul>
+<h3 id="styled-components"><a href="#styled-components" class="headerlink" title="styled-components"></a>styled-components</h3><ul>
+<li>Visual primitives for the component age.<br>Use the best bits of ES6 and CSS to style your apps without stress</li>
+<li>适合React - all in js</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/styled-components/awesome-styled-components">https://github.com/styled-components/awesome-styled-components</a></li>
+<li>如果要用iconfont的话，需要处理iconfont对应的文件</li>
+</ul>
+<h2 id="CSS模块化"><a href="#CSS模块化" class="headerlink" title="CSS模块化"></a>CSS模块化</h2><ul>
+<li>防止全局污染，样式覆盖</li>
+<li>命名混乱</li>
+<li>CSSS代码冗余<h3 id="React-CSS模块化"><a href="#React-CSS模块化" class="headerlink" title="React CSS模块化"></a>React CSS模块化</h3></li>
+<li>CSS module</li>
+<li>css in js</li>
+</ul>
+<h4 id="CSS-module"><a href="#CSS-module" class="headerlink" title="CSS module"></a>CSS module</h4><ul>
+<li>css-loader配置</li>
+<li>自定义命名规则</li>
+<li>全局变量</li>
+<li>组合样式</li>
+<li>配置less和sass</li>
+<li>全局或者公共组件样式，用.css文件</li>
+<li>页面和业务组件，用scss｜less</li>
+<li>配合classNames库，实现更灵活的动态添加类名</li>
+</ul>
+<h4 id="CSS-module使用tips"><a href="#CSS-module使用tips" class="headerlink" title="CSS module使用tips"></a>CSS module使用tips</h4><ul>
+<li>仅用 class 类名定义 css ，不使用其他选择器</li>
+<li>不要嵌套 css .a{ .b{} } 或者重叠 css .a .b {} </li>
+</ul>
+<h4 id="CSS-in-JS"><a href="#CSS-in-JS" class="headerlink" title="CSS in JS"></a>CSS in JS</h4><ul>
+<li>CSS IN JS 本质上 - 用 js 中对象形式保存样式</li>
+<li>拓展运算符实现样式继承</li>
+<li>style-components - 基于 props 动态添加样式 - <a target="_blank" rel="noopener" href="https://styled-components.com/docs/">https://styled-components.com/docs/</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

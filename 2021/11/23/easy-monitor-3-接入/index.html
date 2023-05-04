@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        easy-monitor-3-接入 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Doc"><span class="toc-text">Doc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pre"><span class="toc-text">pre</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2"><span class="toc-text">服务部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prometheus"><span class="toc-text">prometheus</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%82%A8"><span class="toc-text">转储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log-dir"><span class="toc-text">log_dir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5"><span class="toc-text">一次内存泄漏问题排查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-k8s"><span class="toc-text">docker + k8s</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        easy-monitor-3-接入
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-23 15:34:01</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="Doc"><a href="#Doc" class="headerlink" title="Doc"></a>Doc</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/hyj1991/easy-monitor/deployment">https://www.yuque.com/hyj1991/easy-monitor/deployment</a></li>
+</ul>
+<h3 id="pre"><a href="#pre" class="headerlink" title="pre"></a>pre</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server">https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server</a><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER<span class="built_in"> USER </span><span class="string">&#x27;root&#x27;</span> IDENTIFIED WITH mysql_native_password BY <span class="string">&#x27;password&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="服务部署"><a href="#服务部署" class="headerlink" title="服务部署"></a>服务部署</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>repo.mysql.com<span class="regexp">//my</span>sql80-community-release-el8-<span class="number">1</span>.noarch.rpm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql:</span><br><span class="line"></span><br><span class="line">yum -y install nodejs</span><br><span class="line">npm install -g n</span><br><span class="line">yum install git -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目可以fork一下，把config.prod.js加一下，推上去</span></span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/X-Profiler/</span>xprofiler-console</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/X-Profiler/</span>xtransit-manager</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/X-Profiler/</span>xtransit-server</span><br><span class="line"></span><br><span class="line">wget https:<span class="regexp">//</span>repo.mysql.com<span class="regexp">//my</span>sql80-community-release-el8-<span class="number">1</span>.noarch.rpm</span><br><span class="line">rpm -ivh mysql80-community-release-el8-<span class="number">1</span>.noarch.rpm</span><br><span class="line">yum install mysql-server</span><br><span class="line"></span><br><span class="line">https:<span class="regexp">//</span>dev.mysql.com<span class="regexp">/doc/</span>refman<span class="regexp">/8.0/</span>en/linux-installation-yum-repo.html</span><br><span class="line"></span><br><span class="line">service mysqld restart</span><br><span class="line"></span><br><span class="line">grep <span class="string">&#x27;temporary password&#x27;</span> <span class="regexp">/var/</span>log/mysqld.log</span><br><span class="line">mysql -uroot -p</span><br><span class="line">alter user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified by <span class="string">&#x27;xxxxxxxxx&#x27;</span>;</span><br><span class="line"></span><br><span class="line">根据centos是<span class="number">7</span>还是<span class="number">8</span>安装对应的mysql,如<span class="number">80</span>的安装在centos7上面就会出现问题</span><br><span class="line"></span><br><span class="line"><span class="comment"># /usr/bin/mysqladmin -u root password &#x27;xxxx&#x27;</span></span><br><span class="line">mysql -h localhost -u root -p</span><br><span class="line">&gt; create database xprofiler_logs;</span><br><span class="line">&gt; create database xprofiler_console;</span><br><span class="line"></span><br><span class="line">cd xtrainsit-console/db</span><br><span class="line">mysql -uroot -pxxxxxxxxx; -h127.<span class="number">0.0</span>.<span class="number">1</span> -D <span class="string">&#x27;xprofiler_console&#x27;</span> &lt; ./init.sql</span><br><span class="line"></span><br><span class="line">cd xtrainsit-manager/db</span><br><span class="line">mysql -uroot -pxxxxxxxxx -h127.<span class="number">0.0</span>.<span class="number">1</span> -D <span class="string">&#x27;xprofiler_logs&#x27;</span> &lt; ./init.sql</span><br><span class="line">mysql -uroot -pxxxxxxxxx -h127.<span class="number">0.0</span>.<span class="number">1</span> -D <span class="string">&#x27;xprofiler_logs&#x27;</span> &lt; ./date.sql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">redis</span><br><span class="line"></span><br><span class="line">wget http:<span class="regexp">//</span>download.redis.io<span class="regexp">/releases/</span>redis-<span class="number">5.0</span>.<span class="number">8</span>.tar.gz</span><br><span class="line">tar -xvf redis-<span class="number">5.0</span>.<span class="number">8</span>.tar.gz</span><br><span class="line">mv redis-<span class="number">5.0</span>.<span class="number">8</span> <span class="regexp">/usr/</span>local</span><br><span class="line">cd <span class="regexp">/usr/</span>local<span class="regexp">/redis-5.0.8/</span></span><br><span class="line">yum list gcc</span><br><span class="line">yum list tcl</span><br><span class="line">yum install gcc <span class="comment"># 版本</span></span><br><span class="line">yum install tcl <span class="comment"># 版本</span></span><br><span class="line">make MALLOC=libc</span><br><span class="line">make test</span><br><span class="line">cd src &amp;&amp; make install</span><br><span class="line">vim redis.conf <span class="comment"># daemon yes</span></span><br><span class="line">.<span class="regexp">/src/</span>redis-server ./redis.conf</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">nginx 增加域名</span><br><span class="line">emconsole.xxx.cn</span><br><span class="line"><span class="number">172.111</span>.<span class="number">111.111</span> emconsole.xxx.cn</span><br><span class="line"></span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/tengine/</span>sbin/nginx -s reload</span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/tengine/</span>sbin/nginx -t </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">进入到gitlab各个项目下面，npm start</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a>prometheus</h2><ul>
+<li>我们这边机器的监控是运维团队基于prometheus做的</li>
+<li>目前Prometheus是按照k8s集群部署的, 每一个K8s集群都由独立的Prometheus来监控, (Prometheus部署在当前集群中)</li>
+<li><a target="_blank" rel="noopener" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a></li>
+<li>各个node运行node_exporter供prometheus采集数据，运行consul客户端注册节点信息向consul服务端，prometheus server从consul服务端获取所有的node节点，通过prometheus-es-adapter将数据持久化到es。配置alertmanager告警规则触发告警，监控指标图表通过grafana来查看</li>
+<li>jdk    ｜ go ｜node-exporter ｜ prometheus-es-adapter    ｜prometheus ｜ alertmanager｜ consul ｜elasticsearch ｜ kibana ｜grafana    </li>
+<li>基于Prometheus 和 thanos 进一步增加了异常检测机制.  基于机器学习对阈值进行动态检测</li>
+</ul>
+<h3 id="转储"><a href="#转储" class="headerlink" title="转储"></a>转储</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">connect</span> ECONNREFUSED <span class="number">127.0.0.1:8443</span>, POST http://<span class="number">127.0.0.1:8443</span>/xapi/upload_from_xtransit?fileId=<span class="number">4</span>&amp;fileType=heapsnapshot&amp;nonce=<span class="number">74904800742</span>&amp;timestamp=<span class="number">1646389590491</span>&amp;signature=a<span class="number">331</span>a<span class="number">7</span>a<span class="number">4</span>fe<span class="number">28</span>cdd<span class="number">275</span>bfa<span class="number">0</span>df<span class="number">3</span>d<span class="number">937</span>d<span class="number">9</span>e<span class="number">4</span>ca<span class="number">40</span>c<span class="number">6</span>a -<span class="number">1</span> (connected: false, keepalive socket: false, socketHandledRequests: <span class="number">1</span>, socketHandledResponses: <span class="number">0</span>) headers: &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>config.xprofilerConsole = ‘xxx’;</li>
+<li>这部分会提供给应用端，在调用转储的时候，应用端上传文件时候会请求 <figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">url</span> = <span class="string">`<span class="subst">$&#123;server&#125;</span>/xapi/upload_from_xtransit?<span class="subst">$&#123;qs.stringify(&#123; fileId, fileType, nonce, timestamp, signature &#125;</span>)&#125;`</span>;</span><br></pre></td></tr></table></figure></li>
+<li>这个里面的server，就从xprofilerConsole来，所以正式环境部署的时候，要给到能连通的url</li>
+<li>分析策略，看给的各个应用服务的流程图，分析原因</li>
+</ul>
+<h3 id="log-dir"><a href="#log-dir" class="headerlink" title="log_dir"></a>log_dir</h3><p>性能分析文件会比较大，尽量不要放在会太影响memory的位置</p>
+<h3 id="一次内存泄漏问题排查"><a href="#一次内存泄漏问题排查" class="headerlink" title="一次内存泄漏问题排查"></a>一次内存泄漏问题排查</h3><ul>
+<li>基于puppeteer的一个转svg的node服务</li>
+<li>做压力测的时候，间隔时间gc,gc之后内存会往上涨</li>
+<li>借助easy-monitor3, 堆快照，发现TCP -&gt; Socket -&gt; WebSocket 是泄漏点</li>
+<li>Search具体的，发现是WS</li>
+<li>在package-lock里面搜ws ,发现被puppeteer依赖</li>
+<li>这个时候查处理puppeteer部分的代码，发现有代码处理逻辑上，会错误的建立connect（对API使用有问题）</li>
+<li>让处理了下这部分代码，解决问题</li>
+</ul>
+<h3 id="docker-k8s"><a href="#docker-k8s" class="headerlink" title="docker + k8s"></a>docker + k8s</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/hyj1991/easy-monitor/advance_docker">https://www.yuque.com/hyj1991/easy-monitor/advance_docker</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

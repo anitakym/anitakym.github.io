@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Android-design-notes - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-OS"><span class="toc-text">Android OS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82"><span class="toc-text">应用框架层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Binder-IPC"><span class="toc-text">Binder IPC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="toc-text">系统服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E6%8A%BD%E8%B1%A1%E5%B1%82"><span class="toc-text">硬件抽象层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B8"><span class="toc-text">Linux内核</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IOS"><span class="toc-text">IOS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82-Cocoa-touch-application-layer"><span class="toc-text">应用框架层 Cocoa touch(application layer)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%9B%BE%E5%83%8F%E5%B1%82-media-layer"><span class="toc-text">图形图像层 media layer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%9C%8D%E5%8A%A1%E5%B1%82-core-services"><span class="toc-text">核心服务层 core services</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E6%A0%B8%E5%B1%82-core-os"><span class="toc-text">内核层 core os</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-vs-IOS"><span class="toc-text">Android vs IOS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter"><span class="toc-text">Flutter</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#UI%E6%A1%86%E6%9E%B6%E5%B1%82"><span class="toc-text">UI框架层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E6%93%8E%E5%B1%82"><span class="toc-text">引擎层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E5%B1%82"><span class="toc-text">嵌入层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%9A%84%E6%9E%B6%E6%9E%84%E6%89%8B%E6%AE%B5"><span class="toc-text">小的架构手段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#GoF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">GoF设计模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MVC"><span class="toc-text">MVC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MVP"><span class="toc-text">MVP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MVVM"><span class="toc-text">MVVM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AOP"><span class="toc-text">AOP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#loC"><span class="toc-text">loC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E7%9A%84%E6%9E%B6%E6%9E%84%E6%89%8B%E6%AE%B5"><span class="toc-text">大的架构手段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#summary"><span class="toc-text">summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%83%BD%E5%8A%9B"><span class="toc-text">基础能力</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%84%E8%83%BD%E5%8A%9B%E5%BB%BA%E8%AE%BE"><span class="toc-text">常规能力建设</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%EF%BC%88SPI%EF%BC%89"><span class="toc-text">服务发现（SPI）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E8%83%BD%E5%8A%9B"><span class="toc-text">路由能力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E7%A0%81%E5%A2%9E%E5%BC%BA%E8%83%BD%E5%8A%9B"><span class="toc-text">字节码增强能力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%83%BD%E5%8A%9B"><span class="toc-text">网络能力</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E7%AB%AF%E8%83%BD%E5%8A%9B%E5%BB%BA%E8%AE%BE"><span class="toc-text">跨端能力建设</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Web%E5%AE%B9%E5%99%A8"><span class="toc-text">Web容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSBridge"><span class="toc-text">JSBridge</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Flutter-1"><span class="toc-text">Flutter</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UI%E7%9B%B8%E5%85%B3%E8%83%BD%E5%8A%9B%E5%BB%BA%E8%AE%BE"><span class="toc-text">UI相关能力建设</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80UI%E6%8E%A7%E4%BB%B6"><span class="toc-text">基础UI控件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F"><span class="toc-text">夜间模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Native%E5%AE%B9%E5%99%A8"><span class="toc-text">Native容器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E6%A0%88%E7%AA%81%E7%A0%B4"><span class="toc-text">技术栈突破</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E9%BB%98%E7%81%B0%E5%BA%A6%E8%83%BD%E5%8A%9B"><span class="toc-text">静默灰度能力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E6%8A%80%E6%9C%AF%E9%A2%84%E7%A0%94"><span class="toc-text">新技术预研</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%8C%96"><span class="toc-text">标准化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E8%8C%83"><span class="toc-text">规范</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E7%BA%A6-%E8%80%83%E8%AF%95"><span class="toc-text">公约&#x2F;考试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%85%AC%E7%A4%BA"><span class="toc-text">数据公示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E7%A8%8B%E7%B4%A0%E5%85%BB%E5%B0%8F%E6%B4%BB%E5%8A%A8"><span class="toc-text">工程素养小活动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7"><span class="toc-text">工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E8%B5%84%E6%BA%90"><span class="toc-text">重复资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E6%96%87%E4%BB%B6%E3%80%81%E5%A4%A7%E5%87%BD%E6%95%B0%E3%80%81%E5%9C%88%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">大文件、大函数、圈复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E6%A3%80%E6%B5%8B"><span class="toc-text">依赖检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8F%E8%A7%82%E6%8C%87%E6%A0%87"><span class="toc-text">宏观指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%94%A8%E4%BB%A3%E7%A0%81"><span class="toc-text">无用代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84"><span class="toc-text">工程架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">物理结构优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E7%A8%8B%E7%BB%84%E7%BB%87%E6%A8%A1%E5%BC%8F"><span class="toc-text">工程组织模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%E6%B2%BB%E7%90%86"><span class="toc-text">仓库治理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%AB%AF%E5%B7%A5%E7%A8%8B%E4%B8%80%E8%87%B4%E6%80%A7"><span class="toc-text">多端工程一致性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E6%B2%BB%E7%90%86"><span class="toc-text">组件治理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%BE%9D%E8%B5%96%E6%B2%BB%E7%90%86"><span class="toc-text">组件依赖治理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%86%85%E6%A0%87%E5%87%86%E5%8C%96%E6%94%B9%E9%80%A0"><span class="toc-text">组件内标准化改造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%AB%AF%E7%BB%84%E4%BB%B6%E8%83%BD%E5%8A%9B%E7%BB%9F%E4%B8%80"><span class="toc-text">多端组件能力统一</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%B2%BB%E7%90%86"><span class="toc-text">插件治理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E9%97%B4%E4%BE%9D%E8%B5%96%E6%B2%BB%E7%90%86"><span class="toc-text">插件间依赖治理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E8%83%BD%E5%8A%9B%E5%BB%BA%E8%AE%BE"><span class="toc-text">插件能力建设</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%A0%87%E5%87%86%E5%8C%96%E6%94%B9%E9%80%A0"><span class="toc-text">插件标准化改造</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B2%BB%E7%90%86"><span class="toc-text">全局复杂度治理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E5%BB%BA%E8%AE%BE"><span class="toc-text">工具建设</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E9%87%8F%E9%97%AE%E9%A2%98%E6%B6%88%E8%B4%B9"><span class="toc-text">存量问题消费</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E5%8A%A3%E5%8C%96%E5%BB%BA%E8%AE%BE"><span class="toc-text">防劣化建设</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E6%9E%B6%E6%9E%84"><span class="toc-text">业务架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E8%80%A6"><span class="toc-text">解耦</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E4%B8%9A%E5%8A%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BE%9D%E8%B5%96"><span class="toc-text">多业务之间的依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%B8%8D%E5%90%88%E7%90%86%E4%BE%9D%E8%B5%96"><span class="toc-text">组件之间的不合理依赖</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BC%98%E5%8C%96"><span class="toc-text">逻辑优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0%E4%BC%98%E5%8C%96"><span class="toc-text">业务设计和实现优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%80%BB%E8%BE%91%E4%BC%98%E5%8C%96"><span class="toc-text">组件逻辑优化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%8F%B0%E5%8C%96"><span class="toc-text">核心能力中台化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%86%E9%A2%91"><span class="toc-text">视频</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E6%96%87"><span class="toc-text">图文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Feed"><span class="toc-text">Feed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7"><span class="toc-text">内容生产</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-text">目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E5%9F%BA%E5%BB%BA"><span class="toc-text">技术基建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-1"><span class="toc-text">目标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E4%B8%9A%E5%8A%A1"><span class="toc-text">多个业务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-2"><span class="toc-text">目标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E4%B8%9A%E5%8A%A1"><span class="toc-text">单个业务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-3"><span class="toc-text">目标</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Android-design-notes
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-01-11 17:39:00</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>手段<br>业务抽象<br>分而治之<br>标准规范<br>组织管理</p>
+<p>演进<br>解决问题<br>保持重构<br>迭代升级<br>应对衰退</p>
+<p>公共问题</p>
+<ul>
+<li>编程思想</li>
+<li>问题分解</li>
+<li>领域建模</li>
+<li>服务治理</li>
+<li>流程机制</li>
+<li>架构标准</li>
+</ul>
+<p>业务发展 - 越来越复杂 - 必然趋势</p>
+<ul>
+<li><p>理解成本变高</p>
+<ul>
+<li>宏大的规模不好理解</li>
+<li>复杂的结构不好理解</li>
+</ul>
+</li>
+<li><p>预测难度变大</p>
+<ul>
+<li>业务变化</li>
+<li>技术变化</li>
+</ul>
+</li>
+</ul>
+<h2 id="Android-OS"><a href="#Android-OS" class="headerlink" title="Android OS"></a>Android OS</h2><h4 id="应用框架层"><a href="#应用框架层" class="headerlink" title="应用框架层"></a>应用框架层</h4><p>App开发者直接使用的接口层，UI的实现，数据的处理，资源的使用，都是用这一层的API</p>
+<h4 id="Binder-IPC"><a href="#Binder-IPC" class="headerlink" title="Binder IPC"></a>Binder IPC</h4><p>提供跨进程访问的能力，App可以高效的访问由系统进程暴露的能力，App进程与系统进程之间的通信是典型的C/S模型</p>
+<h4 id="系统服务"><a href="#系统服务" class="headerlink" title="系统服务"></a>系统服务</h4><p>提供窗口管理，相机，音视频等系统能力，包含各种子系统，内部逻辑很庞大，往下调用HAL层封装的硬件能力；往上通过Binder暴露可以远程调用的API</p>
+<h4 id="硬件抽象层"><a href="#硬件抽象层" class="headerlink" title="硬件抽象层"></a>硬件抽象层</h4><p>屏蔽底层不同驱动的差异，使得系统服务层可以快速适配到不同的硬件设备</p>
+<h4 id="Linux内核"><a href="#Linux内核" class="headerlink" title="Linux内核"></a>Linux内核</h4><p>CPU、内存、唤醒服务等重要的驱动实现都给予该层操作系统等核心实现</p>
+<h2 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h2><h4 id="应用框架层-Cocoa-touch-application-layer"><a href="#应用框架层-Cocoa-touch-application-layer" class="headerlink" title="应用框架层 Cocoa touch(application layer)"></a>应用框架层 Cocoa touch(application layer)</h4><ul>
+<li>EventKit</li>
+<li>GameKit</li>
+<li>MapKit</li>
+<li>PushKit</li>
+</ul>
+<h4 id="图形图像层-media-layer"><a href="#图形图像层-media-layer" class="headerlink" title="图形图像层 media layer"></a>图形图像层 media layer</h4><ul>
+<li>ULKit</li>
+<li>Animation</li>
+<li>Graphics</li>
+<li>Images</li>
+</ul>
+<h4 id="核心服务层-core-services"><a href="#核心服务层-core-services" class="headerlink" title="核心服务层 core services"></a>核心服务层 core services</h4><ul>
+<li>Location</li>
+<li>Motion</li>
+<li>Health</li>
+<li>GPS</li>
+<li>Telephony</li>
+<li>Foundation</li>
+</ul>
+<h4 id="内核层-core-os"><a href="#内核层-core-os" class="headerlink" title="内核层 core os"></a>内核层 core os</h4><ul>
+<li>Bluetooth</li>
+<li>Security</li>
+<li>Accessories</li>
+</ul>
+<h3 id="Android-vs-IOS"><a href="#Android-vs-IOS" class="headerlink" title="Android vs IOS"></a>Android vs IOS</h3><p>Activity  ViewController<br>Intents   Segues/ViewControllers<br>Service   “Backgrond Mode”<br>ContentProvider   CoreData<br>Layouts   Storyboards and scenes</p>
+<h2 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h2><h4 id="UI框架层"><a href="#UI框架层" class="headerlink" title="UI框架层"></a>UI框架层</h4><p>提供不同样式的组件和动画，声明式UI，Dart作为编程语言，同时支持JIT和AOT</p>
+<h4 id="引擎层"><a href="#引擎层" class="headerlink" title="引擎层"></a>引擎层</h4><p>将上层定义的UI树转换成屏幕像素，提供平台调用接口和Dart虚拟机</p>
+<h4 id="嵌入层"><a href="#嵌入层" class="headerlink" title="嵌入层"></a>嵌入层</h4><p>Flutter引擎需嵌入不同的平台</p>
+<ul>
+<li>架构设计是为了解决特定领域不同发展阶段的业务问题</li>
+<li>不同领域的架构有明显的技术差异，但是也有相似性</li>
+<li>架构要面临技术挑战，还要应对组织业务膨胀的熵增</li>
+<li>移动端需要利用有限的设备资源设计符合小屏幕的架构</li>
+</ul>
+<h3 id="小的架构手段"><a href="#小的架构手段" class="headerlink" title="小的架构手段"></a>小的架构手段</h3><h4 id="GoF设计模式"><a href="#GoF设计模式" class="headerlink" title="GoF设计模式"></a>GoF设计模式</h4><h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h4><ul>
+<li>View和Controller容易膨胀</li>
+<li>View和Model没有完全分离<h4 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h4></li>
+<li>View和Model完全分离，可以修改试图而不影响模型，交互都发生在Presenter</li>
+<li>Presenter与View的交互是通过接口来进行的，方便单元测试</li>
+<li>页面逻辑复杂的话，响应的接口也会变多，增加维护成本<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4></li>
+<li>ViewModel只负责处理和提供数据</li>
+<li>ViewModel里面只包含数据和业务逻辑，没有UI，方便单元测试</li>
+<li>数据绑定使得程序较难调试，因为数据都是自动更新到UI</li>
+</ul>
+<h4 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h4><ul>
+<li>OOP<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">类：代码以函数（<span class="function"><span class="keyword">Method</span>）和字段（<span class="title">Field</span>）的形式封装在类中</span></span><br><span class="line"><span class="function">函数：定义函数签名和函数体</span></span><br><span class="line"><span class="function">函数题：定义函数的执行逻辑</span></span><br><span class="line"><span class="function">编译器：将源代码转换成可执行代码</span></span><br></pre></td></tr></table></figure></li>
+<li>AOP <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">类：代码以切点（PointCuts），属性（<span class="keyword">Attributes</span>）、植入（Advice）的形式封装在类中</span><br><span class="line">切点：定义植入（Advice）的锚点</span><br><span class="line">植入：定义需要植入的逻辑</span><br><span class="line">植入器：将植入逻辑插入到锚点处</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="loC"><a href="#loC" class="headerlink" title="loC"></a>loC</h4><ul>
+<li>直接依赖：一个对象A要完成其功能，通常需要依赖于其他对象B，C等，其具体的实现方式就是在对象A中构建（new）其所依赖的对象B、C等，这就相当于A控制了它所依赖的对象B、C</li>
+<li>控制反转：打破A直接控制B这层关系，B对象的生命周期交由loC容器来控制，A不用再去寻找和初始化（控制）其所依赖的B、C了，只用等着loC容器的投喂就可以</li>
+<li>实例SPI</li>
+</ul>
+<h3 id="大的架构手段"><a href="#大的架构手段" class="headerlink" title="大的架构手段"></a>大的架构手段</h3><ul>
+<li>单体架构</li>
+<li>分离架构</li>
+<li>分层架构</li>
+<li>服务化架构<ul>
+<li>需要约定模块可以对外提供的能力</li>
+<li>模块之间需要遵循相同的调用方式</li>
+<li>旧的模块需要按照相同的标准来改造</li>
+<li>使用方不应该直接依赖于实现方</li>
+</ul>
+</li>
+<li>事件驱动架构</li>
+<li>宿主-插件架构</li>
+<li>微内核架构</li>
+<li>微服务架构</li>
+<li>领域驱动架构</li>
+</ul>
+<h2 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h2><ul>
+<li>不同架构手段对共同目标是高内聚低耦合</li>
+<li>找到适合业务场景的脚骨</li>
+<li>一个复杂系统是多种架构模型的组合体</li>
+</ul>
+<blockquote>
+<p>定义问题 确定架构 方案落地 结果复盘</p>
+</blockquote>
+<blockquote>
+<p>认清问题 - 分类 &amp;&amp; 分级</p>
+</blockquote>
+<h2 id="基础能力"><a href="#基础能力" class="headerlink" title="基础能力"></a>基础能力</h2><h3 id="常规能力建设"><a href="#常规能力建设" class="headerlink" title="常规能力建设"></a>常规能力建设</h3><h4 id="服务发现（SPI）"><a href="#服务发现（SPI）" class="headerlink" title="服务发现（SPI）"></a>服务发现（SPI）</h4><ul>
+<li>基础能力服务化是一个重要的解耦手段<h4 id="路由能力"><a href="#路由能力" class="headerlink" title="路由能力"></a>路由能力</h4></li>
+<li>统一schema信息管理，规范多端路由框架的使用接口<h4 id="字节码增强能力"><a href="#字节码增强能力" class="headerlink" title="字节码增强能力"></a>字节码增强能力</h4></li>
+<li>加强字节码增强技术的易用性，同时避免滥用<h4 id="网络能力"><a href="#网络能力" class="headerlink" title="网络能力"></a>网络能力</h4></li>
+</ul>
+<h3 id="跨端能力建设"><a href="#跨端能力建设" class="headerlink" title="跨端能力建设"></a>跨端能力建设</h3><h4 id="Web容器"><a href="#Web容器" class="headerlink" title="Web容器"></a>Web容器</h4><ul>
+<li>建设更好的web容器生态，为业务提供容易接入，性能可靠，灵活性高的容器组件<h4 id="JSBridge"><a href="#JSBridge" class="headerlink" title="JSBridge"></a>JSBridge</h4></li>
+<li>统一多套JSB框架，多端暴露一致的Native能力</li>
+</ul>
+<h4 id="Flutter-1"><a href="#Flutter-1" class="headerlink" title="Flutter"></a>Flutter</h4><h3 id="UI相关能力建设"><a href="#UI相关能力建设" class="headerlink" title="UI相关能力建设"></a>UI相关能力建设</h3><h4 id="基础UI控件"><a href="#基础UI控件" class="headerlink" title="基础UI控件"></a>基础UI控件</h4><ul>
+<li>保持基础的UI控件在多端的一致性<h4 id="夜间模式"><a href="#夜间模式" class="headerlink" title="夜间模式"></a>夜间模式</h4></li>
+<li>夜间模式能提升图文场景下的用户体验<h4 id="Native容器"><a href="#Native容器" class="headerlink" title="Native容器"></a>Native容器</h4></li>
+<li>Native容器的统一有利于代码复用和页面基础能力建设<h3 id="技术栈突破"><a href="#技术栈突破" class="headerlink" title="技术栈突破"></a>技术栈突破</h3><h4 id="静默灰度能力"><a href="#静默灰度能力" class="headerlink" title="静默灰度能力"></a>静默灰度能力</h4></li>
+<li>显著提升版本升级率，加快需求验证<h4 id="新技术预研"><a href="#新技术预研" class="headerlink" title="新技术预研"></a>新技术预研</h4></li>
+<li>保持技术热情，探寻更好的解决方案</li>
+</ul>
+<h2 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h2><h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><ul>
+<li>树立共同的认知<h4 id="公约-考试"><a href="#公约-考试" class="headerlink" title="公约/考试"></a>公约/考试</h4><h4 id="数据公示"><a href="#数据公示" class="headerlink" title="数据公示"></a>数据公示</h4><h4 id="工程素养小活动"><a href="#工程素养小活动" class="headerlink" title="工程素养小活动"></a>工程素养小活动</h4></li>
+</ul>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ul>
+<li>保障规范的落地<h4 id="重复资源"><a href="#重复资源" class="headerlink" title="重复资源"></a>重复资源</h4><h4 id="大文件、大函数、圈复杂度"><a href="#大文件、大函数、圈复杂度" class="headerlink" title="大文件、大函数、圈复杂度"></a>大文件、大函数、圈复杂度</h4><h4 id="依赖检测"><a href="#依赖检测" class="headerlink" title="依赖检测"></a>依赖检测</h4></li>
+</ul>
+<h4 id="宏观指标"><a href="#宏观指标" class="headerlink" title="宏观指标"></a>宏观指标</h4><ul>
+<li>重复率</li>
+<li>组件数</li>
+</ul>
+<h4 id="无用代码"><a href="#无用代码" class="headerlink" title="无用代码"></a>无用代码</h4><ul>
+<li>无用setting</li>
+<li>未调用的函数<h2 id="工程架构"><a href="#工程架构" class="headerlink" title="工程架构"></a>工程架构</h2><h3 id="物理结构优化"><a href="#物理结构优化" class="headerlink" title="物理结构优化"></a>物理结构优化</h3></li>
+<li>良好的工程结构-开发的第一印象<h4 id="工程组织模式"><a href="#工程组织模式" class="headerlink" title="工程组织模式"></a>工程组织模式</h4></li>
+<li>提供简洁高效的工程组织关系<h4 id="仓库治理"><a href="#仓库治理" class="headerlink" title="仓库治理"></a>仓库治理</h4></li>
+<li>保持仓库层级和数量在标准范围<h4 id="多端工程一致性"><a href="#多端工程一致性" class="headerlink" title="多端工程一致性"></a>多端工程一致性</h4></li>
+<li>保持多端在公共仓库和组件使用上的一致性<h3 id="组件治理"><a href="#组件治理" class="headerlink" title="组件治理"></a>组件治理</h3></li>
+<li>目的：更新技术栈，服务多元业务<h4 id="组件依赖治理"><a href="#组件依赖治理" class="headerlink" title="组件依赖治理"></a>组件依赖治理</h4></li>
+<li>消费和拦截不合理的组件间以来<h4 id="组件内标准化改造"><a href="#组件内标准化改造" class="headerlink" title="组件内标准化改造"></a>组件内标准化改造</h4></li>
+<li>保持每个组件职责清晰<h4 id="多端组件能力统一"><a href="#多端组件能力统一" class="headerlink" title="多端组件能力统一"></a>多端组件能力统一</h4></li>
+<li>抹平不必要的组件多端差异</li>
+</ul>
+<h3 id="插件治理"><a href="#插件治理" class="headerlink" title="插件治理"></a>插件治理</h3><ul>
+<li>持续提升插件这项重度使用的动态化能力，能够让业务迭代更为灵活<h4 id="插件间依赖治理"><a href="#插件间依赖治理" class="headerlink" title="插件间依赖治理"></a>插件间依赖治理</h4><h4 id="插件能力建设"><a href="#插件能力建设" class="headerlink" title="插件能力建设"></a>插件能力建设</h4></li>
+<li>完善插件相关各项基础能力<h4 id="插件标准化改造"><a href="#插件标准化改造" class="headerlink" title="插件标准化改造"></a>插件标准化改造</h4></li>
+<li>规范多端插件调用和启动方式<h3 id="全局复杂度治理"><a href="#全局复杂度治理" class="headerlink" title="全局复杂度治理"></a>全局复杂度治理</h3><h4 id="工具建设"><a href="#工具建设" class="headerlink" title="工具建设"></a>工具建设</h4></li>
+<li>完善有利于代码复杂度问题消费的工具<h4 id="存量问题消费"><a href="#存量问题消费" class="headerlink" title="存量问题消费"></a>存量问题消费</h4></li>
+<li>持续为各业务方消费存量代码复杂度问题做好配套服务<h4 id="防劣化建设"><a href="#防劣化建设" class="headerlink" title="防劣化建设"></a>防劣化建设</h4></li>
+<li>通过规范或流程卡口帮助复杂度指标不劣化</li>
+</ul>
+<h2 id="业务架构"><a href="#业务架构" class="headerlink" title="业务架构"></a>业务架构</h2><h3 id="解耦"><a href="#解耦" class="headerlink" title="解耦"></a>解耦</h3><h4 id="多业务之间的依赖"><a href="#多业务之间的依赖" class="headerlink" title="多业务之间的依赖"></a>多业务之间的依赖</h4><ul>
+<li>提升单个业务迭代效率</li>
+<li><blockquote>
+<p>形成业务间依赖规范</p>
+</blockquote>
+<h4 id="组件之间的不合理依赖"><a href="#组件之间的不合理依赖" class="headerlink" title="组件之间的不合理依赖"></a>组件之间的不合理依赖</h4></li>
+<li>降低组件迁移成本</li>
+<li><blockquote>
+<p>形成组件间接口规范</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="逻辑优化"><a href="#逻辑优化" class="headerlink" title="逻辑优化"></a>逻辑优化</h3><h4 id="业务设计和实现优化"><a href="#业务设计和实现优化" class="headerlink" title="业务设计和实现优化"></a>业务设计和实现优化</h4><ul>
+<li>提升业务的复用率</li>
+</ul>
+<h4 id="组件逻辑优化"><a href="#组件逻辑优化" class="headerlink" title="组件逻辑优化"></a>组件逻辑优化</h4><ul>
+<li>提升组件的通用性</li>
+<li><blockquote>
+<p>减少重复代码，能力更稳定</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="核心能力中台化"><a href="#核心能力中台化" class="headerlink" title="核心能力中台化"></a>核心能力中台化</h3><h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><h4 id="图文"><a href="#图文" class="headerlink" title="图文"></a>图文</h4><h4 id="Feed"><a href="#Feed" class="headerlink" title="Feed"></a>Feed</h4><h4 id="内容生产"><a href="#内容生产" class="headerlink" title="内容生产"></a>内容生产</h4><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><h3 id="技术基建"><a href="#技术基建" class="headerlink" title="技术基建"></a>技术基建</h3><ul>
+<li>工具流程易使用</li>
+<li>品质优化可复制</li>
+<li>质量基建强约束</li>
+<li>整体架构高可用</li>
+</ul>
+<h4 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h4><ul>
+<li>平台接入工具便捷 -&gt; 持续集成流水线、埋点上报和分析平台，实验平台等</li>
+<li>本地工具随取随用 -&gt; 各类IDE插件、编译工具链等可直接用于新产品</li>
+<li>通用场景直接复用 -&gt; 诸如磁盘、内存、线程调度优化等，可直接复制迁移</li>
+<li>特殊场景沉淀基建 -&gt; 诸如启动、预加载、分片处理等，需沉淀框架能力，形成通用组件</li>
+<li>线下监测分析准入 -&gt; 代码静态检查和运行时监控、自动化测试、、内测众测等通用能力和流程</li>
+<li>线上监控止损归因 -&gt; 各类指标监控报警手段、反馈舆情收集、熔断和回滚机制</li>
+<li>工程结构简洁清新 -&gt; 架构模型、演进思路、工程要素的组织关系要做到清晰明确</li>
+<li>技术栈保持先进性 -&gt; 工具、组件、Android版本、跨端、热修等动态化能力需持续更新</li>
+</ul>
+<h3 id="多个业务"><a href="#多个业务" class="headerlink" title="多个业务"></a>多个业务</h3><ul>
+<li>业务之间低耦合</li>
+<li>扇入扇出标准化</li>
+<li>业务集合可维护</li>
+</ul>
+<h4 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h4><ul>
+<li>服务注册发现机制 -&gt; 利用中心服务管理模块进行解耦</li>
+<li>公共模块下沉机制 -&gt; 利用具备公共代码的模块进行解耦</li>
+<li>接口使用规范一致 -&gt; 多业务对外暴露的接口遵循相同的命名、参数、语义规范</li>
+<li>业务外部依赖收敛 -&gt; 最小化业务对外部的依赖，同步多业务相同依赖的版本</li>
+<li>业务复用的清单制 -&gt; 业务组合的场景很多，比如大业务拆开分层组合，需整体维护组合清单</li>
+<li>业务集合的准入制 -&gt; 大而全，但整体可复用程度低的业务稽核，不如少而精</li>
+</ul>
+<h3 id="单个业务"><a href="#单个业务" class="headerlink" title="单个业务"></a>单个业务</h3><ul>
+<li>具备好的扩展性</li>
+<li>支持傻瓜式集成</li>
+<li>宿主依赖接口化</li>
+</ul>
+<h4 id="目标-3"><a href="#目标-3" class="headerlink" title="目标"></a>目标</h4><ul>
+<li>外围能力可插拔 -&gt; 业务内部具备事件路由能力，能够将事件调度到外围</li>
+<li>扩展定制有范式 -&gt; 差异化改造可用参照已有的扩展方式，不需要魔改</li>
+<li>样例文档完备 -&gt; 可用人工支持频次的降低来衡量样例文档是否健全</li>
+<li>侵入式改造少 -&gt; 减少集成的改造点和代码量</li>
+<li>数据链路闭环 -&gt; 从外部获取数据后，尽量业务内部闭环处理，交付结果给外部</li>
+<li>默认实现兜底 -&gt; 外部依赖尽可能有兜底实现，可让业务独立可调试</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

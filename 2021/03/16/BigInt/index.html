@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        BigInt - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97%EF%BC%9A"><span class="toc-text">文档指南：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%90%A6%E5%AE%9E%E7%8E%B0%E4%BA%86%E8%BF%99%E4%B8%AAAPI"><span class="toc-text">查看浏览器是否实现了这个API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%AE%89%E5%85%A8%E6%95%B0"><span class="toc-text">最大安全数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E4%BC%B8"><span class="toc-text">延伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3"><span class="toc-text">相关</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        BigInt
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-16 17:48:15</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="文档指南："><a href="#文档指南：" class="headerlink" title="文档指南："></a>文档指南：</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/BigInt">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/BigInt</a></p>
+<p>TC39——（18年fullstack大会上，Brendan Eich介绍，会在TC39加入BigInt：这是一种新的值类型，用于处理任意精度的整数；）<br><a target="_blank" rel="noopener" href="https://tc39.es/ecma262/#sec-bigint-objects">https://tc39.es/ecma262/#sec-bigint-objects</a></p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">21.2</span><span class="number">.1</span> The BigInt Constructor</span><br><span class="line">The BigInt constructor:</span><br><span class="line"></span><br><span class="line">is %BigInt%.</span><br><span class="line">is <span class="keyword">the</span> initial <span class="built_in">value</span> <span class="keyword">of</span> <span class="keyword">the</span> <span class="string">&quot;BigInt&quot;</span> property <span class="keyword">of</span> <span class="keyword">the</span> <span class="built_in">global</span> object.</span><br><span class="line">performs <span class="keyword">a</span> type conversion when called <span class="keyword">as</span> <span class="keyword">a</span> <span class="function"><span class="keyword">function</span> <span class="title">rather</span> <span class="title">than</span> <span class="title">as</span> <span class="title">a</span> <span class="title">constructor</span>.</span></span><br><span class="line">is <span class="keyword">not</span> intended <span class="built_in">to</span> be used <span class="keyword">with</span> <span class="keyword">the</span> <span class="built_in">new</span> operator <span class="keyword">or</span> <span class="built_in">to</span> be subclassed. It may be used <span class="keyword">as</span> <span class="keyword">the</span> <span class="built_in">value</span> <span class="keyword">of</span> <span class="keyword">an</span> extends clause <span class="keyword">of</span> <span class="keyword">a</span> class definition but <span class="keyword">a</span> super call <span class="built_in">to</span> <span class="keyword">the</span> BigInt constructor will cause <span class="keyword">an</span> exception.</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看浏览器是否实现了这个API"><a href="#查看浏览器是否实现了这个API" class="headerlink" title="查看浏览器是否实现了这个API"></a>查看浏览器是否实现了这个API</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> target = <span class="keyword">new</span> <span class="constructor">Set()</span></span><br><span class="line"><span class="keyword">let</span> arrs = <span class="literal">[&quot;B<span class="identifier">igInt</span>&quot;]</span></span><br><span class="line">arrs.<span class="keyword">for</span><span class="constructor">Each(<span class="params">o</span>=&gt;<span class="params">target</span>.<span class="params">add</span>(<span class="params">o</span>)</span>)</span><br><span class="line"><span class="keyword">let</span> all = <span class="module-access"><span class="module"><span class="identifier">Object</span>.</span></span>get<span class="constructor">OwnPropertyNames(<span class="params">window</span>)</span></span><br><span class="line"><span class="keyword">let</span> ifHas = all.filter(e=&gt;target.has(e))</span><br></pre></td></tr></table></figure>
+
+<h3 id="最大安全数"><a href="#最大安全数" class="headerlink" title="最大安全数"></a>最大安全数</h3><p><a target="_blank" rel="noopener" href="https://2ality.com/2013/10/safe-integers.html">https://2ality.com/2013/10/safe-integers.html</a></p>
+<h3 id="延伸"><a href="#延伸" class="headerlink" title="延伸"></a>延伸</h3><p>String的maxLength<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length</a></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">This <span class="keyword">property</span> returns <span class="keyword">the</span> <span class="built_in">number</span> <span class="keyword">of</span> code units <span class="keyword">in</span> <span class="keyword">the</span> <span class="built_in">string</span>. UTF<span class="number">-16</span>, <span class="keyword">the</span> <span class="built_in">string</span> format used <span class="keyword">by</span> JavaScript, uses a single <span class="number">16</span>-bit code unit <span class="keyword">to</span> represent <span class="keyword">the</span> most common <span class="built_in">characters</span>, <span class="keyword">but</span> needs <span class="keyword">to</span> use two code units <span class="keyword">for</span> less commonly-used <span class="built_in">characters</span>, so <span class="keyword">it</span>&#x27;s possible <span class="keyword">for</span> <span class="keyword">the</span> value returned <span class="keyword">by</span> <span class="built_in">length</span> <span class="keyword">to</span> <span class="keyword">not</span> match <span class="keyword">the</span> actual <span class="built_in">number</span> <span class="keyword">of</span> <span class="built_in">characters</span> <span class="keyword">in</span> <span class="keyword">the</span> <span class="built_in">string</span>.</span><br><span class="line"></span><br><span class="line">ECMAScript <span class="number">2016</span> (ed. <span class="number">7</span>) established a maximum <span class="built_in">length</span> <span class="keyword">of</span> <span class="number">2</span>^<span class="number">53</span> - <span class="number">1</span> elements. Previously, no maximum <span class="built_in">length</span> was specified. In Firefox, strings have a maximum <span class="built_in">length</span> <span class="keyword">of</span> <span class="number">2</span>**<span class="number">30</span> - <span class="number">2</span> (~<span class="number">1</span>GB). In versions prior <span class="keyword">to</span> Firefox <span class="number">65</span>, <span class="keyword">the</span> maximum <span class="built_in">length</span> was <span class="number">2</span>**<span class="number">28</span> - <span class="number">1</span> (~<span class="number">256</span>MB).</span><br><span class="line"></span><br><span class="line">For an empty <span class="built_in">string</span>, <span class="built_in">length</span> <span class="keyword">is</span> <span class="number">0.</span></span><br><span class="line"></span><br><span class="line">The static <span class="keyword">property</span> String.<span class="built_in">length</span> <span class="keyword">is</span> unrelated <span class="keyword">to</span> <span class="keyword">the</span> <span class="built_in">length</span> <span class="keyword">of</span> strings, <span class="keyword">it</span>&#x27;s <span class="keyword">the</span> arity <span class="keyword">of</span> <span class="keyword">the</span> String function (loosely, <span class="keyword">the</span> <span class="built_in">number</span> <span class="keyword">of</span> formal parameters <span class="keyword">it</span> has), which <span class="keyword">is</span> <span class="number">1.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“等值（==）”运算中，不能确定左、右操作数的类型；（JavaScript 认为，如果左、右操作数之一为 <span class="built_in">string</span>、number、bigint 和 symbol 四种基础类型之一，而另一个操作数是对象类型 (x)，那么就需要将对象类型“转换成基础类型（<span class="constructor">ToPrimitive(<span class="params">x</span>)</span>）”来进行比较。操作数将尽量转换为数字来进行比较，即最终结果将等效于：<span class="constructor">Number(<span class="params">x</span>)</span><span class="operator"> == </span><span class="constructor">Number(<span class="params">y</span>)</span>。）</span><br></pre></td></tr></table></figure>
+
+<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><ul>
+<li>V8——2018 年，团队为 WebAssembly 发布了一个名为 Liftoff 的基线编译器，它大大减少了 WebAssembly 应用程序的启动时间，同时提供了可预测的性能。并且发布了 BigInt，这是一个新的 JavaScript 原始类型，可以实现任意精度的整数。</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

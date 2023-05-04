@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        sessionStorage使用 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-Storage"><span class="toc-text">Web Storage:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage-%E7%9A%84%E5%B0%81%E8%A3%85lib"><span class="toc-text">localStorage 的封装lib</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF"><span class="toc-text">移动端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#localstorage"><span class="toc-text">localstorage</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        sessionStorage使用
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-06 15:41:28</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>文档指路：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage</a><br>书籍参考：高程=&gt;23章 离线应用与客户端存储 =&gt; 23.3 数据存储 =&gt; 23.3.3 web存储机制</p>
+<h3 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage:"></a>Web Storage:</h3><pre>
+WebStorage的目的是克服由cookie带来的一些限制，当数据需要被严格控制在客户端上时，无须持续地将数据发回服务器。
+WebStorage的两个主要目标是：
+提供一种在cookie之外存储会话数据的途径；
+提供一种存储大量可以跨会话存在的数据的机制。
+
+泽卡斯(Zakas. Nicholas C.). JavaScript高级程序设计(第3版) (图灵程序设计丛书) (Chinese Edition) (Kindle 位置 22327-22330). 人民邮电出版社. Kindle 版本. 
+
+</pre>
+
+<p>!!!Storage类型只能存储字符串。非字符串的数据在存储之前会被转换成字符串。</p>
+<p>sessionStorage对象是Storage的一个实例</p>
+<p>sessionStorage对象应该主要用于仅针对会话的小段数据的存储。如果需要跨越会话存储数据，那么globalStorage或者localStorage更为合适。</p>
+<p>应用场景：<br>1.对网页的崩溃进行监控<br>window对象：load &amp;&amp; beforeunlaod事件<br>sessionStorage</p>
+<p>window.addEventListener(‘load’, () =&gt; {    sessionStorage.setItem(‘good_exit’, ‘pending’) })<br>window.addEventListener(‘beforeunload’, () =&gt; {    sessionStorage.setItem(‘good_exit’, ‘true’) })<br>if(sessionStorage.getItem(‘good_exit’) &amp;&amp;    sessionStorage.getItem(‘good_exit’) !== ‘true’) {    // 捕 获 到⻚⾯崩溃 }</p>
+<p>代码很 简单，思路 是 ⾸先 在⽹⻚ load 事件的回调 ⾥：利 ⽤ sessionStorage 记录 good_exit 值为 pending；接下来，在⻚⾯⽆异常退出前，即 beforeunload 事 件回调中，修改 sessionStorage 记录的 good_exit 值为 true。因此，如果⻚⾯ 没有崩溃的话，good_exit 值都会在离开前设置为 true，否则就可以通过 sessionStorage.getItem(‘good_exit’) &amp;&amp; sessionStorage.getItem(‘good_exit’) !== ‘true’ 判断出⻚⾯崩溃，并进⾏处理。<br>框架的错误处理</p>
+<p>如果你的应⽤部署了 PWA，那么便可以享受 service worker 带来的福利！在这 ⾥，可以通过 service worker 来完成⽹⻚崩溃的处理⼯作。基本原理在于： service worker 和⽹⻚的主线程独⽴。因此，即便⽹⻚发⽣了崩溃现象，也不会 影响 service worker 所在线程的⼯作。我们在监控⽹⻚的状态时，通过 navigator.serviceWorker.controller.postMessage API 来进⾏信息的获取和记 录。</p>
+<p>HTML5 提供了两种在客户端存储数据的新方法：<br>    •    localStorage - 没有时间限制的数据存储<br>    •    sessionStorage - 针对一个 session 的数据存储</p>
+<p>localStorage is similar to sessionStorage, except that while data stored in localStorage has no expiration time, data stored in sessionStorage gets cleared when the page session ends — that is, when the page is closed.</p>
+<p>It should be noted that data stored in either localStorage or sessionStorage is specific to the protocol of the page.</p>
+<ol>
+<li>Host<br>描述请求将被发送的目的地，包括，且仅仅包括域名和端口号。在任何类型请求中，request都会包含此header信息。</li>
+<li>Origin<br>用来说明请求从哪里发起的，包括，且仅仅包括协议和域名。这个参数一般只存在于CORS跨域请求中，可以看到response有对应的header：Access-Control-Allow-Origin。</li>
+<li>Referer<br>告知服务器请求的原始资源的URI，其用于所有类型的请求，并且包括：协议+域名+查询参数（注意，不包含锚点信息）。<br>因为原始的URI中的查询参数可能包含ID或密码等敏感信息，如果写入referer，则可能导致信息泄露。</li>
+</ol>
+<p>A Storage object which can be used to access the current origin’s local storage space.</p>
+<p>The following snippet accesses the current domain’s local Storage object and adds a data item to it using Storage.setItem().<br>localStorage.setItem(‘myCat’, ‘Tom’);</p>
+<p>The syntax for reading the localStorage item is as follows:<br>var cat = localStorage.getItem(‘myCat’);</p>
+<p>The syntax for removing the localStorage item is as follows:<br>localStorage.removeItem(‘myCat’);</p>
+<p>The syntax for removing all the localStorage items is as follows:<br>// clear all items<br>localStorage.clear();</p>
+<h4 id="localStorage-的封装lib"><a href="#localStorage-的封装lib" class="headerlink" title="localStorage 的封装lib"></a>localStorage 的封装lib</h4><ul>
+<li>store.js<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/marcuswestin/store.js">https://github.com/marcuswestin/store.js</a></li>
+<li>浏览器兼容</li>
+<li>对字符串的处理（项目里面，如果不系统处理，在直接使用API的时候，每个人需要都处理一遍）</li>
+</ul>
+</li>
+</ul>
+<h4 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h4><ul>
+<li>Note: 从iOS 5.1之后，移动端的Safari将localStorage数据存储在cache文件中，在操作系统的要求下，会偶尔进行清除，特别是空间不足时。</li>
+<li><a target="_blank" rel="noopener" href="http://dev-test.nemikor.com/web-storage/support-test/">http://dev-test.nemikor.com/web-storage/support-test/</a></li>
+</ul>
+<h4 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h4><ul>
+<li>同域跨页面通信可以借助localstorage的storage事件的监听，做一些处理；</li>
+<li><a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute">https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

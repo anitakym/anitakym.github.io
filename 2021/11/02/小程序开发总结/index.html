@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        小程序开发总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%BA%93"><span class="toc-text">一些库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%96%87%E6%A1%A3"><span class="toc-text">一些文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Video"><span class="toc-text">Video</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#why"><span class="toc-text">why</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-text">API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF%E4%BC%9A%E7%94%A8"><span class="toc-text">什么场景会用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#advantage"><span class="toc-text">advantage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#feature-%E6%8C%81%E7%BB%AD%E6%8B%93%E5%B1%95%E4%B8%AD%EF%BC%81"><span class="toc-text">feature - 持续拓展中！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2"><span class="toc-text">搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%84%E8%BF%91%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="toc-text">附近小程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%95%86%E4%B8%9A%E8%83%BD%E5%8A%9B%E7%9A%84%E5%AE%8C%E5%96%84"><span class="toc-text">基础商业能力的完善</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%92%AD%E7%BB%84%E4%BB%B6"><span class="toc-text">直播组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6"><span class="toc-text">小程序框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF"><span class="toc-text">订阅消息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-text">安全问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE"><span class="toc-text">服务器域名配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E5%9F%9F%E5%90%8D"><span class="toc-text">业务域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E5%8F%8A%E9%89%B4%E6%9D%83%E5%8F%8A%E6%9D%83%E9%99%90%E8%AE%BE%E8%AE%A1"><span class="toc-text">登录及鉴权及权限设计</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A6%E7%A2%B0%E5%8C%BA%E5%9F%9F%EF%BC%9A"><span class="toc-text">触碰区域：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Flex-%E5%B8%83%E5%B1%80-%E5%AE%BD%E5%BA%A6%E9%99%B7%E9%98%B1"><span class="toc-text">Flex 布局(宽度陷阱)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94behavior%E2%80%94%E2%80%94%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%A4%8D%E7%94%A8"><span class="toc-text">小程序中的继承机制——behavior——实现组件中的复用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tips"><span class="toc-text">tips</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        小程序开发总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-02 14:15:31</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>大量产业升级 - 新需求 - 小程序=&gt;解决前端的问题</p>
+</blockquote>
+<h2 id="一些库"><a href="#一些库" class="headerlink" title="一些库"></a>一些库</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://tdesign.tencent.com/miniprogram/components/button">https://tdesign.tencent.com/miniprogram/components/button</a></li>
+</ul>
+<h2 id="一些文档"><a href="#一些文档" class="headerlink" title="一些文档"></a>一些文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/webboys/pnadia/qggxhs">https://www.yuque.com/webboys/pnadia/qggxhs</a><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><blockquote>
+<p>互动视频组件开发</p>
+</blockquote>
+<h3 id="why"><a href="#why" class="headerlink" title="why"></a>why</h3></li>
+<li>视频（v2.4.0 起支持同层渲染） 相关api：wx.createVideoContext</li>
+<li>可以做互动视频播放</li>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.html">https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.html</a></li>
+</ul>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.seek.html">https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.seek.html</a></p>
+</li>
+<li><p>跳转到指定位置</p>
+<h3 id="什么场景会用"><a href="#什么场景会用" class="headerlink" title="什么场景会用"></a>什么场景会用</h3></li>
+<li><p>why</p>
+</li>
+</ul>
+<p>• 诞生背景<br>    ◦ 更好的体验<br>    ◦ 规范与管理</p>
+<ul>
+<li>what<br>• 触手可及<br>  ◦ 不需要下载安装即可使用<br>• 用完即走<br>  ◦ 扫or搜即可打开<br>• 无需安装卸载</li>
+</ul>
+<p>APP VS 小程序<br>无需安装<br>不占内存<br>易传播</p>
+<p>with h5 - 小程序（消息订阅，直接转发给好友）</p>
+<h4 id="advantage"><a href="#advantage" class="headerlink" title="advantage"></a>advantage</h4><p>（相对）（app - 时频，时长）</p>
+<ul>
+<li>下载，安装成本 - 无</li>
+<li>启动速度</li>
+<li>hybrid-app - 审核周期</li>
+<li>用户体验｜商户运营｜技术开发</li>
+</ul>
+<blockquote>
+<p>学生端引流或者小型测试使用（运营引流+教师测试-课后配套免费服务）</p>
+</blockquote>
+<h3 id="feature-持续拓展中！"><a href="#feature-持续拓展中！" class="headerlink" title="feature - 持续拓展中！"></a>feature - 持续拓展中！</h3><ul>
+<li>命名（可重名）</li>
+<li>星标</li>
+<li>关联多个公众号</li>
+<li>群能力</li>
+<li>灰度更新｜线上回退</li>
+<li>客服能力</li>
+<li>微信能力的接入</li>
+</ul>
+<h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><ul>
+<li>百度影响了微信</li>
+<li>微信小程序SEO指南（20年1月） - 去中心化？</li>
+<li>搜一搜 - 提高小程序搜索排名（注意描述到填写）</li>
+<li>中间有个坑，22年的时候，年初，新开发的小程序，IOS端一直搜不到，然后需要配置搜一搜才能搜到<h4 id="附近小程序"><a href="#附近小程序" class="headerlink" title="附近小程序"></a>附近小程序</h4></li>
+<li>评价机制</li>
+<li>本地化商家</li>
+</ul>
+<h4 id="基础商业能力的完善"><a href="#基础商业能力的完善" class="headerlink" title="基础商业能力的完善"></a>基础商业能力的完善</h4><h4 id="直播组件"><a href="#直播组件" class="headerlink" title="直播组件"></a>直播组件</h4><ul>
+<li>2020年</li>
+</ul>
+<h4 id="小程序框架"><a href="#小程序框架" class="headerlink" title="小程序框架"></a>小程序框架</h4><ul>
+<li>脱离微信客户端环境</li>
+</ul>
+<h4 id="订阅消息"><a href="#订阅消息" class="headerlink" title="订阅消息"></a>订阅消息</h4><ul>
+<li>通知机制</li>
+</ul>
+<h4 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h4><ul>
+<li>对于webview部分，对于允许访问的域要做好控制，尤其设置文档对象存储的部分，一旦文档对象存储的密钥泄漏，容易被放入违规内容，然后进行举报</li>
+</ul>
+<h4 id="服务器域名配置"><a href="#服务器域名配置" class="headerlink" title="服务器域名配置"></a>服务器域名配置</h4><p>每个微信小程序需要事先设置通讯域名，小程序只可以跟指定的域名进行网络通信。</p>
+<h4 id="业务域名"><a href="#业务域名" class="headerlink" title="业务域名"></a>业务域名</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/domain.html">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/domain.html</a></li>
+<li>webview 指向网页的链接。可打开关联的公众号的文章，其它网页需登录小程序管理后台配置业务域名</li>
+<li>配置业务域名后，可打开任意合法的子域名；</li>
+<li>注意安全部分</li>
+</ul>
+<h4 id="登录及鉴权及权限设计"><a href="#登录及鉴权及权限设计" class="headerlink" title="登录及鉴权及权限设计"></a>登录及鉴权及权限设计</h4><ul>
+<li>待补充 - 简单逻辑 + 复杂项目逻辑 + 改造</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h4 id="触碰区域："><a href="#触碰区域：" class="headerlink" title="触碰区域："></a>触碰区域：</h4><p>要比显示的大点<br>1.设计师切图，留点空白（透明的）</p>
+<h4 id="Flex-布局-宽度陷阱"><a href="#Flex-布局-宽度陷阱" class="headerlink" title="Flex 布局(宽度陷阱)"></a>Flex 布局(宽度陷阱)</h4><p>Container 也要设置宽度<br>记得设置内容的宽高<br>如果确定宽度是100%，就设置，不然container是自适应的，被内部元素撑起来的</p>
+<h4 id="小程序中的继承机制——behavior——实现组件中的复用"><a href="#小程序中的继承机制——behavior——实现组件中的复用" class="headerlink" title="小程序中的继承机制——behavior——实现组件中的复用"></a>小程序中的继承机制——behavior——实现组件中的复用</h4><ul>
+<li>构造器</li>
+<li>Es6 extend 单继承</li>
+<li>单继承比较简单</li>
+<li>Behavior 继承与多继承的覆盖规则（子类会覆盖父类中的相关属性）（生命周期函数不会覆盖，会每个都执行）</li>
+<li>(如果要构建自己的组件库，就很有用了，可以用在多个项目之中)</li>
+<li>面向对象中是通过class继承的</li>
+<li>python 支持多继承</li>
+</ul>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span> 自定义事件的激活与监听</span><br><span class="line">可以设置事件的detail属性</span><br></pre></td></tr></table></figure>
+<ul>
+<li>表示类型命名尽量不用type，type 是保留关键字，用category</li>
+<li>想看data的初始值，可以在生命周期函数里面进行打印<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span></span><br><span class="line">ƒ <span class="built_in">Number</span>() &#123; [<span class="keyword">native</span> code] &#125;</span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Number</span></span><br><span class="line"><span class="string">&quot;function&quot;</span></span><br><span class="line">Properties / data</span><br><span class="line">打印出来显示结果一样</span><br></pre></td></tr></table></figure></li>
+<li>设置name不要重名</li>
+<li>注意防范内存泄漏，不要在observer中修改自身属性， 会引起无限递归</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

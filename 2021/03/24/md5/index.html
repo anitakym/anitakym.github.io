@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        md5 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%93"><span class="toc-text">库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SparkMD5"><span class="toc-text">SparkMD5</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9JKM-md5%E5%BA%93%E7%9A%84%E6%94%B9%E8%BF%9B%E3%80%82"><span class="toc-text">对JKM md5库的改进。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95"><span class="toc-text">代码调试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E8%B0%83%E8%AF%95"><span class="toc-text">实例调试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="toc-text">读取文件</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        md5
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-24 14:05:24</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="库"><a href="#库" class="headerlink" title="库"></a>库</h3><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/crypto-js">crypto-js</a><br><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/object-hash">object-hash</a><br><a target="_blank" rel="noopener" href="https://github.com/digitalbazaar/forge">node-forge</a><br><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/spark-md5">spark-md5</a></p>
+<h3 id="SparkMD5"><a href="#SparkMD5" class="headerlink" title="SparkMD5"></a>SparkMD5</h3><ul>
+<li>SparkMD5是MD5算法的一个快速MD5实现。这个脚本是基于JKM md5库的，它是最快的算法。这是最适合浏览器使用的，因为nodejs版本可能更快。</li>
+</ul>
+<h4 id="对JKM-md5库的改进。"><a href="#对JKM-md5库的改进。" class="headerlink" title="对JKM md5库的改进。"></a>对JKM md5库的改进。</h4><ul>
+<li>字符串被转换为utf8，就像大多数服务器端算法一样。</li>
+<li>修正大量数据的计算(溢出)</li>
+<li>增量式md5（见下文）。</li>
+<li>支持数组缓冲区（类型化数组）。</li>
+<li>功能被封装在closure(闭包)中，以避免全局赋值。</li>
+<li>面向对象的库</li>
+<li>CommonJS(它可以在node中使用)和AMD集成</li>
+<li>通过JSHint和JSCS校验</li>
+</ul>
+<p>增量式md5对于大量数据的哈希处理，例如文件，表现得更好。我们可以使用FileReader和Blob来分块读取文件，并在保持低内存使用率的情况下，追加每个分块进行md5哈希。</p>
+<h3 id="代码调试"><a href="#代码调试" class="headerlink" title="代码调试"></a>代码调试</h3><p>本身包很小22K，代码也比较清楚</p>
+<p>开发工具是vscode</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Type definitions for spark-md5 3.0</span></span><br><span class="line"><span class="comment">// Project: https://github.com/satazor/js-spark-md5#readme</span></span><br><span class="line"><span class="comment">// Definitions by: Bastien Moulia &lt;https://github.com/bastienmoulia&gt;</span></span><br><span class="line"><span class="comment">//                 Florian Keller &lt;https://github.com/ffflorian&gt;</span></span><br><span class="line"><span class="comment">// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped</span></span><br><span class="line"><span class="comment">// TypeScript Version: 2.3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// copy of ArrayBuffer because of a conflict with the class SparkMD5.ArrayBuffer</span></span><br><span class="line"><span class="keyword">type</span> JsArrayBuffer = <span class="built_in">ArrayBuffer</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">class</span> SparkMD5 &#123;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params"></span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> hash(str: <span class="built_in">string</span>, raw?: <span class="built_in">boolean</span>): <span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">static</span> hashBinary(content: <span class="built_in">string</span>, raw?: <span class="built_in">boolean</span>): <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">    append(str: <span class="built_in">string</span>): SparkMD5;</span><br><span class="line">    appendBinary(contents: <span class="built_in">string</span>): SparkMD5;</span><br><span class="line">    destroy(): <span class="built_in">void</span>;</span><br><span class="line">    end(raw?: <span class="built_in">boolean</span>): <span class="built_in">string</span>;</span><br><span class="line">    getState(): SparkMD5.State;</span><br><span class="line">    reset(): SparkMD5;</span><br><span class="line">    setState(state: SparkMD5.State): SparkMD5.State;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">namespace</span> SparkMD5 &#123;</span><br><span class="line">    <span class="keyword">interface</span> State &#123;</span><br><span class="line">        buff: <span class="built_in">Uint8Array</span>;</span><br><span class="line">        hash: <span class="built_in">number</span>[];</span><br><span class="line">        length: <span class="built_in">number</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="built_in">ArrayBuffer</span> &#123;</span><br><span class="line">        <span class="keyword">constructor</span>(<span class="params"></span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">static</span> hash(arr: JsArrayBuffer, raw?: <span class="built_in">boolean</span>): <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">        append(str: JsArrayBuffer): <span class="built_in">ArrayBuffer</span>;</span><br><span class="line">        destroy(): <span class="built_in">void</span>;</span><br><span class="line">        end(raw?: <span class="built_in">boolean</span>): <span class="built_in">string</span>;</span><br><span class="line">        getState(): State;</span><br><span class="line">        reset(): <span class="built_in">ArrayBuffer</span>;</span><br><span class="line">        setState(state: State): State;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> = SparkMD5;</span><br></pre></td></tr></table></figure>
+<p>Library/Caches/typescript/4.2/node_modules/@types/spark-md5/index.d.ts<br>因为vscode默认开启了AutomaticTypeAcquisition</p>
+<p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/Docs/languages/javascript#_automatic-type-acquisition">https://code.visualstudio.com/Docs/languages/javascript#_automatic-type-acquisition</a></p>
+<p>如果想要关闭的话，可以设置里面 disableAutomaticTypeAcquisition</p>
+<p>这样我们可以看到类型定义，本身node_modules里面 spark-md5是没有类型声明的</p>
+<h3 id="实例调试"><a href="#实例调试" class="headerlink" title="实例调试"></a>实例调试</h3><p>我们应用场景是对视频做checkmd5,每秒钟50M的样子～</p>
+<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p><a target="_blank" rel="noopener" href="https://github.com/forsigner/browser-md5-file/blob/master/src/index.js">https://github.com/forsigner/browser-md5-file/blob/master/src/index.js</a></p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import SparkMD5 from &#x27;spark-md5&#x27;</span><br><span class="line"></span><br><span class="line">export default <span class="keyword">class</span> BMF &#123;</span><br><span class="line">  md5(file, md5Fn, progressFn) &#123;</span><br><span class="line">    this.aborted = <span class="literal">false</span></span><br><span class="line">    this.progress = <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> currentChunk = <span class="number">0</span></span><br><span class="line">    const blobSlice =</span><br><span class="line">      <span class="module-access"><span class="module"><span class="identifier">File</span>.</span></span>prototype.slice <span class="pattern-match"><span class="operator">||</span></span></span><br><span class="line"><span class="pattern-match">      <span class="constructor">File</span>.prototype.moz<span class="constructor">Slice</span> <span class="operator">||</span></span></span><br><span class="line"><span class="pattern-match">      <span class="constructor">File</span>.prototype.webkit<span class="constructor">Slice</span></span></span><br><span class="line"><span class="pattern-match">    const chunk<span class="constructor">Size</span> = 2097152</span></span><br><span class="line"><span class="pattern-match">    const chunks = <span class="constructor">Math</span>.ceil(file.size <span class="operator">/</span> chunk<span class="constructor">Size</span>)</span></span><br><span class="line"><span class="pattern-match">    const spark = <span class="keyword">new</span> <span class="constructor">SparkMD5</span>.<span class="constructor">ArrayBuffer()</span></span></span><br><span class="line"><span class="pattern-match">    const reader = <span class="keyword">new</span> <span class="constructor">FileReader()</span></span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">    load<span class="constructor">Next()</span></span></span><br><span class="line"><span class="pattern-match"></span></span><br><span class="line"><span class="pattern-match">    reader.onloadend = e =&gt;</span> &#123;</span><br><span class="line">      spark.append(e.target.result) <span class="comment">// Append array buffer</span></span><br><span class="line">      currentChunk++</span><br><span class="line">      this.progress = currentChunk<span class="operator"> / </span>chunks</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (progressFn<span class="operator"> &amp;&amp; </span>typeof progressFn<span class="operator"> === </span>&#x27;<span class="keyword">function</span>&#x27;) &#123;</span><br><span class="line">        progress<span class="constructor">Fn(<span class="params">this</span>.<span class="params">progress</span>)</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (this.aborted) &#123;</span><br><span class="line">        md5<span class="constructor">Fn(&#x27;<span class="params">aborted</span>&#x27;)</span></span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (currentChunk &lt; chunks) &#123;</span><br><span class="line">        load<span class="constructor">Next()</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        md5<span class="constructor">Fn(<span class="params">null</span>, <span class="params">spark</span>.<span class="params">end</span>()</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> load<span class="constructor">Next()</span> &#123;</span><br><span class="line">      const start = currentChunk<span class="operator"> * </span>chunkSize</span><br><span class="line">      const <span class="keyword">end</span> = start + chunkSize &gt;= file.size ? file.size : start + chunkSize</span><br><span class="line">      reader.read<span class="constructor">AsArrayBuffer(<span class="params">blobSlice</span>.<span class="params">call</span>(<span class="params">file</span>, <span class="params">start</span>, <span class="params">end</span>)</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  abort<span class="literal">()</span> &#123;</span><br><span class="line">    this.aborted = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>FileReader(<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader">https://developer.mozilla.org/en-US/docs/Web/API/FileReader</a>)<br>最好直接看英文的，中文的翻译有点问题，而且内容更新不及时！！！<pre>
+FileReader can only access the contents of files that the user has explicitly selected, either using an HTML <input type="file"> element or by drag and drop. It cannot be used to read a file by pathname from the user's file system. To read files on the client's file system by pathname, use the File System Access API. To read server-side files, use standard Ajax solutions, with CORS permission if reading cross-domain.
+</pre>
+<pre>
+FileReader 对象允许 Web 应用程序异步读取存储在用户计算机上的文件（或原始数据缓冲区）的内容，使用 File 或 Blob 对象来指定要读取的文件或数据。
+
+</li>
+</ul>
+<p>文件对象可以从用户使用 <input> 元素选择文件后返回的 FileList 对象中获取，也可以从拖放操作的 DataTransfer 对象中获取，或者从 HTMLCanvasElement 上的 mozGetAsFile() API 中获取。</p>
+<p>FileReader 只能使用 HTML <input type="file"> 元素或通过拖放来访问用户已明确选择的文件内容。它不能用于从用户的文件系统中按路径名读取文件。要通过路径名读取客户端文件系统中的文件，请使用文件系统访问API。要读取服务器端文件，请使用标准的Ajax解决方案，如果跨域读取，请使用CORS权限。<br></pre></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsDataURL">https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsDataURL</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

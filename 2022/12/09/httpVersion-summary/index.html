@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        httpVersion-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E7%82%B9%E6%92%AD"><span class="toc-text">腾讯云点播</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91CDN"><span class="toc-text">腾讯云CDN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E4%B9%A6"><span class="toc-text">推荐书</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        httpVersion-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-12-09 16:11:21</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li><a target="_blank" rel="noopener" href="http://www.alloyteam.com/2016/07/httphttp2-0spdyhttps-reading-this-is-enough/">http://www.alloyteam.com/2016/07/httphttp2-0spdyhttps-reading-this-is-enough/</a><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">cite</span>: </span><br><span class="line">对比 <span class="selector-tag">HTTPS</span> 的升级改造，<span class="selector-tag">HTTP2</span><span class="selector-class">.0</span> 或许会稍微简单一些，你可能需要关注以下问题：</span><br><span class="line"></span><br><span class="line">前文说了 <span class="selector-tag">HTTP2</span><span class="selector-class">.0</span> 其实可以支持非 <span class="selector-tag">HTTPS</span> 的，但是现在主流的浏览器像 <span class="selector-tag">chrome</span>，<span class="selector-tag">firefox</span> 表示还是只支持基于 <span class="selector-tag">TLS</span> 部署的 <span class="selector-tag">HTTP2</span><span class="selector-class">.0</span> 协议，所以要想升级成 <span class="selector-tag">HTTP2</span><span class="selector-class">.0</span> 还是先升级 <span class="selector-tag">HTTPS</span> 为好。</span><br><span class="line">当你的网站已经升级 <span class="selector-tag">HTTPS</span> 之后，那么升级 <span class="selector-tag">HTTP2</span><span class="selector-class">.0</span> 就简单很多，如果你使用 <span class="selector-tag">NGINX</span>，只要在配置文件中启动相应的协议就可以了，可以参考 <span class="selector-tag">NGINX</span> 白皮书，<span class="selector-tag">NGINX</span> 配置 <span class="selector-tag">HTTP2</span><span class="selector-class">.0</span> 官方指南。</span><br><span class="line">使用了 <span class="selector-tag">HTTP2</span><span class="selector-class">.0</span> 那么，原本的 <span class="selector-tag">HTTP1</span><span class="selector-class">.x</span> 怎么办，这个问题其实不用担心，<span class="selector-tag">HTTP2</span><span class="selector-class">.0</span> 完全兼容 <span class="selector-tag">HTTP1</span><span class="selector-class">.x</span> 的语义，对于不支持 <span class="selector-tag">HTTP2</span><span class="selector-class">.0</span> 的浏览器，<span class="selector-tag">NGINX</span> 会自动向下兼容的。</span><br></pre></td></tr></table></figure></li>
+<li><a target="_blank" rel="noopener" href="https://http2.akamai.com/">https://http2.akamai.com/</a><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>caniuse.com/?search=http2</span><br><span class="line">http:<span class="regexp">//</span>www.alloyteam.com<span class="regexp">/2015/</span><span class="number">03</span><span class="regexp">/http2-0-di-qi-miao-ri-chang/</span></span><br></pre></td></tr></table></figure></li>
+<li><a target="_blank" rel="noopener" href="https://http3-explained.haxx.se/zh">https://http3-explained.haxx.se/zh</a></li>
+</ul>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1464264">https://cloud.tencent.com/developer/article/1464264</a></li>
+</ul>
+<h3 id="腾讯云点播"><a href="#腾讯云点播" class="headerlink" title="腾讯云点播"></a>腾讯云点播</h3><ul>
+<li><p>腾讯云点播，如果想支持http2.0，发下需要配置的域名，腾讯云点播后台来配置就行，有个变更窗口了，需要下周一才能配置</p>
+</li>
+<li><p>配置之后，就会支持http2.0</p>
+</li>
+<li><p>head of lin blocking - 对同一个域下请求数量的限制 - 2.0 基于二进制分帧，可避免这个问题</p>
+</li>
+<li><p>影响绝大多数应用性能的并非带宽，而是延迟，而2.0能解决这个问题； 我们这边云点播就出现用户反馈，观看卡顿，用腾讯云的华佗测速工具，发现延迟较大，带宽是OK的；</p>
+</li>
+</ul>
+<h3 id="腾讯云CDN"><a href="#腾讯云CDN" class="headerlink" title="腾讯云CDN"></a>腾讯云CDN</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/228/41689">https://cloud.tencent.com/document/product/228/41689</a><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP2<span class="number">.0</span> 作为最新的 HTTP 协议，大幅提升了 Web 性能，进一步减少了网络延迟。已配置证书启用 HTTPS 加速的域名，可自助开启 HTTP2<span class="number">.0</span> 协议支持。</span><br><span class="line">注意：</span><br><span class="line">目前仅支持 HTTP2<span class="number">.0</span> 访问，暂不支持 HTTP2<span class="number">.0</span> 协议回源。</span><br></pre></td></tr></table></figure></li>
+<li>CDN - 把数据放到离用户地理位置更近的地方，减少每次TCP连接的网络延迟，增大吞吐量</li>
+</ul>
+<h3 id="推荐书"><a href="#推荐书" class="headerlink" title="推荐书"></a>推荐书</h3><ul>
+<li>web性能权威指南 - qq阅读上面有，可当工具书查看使用</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

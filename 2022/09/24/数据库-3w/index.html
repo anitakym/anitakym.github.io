@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        数据库-3w - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cases"><span class="toc-text">cases</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-text">存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#feature"><span class="toc-text">feature</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84"><span class="toc-text">存储器层级结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RAID"><span class="toc-text">RAID</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#overview"><span class="toc-text">overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#feature-1"><span class="toc-text">feature</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93-vs-%E7%BB%8F%E5%85%B8%E5%AD%98%E5%82%A8"><span class="toc-text">数据库 vs 经典存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">数据库使用方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#products"><span class="toc-text">products</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E6%9C%BA%E5%AD%98%E5%82%A8"><span class="toc-text">单机存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8"><span class="toc-text">分布式存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">单机数据库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RDBMS-%E4%BA%8B%E5%8A%A1-ACID"><span class="toc-text">RDBMS 事务 ACID</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        数据库-3w
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-09-24 12:36:19</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>reference： <a target="_blank" rel="noopener" href="https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/gfs-sosp2003.pdf">https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/gfs-sosp2003.pdf</a></p>
+</blockquote>
+<ul>
+<li>the google file system</li>
+</ul>
+<h3 id="cases"><a href="#cases" class="headerlink" title="cases"></a>cases</h3><blockquote>
+<p>数据 - 产生-流动-持久化 - 生命周期</p>
+</blockquote>
+<ul>
+<li>持久化 -&gt; 校验数据的合法性 - 修改内存（用高效的数据结构组织数据） - 写入存储介质（以寿命&amp;性能友好的方式写入硬件）</li>
+</ul>
+<h3 id="存储系统"><a href="#存储系统" class="headerlink" title="存储系统"></a>存储系统</h3><ul>
+<li>提供了读写，控制类接口</li>
+<li>安全有效地把数据持久化</li>
+<li>user - medium - memory - network</li>
+</ul>
+<h4 id="feature"><a href="#feature" class="headerlink" title="feature"></a>feature</h4><ul>
+<li>后端软件的底座，性能敏感</li>
+<li>存储系统软件架构，容易受硬件影响</li>
+<li>代码-“简单”&amp;“复杂”</li>
+</ul>
+<h4 id="存储器层级结构"><a href="#存储器层级结构" class="headerlink" title="存储器层级结构"></a>存储器层级结构</h4><ul>
+<li>Computer Memory Hierarchy</li>
+<li>size | capacity</li>
+<li>缓存 - 重要，贯穿整个存储体系</li>
+<li>拷贝 - 贵，尽量减少</li>
+<li>硬件设备五花八门，需要有抽象统一的接入层</li>
+</ul>
+<h4 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h4><ul>
+<li>redundant array of inexpensive disks</li>
+<li>价格|写入性能|容错能力</li>
+<li>单块磁盘 vs 多块磁盘</li>
+<li>RAID0|1|0+1</li>
+</ul>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><h4 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h4><ul>
+<li>关系 - relation</li>
+<li>Edgar.F.Codd于1970年提出“关系模型”</li>
+<li>关系代数 - 对关系作运算的抽象查询语言（交，并，笛卡尔积）</li>
+<li>关系 - 集合 - 任意元素组成的若干有序偶对 反应了事物间的关系</li>
+<li>SQL - 一种DSL - 方便人类阅读的关系代数表达形式</li>
+</ul>
+<h4 id="feature-1"><a href="#feature-1" class="headerlink" title="feature"></a>feature</h4><ul>
+<li>关系型数据库是存储系统，但是在存储之外，又发展出其他能力</li>
+<li>结构化数据友好 | 支持事务ACID | 支持复杂查询语言</li>
+<li>非关系型数据库也是存储系统，但是一般不要求严格的结构化</li>
+</ul>
+<h4 id="数据库-vs-经典存储"><a href="#数据库-vs-经典存储" class="headerlink" title="数据库 vs 经典存储"></a>数据库 vs 经典存储</h4><ul>
+<li>结构化数据管理 （写入关系型数据库，以表形式管理 | 写入文件，自行定义管理结构）</li>
+<li>事务能力（突显出数据库支持事务的优越性）</li>
+<li>事务<ul>
+<li>atomicity - 事务内的操作要么全做，要么不做</li>
+<li>consistency - 事务执行前后，数据状态是一致的</li>
+<li>isolation - 可以隔离多个并法事务，避免影响</li>
+<li>durability - 事务一旦提交成功，数据保证持久性</li>
+</ul>
+</li>
+<li>复杂查询能力</li>
+</ul>
+<h4 id="数据库使用方式"><a href="#数据库使用方式" class="headerlink" title="数据库使用方式"></a>数据库使用方式</h4><ul>
+<li>everythining is domain specific language</li>
+<li>maybe SQL</li>
+</ul>
+<h3 id="products"><a href="#products" class="headerlink" title="products"></a>products</h3><h4 id="单机存储"><a href="#单机存储" class="headerlink" title="单机存储"></a>单机存储</h4><ul>
+<li>单个计算机节点上的存储软件系统，一般不涉及网络交互</li>
+<li>本地文件系统 | key-value 存储</li>
+<li>linux - 一切皆文件</li>
+<li>文件系统的管理单元：文件</li>
+<li>文件系统接口： ext2/3/4,sysfs,rootfs等，都遵循VFS的统一抽象接口</li>
+<li>index node: inode 是一个文件的唯一标识,记录文件元数据，如id，大小，权限，磁盘位置等</li>
+<li>directory entry: dentry是内存结构，与inode的关系是N:1（hardlink），记录文件名，inode指针，层级关系等</li>
+<li>key-value: put(k,v) &amp; get(k)  |  LSM-tree,某种程度上牺牲读写性能，追求写入性能 | RocksDB</li>
+</ul>
+<h4 id="分布式存储"><a href="#分布式存储" class="headerlink" title="分布式存储"></a>分布式存储</h4><ul>
+<li>在单机存储基础上实现了分布式协议，涉及大量网络交互</li>
+<li>分布式文件系统 | 分布式对象存储</li>
+<li>HDFS - 大数据时代基石</li>
+<li>Ceph - 开源分布式存储系统里的万金油</li>
+</ul>
+<h4 id="单机数据库"><a href="#单机数据库" class="headerlink" title="单机数据库"></a>单机数据库</h4><ul>
+<li>单个计算机节点上的数据库系统</li>
+<li>事务在单机内执行，也可能通过网络交互实现分布式事务</li>
+<li>关系型 - Oracle | MySql | PostgreSQL<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">关系型数据库的通用组件</span></span><br><span class="line"><span class="attr">query</span> <span class="string">engine - 负责解析query，生成查询计划</span></span><br><span class="line"><span class="attr">txn</span> <span class="string">manager - 负责事务并发管理</span></span><br><span class="line"><span class="attr">lock</span> <span class="string">manager - 负责锁相关的策略</span></span><br><span class="line"><span class="attr">storage</span> <span class="string">engine - 负责组织内存/磁盘数据结构</span></span><br><span class="line"><span class="attr">replication</span> <span class="string">- 负责主备同步</span></span><br><span class="line"></span><br><span class="line"><span class="meta">关键内存数据结构：</span> <span class="string">b-tree b+-tree LRU- list</span></span><br><span class="line"><span class="meta">关键磁盘数据结构：</span> <span class="string">WriteAheadLog(RedoLog) Page</span></span><br></pre></td></tr></table></figure></li>
+<li>非关系型 - MongoDB | Redis | Elasticsearch</li>
+<li>不管是否关系型数据库，大家都在尝试支持SQL(子集)和“事务”</li>
+</ul>
+<h3 id="RDBMS-事务-ACID"><a href="#RDBMS-事务-ACID" class="headerlink" title="RDBMS 事务 ACID"></a>RDBMS 事务 ACID</h3><ul>
+<li>事务 - transaction - 一组SQL语句组成的一个程序执行单元，需要满足ACID的特性</li>
+<li>ACID<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">atomicity</span> <span class="string">- 事务是一个不可再分割的工作单元，事务中的操作要么都发生，要么都不发生</span></span><br><span class="line"><span class="attr">consistency</span> <span class="string">- 数据库事务不饿能破坏关系数据的完整性以及业务逻辑上的一致性</span></span><br><span class="line"><span class="attr">isolation</span> <span class="string">- 多个事务并发访问时，事务之间是隔离带，一个事务不应该影响其他事务运行的效果</span></span><br><span class="line"><span class="attr">durability</span> <span class="string">- 在事务完成以后，该事务对数据库所做的更改便持久的保存在数据库之中，并不会被回滚</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

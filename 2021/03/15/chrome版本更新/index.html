@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        chrome版本更新 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#chrome-%E7%89%88%E6%9C%AC"><span class="toc-text">chrome 版本</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        chrome版本更新
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-15 15:34:37</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#chrome" title="chrome">chrome</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>今天测试老师report了一个在Chrome浏览器上的样式问题，排查了下，88无问题，89有问题 —— 具体查，某个没有用scoped的模块，/deep/没有处理<br>让具体的开发老师处理了下代码，那为什么渲染会有差异呢，哪部分的处理变更了呢，查了下Chrome的更新文档</p>
+<p>在Google直接搜索 web updates<br><a target="_blank" rel="noopener" href="https://developers.google.com/web/updates/2021">https://developers.google.com/web/updates/2021</a><br><a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+log/89.0.4389.72..89.0.4389.82?pretty=fuller&amp;n=10000">https://chromium.googlesource.com/chromium/src/+log/89.0.4389.72..89.0.4389.82?pretty=fuller&amp;n=10000</a><br><a target="_blank" rel="noopener" href="https://developer.chrome.com/blog/deps-rems-89/">https://developer.chrome.com/blog/deps-rems-89/</a></p>
+<p>[Deprecation] /deep/ combinator is no longer supported in CSS dynamic profile.It is now effectively no-op, acting as if it were a descendant combinator. /deep/ combinator will be removed, and will be invalid at M65. You should remove it. See <a target="_blank" rel="noopener" href="https://www.chromestatus.com/features/4964279606312960">https://www.chromestatus.com/features/4964279606312960</a> for more details.</p>
+<p><a target="_blank" rel="noopener" href="https://www.chromestatus.com/features#%2Fdeep%2F">https://www.chromestatus.com/features#%2Fdeep%2F</a></p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000021576348">https://segmentfault.com/a/1190000021576348</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/CyLee/p/10006065.html">https://www.cnblogs.com/CyLee/p/10006065.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/guide/scoped-css.html#deep-selectors">https://vue-loader.vuejs.org/guide/scoped-css.html#deep-selectors</a></p>
+<p>node_modules/@vue/component-compiler-utils/lib/stylePlugins/scoped.ts</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">node.selector = selectorParser(<span class="function">(<span class="params">selectors: <span class="built_in">any</span></span>) =&gt;</span> &#123;</span><br><span class="line">      selectors.each(<span class="function">(<span class="params">selector: <span class="built_in">any</span></span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> node: <span class="built_in">any</span> = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// find the last child node to insert attribute selector</span></span><br><span class="line">        selector.each(<span class="function">(<span class="params">n: <span class="built_in">any</span></span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// &quot;&gt;&gt;&gt;&quot; combinator</span></span><br><span class="line">          <span class="comment">// and /deep/ alias for &gt;&gt;&gt;, since &gt;&gt;&gt; doesn&#x27;t work in SASS</span></span><br><span class="line">          <span class="keyword">if</span> (</span><br><span class="line">            n.type === <span class="string">&#x27;combinator&#x27;</span> &amp;&amp;</span><br><span class="line">            (n.value === <span class="string">&#x27;&gt;&gt;&gt;&#x27;</span> || n.value === <span class="string">&#x27;/deep/&#x27;</span>)</span><br><span class="line">          ) &#123;</span><br><span class="line">            n.value = <span class="string">&#x27; &#x27;</span></span><br><span class="line">            n.spaces.before = n.spaces.after = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="comment">// in newer versions of sass, /deep/ support is also dropped, so add a ::v-deep alias</span></span><br><span class="line">          <span class="keyword">if</span> (n.type === <span class="string">&#x27;pseudo&#x27;</span> &amp;&amp; n.value === <span class="string">&#x27;::v-deep&#x27;</span>) &#123;</span><br><span class="line">            n.value = n.spaces.before = n.spaces.after = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (n.type !== <span class="string">&#x27;pseudo&#x27;</span> &amp;&amp; n.type !== <span class="string">&#x27;combinator&#x27;</span>) &#123;</span><br><span class="line">            node = n</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node) &#123;</span><br><span class="line">          node.spaces.after = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">// For deep selectors &amp; standalone pseudo selectors,</span></span><br><span class="line">          <span class="comment">// the attribute selectors are prepended rather than appended.</span></span><br><span class="line">          <span class="comment">// So all leading spaces must be eliminated to avoid problems.</span></span><br><span class="line">          selector.first.spaces.before = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        selector.insertAfter(</span><br><span class="line">          node,</span><br><span class="line">          selectorParser.attribute(&#123;</span><br><span class="line">            attribute: id</span><br><span class="line">          &#125;)</span><br><span class="line">        )</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;).processSync(node.selector)</span><br></pre></td></tr></table></figure>
+
+
+<p>从设计角度来说，我们也不推荐使用嵌套过多:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Very nested SCSS produces big CSS output and is less reusable than little nested one.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Use</span> nesting <span class="keyword">to</span> <span class="keyword">not</span> <span class="keyword">repeat</span> yourself <span class="keyword">when</span> scoping <span class="keyword">of</span> selectors <span class="keyword">is</span> necessary, <span class="keyword">not</span> <span class="keyword">to</span> reflect the <span class="keyword">document</span> structure.</span><br><span class="line"></span><br><span class="line">Supported <span class="keyword">by</span>: <span class="keyword">http</span>://youtu.be/fPAf8dN4G4w?t=<span class="number">26</span>m17s <span class="keyword">and</span> <span class="keyword">http</span>://youtu.be/hou2wJCh3XE?t=<span class="number">4</span>m11s</span><br></pre></td></tr></table></figure>
+
+<h3 id="chrome-版本"><a href="#chrome-版本" class="headerlink" title="chrome 版本"></a>chrome 版本</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://omahaproxy.appspot.com/">https://omahaproxy.appspot.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html">https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

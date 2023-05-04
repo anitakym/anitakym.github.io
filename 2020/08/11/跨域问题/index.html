@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        跨域问题 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E6%A3%80%E8%AF%B7%E6%B1%82"><span class="toc-text">预检请求</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CORS-settings-attributes"><span class="toc-text">CORS settings attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#due-to-access-control-checks"><span class="toc-text">due to access control checks</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        跨域问题
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-08-11 17:24:10</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#CORS" title="CORS">CORS</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>HTTP access control (CORS) 跨域问题是工作中，开发环境下，常遇到的一个问题</p>
+</blockquote>
+<ul>
+<li>名词解释</li>
+</ul>
+<h4 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h4><p>Preflighted requests(options)<br>触发条件：</p>
+<ul>
+<li><p>It uses methods other than GET, HEAD or POST. Also, if POST is used to send request data with a Content-Type other than application/x-www-form-urlencoded, multipart/form-data, ortext/plain, e.g. if the POST request sends an XML payload to the server using application/xmlor text/xml, then the request is preflighted.</p>
+</li>
+<li><p>It sets custom headers in the request (e.g. the request uses a header such as X-PINGOTHER)</p>
+</li>
+</ul>
+<p>浏览器在发起跨域请求的时候会带着一个<code>Origin</code> header，那么其实就是个custom headers，那么也就会先触发一个Preflighted requests， Fetch Standard 也有提到。</p>
+<p>指路：Fetch Standard（<a target="_blank" rel="noopener" href="https://fetch.spec.whatwg.org/#cors-preflight-request%EF%BC%89">https://fetch.spec.whatwg.org/#cors-preflight-request）</a><br>3.2.2. HTTP requests<br>A CORS request is an HTTP request that includes an <code>Origin</code> header. It cannot be reliably identified as participating in the CORS protocol as the <code>Origin</code> header is also included for all requests whose method is neither <code>GET</code> nor <code>HEAD</code>.</p>
+<p>A CORS-preflight request is a CORS request that checks to see if the CORS protocol is understood. It uses <code>OPTIONS</code> as method and includes these headers:</p>
+<p>✔MDN<code>Access-Control-Request-Method</code><br>Indicates which method a future CORS request to the same resource might use.</p>
+<p>✔MDN<code>Access-Control-Request-Headers</code><br>Indicates which headers a future CORS request to the same resource might use.</p>
+<ul>
+<li>为什么要发预检请求？<br>我们都知道浏览器的同源策略，就是出于安全考虑，浏览器会限制从脚本发起的跨域HTTP请求，像XMLHttpRequest和Fetch都遵循同源策略。浏览器限制跨域请求一般有两种方式：<ol>
+<li>浏览器限制发起跨域请求</li>
+<li>跨域请求可以正常发起，但是返回的结果被浏览器拦截了<br>一般浏览器都是第二种方式限制跨域请求，那就是说请求已到达服务器，并有可能对数据库里的数据进行了操作，但是返回的结果被浏览器拦截了，那么我们就获取不到返回结果，这是一次失败的请求，但是可能对数据库里的数据产生了影响。<br>为了防止这种情况的发生，规范要求，对这种可能对服务器数据产生副作用的HTTP请求方法，浏览器必须先使用OPTIONS方法发起一个预检请求，从而获知服务器是否允许该跨域请求：如果允许，就发送带数据的真实请求；如果不允许，则阻止发送带数据的真实请求。</li>
+</ol>
+</li>
+</ul>
+<h3 id="CORS-settings-attributes"><a href="#CORS-settings-attributes" class="headerlink" title="CORS settings attributes"></a>CORS settings attributes</h3><p>canvas合成图片时候的跨域问题<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/crossorigin">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/crossorigin</a></p>
+<h3 id="due-to-access-control-checks"><a href="#due-to-access-control-checks" class="headerlink" title="due to access control checks"></a>due to access control checks</h3><p>COS新的测试桶，部分safari浏览器，会报这个，因为使用了通配符 * 作为allow的origin; 修改之后即可；</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        网关系统-Gateway-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#why"><span class="toc-text">why</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#what"><span class="toc-text">what</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B"><span class="toc-text">请求类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-text">功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E5%85%B3%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1"><span class="toc-text">网关基础服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E7%B3%BB%E7%BB%9F"><span class="toc-text">统一用户中心系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E6%96%99%E7%B3%BB%E7%BB%9F"><span class="toc-text">物料系统</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#frameworks"><span class="toc-text">frameworks</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        网关系统-Gateway-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-03-10 17:38:05</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="why"><a href="#why" class="headerlink" title="why"></a>why</h2><ul>
+<li>应用稳定性: 如果没办法对单一的模块做熔断、升级、回滚等操作，线上不可控的概率极大 -&gt; 微服务架构<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通用性的认证、鉴权、限流 -&gt; 微服务-造轮子</span><br><span class="line">业务复杂度上升 -&gt; 域名分配问题</span><br><span class="line">服务使用的语言框架差异 - DevOps 系统</span><br></pre></td></tr></table></figure></li>
+<li>网关系统 - 通过网关的统一入口来调度各个微服务功能模块，使得每个微服务可以关注于自身的业务功能开发</li>
+</ul>
+<h2 id="what"><a href="#what" class="headerlink" title="what"></a>what</h2><h4 id="请求类型"><a href="#请求类型" class="headerlink" title="请求类型"></a>请求类型</h4><ul>
+<li>静态资源网关 - CSR ｜ SSR</li>
+<li>API网关 - MSA - 统一出入口 - 降低接入和使用成本</li>
+</ul>
+<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><ul>
+<li>流量网关 - 安全（黑白名单），分流（负载均衡）</li>
+<li>业务网关 - 用户（认证，鉴权），服务稳定性（降级，容灾，分流），业务属性灰度（AB test），代理（资源代理，缓存 - 成本高），统一前置（日志，数据校验）</li>
+</ul>
+<h4 id="网关基础服务"><a href="#网关基础服务" class="headerlink" title="网关基础服务"></a>网关基础服务</h4><ul>
+<li>资源分发｜API分发</li>
+<li>资源缓存模块</li>
+<li>AB TEST模块</li>
+<li>通用日志模块</li>
+</ul>
+<h4 id="统一用户中心系统"><a href="#统一用户中心系统" class="headerlink" title="统一用户中心系统"></a>统一用户中心系统</h4><ul>
+<li>用户登录，认证等</li>
+<li>权限系统（RBAC） - 优先级高</li>
+</ul>
+<h4 id="物料系统"><a href="#物料系统" class="headerlink" title="物料系统"></a>物料系统</h4><ul>
+<li>DevOps相关</li>
+</ul>
+<h3 id="frameworks"><a href="#frameworks" class="headerlink" title="frameworks"></a>frameworks</h3><ul>
+<li>Nginx+Lua：Open Resty、Abtesting Gateway</li>
+<li>Java：Spring Cloud Gateway</li>
+<li>Go：Janus、Grpc-Gateway</li>
+<li>Node.js：Express Gateway、MicroGateway</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

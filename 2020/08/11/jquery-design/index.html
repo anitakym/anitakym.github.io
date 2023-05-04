@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        jquery-design - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5"><span class="toc-text">设计理念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%E5%A2%9E%E5%BC%BA"><span class="toc-text">回归增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dir"><span class="toc-text">dir</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#example"><span class="toc-text">example</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB"><span class="toc-text">动画</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9Bjquery%E7%9A%84%E9%A1%B9%E7%9B%AE"><span class="toc-text">一些jquery的项目</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#basics"><span class="toc-text">basics</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#module-js"><span class="toc-text">module.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Others"><span class="toc-text">Others</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ajax"><span class="toc-text">ajax</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        jquery-design
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-08-11 11:31:11</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#jquery" title="jquery">jquery</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>一般我看源码的tricks，找到core.js,一些精简的库，cmd+J,cmd+K,cmd+0（VSCode）;得到方法折叠，然后再一层层展开看结构；<br>jQuery 阶段性的选择，在那个阶段，解决了那个阶段的问题；<br>github彻底移除jquery - blog( why | how )</p>
+</blockquote>
+<h2 id="设计理念"><a href="#设计理念" class="headerlink" title="设计理念"></a>设计理念</h2><h3 id="回归增强"><a href="#回归增强" class="headerlink" title="回归增强"></a>回归增强</h3><ul>
+<li>Regressive Enhancement</li>
+<li>为系统的特性设定基线，并应用到较老的设备和浏览器中<h3 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h3></li>
+<li>3.1.0<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line">➜  jquery tree</span><br><span class="line">.</span><br><span class="line">├── AUTHORS.txt</span><br><span class="line">├── LICENSE.txt</span><br><span class="line">├── README.md</span><br><span class="line">├── brower.json</span><br><span class="line">├── dist</span><br><span class="line">│   ├── core.js</span><br><span class="line">│   ├── jquery.js</span><br><span class="line">│   ├── jquery<span class="selector-class">.min</span>.js</span><br><span class="line">│   ├── jquery<span class="selector-class">.min</span>.map</span><br><span class="line">│   ├── jquery<span class="selector-class">.slim</span>.js</span><br><span class="line">│   ├── jquery<span class="selector-class">.slim</span><span class="selector-class">.min</span>.js</span><br><span class="line">│   └── jquery<span class="selector-class">.slim</span><span class="selector-class">.min</span>.map</span><br><span class="line">├── external</span><br><span class="line">│   └── sizzle</span><br><span class="line">│       └── dist</span><br><span class="line">│           └── LICENSE.txt</span><br><span class="line">├── package.json</span><br><span class="line">└── src</span><br><span class="line">    ├── ajax</span><br><span class="line">    │   ├── jsonp.js</span><br><span class="line">    │   ├── load.js</span><br><span class="line">    │   ├── parseXML.js</span><br><span class="line">    │   ├── script.js</span><br><span class="line">    │   ├── var</span><br><span class="line">    │   │   ├── location.js</span><br><span class="line">    │   │   ├── nonce.js</span><br><span class="line">    │   │   └── rquery.js</span><br><span class="line">    │   └── xhr.js</span><br><span class="line">    ├── ajax.js</span><br><span class="line">    ├── attributes</span><br><span class="line">    │   ├── attr.js</span><br><span class="line">    │   ├── classes.js</span><br><span class="line">    │   ├── prop.js</span><br><span class="line">    │   ├── support.js</span><br><span class="line">    │   └── val.js</span><br><span class="line">    ├── attributes.js</span><br><span class="line">    ├── callbacks.js</span><br><span class="line">    ├── core</span><br><span class="line">    │   ├── DOMEval.js</span><br><span class="line">    │   ├── access.js</span><br><span class="line">    │   ├── init.js</span><br><span class="line">    │   ├── parseHTML.js</span><br><span class="line">    │   ├── ready-no-deferred.js</span><br><span class="line">    │   ├── ready.js</span><br><span class="line">    │   ├── readyException.js</span><br><span class="line">    │   ├── support.js</span><br><span class="line">    │   └── var</span><br><span class="line">    │       └── rsingleTag.js</span><br><span class="line">    ├── core.js</span><br><span class="line">    ├── css</span><br><span class="line">    │   ├── addGetHookIf.js</span><br><span class="line">    │   ├── adjustCSS.js</span><br><span class="line">    │   ├── curCss.js</span><br><span class="line">    │   ├── hiddenVisibleSelector.js</span><br><span class="line">    │   ├── showHide.js</span><br><span class="line">    │   ├── support.js</span><br><span class="line">    │   └── var</span><br><span class="line">    │       ├── cssExpand.js</span><br><span class="line">    │       ├── getStyles.js</span><br><span class="line">    │       ├── isHiddenWithinTree.js</span><br><span class="line">    │       ├── rmargin.js</span><br><span class="line">    │       ├── rnumnonpx.js</span><br><span class="line">    │       └── swap.js</span><br><span class="line">    ├── css.js</span><br><span class="line">    ├── data</span><br><span class="line">    │   ├── Data.js</span><br><span class="line">    │   └── var</span><br><span class="line">    │       ├── acceptData.js</span><br><span class="line">    │       ├── dataPriv.js</span><br><span class="line">    │       └── dataUser.js</span><br><span class="line">    ├── data.js</span><br><span class="line">    ├── deferred</span><br><span class="line">    │   └── exceptionHook.js</span><br><span class="line">    ├── deferred.js</span><br><span class="line">    ├── deprecated.js</span><br><span class="line">    ├── dlimensions.js</span><br><span class="line">    ├── effects</span><br><span class="line">    │   ├── Tween.js</span><br><span class="line">    │   └── animatedSelector.js</span><br><span class="line">    ├── effects.js</span><br><span class="line">    ├── event</span><br><span class="line">    │   ├── ajax.js</span><br><span class="line">    │   ├── alias.js</span><br><span class="line">    │   ├── focusin.js</span><br><span class="line">    │   ├── support.js</span><br><span class="line">    │   └── trigger.js</span><br><span class="line">    ├── event.js</span><br><span class="line">    ├── exports</span><br><span class="line">    │   ├── amd.js</span><br><span class="line">    │   └── global.js</span><br><span class="line">    ├── jquery.js</span><br><span class="line">    ├── manipulation</span><br><span class="line">    │   ├── _evalUrl.js</span><br><span class="line">    │   ├── buildFragment.js</span><br><span class="line">    │   ├── getAll.js</span><br><span class="line">    │   ├── setGlobalEval.js</span><br><span class="line">    │   ├── support.js</span><br><span class="line">    │   ├── var</span><br><span class="line">    │   │   ├── rcheckableType.js</span><br><span class="line">    │   │   ├── rscriptType.js</span><br><span class="line">    │   │   └── rtagName.js</span><br><span class="line">    │   └── wrapMap.js</span><br><span class="line">    ├── manipulation.js</span><br><span class="line">    ├── offset.js</span><br><span class="line">    ├── queue</span><br><span class="line">    │   └── delay.js</span><br><span class="line">    ├── queue.js</span><br><span class="line">    ├── selector-native.js</span><br><span class="line">    ├── selector-sizzle.js</span><br><span class="line">    ├── selector.js</span><br><span class="line">    ├── serialize.js</span><br><span class="line">    ├── traversing</span><br><span class="line">    │   └── var</span><br><span class="line">    │       └── findFilter.js</span><br><span class="line">    ├── traversing.js</span><br><span class="line">    ├── var</span><br><span class="line">    │   ├── ObjectFunctionString.js</span><br><span class="line">    │   ├── arr.js</span><br><span class="line">    │   ├── class2type.js</span><br><span class="line">    │   ├── concat.js</span><br><span class="line">    │   ├── document.js</span><br><span class="line">    │   ├── documentElement.js</span><br><span class="line">    │   ├── fnToString.js</span><br><span class="line">    │   ├── getProto.js</span><br><span class="line">    │   ├── hasOwn.js</span><br><span class="line">    │   ├── indexOf.js</span><br><span class="line">    │   ├── pnum.js</span><br><span class="line">    │   ├── push.js</span><br><span class="line">    │   ├── rcssNum.js</span><br><span class="line">    │   ├── rnotwhile.js</span><br><span class="line">    │   ├── slice.js</span><br><span class="line">    │   ├── support.js</span><br><span class="line">    │   └── toString.js</span><br><span class="line">    └── wrap.js</span><br><span class="line"></span><br><span class="line"><span class="number">24</span> directories, <span class="number">110</span> files</span><br></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title="$"></a>$</h4>$ 本质是个函数</li>
+</ul>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$</span><br><span class="line">jQuery.noConflict()</span><br><span class="line">$</span><br><span class="line">jQuery</span><br></pre></td></tr></table></figure>
+<p>jQuery在占用$之前，先保存了原来的$,调用jQuery.noConflict()时会把原来保存的变量还原</p>
+<h4 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h4><ul>
+<li>层级选择器</li>
+<li>子选择器</li>
+<li>过滤器</li>
+<li>表单相关</li>
+</ul>
+<h4 id="example"><a href="#example" class="headerlink" title="example"></a>example</h4><p>data() 方法向被选元素附加数据，或者从被选元素获取数据。<br>self.find(‘#xxx tr:last’).data().id = rows.sub_categories[i].id;<br>self.find(“#xxx”).children().eq(i).data(“id”)</p>
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><p>我们可以扩展jquery来实现自定义方法—— 编写jquery插件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.fn.testfunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.css(<span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;#fffceb&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">this</span>; <span class="comment">// 因为jquery对象支持链式操作，扩展方法也要能继续链式下去</span></span><br><span class="line">&#125;</span><br><span class="line">$.fn.testfunc.defaults = &#123;</span><br><span class="line">  color: <span class="string">&#x27;#ffffff&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>默认值处理： || &amp;&amp; (可以这么处理)</p>
+<p>编写插件原则：</p>
+<ol>
+<li>给$.fn绑定函数，实现插件的代码逻辑；</li>
+<li>插件函数最后要return this，以支持链式调用；</li>
+<li>插件函数要有默认值，绑定在$.fn.<pluginName>.defaults上；</li>
+<li>调用时可传入设定值以便覆盖默认值</li>
+<li>过滤特定元素</li>
+</ol>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://api.jquery.com/click/">https://api.jquery.com/click/</a></li>
+<li>click 如果事件处理函数里面有延迟执行，可能会被浏览器拦截</li>
+</ul>
+<h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><h3 id="一些jquery的项目"><a href="#一些jquery的项目" class="headerlink" title="一些jquery的项目"></a>一些jquery的项目</h3><ul>
+<li>The No Hassle JavaScript Colorpicker（bgrins.github.io/spectrum/）</li>
+<li></li>
+</ul>
+<h2 id="basics"><a href="#basics" class="headerlink" title="basics"></a>basics</h2><h3 id="module-js"><a href="#module-js" class="headerlink" title="module.js"></a>module.js</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="string">&#x27;use strict&#x27;</span></span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment"># 自执行函数</span></span><br><span class="line"><span class="comment"># 第一个;是为了如果代码混淆之后，前面的代码如果没有分号，可以避免问题；</span></span><br><span class="line"><span class="comment"># 为什么要放在这个里面，避免全局污染；如果直接var a = 1; 则 window.a = 1;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><p>React17:</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">before17:</span></span><br><span class="line"><span class="keyword">document.addEventListener() </span>来监听事件</span><br><span class="line"><span class="number">17</span>:</span><br><span class="line">rootNode.<span class="keyword">addEventListener()</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"># </span>解决了多版本 React 的问题</span><br><span class="line"><span class="comment"># 在和 JQuery 一起使用时，降低事件冲突的可能性</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://api.jquery.com/jQuery.ajax/">https://api.jquery.com/jQuery.ajax/</a><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">async (<span class="keyword">default</span>: <span class="keyword">true</span>)</span><br><span class="line"><span class="keyword">Type</span>: <span class="type">Boolean</span></span><br><span class="line"><span class="keyword">By</span> <span class="keyword">default</span>, <span class="keyword">all</span> requests are sent asynchronously (i.e. this <span class="keyword">is</span> <span class="keyword">set</span> <span class="keyword">to</span> <span class="keyword">true</span> <span class="keyword">by</span> <span class="keyword">default</span>). <span class="keyword">If</span> you need synchronous requests, <span class="keyword">set</span> this <span class="keyword">option</span> <span class="keyword">to</span> <span class="keyword">false</span>. <span class="keyword">Cross</span>-<span class="keyword">domain</span> requests <span class="keyword">and</span> dataType: &quot;jsonp&quot; requests <span class="keyword">do</span> <span class="keyword">not</span> support synchronous operation. Note that synchronous requests may temporarily <span class="keyword">lock</span> the browser, disabling <span class="keyword">any</span> actions <span class="keyword">while</span> the request <span class="keyword">is</span> active. <span class="keyword">As</span> <span class="keyword">of</span> jQuery <span class="number">1.8</span>, the use <span class="keyword">of</span> async: <span class="keyword">false</span> <span class="keyword">with</span> jqXHR ($.<span class="keyword">Deferred</span>) <span class="keyword">is</span> deprecated; you must use the success/error/complete callback <span class="keyword">options</span> <span class="keyword">instead</span> <span class="keyword">of</span> the corresponding methods <span class="keyword">of</span> the jqXHR <span class="keyword">object</span> such <span class="keyword">as</span> jqXHR.done().</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

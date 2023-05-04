@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        图标生成 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#electron"><span class="toc-text">electron</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Flutter"><span class="toc-text">Flutter</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IOS"><span class="toc-text">IOS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        图标生成
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-08-16 15:29:04</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="electron"><a href="#electron" class="headerlink" title="electron"></a>electron</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># testimg.png 为原始文件</span></span><br><span class="line"><span class="comment"># 新建文件夹 icons.iconset</span></span><br><span class="line"><span class="comment"># man sips | man iconutil</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">16</span> <span class="number">16</span> testimg.png --out icons.iconset/testimg_<span class="number">16</span>x<span class="number">16</span>.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">32</span> <span class="number">32</span> testimg.png --out icons.iconset/testimg_<span class="number">16</span>x<span class="number">16</span>@<span class="number">2</span>x.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">32</span> <span class="number">32</span> testimg.png --out icons.iconset/testimg_<span class="number">32</span>x<span class="number">32</span>.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">64</span> <span class="number">64</span> testimg.png --out icons.iconset/testimg_<span class="number">32</span>x<span class="number">32</span>@<span class="number">2</span>x.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">64</span> <span class="number">64</span> testimg.png --out icons.iconset/testimg_<span class="number">64</span>x<span class="number">64</span>.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">128</span> <span class="number">128</span> testimg.png --out icons.iconset/testimg_<span class="number">64</span>x<span class="number">64</span>@<span class="number">2</span>x.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">128</span> <span class="number">128</span> testimg.png --out icons.iconset/testimg_<span class="number">128</span>x<span class="number">128</span>.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">256</span> <span class="number">256</span> testimg.png --out icons.iconset/testimg_<span class="number">128</span>x<span class="number">128</span>@<span class="number">2</span>x.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">256</span> <span class="number">256</span> testimg.png --out icons.iconset/testimg_<span class="number">256</span>x<span class="number">256</span>.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">512</span> <span class="number">512</span> testimg.png --out icons.iconset/testimg_<span class="number">256</span>x<span class="number">256</span>@<span class="number">2</span>x.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">512</span> <span class="number">512</span> testimg.png --out icons.iconset/testimg_<span class="number">512</span>x<span class="number">512</span>.png</span><br><span class="line"></span><br><span class="line"><span class="attribute">sips</span> -z <span class="number">1024</span> <span class="number">1024</span> testimg.png --out icons.iconset/testimg_<span class="number">512</span>x<span class="number">512</span>@<span class="number">2</span>x.png</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attribute">iconutil</span> -c icns icons.iconset -o testimg.icns</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h3><p><a target="_blank" rel="noopener" href="https://flutter.cn/docs/development/ui/assets-and-images">https://flutter.cn/docs/development/ui/assets-and-images</a></p>
+<ul>
+<li>可以借助 sips 进行生成，编写个生成脚本</li>
+<li>然后按约定规则放置到对应位置</li>
+<li>ios 和安卓的规则不完全一样，但是思路是一样的，生成不同尺寸的图片，按照约定的命名规范命名，放置到对应的文件夹</li>
+<li>assets 基于像素密度结构</li>
+</ul>
+<blockquote>
+<p>Flutter 应用，最终以原生工程的方式打包运行在 Android 和 iOS 平台上，so, Flutter 启动时依赖的是原生 Android &amp;&amp;iOS 的运行环境；在引擎初始化之前的（如启动图、App 图标、App 名字）需要在原生工程中实现；</p>
+</blockquote>
+<h4 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h4><ul>
+<li>图标：ios/Runner/Assets.xcassets/AppIcon.appiconset</li>
+<li>启动图：ios/Runner/Assets.xcassets/LaunchImage.imageset</li>
+</ul>
+<h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><ul>
+<li>app/src/main/res/mipmap</li>
+<li>res/drawable + 分辨率</li>
+<li>res/layout 布局 ｜ res/values 资源描述 | assets 原始文件</li>
+<li>drawable<br>可以借助 sips 进行生成，编写个生成脚本<br>最好是借助 UI 的专业工具进行生成</li>
+<li>启动图：app/src/main/res/drawable/lauch_background.xml</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

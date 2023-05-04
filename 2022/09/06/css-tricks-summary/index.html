@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        css-tricks-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%80%BB%E7%BB%93"><span class="toc-text">一些基本的总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#event%E5%81%8F%E7%A7%BB%E9%87%8F"><span class="toc-text">event偏移量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E7%B1%BB"><span class="toc-text">问题分类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%BE%E5%A4%A7%E9%95%9C"><span class="toc-text">放大镜</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BB%9A%E5%8A%A8%E6%B8%90%E5%8F%98%E8%83%8C%E6%99%AF"><span class="toc-text">滚动渐变背景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E5%BD%B1%E6%96%91%E9%A9%B3%E6%95%88%E6%9E%9C"><span class="toc-text">光影斑驳效果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%89%93%E5%AD%97%E6%95%88%E6%9E%9C"><span class="toc-text">自动打字效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8CSS%E5%AE%9E%E7%8E%B0%E5%88%87%E6%8D%A2%E5%92%8C%E8%A1%A8%E5%8D%95%E6%95%88%E6%9E%9C"><span class="toc-text">用CSS实现切换和表单效果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tools"><span class="toc-text">tools</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        css-tricks-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-09-06 14:02:46</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="一些基本的总结"><a href="#一些基本的总结" class="headerlink" title="一些基本的总结"></a>一些基本的总结</h2><h4 id="event偏移量"><a href="#event偏移量" class="headerlink" title="event偏移量"></a>event偏移量</h4><ul>
+<li>相对左上角<br>screen - 屏幕 | page - 网页区域 | client - 浏览器可视区域 | offset - 父节点区域（无则是<code>&lt;html&gt;or&lt;body&gt;</code>）</li>
+</ul>
+<h4 id="问题分类"><a href="#问题分类" class="headerlink" title="问题分类"></a>问题分类</h4><ul>
+<li>结构 | 背景 | 点击 | 切换 | 悬浮 | 表单</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li>基于变量与JS通信，简化基于JS逻辑的效果<h4 id="放大镜"><a href="#放大镜" class="headerlink" title="放大镜"></a>放大镜</h4></li>
+<li>scss</li>
+<li>变量（offset偏移量）随着鼠标移动而改变，offset控制伪元素的绝对定位</li>
+<li>伪元素的background实现放大镜显示内容</li>
+<li><a target="_blank" rel="noopener" href="https://codepen.io/JowayYoung/pen/oNbGzPy">https://codepen.io/JowayYoung/pen/oNbGzPy</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/JowayYoung/idea-css">https://github.com/JowayYoung/idea-css</a></li>
+</ul>
+<h4 id="滚动渐变背景"><a href="#滚动渐变背景" class="headerlink" title="滚动渐变背景"></a>滚动渐变背景</h4><ul>
+<li>event.target.scrollTop</li>
+<li>把鼠标相关参数赋值到变量中</li>
+</ul>
+<h2 id="光影斑驳效果"><a href="#光影斑驳效果" class="headerlink" title="光影斑驳效果"></a>光影斑驳效果</h2><p><a target="_blank" rel="noopener" href="https://css-tricks.com/css-dappled-light-effect/">https://css-tricks.com/css-dappled-light-effect/</a></p>
+<h4 id="自动打字效果"><a href="#自动打字效果" class="headerlink" title="自动打字效果"></a>自动打字效果</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://codepen.io/JowayYoung">https://codepen.io/JowayYoung</a></li>
+</ul>
+<h4 id="用CSS实现切换和表单效果"><a href="#用CSS实现切换和表单效果" class="headerlink" title="用CSS实现切换和表单效果"></a>用CSS实现切换和表单效果</h4><h2 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://codepen.io/">https://codepen.io/</a></li>
+<li><a target="_blank" rel="noopener" href="https://caniuse.com/">https://caniuse.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://csstriggers.com/">https://csstriggers.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://cubic-bezier.com/">https://cubic-bezier.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://xluos.github.io/demo/flexbox/">https://xluos.github.io/demo/flexbox/</a></li>
+<li><a target="_blank" rel="noopener" href="https://gs.statcounter.com/">https://gs.statcounter.com/</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

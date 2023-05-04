@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        css应用总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%A1%B5"><span class="toc-text">分页</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#break"><span class="toc-text">break</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orphans-windows"><span class="toc-text">orphans | windows</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css"><span class="toc-text">css</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#box-sizing"><span class="toc-text">box-sizing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#outline"><span class="toc-text">outline</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#focus-hover"><span class="toc-text">:focus | :hover</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mask%E5%A4%84%E7%90%86"><span class="toc-text">mask处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#calc"><span class="toc-text">calc()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#white-space"><span class="toc-text">white-space</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hover"><span class="toc-text">hover</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unocss"><span class="toc-text">unocss</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#querySelector-querySelectorAll"><span class="toc-text">querySelector | querySelectorAll</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#object-fit-object-position"><span class="toc-text">object-fit&#x2F;object-position</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#em-rem"><span class="toc-text">em | rem</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BFC"><span class="toc-text">BFC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-text">定位</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ifc-bfc-%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="toc-text">ifc &#x2F; bfc &#x2F; 盒模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#charset-import"><span class="toc-text">@charset @import</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-text">CSS模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-Hack"><span class="toc-text">CSS Hack</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AE%E8%A7%82%E7%8E%B0%E8%B1%A1"><span class="toc-text">微观现象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%B5%81"><span class="toc-text">文档流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#z-index"><span class="toc-text">z-index</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clearfix"><span class="toc-text">clearfix</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%83%E5%B1%80"><span class="toc-text">布局</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%9C%E8%89%B2%E5%87%BD%E6%95%B0"><span class="toc-text">颜色函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-text">属性函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%87%BD%E6%95%B0"><span class="toc-text">数字函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%87%BD%E6%95%B0"><span class="toc-text">背景函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BB%A4%E9%95%9C%E5%87%BD%E6%95%B0"><span class="toc-text">滤镜函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%87%BD%E6%95%B0"><span class="toc-text">图形函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E5%87%BD%E6%95%B0"><span class="toc-text">变换函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%8A%A8%E5%87%BD%E6%95%B0"><span class="toc-text">缓动函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%87%BD%E6%95%B0-1"><span class="toc-text">图形函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%93var-var"><span class="toc-text">–var | var()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#API"><span class="toc-text">API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-%EF%BD%9C-mask"><span class="toc-text">background ｜ mask</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E8%BF%9E%E5%86%99"><span class="toc-text">属性连写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%90%E5%8F%98"><span class="toc-text">渐变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mask"><span class="toc-text">mask</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#filter-grayscale-1"><span class="toc-text">filter:grayscale(1)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#transform"><span class="toc-text">transform</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1px"><span class="toc-text">1px</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E7%BF%BB%E8%BD%AC"><span class="toc-text">内容翻转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%B8%A1"><span class="toc-text">过渡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB"><span class="toc-text">动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E6%8E%A7%E4%BB%B6"><span class="toc-text">表单控件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A3%B0%E9%9F%B3%E6%B3%A2%E5%BD%A2"><span class="toc-text">声音波形</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        css应用总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-10-09 18:35:06</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><blockquote>
+<p>做的PDF打印的服务</p>
+</blockquote>
+<h4 id="break"><a href="#break" class="headerlink" title="break"></a>break</h4><ul>
+<li>用于模版的分页处理</li>
+<li>block元素（不脱离文档流，非弹性布局）</li>
+<li>page-break-after | page-break-before | page-break-inside</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/page-break-after">https://developer.mozilla.org/zh-CN/docs/Web/CSS/page-break-after</a></li>
+<li>break-after</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/break-after">https://developer.mozilla.org/zh-CN/docs/Web/CSS/break-after</a></li>
+<li>inside用avoid，避免元素被分割，例如本项目中题目index|tag|icon等元素(page-break-inside: avoid;)</li>
+<li>after用always，在需要插入分页的地方使用</li>
+</ul>
+<h4 id="orphans-windows"><a href="#orphans-windows" class="headerlink" title="orphans | windows"></a>orphans | windows</h4><h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reset.css <span class="meta"># 所有样式都被消除</span></span><br><span class="line"><span class="built_in">normalize</span>.css <span class="meta"># 更合适</span></span><br><span class="line"><span class="meta"># 引入第三方样式库之后，可以看看他们对全局样式的处理，再决定自己要不要做</span></span><br></pre></td></tr></table></figure>
+<h4 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing">https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing</a></li>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Note</span>: 对于新的web站点，你可能希望首先将box-sizing设置为border-box，如下所示：</span><br><span class="line"></span><br><span class="line">* &#123; box-sizing: border-box; &#125;</span><br><span class="line"></span><br><span class="line">这使得处理元素大小的工作变得容易得多，并且通常消除了在布局内容时可能遇到的许多陷阱。然而，在某些情况下，你应谨慎使用这个属性。例如： 你正在编写一个将由其他人使用的共享组件库，如果他们网站的其余部分没有设置此值，他们可能会发现很难使用你的组件库。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="outline"><a href="#outline" class="headerlink" title="outline"></a>outline</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/outline">https://developer.mozilla.org/zh-CN/docs/Web/CSS/outline</a><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border</span> 和 <span class="attribute">outline</span> 很类似，但有如下区别：</span><br><span class="line"></span><br><span class="line"><span class="attribute">outline</span>不占据空间，绘制于元素内容周围。</span><br><span class="line">根据规范，<span class="attribute">outline</span>通常是矩形，但也可以是非矩形的</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="focus-hover"><a href="#focus-hover" class="headerlink" title=":focus | :hover"></a>:focus | :hover</h4><h4 id="mask处理"><a href="#mask处理" class="headerlink" title="mask处理"></a>mask处理</h4><p>可以写个mask</p>
+<div class="xxx-xxx-mask"></div>
+<div class="xxx-xxx"></div>
+可以用结构的方法调
+
+
+<h4 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc()">https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc()</a></li>
+<li>应用在嵌入到IOS，Android的应用的服务项前端页面</li>
+</ul>
+<h4 id="white-space"><a href="#white-space" class="headerlink" title="white-space"></a>white-space</h4><ul>
+<li>富文本相关的录入和渲染，英语学科对<br><code>white-space: pre-wrap; work-break:work-break; text-align:justify;</code></li>
+<li>这个会在Safari<code>text-align:justify;</code> 不生效； Safari 只设置 <code>text-align:justify;</code>才能生效；</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/white-space">https://developer.mozilla.org/zh-CN/docs/Web/CSS/white-space</a></li>
+</ul>
+<h4 id="hover"><a href="#hover" class="headerlink" title="hover"></a>hover</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover">https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover</a></li>
+<li>媒体查询，可以判断hover的可用性</li>
+<li><a target="_blank" rel="noopener" href="https://caniuse.com/?search=hover">https://caniuse.com/?search=hover</a></li>
+<li>can i use - See full reference on MDN Web Docs. As of Safari for iOS 7.1.2, tapping a clickable element causes the element to enter the :hover state. The element will remain in the :hover state until a different element has entered the :hover state.</li>
+<li>js - window.matchMedia(‘(any-hover: hover)’);</li>
+</ul>
+<h2 id="unocss"><a href="#unocss" class="headerlink" title="unocss"></a>unocss</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://antfu.me/posts/reimagine-atomic-css-zh">https://antfu.me/posts/reimagine-atomic-css-zh</a> </li>
+<li>基本上上面这篇看完了就知道了</li>
+<li>原子化CSS<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">John Polacek 在 文章 Let’s Define Exactly What Atomic CSS <span class="keyword">is</span> 中写道：</span><br><span class="line">Atomic CSS <span class="keyword">is</span> the approach <span class="keyword">to</span> CSS architecture <span class="literal">that</span> favors small, single-purpose classes <span class="keyword">with</span> names based <span class="literal">on</span> visual <span class="keyword">function</span>.</span><br><span class="line">译文：</span><br><span class="line">原子化 CSS 是一种 CSS 的架构方式，它倾向于小巧且用途单一的 <span class="class"><span class="keyword">class</span>，并且会以视觉效果进行命名。</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="querySelector-querySelectorAll"><a href="#querySelector-querySelectorAll" class="headerlink" title="querySelector | querySelectorAll"></a>querySelector | querySelectorAll</h4><ul>
+<li>如果选择器是一个ID，并且这个ID错误使用多次，返回第一个匹配该ID的元素</li>
+<li>CSS伪类不会返回任何元素，selectors API</li>
+</ul>
+<h4 id="object-fit-object-position"><a href="#object-fit-object-position" class="headerlink" title="object-fit/object-position"></a>object-fit/object-position</h4><ul>
+<li>css3</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit">https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit</a></li>
+</ul>
+<h4 id="em-rem"><a href="#em-rem" class="headerlink" title="em | rem"></a>em | rem</h4><ul>
+<li><p>em相对于父元素，rem相对于根元素</p>
+</li>
+<li><p>r - root</p>
+</li>
+<li><p>子元素字体大小的em是相对于父元素字体大小</p>
+</li>
+<li><p>元素的width/height/padding/margin用em的话是相对于该元素的font-size</p>
+</li>
+<li><p>rem是全部的长度都相对于根元素(一般为<html>)</p>
+</li>
+</ul>
+<h4 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Block</span> <span class="selector-tag">Formatting</span> <span class="selector-tag">Context</span></span><br><span class="line"><span class="selector-tag">-</span> <span class="selector-tag">https</span>:<span class="comment">//developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context</span></span><br><span class="line"><span class="selector-tag">-</span> 页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素, 反之也如此</span><br><span class="line"><span class="selector-tag">-</span> 因为<span class="selector-tag">BFC</span>内部的元素和外部的元素绝对不会互相影响，因此， 当<span class="selector-tag">BFC</span>外部存在浮动时，它不应该影响<span class="selector-tag">BFC</span>内部<span class="selector-tag">Box</span>的布局，<span class="selector-tag">BFC</span>会通过变窄，而不与浮动有重叠。同样的，当<span class="selector-tag">BFC</span>内部有浮动时，为了不影响外部元素的布局，<span class="selector-tag">BFC</span>计算高度时会包括浮动的高度。避免<span class="selector-tag">margin</span> 重叠也是这样的一个道理。</span><br><span class="line"><span class="selector-tag">clear</span><span class="selector-pseudo">:both</span> <span class="selector-tag">BFC</span>/<span class="selector-tag">haslayout</span></span><br><span class="line"><span class="selector-tag">zoom</span><span class="selector-pseudo">:1(IE6</span>/<span class="selector-tag">IE7</span>)</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123; <span class="attribute">content</span>:&quot;; <span class="attribute">display</span>:block; <span class="attribute">height</span>:<span class="number">0</span>; <span class="attribute">overflow</span>:hidden; <span class="attribute">clear</span>:both; &#125;</span><br><span class="line"><span class="selector-class">.clearfix</span>&#123; *<span class="attribute">zoom</span>:!; &#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> 应用在包含浮动子元素的父级元素上</span><br></pre></td></tr></table></figure>
+
+<h4 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h4><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">内凹圆角</span><br><span class="line">学会组合，拆解图形</span><br><span class="line">linear-gradient()</span><br><span class="line">径向渐变</span><br><span class="line">relative/absolute</span><br><span class="line">限制定位 ab:  <span class="built_in">left</span>:<span class="number">0</span> <span class="built_in">top</span>:<span class="number">0</span></span><br><span class="line">限制层级</span><br><span class="line">限制超越overflow</span><br><span class="line">overflow：hidden 不能限制ab 但是加了relative，可以了</span><br><span class="line">relative、fixed 限制z-index层级</span><br><span class="line">relative，定位特性 相对自身定位 无侵入定位：自定义拖拽</span><br><span class="line"><span class="built_in">top</span>/<span class="built_in">bottom</span> <span class="built_in">left</span>/<span class="built_in">right</span> 绝对定位是拉伸 相对定位是斗争（<span class="built_in">top</span>,<span class="built_in">left</span>）</span><br><span class="line">relative 提高层叠上下文</span><br><span class="line">dom流后面覆盖前面</span><br><span class="line">position：relative(提高层级)</span><br><span class="line">relative z-index :<span class="built_in">auto</span>-&gt;不限制内部absolute层叠问题</span><br><span class="line">IE6，<span class="number">7</span>下，容易出现层级覆盖bug</span><br><span class="line">relative的最小化影响原则</span><br></pre></td></tr></table></figure>
+
+<h3 id="ifc-bfc-盒模型"><a href="#ifc-bfc-盒模型" class="headerlink" title="ifc / bfc / 盒模型"></a>ifc / bfc / 盒模型</h3><ul>
+<li>格式化上下文 - 决定渲染区域内节点的排版，关系和互相作用的渲染规则</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110617108">https://zhuanlan.zhihu.com/p/110617108</a></li>
+</ul>
+<h3 id="charset-import"><a href="#charset-import" class="headerlink" title="@charset @import"></a>@charset @import</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import">https://developer.mozilla.org/en-US/docs/Web/CSS/@import</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@charset">https://developer.mozilla.org/en-US/docs/Web/CSS/@charset</a><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Imported rules must come before all other types of rules, except @charset rules <span class="keyword">and</span> layer creating @layer statements. The @import rule is <span class="keyword">not</span> a nested statement. Therefore, it cannot be used inside conditional<span class="built_in"> group </span>at-rules.</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="CSS模块化"><a href="#CSS模块化" class="headerlink" title="CSS模块化"></a>CSS模块化</h3><p>class名 + hash值</p>
+<h3 id="CSS-Hack"><a href="#CSS-Hack" class="headerlink" title="CSS Hack"></a>CSS Hack</h3><ul>
+<li>IE8以下<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--[if IE]&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span></span><br><span class="line"><span class="xml">    .zzz </span><span class="template-variable">&#123;</span></span><br><span class="line"><span class="template-variable">    &#125;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">![endif]--</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+<li>Avoid CSS Expressions</li>
+</ul>
+<h4 id="微观现象"><a href="#微观现象" class="headerlink" title="微观现象"></a>微观现象</h4><ul>
+<li>换行编写行内元素，排版会出现5px空隙</li>
+<li>行内元素统一以底边垂直对齐</li>
+<li>排版若一行无法完成则换行接着排版</li>
+</ul>
+<h4 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h4><ul>
+<li>节点参与浮动布局后，自身脱流但其文本不脱流</li>
+<li>节点参与定位布局后，自身及其文本一起脱流</li>
+</ul>
+<h4 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h4><ul>
+<li>层叠上下文指盒模型在三维空间Z轴中的表现行为</li>
+<li>z-index只在声明定位的节点中起效</li>
+<li>节点在Z轴的层叠顺序根据z-index、层叠上下文和层叠等级共同决定</li>
+</ul>
+<h4 id="clearfix"><a href="#clearfix" class="headerlink" title="clearfix"></a>clearfix</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use">https://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use</a></li>
+</ul>
+<h4 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h4><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="颜色函数"><a href="#颜色函数" class="headerlink" title="颜色函数"></a>颜色函数</h4><ul>
+<li>rgb | rgba | hsl | hsla | color </li>
+<li>RGB色彩模式 - A透明度（rgba声明的透明度不会应用到子节点中，而opacity声明的透明度会应用到子节点）- 基于笛卡尔坐标系</li>
+<li>普通颜色可以用HEX色彩模式（16进制色彩模式）</li>
+<li>HSL色彩模式是工业界的色彩标准（色相，饱和度，亮度）</li>
+<li>HSL是将RGB中的点在圆柱坐标系中标记出来的表示法<h4 id="属性函数"><a href="#属性函数" class="headerlink" title="属性函数"></a>属性函数</h4></li>
+<li>attr | var</li>
+<li>While attr() is supported for effectively all browsers for the content property, CSS Values and Units Level 5 adds the ability to use attr() on any CSS property, and to use it for non-string values (e.g. numbers, colors).</li>
+</ul>
+<h4 id="数字函数"><a href="#数字函数" class="headerlink" title="数字函数"></a>数字函数</h4><ul>
+<li>clamp ｜ counter ｜ counters ｜ calc | max | min</li>
+<li>calc - 每个运算符号必须使用空格间隔，可混合不同计量单位动态计算</li>
+<li>解决路由切换时滚动条导致的网页抖动（<code>padding-right: calc(100vw - 100%)</code>）<h4 id="背景函数"><a href="#背景函数" class="headerlink" title="背景函数"></a>背景函数</h4></li>
+<li>url | element | image-set | linear-gradient | radial-gradient | conic-gradient | repeating-linear-gradient | repeating-radial-gradient | repeating-conic-gradient</li>
+</ul>
+<h4 id="滤镜函数"><a href="#滤镜函数" class="headerlink" title="滤镜函数"></a>滤镜函数</h4><ul>
+<li>blur ｜ brightness ｜ contrast ｜ drop-shadow ｜ grayscale ｜ hue-rotate | invert | opacity | saturate | sepial </li>
+</ul>
+<h4 id="图形函数"><a href="#图形函数" class="headerlink" title="图形函数"></a>图形函数</h4><ul>
+<li>circle ｜ ellipse ｜ inset ｜ path ｜ polygon </li>
+</ul>
+<h4 id="变换函数"><a href="#变换函数" class="headerlink" title="变换函数"></a>变换函数</h4><ul>
+<li>matrix ｜ perspective ｜ rotate ｜ scale ｜ skew ｜ translate</li>
+</ul>
+<h4 id="缓动函数"><a href="#缓动函数" class="headerlink" title="缓动函数"></a>缓动函数</h4><ul>
+<li>cubic-bezier ｜ steps</li>
+</ul>
+<h4 id="图形函数-1"><a href="#图形函数-1" class="headerlink" title="图形函数"></a>图形函数</h4><ul>
+<li>clip-path - 创建一个只有节点的部分区域可显示的剪切区域 - 只能裁剪折线形成的图形，曲线不行</li>
+</ul>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="–var-var"><a href="#–var-var" class="headerlink" title="–var | var()"></a>–var | var()</h4><ul>
+<li>自定义属性（–var）</li>
+<li>函数var()用于引用自定义属性</li>
+</ul>
+<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><ul>
+<li>elem.style.getPropertyValue()</li>
+<li>elem.style.setProperty()</li>
+<li>elem.style.removeProperty()<h3 id="background-｜-mask"><a href="#background-｜-mask" class="headerlink" title="background ｜ mask"></a>background ｜ mask</h3><h4 id="属性连写"><a href="#属性连写" class="headerlink" title="属性连写"></a>属性连写</h4></li>
+<li>color | image | repeat | attachment | position |｜ size | origin | clip | blend-mode</li>
+<li>margin padding border outline mask font transition animation</li>
+<li>position/size</li>
+<li>clip - 镂空文本<h4 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h4></li>
+<li>line-gradient</li>
+<li>radial-gradient</li>
+<li>conic-gradient</li>
+<li>repeating-*</li>
+</ul>
+<h4 id="mask"><a href="#mask" class="headerlink" title="mask"></a>mask</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.canvasapi.cn/CanvasRenderingContext2D/globalCompositeOperation">https://www.canvasapi.cn/CanvasRenderingContext2D/globalCompositeOperation</a></li>
+</ul>
+<h4 id="filter-grayscale-1"><a href="#filter-grayscale-1" class="headerlink" title="filter:grayscale(1)"></a>filter:grayscale(1)</h4><ul>
+<li><html style="filter:grayscale(1)"> - 把当前节点及后代节点声明为100%的灰度模式</li>
+<li>节点声明不为none的filter时，如果自身及后代节点声明了position:absolute/fixed，则为其创建一个新容器，使这些定位节点其定位基准相对新容器进行</li>
+<li>所以不要在body或者主要节点中声明filter，html是合适的</li>
+<li>html是最顶层的容器，即使创建了新的定位基准节点，不会对自身及后代节点产生不符合预期的影响</li>
+</ul>
+<h4 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h4><ul>
+<li>flat | perserve-3d</li>
+<li>tarnslate | scale | skew | rotate | matrix | perspective - 视距效果</li>
+<li>GPU硬件加速模式 - transform：translate3d() | translateZ() ， webkit内核中，translate3d() 明显； 问题解决-will-change（还会有别的问题），减少translate3d() 节点数量</li>
+</ul>
+<h4 id="1px"><a href="#1px" class="headerlink" title="1px"></a>1px</h4><ul>
+<li>移动端某些设备看着粗</li>
+<li>使用伪元素的边框去当作节点边框，声明border为1px,宽高声明成200%，再声明transform:scale(.5)</li>
+</ul>
+<h4 id="内容翻转"><a href="#内容翻转" class="headerlink" title="内容翻转"></a>内容翻转</h4><ul>
+<li>transform:scale()为负值</li>
+</ul>
+<h4 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h4><ul>
+<li>transition-property 。。。</li>
+<li>缓动函数 - 贝塞尔曲线 - <a target="_blank" rel="noopener" href="https://cubic-bezier.com/">https://cubic-bezier.com/</a></li>
+</ul>
+<h4 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h4><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+：相邻同胞选择器</span><br><span class="line">~：通用同胞选择器</span><br><span class="line"><span class="symbol">:not</span>()：非指定条件的元素</span><br><span class="line"><span class="symbol">:hover</span>：鼠标悬浮的元素</span><br><span class="line"><span class="symbol">:focus</span>：输入聚焦的表单元素</span><br><span class="line"><span class="symbol">:valid</span>：输入合法的表单元素</span><br><span class="line"><span class="symbol">:invalid</span>：输入非法的表单元素</span><br><span class="line"><span class="symbol">:checked</span>：选项选中的表单元素</span><br><span class="line"><span class="symbol">:placeholder-shown</span>：占位显示的表单元素</span><br><span class="line"><span class="symbol">:nth-child</span>(n)：元素中指定顺序索引的元素</span><br></pre></td></tr></table></figure>
+<h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><ul>
+<li>状态</li>
+<li>关键帧动画 ｜ 逐帧动画 - GIF</li>
+<li>关键帧动画必须通过animation与@keyframes声明</li>
+<li>逐帧动画只能通过animation-timing-function:steps()声明</li>
+</ul>
+<h4 id="表单控件"><a href="#表单控件" class="headerlink" title="表单控件"></a>表单控件</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">模块切换   ~  <span class="selector-pseudo">:checked</span>  <span class="selector-tag">nth-child</span>(n) </span><br><span class="line">选中状态   <span class="selector-pseudo">:hover</span></span><br><span class="line">输入状态，校验内容  <span class="selector-pseudo">:focus</span>  <span class="selector-pseudo">:valid</span>  <span class="selector-pseudo">:invalid</span></span><br><span class="line">判断输入框是否存在内容  +  <span class="selector-pseudo">:not()</span>  <span class="selector-tag">placeholder-shown</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">placeholder</span>：占位，在未输入内容时显示提示文本</span><br><span class="line"><span class="selector-tag">pattern</span>：正则，在输入内容时触发正则验证</span><br><span class="line"><span class="selector-pseudo">:valid</span>：作用于输入合法的表单节点</span><br><span class="line"><span class="selector-pseudo">:invalid</span>：作用于输入非法的表单节点</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h4 id="声音波形"><a href="#声音波形" class="headerlink" title="声音波形"></a>声音波形</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://wavesurfer-js.org/">https://wavesurfer-js.org/</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

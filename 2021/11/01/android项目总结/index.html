@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        android项目总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#doc"><span class="toc-text">doc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Error"><span class="toc-text">Error</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Gradle-sync-failed-Could-not-install-Gradle-distribution-from-%E2%80%98https-services-gradle-org-distributions-gradle-6-7-1-all-zip-39-40-s-221-ms"><span class="toc-text">Gradle sync failed: Could not install Gradle distribution from ‘https:&#x2F;&#x2F;services.gradle.org&#x2F;distributions&#x2F;gradle-6.7.1-all.zip&#39;. (40 s 221 ms)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build-err"><span class="toc-text">build err</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebView"><span class="toc-text">WebView</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E8%AF%95"><span class="toc-text">调试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-Review-Fix"><span class="toc-text">Code-Review-Fix</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AA%E9%BB%91%E5%B1%8F"><span class="toc-text">闪黑屏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D"><span class="toc-text">单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B7%E6%B7%86"><span class="toc-text">混淆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%9B%BA"><span class="toc-text">加固</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-text">问题处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#activity-launchmode-singletask"><span class="toc-text">activity - launchmode - singletask</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#user-agent-%E5%A4%A7%E8%B5%8F"><span class="toc-text">user-agent 大赏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%B1%B3%E5%B9%B3%E6%9D%BF"><span class="toc-text">小米平板</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%8F%E5%B9%95%E5%88%86%E8%BE%A8%E7%8E%87%E9%97%AE%E9%A2%98"><span class="toc-text">屏幕分辨率问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android%E7%AB%AF%E9%83%A8%E5%88%86%E6%9C%BA%E5%9E%8B%E5%8F%A3%E8%AF%AD%E8%AF%84%E6%B5%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8"><span class="toc-text">android端部分机型口语评测无法使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bugly"><span class="toc-text">bugly</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        android项目总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-01 16:14:13</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="doc"><a href="#doc" class="headerlink" title="doc"></a>doc</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/platforms#9.0">https://developer.android.com/studio/releases/platforms#9.0</a><h3 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h3><h4 id="Gradle-sync-failed-Could-not-install-Gradle-distribution-from-‘https-services-gradle-org-distributions-gradle-6-7-1-all-zip-39-40-s-221-ms"><a href="#Gradle-sync-failed-Could-not-install-Gradle-distribution-from-‘https-services-gradle-org-distributions-gradle-6-7-1-all-zip-39-40-s-221-ms" class="headerlink" title="Gradle sync failed: Could not install Gradle distribution from ‘https://services.gradle.org/distributions/gradle-6.7.1-all.zip&#39;. (40 s 221 ms)"></a>Gradle sync failed: Could not install Gradle distribution from ‘<a target="_blank" rel="noopener" href="https://services.gradle.org/distributions/gradle-6.7.1-all.zip&#39;">https://services.gradle.org/distributions/gradle-6.7.1-all.zip&#39;</a>. (40 s 221 ms)</h4></li>
+<li>ping了下这个域名 -&gt; ping: cannot resolve <a target="_blank" rel="noopener" href="https://services.gradle.org/distributions/gradle-6.7.1-all.zip">https://services.gradle.org/distributions/gradle-6.7.1-all.zip</a>: Unknown host</li>
+<li>Gradle Scripts -&gt;  gradle-wrapper.properties -&gt; 在官网找到对应版本，下载，把能下载的地址粘贴过来(https://downloads.gradle-dn.com/distributions/gradle-6.7.1-all.zip) </li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.com/studio/build/?hl=zh-cn">https://developer.android.com/studio/build/?hl=zh-cn</a> , Gradle官方相关配置说明</li>
+</ul>
+<h3 id="build-err"><a href="#build-err" class="headerlink" title="build err"></a>build err</h3><p>build =&gt; rebuild</p>
+<h2 id="WebView"><a href="#WebView" class="headerlink" title="WebView"></a>WebView</h2><p>x5内核    原生webview<br>内核版本    统一Blink内核(基于chromium)    4.4以下WebKit，4.4以上chromium</p>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/google/ios-webkit-debug-proxy">https://github.com/google/ios-webkit-debug-proxy</a><h2 id="Code-Review-Fix"><a href="#Code-Review-Fix" class="headerlink" title="Code-Review-Fix"></a>Code-Review-Fix</h2><h3 id="闪黑屏"><a href="#闪黑屏" class="headerlink" title="闪黑屏"></a>闪黑屏</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseAppCompatActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> void onPause() &#123;</span><br><span class="line">        <span class="keyword">super</span>.onPause(); <span class="comment">//fix</span></span><br><span class="line">        <span class="keyword">if</span> (!isXXX()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// origin </span></span><br><span class="line">        <span class="comment">// super.onPause(); </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+Web调用原生提供的openPage的方法，中间会闪黑屏，Android的查问题，发现这个问题；</li>
+</ul>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><ul>
+<li>dp：Density-independent pixels</li>
+<li>以160PPI屏幕为标准，则1dp=1px</li>
+<li>dp*ppi/160 = px</li>
+<li>sp：Scale-independent pixels</li>
+<li>以160PPI屏幕为标准，当字体大小为 100%时， 1sp=1px</li>
+<li>sp*ppi/160 = px</li>
+<li>建议文字用sp单位，非文字用dp单位</li>
+<li>dp,sp 让物理感官上面的高度呈现不会因为设备的分辨率而受影响<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;TextView</span><br><span class="line">           android:<span class="attribute">id</span>=<span class="string">&quot;@+id/tv_content&quot;</span></span><br><span class="line">           <span class="attribute">style</span>=<span class="string">&quot;@style/widget_font_medium&quot;</span></span><br><span class="line">           android:<span class="attribute">layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">           android:<span class="attribute">layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">           android:<span class="attribute">gravity</span>=<span class="string">&quot;center&quot;</span></span><br><span class="line">           android:<span class="attribute">paddingHorizontal</span>=<span class="string">&quot;8dp&quot;</span></span><br><span class="line">           android:<span class="attribute">text</span>=<span class="string">&quot;@string/home_ai_speech_tip&quot;</span></span><br><span class="line">           android:<span class="attribute">textColor</span>=<span class="string">&quot;@color/widget_color_white&quot;</span></span><br><span class="line">           android:<span class="attribute">textSize</span>=<span class="string">&quot;16sp&quot;</span></span><br><span class="line">           app:<span class="attribute">layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">           app:<span class="attribute">layout_constraintLeft_toLeftOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">           app:<span class="attribute">layout_constraintRight_toRightOf</span>=<span class="string">&quot;parent&quot;</span></span><br><span class="line">           app:<span class="attribute">layout_constraintTop_toTopOf</span>=<span class="string">&quot;parent&quot;</span> /&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h2></li>
+<li>build process<h2 id="加固"><a href="#加固" class="headerlink" title="加固"></a>加固</h2></li>
+<li>apk文件</li>
+<li>爱加密移动APP安全加固系统</li>
+<li><a target="_blank" rel="noopener" href="https://www.ijiami.cn/AppProtect/">https://www.ijiami.cn/AppProtect/</a><h3 id="问题处理"><a href="#问题处理" class="headerlink" title="问题处理"></a>问题处理</h3></li>
+<li>.so , <a target="_blank" rel="noopener" href="https://developer.android.com/ndk/guides/abis?hl=zh-cn">https://developer.android.com/ndk/guides/abis?hl=zh-cn</a></li>
+<li>加固之后，之前处理webview的包，需要再加个插件，解决加固之后的问题</li>
+<li>如果有注解的包，可能在加固之后容易有问题，需要做好处理</li>
+</ul>
+<h3 id="activity-launchmode-singletask"><a href="#activity-launchmode-singletask" class="headerlink" title="activity - launchmode - singletask"></a>activity - launchmode - singletask</h3><p>android:launchMode=”singleTask”<br>停机维护页面,和服务端约定接口状态，给出弹窗<br>改成singleTask，类似于web的单例模式，这样只有唯一一个弹框了</p>
+<h3 id="user-agent-大赏"><a href="#user-agent-大赏" class="headerlink" title="user-agent 大赏"></a>user-agent 大赏</h3><h4 id="小米平板"><a href="#小米平板" class="headerlink" title="小米平板"></a>小米平板</h4><ul>
+<li>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/89.0.4389.116 Safari/534.24 Device/nabu Model/21051182C XiaoMi/MiuiBrowser/14.6.62</li>
+</ul>
+<h3 id="屏幕分辨率问题"><a href="#屏幕分辨率问题" class="headerlink" title="屏幕分辨率问题"></a>屏幕分辨率问题</h3><ul>
+<li>锁放大缩小</li>
+</ul>
+<h3 id="android端部分机型口语评测无法使用"><a href="#android端部分机型口语评测无法使用" class="headerlink" title="android端部分机型口语评测无法使用"></a>android端部分机型口语评测无法使用</h3><ul>
+<li>反馈情况为，第一次能用，后面突然无法使用</li>
+<li>同时接入了某飞的SDK（需要麦克风-语音助手类似）</li>
+<li>接入了第三方口语测评SDK</li>
+<li>第三方口语测评部分机型无法使用</li>
+<li>真机复现 -&gt; 发现第三方口语测评SDK调用时报错，查出受另一SDK影响，因为都需要收音的资源，麦克风被占用了，所以上报的录音结果多次为0</li>
+<li>但是第三方口语测评SDK没有报错</li>
+</ul>
+<h3 id="bugly"><a href="#bugly" class="headerlink" title="bugly"></a>bugly</h3><ul>
+<li>Javascript的异常捕获功能</li>
+<li><a target="_blank" rel="noopener" href="https://bugly.qq.com/docs/user-guide/advance-features-android/?v=1.0.0#javascript">https://bugly.qq.com/docs/user-guide/advance-features-android/?v=1.0.0#javascript</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

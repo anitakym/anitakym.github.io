@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Extensible-Markup-Language-XML - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#doctype"><span class="toc-text">doctype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81"><span class="toc-text">字符编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML5-%E9%99%8D%E4%BD%8E%E6%A0%87%E8%AE%B0markup%EF%BC%8C%E7%AE%80%E5%8C%96%E8%B0%83%E7%94%A8-gt-%E4%B8%8D%E7%94%A8%E5%8A%A0type%E4%BA%86"><span class="toc-text">HTML5(降低标记markup，简化调用-&gt;不用加type了)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#H5"><span class="toc-text">H5</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E4%B8%8A%E7%9A%84%E6%94%B9%E8%BF%9B%EF%BC%9A"><span class="toc-text">语法上的改进：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0"><span class="toc-text">增加:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%9F%E9%99%A4%EF%BC%9A"><span class="toc-text">废除：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0-1"><span class="toc-text">增加:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%8A%E4%B8%80%E8%81%8Ahtml%E4%B8%AD%E6%9C%89%E8%B6%A3%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">聊一聊html中有趣的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#map-area"><span class="toc-text">map area</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Deprecated-Tags-Deprecated-Attributes"><span class="toc-text">Deprecated Tags &#x2F; Deprecated Attributes</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Extensible-Markup-Language-XML
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2016-03-03 13:57:50</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#很久以前系列" title="很久以前系列">很久以前系列</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#HTML" title="HTML">HTML</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h4 id="doctype"><a href="#doctype" class="headerlink" title="doctype"></a>doctype</h4><p>之前了解的都不细致，cookbook里面讲的很清楚，document type definition，文档类型声明</p>
+<p>为什么它要在第一行呢，因为是它告诉浏览器如何处理文档的，若非，则浏览器进入quirks mode,怪异模式，这样子代码就有可能无法正常运行了吼</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>奏是这么清爽，告诉浏览器处于标准模式下</p>
+<p>其实很早的时候也是超级简单的。</p>
+<h4 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h4><p>head标记中第一行要包含字符集（charset）的声明,告诉浏览器应该如何解释这个文件。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">charset</span>=<span class="string">&quot;utf-8&quot;</span>/&gt;</span><br><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">&quot;content-type&quot;</span> <span class="attribute">content</span>=<span class="string">&quot;text/html; charset=UTF-8&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">指定文件兼容性模式</span><br><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attribute">content</span>=<span class="string">&quot;IE=edge,chrome=1&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="HTML5-降低标记markup，简化调用-gt-不用加type了"><a href="#HTML5-降低标记markup，简化调用-gt-不用加type了" class="headerlink" title="HTML5(降低标记markup，简化调用-&gt;不用加type了)"></a>HTML5(降低标记markup，简化调用-&gt;不用加type了)</h4><ul>
+<li>语法编写风格-&gt;最好闭合所有标记，使用小写字母，用引号括属性</li>
+<li>HTML5没有官方的验证服务。。。</li>
+<li>validator.w3.org</li>
+<li>html5.validator.nu</li>
+</ul>
+<h4 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h4><ol>
+<li>兼容性</li>
+<li>文档结构</li>
+<li>Web APP Function</li>
+</ol>
+<h4 id="语法上的改进："><a href="#语法上的改进：" class="headerlink" title="语法上的改进："></a>语法上的改进：</h4><ul>
+<li>内容类型</li>
+<li>doctype声明</li>
+<li>指定字符编码</li>
+<li>可以省略标记的元素</li>
+<li>具有布尔值的属性</li>
+<li>省略引号</li>
+</ul>
+<h4 id="增加"><a href="#增加" class="headerlink" title="增加:"></a>增加:</h4><p>结构上</p>
+<p>其他（video audio canvas）</p>
+<p>input</p>
+<h4 id="废除："><a href="#废除：" class="headerlink" title="废除："></a>废除：</h4><p>不再使用frame框架</p>
+<h4 id="增加-1"><a href="#增加-1" class="headerlink" title="增加:"></a>增加:</h4><ul>
+<li>属性（表单，链接）</li>
+<li>全局属性：<br>contentEditable（boolean）</li>
+</ul>
+<p>designMode</p>
+<p>hidden（boolean）</p>
+<p>spellcheck</p>
+<p>tabindex(-1)<br>allow focusing on any element: tabindex</p>
+<ul>
+<li>增加的主体结构元素</li>
+</ul>
+<p>article（独立性）——&gt;可嵌套，插件，内嵌页面，促进语义化</p>
+<p>section（分段，分块）——&gt;1.不要将其作为设置样式的页面容器。2.若article，aside，nav更合适，就放手让它们做吧。3.没有标题内容，不用section</p>
+<p>nav:传统导航条，侧边栏，页内，翻页操作</p>
+<p>aside：article（内OR外）</p>
+<p>time元素</p>
+<p>微格式</p>
+<p>pubdate属性</p>
+<ul>
+<li>增加的非主体结构元素</li>
+</ul>
+<p>header 可以出现多次</p>
+<p>footer 作为其上层父级内容区块或是一个根区块的脚注</p>
+<p>hgroup 对多个相关联的H1，H6标题进行分组</p>
+<p>address 在文档中呈现联系信息</p>
+<p>point.1 显示（隐式）编排内容区域块</p>
+<ul>
+<li><p>标题分级</p>
+</li>
+<li><p>不同区域块使用相同标题</p>
+</li>
+<li><p>表单新增元素与属性</p>
+</li>
+</ul>
+<p>form</p>
+<p>formaction</p>
+<p>formmethod</p>
+<p>formenctype</p>
+<p>formtarget(在何处打开)</p>
+<p>autofocus</p>
+<p>required</p>
+<p>labels</p>
+<ul>
+<li><p>标签的control属性</p>
+</li>
+<li><p>文本框的placeholder属性</p>
+</li>
+<li><p>文本框的list属性</p>
+</li>
+<li><p>文本框的autocomplete属性</p>
+</li>
+<li><p>pattern属性（正则验证）</p>
+</li>
+<li><p>文本框的selectionDirection属性-&gt;获取用户操作</p>
+</li>
+<li><p>复选框的indeterminate属性</p>
+</li>
+<li><p>image提交按钮的height与width属性</p>
+</li>
+</ul>
+<h3 id="聊一聊html中有趣的属性"><a href="#聊一聊html中有趣的属性" class="headerlink" title="聊一聊html中有趣的属性"></a>聊一聊html中有趣的属性</h3><h4 id="map-area"><a href="#map-area" class="headerlink" title="map area"></a>map area</h4><p>MDN指路：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/map">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/map</a></p>
+<p>HTML <map> 属性 与 <area> 属性一起使用来定义一个图像映射(一个可点击的链接区域).</p>
+<p>name属性 给map一个名字用来查询，这个属性是必须的，值必须不能为空并且不能带空格。name属性不准与同文档中其他map元素的值相同，如果id属性也被添加，name属性和id属性的值必须相同。</p>
+<map name="example-map-1">
+  <area shape="circle" coords="200,250,25" href="another.htm" />
+  <area shape="default" />
+</map>
+
+
+
+<h4 id="Deprecated-Tags-Deprecated-Attributes"><a href="#Deprecated-Tags-Deprecated-Attributes" class="headerlink" title="Deprecated Tags / Deprecated Attributes"></a>Deprecated Tags / Deprecated Attributes</h4>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

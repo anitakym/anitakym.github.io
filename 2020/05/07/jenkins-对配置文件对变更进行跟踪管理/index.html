@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        jenkins-对配置文件对变更进行跟踪管理 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%88%E8%81%8A%E8%81%8AJenkins%E5%90%A7"><span class="toc-text">先聊聊Jenkins吧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%8C%96%E6%9E%84%E5%BB%BA"><span class="toc-text">参数化构建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#node%E7%8E%AF%E5%A2%83"><span class="toc-text">node环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%AF%B9%E5%8F%98%E6%9B%B4%E8%BF%9B%E8%A1%8C%E8%B7%9F%E8%B8%AA%E7%AE%A1%E7%90%86"><span class="toc-text">对配置文件对变更进行跟踪管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node%E9%9B%86%E6%88%90%E6%8F%92%E4%BB%B6"><span class="toc-text">node集成插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95"><span class="toc-text">拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JenkinsX"><span class="toc-text">JenkinsX</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#job%E9%85%8D%E7%BD%AE%E7%9A%84%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5"><span class="toc-text">job配置的导出导入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jenkins-%E7%89%88%E6%9C%AC%E7%9A%84%E5%8D%87%E7%BA%A7%E5%92%8C%E5%9B%9E%E9%80%80%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F"><span class="toc-text">jenkins 版本的升级和回退需要注意</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        jenkins-对配置文件对变更进行跟踪管理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-05-07 17:01:40</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#jenkins&amp;&amp;travis" title="jenkins&amp;&amp;travis">jenkins&amp;&amp;travis</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="先聊聊Jenkins吧"><a href="#先聊聊Jenkins吧" class="headerlink" title="先聊聊Jenkins吧"></a>先聊聊Jenkins吧</h3><ul>
+<li>jenkins pipeline脚本</li>
+<li>集成打包问题</li>
+<li>CI/CD工具，Jenkins or Gitlab CI/CD or Github CI/CD</li>
+<li>历史趣事</li>
+</ul>
+<h4 id="参数化构建"><a href="#参数化构建" class="headerlink" title="参数化构建"></a>参数化构建</h4><ul>
+<li>git parameter<br>给git可选参数</li>
+<li>choice parameter<br>比如传入一些构建时需要的参数</li>
+</ul>
+<p>上面两个都需要下载对应的插件</p>
+<h4 id="node环境"><a href="#node环境" class="headerlink" title="node环境"></a>node环境</h4><ul>
+<li><p>nodejs插件：<br>在插件管理面搜nodejs,安装即可（<a target="_blank" rel="noopener" href="https://plugins.jenkins.io/nodejs/%EF%BC%89">https://plugins.jenkins.io/nodejs/）</a></p>
+</li>
+<li><p>在系统管理-&gt;全局工具配置-&gt;nodejs<br>新建一个nodejs环境</p>
+</li>
+<li><p>Provide Node &amp; npm bin/ folder to PATH<br>选择node版本</p>
+<h3 id="对配置文件对变更进行跟踪管理"><a href="#对配置文件对变更进行跟踪管理" class="headerlink" title="对配置文件对变更进行跟踪管理"></a>对配置文件对变更进行跟踪管理</h3><p>Job Configuration History<br>对配置文件的变更进行跟踪管理</p>
+</li>
+<li><p>安装这个插件：<br>在manage jenkins =&gt; manage plugins里面选择 available ，search Job Configuration History；选择安装并重新启动jenkins即可（PS，会有“仅在没有job的时候重新启动的选项”）</p>
+</li>
+<li><p>使用<br>在Jenkins=&gt;job config history里面可以查看系统/job的config的变更<br>也可以在具体的job里面查看当前配置的变更，可以快速回滚配置<br>具体操作指南可见文档：(<a target="_blank" rel="noopener" href="https://plugins.jenkins.io/jobConfigHistory/">https://plugins.jenkins.io/jobConfigHistory/</a>)</p>
+</li>
+</ul>
+<h3 id="node集成插件"><a href="#node集成插件" class="headerlink" title="node集成插件"></a>node集成插件</h3><p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/nodejs/">https://plugins.jenkins.io/nodejs/</a></p>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><h4 id="JenkinsX"><a href="#JenkinsX" class="headerlink" title="JenkinsX"></a>JenkinsX</h4><p><a target="_blank" rel="noopener" href="https://jenkins-x.io/docs/reference/pipeline-syntax-reference/">https://jenkins-x.io/docs/reference/pipeline-syntax-reference/</a></p>
+<h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><ul>
+<li>active choices reactive parameter</li>
+<li>groovy script</li>
+</ul>
+<h4 id="job配置的导出导入"><a href="#job配置的导出导入" class="headerlink" title="job配置的导出导入"></a>job配置的导出导入</h4><ul>
+<li><p><a target="_blank" rel="noopener" href="https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving/copying/renamingjobs">https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving/copying/renamingjobs</a></p>
+</li>
+<li><p>同Jenkins可以直接copy from</p>
+<ul>
+<li>jenkins-cli.jar</li>
+<li><a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/book/managing/cli/">https://www.jenkins.io/doc/book/managing/cli/</a><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># manage jenkins | jenkins-cli | get-job</span></span><br><span class="line"><span class="string">java </span>-<span class="string">jar </span><span class="string">jenkins-cli.</span><span class="string">jar </span>-s 【<span class="string">domain】</span> -<span class="string">auth </span>【<span class="string">account】</span>:【<span class="string">pwd】</span> <span class="built_in">get-job</span> 【<span class="string">job </span><span class="string">name】</span>&gt; 【<span class="string">job </span><span class="string">name】</span>.<span class="string">xml</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="string">Downloads </span><span class="string">java </span>-<span class="string">jar </span><span class="string">jenkins-cli.</span><span class="string">jar </span>-s <span class="string">http:</span>//<span class="string">xxxxxx:xxxx/</span> -<span class="string">auth </span><span class="string">xxxxxx:1234 </span><span class="built_in">get-job</span> <span class="string">seal-troy-</span><span class="string">frontend </span>&gt; <span class="string">seal-troy-</span><span class="string">frontend.</span><span class="string">xml</span></span><br><span class="line"><span class="string">➜</span>  <span class="string">Downloads </span><span class="string">code </span><span class="string">seal-troy-</span><span class="string">frontend.</span><span class="string">xml </span></span><br><span class="line">➜  <span class="string">Downloads </span><span class="string">java </span>-<span class="string">jar </span><span class="string">jenkins-cli.</span><span class="string">jar </span>-s <span class="string">http:</span>//<span class="string">xxxxxx:xxxx/</span> -<span class="string">auth </span><span class="string">xxxxxx:1234 </span><span class="built_in">create-job</span> <span class="string">seal-troy-</span><span class="string">frontend-copy </span>&lt; <span class="string">seal-troy-</span><span class="string">frontend.</span><span class="string">xml</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="jenkins-版本的升级和回退需要注意"><a href="#jenkins-版本的升级和回退需要注意" class="headerlink" title="jenkins 版本的升级和回退需要注意"></a>jenkins 版本的升级和回退需要注意</h4><p>因为插件是依赖于Jenkins的版本的，所以如果回退Jenkins版本，可能会导致依赖于更高版本的已装插件的不可用；</p>
+<ul>
+<li>case ，multijob插件，然后基于这个创建了一个jobA, Jenkins版本被回退到不支持multijob的版本，这个时候，表现为 jobA无法搜索到，但是去服务器上面查，能查到项目的workspace和jobs的配置文件，拿着xml配置文件create-job的时候，<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="string">ERROR:</span> <span class="string">Unexpected </span><span class="string">exception </span><span class="string">occurred </span><span class="string">while </span><span class="string">performing </span><span class="built_in">create-job</span> <span class="string">command.</span></span><br><span class="line"><span class="string">com.</span><span class="string">thoughtworks.</span><span class="string">xstream.</span><span class="string">mapper.</span><span class="string">CannotResolveClassException:</span> <span class="string">com.</span><span class="string">tikal.</span><span class="string">jenkins.</span><span class="string">plugins.</span><span class="string">multijob.</span><span class="string">MultiJobProject</span></span><br></pre></td></tr></table></figure>
+就发现，哦multijob这儿出问题<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> This plugin <span class="keyword">is</span> a MultiJob plugin.</span><br><span class="line">Warning: This plugin has dependencies <span class="keyword">on</span> other plugins <span class="keyword">that</span> require Jenkins <span class="number">2.289</span><span class="number">.1</span> <span class="keyword">or</span> newer. Jenkins will refuse <span class="keyword">to</span> load <span class="keyword">the</span> dependencies requiring a newer <span class="built_in">version</span> <span class="keyword">of</span> Jenkins, <span class="keyword">and</span> <span class="keyword">in</span> turn loading this plugin will fail.</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

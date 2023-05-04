@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        通信协议-websocket - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%88%E6%98%8E%E7%A1%AE%E5%87%A0%E4%B8%AA%E5%AE%9A%E4%B9%89"><span class="toc-text">先明确几个定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E8%AF%B7%E6%B1%82-%E5%BA%94%E7%AD%94%E2%80%9D%E7%9A%84%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%BC%8F-%E5%8D%8A%E5%8F%8C%E5%B7%A5"><span class="toc-text">“请求-应答”的通信模式-半双工</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AE%E8%AF%A2-polling"><span class="toc-text">轮询-polling</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#long-polling"><span class="toc-text">long-polling</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Websocket"><span class="toc-text">Websocket</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE"><span class="toc-text">协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#API"><span class="toc-text">API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0"><span class="toc-text">服务发现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3"><span class="toc-text">默认端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A7%E7%BB%93%E6%9E%84"><span class="toc-text">帧结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#handshake"><span class="toc-text">handshake</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#case"><span class="toc-text">case</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#WebSocket-is-closed-before-the-connection-is-established"><span class="toc-text">WebSocket is closed before the connection is established.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#send"><span class="toc-text">send()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E7%90%86%E8%A7%A3"><span class="toc-text">拓展理解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SSE-Server-Sent-Events"><span class="toc-text">SSE - Server-Sent Events</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        通信协议-websocket
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-09-13 16:44:34</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>还是说文解字，用于“通信”的“协议”； web 指运行在web（也就是通常我们广义的理解的话 HTTP那一层的） 上；</p>
+</blockquote>
+<h3 id="先明确几个定义"><a href="#先明确几个定义" class="headerlink" title="先明确几个定义"></a>先明确几个定义</h3><h4 id="“请求-应答”的通信模式-半双工"><a href="#“请求-应答”的通信模式-半双工" class="headerlink" title="“请求-应答”的通信模式-半双工"></a>“请求-应答”的通信模式-半双工</h4><p>HTTP是这个模式，问题在于同一时刻只能单方向动作；服务器被动响应；</p>
+<p>（HTTP/2 ｜ HTTP/3  ———— Stream｜Server Push）</p>
+<h4 id="轮询-polling"><a href="#轮询-polling" class="headerlink" title="轮询-polling"></a>轮询-polling</h4><p>问题： 消耗带宽和CPU资源</p>
+<h4 id="long-polling"><a href="#long-polling" class="headerlink" title="long-polling"></a>long-polling</h4><ul>
+<li>发出大量请求</li>
+<li>在某个时间间隔内进行AJAX调用</li>
+<li>关键是什么？<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">保证核心操作的简单，快</span><br><span class="line"></span><br><span class="line">不要只使用<span class="built_in">setInterval</span> - 没有考虑到请求需要时间的事实</span><br><span class="line">在当前请求完成后立即为下一个请求启动一个定时器（在函数的末尾为下一个请求SetTimeout）</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h3 id="Websocket"><a href="#Websocket" class="headerlink" title="Websocket"></a>Websocket</h3><ul>
+<li>HTML5规范出来的，RFC6455</li>
+<li>全双工，服务器和客户端可以随时发送数据</li>
+<li>二进制帧结构，语法语义与HTTP不兼容</li>
+</ul>
+<h4 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h4><ul>
+<li>IETF <h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4></li>
+<li>W3C<h4 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h4>URI：wss|ws 表明协议</li>
+</ul>
+<h4 id="默认端口"><a href="#默认端口" class="headerlink" title="默认端口"></a>默认端口</h4><p>80｜443</p>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>实时通信<br>客户端需要不断更新的部分</p>
+<h4 id="帧结构"><a href="#帧结构" class="headerlink" title="帧结构"></a>帧结构</h4><ul>
+<li>指路wiki:<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/WebSocket">https://zh.wikipedia.org/wiki/WebSocket</a></li>
+<li>指路RFC：<a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc6455">https://datatracker.ietf.org/doc/html/rfc6455</a></li>
+<li>可以Wireshark抓包试一下，看看就有感觉了（N年前网络实验课啥都抓一下后遗症。。。</li>
+<li>抓出来的报文，Masking-key 异或下，就可以转出来明文了</li>
+</ul>
+<h4 id="handshake"><a href="#handshake" class="headerlink" title="handshake"></a>handshake</h4><ul>
+<li>“Connection:Upgrade” “Upgrade:websocket” (HTTP 协议升级)</li>
+<li>“Sec-WebSocket-Key” “Sec-WebSocket-Version”(Challenge，防止HTTP被识别为WebSocket)</li>
+<li>服务器返回一个”101 Switching Protocols”响应报文，”Sec-WebSocket-Accept”-由服务器对前面客户端发送的Sec-WebSocket-Key进行确认和加密后的结果，相当于一次验证，以帮助客户端确信对方是真实可用的WebSocket服务器</li>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/fe9/basic/101">https://www.yuque.com/fe9/basic/101</a><h3 id="case"><a href="#case" class="headerlink" title="case"></a>case</h3><h4 id="WebSocket-is-closed-before-the-connection-is-established"><a href="#WebSocket-is-closed-before-the-connection-is-established" class="headerlink" title="WebSocket is closed before the connection is established."></a>WebSocket is closed before the connection is established.</h4></li>
+</ul>
+<p>If you go to <a target="_blank" rel="noopener" href="http://jsbin.com/ekusep/6/edit">http://jsbin.com/ekusep/6/edit</a> and view the JavaScript console you’ll see the ‘WebSocket is closed before the connection is established’ logged. I’ve tested this in Chrome.<br>In this code what it means is that ws.close() was called (by user code) before the connection was even given a chance to be established.<br>So, the cause of this error is if code attempts to close the WebSocket connection before it’s had a chance to actually connect.</p>
+<h4 id="send"><a href="#send" class="headerlink" title="send()"></a>send()</h4><ul>
+<li>消息类型</li>
+<li>字符串 ｜ Blob ｜ ArrayBuffer</li>
+<li>binaryType - 初始值为blob,可以设置为arraybuffer<h3 id="拓展理解"><a href="#拓展理解" class="headerlink" title="拓展理解"></a>拓展理解</h3></li>
+<li>TCP Socket<h4 id="SSE-Server-Sent-Events"><a href="#SSE-Server-Sent-Events" class="headerlink" title="SSE - Server-Sent Events"></a>SSE - Server-Sent Events</h4></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events">https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events</a></li>
+<li>服务器推送信息</li>
+<li>服务器向客户端声明 - 接下来要发送的是流信息 streaming</li>
+<li>基于HTTP协议</li>
+<li>IE/Edge低版本不支持</li>
+<li>单向通道</li>
+<li><a target="_blank" rel="noopener" href="https://caniuse.com/eventsource">https://caniuse.com/eventsource</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
