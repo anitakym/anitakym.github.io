@@ -122,3 +122,9 @@ perf_hooks
 先新建一个项目，引入perf_hooks,没有任何问题
 看了不同版本的代码，发现引入的问题，升级了版本即可
 http://nodejs.cn/api/perf_hooks.html
+
+
+### cases
+#### fetch - 和nodejs的版本相关
+RequestInit: duplex option is required when sending a body #46221
+https://github.com/nodejs/node/issues/46221

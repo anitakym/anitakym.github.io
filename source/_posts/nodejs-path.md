@@ -20,3 +20,11 @@ node服务项目
 
 electron项目
 
+### glob
+- https://www.npmjs.com/package/glob
+- https://github.com/isaacs/node-glob
+- 支持配置通配符规则的方式来扫描文件目录，像在 shell 里执行命令一样，获取匹配对应规则的文件
+```
+__dirname 脚本文件所在目录
+process.cwd() 脚本文件执行目录
+```

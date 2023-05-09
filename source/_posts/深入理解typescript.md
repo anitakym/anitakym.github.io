@@ -3,6 +3,32 @@ title: 深入理解typescript
 date: 2021-05-25 17:51:09
 tags:
 ---
+### 编译原理
+- https://github.com/Microsoft/TypeScript/tree/main/src/compiler
+
+#### 编译流程
+scanner 扫描器（scanner.ts）
+parser 解析器（parser.ts）
+binder 绑定器（binder.ts）
+checker 检查器（checker.ts）
+emitter 发射器（emitter.ts）
+
+Program（在编译开始时创建为一个名为 Program 编译上下文对象）- 帮助判定 AST 节点的语义上下文
+Symbol（Binder 会创建一个用来存储每个 AST 节点和对应符号 Symbol 的映射表）
+
+```
+// 1.解析代码生成AST对象
+SourceCode（源码）with 扫描器 -> Token 流 with 解析器 -> AST
+
+// 2.为AST节点绑定符号
+AST with 绑定器 -> Symbols
+
+// 3.语义检查，类型检查
+AST + Symbols with 检查器 -> 类型验证，语义上下文判断
+
+// 4.代码生成阶段（代码分析不需要关注这个阶段）
+AST + 检查器 with 发射器 -> JavaScript 代码 （无需关注）
+```
 ### typescript 代码风格指南与代码约定
 
 ## Usage
