@@ -17,6 +17,9 @@ git clean
 git checkout --
 ```
 
+#### 二分查找，定位问题commit
+-  git bisect 
+
 #### gitlab 项目管理
 
 分支保护（代码提交合并权限问题）

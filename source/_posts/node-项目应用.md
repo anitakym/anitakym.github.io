@@ -211,3 +211,16 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 - API服务 - restful（易读，快速启动，数据聚合劣势）- github的v3 API的实现
 - API服务 - GraphQL（专注数据聚合，返回前端需要的）
 
+### config
+- https://github.com/node-config/node-config
+- https://www.npmjs.com/package/yaml
+- package.json - config - process.env.npm_package_config_port - npm config set aaa:xxx 80
+
+
+### 钩子
+- 在node_modules/.hooks/{eventname}中放置一个可执行文件，所有根目录下的package.json文件在运行到该生命周期节点时都会被执行
+- husky
+
+### 端口冲突问题
+- lsof -i:3000 | xargs killall
+- npm i -g kp  -  kp 3000

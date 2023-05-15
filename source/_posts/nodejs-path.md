@@ -28,3 +28,18 @@ electron项目
 __dirname 脚本文件所在目录
 process.cwd() 脚本文件执行目录
 ```
+
+### 当前文件和目录所在位置
+- __dirname __filename  (express-generator __dirname确定项目模版目录所在位置)
+
+### 当前终端执行路径
+- process.cwd()
+
+### 当前系统用户主目录
+- process.env.HOME - HOMEPATH - USERPROFILE
+- os - homedir
+
+
+#### 模块依赖图
+- brew install graphviz
+- npm i -g npm2dot

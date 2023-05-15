@@ -163,7 +163,8 @@ netstat -nat | awk '{print $5}' | awk -F ':' '{print $1}' | sort | uniq -c | sor
 open -e .zshrc 
 source .zshrc
 ```
-
+- source命令是在Linux和Unix系统中用来重新加载shell环境变量和函数的命令。在更改了环境变量或者函数定义的情况下，可以使用source命令或者其等效的.（点）符号让这些更改立即生效，而无需重新启动终端
+- 重启终端可以让所有更改的环境变量或函数完全生效
 #### fx(https://github.com/antonmedv/fx)
 能够格式化JSON文本
 #### 日志
@@ -478,3 +479,13 @@ pkill命令则更加方便一些，它允许你使用进程名或者其他属性
 结束指定进程名的进程：pkill [进程名]
 结束指定用户的所有进程：pkill -u [用户名]
 需要注意的是，pkill使用的也是SIGTERM信号，同样可以使用“-9”选项发送SIGKILL信号。
+
+
+### ack
+- apt-get install ack-grep
+- brew install ack
+- 搜索代码很好用
+
+
+### autojump
+- macos13 - brew安装会提示

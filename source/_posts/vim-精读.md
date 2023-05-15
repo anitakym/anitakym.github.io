@@ -24,3 +24,11 @@ https://yianwillis.github.io/vimcdoc/doc/help.html
 - mac - which vim
 - mac - MacVim - 图形化界面 - homebrew
 - 启动中文教程 - LANG=zh_CN.UTF-8 vimtutor
+
+
+### Janus - 集成套件
+`curl -Lo- https://bit.ly/janus-bootstrap | bash`
+- ack.vim
+- ctrlp
+- nerdtree
+- supertab

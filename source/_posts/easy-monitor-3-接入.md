@@ -127,3 +127,23 @@ connect ECONNREFUSED 127.0.0.1:8443, POST http://127.0.0.1:8443/xapi/upload_from
 
 ### docker + k8s
 - https://www.yuque.com/hyj1991/easy-monitor/advance_docker
+
+### 同类产品
+NearForm 是一家总部位于爱尔兰的软件开发公司，他们专注于构建高性能、可扩展的 Node.js 和 JavaScript 应用程序。Clinic 是 NearForm 提供的一套开源工具，从多个角度帮助开发者识别和解决 Node.js 应用程序中的性能问题。该工具包括以下三个主要组件：
+
+1. Clinic Doctor：此工具可帮助诊断应用程序中的常见性能问题，例如内存泄漏、CPU 泄漏或事件循环拥堵。通过可视化指标，Clinic Doctor 可以给出关于如何提高性能的建议。
+
+2. Clinic BubbleProf：BubbleProf 是一种可视化数据流的工具，它可以帮助开发者了解应用程序中不同操作之间的关系。通过观察这些关系，开发者可以更容易地找到性能瓶颈和优化点。
+
+3. Clinic Flame：Flame 是一个 CPU 火焰图分析器，它可以帮助开发者识别应用程序中的热点代码。它使用堆栈跟踪和定时器事件来显示哪些函数和操作占用了 CPU 的时间。
+
+要使用这些工具，你需要在项目中安装 Clinic 包，然后运行相应的 Clinic 命令。例如，使用 Clinic Doctor 对应用程序进行诊断：
+
+```
+npm install -g clinic
+clinic doctor -- node your-application.js
+```
+
+有关更多教程和示例，请访问 NearForm Clinic 的文档：https://clinicjs.org/
+
+这些工具可以帮助你改进 Node.js 应用程序的性能，从而提供更好的用户体验。

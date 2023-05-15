@@ -19,6 +19,7 @@ This should be a module ID relative to the root of your package folder.
 
 For most modules, it makes the most sense to have a main script and often not much else.
 </pre>
+- 一般用于对外提供调用功能的API入口
 
 ### scripts
 - 带有命令行的node模块，不需要全局安装，scripts中定义的脚本根据node_modules找到对应模块并启动脚本指令
