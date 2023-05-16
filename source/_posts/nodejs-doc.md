@@ -131,19 +131,19 @@ https://github.com/nodejs/node/issues/46221
 
 
 ### addon
-Node.js 的 addon 允许本地（C/C++）库与 JavaScript 代码进行交互。这样，JavaScript 不仅能够拥有优秀的编程灵活性，还能在需要的时候利用本地库提高性能。以下是一些使用 Node.js addon 的案例：
+Node.js 的 addon 允许本地（C/C++）库与 JavaScript 代码进行交互
 
-图像处理
-有些高效的图像处理库是用 C 或 C++ 编写的，如 OpenCV（Open Source Computer Vision Library）。通过使用 addon，这些库可以轻松地与 JavaScript 代码集成，开发出功能强大的 Web 应用程序。例如，可以使用 OpenCV 进行实时视频处理、人脸识别和物体追踪等高性能操作。
+- 图像处理
+OpenCV（Open Source Computer Vision Library）使用 OpenCV 进行实时视频处理、人脸识别和物体追踪等高性能操作
 
-加密和解密
-加密和解密通常需要执行大量计算，本地库（如 OpenSSL）在这方面的执行效果通常比纯 JavaScript 更高效。Node.js addon 可让我们在 JavaScript 中使用这些本地库，以此来提高加密和解密操作的性能。
+- 加密和解密
+加密和解密通常需要执行大量计算，本地库（如 OpenSSL）在这方面的执行效果通常比纯 JavaScript 更高效
 
-文件系统操作
-虽然 Node.js 自带了用于文件系统操作的原生模块，但某些特定操作可能需要使用本地库。例如，进行文件压缩与解压缩操作时，本地库（如 zlib）的性能可能优于纯 JavaScript 实现。通过 addon，可以将这些库与 JavaScript 代码相结合，提高应用程序的性能。
+- 文件系统操作
+进行文件压缩与解压缩操作时，本地库（如 zlib）的性能可能优于纯 JavaScript 实现
 
-数值计算与科学计算
-有些数值计算与科学计算库（如 LAPACK - Linear Algebra PACKage、FFTW - Fastest Fourier Transform in the West）是用 C 或 Fortran 编写的，性能优于纯 JavaScript 实现。通过 Node.js addon，可以让这些本地库在 JavaScript 中调用，提高数值计算与科学计算任务的执行效率。
+- 数值计算与科学计算
+LAPACK - Linear Algebra PACKage、FFTW - Fastest Fourier Transform in the West）
 
-机器学习、深度学习及人工智能
-许多高性能机器学习和深度学习库（如 TensorFlow）使用 C++ 或其他本地语言编写。Node.js addon 可以让这些库在 JavaScript 中调用，使我们可以使用 JavaScript 构建高性能的机器学习和深度学习应用程序。
+- 机器学习、深度学习及人工智能
+TensorFlow,C++

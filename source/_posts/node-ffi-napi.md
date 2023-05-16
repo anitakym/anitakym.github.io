@@ -42,3 +42,6 @@ WARNING: The original API of node-ffi is left mostly untouched in the N-API wrap
 - A segmentation fault (aka segfault) is a common condition that causes programs to crash; they are often associated with a file named core . Segfaults are caused by a program trying to read or write an illegal memory location
 
 - https://en.wikipedia.org/wiki/Segmentation_fault
+
+
+### N-API
