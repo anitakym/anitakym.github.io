@@ -37,3 +37,13 @@ css: {
   },
 
 ```
+
+### node-sass
+node-sass
+Warning: LibSass and Node Sass are deprecated. While they will continue to receive maintenance releases indefinitely, there are no plans to add additional features or compatibility with any new CSS or Sass features. Projects that still use it should move onto Dart Sass.
+
+
+### Node version support policy
+- 支持的Node.js版本因版本不同而不同
+- readme页面有对应列表
+- https://github.com/sass/node-sass#node-version-support-policy
