@@ -45,3 +45,20 @@ HTTP is a stateless protocol, meaning that the server does not keep any data (st
 - 工作线程对于执行 CPU 密集型的 JavaScript 操作很有用。 它们对 I/O 密集型的工作帮助不大。 Node.js 内置的异步 I/O 操作比工作线程更高效。
 - http://nodejs.cn/api/worker_threads.html
 - vscode - 
+
+
+## cases
+
+- V8 和 libuv 来实现一个 APM（应用性能监控）watchdog  -> 解决单线程限制。
+- 建立一个与 Node.js 主线程并行的 V8 工作线程。
+
+以下是一些步骤和建议来实现一种 APM watchdog：
+
+1. 使用 V8 的 Isolate::New 和 Locker 构造新的 Isolate，以提供一个可以在新线程中执行 JavaScript 的隔离环境。为 V8 工作线程创建一个新的 Isolate，并与 Node.js主线程进行隔离。
+2. 使用 V8 的 Platform::CallOnBackgroundThread 方法，使得 V8 可以将任务传送到后台线程运行，用于提供多线程的性能监控。
+3. 使用 libuv 中的 uv_loop_new 和 uv_async_send 方法，他们提供简化跨线程通信的能力。用 libuv 来创建一个事件循环，为事件驱动的异步调度提供支持。
+4. 设计一个来自于主线程的通知机制。当主线程发现超时或者其他错误发生时，向工作线程发送通知。
+5. 使用 V8 的 CPUProfiler API 来抓取 CPU profile，它可以在工作线程和主线程都使用。这将帮助查詢那些很可能会导致应用程序性能降低的代码片段。
+6. 设计策略以避免争用条件或数据不一致，并确保应用程序代码的线程安全。当涉及访问多线程共享资源时，请选择互斥锁，读写锁等同步原语。
+7. 在你需要的时候，定期启动或暂停 watchdog 线程以汇报其性能数据。可以通过 HTTP 服务暴露相应的性能数据。
+
