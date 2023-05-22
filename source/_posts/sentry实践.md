@@ -228,3 +228,6 @@ sentryConfigureScope({
 
 ## clickhouse
 - https://github.com/ClickHouse/ClickHouse
+
+### react-native
+- https://docs.sentry.io/platforms/react-native/
