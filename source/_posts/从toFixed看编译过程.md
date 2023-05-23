@@ -4,6 +4,13 @@ date: 2020-11-16 13:34:29
 tags:
 ---
 
+- https://262.ecma-international.org/10.0/#sec-terms-and-definitions-null-type
+- https://2ality.com/2013/10/typeof-null.html
+- https://en.wikipedia.org/wiki/Double-precision_floating-point_format
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
+- https://dorey.github.io/JavaScript-Equality-Table/
+- https://gist.github.com/gaearon/08a85a33e3d08f3f2ca25fb17bd9d638
+
 MDN文档指路：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 规范指路：https://tc39.es/ecma262/#sec-number.prototype.tofixed
 

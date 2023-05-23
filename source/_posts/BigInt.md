@@ -4,6 +4,7 @@ date: 2021-03-16 17:48:15
 tags:
 ---
 ### 文档指南：
+https://v8.dev/features/bigint
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/BigInt
 
 TC39——（18年fullstack大会上，Brendan Eich介绍，会在TC39加入BigInt：这是一种新的值类型，用于处理任意精度的整数；）
