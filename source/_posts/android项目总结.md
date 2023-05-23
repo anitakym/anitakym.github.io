@@ -14,8 +14,13 @@ tags:
 - Gradle Scripts ->  gradle-wrapper.properties -> 在官网找到对应版本，下载，把能下载的地址粘贴过来(https\://downloads.gradle-dn.com/distributions/gradle-6.7.1-all.zip) 
 - https://developer.android.com/studio/build/?hl=zh-cn , Gradle官方相关配置说明
 
+#### Could not resolve all dependencies for configuration ':classpath'.
+- Using insecure protocols with repositories, without explicit opt-in, is unsupported.
+- http 改成 https
 ### build err
 build => rebuild
+
+
 
 
 ## WebView
