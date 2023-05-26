@@ -17,3 +17,6 @@ tags:
 - CoreOS - Etcd
 - Docker公司 - 将开源项目和商业产品绑定 - 技术生态的封闭
 - Kubernetes - 开发者为核心 - 民主开放的容器生态
+
+### docker desktop
+- 可以帮助熟悉指令对应的操作，有个可视化的平台

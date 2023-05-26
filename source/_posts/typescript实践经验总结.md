@@ -196,3 +196,10 @@ TypeScript 的 3.7 版本引入了 @ts-nocheck 注释，可以增加在 TypeScri
 TypeScript 的 3.9 版本引入了 @ts-expect-error 注释。当一行以 @ts-expect-error 注释作为前缀时，TypeScript 将禁止报告该错误。如果没有错误，TypeScript 会报告 @ts-expect-error 是不必要的。在 Airbnb 代码库，我们使用了 @ts-expect-error 而不是 @ts-ignore 。
 https://medium.com/airbnb-engineering/ts-migrate-a-tool-for-migrating-to-typescript-at-scale-cd23bfeb5cc​​​
 ```
+
+### Prototypes
+- https://gist.github.com/gaearon/a25fd42a1e6b4cc24851978df0a36571
+- Beneath Classes: Prototypes
+- https://2ality.com/2015/09/proto-es6.html
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+- https://esdiscuss.org/topic/having-a-non-enumerable-array-prototype-contains-may-not-be-web-compatible
