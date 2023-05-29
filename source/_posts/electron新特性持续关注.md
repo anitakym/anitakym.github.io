@@ -33,3 +33,8 @@ Electron13新特性
 - 一个思路
 - Web rendering surface for Node applications
 - 不过已经不再maintain了
+
+
+### electron-modules
+- 一些实用的 Electron 模块
+- https://github.com/electron-modules

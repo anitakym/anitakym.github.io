@@ -16,3 +16,9 @@ tags:
 #### 开发框架
 - WeiXin Markup Language
 - feature => 数据绑定 | 列表渲染 | 条件渲染 | 模板引用
+
+
+## 其他
+### finclip
+- https://www.finclip.com/mop/document/introduce/introduction/finclip.html
+- FinClip是一款小程序容器，不论是移动 App，还是电脑、电视、车载主机等设备，在集成FinClip 小程序 SDK之后，都能快速获得运行小程序的能力。
