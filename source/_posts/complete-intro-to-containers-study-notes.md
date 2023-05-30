@@ -220,3 +220,43 @@ PS：把材料放到github,也是因为文本材料的错误不可能完全无�
 
 - 容器技术的核心 - 通过约束和修改进程的动态表现，从而为其创造出一个边界
 - 在Linux内核中，很多资源和对象是不能被namespace化的，比如时间
+
+
+### Dockerfile
+#### Docker Daemon
+- Docker Engine（包括 Docker Daemon）、Docker 镜像和 Docker 容器组成。
+- Docker Daemon（dockerd）是一个在主机上持续运行的后台进程，它用于管理 Docker 容器，负责构建、运行和监控容器。Docker Daemon 还会与其他 Docker Daemon 通信，以便协同工作。Docker CLI 和 Docker API 是与 Docker Daemon 进行通信的主要方式。
+一些与 Docker Daemon 交互的操作包括：
+1. 从 Docker Hub 或其他注册表拉取镜像。
+2. 构建新的 Docker 镜像。
+3. 创建、启动、监控和停止容器。
+4. 在容器之间移动文件。
+5. 访问容器的日志和资源使用情况等信息。
+6. 管理容器网络。
+7. 管理容器存储。
+
+要启动 Docker Daemon，请在您的终端中输入以下命令（请注意，您可能需要 root 权限来运行这些命令）：
+
+对于 Linux 系统：
+
+```bash
+sudo systemctl start docker
+```
+
+或者
+
+```bash
+sudo service docker start
+```
+
+对于 macOS 和 Windows，等，请使用 Docker Desktop：
+
+下载并安装 Docker Desktop，然后按照提示启动它。这将自动启动 Docker Daemon，并在系统托盘中提供一个 docker 图标，用于访问设置和其他选项。
+
+确保 Docker 已启动，运行以下命令以检查 Docker Daemon 是否正在运行：
+
+```bash
+docker info
+```
+
+此命令将返回有关 Docker Daemon 和容器的详细信息。如果能够看到输出的信息，说明 Docker Daemon 正在运行。

@@ -44,6 +44,8 @@ https://cloud.tencent.com/document/product/302/3449
     - 同步更新-Cache-Aside
     - 异步更新-Refresh-Ahead （Guava Cache）
   - 调度设计
+  #### cases
+  - https://juejin.cn/post/7200278589874782265
 
 
  #### dig
