@@ -260,3 +260,10 @@ docker info
 ```
 
 此命令将返回有关 Docker Daemon 和容器的详细信息。如果能够看到输出的信息，说明 Docker Daemon 正在运行。
+
+### 构建优化
+docker build 的时候会把构建上下文的所有文件打包发送给 docker deamon 来构建镜像。
+
+可以通过 .dockerignore 指定哪些文件不发送，这样能加快构建时间，减小镜像体积。
+
+多阶段构建也能减小镜像体积，也就是 build 一个镜像、production 一个镜像，最终保留下 production 的镜像。

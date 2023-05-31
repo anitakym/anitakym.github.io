@@ -269,3 +269,12 @@ pnpm 进程在执行时被意外终止（Killed: 9）
    npm install -g pnpm
    ```
 用n装npm也是，也会给提示，也是权限问题；
+
+### --exact
+`npm install --exact` 命令是用于安装 Node.js 项目的依赖项，并确保安装的包版本与 `package.json` 文件中指定的版本完全匹配。`--exact` 标志表示安装的版本将不受 [语义化版本](https://semver.org/) 约束，而是严格遵循 package.json 中指定的确切版本。
+
+例如，如果你需要安装一个名为 `my-package` 的依赖项，可以使用以下命令：
+
+```
+npm install --exact my-package
+```
