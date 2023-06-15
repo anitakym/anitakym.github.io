@@ -278,3 +278,7 @@ pnpm 进程在执行时被意外终止（Killed: 9）
 ```
 npm install --exact my-package
 ```
+
+### update
+- npm update -g @nestjs/cli
+- npx nest new 项目名 (不用update)
