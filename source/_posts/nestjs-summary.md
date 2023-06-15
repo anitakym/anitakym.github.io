@@ -3,6 +3,18 @@ title: nestjs-summary
 date: 2023-03-10 17:24:59
 tags:
 ---
+
+### github
+- 代码拉下来，node 14.X的才能正常install,默认lock文件不ignore(Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.)
+-  "engines": {
+    "node": ">= 16"
+  },
+- 当您使用 npm v7 及更高版本时，默认情况下，peer 依赖项将自动安装，并在遇到冲突时中止安装并报错。这是为了确保所有依赖项与其 peer 依赖项完全兼容，避免后续的问题
+
+### publish
+- 较为完备的多packages的publish脚本
 ### doc
 - https://docs.nestjs.cn/
 

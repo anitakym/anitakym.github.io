@@ -104,3 +104,43 @@ Then, as a main JavaScript file we will ensure failing to bind to the native add
 ### files
 - 如果不写的话，所有文件都会被打包进去
 - 写的话，就是当我们的包作为依赖包被安装时候，被包括的条目
+
+
+### lock
+`package-lock.json` 文件是在 Node.js 项目中使用 npm 包管理器时自动生成的。 它记录了关于项目依赖项（如名称、版本、来源等信息）的确切版本。`lockfileVersion` 是表示锁定文件版本的属性。
+
+每个 `lockfileVersion` 版本都对应一个 npm 版本。 在 `lockfileVersion` 不同之间，主要区别在于文件和解析方式的细微差别
+
+1. `lockfileVersion: 1`
+   - 对应于 npm v5 和 v6。
+   - 此版本的主要目标是确保具有兼容性，使那些正在使用较旧版本的用户不受升级项目依赖版本和生成新锁定文件影响。
+   - 使用此版本时，项目依赖性树在 `package-lock.json` 中以层次结构表示。
+
+2. `lockfileVersion: 2`
+   - 对应于 npm v7 之后的版本。
+   - 包含新的项目依赖关系解析算法。
+   - 包含对 `workspaces` 的支持。
+   - 使用此版本时，项目依赖性树使用扁平列表表示，而不是层次结构。 这使得锁定文件更紧凑，并有助于减小文件大小。
+
+除了 `lockfileVersion`，`package-lock.json` 中还包括以下属性：
+
+- `name` 和 `version`：补充 `package.json` 中项目名称和版本的信息。
+- `requires`：到处都是，作为所有依赖。 这些依赖在 `dependencies` 下的该依赖对象中。
+- `dependencies`：项目的所有第三方依赖，包括直接和间接依赖。 每个依赖包含名称、版本、来源等信息。 还可以包括指向子依赖项的 `requires` 和 `dependencies`。
+
+维护 `package-lock.json` 文件的最佳实践是将它包含在您的版本控制系统中。 这样可以确保所有团队成员和不同环境之间使用相同的依赖项版本。
+
+### peer dep
+在 npm 中，`npm i`（或 `npm install`）命令用于安装项目的依赖项。`--legacy-peer-deps` 是一个命令行选项，用于在安装依赖项时使用旧版的 peer 依赖处理逻辑。
+
+当您使用 npm v7 及更高版本时，默认情况下，peer 依赖项将自动安装，并在遇到冲突时中止安装并报错。这是为了确保所有依赖项与其 peer 依赖项完全兼容，避免后续的问题。
+
+然而，某些情况下，自动安装并检查 peer 依赖()可能会导致错误，或者与现有项目的配置不兼容。在这种情况下，使用 `--legacy-peer-deps` 选项可以按照旧版 npm（v6 及以下版本）的逻辑处理 peer 依赖。也就是说，npm 将不会自动安装 peer 依赖项，也不会因 peer 依赖项冲突而中止安装过程。
+
+一个使用 `--legacy-peer-deps` 的例子：
+
+```
+npm i --legacy-peer-deps
+```
+
+该命令将使用旧版 npm 的逻辑来处理和安装项目的依赖项及其 peer 依赖。当您在更新一个较旧的项目时，或者遇到 peer 依赖冲突导致无法安装新依赖时，这个选项可能会有所帮助。
