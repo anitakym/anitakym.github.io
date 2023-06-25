@@ -282,3 +282,35 @@ npm install --exact my-package
 ### update
 - npm update -g @nestjs/cli
 - npx nest new 项目名 (不用update)
+
+
+### cache
+`_cache`目录是一个包含Node.js类库(metadata)缓存的目录。其中用SHA1哈希值命名文件夹来存储某个特定版本的软件包。在npm 5及以上版本中，由于使用了Content Addressable方式对缓存进行存储，因此`content-v2`目录才开始出现。
+
+让我们看一下缓存目录的结构：
+
+```
+.npm
+└─ _cacache
+   └─ content-v2
+      ├─ sha1
+      │  ├─ aa
+      │  │  └─ 0115c9b19af2c6784c200fa612de
+      │  └─ bb
+      │     └─ 0715c9b19af2c6891c105fa612de
+      ├─ sha256
+      │  ├─ aa
+      │  │  └─ 0115c9b19af2c6784c200fa612de
+      │  └─ bb
+      │     └─ 0715c9b19af2c6891c105fa612de
+```
+
+在这个结构中，
+
+- `content-v2`文件夹包含两个子文件夹，分别基于两种不同的哈希算法：`sha1`和`sha256`。
+- 每个哈希算法文件夹下，按文件哈希值的前两个字符分类存储，比如：`aa`, `bb`。
+- 具体的缓存文件则存在于以上分类文件夹中。
+
+这种方式的好处在于与其他包中重复的文件只会缓存一次，避免了重复存储相同内容，从而节省了磁盘空间。
+
+要注意的是，你应该不需要直接操作`.npm/_cacache`目录。你可以使用npm CLI的内置缓存命令（例如`npm cache verify`）来管理、清除和验证缓存。更多关于npm缓存请参考官方文档：https://docs.npmjs.com/cli/v8/commands/npm-cache
