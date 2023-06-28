@@ -32,3 +32,7 @@ return 语句可以放在前
 - scoped css - 随机属性
 - this - 引用的是函数据以执行的环境对象，函数的名字仅仅是一个包含指针的变量
 - toolbar generator - 根据type得到generator，generator实例化，调用generator的render方法
+
+## Vue
+### UI组件库
+- https://github.com/didi/cube-ui - 移动端

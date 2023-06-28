@@ -127,3 +127,6 @@ When event data is an error, field name is error
 - 好的框架 - 把复杂的，通用的东西下沉（less化），实现渐进式
 
 - 云函数（渐进式，serverless -> 屏蔽服务器细节）
+
+### loopback4
+- https://github.com/loopbackio/loopback-next

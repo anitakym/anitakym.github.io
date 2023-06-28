@@ -81,3 +81,6 @@ API 实现层：这个层次实现了 gfx 抽象层中各个接口的具体实�
 
 ### web audio
 - https://mp.weixin.qq.com/s/8DCFok78lzqgCrp_w5rEmw
+
+## others
+### laya
