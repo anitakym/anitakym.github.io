@@ -140,7 +140,7 @@ WPA2 = IEEE 802.11i = IEEE 802.1X/EAP + WEP(选择性项目)/TKIP/CCMP
 大多数企业和许多新的住宅 Wi-Fi 产品都支持 WPA2。截止到 2006 年 03 月，WPA2 已经成为一种强制性的标准。WPA2 需要采用高级加密标准 (AES) 的芯片组来支持。
 WPA2 有两种风格：WPA2 个人版和 WPA2 企业版。WPA2 企业版需要一台具有 IEEE 802.1X 功能的 RADIUS (远程用户拨号认证系统) 服务器。没有 RADIUS 服务器的 SOHO 用户可以使用 WPA2 个人版，其口令长度为 20 个以上的随机字符，或者使用 McAfee 无线安全或者 Witopia Secure MyWiFi 等托管的 RADIUS 服务。
 ```
-
+(http://en.wikipedia.org/wiki/Advanced_Encryption_Standard) - AES
 ### CLT
 Command Line Tools (CLT) 是一个适用于 macOS 的开发者工具集，它包含了许多编程语言的编译器、二进制库以及开发者基础模板等一系列必备工具，如 git、gcc、make、ld 等。它可以让开发人员在 macOS 上轻松构建与运行他们的项目。
 

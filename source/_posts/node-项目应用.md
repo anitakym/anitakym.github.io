@@ -224,3 +224,13 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 ### 端口冲突问题
 - lsof -i:3000 | xargs killall
 - npm i -g kp  -  kp 3000
+
+### node-demo
+- https://github.com/hua1995116/node-demo
+```
+node文件上传详解
+node-rpc调用详解
+跨域 demo
+重拾css[一]伪元素、包含块和高度坍塌
+React Hooks中这样写HTTP请求可以避免内存泄漏
+```

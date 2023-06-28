@@ -14,3 +14,9 @@ https://slack.engineering/typescript-at-slack/
 #### 读这篇文章前的几个问题：
 - 问什么要在团队推typescript
 - 什么样的项目收益更多（trade-on）
+
+### demos
+- https://github.com/PacktPublishing/Advanced-TypeScript-3-Programming-Projects
+```
+ We will do web development projects briefly on simple vanilla typescript to get the ball rolling, then a full stack project with node.js, a project with TypeScript, A CRM application with React and microservices, a cloud-based map application with Angular and Firebase. In the end, we will build an image recognition application with TensorFlow. 
+```

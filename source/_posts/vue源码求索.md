@@ -18,3 +18,9 @@ tags:
 - https://github.com/vuejs/vue/blob/dev/dist/vue.js#L14-L379
 - https://github1s.com/vuejs/vue/blob/dev/src/shared/util.js
 - https://juejin.cn/post/7024276020731592741#heading-0
+
+
+## core/util/debug.js
+- 2.x
+- src/core/util/debug.js
+- nestjs中的components就是参考这个

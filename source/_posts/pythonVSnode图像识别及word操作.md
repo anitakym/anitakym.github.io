@@ -18,3 +18,6 @@ python自动化办公体系
 控制：通过插件的方式增强办公软件以及周边软件，硬件的交互能力
 存储：和文件相关的很多常用的操作部分
 输出：智能化输出自动工作成果
+
+###
+- https://github.com/wilsonyin123/geekbangpython

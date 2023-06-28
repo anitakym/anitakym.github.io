@@ -7,6 +7,10 @@ tags:
 ### 几个迁移的案例
 https://developers.google.com/web/updates/2021/01/puppeteer-typescript
 
+
+### react-typescript
+- https://github.com/typescript-cheatsheets/react
+- https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
 ### ROI 
 - 团队迁移成本
 （开发思维，开发生态，项目处理，接口及声明文件的维护）

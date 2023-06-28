@@ -40,3 +40,18 @@ https://www.elastic.co/guide/en/elasticsearch/reference/6.7/query-dsl-query-stri
 devtools
 GET xxx/_mapping
 可以看keyword抓取的字符数限制
+
+## 聚合搜索
+- inspect 查看搜索具体语句
+- dev-tools 粘贴刚刚的语句，进行aggs的修改
+```
+"size": 0,
+  "aggs": {
+    "orders_by_ip": {
+      "terms": {
+        "field": "client_ip.keyword"
+      }
+    }
+  },
+```
+-- 或者可以用visualize , 选择已保存的语句，buckets里面add aggs

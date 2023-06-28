@@ -5,3 +5,7 @@ tags:
 ---
 ## doc
 https://opensumi.com/zh/docs/integrate/overview
+
+- https://github.com/opensumi/ide-startup-lite.git
+
+## IDE

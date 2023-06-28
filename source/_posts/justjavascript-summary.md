@@ -43,3 +43,5 @@ Properties & prototypes
 当看完整个的时候，基本上遇到问题，就可以画出现首页上面的那个图了，从而可以帮助判断问题；
 
 > Dan 在YTB上面也有视频，可以瞅瞅，他在线写代码时候，思考问题的方式
+
+- https://github.com/allenGKC/Just-Javascript-Reading-Notes.git
