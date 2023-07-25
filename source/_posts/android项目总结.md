@@ -107,3 +107,22 @@ android:launchMode="singleTask"
 ### bugly
 - Javascript的异常捕获功能
 - https://bugly.qq.com/docs/user-guide/advance-features-android/?v=1.0.0#javascript
+
+
+###
+Hilt是一种非常好的依赖注入框架，如果按照最佳实践使用，可以大大提高Android应用的开发效率。下面是一些经验：
+
+1. **尽可能的使用预定义的注解范围：**Hilt提供了@Singleton, @ActivityRetainedScoped, @ActivityScoped, @FragmentScoped, @ViewScoped, @ViewModelScoped 这些预定义的注解范围。尽量使用这些来标记你的依赖。
+
+2. **在AndroidEntryPoint之下的组件中，不要使用自定义的组件依赖：**自定义的组件（使用`@DefineComponent`标注的）在`@AndroidEntryPoint`标注的类中不能保证正确的行为。
+
+3. **仅在必要的情况下使用自定义的组件：**自定义的组件可能会让Hilt的使用变的复杂。
+
+4. **模块中的重要标注：**对于模块中提供依赖的方法，要确保使用了`@Provides` 或 `@Binds` 标注。同时还要确保模块用`@InstallIn` 标定安装到了合适的组件中。
+
+5. **在模块中避免使用运行时参数：**尽量避免在`@Provides`或者`@Binds` 的方法中使用运行时参数。因为Hilt得知如何提供这些参数会很困难。
+
+6. **避免在应用启动时执行长耗时的操作：**尽量减少`@EntryPoint`或者`@Inject`在`Application`子类中执行耗时的操作，因为这会影响应用的启动时间。
+
+7. **使用Hilt的Android测试库进行单元测试：**Hilt 提供了一套工具，用以测试使用Hilt的Android应用。
+

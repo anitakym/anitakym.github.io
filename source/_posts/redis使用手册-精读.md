@@ -144,3 +144,10 @@ graph
 - 可以用于去重
 - 基数统计：cardinality of a set is a measure of the "number of elements" of the set
 - standard error - 0.81%
+
+### 持久化方式
+Redis的持久化方式主要有两种：RDB（Redis DataBase）和AOF（Append Only File）。
+
+1. RDB：RDB按照设定的规则定期将内存中的数据存储在磁盘上，即快照存储。这些规则可以是时间和数量的集合，例如，10分钟（时间）内如果有10000次（数量）以上的写操作，就自动进行快照存储。RDB是Redis默认的持久化方式，适用于对数据安全性要求较高的场景。
+
+2. AOF：AOF记录服务器接收到的所有写操作，并在启动时通过重新执行这些命令来还原数据集。AOF文件中的命令都是以redis协议的格式追加保存的，可以对这些命令进行人为干预，比如部分删除或者修改。此外，Redis还可以在后台自动对AOF文件进行重写，使其体积保持在最小。AOF相比RDB，在系统故障时能提供更高的数据完整性。
