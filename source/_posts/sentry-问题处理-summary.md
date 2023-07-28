@@ -124,3 +124,8 @@ export default withErrorBoundary(MyComponent, {
 ```
 
 这片代码在 React 组件中引入了错误边界，当组件发生错误时，会自动报告给 Sentry 并显示一个默认的降级 UI。
+
+### linux 下载
+- 切下源
+npm set ENTRYCLI_CDNURL=https://cdn.npm.taobao.org/dist/sentry-cli
+npm set sentrycli_cdnurl=https://cdn.npm.taobao.org/dist/sentry-cli
