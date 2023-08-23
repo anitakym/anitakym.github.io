@@ -28,3 +28,14 @@ tags:
 
 4. TypeDI: 这也是一个强大的IoC容器库。它能和TypeORM，routing-controllers等库无缝集成，为开发者提供一套完整的开发解决方案。
 
+## nestjs
+- 实现了 IOC 容器
+- 从入口模块开始扫描
+- 分析 Module 之间的引用关系，对象之间的依赖关系
+- 自动把 provider 注入到目标对象
+
+- provider 一般都是用 @Injectable 修饰的 class
+- 构造器注入: 通过 provide 指定注入的 token，通过 useClass 指定注入的对象的类，Nest 会自动对它做实例化再注入
+- 属性注入: 通过 @Inject 指定注入的 provider 的 token
+- vs: 用 class 做 token 可以省去 @Inject
+- provider 的值可能是动态产生的，Nest 也同样支持(用 useFactory 来动态创建一个对象,useFactory 也支持参数的注入，支持异步)

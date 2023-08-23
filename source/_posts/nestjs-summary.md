@@ -38,3 +38,15 @@ monorepo | multirepo
 - https://github.com/Ignition-Space/fast-gateway/
 - https://wanago.io/
 - https://github.com/hantsy/nestjs-rest-sample
+
+### 全局模块
+- 模块可以通过 @Global 声明为全局的，这样它 exports 的 provider 就可以在各处使用了，不需要 imports。
+
+
+### 生命周期
+
+provider、controller、module 都支持启动和销毁的生命周期函数，这些生命周期函数都支持 async 的方式。
+
+可以在其中做一些初始化、销毁的逻辑，比如 onApplicationShutwon 里通过 moduleRef.get 取出一些 provider，执行关闭连接等销毁逻辑。
+
+全局模块、生命周期、moduleRef 都是 Nest 很常用的功能。

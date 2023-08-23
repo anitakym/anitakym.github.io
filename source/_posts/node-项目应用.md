@@ -234,3 +234,27 @@ node-rpc调用详解
 重拾css[一]伪元素、包含块和高度坍塌
 React Hooks中这样写HTTP请求可以避免内存泄漏
 ```
+
+### node-jiti
+"Node-jiti"是一个Node.js库，可在运行时（JIT）转译并加载ECMAScript模块。以下是使用"node-jiti"的一些最佳实践：
+
+1. **选择正确的环境**：“node-jiti”是一个在Node.js环境中运行的库，因此你应该确保你的项目是在Node.js环境中运行的。
+
+2. **使用包管理器**： 使用npm或者yarn这种包管理器来安装和管理“node-jiti”，这样可以确保你总是使用最新、最稳定的版本。
+
+3. **适当的错误处理**：“node-jiti”在加载或解析JS文件时可能会出现错误，因此应该适当地使用try...catch语句来处理可能采食的错误。
+
+4. **理解ESM和CJS的区别**：“node-jiti”旨在使那些在运用时还不支持ESM的Node.js版本能够使用ESM，因此你需要对ESM和CJS两种模块系统有所了解。
+
+5. **合理使用动态导入**：“node-jiti”允许你动态地导入JS文件，这是一种有用但需要谨慎使用的工具。因为过度使用动态导入可能会使代码难以理解和保持。
+
+举例：简单的使用 `node-jiti` 加载一个模块：
+
+```javascript
+// 导入 node-jiti
+const jiti = require('jiti')(__dirname)
+// 使用 node-jiti 加载模块
+const myModule = jiti('./myModule')
+```
+
+这是一个简单的示例，`jiti` 将加载并处理名为 `myModule.js` 的文件，此文件应该位于您的项目的根目录中。
