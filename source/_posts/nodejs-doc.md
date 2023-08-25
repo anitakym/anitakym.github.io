@@ -147,3 +147,15 @@ LAPACK - Linear Algebra PACKage、FFTW - Fastest Fourier Transform in the West�
 
 - 机器学习、深度学习及人工智能
 TensorFlow,C++
+
+### error
+```
+{
+  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+```
+nodejs 版本过高
+vue-cli的项目，降级nodejs到16.x能用，18，20都报错

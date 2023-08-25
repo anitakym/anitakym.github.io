@@ -289,5 +289,12 @@ https://gitstats.sourceforge.net/
 #### git fetch -p
 - 清除已删除的远程分支
 
+#### git升级
+```
+wget http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
+rpm -ivh wandisco-git-release-7-2.noarch.rpm 
+yum install git
+```
+
 ## 推荐阅读
 - https://github.com/nnja/advanced-git

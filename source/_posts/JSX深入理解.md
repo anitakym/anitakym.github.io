@@ -96,3 +96,5 @@ fs.readFile('./element.js',(e,data)=>{
 })
 
 ```
+
+- The term "JSX" in React refers to "JavaScript XML". It's a syntax extension for JavaScript, used within React to represent HTML-like components. This combination of JavaScript and XML (HTML-like syntax) allows developers to create their own components or reuse components in a very readable and intuitive way.
