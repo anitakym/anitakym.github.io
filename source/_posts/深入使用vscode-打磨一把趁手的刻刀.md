@@ -192,3 +192,14 @@ F5进入debug模式
 ### 查找，正则
 - 先开启正则模式
 - .* 匹配任意数量任意字符
+
+#### `.vscode/settings.json` 文件是 Visual Studio Code 的一个配置文件，用于为特定项目自定义设置。
+```
+"cSpell.words"是Code Spell Checker 插件提供的一个设置选项。Code Spell Checker 是一个用于检查拼写错误的 Visual Studio Code 插件。
+"cSpell.words" 的值应该是一个数组，其中包含的单词将被添加到插件的词汇表中。这就意味着这些单词不会被拼写检查器标记为拼写错误，即使它们不在默认的英语词典中。
+例如：
+{
+    "cSpell.words": ["jsonwebtoken", "bcryptjs", "eslint", "mocha", "chai"]
+}
+在这个例子中，“jsonwebtoken”, "bcryptjs", "eslint", "mocha"和"chai"这些单词不会被拼写检查器标记为错误，即使它们不是标准的英语单词。这对编程中的库名、函数名等非标准英语词汇提供了方便的拼写检查。
+```
