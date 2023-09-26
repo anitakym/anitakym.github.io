@@ -56,6 +56,7 @@ spectrum/
 # 允许您覆盖特定嵌套依赖项的版本。 有关完整规范，请参见选择性版本解析 RFC。
 # https://github.com/yarnpkg/rfcs/blob/master/implemented/0000-selective-versions-resolutions.md
 # 注意，yarn install —flat 命令将会自动在 package.json 文件里加入 resolutions 字段
+- resolutions 字段是一个 Yarn 的特性，它允许你在项目中覆盖依赖包的版本。这在处理一些由冲突版本引发的问题时非常有用。npm 本身并不支持这个字段。
 ```
 
 #### immutable-js 
