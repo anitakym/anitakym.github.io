@@ -66,3 +66,8 @@ We also recommend installing [ni](https://github.com/antfu/ni) to help switching
 
 ### monorepo - nest
 微服务项目
+
+### nx
+
+
+### rushstack

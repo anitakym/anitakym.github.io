@@ -26,3 +26,8 @@ tags:
 
 #### Transformer 的核心是自注意力机制（Self-Attention）
 - 自注意力机制可以将输入序列中的每个位置都表示为一个向量，这些向量可以同时参与计算，从而实现高效的并行计算
+
+
+#### AI - document - search
+- aircodelab
+- documate(https://github.com/aircodelabs/documate)
