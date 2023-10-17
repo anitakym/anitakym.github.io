@@ -3,6 +3,8 @@ title: typescript实践经验总结
 date: 2021-03-08 12:07:02
 tags:
 ---
+> https://www.typescriptlang.org/docs/handbook/intro.html - handbook随手查～
+
 > 多看下生成的JS，从而看看处理的逻辑（使用不同的ES标准进行编译）
 ### 几个迁移的案例
 https://developers.google.com/web/updates/2021/01/puppeteer-typescript
