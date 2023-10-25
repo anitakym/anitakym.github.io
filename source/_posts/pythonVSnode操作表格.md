@@ -124,3 +124,8 @@ AttributeError: module 'xlwt' has no attribute 'Workbook'
 
 ## Excel相关
 - https://www.yuque.com/antfe/featured/ko8iuecqi9elaa1v
+
+### sheetjs相关
+- https://docs.sheetjs.com/docs/miscellany/
+
+渲染table - https://github.com/handsontable/handsontable

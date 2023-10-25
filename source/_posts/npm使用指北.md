@@ -314,3 +314,9 @@ npm install --exact my-package
 这种方式的好处在于与其他包中重复的文件只会缓存一次，避免了重复存储相同内容，从而节省了磁盘空间。
 
 要注意的是，你应该不需要直接操作`.npm/_cacache`目录。你可以使用npm CLI的内置缓存命令（例如`npm cache verify`）来管理、清除和验证缓存。更多关于npm缓存请参考官方文档：https://docs.npmjs.com/cli/v8/commands/npm-cache
+
+### npm version
+`npm version` 命令：使用 `npm version` 命令来更新 `package.json` 文件中的版本号。这个命令也可以自动创建一个新的 Git 标签。
+`^` 和 `~`字符：在 `package.json` 文件中，可以使用这些字符来指定一个版本范围，使项目能够自动接收 bug 修复和小更新，但不会突然接收到大的更新。
+`npm outdated`：这个命令可以检查所有依赖项的当前版本和最新版本，有助于跟踪哪些依赖包需要更新。
+`npm audit`：这个命令可以检查项目依赖项中的安全漏洞。如果发现有安全问题的依赖，可以使用 `npm audit fix` 来自动更新这些依赖包。
