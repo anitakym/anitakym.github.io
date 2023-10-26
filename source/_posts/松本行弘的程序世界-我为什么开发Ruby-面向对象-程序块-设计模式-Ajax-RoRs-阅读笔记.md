@@ -56,3 +56,32 @@ tags:
 ## Ruby on Rails
 ### MVC 和 Ruby on Rails
 ### 开放类和猴子补丁
+
+###
+etching bundler-2.3.26.gem
+ERROR: While executing gem ... (Gem::FilePermissionError)
+You don't have write permissions for the /Library/Ruby/Gems/2.6.0 directory.
+这个错误意味着你没有足够的权限来向这个目录写入文件。这在OS X上是常见的问题，因为这个目录是由系统拥有的。
+
+要解决这个问题，你有两个选择。
+
+第一个选择是使用sudo命令来运行gem install：
+
+```bash
+sudo gem install bundler -v 2.3.26
+```
+
+这将给你足够的权限来安装gem，但是这可能会让你的系统环境被修改，这是一种不推荐的做法。
+
+第二个更好的选择是安装一个版本管理器，例如RVM或RBENV。这些版本管理器为你的Ruby版本和Gem创建了一个单独的环境，这样你就可以在不修改系统环境的情况下安装它们。
+
+例如，你可以通过下面的步骤安装RVM和新版本的Ruby：
+
+```bash
+\curl -sSL https://get.rvm.io | bash -s stable
+rvm install 2.7.0
+rvm use 2.7.0
+gem install bundler -v 2.3.26
+```
+
+这将安装RVM，然后使用RVM安装Ruby 2.7.0，然后切换到这个新版本的Ruby，最后安装所需版本的bundler。

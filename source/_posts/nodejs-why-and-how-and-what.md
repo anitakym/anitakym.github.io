@@ -229,6 +229,14 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 ## Tools
 #### volta - The Hassle-Free JavaScript Tool Manager
 - https://volta.sh/
+- 在MacOS上使用Volta来安装Yarn的过程相对简单。首先，你需要确保你已经在你的机器上安装了Volta。如果你还没有安装Volta，你可以使用下面的命令来安装：
+```bash
+curl https://get.volta.sh | bash
+```
+```bash
+volta install yarn
+```
+
 
 ## 框架设计和工程化 
 > 软件质量体系，https://juejin.cn/post/6990365231348187150 - 设计模式经典书籍

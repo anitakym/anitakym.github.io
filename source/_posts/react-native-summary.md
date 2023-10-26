@@ -95,6 +95,27 @@ tags:
 #### watchman
 - brew install watchman
 - Facebook Watchman 是一个文件监视服务，用于监控文件系统的更改。对于 React Native 项目，Watchman 可以提高开发效率，因为它能够实时监控项目中的文件更改并自动重新构建和刷新。当文件发生更改时，它会在后台执行相应的任务，例如实时重新加载应用。
+Watchman主要依赖几种主要的库和软件，这些库和软件包括：
+1. Autoconf：一个用于自动化生成可移植编译系统的工具，它会根据你的系统环境和你的特定需要来生成一份适合你机器的Makefile。
+2. Automake：与Autoconf配套使用的工具，它可以自动产生跨平台的Makefile.in文件。
+3. Libtool：用于创建可移植库的工具。
+4. pkg-config：它是用来在配置阶段检测库安装路径的工具。当你编译需要一些库文件（比如X、GTK、QT库等）支持的程序时，你可以用它快速找到这些库文件安装在哪里。
+5. Python-dev (仅在构建Python扩展时需要)
+6. OpenSSL (仅在构建fb303 Thrift 服务时需要)
+
+Zstandard（也被称为zstd）是一个实时压缩算法，提供高压缩率和极快的解压缩速度。它由Facebook开发并且已经开源。Zstandard在设计上十分灵活，可允许用户在压缩/解压缩速度与压缩率之间进行权衡。
+1. 高性能：它提供了类似gzip的压缩率，但解压速度要快得多，对于需要频繁解压缩的场景，比如服务端服务，效果明显。
+2. 高压缩比：Zstandard也支持高压缩等级，以获取更高的压缩比，这意味着它可以为需要压缩大量数据的场景，如数据仓库大规模存储和传输，提供更好的解决方案。
+3. 具备字典压缩功能：Zstandard可以训练一个字典，以改进小数据压缩。如果存在大量的重复字符串，使用预训练的字典可以显著提高压缩率。
+在大多数系统上安装zstd非常简单，对于Unix/Linux系统，可以通过包管理器(如apt, yum等)来安装。例如，在基于Debian的系统上，可以用以下命令安装：
+```bash
+sudo apt-get install zstd
+```
+在macOS上，你可以通过brew来安装：
+```bash
+brew install zstd
+```
+
 
 #### ruby
 - Ruby是一种通用的编程语言。React Native在一些与iOS依赖性管理相关的脚本中使用。和每一种编程语言一样，Ruby也有不同的版本，这些年来一直在开发。
@@ -111,3 +132,9 @@ chruby
 
 ### CLI
 - React Native有一个内置的命令行界面。与其在全局范围内安装和管理特定版本的CLI，我们建议你在运行时使用Node.js附带的npx来访问当前版本。使用npx react-native <command>，当前稳定版本的CLI将在运行命令时被下载和执行。
+
+###
+- https://github.com/microsoft/react-native-windows
+
+- apps - opensource
+https://github.com/ReactNativeNews/React-Native-Apps
