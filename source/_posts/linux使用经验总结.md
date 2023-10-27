@@ -489,3 +489,13 @@ pkill命令则更加方便一些，它允许你使用进程名或者其他属性
 
 ### autojump
 - macos13 - brew安装会提示
+
+### lsb_release -a
+在Linux中，"lsb_release -a"这个命令被用来查看系统的相关信息。其中的"lsb"是"Linux Standard Base"的缩写，它代表了一套Linux系统的标准规范，旨在增强Linux的兼容性
+```
+LSB Version:    :core-4.1-amd64:core-4.1-noarch
+Distributor ID: CentOS
+Description:    CentOS Linux release 8.5.2111
+Release:        8.5.2111
+Codename:       n/a
+```
