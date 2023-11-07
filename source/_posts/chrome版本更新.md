@@ -86,3 +86,12 @@ Supported by: http://youtu.be/fPAf8dN4G4w?t=26m17s and http://youtu.be/hou2wJCh3
 ### chrome 版本
 - https://omahaproxy.appspot.com/
 - https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html
+
+- https://chromiumdash.appspot.com/schedule (很清楚，有内核也有对应browser的)
+- https://chromestatus.com/roadmap (更新的特性)
+### 118的问题
+- 有问题
+
+### Chrome Enterprise and Education release notes
+- https://support.google.com/chrome/a/answer/7679408?sjid=6136179283723156290-AP
+- https://chromereleases.googleblog.com/2023/

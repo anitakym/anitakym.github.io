@@ -68,6 +68,9 @@ npx degit antfu/vitesse my-vitesse-app
 cd my-vitesse-app
 pnpm i # 如果你没装过 pnpm, 可以先运行: npm install -g pnpm
 ```
+- expo 用npx使用
+npx expo start (ok)
+npx run ios (wrong)
 
 ### yarn
 可以通过homebrew安装，也可以通过npm安装

@@ -22,3 +22,10 @@ tags:
 - gRPC 把 Protobuf 作为底层的编解码协议
 - gRPC也使用了协议缓冲区（也称为protobuf），它提供了一种将结构化数据定义和序列化为高效的二进制格式的方法。由于它们是二进制格式的，所以它们的传输量相对更小，可以快速在线上传输。
 - 对于性能要求高并且数据量大的应用而言，protobuf常常是最佳的选择
+
+### protobuf.js
+用的时候，不要用protobuf.min.js
+
+reads output from proto2json as a schema
+encodes objects to buffers
+decodes buffers to objects

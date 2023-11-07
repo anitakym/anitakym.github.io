@@ -48,3 +48,10 @@ Cannot read property 'range' of null
 "warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)
 "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
 ```
+
+### eslint-config
+- https://github.com/antfu/eslint-config#faq
+
+
+### eslint 和 prettier
+- https://eslint.org/blog/2023/10/deprecating-formatting-rules/
