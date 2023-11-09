@@ -65,3 +65,11 @@ Default: false
 默认情况下 babel-loader 会忽略所有 node_modules 中的文件。你可以启用本选项，以避免构建后的代码中出现未转译的第三方依赖。
 不过，对所有的依赖都进行转译可能会降低构建速度。如果对构建性能有所顾虑，你可以只转译部分特定的依赖：给本选项传一个数组，列出需要转译的第三方包包名或正则表达式即可。
 ```
+
+
+### @vue/cli-plugin-babel 
+@vue/cli-plugin-babel 是一个 Vue CLI 的插件，它用于将 Babel 集成到 Vue 项目中。
+使用 @vue/cli-plugin-babel 的主要优势：
+1. 使用最新的 JavaScript 语法：这意味着你可以使用例如 async/await 或是 ES6 modules 这样新的语法特性，Babel 将会为旧浏览器编译这些代码。
+2. 自动检测浏览器兼容性：插件能获知你的 Vue 应用将在什么环境下运行，并为目标环境优化配置。
+3. 自动引入 polyfill：为了在旧版本浏览器中使用新特性，有时我们需要引入 polyfill。插件能了解你已经使用了哪些新特性，然后只引入需要的 polyfill。

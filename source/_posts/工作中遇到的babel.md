@@ -71,3 +71,10 @@ https://tc39.es/ecma262/2022/
 
 ### compat-table
 https://kangax.github.io/compat-table/es2016plus/
+
+
+### Presets
+@babel/preset-env
+
+基本上可以看到各个版本的新增特性和用法
+https://babeljs.io/docs/babel-plugin-transform-async-to-generator

@@ -37,3 +37,6 @@ A event happeds in node   |a   Electron Main Thread   |b   Chromium MessageLoop
 - electron-internals-node-integration(electronjs.org)
 - Electron: The Event Loop Tightrope - Shelley Vohr | JSHeroes 2019 - ytb - JS/Heroes
 - shell/common/node_bindings.cc
+
+### bugs
+- https://bugs.chromium.org/p/chromium/issues/list

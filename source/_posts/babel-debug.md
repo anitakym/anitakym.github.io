@@ -29,3 +29,25 @@ tags:
 
 ### babel-plugin
 - https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/plugin-handbook.md
+
+
+### @babel/traverse
+- 用于遍历和更新抽象语法树（Abstract Syntax Tree，AST）
+- "@babel/traverse" 的模块对于做语法分析、代码转化、代码生成等任务非常实用。
+
+在 Babel 的转换流程中，“解析”阶段会生成一棵 AST，然后 "@babel/traverse" 在“转换”阶段遍历这棵 AST，根据需要进行各种转换。你可以在插件或 preset 中使用它，以实现你想要的转换。
+
+```javascript
+import * as parser from "@babel/parser";
+import traverse from "@babel/traverse";
+const code = "function square(n) { return n * n; }";
+const ast = parser.parse(code);
+
+traverse(ast, {
+  enter(path) {
+    if (path.isIdentifier({ name: "n" })) {
+      path.node.name = "x";
+    }
+  }
+})
+```

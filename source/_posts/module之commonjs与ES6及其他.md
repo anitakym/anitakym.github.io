@@ -16,3 +16,7 @@ http://caibaojian.com/es6/module.html
 node:commonjs
 foreceipt:amd(requirejs)
 现在项目：es6
+
+### systemjs
+- https://babeljs.io/docs/babel-plugin-transform-modules-systemjs  This plugin is included in @babel/preset-env under the modules option(@vitejs/plugin-legacy -> @babel/preset-env)
+- vite - legacy - systemjs
