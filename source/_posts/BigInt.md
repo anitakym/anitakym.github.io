@@ -52,3 +52,22 @@ The static property String.length is unrelated to the length of strings, it's th
 
 ### 相关
 - V8——2018 年，团队为 WebAssembly 发布了一个名为 Liftoff 的基线编译器，它大大减少了 WebAssembly 应用程序的启动时间，同时提供了可预测的性能。并且发布了 BigInt，这是一个新的 JavaScript 原始类型，可以实现任意精度的整数。
+
+### A small, fast JavaScript library for arbitrary-precision decimal arithmetic.
+- https://github.com/MikeMcl/big.js/
+```
+一个小型、快速的 JavaScript 库，用于任意精度的十进制运算。
+简单的应用程序接口
+比 JavaScript 版本的 Java BigDecimal 更快、更小、更易用
+最小化后仅 6 KB
+复制 JavaScript Numbers 的 toExponential、toFixed 和 toPrecision 方法
+以可访问的十进制浮点格式存储数值
+全面的文档和测试集
+无依赖关系
+仅使用 ECMAScript 3，因此可在所有浏览器中运行
+是 bignumber.js 和 decimal.js 的姊妹篇。关于它们之间的区别，请参阅此处。
+```
+
+### mathjs
+- https://github.com/josdejong/mathjs
+- Math.js 是一个适用于 JavaScript 和 Node.js 的广泛数学库。它具有灵活的表达式解析器，支持符号计算，提供了大量内置函数和常量，并提供了处理不同数据类型（如数字、大数、复数、分数、单位和矩阵）的集成解决方案。功能强大，易于使用。

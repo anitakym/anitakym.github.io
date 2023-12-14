@@ -8,7 +8,16 @@ tags:
 
 
 
+### nest-cli
+command-line interface tool
+initialize, develop, and maintain your Nest applications
+scaffolding the project
+serving it in development mode
+building and bundling the application for production distribution
+It embodies best-practice architectural patterns to encourage well-structured apps
 
+#### @nestjs/schematics
+- Nest architecture element generation based on Angular schematics 
 
 
 

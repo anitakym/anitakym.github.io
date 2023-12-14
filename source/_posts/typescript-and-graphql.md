@@ -23,3 +23,22 @@ https://mp.weixin.qq.com/s/q05JeUZ0mfjhhCshhhPNtw
 
 #### frameworks
 - koa-graphql
+- nestjs/graphql
+
+### npm
+- https://github.com/graphql
+
+### test-demo
+@apollo/server 
+@apollo/client
+
+#### Queries
+#### Mutations
+
+## 思想～～
+https://graphql.org/learn/thinking-in-graphs/
+
+DSL
+
+### Javascript Server
+https://graphql.org/code/#javascript-server
