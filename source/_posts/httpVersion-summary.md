@@ -43,3 +43,11 @@ HTTP2.0 作为最新的 HTTP 协议，大幅提升了 Web 性能，进一步减�
 
 ### 推荐书
 - web性能权威指南 - qq阅读上面有，可当工具书查看使用
+
+### http 基础
+#### 数据传输
+- url param
+- query
+- form-urlencoded
+- form-data
+- json
