@@ -21,3 +21,12 @@ node的benchmark写的还是非常值得学习的
 - 并发：一段时间访问的大量用户的请求
 - 并行：同一时刻的大量的用户请求
 - 峰值时间的每秒请求 / 单台的QPS = 机器数量
+
+### 微基准测试
+
+
+### 宏基准测试
+
+
+### reference
+- https://docs.deno.com/runtime/manual/tools/benchmarker

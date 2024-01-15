@@ -27,3 +27,7 @@ Flutter version in the kraken/pubspec.yaml
 CMake v3.2.0 or later
 Xcode (10.12) or later (Running on macOS or iOS)
 Android NDK version 21.4.7075529 (Running on Android)
+
+### harmonyOS已知问题
+- 如果makefile中的业务逻辑存在并发操作，由于CMake机制上通过多线程执行，在多CPU架构并发操作场景，会偶现编译失败。规避措施：建议排查并修改makefile中的业务逻辑，去除并发操作。
+- https://developer.harmonyos.com/cn/docs/documentation/doc-releases-V3/ide-known-issues-v3-1-0000001440852961-V3
