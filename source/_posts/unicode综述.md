@@ -56,3 +56,6 @@ Table of Contents
 ```
 - 可用来做隐形水印
 - 对于用户录入内容中的零宽字符，注意处理；
+
+- 相关文章
+- https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/
