@@ -13,3 +13,8 @@ tags:
 - z-index
 - 排查重绘过程（滚动过程）页面卡顿
 - https://codepen.io/Chokcoco/pen/oNdKzNX
+
+
+### Chrome 开发者工具的使用文档
+- https://developer.chrome.com/docs/devtools/network/reference/?utm_source=devtools#timing-explanation
+

@@ -23,3 +23,7 @@ Added bonuses:
 – Could use another element for the author initials of a highlight and animate that in too. Here the pseudoelement is being used. But another accessible span would do the trick.
 – Highlight color is scoped inline via hue.
 – View transition theme switch for a bonus that looks like a triangle. Been messing with Vercel docs so was the easiest thing to go with 
+
+
+# Lightweight, robust, elegant syntax highlighting.
+https://github.com/PrismJS/prism
