@@ -18,3 +18,5 @@ tags:
 ### Chrome 开发者工具的使用文档
 - https://developer.chrome.com/docs/devtools/network/reference/?utm_source=devtools#timing-explanation
 
+### source跨文件搜索
+cmd+option+F
