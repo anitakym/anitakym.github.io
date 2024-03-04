@@ -20,3 +20,7 @@ Java部分参考：https://gitee.com/mose-x/wps-view-java.git
 商业化其实还有待进一步深化
 
 开发对接的时候能明显感受到这个状况
+
+### 其他服务提供商
+- https://cloud.tencent.com/document/product/460/52518
+- 数据万象- 文档转html

@@ -15,3 +15,8 @@ tags:
 #### HTTP server
 - 如果本地起静态资源服务，默认配置下
 - svg (python simple-http-server type:octet-stream | node http-server type:svg+xml)
+- https://github.com/http-party/http-server
+```
+http-server的原理
+
+```
