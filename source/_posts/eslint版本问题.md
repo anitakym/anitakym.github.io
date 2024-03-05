@@ -55,3 +55,11 @@ Cannot read property 'range' of null
 
 ### eslint 和 prettier
 - https://eslint.org/blog/2023/10/deprecating-formatting-rules/
+
+```
+旧项目
+member-delimiter-style
+DEPRECATED
+Formatting rules now live in eslint-stylistic. @stylistic/ts/member-delimiter-style is the replacement for this rule.
+See Deprecating Formatting Rules for more information.
+```
