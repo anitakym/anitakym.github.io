@@ -13,3 +13,12 @@ tags:
 
 ## 剖析 lottie-web 动画实现原理 - 网易云音乐
 - https://juejin.cn/post/6914835547588395022
+
+## svgpath
+- https://www.npmjs.com/package/svgpath
+- 对于path的各种处理的方法
+- 线性代数的思维
+- https://github.com/fontello/svgpath
+
+### 可视化软件
+- https://svg-path-visualizer.netlify.app/

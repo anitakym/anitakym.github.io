@@ -15,3 +15,6 @@ Access Token 是一种用于授权访问受保护资源的凭证，通常在 OAu
 #### reference
 - OAuth2协议规范
 - OpenID Connect explained
+
+#### Lucia
+- https://github.com/lucia-auth/lucia

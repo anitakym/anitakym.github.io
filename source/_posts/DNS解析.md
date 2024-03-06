@@ -51,3 +51,11 @@ https://cloud.tencent.com/document/product/302/3449
  #### dig
  查DNS的问题
  一般做了CDN缓存，可以用这个看看，或者新上的域名，运维配置有没有问题；
+
+ ### 一些问题
+ Alpine - 可能会有dns解析超时问题
+虽然 Alpine Linux 由于其小差异、安全和简单性而受到许多 Docker 用户的喜爱，但它确实存在一些问题，其中之一就是 DNS 解析问题。
+
+关于 DNS 解析问题，大多是由于 Alpine 使用的是 musl libc，而不是 glibc。此差异可能会引起一些特定的问题，尤其是在 DNS 解析和网络中。
+
+如果你的应用依赖于特定的 glibc 功能，或者你发现了 Alpine 引导的问题，那么使用更大的基础镜像（如 debian 或 ubuntu）可能会更好。即使它们占用的空间更多一些，但它们可能避免了一些潜在的问题。
