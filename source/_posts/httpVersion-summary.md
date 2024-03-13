@@ -51,3 +51,7 @@ HTTP2.0 作为最新的 HTTP 协议，大幅提升了 Web 性能，进一步减�
 - form-urlencoded
 - form-data
 - json
+
+### 项目数据
+- 先升了腾讯云点播的域名(支持http2.0)
+- xxxvod.xxx.cn
