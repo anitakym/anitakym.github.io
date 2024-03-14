@@ -79,3 +79,14 @@ So, the cause of this error is if code attempts to close the WebSocket connectio
 - IE/Edge低版本不支持
 - 单向通道
 - https://caniuse.com/eventsource
+
+content-type:
+text/event-stream
+
+`text/event-stream`是一种MIME类型，它被用于服务器发送事件(SSE，Server-Sent Events)协议中。在这个协议中，通过一个HTTP连接，服务器可以发送到客户端的一连串的事件。与Websockets相比，SSE是单向的，只允许服务器向客户端发送消息。
+
+每个事件以`data: `开始，后面跟着消息的内容，然后是两个换行符来表示消息的结束。服务器可以发送任意多的事件，只要连接保持打开状态。
+
+这种类型的通信特别适合于服务器需要实时，持续地发送更新（例如股票价格更新，新闻滚动，实时计分等）给客户端，但客户端不需要频繁地向服务器发送数据的场景。
+
+使用`text/event-stream`的服务器发送事件(SSE)是HTML5引入的一个标准，被所有现代浏览器支持。
