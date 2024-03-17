@@ -129,3 +129,15 @@ AttributeError: module 'xlwt' has no attribute 'Workbook'
 - https://docs.sheetjs.com/docs/miscellany/
 
 渲染table - https://github.com/handsontable/handsontable
+
+### 其他 - Java
+- https://github.com/apache/poi
+- https://github.com/alibaba/easyexcel
+(快速、简洁、解决大文件内存溢出的java处理Excel工具)
+```
+Apache POI和JXL在处理大数据量的Excel时，确实可能会出现内存溢出的问题。针对这个问题，Apache POI提供了SAX模式API。
+
+实际上，SAX(Simple API for XML)是一种基于事件驱动的API。这样可以实现你在解析文档时只把XML文档看成一系列的事件，然后编写处理事件的代码，这样可以极大地减小内存的消耗。
+
+而easyexcel在处理大Excel的性能上进一步优化，比如对07版Excel解析时的内存压缩，显著降低了内存消耗。EasyExcel在模型转换的封装也让开发者用起来更方便。
+```

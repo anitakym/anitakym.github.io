@@ -167,3 +167,12 @@ SELECT COUNT(*) as num FROM new_user WHERE TO_DAYS(NOW())-TO_DAYS(regist_time)<=
 - mybatis-3
   - MyBatis SQL mapper framework for Java —— mybatis.github.io/mybatis-3/
 	- 数据持久化
+	- https://github.com/mybatis/mybatis-3
+- MyBatis-Plus是一个对MyBatis的增强工具，在MyBatis的基础上只做增强，不做改变，为简化开发、提高效率而生。
+- https://github.com/baomidou/mybatis-plus
+1. 自动化SQL语句处理：它提供了一些增删查改的通用方法，能够自动构造SQL语句，对常见的增删查改操作能节省大量的编码工作，简化代码。
+2. 条件构造器：简化了复杂条件查询，提供了丰富的表达式，满足大部分的查询需求。
+3. 支持ActiveRecord模式：ActiveRecord是一种Active Record模式，它将数据库记录映射为对象，这是一种领域模型模式，行为和数据被封装在对象中。  
+4. 完全兼容MyBatis：和MyBatis无缝结合，可以灵活读写分离等等。
+5. 支持自定义全局通用操作：插入、修改、删除及查询，提供全局通用方法做基础操作，提供通用接口Iselect为非通用系操作。
+  

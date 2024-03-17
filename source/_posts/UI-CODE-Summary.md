@@ -22,3 +22,8 @@ Picasso是58同城推出的一款sketch设计稿解析插件，可将sketch设�
 - AI Lab - MS
 
 - Locofy
+
+### 设计类software
+- mastergo
+- figma
+- sketch

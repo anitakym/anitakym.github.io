@@ -318,3 +318,18 @@ HTTP状态码301和302都是重定向代码，但它们在使用场景上会有�
 4. **HAR Reference Parties Construction**：这可能涉及创建HAR参考方。具体的含义和用法可能依赖于特定的应用环境。
    
 5. **Association of HAR editing**：这可能涉及在编辑HAR文件时建立与其他文件或数据的关联。这可能需要使用特定的编辑工具或程序库。
+
+
+### PROPFIND
+HTTP "PROPFIND"方法是对使用WebDAV协议的资源进行访问的一种方式。WebDAV协议是HTTP/1.1的扩展，它允许客户设备对网络存储空间进行读写操作。
+
+PROPFIND方法用于获取URI标识的资源属性，包括但不限于创建日期、修改日期、内容类型、内容长度等。这些属性被封装在一个XML中，并在PROPFIND响应中被返回。
+
+广泛使用的场景包括：
+1. 文件共享：比如在Dropbox, Google Drive等云存储服务中，客户端使用PROPFIND方法获取文件及文件夹的属性信息，如文件大小、最后修改时间等。
+
+2. 内容管理系统：如WordPress，用PROPFIND方法获取文章或页面的元数据。
+
+3. 在一些封装较复杂的Web服务中，客户端可以用PROPFIND请求获取资源的一些属性信息，如权限列表、协作者列表等。
+
+要注意的是，虽然PROPFIND方法在HTTP/1.1协议中已经被定义，但并非所有的Web服务器或HTTP client都实现了对PROPFIND的支持。

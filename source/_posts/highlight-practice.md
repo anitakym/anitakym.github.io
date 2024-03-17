@@ -27,3 +27,6 @@ Added bonuses:
 
 # Lightweight, robust, elegant syntax highlighting.
 https://github.com/PrismJS/prism
+
+### code-blocks-but-better
+https://pedro-ofurnl2ot-peduarte.vercel.app/writing/code-blocks-but-better

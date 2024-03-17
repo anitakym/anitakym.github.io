@@ -78,3 +78,7 @@ https://kangax.github.io/compat-table/es2016plus/
 
 基本上可以看到各个版本的新增特性和用法
 https://babeljs.io/docs/babel-plugin-transform-async-to-generator
+
+## 其他
+- https://babeljs.io/blog/2021/05/10/funding-update
+- https://babeljs.io/blog/2023/10/16/cve-2023-45133
