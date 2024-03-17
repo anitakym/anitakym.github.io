@@ -36,3 +36,6 @@ tags:
 #### 2022 year in review
 - vapor mode : Vapor Mode是我们一直在尝试的另一种编译策略，其灵感来自Solid。给予相同的Vue SFC，Vapor Mode将其编译成JavaScript输出，与当前基于Virtual DOM的输出相比，性能更强，使用的内存更少，需要的运行时支持代码更少。
 - https://blog.vuejs.org/posts/2022-year-in-review
+
+### 网站分析
+- https://web-check.xyz/
