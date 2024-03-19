@@ -40,3 +40,5 @@ Mixer.on('mixFinished', function() {
 不过要注意，使用 Lame.js 需要遵循其相关的授权和使用条件，并且由于 LAME 编码器的特性，Lame.js 对浏览器的性能有一定的要求，可能不适合所有的环境和应用。
 
 - https://imgcache.qq.com/open/qcloud/soe/lame/lame.all.js
+
+如果load失败，主要原因是网络，会抛错，每日万次调用，个位数报错（1-2）
