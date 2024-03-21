@@ -190,3 +190,43 @@ CI设置为false，避免把warning当成error处理，导致构建直接退出
 
 ## 基础
 
+### history
+- Webpack 1.0.0：2014年2月
+  - 此版本是Webpack的首个稳定版本，主要功能是模块打包和资源管理。
+
+- Webpack 2.2.0：2017年1月17日
+  - 新增了对ES6模块处理的支持，即	import 和 export语法。
+  - 引入了Tree shaking技术，可以实现去除无用代码。
+  - 新增了动态导入功能，即 import()语法。
+
+- Webpack 3.0.0：2017年6月19日
+  - 具有作用域提升(Scope Hoisting)功能，可以使代码在浏览器端运行更快。
+  - 提供了新的插件系统。
+
+- Webpack 4.0.0：2018年2月26日
+  - 新增了Mode选项，取代了--optimize-*选项。
+  - 废除了CommonsChunkPlugin，新添加了optimization.splitChunks和optimization.runtimeChunk选项。
+  - 在编译时，可以将 import 和 export 语句转换为 ES5 代码，支持更多的设备和环境。
+
+- Webpack 5.0.0：2020年10月10日
+  - 默认支持持久缓存，提升了构建性能。
+  - 自动生成文件名，用于长期缓存。
+  - 新增了对模块联邦（Module Federation）的支持，可以实现多个构建共享模块。
+  - 提高了算法和默认配置以减少捆绑包的大小。
+
+### dif
+Webpack中的插件（Plugins）和加载器（Loaders）都是Webpack的扩展方式，它们在处理项目时起着不同的作用。这两者的主要区别如下：
+
+1. 负责的工作内容不同：
+Loader：它是一个转换器，将A文件进行编译形成B文件，这里操作的是文件，比如将A.scss或A.less转化为A.css，单纯的文件转换过程。
+Plugin：它是一个扩展器，它丰富了webpack本身，针对的是loader结束后，webpack打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听webpack打包过程中的某些节点。
+
+2. 使用方式不同：
+Loader：在module.rules中配置，作为模块的规则存在，类似于一种解析器。
+Plugin：在plugins中单独配置，作为插件的存在，用来扩展Webpack的功能。
+
+3. 作用的文件不同：
+Loader：在导入某个文件的时候，预处理文件。
+Plugin：处理的是整个构建过程。
+
+总的来说，Loader 主要用于转换文件内容，而 Plugin 则可以用于执行范围更广的任务。Loaders 是在文件加载时使用，Plugins 更多的是在打包优化和缩小以及重新定义环境中的词等操作。
