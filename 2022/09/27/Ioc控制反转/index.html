@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Ioc控制反转 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nestjs"><span class="toc-text">nestjs</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Ioc控制反转
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-09-27 16:44:09</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://medium.com/nmc-techblog/dip-ioc-di-know-them-better-abed5b57fd20">https://medium.com/nmc-techblog/dip-ioc-di-know-them-better-abed5b57fd20</a></li>
+<li><a target="_blank" rel="noopener" href="https://martinfowler.com/articles/injection.html">https://martinfowler.com/articles/injection.html</a></li>
+</ul>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">面向对象编程 <span class="operator">-</span> 设计原则</span><br><span class="line">控制反转（<span class="variable">Inversion</span> <span class="variable">of</span> <span class="built_in">Control</span>，缩写为 <span class="variable">IoC</span>）</span><br><span class="line">降低代码之间的耦合度</span><br><span class="line"></span><br><span class="line">方式</span><br><span class="line">依赖注入（<span class="variable">Dependency</span> <span class="variable">Injection</span>）</span><br><span class="line">依赖查找（<span class="variable">Dependency</span> <span class="built_in">Lookup</span>）</span><br><span class="line"></span><br><span class="line">通过控制反转，对象在被创建的时候，由一个调控系统内所有对象的外界实体将其所依赖的对象的引用传递给它</span><br><span class="line">依赖被注入到对象中</span><br></pre></td></tr></table></figure>
+
+
+<ol>
+<li><p>InversifyJS：是一个强大且轻量的反转控制(IoC)容器，用于JavaScript和Node.js的开发，支持TypeScript。它使用了类似于Java的注解方式引入依赖，让开发者更专注于业务代码的开发。</p>
+</li>
+<li><p>tsyringe：是一个轻量级的依赖注入容器，有着简洁易懂的API和易于操作的使用方式，也共享了类似Hilt的理念。它支持构造函数注入、属性注入和方法注入，大大方便了开发过程。</p>
+</li>
+<li><p>NestJS：虽然它主要是一个Node.js后端开发框架，但其中内嵌了一套依赖注入系统。这个系统虽然简单，但非常灵活，可以帮助你管理项目中的各种服务和组件。</p>
+</li>
+<li><p>TypeDI: 这也是一个强大的IoC容器库。它能和TypeORM，routing-controllers等库无缝集成，为开发者提供一套完整的开发解决方案。</p>
+</li>
+</ol>
+<h2 id="nestjs"><a href="#nestjs" class="headerlink" title="nestjs"></a>nestjs</h2><ul>
+<li><p>实现了 IOC 容器</p>
+</li>
+<li><p>从入口模块开始扫描</p>
+</li>
+<li><p>分析 Module 之间的引用关系，对象之间的依赖关系</p>
+</li>
+<li><p>自动把 provider 注入到目标对象</p>
+</li>
+<li><p>provider 一般都是用 @Injectable 修饰的 class</p>
+</li>
+<li><p>构造器注入: 通过 provide 指定注入的 token，通过 useClass 指定注入的对象的类，Nest 会自动对它做实例化再注入</p>
+</li>
+<li><p>属性注入: 通过 @Inject 指定注入的 provider 的 token</p>
+</li>
+<li><p>vs: 用 class 做 token 可以省去 @Inject</p>
+</li>
+<li><p>provider 的值可能是动态产生的，Nest 也同样支持(用 useFactory 来动态创建一个对象,useFactory 也支持参数的注入，支持异步)</p>
+</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

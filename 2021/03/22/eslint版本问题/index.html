@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        eslint版本问题 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="toc-text">命令行脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#basics"><span class="toc-text">basics</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#env"><span class="toc-text">env</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rules"><span class="toc-text">rules</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vscode"><span class="toc-text">Vscode</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#parserOptions"><span class="toc-text">parserOptions</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#problems"><span class="toc-text">problems</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#eslint%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98"><span class="toc-text">eslint版本问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rules-1"><span class="toc-text">rules</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eslint-config"><span class="toc-text">eslint-config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eslint-%E5%92%8C-prettier"><span class="toc-text">eslint 和 prettier</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        eslint版本问题
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-22 18:18:33</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="命令行脚本"><a href="#命令行脚本" class="headerlink" title="命令行脚本"></a>命令行脚本</h3><ul>
+<li>npm run lint:init</li>
+<li><code>eslint --init</code></li>
+<li>初始化配置 - interactive</li>
+<li>npm run lint:fix </li>
+<li><code>eslint &#39;./**/*.js&#39; --fix</code><h3 id="basics"><a href="#basics" class="headerlink" title="basics"></a>basics</h3><h4 id="env"><a href="#env" class="headerlink" title="env"></a>env</h4></li>
+<li>browser: true - 就告诉eslint,是浏览器项目，这样不会有console未定义这样的错误（浏览器内置对象）<h4 id="rules"><a href="#rules" class="headerlink" title="rules"></a>rules</h4></li>
+<li>定义覆盖规则</li>
+</ul>
+<h3 id="Vscode"><a href="#Vscode" class="headerlink" title="Vscode"></a>Vscode</h3><ul>
+<li>编辑器给出语法提示<h4 id="parserOptions"><a href="#parserOptions" class="headerlink" title="parserOptions"></a>parserOptions</h4></li>
+<li>指定支持的版本的最新的语法 - ecmaVersion</li>
+<li>支持ES module模块加载语法的检查 - sourceType: ‘module’<h3 id="problems"><a href="#problems" class="headerlink" title="problems"></a>problems</h3>Cannot read property ‘range’ of null</li>
+</ul>
+<p>babel-eslint版本依赖问题</p>
+<p>删除了node_modules和package-lock.json文件，重新安装后，问题就没有了</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">warning  in .<span class="regexp">/src/</span>views<span class="regexp">/statistical/</span>english/data.js</span><br><span class="line"></span><br><span class="line">Module Warning (<span class="keyword">from</span> .<span class="regexp">/node_modules/</span>thread-loader<span class="regexp">/dist/</span>cjs.js):</span><br><span class="line">Cannot <span class="keyword">read</span> property <span class="string">&#x27;range&#x27;</span> of <span class="keyword">null</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="eslint版本问题"><a href="#eslint版本问题" class="headerlink" title="eslint版本问题"></a>eslint版本问题</h4><ul>
+<li>如果是在Linux机器上，16.x的node版本，安装之前用低版本</li>
+</ul>
+<h4 id="rules-1"><a href="#rules-1" class="headerlink" title="rules"></a>rules</h4><ul>
+<li>rules - <a target="_blank" rel="noopener" href="https://eslint.org/docs/latest/user-guide/configuring/rules">https://eslint.org/docs/latest/user-guide/configuring/rules</a></li>
+<li><a target="_blank" rel="noopener" href="https://eslint.org/">https://eslint.org/</a><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;off&quot;</span> or <span class="number">0</span> - turn the rule off</span><br><span class="line"><span class="string">&quot;warn&quot;</span> or <span class="number">1</span> - turn the rule on as a warning (doesn’t affect <span class="keyword">exit</span> code)</span><br><span class="line"><span class="string">&quot;error&quot;</span> or <span class="number">2</span> - turn the rule on as an error (<span class="keyword">exit</span> code is <span class="number">1</span> when triggered)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="eslint-config"><a href="#eslint-config" class="headerlink" title="eslint-config"></a>eslint-config</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/antfu/eslint-config#faq">https://github.com/antfu/eslint-config#faq</a></li>
+</ul>
+<h3 id="eslint-和-prettier"><a href="#eslint-和-prettier" class="headerlink" title="eslint 和 prettier"></a>eslint 和 prettier</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://eslint.org/blog/2023/10/deprecating-formatting-rules/">https://eslint.org/blog/2023/10/deprecating-formatting-rules/</a></li>
+</ul>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">旧项目</span><br><span class="line">member-delimiter-style</span><br><span class="line">DEPRECATED</span><br><span class="line">Formatting rules now live <span class="keyword">in</span> eslint-stylistic. <span class="meta">@stylistic</span>/ts/member-delimiter-style <span class="keyword">is</span> the replacement <span class="keyword">for</span> <span class="keyword">this</span> rule.</span><br><span class="line">See Deprecating Formatting Rules <span class="keyword">for</span> more information.</span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

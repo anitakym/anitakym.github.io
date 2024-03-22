@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        flutter开发环境配置 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%9F%A5%E8%AF%A2"><span class="toc-text">命令查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98"><span class="toc-text">调试问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IOS"><span class="toc-text">IOS</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        flutter开发环境配置
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-06-24 10:31:09</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>问题:</p>
+<ol>
+<li>执行 flutter doctor 之后，出现这个</li>
+</ol>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[!] Xcode - develop for iOS<span class="built_in"> and </span>macOS</span><br><span class="line">    ✗ CocoaPods installed but<span class="built_in"> not </span>working.</span><br><span class="line">        You appear to have CocoaPods installed but it is<span class="built_in"> not </span>working.</span><br><span class="line">        This can happen<span class="built_in"> if </span>the version of Ruby that CocoaPods was installed with is different from the one being used to<span class="built_in"> invoke </span>it.</span><br><span class="line">        This can usually be fixed by re-installing CocoaPods.</span><br><span class="line">      To re-install see https://guides.cocoapods.org/using/getting-started.html<span class="comment">#installation for instructions.</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清理旧版本,Remove stale lock files and outdated downloads for all formulae and casks, and remove old versions of installed formulae. </span></span><br><span class="line"><span class="keyword">brew </span>cleanup -d -v</span><br><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>cocoapods <span class="title">| brew upgrade cocoapods</span></span><br></pre></td></tr></table></figure>
+
+<p>如果提示 failed to link, brew link cocoapods</p>
+<ol start="2">
+<li>IOS 设备开发调试</li>
+</ol>
+<ul>
+<li>普通调试，Xcode 登录开发者帐号，进入项目，双击 xxx/ios/Runner.xcworkspace , 在 Runner.xcodeproj Tab 下，Targets/Runner , Signing &amp; Capabilities , 里面的 Signing ： 1.勾选 Automatically manage signing 2.Team 选择登录的帐号的 Team； 这样会自动给生成一个临时的签名； 设备插入电脑，就可以识别并安装了；</li>
+<li>记得关掉 iPhone 的同步功能，不然会显示设备 busy</li>
+<li>查 UDID<br>设备连接到 Mac 电脑上<br>点击设备，显示的信息最上方，可以点击内容切换信息；切到有 UDID 的，然后右键，选择拷贝 UDID 即可</li>
+<li><code>flutter run --release </code>,可以在 ios 设备上安装 release 包，这样不在连接情况下，也能使用</li>
+</ul>
+<ol start="3">
+<li>android 设备开发调试</li>
+</ol>
+<h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><ul>
+<li>连上 android 设备</li>
+<li>如果 flutter doctor 出现 android 方面的问题，可以打开 android studio，点击 preferences</li>
+<li>以 SDK 为关键词搜索，进入到 Android SDK 设置的面板，这个时候就可以安装没有安装的 SDK</li>
+<li>下面的问题，Android SDK 面板 - SDK platform 里面选择对应版本安装</li>
+</ul>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[!] Android toolchain - develop <span class="keyword">for</span> Android devices (Android SDK version <span class="number">30.0</span>.<span class="number">3</span>)</span><br><span class="line">    ✗ Android SDK <span class="keyword">file</span> not found:</span><br><span class="line">      <span class="regexp">/Users/</span>kuangyimin<span class="regexp">/Library/</span>Android<span class="regexp">/sdk/</span>platforms<span class="regexp">/android-30/</span>android.jar.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>下面的问题，按提示，Run <code>flutter doctor --android-licenses</code></li>
+</ul>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[!] <span class="string">Android</span> <span class="string">toolchain</span> - <span class="string">develop</span> <span class="string">for</span> <span class="string">Android</span> <span class="string">devices</span> (<span class="string">Android</span> <span class="string">SDK</span> <span class="string">version</span> <span class="string">30</span>.<span class="string">0</span>.<span class="string">3</span>)</span><br><span class="line">    ✗ <span class="string">Android</span> <span class="string">license</span> <span class="string">status</span> <span class="string">unknown</span>.</span><br><span class="line">      <span class="string">Run</span> `<span class="string">flutter</span> <span class="string">doctor</span> <span class="built_in">--android-licenses`</span> <span class="string">to</span> <span class="string">accept</span> <span class="string">the</span> <span class="string">SDK</span> <span class="string">licenses</span>.</span><br><span class="line">      <span class="string">See</span> <span class="string">https</span>://<span class="string">flutter</span>.<span class="string">dev</span>/<span class="string">docs</span>/<span class="built_in">get-started/install/macos#android-setup</span> <span class="string">for</span></span><br><span class="line">      <span class="string">more</span> <span class="string">details</span>.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果出现了这个问题，则可以在 Android SDK 面板设置 “command line tools”,勾选，然后安装</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor <span class="attr">--android-licenses</span></span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">&quot;main&quot;</span> java<span class="selector-class">.lang</span><span class="selector-class">.NoClassDefFoundError</span>: javax/xml/bind/annotation/XmlSchema</span><br><span class="line">	at com<span class="selector-class">.android</span><span class="selector-class">.repository</span><span class="selector-class">.api</span>.SchemaModule<span class="variable">$SchemaModuleVersion</span>.&lt;init&gt;(SchemaModule<span class="selector-class">.java</span>:<span class="number">156</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果 flutter run 的时候提示这个问题，则可以按提示，去 Android Studio，搜 SDK，下载对应缺少的 SDK</li>
+</ul>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Could <span class="keyword">not</span> determine <span class="keyword">the</span> dependencies <span class="keyword">of</span> task <span class="string">&#x27;:launch_review:compileDebugAidl&#x27;</span>.</span><br><span class="line">&gt; Failed <span class="built_in">to</span> install <span class="keyword">the</span> following SDK components:</span><br><span class="line">      platforms;android<span class="number">-28</span> Android SDK Platform <span class="number">28</span></span><br><span class="line">  Install <span class="keyword">the</span> missing components <span class="keyword">using</span> <span class="keyword">the</span> SDK manager <span class="keyword">in</span> Android Studio.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>阿里云镜像配置</li>
+</ul>
+<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对照表</span></span><br><span class="line"><span class="comment">// https://developer.aliyun.com/mvn/guide</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">buildscript</span> &#123;</span><br><span class="line">    <span class="keyword">repositories</span> &#123;</span><br><span class="line">        <span class="comment">// google()</span></span><br><span class="line">        <span class="comment">// jcenter()</span></span><br><span class="line">        <span class="keyword">maven</span> &#123;</span><br><span class="line">            url <span class="symbol">&#x27;https</span><span class="operator">:</span><span class="comment">//maven.aliyun.com/repository/google&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">maven</span> &#123;</span><br><span class="line">            url <span class="symbol">&#x27;https</span><span class="operator">:</span><span class="comment">//maven.aliyun.com/repository/jcenter&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">maven</span> &#123;</span><br><span class="line">            url <span class="symbol">&#x27;https</span><span class="operator">:</span><span class="comment">//maven.aliyun.com/nexus/content/groups/public&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">dependencies</span> &#123;</span><br><span class="line">        classpath <span class="symbol">&#x27;com</span>.android.tools.build<span class="operator">:</span>gradle<span class="operator">:</span>3.5.4&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>开模拟器的时候，如果报”The emulator process for AVD was killed”<br>原因：没有足够的空间，可以关掉别的占内存的软件；删除虚拟机，重新安装，启动；<br>show on Disk(可以看到安装的位置)<h3 id="命令查询"><a href="#命令查询" class="headerlink" title="命令查询"></a>命令查询</h3></li>
+</ul>
+<p><code>flutter --help</code></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Available commands:</span><br><span class="line">  analyze           Analyze the project&#x27;s Dart code.</span><br><span class="line">  assemble          Assemble and build Flutter resources.</span><br><span class="line">  attach            Attach to a running <span class="keyword">app</span>.</span><br><span class="line">  bash-completion   Output command <span class="keyword">line</span> <span class="keyword">shell</span> completion setup scripts.</span><br><span class="line">  build             Build <span class="keyword">an</span> executable <span class="keyword">app</span> or install bundle.</span><br><span class="line">  channel           <span class="keyword">List</span> or switch Flutter channels.</span><br><span class="line">  clean             Delete the build/ and .dart_tool/ directories.</span><br><span class="line">  config            Configure Flutter settings.</span><br><span class="line">  create            Create a new Flutter project.</span><br><span class="line">  devices           <span class="keyword">List</span> all connected devices.</span><br><span class="line">  doctor            Show information <span class="keyword">about</span> the installed tooling.</span><br><span class="line">  downgrade         Downgrade Flutter to the last active <span class="keyword">version</span> <span class="keyword">for</span> the current channel.</span><br><span class="line">  drive             <span class="keyword">Run</span> integration tests <span class="keyword">for</span> the project <span class="keyword">on</span> <span class="keyword">an</span> attached device or emulator.</span><br><span class="line">  emulators         <span class="keyword">List</span>, launch and create emulators.</span><br><span class="line">  <span class="keyword">format</span>            <span class="keyword">Format</span> <span class="keyword">one</span> or <span class="keyword">more</span> Dart files.</span><br><span class="line">  <span class="keyword">gen</span>-l10n          <span class="keyword">Generate</span> localizations <span class="keyword">for</span> the current project.</span><br><span class="line">  install           Install a Flutter <span class="keyword">app</span> <span class="keyword">on</span> <span class="keyword">an</span> attached device.</span><br><span class="line">  logs              Show <span class="keyword">log</span> output <span class="keyword">for</span> running Flutter apps.</span><br><span class="line">  precache          Populate the Flutter tool&#x27;s cache of binary artifacts.</span><br><span class="line">  pub               Commands <span class="keyword">for</span> managing Flutter packages.</span><br><span class="line">  <span class="keyword">run</span>               <span class="keyword">Run</span> your Flutter <span class="keyword">app</span> <span class="keyword">on</span> <span class="keyword">an</span> attached device.</span><br><span class="line">  screenshot        Take a screenshot from a connected device.</span><br><span class="line">  symbolize         Symbolize a <span class="keyword">stack</span> trace from <span class="keyword">an</span> AOT-compiled Flutter <span class="keyword">app</span>.</span><br><span class="line">  <span class="keyword">test</span>              <span class="keyword">Run</span> Flutter unit tests <span class="keyword">for</span> the current project.</span><br><span class="line">  upgrade           Upgrade your <span class="keyword">copy</span> of Flutter.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Run</span> <span class="string">&quot;flutter help &lt;command&gt;&quot;</span> <span class="keyword">for</span> <span class="keyword">more</span> information <span class="keyword">about</span> a command.</span><br><span class="line"><span class="keyword">Run</span> <span class="string">&quot;flutter help -v&quot;</span> <span class="keyword">for</span> verbose <span class="keyword">help</span> output, including less commonly used options.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> a new Flutter project.</span><br><span class="line"><span class="keyword">If</span> run <span class="keyword">on</span> a project that already <span class="keyword">exists</span>, this will repair the project, recreating <span class="keyword">any</span> files that are <span class="literal">missing</span>.</span><br><span class="line">如果想要生成对应iOS，android文件，可以 flutter <span class="keyword">create</span> .</span><br></pre></td></tr></table></figure>
+
+<h4 id="调试问题"><a href="#调试问题" class="headerlink" title="调试问题"></a>调试问题</h4><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vm-service: Error: Unhandled exception:</span><br><span class="line">WebSocketException: Invalid WebSocket upgrade request</span><br><span class="line">[VERBOSE<span class="string">-2</span>:dart_isolate.cc(1137)] Unhandled exception:</span><br><span class="line">WebSocketException: Invalid WebSocket upgrade request</span><br><span class="line"><span class="keyword">Error </span>connecting to the service protocol: failed to connect to http://127.0.0.1:55440/xxxxx=/</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>Error connecting to the service protocol: failed to connect to <a target="_blank" rel="noopener" href="http://127.0.0.1:58661/xxxxx=/">http://127.0.0.1:58661/xxxxx=/</a></p>
+</li>
+<li><p>问题原因，电脑开了系统代理 | 设备和电脑不在一个网络；</p>
+</li>
+<li><p>解决方案，关掉系统代理，如果在当前 terminal 里面加了 export 语句，记得关掉，重新打开一个新的终端；如果是外接设备，可以把设备和电脑连接到同一个网络；</p>
+</li>
+</ol>
+<h4 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h4><ol>
+<li>Specifies the platform for which a static library should be built.</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">podfile:</span><br><span class="line"><span class="comment"># Uncomment this line to define a global platform for your project</span></span><br><span class="line">platform :ios, <span class="string">&#x27;9.0&#x27;</span></span><br><span class="line">https:<span class="regexp">//gui</span>des.cocoapods.org<span class="regexp">/syntax/</span>podfile.html<span class="comment">#platform</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><a target="_blank" rel="noopener" href="https://guides.cocoapods.org/syntax/podfile.html">https://guides.cocoapods.org/syntax/podfile.html</a><br>podfile 的配置</li>
+</ol>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

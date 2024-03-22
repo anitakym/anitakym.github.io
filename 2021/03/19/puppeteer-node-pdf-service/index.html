@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        puppeteer-node-pdf-service - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%8C%87%E5%8C%97%EF%BC%9A"><span class="toc-text">文档指北：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#History"><span class="toc-text">History</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E6%AC%A1%E6%8A%80%E6%9C%AF%E6%94%B9%E9%80%A0"><span class="toc-text">几次技术改造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%92%8CCI%E4%BC%98%E5%8C%96"><span class="toc-text">部署和CI优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%95%E5%B1%82%E8%84%9A%E6%9C%AC"><span class="toc-text">底层脚本</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#https-www-npmjs-com-package-font-carrier"><span class="toc-text">https:&#x2F;&#x2F;www.npmjs.com&#x2F;package&#x2F;font-carrier</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%B2%E5%AD%97%E9%97%AE%E9%A2%98"><span class="toc-text">割字问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#echarts%E9%83%A8%E5%88%86%E5%9B%BE%E4%B8%A2%E5%A4%B1"><span class="toc-text">echarts部分图丢失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%BA%90%E5%AD%97%E4%BD%93"><span class="toc-text">开源字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ttf2woff2-dep-by-font-carrier"><span class="toc-text">ttf2woff2 (dep by font-carrier)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#truetype-type1"><span class="toc-text">truetype | type1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E7%AB%AF%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6"><span class="toc-text">C端下载文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#web%E7%AB%AF"><span class="toc-text">web端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%93no-sandbox"><span class="toc-text">–no-sandbox</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iframe"><span class="toc-text">iframe</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chromium%E4%B8%8B%E8%BD%BD"><span class="toc-text">chromium下载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Others"><span class="toc-text">Others</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%E6%89%93%E5%8D%B0PPT%E5%91%A2%EF%BC%9F"><span class="toc-text">如果需要打印PPT呢？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TTF-OTF-WOFF-EOT-amp-SVG"><span class="toc-text">TTF, OTF, WOFF, EOT &amp; SVG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WOFF-Web-Open-Font-Format"><span class="toc-text">WOFF (Web Open Font Format)</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        puppeteer-node-pdf-service
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-19 16:30:34</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>不涉及业务，讲一下技术方面PDF生成服务的心得</p>
+<h3 id="文档指北："><a href="#文档指北：" class="headerlink" title="文档指北："></a>文档指北：</h3><ul>
+<li>puppeteer(<a target="_blank" rel="noopener" href="https://github.com/puppeteer/puppeteer">https://github.com/puppeteer/puppeteer</a>)<pre>
+Puppeteer is a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol. Puppeteer runs headless by default, but can be configured to run full (non-headless) Chrome or Chromium.
+</pre>
+
+</li>
+</ul>
+<p>应用场景：</p>
+<ol>
+<li>页面截图服务</li>
+<li>PDF生成服务</li>
+<li>自动化测试</li>
+<li>服务端渲染内容抓取</li>
+</ol>
+<p>try:<a target="_blank" rel="noopener" href="https://try-puppeteer.appspot.com/">https://try-puppeteer.appspot.com/</a></p>
+<p>就几乎碰到的问题，文档上面都能找到，所以文档和生态还是比较完备的<br><a target="_blank" rel="noopener" href="https://github.com/puppeteer/puppeteer/blob/main/docs/api.md">https://github.com/puppeteer/puppeteer/blob/main/docs/api.md</a></p>
+<p>也有troubleShooting的文档：<br><a target="_blank" rel="noopener" href="https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md">https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md</a></p>
+<p>基于 -  DevTools Protocol </p>
+<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><h3 id="几次技术改造"><a href="#几次技术改造" class="headerlink" title="几次技术改造"></a>几次技术改造</h3><ul>
+<li>downloadCenter</li>
+<li>从接口获取模版渲染数据 -&gt; 从mongodb获取</li>
+<li>XX_report 进度状态原先由接口返回 -&gt; 返回到mq</li>
+<li>node服务本身 - 配合修改+日志+调试配置开关</li>
+</ul>
+<h3 id="部署和CI优化"><a href="#部署和CI优化" class="headerlink" title="部署和CI优化"></a>部署和CI优化</h3><h4 id="底层脚本"><a href="#底层脚本" class="headerlink" title="底层脚本"></a>底层脚本</h4><ul>
+<li>pm2配置<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">#### Jenkins可视化集成</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 项目代码分析</span><br><span class="line"></span><br><span class="line">### <span class="keyword">module</span>本身使用代码风格不是很清晰明确</span><br><span class="line">- https:<span class="comment">//github.com/chemdemo/chemdemo.github.io/issues/2</span></span><br><span class="line">- exports.xxx | <span class="keyword">module</span>.exports = xxx</span><br><span class="line"></span><br><span class="line">### process</span><br><span class="line">- beforeExit</span><br><span class="line">- </span><br><span class="line"></span><br><span class="line">## 字体相关</span><br><span class="line"></span><br><span class="line">### 字体的一些基础知识</span><br><span class="line">#### Windows</span><br><span class="line">- https:<span class="comment">//docs.microsoft.com/en-us/typography/</span></span><br><span class="line"> -https:<span class="comment">//en.wikipedia.org/wiki/List_of_typefaces_included_with_Microsoft_Windows</span></span><br><span class="line">- 微软雅黑-vista开始提供的，win8之后，加入了light,默认win平台可以设置这个，效果最好；</span><br><span class="line">- Arial | Tahoma 等无衬线字体，西文选择</span><br><span class="line">#### Mac</span><br><span class="line">- https:<span class="comment">//en.wikipedia.org/wiki/List_of_typefaces_included_with_macOS</span></span><br><span class="line">---------旧一点</span><br><span class="line">- 华文黑体，华文细黑 <span class="number">10.6</span>之前简体中文默认系统字体</span><br><span class="line">- 黑体 <span class="number">10.6</span>之后</span><br><span class="line">- 冬青黑体 - 专业印刷字体，小字号清晰</span><br><span class="line">- Time New Roman - 西文衬线，Safari默认</span><br><span class="line">- Helvetica，Helvetica Neue - 可以看看history，有意思，苹果重金购买（在根号这个字符的渲染上，这个接近微软雅黑的，没有横线）</span><br><span class="line">--------- 新一点</span><br><span class="line">- PingFang SC - 苹果为中文用户提供的 - 极细｜。。。｜中粗 - <span class="number">6</span>个</span><br><span class="line">- San Francisco - Capitan 上最新发布的</span><br><span class="line">- 可以看看苹果官网针对不同地区设置的字体</span><br><span class="line"></span><br><span class="line">#### linux</span><br><span class="line">- 文泉驿微米黑 - 简体中文</span><br><span class="line">- 思源黑体，（在根号这个字符的渲染上，这个接近Helvetica的，没有横线）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 默认声明</span><br><span class="line">- 尽量用英文，中文也写保险一点</span><br><span class="line">- 英文放在中文前面，这样不影响中文</span><br><span class="line">- `font-family: Helvetica, Tahoma, Arial;` </span><br><span class="line">- `font-family: <span class="string">&quot;PingFang SC&quot;</span>, <span class="string">&quot;Hiragino Sans GB&quot;</span>, <span class="string">&quot;Heiti SC&quot;</span>, <span class="string">&quot;Microsoft YaHei&quot;</span>, <span class="string">&quot;WenQuanYi Micro Hei&quot;</span>;`</span><br><span class="line">- `font-family: Helvetica, Tahoma, Arial, <span class="string">&quot;Heiti SC&quot;</span>, <span class="string">&quot;Microsoft YaHei&quot;</span>, <span class="string">&quot;WenQuanYi Micro Hei&quot;</span>;`</span><br><span class="line">- `font-family: Helvetica, Tahoma, Arial, <span class="string">&quot;PingFang SC&quot;</span>, <span class="string">&quot;Hiragino Sans GB&quot;</span>, <span class="string">&quot;Heiti SC&quot;</span>, <span class="string">&quot;Microsoft YaHei&quot;</span>, <span class="string">&quot;WenQuanYi Micro Hei&quot;</span>;`</span><br><span class="line">- `font-family: Helvetica, Tahoma, Arial, <span class="string">&quot;PingFang SC&quot;</span>, <span class="string">&quot;Hiragino Sans GB&quot;</span>, <span class="string">&quot;Heiti SC&quot;</span>, <span class="string">&quot;Microsoft YaHei&quot;</span>, <span class="string">&quot;WenQuanYi Micro Hei&quot;</span>, sans-serif;` - 补充字体族</span><br><span class="line">- 可以参考各个类型网站的写法</span><br><span class="line">- 如果字体名称中间有空格，或者中文的，加上引号</span><br><span class="line">- 版权问题 - 思源黑体，我们打印就用的这个</span><br><span class="line"></span><br><span class="line">### 一些参考</span><br><span class="line">- https:<span class="comment">//github.com/zenozeng/fonts.css</span></span><br><span class="line">- https:<span class="comment">//github.com/sofish/typo.css - 好久以前的，可以看一眼</span></span><br><span class="line">### 页眉页脚中文字体</span><br><span class="line">- https:<span class="comment">//www.npmjs.com/package/pdf-lib#embed-font-and-measure-text</span></span><br><span class="line">- https:<span class="comment">//github.com/Hopding/pdf-lib/issues/430</span></span><br><span class="line">- 额外引入一些特殊的中文字体，如果直接用pdf-lib，@pdf-lib/fontkit（旧版本） ，则需配合font-carrier进行字体精简</span><br><span class="line">- https:<span class="comment">//www.npmjs.com/package/pdfkit， pdfkit则不用，默认精简</span></span><br><span class="line">- @pdf-lib/fontkit - https:<span class="comment">//github.com/Hopding/fontkit , https://github.com/foliojs/fontkit</span></span><br></pre></td></tr></table></figure>
+<h1 id="https-www-npmjs-com-package-font-carrier"><a href="#https-www-npmjs-com-package-font-carrier" class="headerlink" title="https://www.npmjs.com/package/font-carrier"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/font-carrier">https://www.npmjs.com/package/font-carrier</a></h1>案例三<br>对中文字体精简</li>
+</ul>
+<p>var fontCarrier = require(‘font-carrier’)<br>var transFont = fontCarrier.transfer(‘./test/test.ttf’)<br>// 会自动根据当前的输入的文字过滤精简字体<br>transFont.min(‘我是精简后的字体，我可以重复’)<br>transFont.output({<br>  path: ‘./min’<br>})</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">fontkit</span> = <span class="keyword">require</span>(<span class="string">&#x27;@pdf-lib/fontkit&#x27;</span>);</span><br><span class="line">doc.<span class="title function_ invoke__">registerFontkit</span>(fontkit); <span class="comment">// 注册字体</span></span><br><span class="line"><span class="comment"># 如果直接用的话，则默认无裁剪，会导致生成的PDF文件过大</span></span><br><span class="line"><span class="comment"># 可以利用font-carrier解决</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">fontCarrier</span> = <span class="keyword">require</span>(<span class="string">&#x27;font-carrier&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">transFont</span> = fontCarrier.<span class="title function_ invoke__">transfer</span>(`$&#123;dir&#125;/font/pingfang.ttf`);</span><br><span class="line">transFont.<span class="title function_ invoke__">min</span>(headerFooter.title.<span class="title function_ invoke__">join</span>(<span class="string">&#x27;&#x27;</span>) + extra + <span class="string">&#x27;.&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">fontMinResult</span> = transFont.<span class="title function_ invoke__">output</span>(&#123;</span><br><span class="line">    <span class="attr">types</span>:[<span class="string">&#x27;ttf&#x27;</span>]</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// 加载自定义字体</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">customFont</span> = doc.<span class="title function_ invoke__">embedFont</span>(fontMinResult.ttf);</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基于font subsetting来做</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">fontBytes</span> = fs.<span class="title function_ invoke__">readFileSync</span>(<span class="string">&#x27;./font/pingfang.ttf&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">pdfDoc</span> = await PDFDocument.<span class="title function_ invoke__">create</span>()</span><br><span class="line">pdfDoc.<span class="title function_ invoke__">registerFontkit</span>(fontkit)</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">font</span> = await pdfDoc.<span class="title function_ invoke__">embedFont</span>(fontBytes, &#123; <span class="attr">subset</span>: <span class="literal">true</span> &#125;);</span><br><span class="line"><span class="comment"># 这个目前版本会有问题，出来的文件除了adobe能正常读取，其余软件显示乱码</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 较新版本支持<span class="built_in">subset</span></span><br><span class="line">const <span class="built_in">subset</span> = <span class="built_in">font</span>.createSubset();</span><br><span class="line">run.glyphs.forEach(function(glyph) &#123;</span><br><span class="line">  <span class="built_in">subset</span>.includeGlyph(glyph);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">subset</span>.encodeStream()</span><br><span class="line">      .pipe(fs.createWriteStream(&#x27;<span class="built_in">subset</span>.ttf&#x27;));</span><br><span class="line"># 但是sub</span><br></pre></td></tr></table></figure>
+
+<h3 id="割字问题"><a href="#割字问题" class="headerlink" title="割字问题"></a>割字问题</h3><p>保证内容里面不想被切割的，为块装结构</p>
+<h3 id="echarts部分图丢失"><a href="#echarts部分图丢失" class="headerlink" title="echarts部分图丢失"></a>echarts部分图丢失</h3><p>升级puppteer</p>
+<h3 id="开源字体"><a href="#开源字体" class="headerlink" title="开源字体"></a>开源字体</h3><ul>
+<li>思源 - 是由Google和Adobe合作开发的。Google将其命名为Noto SansCJK，作为Google的Noto字体家族的成员。Adobe则命名为Source Han Sans，作为Adobe的Source字体家族的一员。Adobe拥有字体设计的版权。发布的字体文件则可以不受限制的免费使用。</li>
+<li>打印用的字体就是思源，跑在linux机器上</li>
+<li>这个属于 sans-serif</li>
+<li>黑体字属于“无衬线体”（Sans-serif），而宋体字属于“有衬线体”（Serif）<h3 id="ttf2woff2-dep-by-font-carrier"><a href="#ttf2woff2-dep-by-font-carrier" class="headerlink" title="ttf2woff2 (dep by font-carrier)"></a>ttf2woff2 (dep by font-carrier)</h3></li>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/ttf2woff2">https://www.npmjs.com/package/ttf2woff2</a></li>
+<li>This is a NodeJS wrapper for the Google WOFF2 project. If the C++ wrapper compilation fail, it fallbacks to an Emscripten build.</li>
+<li>Convert TTF files to WOFF2 ones.</li>
+</ul>
+<h3 id="truetype-type1"><a href="#truetype-type1" class="headerlink" title="truetype | type1"></a>truetype | type1</h3><ul>
+<li>TrueType是苹果和微软联合提出的一种新型数学字形描述，既可以作打印字体，又可以用作屏幕显示</li>
+<li>OpenType，封装格式和truetype兼容，轮廓格式是Postscript</li>
+<li>Type1 ,在Opentype出现前，Adobe的印刷字体封装格式，使用PS曲线</li>
+<li>Type0. Postscript里的复合字体</li>
+<li>字体构成<ul>
+<li>轮廓格式（TT/PS） —— 记载字符的形状（矢量）</li>
+<li>封装格式（SFNT/Type 1）—— 封装成一个文件的方法</li>
+<li>编码方式（Unicode/CID） —— 决定字体里字符的内部编号、Unicode 以及轮廓的对应关系</li>
+</ul>
+</li>
+<li>书本推荐：Fonts &amp; Encodings - 作者: Yannis Haralambous</li>
+</ul>
+<h2 id="C端下载文件"><a href="#C端下载文件" class="headerlink" title="C端下载文件"></a>C端下载文件</h2><h3 id="web端"><a href="#web端" class="headerlink" title="web端"></a>web端</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition</a></li>
+<li>我们文件制作完成会上传腾讯云CDN</li>
+<li>C端下载的话，注意content-disposition （看下response里面这部分的值）</li>
+<li>腾讯云支持query传参设定response里面的content-disposition的值<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">https</span>://cloud.tencent.com/document/product/<span class="number">436</span>/<span class="number">57420</span></span><br><span class="line">获取对象访问 <span class="built_in">URL</span></span><br><span class="line">功能说明</span><br><span class="line">查询对象访问的 <span class="built_in">URL</span>，该接口不会判断对象是否真实存在。</span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line">如何使生成的对象<span class="built_in">URL</span>在浏览器中打开是预览，而不是下载：在获取的url后拼接参数 response-content-disposition=inline</span><br><span class="line">如何使生成的对象<span class="built_in">URL</span>在浏览器中打开是下载，而不是预览：在获取的url后拼接参数 response-content-disposition=attachment</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="–no-sandbox"><a href="#–no-sandbox" class="headerlink" title="–no-sandbox"></a>–no-sandbox</h4><ul>
+<li>如果服务端root权限下运行</li>
+<li>running as root without –no-sandbox is not supported</li>
+<li>linux 里面使用Chrome也是这个道理，都会有这个权限问题</li>
+</ul>
+<h4 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h4><ul>
+<li>等待加载完成 - page.waitFor(提供各种模式)<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">It<span class="comment">&#x27;s generally recommended to not wait for a number of seconds, but instead use Page.waitForSelector(), Page.waitForXPath() or Page.waitForFunction() to wait for exactly the conditions you want.</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="chromium下载"><a href="#chromium下载" class="headerlink" title="chromium下载"></a>chromium下载</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://storage.googleapis.com/chromium-browser-snapshots/">https://storage.googleapis.com/chromium-browser-snapshots/</a></li>
+<li>extract-zip</li>
+</ul>
+<h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><h4 id="如果需要打印PPT呢？"><a href="#如果需要打印PPT呢？" class="headerlink" title="如果需要打印PPT呢？"></a>如果需要打印PPT呢？</h4><ul>
+<li>模拟翻页操作</li>
+<li>每次翻页之后，获取需要打印的DOM - this.page.evaluate(domStr =&gt; document.body.innerHTML = domStr, content);</li>
+<li><a target="_blank" rel="noopener" href="https://pptr.dev/api/puppeteer.page.evaluate/">https://pptr.dev/api/puppeteer.page.evaluate/</a></li>
+<li>后台打印可用超管账号（增加中间件）</li>
+</ul>
+<h3 id="TTF-OTF-WOFF-EOT-amp-SVG"><a href="#TTF-OTF-WOFF-EOT-amp-SVG" class="headerlink" title="TTF, OTF, WOFF, EOT &amp; SVG"></a>TTF, OTF, WOFF, EOT &amp; SVG</h3><ul>
+<li>WOFF 最小，最适合web</li>
+<li>SVG Safari低版本支持</li>
+<li>TTF 苹果微软，兼容性最好</li>
+<li>OTF Adobe微软</li>
+<li>EOT 微软</li>
+</ul>
+<h3 id="WOFF-Web-Open-Font-Format"><a href="#WOFF-Web-Open-Font-Format" class="headerlink" title="WOFF (Web Open Font Format)"></a>WOFF (Web Open Font Format)</h3><ul>
+<li>本质上是 metadata + 基于 SFNT 的字体（如 TTF、OTF 或其他开放字体格式）</li>
+<li>由 Mozilla 基金会、微软和 Opera 软件公司合作推出</li>
+<li>WOFF 字体均经过 WOFF 的编码工具压缩，文件大小一般比 TTF 小 40%，加载速度更快，以更好的嵌入网页中</li>
+<li>metadata 允许在字体文件中包含许可数据，以解决版权问题</li>
+<li>WOFF2 格式在原有的基础上提升了 30% 的压缩率</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

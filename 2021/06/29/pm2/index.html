@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        pm2 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cluster"><span class="toc-text">cluster</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#God-js%E7%9A%84%E4%BE%9D%E8%B5%96"><span class="toc-text">God.js的依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#semver"><span class="toc-text">semver</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vizion"><span class="toc-text">vizion</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8"><span class="toc-text">项目使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE"><span class="toc-text">日志配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#basic-%E4%BB%8B%E7%BB%8D"><span class="toc-text">basic 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pm2-list"><span class="toc-text">pm2 list</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#uptime"><span class="toc-text">uptime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#restarts"><span class="toc-text">restarts</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E6%8E%A7"><span class="toc-text">监控</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pm2-IO"><span class="toc-text">pm2.IO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Launch-PM2-in-no-deamon"><span class="toc-text">Launch PM2 in no deamon</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#doc"><span class="toc-text">doc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#options"><span class="toc-text">options</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%93watch"><span class="toc-text">–watch</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        pm2
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-06-29 15:24:15</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><h3 id="cluster"><a href="#cluster" class="headerlink" title="cluster"></a>cluster</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">// lib/God.js</span><br><span class="line">var cluster       = require(<span class="symbol">&#x27;cluster</span>&#x27;);</span><br><span class="line">require(&#x27;./God/ClusterMode.js&#x27;)(God);</span><br><span class="line">/**</span><br><span class="line">     * Cluster mode logic (<span class="keyword">for</span> NodeJS apps)</span><br><span class="line">     */</span><br><span class="line">...</span><br><span class="line">// ./God/ClusterMode.js</span><br><span class="line">module.exports = <span class="keyword">function</span> <span class="title">ClusterMode</span>(God) &#123;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * For Node apps - Cluster mode</span><br><span class="line">   * It will wrap the code and enable load-balancing mode</span><br><span class="line">   * @method nodeApp</span><br><span class="line">   * @param &#123;&#125; env_copy</span><br><span class="line">   * @param &#123;&#125; cb</span><br><span class="line">   * @<span class="keyword">return</span> <span class="type">Literal</span></span><br><span class="line">   */</span><br><span class="line">  God.nodeApp = <span class="keyword">function</span> <span class="title">nodeApp</span>(env_copy, cb)&#123;</span><br><span class="line">    var clu = null;</span><br><span class="line"></span><br><span class="line">    console.log(`App [$&#123;env_copy.name&#125;:$&#123;env_copy.pm_id&#125;] starting in -cluster mode-`)</span><br><span class="line">    if (env_copy.node_args &amp;&amp; Array.<span class="keyword">is</span><span class="keyword">Array</span>(env_copy.node_args)) &#123;</span><br><span class="line">      cluster.settings.execArgv = env_copy.node_args;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    env_copy._pm2_version = pkg.version;</span><br><span class="line"></span><br><span class="line">    try &#123;</span><br><span class="line">      // node.js cluster clients can <span class="keyword">not</span> receive deep-level objects <span class="keyword">or</span> arrays <span class="keyword">in</span> the forked process, e.g.:</span><br><span class="line">      // &#123; <span class="string">&quot;args&quot;</span>: [<span class="string">&quot;foo&quot;</span>, <span class="string">&quot;bar&quot;</span>], <span class="string">&quot;env&quot;</span>: &#123; <span class="string">&quot;foo1&quot;</span>: <span class="string">&quot;bar1&quot;</span> &#125;&#125; will be parsed to</span><br><span class="line">      // &#123; <span class="string">&quot;args&quot;</span>: <span class="string">&quot;foo, bar&quot;</span>, <span class="string">&quot;env&quot;</span>: <span class="string">&quot;[object Object]&quot;</span>&#125;</span><br><span class="line">      // So we passing a stringified JSON here.</span><br><span class="line">      clu = cluster.fork(&#123;pm2_env: JSON.stringify(env_copy), windowsHide: <span class="literal">true</span>&#125;);</span><br><span class="line">    &#125; catch(e) &#123;</span><br><span class="line">      God.logAndGenerateError(e);</span><br><span class="line">      <span class="keyword">return</span> cb(e);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    clu.pm2_env = env_copy;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Broadcast message to God</span><br><span class="line">     */</span><br><span class="line">    clu.on(<span class="symbol">&#x27;message</span>&#x27;, <span class="keyword">function</span> <span class="title">cluMessage</span>(msg) &#123;</span><br><span class="line">      /*********************************</span><br><span class="line">       * If you edit this <span class="keyword">function</span></span><br><span class="line">       <span class="title">*</span> Do the same in ForkMode.js !</span><br><span class="line">       *********************************/</span><br><span class="line">      if (msg.data &amp;&amp; msg.type) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">God.bus.emit(msg.type</span> ? msg.<span class="keyword">type</span> <span class="type">: </span><span class="symbol">&#x27;process</span>:msg&#x27;, &#123;</span><br><span class="line">          <span class="keyword">at</span>      : <span class="type">Utility.getDate</span>(),</span><br><span class="line">          data    : <span class="type">msg.data</span>,</span><br><span class="line">          process :  &#123;</span><br><span class="line">            pm_id      : <span class="type">clu.pm2_env.pm_id</span>,</span><br><span class="line">            name       : <span class="type">clu.pm2_env.name</span>,</span><br><span class="line">            rev        : (<span class="type">clu.pm2_env.versioning</span> &amp;&amp; clu.pm2_env.versioning.revision) ? clu.pm2_env.versioning.revision : <span class="keyword"><span class="keyword">null</span></span>,</span><br><span class="line">            namespace  : <span class="type">clu.pm2_env.namespace</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (typeof msg == <span class="symbol">&#x27;object</span>&#x27; &amp;&amp; <span class="symbol">&#x27;node_version</span>&#x27; <span class="keyword">in</span> msg) &#123;</span><br><span class="line">          clu.pm2_env.node_version = msg.node_version;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> God.bus.emit(<span class="symbol">&#x27;process</span>:msg&#x27;, &#123;</span><br><span class="line">          <span class="keyword">at</span>      : <span class="type">Utility.getDate</span>(),</span><br><span class="line">          raw     : <span class="type">msg</span>,</span><br><span class="line">          process :  &#123;</span><br><span class="line">            pm_id      : <span class="type">clu.pm2_env.pm_id</span>,</span><br><span class="line">            name       : <span class="type">clu.pm2_env.name</span>,</span><br><span class="line">            namespace  : <span class="type">clu.pm2_env.namespace</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cb(null, clu);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>我们还可以看下cluster mode的测试用例</p>
+<h3 id="God-js的依赖"><a href="#God-js的依赖" class="headerlink" title="God.js的依赖"></a>God.js的依赖</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cluster       = <span class="built_in">require</span>(<span class="string">&#x27;cluster&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> numCPUs       = <span class="built_in">require</span>(<span class="string">&#x27;os&#x27;</span>).<span class="title function_">cpus</span>() ? <span class="built_in">require</span>(<span class="string">&#x27;os&#x27;</span>).<span class="title function_">cpus</span>().<span class="property">length</span> : <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> path          = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> <span class="title class_">EventEmitter2</span> = <span class="built_in">require</span>(<span class="string">&#x27;eventemitter2&#x27;</span>).<span class="property">EventEmitter2</span>;</span><br><span class="line"><span class="keyword">var</span> fs            = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> vizion        = <span class="built_in">require</span>(<span class="string">&#x27;vizion&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> debug         = <span class="built_in">require</span>(<span class="string">&#x27;debug&#x27;</span>)(<span class="string">&#x27;pm2:god&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> <span class="title class_">Utility</span>       = <span class="built_in">require</span>(<span class="string">&#x27;./Utility&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> cst           = <span class="built_in">require</span>(<span class="string">&#x27;../constants.js&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> timesLimit    = <span class="built_in">require</span>(<span class="string">&#x27;async/timesLimit&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> <span class="title class_">Configuration</span> = <span class="built_in">require</span>(<span class="string">&#x27;./Configuration.js&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> semver        = <span class="built_in">require</span>(<span class="string">&#x27;semver&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="semver"><a href="#semver" class="headerlink" title="semver"></a>semver</h4><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Override cluster module configuration</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">if</span> (semver.lt(process.<span class="keyword">version</span>, <span class="string">&#x27;10.0.0&#x27;</span>)) &#123;</span><br><span class="line">  <span class="keyword">cluster</span>.setupMaster(&#123;</span><br><span class="line">    windowsHide: <span class="keyword">true</span>,</span><br><span class="line">    exec : <span class="type">path</span>.resolve(<span class="type">path</span>.dirname(module.filename), <span class="string">&#x27;ProcessContainerLegacy.js&#x27;</span>)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">cluster</span>.setupMaster(&#123;</span><br><span class="line">    windowsHide: <span class="keyword">true</span>,</span><br><span class="line">    exec : <span class="type">path</span>.resolve(<span class="type">path</span>.dirname(module.filename), <span class="string">&#x27;ProcessContainer.js&#x27;</span>)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>显然，semver(1) – The semantic versioner for npm，用作判断版本</p>
+<h4 id="vizion"><a href="#vizion" class="headerlink" title="vizion"></a>vizion</h4><ul>
+<li>Git/Subversion/Mercurial repository metadata parser</li>
+<li>Grab metadata for svn/git/hg repositories <code>vizion.analyze</code></li>
+<li>Check if a local repository is up to date with its remote<code>vizion.isUpToDate</code></li>
+<li>Update the local repository to latest commit found on the remote for its current branch on fail it rollbacks to the latest commit<code>vizion.update</code></li>
+<li>Revert to a specified commit<code>revertTo</code></li>
+<li>…等功能<br>God.js中用到了analyze, 目标是：Discovers if your app is a svn/git/hg repository and shows metadata about it</li>
+</ul>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Grab metadata <span class="keyword">for</span> svn/git/hg repositories</span><br><span class="line"> */</span><br><span class="line">vizion.analyze(&#123;</span><br><span class="line">  folder : &#x27;/<span class="type">tmp</span>/folder&#x27;</span><br><span class="line">&#125;, <span class="keyword">function</span>(err, meta) &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) throw <span class="keyword">new</span> Error(err);</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   *</span><br><span class="line">   * meta = &#123;</span><br><span class="line">   *   <span class="keyword">type</span>        <span class="type">: </span><span class="symbol">&#x27;git</span>&#x27;,</span><br><span class="line">   *   ahead       : <span class="type">false</span>,</span><br><span class="line">   *   unstaged    : <span class="type">false</span>,</span><br><span class="line">   *   branch      : &#x27;<span class="type">development</span>&#x27;,</span><br><span class="line">   *   remotes     : [ &#x27;<span class="type">http</span>&#x27;, <span class="symbol">&#x27;http</span> ssl&#x27;, <span class="symbol">&#x27;origin</span>&#x27; ],</span><br><span class="line">   *   remote      : &#x27;<span class="type">origin</span>&#x27;,</span><br><span class="line">   *   commment    : &#x27;<span class="type">This</span> <span class="keyword">is</span> a comment&#x27;,</span><br><span class="line">   *   update_time : <span class="type">Tue</span> Oct <span class="number">28</span> <span class="number">2014</span> <span class="number">14</span>:<span class="number">33</span>:<span class="number">30</span> GMT+<span class="number">0100</span> (CET),</span><br><span class="line">   *   url         : &#x27;<span class="type">https</span>://github.com/keymetrics/vizion.git&#x27;,</span><br><span class="line">   *   revision    : &#x27;<span class="type">f0a1d45936cf7a3c969e4caba96546fd23255796</span>&#x27;,</span><br><span class="line">   *   next_rev    : <span class="keyword"><span class="keyword">null</span></span>,  // <span class="keyword"><span class="keyword">null</span></span> <span class="type">if</span> its latest <span class="keyword">in</span> the branch</span><br><span class="line">   *   prev_rev    : &#x27;6<span class="type">d6932dac9c82f8a29ff40c1d5300569c24aa2c8</span>&#x27;</span><br><span class="line">   * &#125;</span><br><span class="line">   *</span><br><span class="line">   */</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// God.js</span><br><span class="line">vizion.analyze(&#123;folder : current_path&#125;, function recur_path(err, meta)&#123;</span><br><span class="line">    var <span class="keyword">proc</span> =<span class="title"> God.clusters_db[proc_id];</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">    if</span> (err)<span class="title"></span></span><br><span class="line"><span class="title">      debug(err.stack</span> ||<span class="title"> err);</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">    if</span> (!<span class="keyword">proc</span> ||</span><br><span class="line">        !<span class="keyword">proc</span>.pm2_env ||<span class="title"></span></span><br><span class="line"><span class="title">        proc.pm2_env.status</span> ==<span class="title"> cst.STOPPED_STATUS</span> ||<span class="title"></span></span><br><span class="line"><span class="title">        proc.pm2_env.status</span> ==<span class="title"> cst.STOPPING_STATUS</span> ||<span class="title"></span></span><br><span class="line"><span class="title">        proc.pm2_env.status</span> ==<span class="title"> cst.ERRORED_STATUS)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> console.<span class="keyword">error</span>(&#x27;Cancelling versioning data parsing&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">proc</span>.pm2_env.vizion_running = false;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">      <span class="keyword">proc</span>.pm2_env.versioning = meta;</span><br><span class="line">      <span class="keyword">proc</span>.pm2_env.versioning.repo_path = current_path;</span><br><span class="line">      God.notify(&#x27;online&#x27;, <span class="keyword">proc</span>);</span><br><span class="line">    &#125;<span class="title"></span></span><br><span class="line"><span class="title">    else</span> if (err &amp;&amp;<span class="title"> current_path</span> ===<span class="title"> last_path)</span> &#123;</span><br><span class="line">      <span class="keyword">proc</span>.pm2_env.versioning = null;</span><br><span class="line">      God.notify(&#x27;online&#x27;, <span class="keyword">proc</span>);</span><br><span class="line">    &#125;<span class="title"></span></span><br><span class="line"><span class="title">    else</span> &#123;</span><br><span class="line">      last_path = current_path;</span><br><span class="line">      current_path = path.dirname(current_path);</span><br><span class="line">      <span class="keyword">proc</span>.pm2_env.vizion_running = true;</span><br><span class="line">      vizion.analyze(&#123;folder : current_path&#125;, recur_path);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> false;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="项目使用"><a href="#项目使用" class="headerlink" title="项目使用"></a>项目使用</h2><h3 id="日志配置"><a href="#日志配置" class="headerlink" title="日志配置"></a>日志配置</h3><ul>
+<li>ecosystem file </li>
+<li>merge_logs | log | log_Date_format</li>
+<li>pm2 install pm2-logrotate &amp;&amp; pm2 set pm2-logrotate:retain 14</li>
+<li>scripts: pm2 start ecosystem.config.js –env xxx (dev + –watch)</li>
+</ul>
+<h2 id="basic-介绍"><a href="#basic-介绍" class="headerlink" title="basic 介绍"></a>basic 介绍</h2><h3 id="pm2-list"><a href="#pm2-list" class="headerlink" title="pm2 list"></a>pm2 list</h3><h4 id="uptime"><a href="#uptime" class="headerlink" title="uptime"></a>uptime</h4><p> 运行时间</p>
+<h4 id="restarts"><a href="#restarts" class="headerlink" title="restarts"></a>restarts</h4><p> 重启次数</p>
+<h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><h3 id="pm2-IO"><a href="#pm2-IO" class="headerlink" title="pm2.IO"></a>pm2.IO</h3><ul>
+<li><p>官方：keymetrics, 有免费的配额（You can now connect up to 4 servers or Node.js processes for free.）</p>
+</li>
+<li><p>免费的限制服务数量，且功能较少，里面还会有plus和enterprise版本的供选购</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://pm2.keymetrics.io/docs/usage/docker-pm2-nodejs/">https://pm2.keymetrics.io/docs/usage/docker-pm2-nodejs/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://app.pm2.io/">https://app.pm2.io/</a></p>
+<figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># server</span><br><span class="line">pm2 <span class="keyword">link</span> xxx-sec-<span class="keyword">key</span> xxx-pub-<span class="keyword">key</span></span><br><span class="line"># docker</span><br><span class="line"><span class="keyword">RUN </span>npm install pm2 -g</span><br><span class="line">ENV PM2_PUBLIC_KEY xxx</span><br><span class="line">ENV PM2_SECRET_KEY xxx</span><br><span class="line"></span><br><span class="line">CMD [<span class="string">&quot;pm2-runtime&quot;</span>, <span class="string">&quot;app.js&quot;</span>]</span><br><span class="line"># pm2 <span class="keyword">link</span></span><br><span class="line">pm2 <span class="keyword">link</span> -h</span><br><span class="line"></span><br><span class="line"> Usage: <span class="keyword">link</span> [<span class="keyword">options</span>] [secret] [public] [name]</span><br><span class="line"></span><br><span class="line"> <span class="keyword">link</span> with the pm2 monitoring dashboard</span><br><span class="line"></span><br><span class="line"> <span class="keyword">Options</span>:</span><br><span class="line"></span><br><span class="line">   --info-node [url]  <span class="keyword">set</span> url info node</span><br><span class="line">   --ws               websocket mode</span><br><span class="line">   --axon             axon mode</span><br><span class="line">   -h, --help         <span class="keyword">output</span> usage information</span><br></pre></td></tr></table></figure>
+
+<h3 id="Launch-PM2-in-no-deamon"><a href="#Launch-PM2-in-no-deamon" class="headerlink" title="Launch PM2 in no deamon"></a>Launch PM2 in no deamon</h3></li>
+</ul>
+<p>Make sure you kill any PM2 instance before starting PM2 in no deamon mode (pm2 kill).</p>
+<p>Launching PM2 without daemonizing itself:</p>
+<p>pm2 start app.js –no-daemon<br>There is also the CLI pm2-runtime installed by default at PM2 installation, that is a drop-in replacement of the Node.js binary.</p>
+<h2 id="doc"><a href="#doc" class="headerlink" title="doc"></a>doc</h2><h3 id="options"><a href="#options" class="headerlink" title="options"></a>options</h3><h4 id="–watch"><a href="#–watch" class="headerlink" title="–watch"></a>–watch</h4><p>Restart application on changes</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

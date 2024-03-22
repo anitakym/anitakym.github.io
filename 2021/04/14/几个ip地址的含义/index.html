@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        几个ip地址的含义 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#mongo-%E5%AE%89%E5%85%A8%E4%BA%8B%E4%BB%B6"><span class="toc-text">mongo 安全事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%89%E8%B6%A3%E7%9A%84%E5%B0%8F%E7%99%BD%E7%94%A8%E6%88%B7%E8%AE%A8%E8%AE%BA"><span class="toc-text">一个有趣的小白用户讨论</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        几个ip地址的含义
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-14 17:05:35</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>对于监听地址， :: 等同于IPV4的0.0.0.0 （全0）<br>而 ::1 则等同于 127.0.0.1 （本机地址）</p>
+<p>在IP地址范围内，一部分地址将保留作为私人IP地址空间，专门用于内部局域网使用，这些地址如下表：</p>
+<p>  A类 10.0.0.0-10.255.255.255 网络数：1<br>  B类 172.16.0.0-172.31.255.255 网络数：16<br>  C类 192.168.0.0-192.168.255.255 网络数：255</p>
+<p>  这些地址是不会被Internet分配的，它们在Internet上也不会被路由，虽然它们不能直接和Internet网连接，但通过技术手段仍旧可以和Internet通讯。我们可以根据需要来选择适当的地址类，在内部局域网中将这些地址像公用IP地址一样地使用。在Internet上，有些不需要与Internet通讯的设备，如打印机、可管理集线器等也可以使用这些地址，以节省IP地址资源。</p>
+<p>// Various Dev Server settings<br>    host: ‘10.200.166.65’, // can be overwritten by process.env.HOST<br>    port: 8887, // can be overwritten by process.env.PORT, if port is in use</p>
+<p>起服务的时候：<br>用本机ip,或者0.0.0.0<br>这样子局域网的别的机器才能访问(局域网地址)到</p>
+<p><a target="_blank" rel="noopener" href="https://applegazette.com/mac/what-is-localhost-and-how-is-it-different-from-127-0-0-1/">https://applegazette.com/mac/what-is-localhost-and-how-is-it-different-from-127-0-0-1/</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/20778771/what-is-the-difference-between-0-0-0-0-127-0-0-1-and-localhost/20778887#20778887">https://stackoverflow.com/questions/20778771/what-is-the-difference-between-0-0-0-0-127-0-0-1-and-localhost/20778887#20778887</a></p>
+<p>127.0.0.1 is normally the IP address assigned to the “loopback” or local-only interface. This is a “fake” network adapter that can only communicate within the same host. It’s often used when you want a network-capable application to only serve clients on the same host. A process that is listening on 127.0.0.1 for connections will only receive local connections on that socket.</p>
+<p>“localhost” is normally the hostname for the 127.0.0.1 IP address. It’s usually set in /etc/hosts (or the Windows equivalent named “hosts” somewhere under %WINDIR%). You can use it just like any other hostname - try “ping localhost” to see how it resolves to 127.0.0.1.</p>
+<p>0.0.0.0 has a couple of different meanings, but in this context, when a server is told to listen on 0.0.0.0 that means “listen on every available network interface”. The loopback adapter with IP address 127.0.0.1 from the perspective of the server process looks just like any other network adapter on the machine, so a server told to listen on 0.0.0.0 will accept connections on that interface too.</p>
+<p>At least in Windows, localhost behaves as 0.0.0.0 (not 127.0.0.1) by default</p>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/zxhfighter/b9f4b4ef328cd8b433b0e9dc2f4af26d">https://gist.github.com/zxhfighter/b9f4b4ef328cd8b433b0e9dc2f4af26d</a></p>
+<p>实际测试：<br>均为Mac</p>
+<p>127.0.0.1 起服务，同局域网的另外一台Mac无法访问-ERR_CONNECTION_REFUSED<br>0.0.0.0 起服务，同局域网的另外一台Mac可以访问 # 注意，开启VPN的情况下，可能会导致访问出问题；</p>
+<h3 id="mongo-安全事件"><a href="#mongo-安全事件" class="headerlink" title="mongo 安全事件"></a>mongo 安全事件</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d34ff415fbb4">https://www.jianshu.com/p/d34ff415fbb4</a></p>
+<h3 id="一个有趣的小白用户讨论"><a href="#一个有趣的小白用户讨论" class="headerlink" title="一个有趣的小白用户讨论"></a>一个有趣的小白用户讨论</h3><p><a target="_blank" rel="noopener" href="https://github.com/gruntjs/grunt-contrib-connect/issues/164">https://github.com/gruntjs/grunt-contrib-connect/issues/164</a></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

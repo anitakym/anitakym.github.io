@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        深入使用vscode-打磨一把趁手的刻刀 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90%EF%BC%9A"><span class="toc-text">参考资源：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">重要的快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E5%88%B6%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">定制编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98-%E5%AE%89%E8%A3%85-icon-%E4%B8%BB%E9%A2%98-%E5%88%87%E6%8D%A2%E5%AD%97%E4%BD%93"><span class="toc-text">切换主题&#x2F;安装 icon 主题&#x2F;切换字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8%E8%B0%83%E6%95%B4"><span class="toc-text">编辑器调整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%83%A8%E5%88%86%E6%94%B9%E6%88%90%E9%BB%98%E8%AE%A4%E6%89%93%E5%BC%80%E4%B8%BA-json"><span class="toc-text">设置部分改成默认打开为 json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#peacock"><span class="toc-text">peacock</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E5%8A%9B%E6%8F%90%E9%AB%98%E6%8A%80%E5%B7%A7"><span class="toc-text">生产力提高技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%AF%BC%E8%88%AA%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">基本导航快捷键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Emmet"><span class="toc-text">Emmet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#auto-close-tag-Extensions"><span class="toc-text">auto close tag Extensions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%EF%BC%8C%E5%A4%8D%E5%88%B6%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">移动，复制和删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#folding-sections"><span class="toc-text">folding sections</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%B3%A8%E9%87%8A"><span class="toc-text">快速注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E4%B8%ADword"><span class="toc-text">选中word</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#editor%E5%88%87%E6%8D%A2tab"><span class="toc-text">editor切换tab</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Words"><span class="toc-text">Words</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ts"><span class="toc-text">ts</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ts-%E6%94%AF%E6%8C%81%EF%BC%8C%E4%BD%86%E6%98%AF%E7%9B%AE%E5%89%8D%E9%A6%96%E8%A1%8C%E6%8A%A5%E9%94%99"><span class="toc-text">ts 支持，但是目前首行报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">&lt;&#x2F;h3&gt;&lt;p&gt;如果使用了&lt;script setup&gt;&lt;br&gt;用 Volar&lt;br&gt;禁掉 Vetur&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;github.com&#x2F;vuejs&#x2F;rfcs&#x2F;blob&#x2F;script-setup&#x2F;active-rfcs&#x2F;0000-script-setup.md&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;vuejs&#x2F;rfcs&#x2F;blob&#x2F;script-setup&#x2F;active-rfcs&#x2F;0000-script-setup.md&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;github.com&#x2F;vuejs&#x2F;vue-next&#x2F;blob&#x2F;master&#x2F;CHANGELOG.md&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;vuejs&#x2F;vue-next&#x2F;blob&#x2F;master&#x2F;CHANGELOG.md&lt;&#x2F;a&gt; 里面搜索 &lt;script setup&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id&#x3D;&quot;ligatures&quot;&gt;&lt;a href&#x3D;&quot;#ligatures&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;ligatures&quot;&gt;&lt;&#x2F;a&gt;ligatures&lt;&#x2F;h3&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;worldofzero.com&#x2F;posts&#x2F;enable-font-ligatures-vscode&#x2F;&quot;&gt;https:&#x2F;&#x2F;worldofzero.com&#x2F;posts&#x2F;enable-font-ligatures-vscode&#x2F;&lt;&#x2F;a&gt;&lt;br&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;marketplace.visualstudio.com&#x2F;items?itemName&#x3D;sdras.night-owl&quot;&gt;https:&#x2F;&#x2F;marketplace.visualstudio.com&#x2F;items?itemName&#x3D;sdras.night-owl&lt;&#x2F;a&gt;&lt;br&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;marketplace.visualstudio.com&#x2F;items?itemName&#x3D;vscode-icons-team.vscode-icons&quot;&gt;https:&#x2F;&#x2F;marketplace.visualstudio.com&#x2F;items?itemName&#x3D;vscode-icons-team.vscode-icons&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h4 id&#x3D;&quot;debug&quot;&gt;&lt;a href&#x3D;&quot;#debug&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;debug&quot;&gt;&lt;&#x2F;a&gt;debug&lt;&#x2F;h4&gt;&lt;p&gt;F5进入debug模式&lt;&#x2F;p&gt;
+&lt;h3 id&#x3D;&quot;查找，正则&quot;&gt;&lt;a href&#x3D;&quot;#查找，正则&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;查找，正则&quot;&gt;&lt;&#x2F;a&gt;查找，正则&lt;&#x2F;h3&gt;&lt;ul&gt;
+&lt;li&gt;先开启正则模式&lt;&#x2F;li&gt;
+&lt;li&gt;.* 匹配任意数量任意字符&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id&#x3D;&quot;vscode-settings-json-文件是-Visual-Studio-Code-的一个配置文件，用于为特定项目自定义设置。&quot;&gt;&lt;a href&#x3D;&quot;#vscode-settings-json-文件是-Visual-Studio-Code-的一个配置文件，用于为特定项目自定义设置。&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;.vscode&#x2F;settings.json 文件是 Visual Studio Code 的一个配置文件，用于为特定项目自定义设置。&quot;&gt;&lt;&#x2F;a&gt;&lt;code&gt;.vscode&#x2F;settings.json&lt;&#x2F;code&gt; 文件是 Visual Studio Code 的一个配置文件，用于为特定项目自定义设置。&lt;&#x2F;h4&gt;&lt;figure class&#x3D;&quot;highlight armasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;string&quot;&gt;&quot;cSpell.words&quot;&lt;&#x2F;span&gt;是&lt;span class&#x3D;&quot;meta&quot;&gt;Code&lt;&#x2F;span&gt; Spell Checker 插件提供的一个设置选项。&lt;span class&#x3D;&quot;meta&quot;&gt;Code&lt;&#x2F;span&gt; Spell Checker 是一个用于检查拼写错误的 Visual Studio &lt;span class&#x3D;&quot;meta&quot;&gt;Code&lt;&#x2F;span&gt; 插件。&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;string&quot;&gt;&quot;cSpell.words&quot;&lt;&#x2F;span&gt; 的值应该是一个数组，其中包含的单词将被添加到插件的词汇表中。这就意味着这些单词不会被拼写检查器标记为拼写错误，即使它们不在默认的英语词典中。&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;例如：&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;string&quot;&gt;&quot;cSpell.words&quot;&lt;&#x2F;span&gt;: [&lt;span class&#x3D;&quot;string&quot;&gt;&quot;jsonwebtoken&quot;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;string&quot;&gt;&quot;bcryptjs&quot;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;string&quot;&gt;&quot;eslint&quot;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;string&quot;&gt;&quot;mocha&quot;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;string&quot;&gt;&quot;chai&quot;&lt;&#x2F;span&gt;]&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&amp;#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;在这个例子中，“jsonwebtoken”, &lt;span class&#x3D;&quot;string&quot;&gt;&quot;bcryptjs&quot;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;string&quot;&gt;&quot;eslint&quot;&lt;&#x2F;span&gt;, &lt;span class&#x3D;&quot;string&quot;&gt;&quot;mocha&quot;&lt;&#x2F;span&gt;和&lt;span class&#x3D;&quot;string&quot;&gt;&quot;chai&quot;&lt;&#x2F;span&gt;这些单词不会被拼写检查器标记为错误，即使它们不是标准的英语单词。这对编程中的库名、函数名等非标准英语词汇提供了方便的拼写检查。&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        深入使用vscode-打磨一把趁手的刻刀
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-08 11:01:58</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a>参考资源：</h3><p>gitbook （<a target="_blank" rel="noopener" href="https://burkeholland.gitbook.io/vs-code-can-do-that/%EF%BC%89">https://burkeholland.gitbook.io/vs-code-can-do-that/）</a><br>系统的介绍了 vscode 的使用，还有一些很棒的 tricks，各种拓展的选择和使用</p>
+<p>frontend masters 有 course，gitbook 里面是 exercise</p>
+<p>如果使用上面的材料：<br>vscode 可以安装这个 extension —— (慎重全部安装，可以查看下，按需安装)<br><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=burkeholland.vs-code-can-do-that">https://marketplace.visualstudio.com/items?itemName=burkeholland.vs-code-can-do-that</a><br>docker ——<br><a target="_blank" rel="noopener" href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/</a><br>git + node</p>
+<p>提供了一个测试项目：<br>git clone <a target="_blank" rel="noopener" href="https://github.com/burkeholland/workshop-vs-code-can-do-that">https://github.com/burkeholland/workshop-vs-code-can-do-that</a></p>
+<h3 id="重要的快捷键"><a href="#重要的快捷键" class="headerlink" title="重要的快捷键"></a>重要的快捷键</h3><ul>
+<li>快捷用 vscode 打开项目</li>
+</ul>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">code .</span><br><span class="line"></span><br><span class="line"># https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode</span><br><span class="line">code --diff file file</span><br><span class="line">code --goto <span class="link">file:line</span>[<span class="string">:char</span>]</span><br><span class="line">code --verbose</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>需要先：<br>(Cmd/Ctrl + Shift + P) and select “Shell Command: Install ‘code’ command in path”.</p>
+<p>Mac 的话，也可以构建任务流，这样就可以右键选择，里面“用 vscode 打开了”</p>
+<ul>
+<li>Mac 里面 Cmd 是主要的控制键，Windows 里面 Ctrl 是主要的控制键</li>
+<li>一些常用的快捷键(写成 Mac 的，Windows 的换控制键为 Ctrl 即可)</li>
+<li>sidebar 的切换(Cmd + B)</li>
+<li>打开命令面板(Cmd + shift + P)</li>
+<li>打开文件面板(Cmd + P)</li>
+<li>打开设置(Cmd + ,)</li>
+<li>集成终端视图切换(Ctrl + <code>) =&gt; (私人换了，一般应该是Cmd + </code>)</li>
+</ul>
+<h3 id="定制编辑器"><a href="#定制编辑器" class="headerlink" title="定制编辑器"></a>定制编辑器</h3><h4 id="切换主题-安装-icon-主题-切换字体"><a href="#切换主题-安装-icon-主题-切换字体" class="headerlink" title="切换主题/安装 icon 主题/切换字体"></a>切换主题/安装 icon 主题/切换字体</h4><p>(Cmd/Ctrl + Shift + P)</p>
+<ul>
+<li><p>“Preferences: Color Theme”.<br>拖到最底下，可以下载想要安装的主题（颜色主题）</p>
+</li>
+<li><p>“Preferences: File Icon Theme”<br>material 比较清晰，可以区分 workspace 和 file(icon 主题)</p>
+</li>
+<li><p>FiraCode/Hasklig/Monoid</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tonsky/FiraCode">https://github.com/tonsky/FiraCode</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/i-tu/Hasklig">https://github.com/i-tu/Hasklig</a></p>
+</li>
+<li><p>font ligatures</p>
+</li>
+<li><p>有些字体支持 “字体连字”。这些符号代表我们在编程中使用的复合符号。如果你正在使用的字体支持它们，你可以通过勾选 “Editor.Font Ligatures”框来打开它们。</p>
+</li>
+</ul>
+<h4 id="编辑器调整"><a href="#编辑器调整" class="headerlink" title="编辑器调整"></a>编辑器调整</h4><ul>
+<li><p>minimap(缩略图),其实不太好用，可以关掉</p>
+</li>
+<li><p>Settings(Cmd+,) =&gt; 搜索 Minimap =&gt; 取消 enable 的选择</p>
+</li>
+<li><p>sidebar 位置调整</p>
+</li>
+<li><p>在 cmd + shift + p</p>
+</li>
+<li><p>输入 toggle sidebar position</p>
+</li>
+<li><p>open enditors (打开的编辑器)</p>
+</li>
+<li><p>其实我们可以通过 cmd + p 快速搜索文件，所以这部分如果想关掉，可以 Settings(Cmd+,) =&gt; 搜索 Explorer › Open Editors: Visible<br>“打开编辑器”窗格中显示的编辑器的数量。将其设置为 0 将隐藏“打开编辑器”窗格 =&gt; 还有别的设置，可以更细粒度的控制这部分</p>
+</li>
+</ul>
+<h4 id="设置部分改成默认打开为-json"><a href="#设置部分改成默认打开为-json" class="headerlink" title="设置部分改成默认打开为 json"></a>设置部分改成默认打开为 json</h4><ul>
+<li>cmd + , 搜索 Workbench › Settings: Editor 配置默认使用的设置编辑器 =&gt; 改为 json</li>
+<li>如果想保留 UI 的快捷打开，可以在键盘快捷方式里面，open settings (ui)，可以自己设置一个，我设置成了（cmd + alt + ,）</li>
+</ul>
+<h4 id="peacock"><a href="#peacock" class="headerlink" title="peacock"></a>peacock</h4><ul>
+<li>cmd + shift + P =&gt; peacock:enter a color</li>
+<li>settings 增加这两行，这样看起来颜色没那么鲜艳:<br>“peacock.affectActivityBar”: false<br>“peacock.affectStatusBar”: false</li>
+</ul>
+<h3 id="生产力提高技巧"><a href="#生产力提高技巧" class="headerlink" title="生产力提高技巧"></a>生产力提高技巧</h3><h4 id="基本导航快捷键"><a href="#基本导航快捷键" class="headerlink" title="基本导航快捷键"></a>基本导航快捷键</h4><ul>
+<li>cmd + 0 焦点到 sidebar</li>
+<li>cmd + 1 焦点到编辑器<br>下面几个都是英文首字母：</li>
+<li>cmd + shift + e 资源管理器 explorer</li>
+<li>cmd + shift + d 运行和调试 debug</li>
+<li>ctrl + shift + g 源代码管理器 git</li>
+<li>cmd + shift + x 扩展 extensions</li>
+<li>cursor 位置移动 —— On Mac: Ctrl + - … navigate back / Ctrl + Shift + - … navigate forward</li>
+<li>cmd + shift + o 如果是 markdown 文件，可以快速选择定位到哪个标题</li>
+</ul>
+<h4 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h4><ul>
+<li>输入! （记住是英文输入法）然后 Tab 键</li>
+<li>这个时候按 Tab 键，可以在标题和属性设置间切换，按序修改我们需要修改的地方</li>
+<li>(Cmd/Ctrl + Shift + P) and select “Emmet: Balance Outward” 可以一层层的选择标签</li>
+<li>(Cmd/Ctrl + Shift + P) and select “Emmet: Wrap with abbreviation” 可以可以快速在外层包标签(.test)</li>
+<li>(Cmd/Ctrl + Shift + P) and select “Format Document” 可以快速格式化文件,输入 format on save，可以选择是否要在保存时候格式化文档，推荐不要选，因为文件有差异，还是走具体项目的格式化</li>
+<li>emmet 样式上面，也可以用缩写，还是很好用的，省时间</li>
+</ul>
+<h4 id="auto-close-tag-Extensions"><a href="#auto-close-tag-Extensions" class="headerlink" title="auto close tag Extensions"></a>auto close tag Extensions</h4><p>可以安装这个插件，修改 tag 名的时候，闭合标签会跟着改动(根据说明配置 settings)<br>emmet 也可以达到这个=&gt; cmd + shift + P ，输入 update tag</p>
+<h4 id="移动，复制和删除"><a href="#移动，复制和删除" class="headerlink" title="移动，复制和删除"></a>移动，复制和删除</h4><ul>
+<li>复制一行 opt/alt + shift + down/up arrow</li>
+<li>移动一行 opt/alt + down/up arrow</li>
+<li>删除一行 cmd + shift + k</li>
+</ul>
+<p>vscode 里面，光标在哪一行，直接 cmd + c/x/v ,就可以复制/剪切了</p>
+<h4 id="folding-sections"><a href="#folding-sections" class="headerlink" title="folding sections"></a>folding sections</h4><ul>
+<li>html/code 光标放在需要折叠的区域 cmd + shift + P =&gt; fold</li>
+<li>fold region ，可以添加 a comment with //#region at the start of the block and //#endregion at the end.<br>创建折叠区域</li>
+<li>cmd + k + 0，0 是代码折叠级别,全部折叠，同理可以换用 1，2，3</li>
+<li>cmd + k + j 展开所有代码块</li>
+</ul>
+<h4 id="快速注释"><a href="#快速注释" class="headerlink" title="快速注释"></a>快速注释</h4><ul>
+<li>cmd + / 注释行</li>
+</ul>
+<h4 id="选中word"><a href="#选中word" class="headerlink" title="选中word"></a>选中word</h4><ul>
+<li>cmd + d</li>
+</ul>
+<h4 id="editor切换tab"><a href="#editor切换tab" class="headerlink" title="editor切换tab"></a>editor切换tab</h4><p>cmd + option + &lt;- | -&gt; </p>
+<h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2><p><a target="_blank" rel="noopener" href="https://burkeholland.gitbook.io/vs-code-can-do-that/">https://burkeholland.gitbook.io/vs-code-can-do-that/</a></p>
+<ul>
+<li><p>That denotes that these are separate workspaces, not folders. Other icon themes will not make this distinction as you can see below in Chalice Icons.<br>这表示这些是独立的工作空间，而不是文件夹。其他图标主题不会做出这种区分，你可以在下面的 Chalice Icons 中看到。</p>
+</li>
+<li><p>prerequisite | BrE priːˈrɛkwɪzɪt, AmE priˈrɛkwəzət |<br>A. noun<br>先决条件<br>▸ to be a prerequisite for sth;<br>是某事的前提</p>
+</li>
+<li><p>You can make some tweaks to the visual components of the editor to increase the available space and improve legibility.你可以对编辑器的视觉组件进行一些调整，增加可用空间，提高可读性。</p>
+</li>
+<li><p>Here are a few more keyboard shortcuts to add to your repertoire( a list or supply of dramas, operas, pieces, or parts that a company or person is prepared to perform).</p>
+</li>
+</ul>
+<h2 id="ts"><a href="#ts" class="headerlink" title="ts"></a>ts</h2><h3 id="ts-支持，但是目前首行报错"><a href="#ts-支持，但是目前首行报错" class="headerlink" title="ts 支持，但是目前首行报错"></a>ts 支持，但是目前首行报错</h3><p>vetur.experimental.templateInterpolationService</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><script setup></h3><p>如果使用了<script setup><br>用 Volar<br>禁掉 Vetur</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/vuejs/rfcs/blob/script-setup/active-rfcs/0000-script-setup.md">https://github.com/vuejs/rfcs/blob/script-setup/active-rfcs/0000-script-setup.md</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md">https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md</a> 里面搜索 <script setup></li>
+</ul>
+<h3 id="ligatures"><a href="#ligatures" class="headerlink" title="ligatures"></a>ligatures</h3><p><a target="_blank" rel="noopener" href="https://worldofzero.com/posts/enable-font-ligatures-vscode/">https://worldofzero.com/posts/enable-font-ligatures-vscode/</a><br><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=sdras.night-owl">https://marketplace.visualstudio.com/items?itemName=sdras.night-owl</a><br><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons</a></p>
+<h4 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h4><p>F5进入debug模式</p>
+<h3 id="查找，正则"><a href="#查找，正则" class="headerlink" title="查找，正则"></a>查找，正则</h3><ul>
+<li>先开启正则模式</li>
+<li>.* 匹配任意数量任意字符</li>
+</ul>
+<h4 id="vscode-settings-json-文件是-Visual-Studio-Code-的一个配置文件，用于为特定项目自定义设置。"><a href="#vscode-settings-json-文件是-Visual-Studio-Code-的一个配置文件，用于为特定项目自定义设置。" class="headerlink" title=".vscode/settings.json 文件是 Visual Studio Code 的一个配置文件，用于为特定项目自定义设置。"></a><code>.vscode/settings.json</code> 文件是 Visual Studio Code 的一个配置文件，用于为特定项目自定义设置。</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;cSpell.words&quot;</span>是<span class="meta">Code</span> Spell Checker 插件提供的一个设置选项。<span class="meta">Code</span> Spell Checker 是一个用于检查拼写错误的 Visual Studio <span class="meta">Code</span> 插件。</span><br><span class="line"><span class="string">&quot;cSpell.words&quot;</span> 的值应该是一个数组，其中包含的单词将被添加到插件的词汇表中。这就意味着这些单词不会被拼写检查器标记为拼写错误，即使它们不在默认的英语词典中。</span><br><span class="line">例如：</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;cSpell.words&quot;</span>: [<span class="string">&quot;jsonwebtoken&quot;</span>, <span class="string">&quot;bcryptjs&quot;</span>, <span class="string">&quot;eslint&quot;</span>, <span class="string">&quot;mocha&quot;</span>, <span class="string">&quot;chai&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line">在这个例子中，“jsonwebtoken”, <span class="string">&quot;bcryptjs&quot;</span>, <span class="string">&quot;eslint&quot;</span>, <span class="string">&quot;mocha&quot;</span>和<span class="string">&quot;chai&quot;</span>这些单词不会被拼写检查器标记为错误，即使它们不是标准的英语单词。这对编程中的库名、函数名等非标准英语词汇提供了方便的拼写检查。</span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

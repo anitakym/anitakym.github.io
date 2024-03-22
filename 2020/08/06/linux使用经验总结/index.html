@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        linux使用经验总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">学习参考资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3"><span class="toc-text">报错解决</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%8C%E8%A1%A8%E7%A4%BA%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0%E3%80%82"><span class="toc-text">!$，表示上一个命令行的最后一个参数。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%8C%E8%A1%A8%E7%A4%BA%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E7%9A%84%E5%AE%8C%E6%95%B4%E5%91%BD%E4%BB%A4"><span class="toc-text">!!，表示上一个命令的完整命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gzip"><span class="toc-text">gzip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tree"><span class="toc-text">tree</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chmod"><span class="toc-text">chmod</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cp"><span class="toc-text">cp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#z"><span class="toc-text">z</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vidir"><span class="toc-text">vidir</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="toc-text">命令行操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Network-Time-Proctocol-NTP"><span class="toc-text">Network Time Proctocol - NTP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#top"><span class="toc-text">top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nohup"><span class="toc-text">nohup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#curl"><span class="toc-text">curl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fx"><span class="toc-text">fx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wget"><span class="toc-text">wget</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#netstat"><span class="toc-text">netstat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#alias"><span class="toc-text">alias</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fx-https-github-com-antonmedv-fx"><span class="toc-text">fx(https:&#x2F;&#x2F;github.com&#x2F;antonmedv&#x2F;fx)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%BF%97"><span class="toc-text">日志</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%9C%BA%E6%99%AF"><span class="toc-text">具体场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%96%87%E4%BB%B6-%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AA%E6%95%B0"><span class="toc-text">查看目录下文件&#x2F;文件夹个数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#export"><span class="toc-text">export</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E4%BB%8B%E8%B4%A8"><span class="toc-text">存储介质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-text">定时任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#etc-init-d"><span class="toc-text">&#x2F;etc&#x2F;init.d</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-text">名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rpm"><span class="toc-text">rpm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dump"><span class="toc-text">dump</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lsbrelease"><span class="toc-text">lsbrelease</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#telnet"><span class="toc-text">telnet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#netcat"><span class="toc-text">netcat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9B%AE%E5%BD%95%E5%90%8D%E7%A7%B0"><span class="toc-text">查目录名称</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kill-pkill"><span class="toc-text">kill pkill</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ack"><span class="toc-text">ack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#autojump"><span class="toc-text">autojump</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lsb-release-a"><span class="toc-text">lsb_release -a</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        linux使用经验总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-08-06 16:44:03</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Linux系统使用系列" title="Linux系统使用系列">Linux系统使用系列</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="学习参考资料"><a href="#学习参考资料" class="headerlink" title="学习参考资料"></a>学习参考资料</h3><p><a target="_blank" rel="noopener" href="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md">https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md</a></p>
+<ul>
+<li>the-art-of-command-line</li>
+</ul>
+<h3 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch <span class="built_in">h</span>(<span class="number">1</span>)<span class="selector-class">.txt</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>-bash: syntax error near unexpected token `(‘</li>
+<li>zsh: no matches found: 嘿嘿(1).txt<br>因为括号的原因啦，需要转义，加; 也可以加引号；</li>
+</ul>
+<blockquote>
+<p>一些和系统平台无关的command</p>
+</blockquote>
+<h4 id="，表示上一个命令行的最后一个参数。"><a href="#，表示上一个命令行的最后一个参数。" class="headerlink" title="!$，表示上一个命令行的最后一个参数。"></a>!$，表示上一个命令行的最后一个参数。</h4><h4 id="，表示上一个命令的完整命令"><a href="#，表示上一个命令的完整命令" class="headerlink" title="!!，表示上一个命令的完整命令"></a>!!，表示上一个命令的完整命令</h4><h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h4><p>平时构建出来的文件，想看看gzip之后大小<br><code>gzip xxx.js</code></p>
+<ul>
+<li><p>AWS - 改变S3自身存储服务数据（主要是日志的）的压缩方式-从gzip日志切换到ztsd日志，使得存储成本降低30%</p>
+</li>
+<li><p>ztsd - Zstandard - Facebook 开源的快速无损压缩算法，应用于zlib级别的实时压缩场景，并且具有更好的压缩比</p>
+</li>
+<li><p>ztsd - 可以以压缩速度为代价提供更强的压缩比，速度与压缩率的比重可通过增量进行配置</p>
+<h4 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h4><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man <span class="built_in">tree</span></span><br></pre></td></tr></table></figure>
+<p>mac 上想使用，用brew安装<br>(比tree更好看的是 <a target="_blank" rel="noopener" href="https://the.exa.website/install/macos">exa</a>)</p>
+</li>
+<li><p>场景（查看项目里面的文件，排除node_modules）</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree - I <span class="string">&quot;node_modules&quot;</span> -<span class="keyword">f</span> | <span class="keyword">grep</span> -C3 <span class="built_in">index</span>.md</span><br></pre></td></tr></table></figure>
+<p>也可以用把结果输出后，用编辑器进行更复杂的搜索</p>
+<h4 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">chmod</span> -R <span class="number">777</span> </span><br></pre></td></tr></table></figure>
+<p>设置当前目录及子目录所有文件=&gt;所有人可读写可执行</p>
+</li>
+</ul>
+<h4 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h4><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r <span class="regexp">/root/</span>firekylin<span class="regexp">/www/</span><span class="keyword">static</span><span class="regexp">/pic /</span>root<span class="regexp">/firekylin_1.x/</span>www<span class="regexp">/static/</span>pic </span><br></pre></td></tr></table></figure>
+
+<h4 id="z"><a href="#z" class="headerlink" title="z"></a>z</h4><p>文件夹跳转</p>
+<h4 id="vidir"><a href="#vidir" class="headerlink" title="vidir"></a>vidir</h4><p>可以批量修改文件名</p>
+<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><p>cat del2.log | grep  -oP “\w+([-+.]\w+)*@\w+([-.]\w+)<em>.\w+([-.]\w+)</em>“ &gt; del3.log</p>
+<h4 id="命令行操作"><a href="#命令行操作" class="headerlink" title="命令行操作"></a>命令行操作</h4><pre>
+Ctrl+b 或左箭头键 左移一个字bai符（移至前一个字符）du
+Ctrl+f 或右箭头键 右移一个字符（移至后一个字符）
+Ctrl+a 移至行首
+Ctrl+e 移至行尾
+Esc b 左移一个单词
+Esc f 右移一个单词
+Del 删除光标所在处的字符
+Ctrl+d 删除光标所在处的字符
+BACKSPACE或Ctrl+h 删除光标左边的字符
+Ctrl+k 删除至行尾
+
+所以：
+Ctrl + a
+Ctrl + k
+删除一整行
+</pre>
+
+
+<h4 id="Network-Time-Proctocol-NTP"><a href="#Network-Time-Proctocol-NTP" class="headerlink" title="Network Time Proctocol - NTP"></a>Network Time Proctocol - NTP</h4><ul>
+<li>如果系统时间存在误差，可以起Cron任务，配置NTP服务，定时同步<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rpm -q<span class="built_in"> ntp</span></span><br><span class="line"><span class="built_in"></span>yum -y install<span class="built_in"> ntp</span></span><br><span class="line"><span class="built_in"></span>systemctl <span class="built_in">enable</span> ntpd</span><br><span class="line">systemctl start ntpd</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><p>这个是个蛮重要的，一般机器情况看下这个基本上就知道了(Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况)</p>
+<ul>
+<li>改变画面更新频率<br>　　l - 关闭或开启第一部分第一行 top 信息的表示<br>　　t - 关闭或开启第一部分第二行 Tasks 和第三行 Cpus 信息的表示<br>　　m - 关闭或开启第一部分第四行 Mem 和 第五行 Swap 信息的表示<br>　　N - 以 PID 的大小的顺序排列表示进程列表（第三部分后述）<br>　　P - 以 CPU 占用率大小的顺序排列进程列表 （第三部分后述）<br>　　M - 以内存占用率大小的顺序排列进程列表 （第三部分后述）<br>　　h - 显示帮助<br>　　n - 设置在进程列表所显示进程的数量<br>　　q - 退出 top</li>
+</ul>
+<p>Mac上面，<strong>“活动监视器是”</strong>GUI的面板<br>Windows,类似于任务管理器。</p>
+<h4 id="nohup"><a href="#nohup" class="headerlink" title="nohup"></a>nohup</h4><p>参考资料：<a target="_blank" rel="noopener" href="https://developer.ibm.com/zh/tutorials/l-lpic1-103-5/">https://developer.ibm.com/zh/tutorials/l-lpic1-103-5/</a></p>
+<h4 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h4><p>curl - transfer a URL<br>curl(CommandLine Uniform Resource Locator)<br>curl  is  a tool to transfer data from or to a server, using one of the supported protocols (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS,  IMAP, IMAPS,  LDAP,  LDAPS,  POP3,  POP3S,  RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP).<br>cURL是一个多功能工具。当然，它可以下载网络内容，但同时它也能做更多别的事情。</p>
+<p>curl is powered by  libcurl  for  all  transfer-related  features.<br>cURL 技术支持库是：libcurl。这就意味着你可以基于 cURL 编写整个程序，允许你基于 libcurl 库中编写图形环境的下载程序，访问它所有的功能。</p>
+<p>curl offers a busload of useful tricks like proxy support, user authentication, FTP upload, HTTP post, SSL connections, cookies, file  transfer  resume,  Metalink,  and more.<br>cURL 宽泛的网络协议支持可能是其最大的卖点。cURL 支持访问 HTTP 和 HTTPS 协议，能够处理 FTP 传输。它支持 LDAP 协议，甚至支持 Samba 分享。实际上，你还可以用 cURL 收发邮件。</p>
+<p>cURL 也有一些简洁的安全特性。cURL 支持安装许多 SSL/TLS 库，也支持通过网络代理访问，包括 SOCKS。这意味着，你可以越过 Tor 来使用cURL。<br>cURL 同样支持让数据发送变得更容易的 gzip 压缩技术。</p>
+<h4 id="fx"><a href="#fx" class="headerlink" title="fx"></a>fx</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/antonmedv/fx">https://github.com/antonmedv/fx</a><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fx data.json</span><br><span class="line"><span class="comment"># 不展开</span></span><br><span class="line">curl <span class="string">...</span> | fx <span class="comment"># 点击可展开，可搜索 .xxx.xxx</span></span><br><span class="line"><span class="comment"># 全部展开</span></span><br><span class="line">curl <span class="string">...</span> | fx .</span><br></pre></td></tr></table></figure></li>
+<li>查问题的时候，能方便看到json数据<h4 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h4>Wget - The non-interactive network downloader.</li>
+</ul>
+<h4 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">netstat -- show network status</span><br><span class="line"><span class="comment"># 查看连接当前服务器的用户IP，前5名</span></span><br><span class="line">netstat -nat | awk <span class="string">&#x27;&#123;print $5&#125;&#x27;</span> | awk -F <span class="string">&#x27;:&#x27;</span> <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c | <span class="built_in">sort</span> -rn | <span class="built_in">head</span> -n 5</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h4><p>自定义指令<br>注意，如果使用了zsh,则改动bash的配置就不生效了,只需要处理下.zshrc文件即可</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">open -e <span class="string">.zshrc</span> </span><br><span class="line">source <span class="string">.zshrc</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>source命令是在Linux和Unix系统中用来重新加载shell环境变量和函数的命令。在更改了环境变量或者函数定义的情况下，可以使用source命令或者其等效的.（点）符号让这些更改立即生效，而无需重新启动终端</li>
+<li>重启终端可以让所有更改的环境变量或函数完全生效<h4 id="fx-https-github-com-antonmedv-fx"><a href="#fx-https-github-com-antonmedv-fx" class="headerlink" title="fx(https://github.com/antonmedv/fx)"></a>fx(<a target="_blank" rel="noopener" href="https://github.com/antonmedv/fx">https://github.com/antonmedv/fx</a>)</h4>能够格式化JSON文本<h4 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h4>tail/lnav</li>
+<li>tail 默认最后10行</li>
+<li>tail -f(循环读取)</li>
+</ul>
+<h3 id="具体场景"><a href="#具体场景" class="headerlink" title="具体场景"></a>具体场景</h3><h4 id="查看目录下文件-文件夹个数"><a href="#查看目录下文件-文件夹个数" class="headerlink" title="查看目录下文件/文件夹个数"></a>查看目录下文件/文件夹个数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件</span></span><br><span class="line">_posts git:(master) ✗ <span class="built_in">ls</span> -l | grep <span class="string">&quot;^-&quot;</span> | <span class="built_in">wc</span> -l</span><br><span class="line">     149</span><br><span class="line"><span class="comment"># 文件夹</span></span><br><span class="line">_posts git:(master) ✗ <span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | <span class="built_in">wc</span> -l</span><br><span class="line">     135</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包括子文件夹</span></span><br><span class="line"><span class="built_in">ls</span> -lR</span><br></pre></td></tr></table></figure>
+
+<h3 id="export"><a href="#export" class="headerlink" title="export"></a>export</h3><p>Linux export 命令用于设置或显示环境变量。</p>
+<p>在 shell 中执行程序时，shell 会提供一组环境变量。export 可新增，修改或删除环境变量，供后续执行的程序使用。export 的效力仅限于该次登陆操作。</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export <span class="comment">[-fnp]</span><span class="comment">[变量名称]</span>=<span class="comment">[变量设置值]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">date</span> | cal | <span class="built_in">df</span> | free( free - Display amount of free and used memory <span class="keyword">in</span> the system 显示内存使用情况的统计信息)</span><br><span class="line">[root@VM-12-3-centos ~]<span class="comment"># free</span></span><br><span class="line">              total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:        1882008      501288       80272         520     1300448     1196596</span><br><span class="line">[root@VM-12-3-centos ~]<span class="comment"># df -Th</span></span><br><span class="line">Filesystem     Type      Size  Used Avail Use% Mounted on</span><br><span class="line">devtmpfs       devtmpfs  908M     0  908M   0% /dev</span><br><span class="line">tmpfs          tmpfs     919M   24K  919M   1% /dev/shm</span><br><span class="line">tmpfs          tmpfs     919M  496K  919M   1% /run</span><br><span class="line">tmpfs          tmpfs     919M     0  919M   0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1      ext4       59G  5.9G   51G  11% /</span><br><span class="line">tmpfs          tmpfs     184M     0  184M   0% /run/user/0</span><br><span class="line">[root@VM-12-3-centos ~]<span class="comment"># df -Th /data</span></span><br><span class="line">Filesystem     Type  Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/vda1      ext4   59G  5.9G   51G  11% /</span><br><span class="line"></span><br><span class="line"><span class="comment"># -h (--human) 方便阅读的数据单位格式</span></span><br><span class="line"><span class="comment"># -T (--print-type) print file system typeq</span></span><br></pre></td></tr></table></figure>
+<p>free里面有个buffer(缓冲区)，例如打印场景；在Linux中，你会发现系统运行的时间越长，占用的内存就越多。这并不是说Linux用完了所有内存，而是Linux利用所有的可用内存尽可能地进行缓冲；<br>卸载设备会将所有剩余的数据写入设备，以便能够将其安全地移除。如果在移除前没有先卸载，则存在数据并未完全写入该设备的可能性。</p>
+<h3 id="存储介质"><a href="#存储介质" class="headerlink" title="存储介质"></a>存储介质</h3><p>mount：挂载文件系统<br>umount：卸载文件系统<br>fsck：检查和修复文件系统<br>fdisk：操作分区<br>mkfs：创建新的文件系统<br>dd：转换和复制文件<br>genisoimage（mkisofs）：创建ISO 9660映像文件<br>wodim（cdrecord）：擦除和刻录光学存储介质<br>md5sum：计算MD5校验和</p>
+<h3 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cron - 周期性执行</span><br><span class="line"><span class="keyword">at</span> - 单一时刻执行一次任务</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="etc-init-d"><a href="#etc-init-d" class="headerlink" title="/etc/init.d"></a>/etc/init.d</h3><h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><blockquote>
+<p>man XXX / xxx –help </p>
+</blockquote>
+<ol>
+<li>su / sudo (man su / man sudo)  su 使用的是root的密码，sudo使用的是当前用户的密码</li>
+<li>default setting 默认设置</li>
+<li>enable adapter  授权适配</li>
+<li>at the boot prompt (boot:引导，启动)</li>
+<li>sed：stream editor for filtering and transforming text<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A stream editor <span class="keyword">is</span> used <span class="keyword">to</span> <span class="keyword">perform</span> basic <span class="type">text</span> transformations <span class="keyword">on</span> an <span class="keyword">input</span> stream (a file <span class="keyword">or</span></span><br><span class="line">  <span class="keyword">input</span> <span class="keyword">from</span> a pipeline).  <span class="keyword">While</span> <span class="keyword">in</span> <span class="keyword">some</span> ways <span class="keyword">similar</span> <span class="keyword">to</span> an editor which permits scripted edits (such <span class="keyword">as</span> ed),  sed  works <span class="keyword">by</span>  making <span class="keyword">only</span> one pass <span class="keyword">over</span> the <span class="keyword">input</span>(s), <span class="keyword">and</span> <span class="keyword">is</span> consequently more efficient.  But it <span class="keyword">is</span> sed<span class="string">&#x27;s ability to filter text</span></span><br><span class="line"><span class="string">  in a pipeline which particularly distinguishes it from other types of editors.</span></span><br></pre></td></tr></table></figure>
+特点：1、非交互式编辑器；<br>     2、没有破坏性，不修改原文件，除非使用shell的重定向符来保存结果；<br>     3、sed也支持sed脚本。<br>其工作原理为：将一行文字读到内存空间（该内存空间称为sed的模式空间）里面去，做完处理之后，再输出到屏幕上。<br>sed 的模式空间：即能被sed匹配到的字符串被存放到的内存空间。</li>
+<li>command prompt 命令提示符;</li>
+<li>subsystem 子系统，分系统;</li>
+<li>X11 forwarding </li>
+<li>动态主机配置协议（Dynamic Host Configuration Protocol, DHCP）是一个局域网的网络协议，使用UDP协议工作，主要有两个用途：给内部网络或网络服务供应商自动分配IP地址，给用户或者内部网络管理员作为对所有计算机作中央管理的手段。</li>
+<li>SSH 为 Secure Shell 的缩写，由 IETF 的网络工作小组（Network Working Group）所制定；SSH 为建立在应用层和传输层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。SSH最初是UNIX系统上的一个程序，后来又迅速扩展到其他操作平台。SSH在正确使用时可弥补网络中的漏洞。SSH客户端适用于多种平台。几乎所有UNIX平台—包括HP-UX、Linux、AIX、Solaris、Digital UNIX、Irix，以及其他平台—都可运行SSH。</li>
+<li>archive 归档</li>
+</ol>
+<pre>
+su：Swith user  切换用户，切换到root用户
+cat: Concatenate  串联
+uname: Unix name  系统名称
+df: Disk free  空余硬盘
+du: Disk usage 硬盘使用率
+chown: Change owner 改变所有者
+chgrp: Change group 改变用户组
+ps：Process Status  进程状态
+tar：Tape archive 解压文件
+chmod: Change mode 改变模式
+umount: Unmount 卸载
+ldd：List dynamic dependencies 列出动态相依
+insmod：Install module 安装模块
+rmmod：Remove module 删除模块
+lsmod：List module 列表模块
+alias :Create your own name for a command
+bash :GNU Bourne-Again Shell  linux内核 
+grep:global regular expression print
+httpd :Start Apache
+ipcalc :Calculate IP information for a host
+ping :Send ICMP ECHO_Request to network hosts
+reboot: Restart your computer
+sudo:Superuser do
+ 
+
+FIFO = First In, First Out 
+GRUB = GRand Unified Bootloader 
+IFS = Internal Field Seperators 
+LILO = LInux LOader 
+MySQL = My最初作者的名字SQL = Structured Query Language 
+PHP = Personal Home Page Tools = PHP Hypertext Preprocessor 
+PS = Prompt String 
+Perl = "Pratical Extraction and Report Language" = "Pathologically Eclectic Rubbish Lister" 
+Python Monty Python's Flying Circus 
+Tcl = Tool Command Language 
+Tk = ToolKit 
+VT = Video Terminal 
+YaST = Yet Another Setup Tool 
+apache = "a patchy" server 
+apt = Advanced Packaging Tool 
+ar = archiver 
+as = assembler 
+bash = Bourne Again SHell 
+bc = Basic (Better) Calculator 
+bg = BackGround 
+cal = CALendar 
+cat = CATenate 
+cd = Change Directory 
+chgrp = CHange GRouP 
+chmod = CHange MODe 
+chown = CHange OWNer 
+chsh = CHange SHell 
+cmp = compare 
+cobra = Common Object Request Broker Architecture 
+comm = common 
+cp = CoPy 
+cpio = CoPy In and Out 
+cpp = C Pre Processor 
+cups = Common Unix Printing System 
+cvs = Current Version System 
+daemon = Disk And Execution MONitor 
+dc = Desk Calculator 
+dd = Disk Dump 
+df = Disk Free 
+diff = DIFFerence 
+dmesg = diagnostic message 
+du = Disk Usage 
+ed = editor 
+egrep = Extended GREP 
+elf = Extensible Linking Format 
+elm = ELectronic Mail 
+emacs = Editor MACroS 
+eval = EVALuate 
+ex = EXtended 
+exec = EXECute 
+fd = file descriptors 
+fg = ForeGround 
+fgrep = Fixed GREP 
+fmt = format 
+fsck = File System ChecK 
+fstab = FileSystem TABle 
+fvwm = F*** Virtual Window Manager 
+gawk = GNU AWK 
+gpg = GNU Privacy Guard 
+groff = GNU troff 
+hal = Hardware Abstraction Layer 
+joe = Joe's Own Editor 
+ksh = Korn SHell 
+lame = Lame Ain't an MP3 Encoder 
+lex = LEXical analyser 
+lisp = LISt Processing = Lots of Irritating Superfluous Parentheses 
+ln = LiNk 
+lpr = Line PRint 
+ls = list 
+lsof = LiSt Open Files 
+m4 = Macro processor Version 4 
+man = MANual pages 
+mawk = Mike Brennan's AWK 
+mc = Midnight Commander 
+mkfs = MaKe FileSystem 
+mknod = MaKe NODe 
+motd = Message of The Day 
+mozilla = MOsaic GodZILLa 
+mtab = Mount TABle 
+mv = MoVe 
+nano = Nano's ANOther editor 
+nawk = New AWK 
+nl = Number of Lines 
+nm = names 
+nohup = No HangUP 
+nroff = New ROFF 
+od = Octal Dump 
+passwd = PASSWorD 
+pg = pager 
+pico = PIne's message COmposition editor 
+pine = "Program for Internet News & Email" = "Pine is not Elm" 
+ping =  Packet InterNet Grouper 
+pirntcap = PRINTer CAPability 
+popd = POP Directory 
+pr = pre 
+printf = PRINT Formatted 
+ps = Processes Status 
+pty = pseudo tty 
+pushd = PUSH Directory 
+pwd = Print Working Directory 
+rc = runcom = run command, shell 
+rev = REVerse 
+rm = ReMove 
+rn = Read News 
+roff = RunOFF 
+rpm = RPM Package Manager = RedHat Package Manager 
+rsh, rlogin, = Remote 
+rxvt = ouR XVT 
+sed = Stream EDitor 
+seq = SEQuence 
+shar = SHell ARchive 
+slrn = S-Lang rn 
+ssh = Secure SHell 
+ssl = Secure Sockets Layer 
+stty = Set TTY 
+su = Substitute User 
+svn = SubVersioN 
+tar = Tape ARchive 
+tcsh = TENEX C shell 
+telnet = TEminaL over Network 
+termcap = terminal capability 
+terminfo = terminal information 
+tr = traslate 
+troff = Typesetter new ROFF 
+tsort = Topological SORT 
+tty = TeleTypewriter 
+twm = Tom's Window Manager 
+tz = TimeZone 
+udev = Userspace DEV 
+ulimit = User's LIMIT 
+umask = User's MASK 
+uniq = UNIQue 
+vi = VIsual = Very Inconvenient 
+vim = Vi IMproved 
+wall = write all 
+wc = Word Count 
+wine = WINE Is Not an Emulator 
+xargs = eXtended ARGuments 
+xdm = X Display Manager 
+xlfd = X Logical Font Description 
+xmms = X Multimedia System 
+xrdb = X Resources DataBase 
+xwd = X Window Dump 
+yacc = yet another compiler compile
+
+</pre>
+
+<pre>
+EOF = end of file(https://en.wikipedia.org/wiki/End-of-file)
+RPC = Remote Procedure Call(Remote Procedure Call (RPC) is a protocol that provides the high-level communications paradigm used in the operating system.)
+</pre>
+
+
+<h4 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://rpm.org/about.html">https://rpm.org/about.html</a></li>
+<li>RPM软件包管理器（RPM）是一个强大的命令行驱动的软件包管理系统，能够安装、卸载、验证、查询和更新计算机软件包。</li>
+<li>Install on RPM-based Linux (CentOS, Fedora, OpenSuse, Red Hat)</li>
+</ul>
+<h4 id="dump"><a href="#dump" class="headerlink" title="dump"></a>dump</h4><ul>
+<li>备份文件系统</li>
+<li>Fedora - <a target="_blank" rel="noopener" href="https://installati.one/fedora/34/dump/">https://installati.one/fedora/34/dump/</a></li>
+</ul>
+<h4 id="lsbrelease"><a href="#lsbrelease" class="headerlink" title="lsbrelease"></a>lsbrelease</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://refspecs.linuxfoundation.org/LSB_3.0.0/LSB-PDA/LSB-PDA/lsbrelease.html">https://refspecs.linuxfoundation.org/LSB_3.0.0/LSB-PDA/LSB-PDA/lsbrelease.html</a></li>
+</ul>
+<h4 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h4><ul>
+<li>协议</li>
+<li>TCP/IP协议族中的一员</li>
+<li>Internet远程登陆服务的标准协议和主要方式</li>
+</ul>
+<h4 id="netcat"><a href="#netcat" class="headerlink" title="netcat"></a>netcat</h4><p>nc -l port</p>
+<h4 id="查目录名称"><a href="#查目录名称" class="headerlink" title="查目录名称"></a>查目录名称</h4><ul>
+<li>ls -l | grep ^d | awkj ‘console.log($9)’</li>
+</ul>
+<h4 id="kill-pkill"><a href="#kill-pkill" class="headerlink" title="kill pkill"></a>kill pkill</h4><p>结束指定进程：kill [进程ID]<br>按进程名结束进程：killall [进程名]<br>需要注意的是，kill命令默认发送的是SIGTERM信号，也可以使用“-9”选项发送SIGKILL信号，但是SIGKILL信号不会给进程机会执行清理工作，直接终止进程可能会导致数据丢失等问题。</p>
+<p>pkill命令则更加方便一些，它允许你使用进程名或者其他属性来选择要结束的进程，比如：<br>结束指定进程名的进程：pkill [进程名]<br>结束指定用户的所有进程：pkill -u [用户名]<br>需要注意的是，pkill使用的也是SIGTERM信号，同样可以使用“-9”选项发送SIGKILL信号。</p>
+<h3 id="ack"><a href="#ack" class="headerlink" title="ack"></a>ack</h3><ul>
+<li>apt-get install ack-grep</li>
+<li>brew install ack</li>
+<li>搜索代码很好用</li>
+</ul>
+<h3 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h3><ul>
+<li>macos13 - brew安装会提示</li>
+</ul>
+<h3 id="lsb-release-a"><a href="#lsb-release-a" class="headerlink" title="lsb_release -a"></a>lsb_release -a</h3><p>在Linux中，”lsb_release -a”这个命令被用来查看系统的相关信息。其中的”lsb”是”Linux Standard Base”的缩写，它代表了一套Linux系统的标准规范，旨在增强Linux的兼容性</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">LSB</span> Version:    :core-<span class="number">4</span>.<span class="number">1</span>-amd64:core-<span class="number">4</span>.<span class="number">1</span>-noarch</span><br><span class="line"><span class="attribute">Distributor</span> ID: CentOS</span><br><span class="line"><span class="attribute">Description</span>:    CentOS Linux release <span class="number">8</span>.<span class="number">5</span>.<span class="number">2111</span></span><br><span class="line"><span class="attribute">Release</span>:        <span class="number">8</span>.<span class="number">5</span>.<span class="number">2111</span></span><br><span class="line"><span class="attribute">Codename</span>:       n/a</span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

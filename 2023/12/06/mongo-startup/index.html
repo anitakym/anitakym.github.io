@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        mongo-startup - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mongosh"><span class="toc-text">Mongosh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Artifactory"><span class="toc-text">Artifactory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prune"><span class="toc-text">prune</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84"><span class="toc-text">端口映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongo-compass"><span class="toc-text">mongo compass</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        mongo-startup
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-12-06 14:33:13</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="Mongosh"><a href="#Mongosh" class="headerlink" title="Mongosh"></a>Mongosh</h3><p>MongoDB Shell(Mongosh)是MongoDB的标准交互式JavaScript接口。直到MongoDB 4.2，标准的shell是mongo。在MongoDB 4.4中，Mongosh是一种新的命令行接口，用来代替老的mongo shell。这是因为Mongosh比起老的mongo shell有更多的现代化的交互特性。 </p>
+<p>然而，MongoDB 4.4是在Mongosh正式发布之前就发布的。因此，MongoDB 4.4及其之前的版本的安装包中并不包含Mongosh，因为在那个时候Mongosh就还未开发完。如果你想在MongoDB 4.4或之前的版本中使用Mongosh，你需要自己去下载和安装。</p>
+<h3 id="Artifactory"><a href="#Artifactory" class="headerlink" title="Artifactory"></a>Artifactory</h3><p>Artifactory是JFrog公司开发的一个强大的二进制包管理工具，支持各种主流的包管理系统，包括Java，Python，npm，npm，Maven，Gradle，NuGet，Ruby，YUM，Debian等。Artifactory可以帮助开发者和DevOps工程师存储、组织、管理（如访问控制、版本管理），以及跟踪他们的代码，减少构建和发布流程中的复杂性。</p>
+<p>Artifactory主要包含以下特性：</p>
+<ol>
+<li>强大的二进制包管理能力：无论你是在本地还是在云端都可以管理和跟踪你的二进制包。</li>
+<li>强大的集成能力：与主流的CI/CD工具，像Jenkins，Bamboo，TeamCity，和Docker等等做了深度的集成。</li>
+<li>安全和访问控制：可以为你的仓库，包和元数据设置权限来保证你的代码的安全。</li>
+<li>版本管理：可以管理和跟踪你的包的版本，确保你总能找到你需要的版本。</li>
+<li>多仓库管理：Artifactory允许你为你的包设置不同的仓库，可以帮助你更好地组织你的包。</li>
+</ol>
+<h3 id="prune"><a href="#prune" class="headerlink" title="prune"></a>prune</h3><p>docker system prune<br>docker system prune -a</p>
+<h3 id="端口映射"><a href="#端口映射" class="headerlink" title="端口映射"></a>端口映射</h3><p>如果在Docker容器中运行的应用程序需要通过网络进行交互，那么端口映射是必须的。如果没有进行端口映射，会遇到以下问题：</p>
+<ol>
+<li>外部访问：如果没有进行端口映射，那么外部设备（包括运行 Docker 的宿主机）无法通过网络访问到容器中的应用。这是因为 Docker 容器有自己的网络命名空间，对外界默认是隔离的。</li>
+<li>通信隔离：另外，如果多个容器之间需要进行通信，如果没有正确的端口映射，也可能导致相互之间无法通信。</li>
+<li>服务使用限制：对于某些需要阿尔特端口（如HTTP服务的80端口， HTTPS服务的443端口）的服务，如果你没有进行端口映射，可能就无法正常提供服务。</li>
+</ol>
+<h3 id="mongo-compass"><a href="#mongo-compass" class="headerlink" title="mongo compass"></a>mongo compass</h3><ul>
+<li>可视化，及时更新客户端，关注release</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

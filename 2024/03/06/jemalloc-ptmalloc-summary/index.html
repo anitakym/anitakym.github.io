@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        jemalloc-ptmalloc-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        jemalloc-ptmalloc-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-03-06 11:24:20</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://internals.rust-lang.org/t/jemalloc-was-just-removed-from-the-standard-library/8759">https://internals.rust-lang.org/t/jemalloc-was-just-removed-from-the-standard-library/8759</a><br>rust 从默认的jemalloc,该回了系统malloc</li>
+</ul>
+<p><code>jemalloc</code> 是一种开源内存分配库，有时由于其提供的优化性能，开发者会希望使用它替代默认的 <code>ptmalloc</code>，下面是在 Linux 上做此类替换的一般步骤：</p>
+<ol>
+<li><p>首先，我们需要安装 <code>jemalloc</code>。在 Ubuntu 上，可以使用 <code>apt-get</code>：</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install libjemalloc-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个包装脚本以将 <code>jemalloc</code> 插入到库加载序列的最前面。这实际上会将 <code>LD_PRELOAD</code> 环境变量设置为 <code>jemalloc</code> 的路径，以此在应用启动时优先加载 <code>jemalloc</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">export</span> LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.1</span><br><span class="line"><span class="built_in">exec</span> <span class="string">&quot;<span class="variable">$@</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>假设该脚本命名为 <code>use_jemalloc.sh</code>。要打开文件并使其可执行，我们可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x use_jemalloc.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在我们可以使用此脚本启动我们的应用，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./use_jemalloc.sh node app.js</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>上述步骤将确保你的 Node.js 应用使用 <code>jemalloc</code> 而不是默认的 <code>ptmalloc</code>。</p>
+<p>提示：<code>jemalloc</code> 的路径可能因操作系统和版本不同而异。如果 <code>/usr/lib/x86_64-linux-gnu/libjemalloc.so.1</code> 不起作用，你可能需要在你的系统中搜索正确的路径。</p>
+<p>不过，即便执行了上述步骤，也不能保证一定能提升性能，这很大程度上取决于你的特定应用和工作负载。这是一个值得试验的方面。如果你没有看到预期的性能改进，你可能需要更深入地研究或者考虑其他的优化方法。</p>
+<p>Node.js 应用 RSS 内存泄漏排查与解决方案<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/675317993">https://zhuanlan.zhihu.com/p/675317993</a></p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">故事从一次 Node.<span class="keyword">js </span><span class="number">20</span> 升级开始</span><br><span class="line">一直走弯路，Node.<span class="keyword">js </span><span class="number">16</span>、<span class="number">18</span> 就存在此问题</span><br><span class="line">第一次的 RSS 内存分析结论：内存碎片比较多没有及时回收</span><br><span class="line">问题结果：周期性 OOM</span><br><span class="line">故事再次循环</span><br><span class="line">复现代码</span><br><span class="line">TestCase1</span><br><span class="line">TestCase2</span><br><span class="line">npmmirror 使用 <span class="keyword">jemalloc </span>的修复效果</span><br><span class="line">通过 ezm 摸排有多少类似的应用</span><br><span class="line">只有 Node.<span class="keyword">js </span>出现此类问题吗？</span><br><span class="line">为什么 <span class="number">2009</span> 年 Facebook 就提供 <span class="keyword">jemalloc </span>解决此问题而 Node.<span class="keyword">js </span>在 <span class="number">2023</span> 年还在发生？</span><br><span class="line">相关资料</span><br><span class="line">故事从一次 Node.<span class="keyword">js </span><span class="number">20</span> 升级开始</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

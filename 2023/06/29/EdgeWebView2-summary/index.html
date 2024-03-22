@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        EdgeWebView2-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        EdgeWebView2-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-06-29 15:18:10</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Dh2t_UcRNMUTrxVVPVQVbw">https://mp.weixin.qq.com/s/Dh2t_UcRNMUTrxVVPVQVbw</a></li>
+<li>Electron末日来了？又一应用将其抛弃！WhatsApp强制推行原生应用：速度更快、内存占用更少</li>
+<li>十年“屎山”终重构，但 QQ选用了微软 Teams 放弃的 Electron<br>(微软teams转到了EdgeWebView2)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">该如何选择跨平台框架</span><br><span class="line">虽然多端统一带来很多便利，但跨平台框架并非万能。“跨平台意味着需要花费很多时间来解决平台差异性问题，同时要面临第三方库不够原生平台丰富健壮的现状。跨平台其实是牺牲部分功能和体验，换取开发速度和一致性的权衡，并不是业务开发的银弹。”腾讯微信客户端工程师方秋枋曾说道。</span><br><span class="line"></span><br><span class="line">目前，并没有一个能完善解决这些问题的解决方案。事实上，GitHub 重写应用的团队也曾表示，Web 并非完美的平台，不过原生应用也不是。使用 Electron 重写原生应用只不过是在不同的权衡点之间进行了交换。</span><br><span class="line"></span><br><span class="line">方秋枋认为，从框架开发者的角度，跨平台开发的难点就在于处理平台差异性。从框架使用者的角度，难点在于如果框架出问题了，维护成本将会变得非常高。</span><br><span class="line"></span><br><span class="line">那么，企业如何选择适合自己的跨平台开发框架？</span><br><span class="line"></span><br><span class="line">阿里巴巴淘系技术部资深无线技术专家黄刚（花名：腾渊）曾分享道，从应用的 Life <span class="keyword">Cycle</span> 来看，研发阶段只是其中一个阶段，是否具有长久的可维护性、可运维性也是需要重点考虑的问题。</span><br><span class="line"></span><br><span class="line">腾渊表示，如果在当下的业务形态里，前台展现是高度产品化、比较稳定或者对于性能以及交互的要求极度苛刻的，那么 <span class="keyword">Cross</span><span class="operator">-</span>Platform <span class="keyword">First</span> 未必是一个理想的选择。一方面，多平台开发工作在整个研发成本里的占比不高，ROI 未必高；另一方面是 <span class="keyword">Cross</span><span class="operator">-</span>Platform <span class="keyword">First</span> 是以牺牲平台特性为代价来达到跨平台的一致性。在达到一致性表现的过程中，工程上的填坑成本可能更高。</span><br><span class="line"></span><br><span class="line">反过来讲，如果当前的业务，前台的呈现比较不稳定并且整个前台开发占比较高，那么应用跨平台框架的收益就比较高了。</span><br><span class="line"></span><br><span class="line">腾渊认为，从 Hybrid 的方案到 React Native、Weex 再到 Flutter，本质上都是在研发成本、灵活性、性能体验三者间找一个平衡点，只是大家切入的点不太一样，最终导致整个解决方案有了不同。</span><br><span class="line"></span><br><span class="line">“假设现在你要做一个新的 App，可能整个开发团队是多前端、少客户端的，那我可能比较建议考虑 Hybrid 的模式；如果对性能要求比较高，可以考虑 Weex 或者 React Native；反过来，如果是客户端同学比较多，那么考虑下 Flutter 未尝不可。”腾渊说道。</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

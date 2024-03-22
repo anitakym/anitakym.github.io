@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        flutter-webview - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#debugging"><span class="toc-text">debugging</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#packages"><span class="toc-text">packages</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IOS"><span class="toc-text">IOS</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tips"><span class="toc-text">Tips</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP"><span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mode"><span class="toc-text">mode</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#h5%E5%AF%B9%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9%EF%BC%8Cwebview%E7%89%88%E6%9C%AC%E4%BD%8E%E4%BC%9A%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">h5对接第三方，webview版本低会导致的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cases"><span class="toc-text">cases</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WKWebView-%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%AE%9E%E8%B7%B5"><span class="toc-text">WKWebView 请求拦截探索与实践</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        flutter-webview
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-08-09 14:12:43</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="debugging"><a href="#debugging" class="headerlink" title="debugging"></a>debugging</h3><p><a target="_blank" rel="noopener" href="https://inappwebview.dev/docs/debugging-webviews/">https://inappwebview.dev/docs/debugging-webviews/</a></p>
+<h3 id="packages"><a href="#packages" class="headerlink" title="packages"></a>packages</h3><p><a target="_blank" rel="noopener" href="https://pub.dev/packages/webview_flutter">https://pub.dev/packages/webview_flutter</a></p>
+<h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><ul>
+<li>on Android the WebView widget is backed by a WebView.</li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.com/reference/android/webkit/WebView">https://developer.android.com/reference/android/webkit/WebView</a></li>
+<li><a target="_blank" rel="noopener" href="https://flutter.dev/docs/development/platform-integration/platform-views">https://flutter.dev/docs/development/platform-integration/platform-views</a></li>
+</ul>
+<h4 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/webkit/wkwebview">https://developer.apple.com/documentation/webkit/wkwebview</a></li>
+</ul>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><ul>
+<li>iOS默认会白屏</li>
+<li>android9.0以上版本也会限制访问</li>
+<li>info.list | AndroidManifest.xml</li>
+</ul>
+<h4 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h4><ul>
+<li>When building your application in release mode, Flutter apps can be compiled for armeabi-v7a (ARM 32-bit), arm64-v8a (ARM 64-bit), and x86-64 (x86 64-bit). Flutter does not currently support building for x86 Android.</li>
+<li><a target="_blank" rel="noopener" href="https://flutter.dev/docs/deployment/android#what-are-the-supported-target-architectures">https://flutter.dev/docs/deployment/android#what-are-the-supported-target-architectures</a></li>
+</ul>
+<h3 id="h5对接第三方，webview版本低会导致的问题"><a href="#h5对接第三方，webview版本低会导致的问题" class="headerlink" title="h5对接第三方，webview版本低会导致的问题"></a>h5对接第三方，webview版本低会导致的问题</h3><h4 id="cases"><a href="#cases" class="headerlink" title="cases"></a>cases</h4><ul>
+<li>padStart 支持</li>
+<li></li>
+</ul>
+<h3 id="WKWebView-请求拦截探索与实践"><a href="#WKWebView-请求拦截探索与实践" class="headerlink" title="WKWebView 请求拦截探索与实践"></a>WKWebView 请求拦截探索与实践</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6922625242796032007">https://juejin.cn/post/6922625242796032007</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

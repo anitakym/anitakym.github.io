@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        3d数据可视化 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E7%AF%87"><span class="toc-text">工具篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webgl%EF%BC%88%E5%9B%BE%E5%BD%A2%E7%B3%BB%E7%BB%9F%EF%BC%89"><span class="toc-text">webgl（图形系统）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lib-%E5%9B%BE%E5%BD%A2%E5%BA%93"><span class="toc-text">lib - 图形库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E6%89%8B%E6%9C%BA%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99"><span class="toc-text">各种手机官方网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3d-model"><span class="toc-text">3d model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#basics"><span class="toc-text">basics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gltf-vs-fbx"><span class="toc-text">gltf vs fbx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vizceral"><span class="toc-text">vizceral</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96-Basic"><span class="toc-text">可视化 - Basic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Basics"><span class="toc-text">Basics</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#others"><span class="toc-text">others</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#spritejs"><span class="toc-text">spritejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-text">绘制一个三角形</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        3d数据可视化
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-12-01 15:59:59</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>学习机里面的互动机器人</p>
+</blockquote>
+<h2 id="工具篇"><a href="#工具篇" class="headerlink" title="工具篇"></a>工具篇</h2><ul>
+<li>D3</li>
+<li>图表库</li>
+<li>GIS</li>
+</ul>
+<h2 id="webgl（图形系统）"><a href="#webgl（图形系统）" class="headerlink" title="webgl（图形系统）"></a>webgl（图形系统）</h2><ul>
+<li>web graphics library</li>
+<li>opengl es 2.0<br>（还有HTML+CSS ｜ SVG ｜ Canvas）<h2 id="lib-图形库"><a href="#lib-图形库" class="headerlink" title="lib - 图形库"></a>lib - 图形库</h2></li>
+<li>threejs,babylonjs scenejs,cesiumjs</li>
+</ul>
+<h2 id="各种手机官方网站"><a href="#各种手机官方网站" class="headerlink" title="各种手机官方网站"></a>各种手机官方网站</h2><ul>
+<li>like apple</li>
+<li>vivo</li>
+</ul>
+<h2 id="3d-model"><a href="#3d-model" class="headerlink" title="3d model"></a>3d model</h2><ul>
+<li>obj - 纯文本 - 动画支持较弱</li>
+<li>fbx - 二进制 - 不同引擎解析差异</li>
+<li>gltf - json - 扩展性好</li>
+<li>模型文件</li>
+</ul>
+<h2 id="basics"><a href="#basics" class="headerlink" title="basics"></a>basics</h2><ul>
+<li>相机 - 投影</li>
+<li>光照</li>
+<li>旋转模型</li>
+<li>全景</li>
+<li>性能（模型压缩）</li>
+</ul>
+<h2 id="gltf-vs-fbx"><a href="#gltf-vs-fbx" class="headerlink" title="gltf vs fbx"></a>gltf vs fbx</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.threekit.com/blog/gltf-vs-fbx-which-format-should-i-use">https://www.threekit.com/blog/gltf-vs-fbx-which-format-should-i-use</a></li>
+<li>不同引擎提供的导入工具，也会要求不同的fbx导出处理方式，从而达到最好的效果</li>
+</ul>
+<h2 id="vizceral"><a href="#vizceral" class="headerlink" title="vizceral"></a>vizceral</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Netflix/vizceral">https://github.com/Netflix/vizceral</a></li>
+<li>vizceral is a component for displaying traffic data on a webgl canvas. If a graph of nodes and edges with data about traffic volume is provided, it will render a traffic graph animating the connection volume between nodes.</li>
+</ul>
+<h2 id="可视化-Basic"><a href="#可视化-Basic" class="headerlink" title="可视化 - Basic"></a>可视化 - Basic</h2><h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><ul>
+<li><p>CPU 运算单位</p>
+</li>
+<li><p>GPU 图形处理单元</p>
+</li>
+<li><p>可视化更重要的是利用WebGL这样的图形系统，来更高效的去实现更多有趣的图形</p>
+</li>
+<li><p>数据 =&gt; 视觉</p>
+</li>
+<li><p>数据（设计语言 - 数据建模 - 数据分析）</p>
+</li>
+<li><p>视觉（工具｜图形库｜图形系统｜理论basic）</p>
+</li>
+<li><p>可视化 - 性能</p>
+</li>
+</ul>
+<h4 id="others"><a href="#others" class="headerlink" title="others"></a>others</h4><h4 id="spritejs"><a href="#spritejs" class="headerlink" title="spritejs"></a>spritejs</h4><ul>
+<li>跨平台的开源图形系统</li>
+</ul>
+<h4 id="绘制一个三角形"><a href="#绘制一个三角形" class="headerlink" title="绘制一个三角形"></a>绘制一个三角形</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">width</span>=<span class="string">&quot;300&quot;</span> <span class="attr">height</span>=<span class="string">&quot;300&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 创建webgl上下文</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;canvas&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> gl = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;webgl&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 创建WebGL程序</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// glsl - 顶点着色器 - 处理顶点的CPU程序代码</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> vertex = <span class="string">`</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            attribute vec2 position;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            varying vec3 color;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            void main() &#123;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">                gl_PointSize = 1.0;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">                color = vec3(0.5 + position * 0.5, 0.0);</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">                gl_Position = vec4(position * 0.5, 1.0, 1.0);</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            &#125;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            `</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 片元着色器 - 处理光栅化后的像素信息</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> fragment = <span class="string">`</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            precision mediump float;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            varying vec3 color;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            void main() </span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            &#123;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">                gl_FragColor = vec4(color, 1.0);</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            &#125;</span></span></span><br><span class="line"><span class="string"><span class="language-javascript">            `</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// shader 对象创建</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> vertexShader = gl.<span class="title function_">createShader</span>(gl.<span class="property">VERTEX_SHADER</span>)</span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">shaderSource</span>(vertexShader, vertex)</span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">compileShader</span>(vertexShader)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> fragmentShader = gl.<span class="title function_">createShader</span>(gl.<span class="property">FRAGMENT_SHADER</span>)</span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">shaderSource</span>(fragmentShader, fragment)</span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">compileShader</span>(fragmentShader)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// webglprogram obj create</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> program = gl.<span class="title function_">createProgram</span>()</span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">attachShader</span>(program, vertexShader)</span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">attachShader</span>(program, fragmentShader)</span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">linkProgram</span>(program)</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// use webglprogram obj</span></span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">useProgram</span>(program)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 数据存入缓冲区</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> points = <span class="keyword">new</span> <span class="title class_">Float32Array</span>([-<span class="number">1</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, -<span class="number">1</span>])</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// create buffer obj</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> bufferId = gl.<span class="title function_">createBuffer</span>()</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// bind as current</span></span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">bindBuffer</span>(gl.<span class="property">ARRAY_BUFFER</span>, bufferId)</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// write</span></span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">bufferData</span>(gl.<span class="property">ARRAY_BUFFER</span>, points, gl.<span class="property">STATIC_DRAW</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// gpu 加载缓存中的数据</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// get vertex position</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> vPosition = gl.<span class="title function_">getAttribLocation</span>(program, <span class="string">&#x27;position&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// set length and type</span></span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">vertexAttribPointer</span>(vPosition, <span class="number">2</span>, gl.<span class="property">FLOAT</span>, <span class="literal">false</span>, <span class="number">0</span>, <span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// activate</span></span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">enableVertexAttribArray</span>(vPosition)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 绘制图形</span></span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">clear</span>(gl.<span class="property">COLOR_BUFFER_BIT</span>)</span></span><br><span class="line"><span class="language-javascript">        gl.<span class="title function_">drawArrays</span>(gl.<span class="property">TRIANGLES</span>, <span class="number">0</span>, points.<span class="property">length</span> / <span class="number">2</span>)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

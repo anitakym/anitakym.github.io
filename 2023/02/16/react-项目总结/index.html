@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        react-项目总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#why"><span class="toc-text">why</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history-feature"><span class="toc-text">history - feature</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react-scripts"><span class="toc-text">react-scripts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#better-scroll"><span class="toc-text">better-scroll</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react-lazyload"><span class="toc-text">react-lazyload</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react-flow"><span class="toc-text">react-flow</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react-transition-group"><span class="toc-text">react-transition-group</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#emotion-react"><span class="toc-text">@emotion&#x2F;react</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96"><span class="toc-text">优化</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        react-项目总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-02-16 11:46:21</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h4 id="why"><a href="#why" class="headerlink" title="why"></a>why</h4><ul>
+<li>交互式UI-简单</li>
+<li>组件化</li>
+<li>跨平台</li>
+</ul>
+<h4 id="history-feature"><a href="#history-feature" class="headerlink" title="history - feature"></a>history - feature</h4><p><code>https://github.com/facebook/react/releases</code></p>
+<ul>
+<li>v16.0 - 2017.09 <figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">重写R<span class="function"><span class="title">econciler</span> - 性能，Fiber - 性能 ，createPortal API - 让节点渲染到指定容器内，更好实现弹窗功能 ，componentDidCatch -&gt;</span> 划分了错误边界，捕获渲染中的异常</span><br></pre></td></tr></table></figure></li>
+<li>v16.2<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">React</span></span><br><span class="line"><span class="selector-tag">Add</span> <span class="selector-tag">Fragment</span> <span class="selector-tag">as</span> <span class="selector-tag">named</span> <span class="selector-tag">export</span> <span class="selector-tag">to</span> <span class="selector-tag">React</span>. (<span class="variable">@clemmy</span> in #<span class="number">10783</span>) <span class="selector-tag">-</span>&gt; 解决数组元素问题</span><br><span class="line"><span class="selector-tag">Support</span> <span class="selector-tag">experimental</span> <span class="selector-tag">Call</span>/<span class="selector-tag">Return</span> <span class="selector-tag">types</span> <span class="selector-tag">in</span> <span class="selector-tag">React</span><span class="selector-class">.Children</span> <span class="selector-tag">utilities</span>. (<span class="variable">@MatteoVH</span> in #<span class="number">11422</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>v16.3<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">React</span></span><br><span class="line"><span class="selector-tag">Add</span> <span class="selector-tag">a</span> <span class="selector-tag">new</span> <span class="selector-tag">officially</span> <span class="selector-tag">supported</span> <span class="selector-tag">context</span> <span class="selector-tag">API</span>. (<span class="variable">@acdlite</span> in #<span class="number">11818</span>)</span><br><span class="line"><span class="selector-tag">Add</span> <span class="selector-tag">a</span> <span class="selector-tag">new</span> <span class="selector-tag">React</span><span class="selector-class">.createRef</span>() <span class="selector-tag">API</span> <span class="selector-tag">as</span> <span class="selector-tag">an</span> <span class="selector-tag">ergonomic</span> <span class="selector-tag">alternative</span> <span class="selector-tag">to</span> <span class="selector-tag">callback</span> <span class="selector-tag">refs</span>. (<span class="variable">@trueadm</span> in #<span class="number">12162</span>)</span><br><span class="line"><span class="selector-tag">Add</span> <span class="selector-tag">a</span> <span class="selector-tag">new</span> <span class="selector-tag">React</span><span class="selector-class">.forwardRef</span>() <span class="selector-tag">API</span> <span class="selector-tag">to</span> <span class="selector-tag">let</span> <span class="selector-tag">components</span> <span class="selector-tag">forward</span> <span class="selector-tag">their</span> <span class="selector-tag">refs</span> <span class="selector-tag">to</span> <span class="selector-tag">a</span> <span class="selector-tag">child</span>. (<span class="variable">@bvaughn</span> in #<span class="number">12346</span>)</span><br><span class="line"><span class="selector-tag">Fix</span> <span class="selector-tag">a</span> <span class="selector-tag">false</span> <span class="selector-tag">positive</span> <span class="selector-tag">warning</span> <span class="selector-tag">in</span> <span class="selector-tag">IE11</span> <span class="keyword">when</span> using React.Fragment. (<span class="variable">@XaveScor</span> in #<span class="number">11823</span>)</span><br><span class="line">Replace React.unstable_AsyncComponent with React.unstable_AsyncMode. (<span class="variable">@acdlite</span> in #<span class="number">12117</span>)</span><br><span class="line">Improve the error message <span class="keyword">when</span> calling <span class="built_in">setState</span>() on an unmounted component. (<span class="variable">@sophiebits</span> in #<span class="number">12347</span>)</span><br></pre></td></tr></table></figure></li>
+<li>v16.6<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">React</span></span><br><span class="line"><span class="selector-tag">Add</span> <span class="selector-tag">React</span><span class="selector-class">.memo</span>() <span class="selector-tag">as</span> <span class="selector-tag">an</span> <span class="selector-tag">alternative</span> <span class="selector-tag">to</span> <span class="selector-tag">PureComponent</span> <span class="selector-tag">for</span> <span class="selector-tag">functions</span>. (<span class="variable">@acdlite</span> in #<span class="number">13748</span>) <span class="selector-tag">-</span> 控制子组件的渲染</span><br><span class="line"><span class="selector-tag">Add</span> <span class="selector-tag">React</span><span class="selector-class">.lazy</span>() <span class="selector-tag">for</span> <span class="selector-tag">code</span> <span class="selector-tag">splitting</span> <span class="selector-tag">components</span>. (<span class="variable">@acdlite</span> in #<span class="number">13885</span>) <span class="selector-tag">-</span> 代码分割</span><br><span class="line"><span class="selector-tag">React</span><span class="selector-class">.StrictMode</span> <span class="selector-tag">now</span> <span class="selector-tag">warns</span> <span class="selector-tag">about</span> <span class="selector-tag">legacy</span> <span class="selector-tag">context</span> <span class="selector-tag">API</span>. (<span class="variable">@bvaughn</span> in #<span class="number">13760</span>)</span><br><span class="line"><span class="selector-tag">React</span><span class="selector-class">.StrictMode</span> <span class="selector-tag">now</span> <span class="selector-tag">warns</span> <span class="selector-tag">about</span> <span class="selector-tag">findDOMNode</span>. (<span class="variable">@sebmarkbage</span> in #<span class="number">13841</span>)</span><br><span class="line"><span class="selector-tag">Rename</span> <span class="selector-tag">unstable_AsyncMode</span> <span class="selector-tag">to</span> <span class="selector-tag">unstable_ConcurrentMode</span>. (<span class="variable">@trueadm</span> in #<span class="number">13732</span>)</span><br><span class="line"><span class="selector-tag">Rename</span> <span class="selector-tag">unstable_Placeholder</span> <span class="selector-tag">to</span> <span class="selector-tag">Suspense</span>, <span class="selector-tag">and</span> <span class="selector-tag">delayMs</span> <span class="selector-tag">to</span> <span class="selector-tag">maxDuration</span>. (<span class="variable">@gaearon</span> in #<span class="number">13799</span> <span class="keyword">and</span> <span class="variable">@sebmarkbage</span> in #<span class="number">13922</span>)</span><br><span class="line"><span class="selector-tag">React</span> <span class="selector-tag">DOM</span></span><br><span class="line"><span class="selector-tag">Add</span> <span class="selector-tag">contextType</span> <span class="selector-tag">as</span> <span class="selector-tag">a</span> <span class="selector-tag">more</span> <span class="selector-tag">ergonomic</span> <span class="selector-tag">way</span> <span class="selector-tag">to</span> <span class="selector-tag">subscribe</span> <span class="selector-tag">to</span> <span class="selector-tag">context</span> <span class="selector-tag">from</span> <span class="selector-tag">a</span> <span class="selector-tag">class</span>. (<span class="variable">@bvaughn</span> in #<span class="number">13728</span>) <span class="selector-tag">-</span> 方便类组件使用<span class="selector-tag">context</span></span><br></pre></td></tr></table></figure></li>
+<li>v16.8 - Add Hooks — a way to use state and other React features without writing a class. (@acdlite et al. in #13968) - 使函数组件也能做类组件做的一切事儿</li>
+<li>v17 - 2020.10 - 事件绑定（document -&gt; container ）, 移除事件池<br><code>https://reactjs.org/blog/2020/10/20/react-v17.html</code></li>
+</ul>
+<h4 id="react-scripts"><a href="#react-scripts" class="headerlink" title="react-scripts"></a>react-scripts</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/react-scripts">https://www.npmjs.com/package/react-scripts</a></li>
+<li>@svgr/webpack<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This package includes scripts <span class="keyword">and</span> configuration used <span class="keyword">by</span> Create React App.</span><br><span class="line">Please refer <span class="keyword">to</span> <span class="keyword">its</span> documentation:</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="better-scroll"><a href="#better-scroll" class="headerlink" title="better-scroll"></a>better-scroll</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">BetterScroll</span> 是一款重点解决移动端（已支持 <span class="selector-tag">PC</span>）各种滚动场景需求的插件。它的核心是借鉴的 <span class="selector-attr">[iscroll]</span>(<span class="attribute">https</span>:<span class="comment">//github.com/cubiq/iscroll) 的实现，它的 API 设计基本兼容 iscroll，在 iscroll 的基础上又扩展了一些 feature 以及做了一些性能优化。</span></span><br><span class="line"></span><br><span class="line">BetterScroll 是使用纯 JavaScript 实现的，这意味着它是无依赖的。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ustbhuangyi/better-scroll">https://github.com/ustbhuangyi/better-scroll</a></li>
+</ul>
+<h4 id="react-lazyload"><a href="#react-lazyload" class="headerlink" title="react-lazyload"></a>react-lazyload</h4><h4 id="react-flow"><a href="#react-flow" class="headerlink" title="react-flow"></a>react-flow</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/wbkd/react-flow">https://github.com/wbkd/react-flow</a></li>
+<li>高度可定制的库，用于构建基于节点的交互式用户界面、工作流程编辑器、流程图或静态图</li>
+</ul>
+<h4 id="react-transition-group"><a href="#react-transition-group" class="headerlink" title="react-transition-group"></a>react-transition-group</h4><h4 id="emotion-react"><a href="#emotion-react" class="headerlink" title="@emotion/react"></a>@emotion/react</h4><p>Emotion is a library designed for writing css styles with JavaScript. It provides powerful and predictable style composition in addition to a great developer experience with features such as source maps, labels, and testing utilities. Both string and object styles are supported.</p>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

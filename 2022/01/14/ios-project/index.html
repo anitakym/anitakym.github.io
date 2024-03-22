@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        ios-project - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#files"><span class="toc-text">files</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#project-pbxproj"><span class="toc-text">project.pbxproj</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setup"><span class="toc-text">setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https-cocoapods-org"><span class="toc-text">https:&#x2F;&#x2F;cocoapods.org&#x2F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SwiftPM"><span class="toc-text">SwiftPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#spec-repo-trunk"><span class="toc-text">spec repo trunk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#podfile"><span class="toc-text">podfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https-bugly-qq-com"><span class="toc-text">https:&#x2F;&#x2F;bugly.qq.com&#x2F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bonree"><span class="toc-text">bonree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A1%E9%A1%BF%E5%88%86%E6%9E%90"><span class="toc-text">卡顿分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%88%86%E6%9E%90"><span class="toc-text">错误分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SIGKILL-The-application-did-not-terminate-cleanly-but-no-crash-occured"><span class="toc-text">SIGKILL The application did not terminate cleanly but no crash occured.</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B4%A9%E6%BA%83%E5%88%86%E6%9E%90"><span class="toc-text">崩溃分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#exportoptions-plist"><span class="toc-text">exportoptions.plist</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#release-achive-pre-action-sh"><span class="toc-text">release_achive_pre_action.sh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9Cbuild-test-sh%E2%80%9D-%E6%98%AF%E4%B8%80%E4%B8%AA-shell-%E8%84%9A%E6%9C%AC%EF%BC%8C%E7%94%A8%E4%BA%8E%E5%9C%A8-Xcode-%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9E%84%E5%BB%BA%E6%B5%8B%E8%AF%95%E7%9A%84%E8%BF%87%E7%A8%8B%E3%80%82"><span class="toc-text">“build_test.sh” 是一个 shell 脚本，用于在 Xcode 中自定义构建测试的过程。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#info-plist-%E6%98%AF-iOS-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B1%9E%E6%80%A7%E5%88%97%E8%A1%A8%E6%96%87%E4%BB%B6%EF%BC%8C%E5%8C%85%E5%90%AB%E4%BA%86%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E5%92%8C%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E3%80%82"><span class="toc-text">info.plist 是 iOS 应用程序中的一个属性列表文件，包含了应用程序的基本信息和配置参数。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bridging-header-h"><span class="toc-text">bridging-header.h</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9CAppDelegate-swift%E2%80%9D-%E6%98%AF%E5%9C%A8%E4%BD%BF%E7%94%A8-Swift-%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91-iOS-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%97%B6%EF%BC%8C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6%E5%92%8C%E4%B8%BB%E8%A6%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E3%80%82"><span class="toc-text">“AppDelegate.swift” 是在使用 Swift 语言开发 iOS 应用程序时，应用程序的入口文件和主要配置文件。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9CBase-lproj%E2%80%9D%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%8C%E8%A1%A8%E7%A4%BA%E5%9F%BA%E7%A1%80%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83%E3%80%82%E5%9C%A8iOS%E5%92%8CmacOS%E5%BC%80%E5%8F%91%E4%B8%AD%EF%BC%8C%E5%BC%80%E5%8F%91%E8%80%85%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E5%9C%A8%E5%B7%A5%E7%A8%8B%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%8C%96%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%8C%E5%B9%B6%E5%9C%A8%E5%85%B6%E4%B8%AD%E6%94%BE%E7%BD%AE%E5%AF%B9%E5%BA%94%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%87%E4%BB%B6%E6%9D%A5%E5%AE%9E%E7%8E%B0%E5%A4%9A%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81%E3%80%82"><span class="toc-text">“Base.lproj”是一个语言环境标识符，表示基础语言环境。在iOS和macOS开发中，开发者可以通过在工程项目中添加不同语言环境的本地化文件夹，并在其中放置对应语言的本地化字符串文件来实现多语言支持。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#assets-xcassets"><span class="toc-text">assets.xcassets</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        ios-project
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-01-14 14:19:00</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="files"><a href="#files" class="headerlink" title="files"></a>files</h2><h3 id="project-pbxproj"><a href="#project-pbxproj" class="headerlink" title="project.pbxproj"></a>project.pbxproj</h3><ul>
+<li>The Xcode project file is an old-style plist (Next style) based on braces大括号 to delimit the hierarchy. The file begins with an explicit encoding information, usually the UTF-8 one. </li>
+<li>plist</li>
+<li><a target="_blank" rel="noopener" href="http://www.monobjc.net/xcode-project-file-format.html">http://www.monobjc.net/xcode-project-file-format.html</a><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Root Element</span><br><span class="line">The root section <span class="keyword">contains</span> <span class="keyword">the</span> general informations.</span><br><span class="line"></span><br><span class="line">Attribute	Type	Value	Comment</span><br><span class="line">archiveVersion	Number	<span class="number">1</span>	Default <span class="built_in">value</span>.</span><br><span class="line">classes	List	Empty	</span><br><span class="line">objectVersion	Number		See XcodeCompatibilityVersion enumeration.</span><br><span class="line">objects	Map	A map <span class="keyword">of</span> <span class="keyword">element</span>	The map is indexed <span class="keyword">by</span> <span class="keyword">the</span> elements identifier.</span><br><span class="line">rootObject	Reference	An <span class="keyword">element</span> reference	The object is <span class="keyword">a</span> reference <span class="built_in">to</span> <span class="keyword">a</span> PBXProject <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h3><ul>
+<li>pod install</li>
+<li>安装完成后，打开生成的 .xcworkspace 文件，并使用此文件打开您的项目。不要使用原始的 .xcodeproj 文件打开项目，否则项目将无法使用新安装的依赖项</li>
+<li>保证网络 or 切换稳定源（pod repo）</li>
+<li>等待Indexing(Indexing 是 Xcode 中必要的过程，可以提高编码效率和编译速度。如果 Indexing 过程耗时较长或出现问题，可以尝试暂停 Indexing、清理 DerivedData 和优化代码结构等方法来解决问题)</li>
+</ul>
+<h3 id="https-cocoapods-org"><a href="#https-cocoapods-org" class="headerlink" title="https://cocoapods.org/"></a><a target="_blank" rel="noopener" href="https://cocoapods.org/">https://cocoapods.org/</a></h3><ul>
+<li><p>CocoaPods.org 是 CocoaPods 官方网站，提供了 CocoaPods 的搜索引擎、文档、指南、社区等资源。在该网站上，你可以搜索并找到符合需求的 Pods，并查看其用法、版本历史、许可证等信息。此外，CocoaPods.org 还提供了 Pod 创建、发布和管理等功能，是 CocoaPods 开发和使用的重要平台。</p>
+</li>
+<li><p>CocoaControls 则是一个第三方网站，主要提供了 iOS 和 macOS 开发中常用的 UI 控件和库。在该网站上，你可以浏览并下载各种开源 UI 组件，如按钮、标签、表格、图表、动画等。这些组件大多数都是基于 CocoaPods 库构建的，因此你可以在 CocoaControls 网站上直接查看并复制 Podfile 中的代码，以便更轻松地集成到项目中。</p>
+</li>
+<li><p>podfile - ruby</p>
+</li>
+<li><p>do|end</p>
+</li>
+</ul>
+<h3 id="SwiftPM"><a href="#SwiftPM" class="headerlink" title="SwiftPM"></a>SwiftPM</h3><h3 id="spec-repo-trunk"><a href="#spec-repo-trunk" class="headerlink" title="spec repo trunk"></a>spec repo trunk</h3><ul>
+<li>pod trunk</li>
+<li>pod trunk register EMAIL ‘NAME’ –description=’DESCRIPTION’</li>
+<li>pod trunk push PODSPEC_FILE</li>
+</ul>
+<h3 id="podfile"><a href="#podfile" class="headerlink" title="podfile"></a>podfile</h3><ul>
+<li><p>“use_frameworks!” 是一个在使用 CocoaPods 管理 iOS 项目依赖库时，用于指定是否使用动态框架的命令。</p>
+</li>
+<li><p>当在 Podfile 中添加 “use_frameworks!” 后，在安装依赖库时，CocoaPods 将会通过生成并链接动态框架的方式来管理项目中的第三方库。这种方式相对于静态库链接的方式可以减小最终 App 的大小，并且能够更好地管理依赖性。</p>
+</li>
+<li><p>需要注意的是，如果项目依赖库中有一些只提供了静态库而没有提供动态库的话，使用 “use_frameworks!” 可能会导致编译错误。此时可以考虑手动将这些库作为静态库集成到项目中，或者使用其他的依赖管理工具来处理这种情况。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">post_install <span class="keyword">do</span> |installer|</span><br><span class="line">    installer.pods_project.targets.each <span class="keyword">do</span> |target|</span><br><span class="line">        target.build_configurations.each <span class="keyword">do</span> |<span class="built_in">config</span>|</span><br><span class="line">            <span class="built_in">config</span>.build_settings[<span class="string">&#x27;EXPANDED_CODE_SIGN_IDENTITY&#x27;</span>] = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            <span class="built_in">config</span>.build_settings[<span class="string">&#x27;CODE_SIGNING_REQUIRED&#x27;</span>] = <span class="string">&#x27;NO&#x27;</span></span><br><span class="line">            <span class="built_in">config</span>.build_settings[<span class="string">&#x27;CODE_SIGNING_ALLOWED&#x27;</span>] = <span class="string">&#x27;NO&#x27;</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在使用 CocoaPods 管理 iOS 项目依赖库时，为所有的 Pod 库设置编译选项以关闭代码签名功能。代码签名是一种苹果公司用于保护 App 安全性和防止恶意软件入侵的机制，但有时在开发过程中可能会因为证书问题或其他原因导致编译失败。</p>
+</li>
+<li><p>该代码将 EXPANDED_CODE_SIGN_IDENTITY、CODE_SIGNING_REQUIRED 和 CODE_SIGNING_ALLOWED 这三个选项都设置为 NO，这样就可以禁用代码签名功能了。需要注意的是，这种做法通常只适用于开发和测试环境，发布到 App Store 前仍然需要进行正式的代码签名和验证。</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod <span class="string">&#x27;DoraemonKit/Core&#x27;</span>, <span class="string">&#x27;~&gt; 3.0.4&#x27;</span>, :<span class="function"><span class="params">configurations</span> =&gt;</span> [<span class="string">&#x27;Release_Test&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+<li><p>引用的是 DoraemonKit/Core 库的 3.0.4 版本，并且只有当当前项目的配置为 Release_Test 时才会包含该库。这意味着该库仅在 Release_Test 配置下才会被引入，并且在其他配置下不会被包含在项目中。</p>
+</li>
+<li><p>DoraemonKit 是一款 iOS 开发者调试工具集合，包含了多个实用工具，如性能检测、UI 展示、网络拦截等。Core 模块是 DoraemonKit 的核心库之一，包含了基础的工具和框架，可以帮助开发者快速构建和扩展更加强大的调试工具。</p>
+<h3 id="https-bugly-qq-com"><a href="#https-bugly-qq-com" class="headerlink" title="https://bugly.qq.com/"></a><a target="_blank" rel="noopener" href="https://bugly.qq.com/">https://bugly.qq.com/</a></h3></li>
+<li><p><a target="_blank" rel="noopener" href="https://bugly.qq.com/docs/user-guide/instruction-manual-ios/?v=1.0.0">https://bugly.qq.com/docs/user-guide/instruction-manual-ios/?v=1.0.0</a></p>
+</li>
+</ul>
+<h3 id="bonree"><a href="#bonree" class="headerlink" title="bonree"></a>bonree</h3><h3 id="卡顿分析"><a href="#卡顿分析" class="headerlink" title="卡顿分析"></a>卡顿分析</h3><ul>
+<li>“NotSmoothFrameException” 这个问题在 iOS 应用程序中通常被称为卡顿（Jank），它可能会导致应用程序响应变慢，用户体验下降。</li>
+</ul>
+<h3 id="错误分析"><a href="#错误分析" class="headerlink" title="错误分析"></a>错误分析</h3><ul>
+<li><h1 id="SIGKILL-The-application-did-not-terminate-cleanly-but-no-crash-occured"><a href="#SIGKILL-The-application-did-not-terminate-cleanly-but-no-crash-occured" class="headerlink" title="SIGKILL The application did not terminate cleanly but no crash occured."></a>SIGKILL The application did not terminate cleanly but no crash occured.</h1></li>
+<li>这个消息提示，意味着应用程序在运行过程中被强制终止了。SIGKILL 是一种 Unix 信号，用于强制终止进程，因此这种情况可能是由系统或用户手动杀死了进程导致的。</li>
+<li>与 SIGKILL 不同的是，如果应用程序崩溃了，会触发 SIGSEGV 或 SIGBUS 信号，Crash 报告工具（如 Crashlytics 或 Bugly）通常可以捕获这些信号并生成相应的报告。但是，在没有崩溃的情况下，一些监控工具可能会记录 SIGKILL 信号以帮助开发人员进行故障排除，获取更多关于应用程序运行时的上下文信息。</li>
+</ul>
+<h3 id="崩溃分析"><a href="#崩溃分析" class="headerlink" title="崩溃分析"></a>崩溃分析</h3><ul>
+<li></li>
+</ul>
+<h4 id="exportoptions-plist"><a href="#exportoptions-plist" class="headerlink" title="exportoptions.plist"></a>exportoptions.plist</h4><p>是 Xcode 中用于导出 iOS 应用程序的配置文件，它包含了一些指定导出选项和目标设备信息的属性。</p>
+<p>当开发者需要将自己的应用程序发布到 App Store 或者分发到其他用户时，可以使用 Xcode 的 Export 功能来生成一个可安装的 IPA 文件。在执行 Export 操作之前，需要先选择一些导出选项，如导出方式（Ad Hoc、App Store 等）、目标设备、证书等，并将这些选项保存为 exportoptions.plist 配置文件。</p>
+<p>exportoptions.plist 文件是一个 XML 格式的文本文件，其中包含了多个键值对，每个键表示一个导出选项，对应的值表示该选项的设置。例如，”method” 键表示导出方式，可以设置为 “app-store”、”ad-hoc” 等；”teamID” 键表示开发者团队的唯一标识符，用于验证证书等信息。</p>
+<h4 id="release-achive-pre-action-sh"><a href="#release-achive-pre-action-sh" class="headerlink" title="release_achive_pre_action.sh"></a>release_achive_pre_action.sh</h4><p>是指在 Xcode 中进行 Archive（归档）操作前自定义执行的脚本或命令。</p>
+<p>在 Xcode 中，Archive 操作是将项目打包成一个可发布的 IPA 文件的过程。在执行该操作之前，有时需要执行一些额外的操作，例如版本号更新、代码检查等。这时就可以使用 “release_achive_pre_action” 这个钩子来实现这些自定义任务。</p>
+<p>要配置 “release_achive_pre_action”，可以在项目的 Build Phases 设置中选择 “Editor” &gt; “Add Build Phase” &gt; “Add Run Script Build Phase”，然后在脚本编辑器中编写需要执行的脚本或命令即可。在执行 Archive 操作时，Xcode 将会先执行设置的所有 pre-action 内容，再执行 Archive 操作本身。</p>
+<h4 id="“build-test-sh”-是一个-shell-脚本，用于在-Xcode-中自定义构建测试的过程。"><a href="#“build-test-sh”-是一个-shell-脚本，用于在-Xcode-中自定义构建测试的过程。" class="headerlink" title="“build_test.sh” 是一个 shell 脚本，用于在 Xcode 中自定义构建测试的过程。"></a>“build_test.sh” 是一个 shell 脚本，用于在 Xcode 中自定义构建测试的过程。</h4><p>在 iOS 应用程序开发中，我们通常需要编写一些单元测试和集成测试来保障代码的质量和稳定性。Xcode 提供了对 XCTest 框架的支持，可以很方便地进行测试。但是，有时开发者可能需要执行一些额外的操作或者使用其他的测试框架来进行测试，这时就可以使用 “build_test.sh” 这个脚本来自定义测试构建流程。</p>
+<p>“build_test.sh” 脚本可以包含一些特殊的命令，例如 xcodebuild 和 xctool 等，用于编译测试包、运行测试并将测试结果输出到指定位置。通过编写自定义的 “build_test.sh” 脚本，开发者可以更灵活地管理项目的测试流程，并满足不同的测试需求。</p>
+<h4 id="info-plist-是-iOS-应用程序中的一个属性列表文件，包含了应用程序的基本信息和配置参数。"><a href="#info-plist-是-iOS-应用程序中的一个属性列表文件，包含了应用程序的基本信息和配置参数。" class="headerlink" title="info.plist 是 iOS 应用程序中的一个属性列表文件，包含了应用程序的基本信息和配置参数。"></a>info.plist 是 iOS 应用程序中的一个属性列表文件，包含了应用程序的基本信息和配置参数。</h4><p>在 info.plist 文件中，可以定义一些键值对来指定应用程序的名称、版本号、图标、权限、URL schemes 等信息。这些信息将被系统用于显示应用程序的基本信息以及确定应用程序在设备上的行为。</p>
+<p>例如，”CFBundleDisplayName” 键用于指定应用程序在设备上显示的名称；”CFBundleVersion” 键用于指定应用程序的版本号；”NSCameraUsageDescription” 键用于指定应用程序访问相机权限时的提示文案等。通过修改 info.plist 文件，开发者可以轻松地修改应用程序的基本信息，并调整其行为和功能。</p>
+<p>需要注意的是，info.plist 文件是必须存在的，并且必须包含一些必要的键值对，否则应用程序将无法正常运行。</p>
+<h4 id="bridging-header-h"><a href="#bridging-header-h" class="headerlink" title="bridging-header.h"></a>bridging-header.h</h4><p>Use this file to import your target’s public headers that you would like to expose to Swift.<br>“bridging-header.h” 是在使用 Swift 语言开发 iOS 应用程序时，将 Objective-C 代码引入到 Swift 项目中的一种方式。</p>
+<p>由于 Swift 和 Objective-C 是两种不同的编程语言，它们之间并不完全兼容，因此在进行混合编程时需要进行桥接。在 Xcode 中，可以创建一个名为 “bridging-header.h” 的文件，并在其中包含需要引入的 Objective-C 头文件。这样，Swift 代码就可以访问并使用 Objective-C 类和方法了。</p>
+<p>要使用 bridging-header.h 文件，需要先在 Build Settings 中设置 “Objective-C Bridging Header” 选项，将其设置为 bridging-header.h 文件的路径。然后，在 Swift 代码中就可以通过 import 关键字来引入 Objective-C 类和方法，从而实现混合编程的目的。</p>
+<p>需要注意的是，虽然可以通过 bridging-header.h 文件将 Objective-C 代码引入到 Swift 项目中，但是反过来却不行。也就是说，Objective-C 项目无法直接引入 Swift 代码，需要通过其他方式实现混合编程。</p>
+<h4 id="“AppDelegate-swift”-是在使用-Swift-语言开发-iOS-应用程序时，应用程序的入口文件和主要配置文件。"><a href="#“AppDelegate-swift”-是在使用-Swift-语言开发-iOS-应用程序时，应用程序的入口文件和主要配置文件。" class="headerlink" title="“AppDelegate.swift” 是在使用 Swift 语言开发 iOS 应用程序时，应用程序的入口文件和主要配置文件。"></a>“AppDelegate.swift” 是在使用 Swift 语言开发 iOS 应用程序时，应用程序的入口文件和主要配置文件。</h4><p>在 AppDelegate.swift 文件中，包含了应用程序启动时需要执行的代码和各种配置选项。例如，在该文件中可以定义应用程序的窗口、根视图控制器、推送通知设置、URL schemes 处理等功能。同时，AppDelegate.swift 还提供了多个生命周期方法，如 application(:didFinishLaunchingWithOptions:)、applicationDidBecomeActive(:) 等，用于处理应用程序在不同状态下的行为和逻辑。</p>
+<p>需要注意的是，虽然 AppDelegate.swift 是应用程序的主要入口文件，但它并不是唯一的入口点。在应用程序中，还可以通过 SceneDelegate.swift 文件（仅适用于 iOS 13 及以上版本）和 SwiftUI 的 @main 注解来定义应用程序的入口点。<br>NS的全称是NextStep，它是苹果公司早期开发的一种面向对象编程框架，现在被整合到了Cocoa和Cocoa Touch中。NSLocalizedString函数是一个用于本地化字符串的Objective-C语言中的宏，它可以帮助开发者根据用户的语言环境来获取相应的翻译字符串。</p>
+<p>“zh-hans.lproj”是一个语言环境标识符，表示简体中文。在iOS和macOS开发中，开发者可以通过在工程项目中添加不同语言环境的本地化文件夹，并在其中放置对应语言的本地化字符串文件来实现多语言支持。其中，”.lproj”是”language project”（语言项目）的缩写。</p>
+<p>“launchScreen.strings”是一个字符串文件的文件名，它通常用于应用程序启动画面的本地化。这个文件包含了用于展示启动画面的字符串，可以根据用户的语言环境进行本地化翻译。在该文件中，开发者可以使用NSLocalizedString函数来获取本地化字符串。</p>
+<h4 id="“Base-lproj”是一个语言环境标识符，表示基础语言环境。在iOS和macOS开发中，开发者可以通过在工程项目中添加不同语言环境的本地化文件夹，并在其中放置对应语言的本地化字符串文件来实现多语言支持。"><a href="#“Base-lproj”是一个语言环境标识符，表示基础语言环境。在iOS和macOS开发中，开发者可以通过在工程项目中添加不同语言环境的本地化文件夹，并在其中放置对应语言的本地化字符串文件来实现多语言支持。" class="headerlink" title="“Base.lproj”是一个语言环境标识符，表示基础语言环境。在iOS和macOS开发中，开发者可以通过在工程项目中添加不同语言环境的本地化文件夹，并在其中放置对应语言的本地化字符串文件来实现多语言支持。"></a>“Base.lproj”是一个语言环境标识符，表示基础语言环境。在iOS和macOS开发中，开发者可以通过在工程项目中添加不同语言环境的本地化文件夹，并在其中放置对应语言的本地化字符串文件来实现多语言支持。</h4><p>“Base.lproj”文件夹通常包含项目中默认的本地化字符串文件，这些字符串将作为其他语言版本的备选项。如果应用程序在运行时无法找到特定语言的本地化字符串，系统将会回退并使用”Base.lproj”文件夹中的字符串作为默认值。因此，开发者需要确保”Base.lproj”文件夹中包含了所有必要的本地化字符串，并且这些字符串能够清晰、准确地表达应用程序的功能和信息。</p>
+<p>“launchScreen.storyboard”是一个故事板文件的文件名，它通常用于应用程序启动画面的设计。在iOS和macOS开发中，启动画面是应用程序第一次启动时显示给用户的界面，通常用来展示应用程序的品牌、公司或者产品信息。</p>
+<p>与传统的XIB文件不同，故事板（Storyboard）是一种更加高级的用户界面设计工具，可以在其中同时包含多个页面的设计，以及这些页面之间的流程和跳转关系。在故事板中设计完成后，可以使用代码来加载和控制这些页面，并将其作为应用程序的一部分进行发布。</p>
+<h4 id="assets-xcassets"><a href="#assets-xcassets" class="headerlink" title="assets.xcassets"></a>assets.xcassets</h4><p>在iOS和macOS开发中，图像资源是应用程序界面设计的重要组成部分。为了方便管理这些资源，开发者可以将它们放置在”assets.xcassets”文件夹中，并使用Xcode的图形化界面来进行预览、编辑和设置属性。其中，”.xcassets”是“Xcode Assets”的缩写，表示这个文件夹是由Xcode管理的资源库。同时，该文件夹还支持不同屏幕尺寸和设备类型之间的自动适配，使得应用程序更加灵活和易于维护。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

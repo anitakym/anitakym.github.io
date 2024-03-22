@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        谈谈debug - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#vscode%E4%B8%ADdebug"><span class="toc-text">vscode中debug</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E8%AF%B4%E6%98%8E%EF%BC%9A-vscode%E6%8A%8Adebug%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%BA%A4%E4%BB%98%E7%BB%99%E6%8F%92%E4%BB%B6%E5%AE%8C%E6%88%90%E7%9A%84%EF%BC%88vscode%E6%8F%90%E4%BE%9B%E4%BA%86Debug-Adapter-Protocol-%E2%80%94%E2%80%94-DAP%EF%BC%89"><span class="toc-text">原理说明： vscode把debug功能的实现交付给插件完成的（vscode提供了Debug Adapter Protocol —— DAP）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97"><span class="toc-text">操作指南</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ndb-firekylin%E8%B0%83%E8%AF%95"><span class="toc-text">ndb-firekylin调试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%BF%AB%E9%80%9F%E6%8E%92%E6%9F%A5%E4%B9%8Bdebug"><span class="toc-text">Vue相关问题快速排查之debug</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Hello!</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#node-assert"><span class="toc-text">node-assert</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ndb"><span class="toc-text">ndb</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E5%8F%B0%EF%BD%9C%E7%8E%AF%E5%A2%83%EF%BD%9C%E5%B7%A5%E5%85%B7%EF%BD%9C%E6%96%B9%E6%B3%95"><span class="toc-text">平台｜环境｜工具｜方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chrome"><span class="toc-text">chrome</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F"><span class="toc-text">动态修改样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#console"><span class="toc-text">console</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sourcemap"><span class="toc-text">sourcemap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#performance"><span class="toc-text">performance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lighthouse"><span class="toc-text">lighthouse</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        谈谈debug
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-07-06 16:31:04</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#debug+proxy篇" title="debug+proxy篇">debug+proxy篇</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h4 id="vscode中debug"><a href="#vscode中debug" class="headerlink" title="vscode中debug"></a>vscode中debug</h4><h5 id="原理说明：-vscode把debug功能的实现交付给插件完成的（vscode提供了Debug-Adapter-Protocol-——-DAP）"><a href="#原理说明：-vscode把debug功能的实现交付给插件完成的（vscode提供了Debug-Adapter-Protocol-——-DAP）" class="headerlink" title="原理说明： vscode把debug功能的实现交付给插件完成的（vscode提供了Debug Adapter Protocol —— DAP）"></a>原理说明： vscode把debug功能的实现交付给插件完成的（vscode提供了Debug Adapter Protocol —— DAP）</h5><p>插件=&gt;把调试和vscode的界面和交互结合<br>vscode=》用户在界面的操作，vscode通过DAP唤起插件，插件完成最终的操作</p>
+<p>文档指路：<br><a target="_blank" rel="noopener" href="https://microsoft.github.io/debug-adapter-protocol/">https://microsoft.github.io/debug-adapter-protocol/</a><br><a target="_blank" rel="noopener" href="https://code.visualstudio.com/api/extension-guides/debugger-extension">https://code.visualstudio.com/api/extension-guides/debugger-extension</a></p>
+<h5 id="操作指南"><a href="#操作指南" class="headerlink" title="操作指南"></a>操作指南</h5><ul>
+<li>cmd + shift + D </li>
+<li>点击调试按钮，选择环境</li>
+</ul>
+<h4 id="ndb-firekylin调试"><a href="#ndb-firekylin调试" class="headerlink" title="ndb-firekylin调试"></a>ndb-firekylin调试</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/41315709">https://zhuanlan.zhihu.com/p/41315709</a></p>
+<h4 id="Vue相关问题快速排查之debug"><a href="#Vue相关问题快速排查之debug" class="headerlink" title="Vue相关问题快速排查之debug"></a>Vue相关问题快速排查之debug</h4><p>涉及一些Vue本身相关的问题，首先查文档，略微查下源码，能解决的就解决了；还是有疑问的，对相关疑问点进行debug调试</p>
+<p>借助vue-cli3：<br><a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/guide/prototyping.html">https://cli.vuejs.org/zh/guide/prototyping.html</a><br>快速原型开发<br>你可以使用 vue serve 和 vue build 命令对单个 *.vue 文件进行快速原型开发，不过这需要先额外安装一个全局的扩展：<br>npm install -g @vue/cli-service-global<br>vue serve 的缺点就是它需要安装全局依赖，这使得它在不同机器上的一致性不能得到保证。因此这只适用于快速原型开发。<br>#<br>vue serve<br>Usage: serve [options] [entry]</p>
+<p>在开发环境模式下零配置为 .js 或 .vue 文件启动一个服务器</p>
+<p>Options:</p>
+<p>  -o, –open  打开浏览器<br>  -c, –copy  将本地 URL 复制到剪切板<br>  -h, –help  输出用法信息<br>你所需要的仅仅是一个 App.vue 文件：<br><template><br>  <h1>Hello!</h1><br></template><br>然后在这个 App.vue 文件所在的目录下运行：<br>vue serve<br>vue serve 使用了和 vue create 创建的项目相同的默认设置 (webpack、Babel、PostCSS 和 ESLint)。它会在当前目录自动推导入口文件——入口可以是 main.js、index.js、App.vue 或 app.vue 中的一个。你也可以显式地指定入口文件：<br>vue serve MyComponent.vue<br>如果需要，你还可以提供一个 index.html、package.json、安装并使用本地依赖、甚至通过相应的配置文件配置 Babel、PostCSS 和 ESLint。</p>
+<p>template文件：<br>开发的ide是vscode,所以可以安装相应的snippets</p>
+<p>1.可以有一些插件<br>2.可以自定义用户snippet（<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/userdefinedsnippets%EF%BC%89">https://code.visualstudio.com/docs/editor/userdefinedsnippets）</a><br> There is also support for tab-completion: Enable it with “editor.tabCompletion”: “on”, type a snippet prefix (trigger text), and press Tab to insert a snippet.<br>(可以增加如下配置)</p>
+<h4 id="node-assert"><a href="#node-assert" class="headerlink" title="node-assert"></a>node-assert</h4><p>webpack-debug</p>
+<p>DevTools=&gt;Devices=&gt;Target build/build.js</p>
+<h4 id="ndb"><a href="#ndb" class="headerlink" title="ndb"></a>ndb</h4><p>ndb<br><a target="_blank" rel="noopener" href="https://chromedevtools.github.io/devtools-protocol/">https://chromedevtools.github.io/devtools-protocol/</a></p>
+<h4 id="平台｜环境｜工具｜方法"><a href="#平台｜环境｜工具｜方法" class="headerlink" title="平台｜环境｜工具｜方法"></a>平台｜环境｜工具｜方法</h4><ul>
+<li>浏览器，hybrid，nodejs,小程序，electron</li>
+<li>local| online</li>
+<li>chrome devtools | charles | spy-debugger | whistle | vConsole</li>
+<li>console | breakpoint | sourceMap | proxy</li>
+</ul>
+<h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h4 id="动态修改样式"><a href="#动态修改样式" class="headerlink" title="动态修改样式"></a>动态修改样式</h4><ul>
+<li>.cls</li>
+<li>computed -&gt; 跳转到styles</li>
+<li>强制激活伪类 - 选中具有伪类的元素 点击:hov</li>
+<li>强制激活伪类 - DOM树右键菜单，选择Force State<h4 id="console"><a href="#console" class="headerlink" title="console"></a>console</h4></li>
+<li>.table 和 .dir 可根据场景，选择打印，方便观察</li>
+<li>%d %o %s %c 占位符- 字符串替换 - 增加样式，格式</li>
+</ul>
+<h4 id="sourcemap"><a href="#sourcemap" class="headerlink" title="sourcemap"></a>sourcemap</h4><ul>
+<li>mappings =&gt; 映射 <a target="_blank" rel="noopener" href="https://www.murzwin.com/base64vlq.html">https://www.murzwin.com/base64vlq.html</a></li>
+</ul>
+<h4 id="performance"><a href="#performance" class="headerlink" title="performance"></a>performance</h4><ul>
+<li>frames帧线程</li>
+<li>main主线程，JS执行｜html/css解析，完成绘制</li>
+<li>raster 完成某个layer或者tile的绘制</li>
+<li><a target="_blank" rel="noopener" href="https://googlechrome.github.io/devtools-samples/jank/">https://googlechrome.github.io/devtools-samples/jank/</a></li>
+<li>FPS | CPU | NET - 概览分析，看性能节点</li>
+</ul>
+<h4 id="lighthouse"><a href="#lighthouse" class="headerlink" title="lighthouse"></a>lighthouse</h4><ul>
+<li>LCP - 加载性能</li>
+<li>FID - 交互性</li>
+<li>CLS - 视觉稳定性</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        mongodb - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic"><span class="toc-text">Basic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#docs"><span class="toc-text">docs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#intro"><span class="toc-text">intro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history"><span class="toc-text">history</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%B2%E8%AF%9D"><span class="toc-text">闲话</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#advantage"><span class="toc-text">advantage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install"><span class="toc-text">install</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%A5%E5%85%B7"><span class="toc-text">查看工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-text">操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%BF%E9%97%AEmongodb"><span class="toc-text">程序访问mongodb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88"><span class="toc-text">聚合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client-Side-Field-Level-Encryption"><span class="toc-text">Client-Side Field Level Encryption</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C"><span class="toc-text">js脚本执行</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        mongodb
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-23 22:15:30</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>精读-学习笔记 - 在集群架构拥有十分高的扩展性，高可用的实现对运维的要求比较高</p>
+</blockquote>
+<h2 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h2><h3 id="docs"><a href="#docs" class="headerlink" title="docs"></a>docs</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.mongodb.com/guides/">https://docs.mongodb.com/guides/</a></li>
+<li><a target="_blank" rel="noopener" href="https://university.mongodb.com/?tck=docs_landing">https://university.mongodb.com/?tck=docs_landing</a></li>
+<li>中文社区-<a target="_blank" rel="noopener" href="https://mongoing.com/">https://mongoing.com/</a></li>
+<li>中文版手册-<a target="_blank" rel="noopener" href="https://docs.mongoing.com/">https://docs.mongoing.com/</a></li>
+</ul>
+<h3 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h3><ul>
+<li>DB-Engines 排名</li>
+<li>重新定义OLTP数据库 - （tips:OLAP）</li>
+<li>JSON Document 以JSON为数据模型的文档数据库</li>
+<li>MongoDB Inc.</li>
+<li>建模可选/横向扩展可以支撑很大的数据量和并发</li>
+<li>社区版（SSPL）/企业版（商业协议）</li>
+<li>数据容量-理论上没有上限</li>
+</ul>
+<h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><p>0.x 2008<br>1.x 2010 - 支持复制集（高可用）和分片集<br>2.x 2012 - 数据库功能<br>3.x 2014 - WiredTiger + 生态<br>4.x 2018 - 分布式事务支持</p>
+<h4 id="闲话"><a href="#闲话" class="headerlink" title="闲话"></a>闲话</h4><ul>
+<li><p>竞品：<br>14年，微软推出了DocumentDB预览版，17年5月升级为Cosmos DB（包含多个数据模型，文档模型成为子集）<br>MongoDB-易用性！ 稳定性（丢数据，安全，分布式处理能力）？<br>DocumentDB-Leslie Lamport(对事务的处理，自动索引，PaaS服务)<br>做成了Windows Azure的一个服务<br>17年，提供了兼容MongoDB的API<br>（17年1月，黑客大量袭击了默认安装的MongoDB）</p>
+</li>
+<li><p>人<br>DoubleCLick原创始人（Dwight Merriman, Kevin Ryan, Eliot Horowitz）<br>原先想做一个云计算的服务的<br>然后先搭一个数据库</p>
+</li>
+</ul>
+<p>mongo - humongous - 海量数据库 - 面向集合，模式自由，文档型数据库（Accelerate development, address diverse data sets, and adapt quickly to change with a proven application data platform built around the database most wanted by developers 4 years running.）</p>
+<p>PS：SQL是IBM出来的</p>
+<p>10gen 在 2009年2月正式开源MongoDB的第一个版本</p>
+<p>商业上-资助用户组，对社区的支持，技术支持团队-nice（用户体验）</p>
+<p>13年更名 MongoDB公司</p>
+<h3 id="advantage"><a href="#advantage" class="headerlink" title="advantage"></a>advantage</h3><ul>
+<li><p>面向开发者的易用&amp;&amp;高效数据库</p>
+</li>
+<li><p>对象模型（Objects=&gt;Database）—— 传统关系数据库，复杂的关系模型</p>
+</li>
+<li><p>快速响应业务变化（可动态增加新字段）</p>
+<ul>
+<li>多形性:同一个集合中，可以包含不同字段的文档对象</li>
+<li>动态性：线上修改数据模式，修改时应用与数据库均无需下线</li>
+<li>数据治理：支持使用JSON Schema来规范数据模式。在保证模式灵活动态的前提下，提供数据治理能力</li>
+</ul>
+</li>
+<li><p>JSON模型（快速灵活）</p>
+<ul>
+<li>数据库引擎只需要在一个存储区读写（对物理存储有优势，节约了定位时间）</li>
+<li>反范式，无关联的组织极大优化查询速度</li>
+<li>程序API自然，开发快速（API查询）</li>
+</ul>
+</li>
+<li><p>分布式（原生的高可用）</p>
+<ul>
+<li>Replica Set 复制集（2-50个成员）3个节点以上</li>
+<li>自动恢复</li>
+<li>多中心容灾</li>
+<li>滚动服务-最小化服务终端（无需下线）</li>
+</ul>
+</li>
+<li><p>横向扩展能力</p>
+<ul>
+<li>需要的时候无缝扩展</li>
+<li>对应用全透明</li>
+<li>多种数据分布策略</li>
+<li>支持TB-PB数量级</li>
+</ul>
+<h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3></li>
+<li><p>企业/社区</p>
+</li>
+<li><p>偶数版</p>
+</li>
+<li><p>version/os/package</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/administration/install-community/">https://docs.mongodb.com/manual/administration/install-community/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># centos - 本地安装</span></span><br><span class="line"><span class="comment"># 新建一个/etc/yum.repos.d/mongodb-org-4.2.repo，这样我们可以用yum来安装</span></span><br><span class="line">[mongodb-org-4.2]</span><br><span class="line">name=MongoDB Repository</span><br><span class="line">baseurl=https://repo.mongodb.org/yum/redhat/<span class="variable">$releasever</span>/mongodb-org/4.2/x86_64/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=1</span><br><span class="line">gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 然后安装最近的稳定版本</span></span><br><span class="line">sudo yum install -y mongodb-org</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动社区版</span></span><br><span class="line"><span class="comment"># 默认会在/var/lib/mongo(data) /var/log/mongodb(log)，如果想要改到自己创建的目录，可以修改/etc/mongod.conf文件</span></span><br><span class="line">sudo <span class="built_in">chown</span> -R mongod:mongod &lt;directory&gt; <span class="comment"># 注意权限问题</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 看用systemctl（较新版本Linux） 还是 service （较老版本），可以用&quot;ps --no-headers -o comm 1&quot;查，我这边centos7，用的是systemctl</span></span><br><span class="line">systemctl start mongod</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果报错“Failed to start mongod.service: Unit mongod.service not found.”</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看是否成功启动</span></span><br><span class="line">systemctl status mongod</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果想随着系统reboot开启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> mongod</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关</span></span><br><span class="line">systemctl stop mongod</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">systemctl restart mongod</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">mongo</span><br><span class="line"></span><br><span class="line"><span class="comment"># MacOS - 自己下载安装</span></span><br><span class="line"><span class="comment"># https://docs.mongoing.com/install-mongodb/install-mongodb-community-edition/install-on-macos</span></span><br><span class="line">xcode-select --install</span><br><span class="line">brew tap mongodb/brew</span><br><span class="line">brew install mongodb-community@4.4 </span><br><span class="line"><span class="comment"># 本质上也是下载下面的文件Updating Homebrew...</span></span><br><span class="line">==&gt; Installing mongodb-community from mongodb/brew</span><br><span class="line">==&gt; Downloading https://fastdl.mongodb.org/tools/db/mongodb-database-tools-macos-x86_64-100.3.1.zip</span><br><span class="line">==&gt; Downloading https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-4.4.5.tgz</span><br><span class="line">==&gt; Installing dependencies <span class="keyword">for</span> mongodb/brew/mongodb-community: mongodb-database-tools</span><br><span class="line">==&gt; Installing mongodb/brew/mongodb-community dependency: mongodb-database-tools</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果有报错，```brew uninstall mongodb```之后再安装</span></span><br><span class="line">brew services start mongodb/brew/mongodb-community</span><br><span class="line"></span><br><span class="line"><span class="comment"># 云部署</span></span><br><span class="line">Atlas免费测试账号：</span><br><span class="line">可以cloud.mongodb.com,注册登录之后就可以免费创建集群了（白名单ip+用户名密码）</span><br><span class="line">然后用命令行连接集群</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mongorestore </span></span><br><span class="line">curl -O -k https://xxx.xxx.com/dump.tar.gz</span><br><span class="line">tar -xvf dump.tar.gz</span><br><span class="line">mongorestore /dump</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看工具"><a href="#查看工具" class="headerlink" title="查看工具"></a>查看工具</h3><ul>
+<li>studio3T</li>
+<li>NoSQL Booster</li>
+</ul>
+<p>grafana:<br><a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/8339">https://grafana.com/grafana/dashboards/8339</a></p>
+<ul>
+<li>mongoDB compass(官方，免费，好用)<ul>
+<li>mongodb compass,左下角，点击 _MONGOSH BETA 也能进入shell模式</li>
+<li>documents 切换view的模式,Interactive Document Editor.Modify existing documents with greater confidence using the intuitive visual editor, or insert new documents and clone or delete existing ones in just a few clicks.</li>
+<li>schema 子文档的字段也能看，分析，compass特有功能;Visualize your Schema.MongoDB Compass analyzes your documents and displays rich structures within your collections through an intuitive GUI. It allows you to quickly visualize and explore your schema to understand the frequency, types and ranges of fields in your data set.</li>
+<li>执行查询的时候;Visual Explain Plans.Know how queries are running through an easy-to-understand GUI that helps you identify and resolve performance issues.</li>
+<li>Performance Charts.Real-time server statistics let you view key server metrics and database operations. Drill down into database operations easily and understand your most active collections.</li>
+<li>Schema Validation.Create schema validation rules with a smart editor that auto-suggests rule components. See immediate results with a live preview and revise rules as needed. See Schema Validation in the MongoDB documentation for more information.</li>
+<li>Deployment Awareness;Replica set aware connections allow for continued use during replica set configuration changes and provides additional information of the connected cluster.</li>
+<li>Query History;Easily access and manage executed queries and save favorites for often executed queries.</li>
+</ul>
+</li>
+</ul>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<li>find - 查询，类似于SELECT；返回的是游标；<code>$and:[] $or:[] ;正则 /^B/；</code><ul>
+<li>使用游标对象的API可以对全部结果进行遍历</li>
+<li>DBQuery.shellBatchSize</li>
+<li>查询条件和SQL的对照 <code>a &lt;= 1  &#123;a:&#123;$lte:1&#125;&#125;  ，a = 1 AND b = 1 &#123;$and: [&#123;a:1&#125;,&#123;b:1&#125;]&#125;</code></li>
+<li>$ 是mongo里面特殊的符号 查询逻辑运算符 $lt ，因为在mongo里面，需要要key:value</li>
+<li>支持使用<code>field.sub_field   db.barcode.find(&#123;&quot;volumes.pdfUrl&quot;: &quot;www.baidu.com&quot;&#125;) </code> </li>
+<li>使用find搜索数组(注意存的类型是数组，还是数组stringfy之后的字符串)，数组子文档也可以搜 . $elemMatch</li>
+<li>可以返回指定字段 Projection 投影</li>
+<li>.pretty()</li>
+</ul>
+</li>
+<li>remove <ul>
+<li>需要配合查询条件使用</li>
+</ul>
+</li>
+<li>update<ul>
+<li>查询条件，更新字段</li>
+<li>{$set:} 各种操作方法</li>
+</ul>
+</li>
+<li>drop<ul>
+<li>db.<collection>.drop() 集合中的全部文档和索引都会被删除</li>
+<li>不要在生产上轻易操作</li>
+<li>db.dropDatabase() 数据库就删了</li>
+</ul>
+</li>
+</ul>
+<h3 id="程序访问mongodb"><a href="#程序访问mongodb" class="headerlink" title="程序访问mongodb"></a>程序访问mongodb</h3><ul>
+<li>python <code>pip install pymongo</code></li>
+<li>mongoDB连接串 比如有—— mongodb://数据库服务器主机地址:端口号</li>
+<li>我们可以进行一系列操作（按文档），mongo-无模式</li>
+<li>更新用户 update_one 我们没有去数据库修改表结构</li>
+<li>代码量少</li>
+</ul>
+<h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><ul>
+<li>做的是sql里面as ，groupby , leftjoin 的操作</li>
+<li>aggregation framework - 计算框架</li>
+<li>pipeline = [$stage1,$stage2, …$stageN]</li>
+<li>db.<COLLECTION>.aggregate(pipeline,{ options })</li>
+<li>$match -过滤 WHERE | $ project -投影 SELECT AS | $sort -排序 ORDER BY | $group -分组 GROUP BY | $skip/$limit -结果限制 SKIP/LIMIT | $lookup -左外连接（关联） LEFT OUTER JOIN</li>
+<li>常见步骤中的运算符</li>
+<li>非常见步骤，mongo特有 $unwind - 展开数组 | $graphLookup - 图搜索 | $facet/$bucket - 分面搜索（电商常用）</li>
+<li>OLTP | OLAP</li>
+<li></li>
+</ul>
+<h2 id="Client-Side-Field-Level-Encryption"><a href="#Client-Side-Field-Level-Encryption" class="headerlink" title="Client-Side Field Level Encryption"></a>Client-Side Field Level Encryption</h2><ul>
+<li>MongoDB 的客户端字段级加密功能</li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/X7JKiK59iu9i7iacWnjsJg">https://mp.weixin.qq.com/s/X7JKiK59iu9i7iacWnjsJg</a></li>
+</ul>
+<h3 id="js脚本执行"><a href="#js脚本执行" class="headerlink" title="js脚本执行"></a>js脚本执行</h3><ul>
+<li>mongodb compass 的命令行暂时不支持load</li>
+<li>mongosh 可以，执行load()</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        工作中遇到的babel - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#why-amp-amp-what"><span class="toc-text">why &amp;&amp; what</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE"><span class="toc-text">初始化项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#babelrc"><span class="toc-text">.babelrc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-text">官方文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="toc-text">场景：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#babel-7-0-%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="toc-text">babel 7.0 的更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91babel%E6%8F%92%E4%BB%B6"><span class="toc-text">开发babel插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E9%98%B6%E6%AE%B5"><span class="toc-text">解析阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E9%98%B6%E6%AE%B5"><span class="toc-text">转换阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%98%B6%E6%AE%B5"><span class="toc-text">生成阶段</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cases"><span class="toc-text">cases</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue2-x%E7%9A%84%E9%A1%B9%E7%9B%AE"><span class="toc-text">vue2.x的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shippedproposal"><span class="toc-text">shippedproposal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compat-table"><span class="toc-text">compat-table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Presets"><span class="toc-text">Presets</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        工作中遇到的babel
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-11-28 20:26:03</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="why-amp-amp-what"><a href="#why-amp-amp-what" class="headerlink" title="why &amp;&amp; what"></a>why &amp;&amp; what</h3><ul>
+<li>babel是JavaScript编译器</li>
+<li>解决代码对旧版本的兼容性问题</li>
+</ul>
+<h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><ul>
+<li>@vue/cli 的话，可以直接走<code>@vue/cli-plugin-babel</code></li>
+<li>没用脚手架构建工具的话： @babel/core - 核心库 @babel/cli - 命令行工具 @babel/preset-env - 默认的预设环境 | devDependencies</li>
+<li>core-js - dependencies - 在运行时为老版本的浏览器提供不支持的API</li>
+</ul>
+<h3 id="babelrc"><a href="#babelrc" class="headerlink" title=".babelrc"></a>.babelrc</h3><ul>
+<li></li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a target="_blank" rel="noopener" href="https://babeljs.io/">https://babeljs.io/</a></p>
+<h3 id="场景："><a href="#场景：" class="headerlink" title="场景："></a>场景：</h3><ol>
+<li>babel的升级—— 那么前提就要了解版本之间的核心差异，可以通过官方发布的blog，对整体概况有一个了解</li>
+<li>开发babel插件</li>
+</ol>
+<h3 id="babel-7-0-的更新"><a href="#babel-7-0-的更新" class="headerlink" title="babel 7.0 的更新"></a>babel 7.0 的更新</h3><p><a target="_blank" rel="noopener" href="https://babeljs.io/blog/2018/08/27/7.0.0">https://babeljs.io/blog/2018/08/27/7.0.0</a><br>Babel 7.0 版本的重大变更包括：</p>
+<ul>
+<li>支持 TypeScript 和 JSX Fragment；</li>
+<li>不再支持没有维护的 Node 版本（0.10、0.12、4、5）；</li>
+<li>使用 @babel 命名空间（babel-core 变成了 @babel/core）；</li>
+<li>移除并停止发布任何年度预设（preset-es2015 等）;</li>
+<li>移除“Stage” 预设（@babel/preset-stage-0 等）；</li>
+<li>重命名了某些包（任何 TC39 提议插件现在都是 -proposal 而不是 -transform）。</li>
+</ul>
+<h2 id="开发babel插件"><a href="#开发babel插件" class="headerlink" title="开发babel插件"></a>开发babel插件</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><h4 id="解析阶段"><a href="#解析阶段" class="headerlink" title="解析阶段"></a>解析阶段</h4><ul>
+<li>词法分析（tokens）</li>
+<li>语法分析（AST）<h4 id="转换阶段"><a href="#转换阶段" class="headerlink" title="转换阶段"></a>转换阶段</h4></li>
+<li>访问者模式</li>
+<li>深度优先遍历</li>
+<li>path<h4 id="生成阶段"><a href="#生成阶段" class="headerlink" title="生成阶段"></a>生成阶段</h4></li>
+</ul>
+<h2 id="cases"><a href="#cases" class="headerlink" title="cases"></a>cases</h2><h3 id="vue2-x的项目"><a href="#vue2-x的项目" class="headerlink" title="vue2.x的项目"></a>vue2.x的项目</h3><ul>
+<li>要使用 <code>&lt;script setup&gt;</code> 的语法，所以引用了插件 </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/antfu/unplugin-vue2-script-setup.git">https://github.com/antfu/unplugin-vue2-script-setup.git</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/antfu/unplugin-vue2-script-setup/blob/main/src/core/transformScriptSetup.ts">https://github.com/antfu/unplugin-vue2-script-setup/blob/main/src/core/transformScriptSetup.ts</a></li>
+<li>处理script setup语法支持的时候<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">generate</span> from &#x27;@babel/generator&#x27;</span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">    ast,</span><br><span class="line">    code: <span class="keyword">generate</span>(ast)<span class="variable">.code</span>,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="shippedproposal"><a href="#shippedproposal" class="headerlink" title="shippedproposal"></a>shippedproposal</h3><p><a target="_blank" rel="noopener" href="https://github.com/vitejs/vite/commit/ed25817">https://github.com/vitejs/vite/commit/ed25817</a><br><a target="_blank" rel="noopener" href="https://tc39.es/ecma262/#sec-array.prototype.at">https://tc39.es/ecma262/#sec-array.prototype.at</a><br><a target="_blank" rel="noopener" href="https://tc39.es/ecma262/2021/">https://tc39.es/ecma262/2021/</a><br><a target="_blank" rel="noopener" href="https://tc39.es/ecma262/2022/">https://tc39.es/ecma262/2022/</a></p>
+<h3 id="compat-table"><a href="#compat-table" class="headerlink" title="compat-table"></a>compat-table</h3><p><a target="_blank" rel="noopener" href="https://kangax.github.io/compat-table/es2016plus/">https://kangax.github.io/compat-table/es2016plus/</a></p>
+<h3 id="Presets"><a href="#Presets" class="headerlink" title="Presets"></a>Presets</h3><p>@babel/preset-env</p>
+<p>基本上可以看到各个版本的新增特性和用法<br><a target="_blank" rel="noopener" href="https://babeljs.io/docs/babel-plugin-transform-async-to-generator">https://babeljs.io/docs/babel-plugin-transform-async-to-generator</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://babeljs.io/blog/2021/05/10/funding-update">https://babeljs.io/blog/2021/05/10/funding-update</a></li>
+<li><a target="_blank" rel="noopener" href="https://babeljs.io/blog/2023/10/16/cve-2023-45133">https://babeljs.io/blog/2023/10/16/cve-2023-45133</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

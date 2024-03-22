@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        ssh配置 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98"><span class="toc-text">ssh连接问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5%E5%88%B0Github"><span class="toc-text">使用SSH连接到Github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#github%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97"><span class="toc-text">github文档指南</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#screen%E5%92%8Ctmux%E5%AE%9E%E7%8E%B0%E4%BC%9A%E8%AF%9D%E6%81%A2%E5%A4%8D%E7%9A%84%E6%9C%BA%E5%88%B6"><span class="toc-text">screen和tmux实现会话恢复的机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E8%BF%9B%E7%A8%8B"><span class="toc-text">后台运行进程</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        ssh配置
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-05-05 14:23:59</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="ssh连接问题"><a href="#ssh连接问题" class="headerlink" title="ssh连接问题"></a>ssh连接问题</h2><p>ssh之后连接会断，可以在服务器上面做配置：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vim</span> /etc/ssh/sshd_config</span><br><span class="line"><span class="attribute">ClientAliveInterval</span> <span class="number">60</span></span><br><span class="line"><span class="attribute">ClientAliveCountMax</span> <span class="number">60</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">systemctl</span> restart sshd</span><br></pre></td></tr></table></figure>
+
+<p>客户端配置：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vim</span> /etc/ssh/ssh_config</span><br><span class="line"><span class="attribute">ServerAliveInterval</span> <span class="number">60</span></span><br></pre></td></tr></table></figure>
+
+<p>TIPS:<br>systemctl | service 命令</p>
+<p>华为云服务的帮助文档：<br><a target="_blank" rel="noopener" href="https://support.huaweicloud.com/trouble-ecs/ecs_trouble_0306.html">https://support.huaweicloud.com/trouble-ecs/ecs_trouble_0306.html</a></p>
+<p>Init System</p>
+<p>To run and manage your mongod process, you will be using your operating system’s built-in init system. Recent versions of Linux tend to use systemd (which uses the systemctl command), while older versions of Linux tend to use System V init (which uses the service command).</p>
+<p>If you are unsure which init system your platform uses, run the following command:</p>
+<p>ps –no-headers -o comm 1</p>
+<p>Then select the appropriate tab below based on the result:</p>
+<p>systemd - select the systemd (systemctl) tab below.<br>init - select the System V Init (service) tab below.</p>
+<h2 id="使用SSH连接到Github"><a href="#使用SSH连接到Github" class="headerlink" title="使用SSH连接到Github"></a>使用SSH连接到Github</h2><h3 id="github文档指南"><a href="#github文档指南" class="headerlink" title="github文档指南"></a>github文档指南</h3><p><a target="_blank" rel="noopener" href="https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh">https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh/about-ssh</a></p>
+<p>这个文档强烈推荐，对于项目管理中的问题，给出了建议和最佳实践指南；可以当作解决问题的参考手册；</p>
+<h2 id="screen和tmux实现会话恢复的机制"><a href="#screen和tmux实现会话恢复的机制" class="headerlink" title="screen和tmux实现会话恢复的机制"></a>screen和tmux实现会话恢复的机制</h2><h2 id="后台运行进程"><a href="#后台运行进程" class="headerlink" title="后台运行进程"></a>后台运行进程</h2><p><code>nohup</code>和<code>&amp;</code>都是在Linux系统下用来在后台运行进程的工具，但他们的运行方式和具体功能有所不同。</p>
+<p>**&amp;**：</p>
+<ul>
+<li><code>&amp;</code> 是一个shell的内建命令，用来把命令放到后台执行。例如“command &amp;”，该命令将在后台运行。</li>
+<li>如果你在命令行中执行一个程序，然后你关闭该命令行，这个程序会立即停止。如果你用 <code>&amp;</code> 把这个程序放入后台，这个程序会继续在你的控制领域之下运行，直到完成。</li>
+</ul>
+<p><strong>nohup</strong>：</p>
+<ul>
+<li><code>nohup</code> 是一个非内建命令，它不依赖于shell，即使shell终结也可以继续执行。</li>
+<li>如果你将一个程序用 <code>nohup</code> 和 <code>&amp;</code> 运行，“nohup command &amp;”，该命令就可以忽略所有来自shell的挂断（HUP）信号。即使你退出了shell，该命令也会在后台继续运行，直到完成。</li>
+<li>它还会把标准输出和标准错误输出重定向到名为 nohup.out 的文件中，因此不会因为关闭Shell会话而丢失信息。</li>
+</ul>
+<p>所以，<code>nohup</code>和<code>&amp;</code>的主要区别在于，<code>nohup</code>保护进程不受Shell会话结束影响（甚至在用户注销之后也可以继续运行）,而 <code>&amp;</code> 则只是简单地将进程放到后台运行。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

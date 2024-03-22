@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        axios的cancelToken初探 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#axios%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6%E6%BA%90"><span class="toc-text">axios官方文件源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XMLHttpRequest"><span class="toc-text">XMLHttpRequest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fetch"><span class="toc-text">Fetch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5"><span class="toc-text">同步异步</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#core"><span class="toc-text">core</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OPML"><span class="toc-text">OPML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#source-code"><span class="toc-text">source code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XMLHttpRequest-%E5%AF%B9%E8%B1%A1"><span class="toc-text">XMLHttpRequest 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#withCredentials"><span class="toc-text">withCredentials</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        axios的cancelToken初探
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-12-29 16:15:50</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#XMLHttpRequest" title="XMLHttpRequest">XMLHttpRequest</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="axios官方文件源"><a href="#axios官方文件源" class="headerlink" title="axios官方文件源"></a>axios官方文件源</h3><p>官方指南：<a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-cancelable-promises%EF%BC%88%E4%BD%86%E6%98%AF%EF%BC%9AThis">https://github.com/tc39/proposal-cancelable-promises（但是：This</a> proposal has been withdrawn）<br>代码实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> <span class="title class_">Cancel</span> = <span class="built_in">require</span>(<span class="string">&#x27;./Cancel&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A `CancelToken` is an object that can be used to request cancellation of an operation.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@class</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">Function</span>&#125; executor The executor function.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">CancelToken</span>(<span class="params">executor</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> executor !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">TypeError</span>(<span class="string">&#x27;executor must be a function.&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> resolvePromise;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">promise</span> = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> <span class="title function_">promiseExecutor</span>(<span class="params">resolve</span>) &#123;</span><br><span class="line">    resolvePromise = resolve;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> token = <span class="variable language_">this</span>;</span><br><span class="line">  <span class="title function_">executor</span>(<span class="keyword">function</span> <span class="title function_">cancel</span>(<span class="params">message</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (token.<span class="property">reason</span>) &#123;</span><br><span class="line">      <span class="comment">// Cancellation has already been requested</span></span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    token.<span class="property">reason</span> = <span class="keyword">new</span> <span class="title class_">Cancel</span>(message);</span><br><span class="line">    <span class="title function_">resolvePromise</span>(token.<span class="property">reason</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Throws a `Cancel` if cancellation has been requested.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="title class_">CancelToken</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">throwIfRequested</span> = <span class="keyword">function</span> <span class="title function_">throwIfRequested</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">reason</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="variable language_">this</span>.<span class="property">reason</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Returns an object that contains a new `CancelToken` and a function that, when called,</span></span><br><span class="line"><span class="comment"> * cancels the `CancelToken`.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="title class_">CancelToken</span>.<span class="property">source</span> = <span class="keyword">function</span> <span class="title function_">source</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> cancel;</span><br><span class="line">  <span class="keyword">var</span> token = <span class="keyword">new</span> <span class="title class_">CancelToken</span>(<span class="keyword">function</span> <span class="title function_">executor</span>(<span class="params">c</span>) &#123;</span><br><span class="line">    cancel = c;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">token</span>: token,</span><br><span class="line">    <span class="attr">cancel</span>: cancel</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title class_">CancelToken</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h3><p>同步请求：原理是 XMLHttpRequest 这个可以传第三个参数，但是不建议用同步请求，会把 JS 执行线程卡住</p>
+<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><p>AbortController</p>
+<blockquote>
+<p>AbortController接口表示一个控制器对象，允许你根据需要中止一个或多个 Web请求。</p>
+</blockquote>
+<p>文档指南：<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/AbortController">https://developer.mozilla.org/zh-CN/docs/Web/API/AbortController</a></p>
+<p>redaxios(Axios has a great API that developers love. Redaxios provides that API in 800 bytes, using native fetch().)</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// redaxios(https://github.com/developit/redaxios)中，用<span class="type">AbortController</span>实现的<span class="type">CancelToken</span></span><br><span class="line">/**</span><br><span class="line">	 * @public</span><br><span class="line">	 * @<span class="keyword">type</span> &#123;<span class="type">AbortController</span>&#125;</span><br><span class="line">	 */</span><br><span class="line">	redaxios.<span class="type">CancelToken</span> = /** @<span class="keyword">type</span> &#123;any&#125; */ (typeof <span class="type">AbortController</span> == &#x27;function&#x27; ? <span class="type">AbortController</span> : <span class="type">Object</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="同步异步"><a href="#同步异步" class="headerlink" title="同步异步"></a>同步异步</h3><p>request拦截器执行的时机，默认放异步队列，加了参数的话，则requestinterceptor同步处理；</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/axios/axios/blob/master/lib/core/Axios.js">https://github.com/axios/axios/blob/master/lib/core/Axios.js</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/axios/axios/pull/2702/files">https://github.com/axios/axios/pull/2702/files</a><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">When</span> you <span class="keyword">add</span> request interceptors, they are presumed <span class="keyword">to</span> be asynchronous <span class="keyword">by</span> <span class="keyword">default</span>. This can cause a delay <span class="keyword">in</span> the execution <span class="keyword">of</span> your axios request <span class="keyword">when</span> the main thread <span class="keyword">is</span> blocked (a promise <span class="keyword">is</span> created under the hood <span class="keyword">for</span> the interceptor <span class="keyword">and</span> your request gets put <span class="keyword">on</span> the bottom <span class="keyword">of</span> the <span class="keyword">call</span> stack). <span class="keyword">If</span> your request interceptors are synchronous you can <span class="keyword">add</span> a flag <span class="keyword">to</span> the <span class="keyword">options</span> <span class="keyword">object</span> that will tell axios <span class="keyword">to</span> run the code synchronously <span class="keyword">and</span> avoid <span class="keyword">any</span> delays <span class="keyword">in</span> request execution.</span><br><span class="line"></span><br><span class="line">axios.interceptors.request.use(<span class="keyword">function</span> (config) &#123;</span><br><span class="line">  config.headers.test = <span class="string">&#x27;I am only a header!&#x27;</span>;</span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;, <span class="keyword">null</span>, &#123; synchronous: <span class="keyword">true</span> &#125;);</span><br><span class="line"><span class="keyword">If</span> you want <span class="keyword">to</span> <span class="keyword">execute</span> a particular interceptor based <span class="keyword">on</span> a runtime <span class="keyword">check</span>, you can <span class="keyword">add</span> a runWhen <span class="keyword">function</span> <span class="keyword">to</span> the <span class="keyword">options</span> <span class="keyword">object</span>. The interceptor will <span class="keyword">not</span> be executed <span class="keyword">if</span> <span class="keyword">and</span> <span class="keyword">only</span> <span class="keyword">if</span> the <span class="keyword">return</span> <span class="keyword">of</span> runWhen <span class="keyword">is</span> <span class="keyword">false</span>. The <span class="keyword">function</span> will be <span class="keyword">called</span> <span class="keyword">with</span> the config <span class="keyword">object</span> (don<span class="string">&#x27;t forget that you can bind your own arguments to it as well.) This can be handy when you have an asynchronous request interceptor that only needs to run at certain times.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">function onGetCall(config) &#123;</span></span><br><span class="line"><span class="string">  return config.method === &#x27;</span><span class="keyword">get</span><span class="string">&#x27;;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">axios.interceptors.request.use(function (config) &#123;</span></span><br><span class="line"><span class="string">  config.headers.test = &#x27;</span>special <span class="keyword">get</span> headers<span class="string">&#x27;;</span></span><br><span class="line"><span class="string">  return config;</span></span><br><span class="line"><span class="string">&#125;, null, &#123; runWhen: onGetCall &#125;);</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="core"><a href="#core" class="headerlink" title="core"></a>core</h4><ul>
+<li>cancelToken - config </li>
+<li>if cancelToken</li>
+<li>在 promise 链式调用的 dispatchRequest 抛出错误，在 adapter 中 request.abort() 取消请求，使 promise 走向 rejected，被用户捕获取消信息<h3 id="OPML"><a href="#OPML" class="headerlink" title="OPML"></a>OPML</h3><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/OPML">https://en.wikipedia.org/wiki/OPML</a></li>
+</ul>
+<h3 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/axios/axios/blob/main/lib/utils.js">https://github.com/axios/axios/blob/main/lib/utils.js</a></li>
+</ul>
+<h3 id="XMLHttpRequest-对象"><a href="#XMLHttpRequest-对象" class="headerlink" title="XMLHttpRequest 对象"></a>XMLHttpRequest 对象</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState">https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState</a></li>
+</ul>
+<p>//这篇文章非常好</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://medium.com/datadriveninvestor/aborting-cancelling-requests-with-fetch-or-axios-db2e93825a36">https://medium.com/datadriveninvestor/aborting-cancelling-requests-with-fetch-or-axios-db2e93825a36</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/2ADjfJPge391xpdikM08qQ">https://mp.weixin.qq.com/s/2ADjfJPge391xpdikM08qQ</a> - 由一个bug引发对axios的刨根问底</li>
+</ul>
+<h4 id="withCredentials"><a href="#withCredentials" class="headerlink" title="withCredentials"></a>withCredentials</h4><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials</a></p>
+<p>The XMLHttpRequest.withCredentials property is a Boolean that indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. Setting withCredentials has no effect on same-site requests.</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

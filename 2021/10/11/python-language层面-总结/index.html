@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        python-language层面-总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97"><span class="toc-text">开发指南</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#google-python-style-guide"><span class="toc-text">google python style guide</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PEP-8-%E2%80%93-Style-Guide-for-Python-Code"><span class="toc-text">PEP 8 – Style Guide for Python Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90"><span class="toc-text">推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Jupyter-Notebook"><span class="toc-text">Jupyter Notebook</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQLAlchemy"><span class="toc-text">SQLAlchemy</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ORM"><span class="toc-text">ORM</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#type-a-python"><span class="toc-text">type -a python</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lib"><span class="toc-text">lib</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#contextlib"><span class="toc-text">contextlib</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#basic"><span class="toc-text">basic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pythonic"><span class="toc-text">pythonic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97-Number"><span class="toc-text">数字 - Number</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84"><span class="toc-text">组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8-%E6%9E%9A%E4%B8%BE"><span class="toc-text">字典 枚举</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%EF%BC%9A"><span class="toc-text">装饰器：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-text">函数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%EF%BC%8C%E6%A8%A1%E5%9D%97%EF%BC%8C%E5%87%BD%E6%95%B0%E4%B8%8E%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">包，模块，函数与变量作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E7%A8%8B"><span class="toc-text">工程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#concept"><span class="toc-text">concept</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        python-language层面-总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-10-11 11:36:04</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>bytes are bytes; characters ara an abstraction;an immutable sequence of unicode characters is called a string;an immutable sequence of numbers-between-0-and-255 is called a bytes object;(dive into python3)</p>
+</blockquote>
+<h2 id="开发指南"><a href="#开发指南" class="headerlink" title="开发指南"></a>开发指南</h2><h3 id="google-python-style-guide"><a href="#google-python-style-guide" class="headerlink" title="google python style guide"></a>google python style guide</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://google.github.io/styleguide/pyguide.html">https://google.github.io/styleguide/pyguide.html</a></li>
+</ul>
+<h3 id="PEP-8-–-Style-Guide-for-Python-Code"><a href="#PEP-8-–-Style-Guide-for-Python-Code" class="headerlink" title="PEP 8 – Style Guide for Python Code"></a>PEP 8 – Style Guide for Python Code</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></li>
+<li>flake8 <code>pip install flake8</code></li>
+</ul>
+<h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><h3 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h3><ul>
+<li>vscode 插件</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jupyter/notebook">https://github.com/jupyter/notebook</a></li>
+<li>The Jupyter notebook is a web-based notebook environment for interactive computing.</li>
+<li><a target="_blank" rel="noopener" href="https://jupyter-notebook.readthedocs.io/en/stable/">https://jupyter-notebook.readthedocs.io/en/stable/</a></li>
+</ul>
+<h3 id="SQLAlchemy"><a href="#SQLAlchemy" class="headerlink" title="SQLAlchemy"></a>SQLAlchemy</h3><h4 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h4><ul>
+<li>Object-Relational Mapping</li>
+<li>ORM框架的作用 - 把数据库表的一行记录与一个对象互相做自动转换</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sqlalchemy/sqlalchemy">https://github.com/sqlalchemy/sqlalchemy</a></li>
+<li>nodejs的话就是mongoose(<a target="_blank" rel="noopener" href="https://github.com/Automattic/mongoose">https://github.com/Automattic/mongoose</a>)</li>
+</ul>
+<h3 id="type-a-python"><a href="#type-a-python" class="headerlink" title="type -a python"></a>type -a python</h3><ul>
+<li>找到python解释器的完整路径</li>
+</ul>
+<h2 id="lib"><a href="#lib" class="headerlink" title="lib"></a>lib</h2><h4 id="contextlib"><a href="#contextlib" class="headerlink" title="contextlib"></a>contextlib</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://pymotw.com/3/contextlib/index.html">https://pymotw.com/3/contextlib/index.html</a></li>
+</ul>
+<h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2><h3 id="pythonic"><a href="#pythonic" class="headerlink" title="pythonic"></a>pythonic</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.tiobe.com/">https://www.tiobe.com/</a></li>
+<li>Java 静态语言，有编译过程</li>
+<li>ES6出来后，对面向对象的支持改善了</li>
+<li>python动态语言，面向对象（思想），（现实到计算机的映射）的语言</li>
+<li>缺点：慢</li>
+<li>编译型：C，C++（源代码编译成机器码）</li>
+<li>解释型：javascript, python</li>
+<li>Java,C#（编译成中间代码）</li>
+<li>胶水语言（把C，C++编写的模块组合在一起）</li>
+<li>回归语言的本质，享受语言本身的纯粹之美<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><h4 id="数字-Number"><a href="#数字-Number" class="headerlink" title="数字 - Number"></a>数字 - Number</h4>int 整型 | float 浮点 | bool 布尔 | complex 复数</li>
+</ul>
+<h4 id="组"><a href="#组" class="headerlink" title="组"></a>组</h4><p>序列 - str | list | tuple (有序，可用下标索引来访问，切片操作[0,5])<br>集合 - set (无序，没有索引，不能切片)<br>字典 - dict(key:value 键值对)</p>
+<h4 id="字典-枚举"><a href="#字典-枚举" class="headerlink" title="字典 枚举"></a>字典 枚举</h4><ul>
+<li><p>Python的枚举是个类，其它的语言是个类型，有关键字</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">VIP</span>(<span class="type">Enum</span>):</span></span><br><span class="line"><span class="class">	<span class="type">YELLOW</span> = 1</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="type">Print</span>(<span class="type">VIP</span>.<span class="type">YELLOW</span>)</span></span><br><span class="line"><span class="class"><span class="type">VIP</span>.<span class="type">YELLOW</span> </span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="type">VIP</span>.<span class="type">YELLOW</span>.value</span></span><br><span class="line"><span class="class"><span class="type">VIP</span>.<span class="type">YELLOW</span>.name</span></span><br><span class="line"><span class="class"># 枚举类型，名字，值</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">for v in <span class="type">VIP</span>:</span></span><br><span class="line"><span class="class">	print(<span class="title">v</span>)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">枚举类型不支持 &gt; &lt; 比较</span></span><br></pre></td></tr></table></figure></li>
+<li><p>表示类型：字典（数据结构），类（封装）</p>
+</li>
+<li><p>缺点：都是可变的，可以被更改（类型被确定下来之后，是不让更改的）没有防止相同标签的功能</p>
+</li>
+<li><p>枚举：如果值相同，第二个的标签就是第一个的别名了，遍历的时候，第二个就不会出现;想要得到第二个，遍历这个</p>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">for</span> <span class="variable">v</span> <span class="variable"><span class="keyword">in</span></span> <span class="variable">VIP.__members__.items</span>():</span><br><span class="line">	<span class="function"><span class="title">print</span>(<span class="variable">v</span>)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">for</span> <span class="variable">v</span> <span class="variable"><span class="keyword">in</span></span> <span class="variable">VIP.__members__</span>:</span><br><span class="line">	<span class="function"><span class="title">print</span>(<span class="variable">v</span>)</span></span><br></pre></td></tr></table></figure></li>
+<li><p>数据库存储：值用数字</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">a</span> = <span class="number">1</span></span><br><span class="line">print(VIP(<span class="keyword">a</span>))</span><br><span class="line"><span class="comment"># 枚举转换</span></span><br><span class="line">Enum</span><br><span class="line">IntEnum</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="装饰器："><a href="#装饰器：" class="headerlink" title="装饰器："></a>装饰器：</h3><p>unique<br>@unique</p>
+<ul>
+<li><p>枚举在python中的实现是单例模式，所以不能new</p>
+</li>
+<li><p>设计模式应该在实践中,设计模式防止代码乱变化</p>
+</li>
+</ul>
+<h2 id="函数："><a href="#函数：" class="headerlink" title="函数："></a>函数：</h2><p>print()</p>
+<p>round(1.234, 3)</p>
+<p>help(round)</p>
+<p>import this<br>The Zen of Python, by Tim Peters</p>
+<p>函数：</p>
+<ol>
+<li>功能性</li>
+<li>  隐藏细节</li>
+<li>  避免编写重复的代码<br>组织代码，自定义函数</li>
+</ol>
+<p>def 关键字定义一个函数</p>
+<p>1.参数列表可以没有<br>2.return value ,如果没有，默认返回的是None</p>
+<p>Import sys</p>
+<p>sys.setrecursionlimit(100000)</p>
+<p>可变参数</p>
+<p>对函数的返回值没有类型限制（动态类型语言）</p>
+<p>解构赋值（序列解包）： 接收返回结果</p>
+<p>Python 中数字不能和字符串相加</p>
+<p>（定义过程中：形参，调用过程中：实参）<br>代码的可读性</p>
+<ol>
+<li><p>必须参数</p>
+</li>
+<li><p>关键字参数（c = add(y=3, x=2)）<br>（区别在于调用上，定义上一样的）（关键字参数也要满足必须参数）</p>
+</li>
+<li><p> 默认参数（定义和调用的时候：非默认参数不能放在默认参数后面）</p>
+</li>
+</ol>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>有意义的面向对象的代码</p>
+<p>类，对象<br>实例化</p>
+<p>class StudentHomeWork( ):</p>
+<p>调用了类下面的方法</p>
+<p>def fun(self):</p>
+<p>类最基本的作用：封装代码</p>
+<p>类只负责定义（刻画，描述）<br>运行和调用要放在类的外部</p>
+<p>建议模块里面如果写类，就写类，对类的调用就不要放在这个模块了</p>
+<p>函数，方法：<br>C,C++<br>Java, C#</p>
+<p>方法：设计层面<br>函数：程序运行，过程式的一种称谓</p>
+<p>变量出现在模块，就是称为变量<br>如果出现在类里面，就是数据成员</p>
+<p>类和对象：</p>
+<p>类是现实世界或思维世界中的实体在计算机中的反映<br>它将数据以及这些数据上的操作封装在一起</p>
+<p>数据成员表现特征<br>方法刻画行为</p>
+<p>当类被实例化后，就变成了一个具体的对象</p>
+<p>def <strong>init</strong>():<br>不能返回除none之外的值<br>构造函数<br>初始化对象的属性（特征）</p>
+<p>实例化的时候，自动调用构造函数</p>
+<p>模块下的全局变量，模块下函数里的局部变量</p>
+<p>类变量-和类相关联在一起<br>实例变量-和对象相关联在一起<br>在面向对象的角度思考这个问题</p>
+<p>类是抽象的，对象是具体的</p>
+<p>Student类就不要name,name应该是对象有的</p>
+<p>保存对象的特征值：<br>self（对实例变量赋值要加self）</p>
+<p>谁调用了这个方法，self就是调用的那个实例对象</p>
+<p>实例方法：和对象实例相关联的，实例可以调用的方法，定义时要self（显胜于隐），调用时不用传的</p>
+<p>其他语言可能会用this<br>显胜于隐</p>
+<p>动态语言，写起来简单，但是对一些机制理解不深刻，就容易有坑</p>
+<p>student1.<strong>dict</strong><br>Student.<strong>dict</strong></p>
+<p>python类<br>    变量<br>        类变量<br>        实例变量<br>    方法<br>        实例方法<br>        类方法<br>        静态方法<br>    构造函数<br>    成员的可见性<br>    面向对象3大特性<br>        继承性<br>        封装性<br>        多态性</p>
+<p>方法可以操作变量，大部分是用来操作变量的</p>
+<p>实例方法描述类的行为<br>构造函数初始化类的各种特征的</p>
+<p>实例方法访问类变量</p>
+<p>self.<strong>class</strong>.sum1<br>Student.sum1</p>
+<p>定义类方法：</p>
+<p>@classmethod<br>def plus_sum(cls):<br>    pass</p>
+<p>Student.plus_sum()</p>
+<p>Python 中，对象可以调用类方法</p>
+<p>静态方法，类方法</p>
+<p>静态方法，和类和对象都没什么关系，不太推荐使用</p>
+<p>类的内部调用，外部调用</p>
+<h2 id="包，模块，函数与变量作用域"><a href="#包，模块，函数与变量作用域" class="headerlink" title="包，模块，函数与变量作用域"></a>包，模块，函数与变量作用域</h2><p>高性能，封装性（可复用），抽象能力</p>
+<p>包(文件夹) dll.jar<br>模块 .py<br>类<br>函数，变量</p>
+<p>js:npm is the package manager for JavaScript and the world’s largest software registry. Discover packages of reusable code — and assemble them in powerful new ways</p>
+<p>Find, install and publish Python packages with the Python Package Index</p>
+<p>seven.c4<br>six.c4</p>
+<p>命名空间</p>
+<p>包下面可以有子包</p>
+<p><strong>init</strong>.py</p>
+<p>import module_name<br>import t.c7 as m<br>包引用的方法机制也是为了解决引入的各种问题，方便我们使用</p>
+<p>解释型语言——有顺序的<br><strong>pycache</strong> 提高python运行效率的，虚拟机</p>
+<p>Vscode:<br> Files.exclude<br><strong>pycache</strong></p>
+<p>Py换行 \</p>
+<p>或者加（）</p>
+<p>From c9 import (a, b<br>,c) </p>
+<p>系统内置类库（内置标准库）</p>
+<p>clear  清屏vscode</p>
+<p>批量导入库</p>
+<p><strong>init</strong></p>
+<p>系统思维</p>
+<p>包和模块不会被重复导入的<br>避免循环导入</p>
+<p>一旦导入，就会执行模块里面的代码，在导入阶段只会执行一次</p>
+<p>入口文件的概念</p>
+<h2 id="工程"><a href="#工程" class="headerlink" title="工程"></a>工程</h2><ul>
+<li>vim ｜ vscode 插件<br>Python<br>不强制；<br>不需要{}区分代码块，用的缩进</li>
+</ul>
+<p>条件控制 if else<br>循环控制 while<br>分支 switch(python不是)</p>
+<p>桌面端代码的加密比较重要</p>
+<p>Python 不适合去空格的压缩</p>
+<p>ACCOUNT<br>type_kind_level</p>
+<p>看似变量的丢到模块里面，会导致识别为不应为变量<br>变量应该在函数或者模块里面</p>
+<p>Pylint</p>
+<p>Snippet</p>
+<p>结构体-作用域</p>
+<p>代码块里面的代码是同级别的</p>
+<p>python 没有goto </p>
+<p>分支里面很多分支，典型面向过程</p>
+<p>抽成函数，基本的抽象</p>
+<p>elif 替代 switch<br>字典的方式替代 switch（比较好）</p>
+<p>从终端输入的得到的是字符串</p>
+<p>A,b 不可能同时为false</p>
+<p>a or b</p>
+<p>循环，解决问题的思维模式，甚至穷举</p>
+<p>While（condition 不能是常量）（python 中有else）(递归)<br>For 遍历/循环 序列，集合，字典(break, continue)(range())</p>
+<p>序列切片<br>B = a[0, len(a):2]<br>Print(b)</p>
+<h2 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h2><p>命名可读性</p>
+<p>变量要有意义</p>
+<p>变量存储在内存中的值。这就意味着在创建变量时会在内存中开辟一个空间。<br>基于变量的数据类型，解释器会分配指定内存，并决定什么数据可以被存储在内存中。<br>因此，变量可以指定不同的数据类型，这些变量可以存储整数，小数或字符。</p>
+<p>保留关键字不能用作变量名<br>如type,print 等方法也不要用做变量名</p>
+<p>值类型，引用类型（值可以改变）</p>
+<p>Python id 显示内存地址</p>
+<pre><code>1.    1，id() 内存地址2.==比较的是值3.is  比较的是内存地址    数字，字符串，有小数据池    int -5--256    str:1,不能有空格        2.长度不能超过20个字符        3.不能有特殊字符如：#@....
+</code></pre>
+<p>js取不到的，用chrome的heap snapshot，能看到一个等价的地址，但不是真实的内存地址。</p>
+<p>回复 flcwl：<br>js不提供对内存的直接访问，debug工具也只提供到vm的虚拟内存空间，想要取到底层的进程虚拟内存空间，只有用gdb去调试引擎源代码：<a target="_blank" rel="noopener" href="https://medium.com/fhinkel/de">https://medium.com/fhinkel/de</a>…</p>
+<p>一、作用域链：函数在定义的时候创建的,用于寻找使用到的变量的值的一个索引,而他内部的规则是,把函数自身的本地变量放在最前面,把自身的父级函数中的变量放在其次,把再高一级函数中的变量放在更后面,以此类推直至全局对象为止.当函数中需要查询一个变量的值的时候,js解释器会去作用域链去查找,从最前面的本地变量中先找,如果没有找到对应的变量,则到下一级的链上找,一旦找到了变量,则不再继续.如果找到最后也没找到需要的变量,则解释器返回undefined。<br>二、内存回收机制：一个函数在执行开始的时候,会给其中定义的变量划分内存空间保存,以备后面的语句所用,等到函数执行完毕返回了,这些变量就被认为是无用的了.对应的内存空间也就被回收了.下次再执行此函数的时候,所有的变量又回到最初的状态,重新赋值使用.但是如果这个函数内部又嵌套了另一个函数,而这个函数是有可能在外部被调用到的.并且这个内部函数又使用了外部函数的某些变量的话.这种内存回收机制就会出现问题.如果在外部函数返回后,又直接调用了内部函数,那么内部函数就无法读取到他所需要的外部函数中变量的值了.所以js解释器在遇到函数定义的时候,会自动把函数和他可能使用的变量(包括本地变量和父级和祖先级函数的变量(自由变量))一起保存起来.也就是构建一个闭包,这些变量将不会被内存回收器所回收,只有当内部的函数不可能被调用以后(例如被删除了,或者没有了指针),才会销毁这个闭包,而没有任何一个闭包引用的变量才会被下一次内存回收启动时所回收。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>id(p)<br>16079976<br>hex(id(p))<br>‘0xf55c68’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#!/usr/bin/python</p>
+<p>aList = [123, ‘xyz’, ‘zara’, ‘abc’];<br>aList.append( 2009 );<br>print “Updated List : “, aList;<br>Updated List :  [123, ‘xyz’, ‘zara’, ‘abc’, 2009]</p>
+<p>jQuery append()</p>
+<p>Tuple 不可改变，有时候需要</p>
+<p>Js:<br>2**9<br>512<br>Math.pow(x,y) // x的y次幂 x——底数,y——幂数</p>
+<p>成员运算符</p>
+<p>对象的三个特征<br>值，身份， 类型<br>==    is   isinstance</p>
+<p>位运算符</p>
+<p>表达式是运算符和操作数所构成的序列 (序列：有序的)<br>expression     operator   operand</p>
+<p>从左向右 左结合</p>
+<p>如果有 =<br>右结合</p>
+<p>转义字符 - 特殊的字符</p>
+<ul>
+<li>无法“看见”的字符</li>
+<li>与语言本身语法有冲突的字符</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        harmonyOS-dev-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B"><span class="toc-text">开发模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HAP"><span class="toc-text">HAP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ohpm"><span class="toc-text">ohpm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HAR-HSP"><span class="toc-text">HAR&#x2F;HSP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%92%8C%E7%8A%B6%E6%80%81"><span class="toc-text">组件和状态</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        harmonyOS-dev-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-08-15 15:25:59</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li>真机测试</li>
+<li>hdc 如果报inner error，先要确认真机的API版本，然后再进行开发</li>
+</ul>
+<h2 id="开发模型"><a href="#开发模型" class="headerlink" title="开发模型"></a>开发模型</h2><ul>
+<li>FA（不建议使用）</li>
+<li>Stage（1.支持多窗口2.进程单ArkTS引擎）</li>
+</ul>
+<p>进程间的数据和内存共享是操作系统中一个重要的概念，特别是在多任务和并发编程中。如果一个引擎运行在单一进程上，并且所有应用程序也在这同一进程中运行，它们将能够直接访问相同的内存空间，实现无缝的数据共享。</p>
+<p>这种设计可以提高数据访问的效率，因为它消除了进程间通信（IPC）的需要，而进程间通信至少需要一次上下文切换和数据拷贝，这对性能的影响是很大的。另一方面，这种设计也会带来一些挑战，比如应用程序之间的隔离性和安全性问题，因为在同一进程中运行的应用程序理论上能够访问进程的所有资源。</p>
+<h2 id="HAP"><a href="#HAP" class="headerlink" title="HAP"></a>HAP</h2><ul>
+<li>一个可以独立运行的完整模块</li>
+<li>like - aab标准包格式</li>
+<li>华为HAP (HarmonyOS Ability Package) 是华为为其操作系统 HarmonyOS 设计的一种应用程序包格式。为了在 HarmonyOS 设备上运行，应用程序需要被打包为 HAP 包。<br>以 HAP 格式打包的应用程序可以在多种类型的 HarmonyOS 设备上运行，包括智能手机、智能电视、智能穿戴装置等。<br>HAP 包包含应用程序的所有资源，包括代码、静态文件、图标等。它们可以从华为的分发平台（如 AppGallery）上下载并安装。</li>
+<li>相同能力内敛+按需加载，共享能力减少包体积大小</li>
+</ul>
+<h2 id="ohpm"><a href="#ohpm" class="headerlink" title="ohpm"></a>ohpm</h2><ul>
+<li>基于npm,pnpm</li>
+</ul>
+<h2 id="HAR-HSP"><a href="#HAR-HSP" class="headerlink" title="HAR/HSP"></a>HAR/HSP</h2><ul>
+<li>在app中是否以单例模式存在</li>
+<li>har,在不同的模块，存在不同的包实例</li>
+<li>hsp,模块的包实例是同一个</li>
+</ul>
+<h2 id="组件和状态"><a href="#组件和状态" class="headerlink" title="组件和状态"></a>组件和状态</h2><p>UI描述<br>数据与数据状态交互处理（底层逻辑）</p>
+<p>ArkUI - 声明式表达UI<br>ArkTS - ArkTS 是 HarmonyOS 优选的主力应用开发语言。ArkTS 围绕应用开发在 TypeScript（简称 TS）生态基础上做了进一步扩展，继承了 TS 的所有特性，是 TS 的超集。 </p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

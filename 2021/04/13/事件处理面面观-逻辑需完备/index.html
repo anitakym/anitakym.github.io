@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        事件处理面面观-逻辑需完备 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%8F%82%E8%80%83"><span class="toc-text">事件参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-text">装饰器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="toc-text">高阶函数</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        事件处理面面观-逻辑需完备
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-13 10:32:08</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>Once</p>
+<p>函数装饰器</p>
+<p>通过实例解释为什么是节流和防抖的中文含义</p>
+<p>本质上，利用定时器，来决定回调函数执行的时机</p>
+<p>节流（once的抽象）<br>比如频繁给服务器发送请求，这是个很消耗资源流量的事，我们限制一个时间间隔发送，这就是节流啦</p>
+<p>防抖<br>我们频繁触发某个事件的回调函数，比如canvas随着pi</p>
+<h3 id="事件参考"><a href="#事件参考" class="headerlink" title="事件参考"></a>事件参考</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Events">https://developer.mozilla.org/zh-CN/docs/Web/Events</a></p>
+<h3 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841">https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841</a><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">An ES2016 decorator <span class="keyword">is</span> an expression which <span class="keyword">returns</span> a <span class="keyword">function</span> <span class="keyword">and</span> can take a target, <span class="type">name</span> <span class="keyword">and</span> property descriptor <span class="keyword">as</span> arguments. You apply it <span class="keyword">by</span> prefixing the decorator <span class="keyword">with</span> an @ <span class="type">character</span> <span class="keyword">and</span> <span class="keyword">placing</span> this at the very top <span class="keyword">of</span> what you are trying <span class="keyword">to</span> decorate. Decorators can be defined <span class="keyword">for</span> either a <span class="keyword">class</span>, a <span class="keyword">method</span> <span class="keyword">or</span> a property.</span><br></pre></td></tr></table></figure>
+装饰器（Decorator）是一种用于修改类、方法、属性或参数的语法糖。</li>
+</ul>
+<ol>
+<li><p><strong>Angular</strong>：Angular 装饰器包括 <code>@Component</code>、<code>@NgModule</code>、<code>@Directive</code>、<code>@Input</code>、<code>@Output</code> 和 <code>@Injectable</code>。</p>
+</li>
+<li><p><strong>MobX</strong>：使用装饰器（如 <code>@observable</code>、<code>@action</code>、<code>@computed</code> 和 <code>@autorun</code>）轻松实现状态管理。通过使用这些装饰器，可以实现高效的响应式编程，使组件和状态更容易应对变化。</p>
+</li>
+<li><p><strong>Nest.js</strong>：大量使用装饰器，包括 <code>@Controller</code>、<code>@Get</code>、<code>@Post</code>、<code>@Inject</code> 和 <code>@Param</code> 等。</p>
+</li>
+</ol>
+<p>装饰器目前仍处于实验性阶段，尚未成为 JavaScript 的正式特性。要在项目中使用装饰器，需要通过 Babel 或 TypeScript 进行转译。对于 Babel，安装相应的插件（如：<code>@babel/plugin-proposal-decorators</code> 和 <code>@babel/plugin-proposal-class-properties</code>）。对于 TypeScript，需要在 <code>tsconfig.json</code> 文件中设置 <code>&quot;experimentalDecorators&quot;: true</code>。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposal-decorators">https://github.com/tc39/proposal-decorators</a> - stage:3 了 22.03</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tc39/proposals">https://github.com/tc39/proposals</a></li>
+</ul>
+<p>截至目前（2022年1月），装饰器语法在 ECMAScript 提案流程中处于第二阶段（Stage 2）。在 ECMAScript 的提案过程中，共有四个阶段：</p>
+<ol>
+<li>Stage 0：策展阶段 - 提案的起点，任何人可以提交新功能或更改。</li>
+<li>Stage 1：征求意见阶段 - 此阶段需要一个正式的描述，并由至少一位成员支持。</li>
+<li>Stage 2：草案阶段 - 提案需要有一个规范的初稿，进入此阶段意味着该功能很有可能被纳入未来的 ECMAScript 版本。</li>
+<li>Stage 3：候选阶段 - 对规范进行详尽审查和实现。对提案进行微调，并完善规范的细节。</li>
+<li>Stage 4：完成阶段 - 提案已在多个引擎中得到实现并通过了测试。该提案将作为下一个 ECMAScript 版本的一部分，并正式发布。</li>
+</ol>
+<p>目前，装饰器语法处于草案阶段，这意味着该功能很有可能会被纳入未来的 ECMAScript 版本。但是，在提交到正式规范之前，它可能仍会发生变化。因此，建议在使用装饰器语法时利用 Babel 等工具来确保代码的兼容性。</p>
+<h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><p>Vue 3.x 源码中充分利用了高阶函数（Higher-Order Functions，HOFs）的概念。高阶函数是指接受函数作为参数并/或返回函数作为结果的函数。</p>
+<p>以下是 Vue 3.x 源代码中一些使用高阶函数的例子。</p>
+<ol>
+<li><p><code>computed</code> 函数（位于 <code>packages/reactivity/src/computed.ts</code> 文件中）</p>
+<p><code>computed</code> 函数接受一个函数作为参数，并返回一个具有响应式特性的新函数。这是一个很典型的将普通函数转换为响应式的高阶函数应用。</p>
+</li>
+<li><p><code>watch</code> 和 <code>watchEffect</code> 函数（位于 <code>packages/runtime-core/src/apiWatch.ts</code> 文件中）</p>
+<p>这两个函数都接受函数作为参数，并且根据这些函数的结果来观察响应式数据的变化。这是一个非常常见的使用高阶函数进行数据观察的例子。</p>
+</li>
+<li><p><code>onBeforeMount</code>, <code>onMounted</code>, <code>onBeforeUpdate</code>, <code>onUpdated</code>, <code>onBeforeUnmount</code>, <code>onUnmounted</code> 生命周期方法（位于 <code>packages/runtime-core/src/apiLifecycle.ts</code> 文件中）</p>
+<p>这些生命周期方法接受一个函数作为参数，这些函数会在对应的 Vue 组件生命周期阶段被执行。这是使用高阶函数管理组件生命周期的例子。</p>
+</li>
+</ol>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

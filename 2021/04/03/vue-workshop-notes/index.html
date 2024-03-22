@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        vue-workshop-notes - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Reactivity"><span class="toc-text">Reactivity</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Words"><span class="toc-text">Words</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#intro"><span class="toc-text">intro</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#reactivity"><span class="toc-text">reactivity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getters-and-setters"><span class="toc-text">getters and setters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dependency-tracker"><span class="toc-text">dependency tracker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mini-observer"><span class="toc-text">mini observer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#intro-writing-plugins"><span class="toc-text">intro writing plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#writing-a-simple-plugin"><span class="toc-text">writing a simple plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#render-functions"><span class="toc-text">render functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        vue-workshop-notes
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-03 17:00:15</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>以前听的Evan You的一个workshop的笔记</p>
+</blockquote>
+<h3 id="Reactivity"><a href="#Reactivity" class="headerlink" title="Reactivity"></a>Reactivity</h3><ul>
+<li><p>imperative/declarative</p>
+<pre>
+命令式和声明式
+我们先把命令式的行为转为声明式的，可以通过函数（声明关系），再进一步抽象，抽象成模版语言
+view = render(state)是视图渲染系统都用的高度抽象的模式
+我们不允许用户任意操控状态，而是让他们总是来调用一个函数来操控状态
+对于这个函数，react中就是setState, 但是在Vue和Angualr中，我们不需要调用setState，angularJS用dirty checking实现（比较旧的版本了），拦截实践，然后执行一个digest cyle, 就不管有没有变化，都会检查；但是Vue要做得更精细一点，会把state 对象变成响应式的
+用ES5 的 object.defineProperty API来将所有property都变成getters and setters
+刚刚的方法，其实是一个很基本的依赖追踪的形式，knockout.js,meteor tracker,vue,mobx中都是这样的
+</pre>
+</li>
+<li><p>getters and setters</p>
+<pre>
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+</pre>
+
+
+</li>
+</ul>
+<h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2><h2 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h2><ul>
+<li>ins and outs 来龙去脉</li>
+<li>our agenda comprises of 议程包括</li>
+<li>resemble 类似</li>
+<li>under the hood 在底层</li>
+<li>field them with Vue.use, the API.</li>
+<li>And kind of walk you through how to use render functions in the Vue context 并指导你如何在Vue上下文中使用渲染函数</li>
+</ul>
+<h3 id="reactivity"><a href="#reactivity" class="headerlink" title="reactivity"></a>reactivity</h3><ul>
+<li>is like streams and stuff 像流之类的东西</li>
+<li>when you change the state and how the state reflects in the update of the entire system.</li>
+<li>So this is a very naive imperative solution right? 所以这是一个很幼稚的命令式解决方案吧？</li>
+<li>procedural 程序性的</li>
+<li>the b1 cell is always kept in sync per(按照-in accordance with) the requirements of the spreadsheet</li>
+<li>So this internal representation, view = render(state) is the very high level abstraction of how all the view rendering systems work.</li>
+<li>So we’ll not really bother with the details in here because it involves detailed DOM, DOM implementations, virtual DOM implementations and all that.所以我们就不去管这里面的细节了，因为这涉及到详细的DOM，DOM实现，虚拟DOM实现等等。</li>
+<li>look into 研究</li>
+<li>in a nutshell 简而言之</li>
+<li>granular adj.含颗粒的，颗粒状的； 粗糙的；</li>
+<li>in the sense that <ul>
+<li>“In the sense that” is correctly used to distinguish between two possible senses (approximately meanings) of a word or phrase. So:”This fact is funny, in the sense that it makes me laugh” or “This fact is funny, in the sense that it is strange”.</li>
+<li>This phrase is an explanatory linking phrase, used to link two parts of a sentence together so that it is clear that the first statement is being explained by or contrasted with the second part.</li>
+</ul>
+</li>
+<li>This is essentially a basic form of dependency tracking that’s commonly shared in Knockout.js, Meteor Tracker, and Vue.js and MobX. MobX is a state management pattern for React.</li>
+</ul>
+<h3 id="getters-and-setters"><a href="#getters-and-setters" class="headerlink" title="getters and setters"></a>getters and setters</h3><ul>
+<li>essentially 本质上</li>
+<li>arbitrary values 任意值</li>
+<li>to assert whether your current implementation is correct 以确定您当前的实现是否正确</li>
+<li>access and assignments 访问和赋值</li>
+<li>And this class will have two methods, depend and notify 这个类会有两个方法，依赖和通知</li>
+<li>associate 关联</li>
+<li>go half through the time 时间过半</li>
+<li>So the catch here is 所以这里的问题是</li>
+<li>So this variable will always point to something that references this 所以这个变量将始终指向引用这个变量的东西</li>
+</ul>
+<h3 id="dependency-tracker"><a href="#dependency-tracker" class="headerlink" title="dependency tracker"></a>dependency tracker</h3><ul>
+<li>That’s the whole point, right? 这就是重点，对吧？</li>
+<li>so we can just take the subscriber function and just invoke it 所以我们可以直接使用订阅者函数并调用它</li>
+<li>That’s pretty much it 这就差不多了</li>
+<li>this wrapped update 封装的更新</li>
+<li>we need to clean up stale dependencies 我们需要清理过时的依赖关系</li>
+<li>This is not accounted for 没有考虑到的</li>
+</ul>
+<h3 id="mini-observer"><a href="#mini-observer" class="headerlink" title="mini observer"></a>mini observer</h3><ul>
+<li>mutate a property 改变一个属性</li>
+<li>fill in the blanks 填空</li>
+<li>to this point 到此为止</li>
+</ul>
+<h2 id="intro-writing-plugins"><a href="#intro-writing-plugins" class="headerlink" title="intro writing plugins"></a>intro writing plugins</h2><h3 id="writing-a-simple-plugin"><a href="#writing-a-simple-plugin" class="headerlink" title="writing a simple plugin"></a>writing a simple plugin</h3><h3 id="render-functions"><a href="#render-functions" class="headerlink" title="render functions"></a>render functions</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>(Essentially) A lightweight JavaScript data format to represent what the actual DOM should look like at a given point in time (本质上)一个轻量级的JavaScript数据格式来表示实际的DOM在一个给定的时间点应该是什么样子的。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

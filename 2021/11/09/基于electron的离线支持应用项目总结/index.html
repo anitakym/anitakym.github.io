@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        基于electron的离线支持应用项目总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#history"><span class="toc-text">history</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD"><span class="toc-text">截屏功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#electron-rebuild"><span class="toc-text">electron rebuild</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Arch"><span class="toc-text">Arch</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%BF%9B%E7%A8%8B"><span class="toc-text">主进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B"><span class="toc-text">渲染进程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="toc-text">功能模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-text">文件下载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E7%AB%AF"><span class="toc-text">网页端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sentry"><span class="toc-text">sentry</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#EXCEPTION-ACCESS-VIOLATION-READ"><span class="toc-text">EXCEPTION_ACCESS_VIOLATION_READ</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E4%BA%A7%E5%93%81"><span class="toc-text">其他产品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#electron-builder"><span class="toc-text">electron-builder</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level"><span class="toc-text">level</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        基于electron的离线支持应用项目总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-09 18:07:30</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><blockquote>
+<p>一个15年的应用，之所以支持离线，是因为校区教室内的网络可能不好，所以需要课中使用时支持离线；</p>
+</blockquote>
+<ul>
+<li>那个时候electron的版本和相关构建生态都是比较开始的阶段，基于node的版本也比较低，过了几年，重新起那个项目</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">npm run start</span><br><span class="line">(会发生fse.node无法通过安全与偏好设置，这个需要在安全与偏好设置里面同意一下)</span><br><span class="line"></span><br><span class="line">开始错误暂不影响看，可点过掉</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">● electron-mocha</span><br><span class="line">- https:<span class="regexp">//m</span>ochajs.org/</span><br><span class="line">- https:<span class="regexp">//gi</span>thub.com<span class="regexp">/mochajs/m</span>ocha</span><br><span class="line"></span><br><span class="line">● electron-prebuilt</span><br><span class="line">  ○ npm地址： https:<span class="regexp">//</span>www.npmjs.com<span class="regexp">/package/</span>electron-prebuilt</span><br><span class="line">  ○ 说明：electron-prebuilt has been renamed to electron. For more details, see http:<span class="regexp">//</span>electron.atom.io<span class="regexp">/blog/</span><span class="number">2016</span><span class="regexp">/08/</span><span class="number">16</span>/npm-install-electron</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>“requires”: {<br>        “electron-download”: “^3.0.1”,<br>        “extract-zip”: “^1.0.3”<br>      }</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">被重新命名为electron了（https://www.electronjs<span class="meta">.org</span>/blog/npm-install-electron）</span><br><span class="line"></span><br><span class="line">● Mac，Windows包(利用两个工具，流程化得进行封包工作)</span><br><span class="line">  ○ appdmg</span><br><span class="line">  ○ rcedit</span><br><span class="line"></span><br><span class="line">(基于seal_electron)</span><br><span class="line">● 测试模块</span><br><span class="line"><span class="symbol">https:</span>//www.electronjs<span class="meta">.org</span>/spectron</span><br><span class="line">● 构建模块</span><br><span class="line"><span class="symbol">dps:</span></span><br><span class="line">electron-log</span><br><span class="line">electron-updater</span><br><span class="line"></span><br><span class="line">dev-deps:</span><br><span class="line">electron</span><br><span class="line">electron-builder</span><br><span class="line">electron-webpack</span><br></pre></td></tr></table></figure>
+
+<h3 id="截屏功能"><a href="#截屏功能" class="headerlink" title="截屏功能"></a>截屏功能</h3><h3 id="electron-rebuild"><a href="#electron-rebuild" class="headerlink" title="electron rebuild"></a>electron rebuild</h3><p>This executable rebuilds native Node.js modules against the version of Node.js that your Electron project is using. This allows you to use native Node.js modules in Electron apps without your system version of Node.js matching exactly (which is often not the case, and sometimes not even possible).<br>该可执行文件将根据您的Electron项目使用的Node.js版本重建本机Node.js模块。这使您可以在Electron应用程序中使用本机Node.js模块，而无需与系统版本的Node.js完全匹配</p>
+<ul>
+<li>可配置到script中</li>
+</ul>
+<h3 id="Arch"><a href="#Arch" class="headerlink" title="Arch"></a>Arch</h3><h4 id="主进程"><a href="#主进程" class="headerlink" title="主进程"></a>主进程</h4><ul>
+<li>browser window（浏览器窗口，加载网页，注入JSSDK，挂window上面）</li>
+<li>electron updater （客户端更新）</li>
+<li>客户端监控 - sentry</li>
+</ul>
+<h4 id="渲染进程"><a href="#渲染进程" class="headerlink" title="渲染进程"></a>渲染进程</h4><ul>
+<li>JSSDK （暴露给嵌入的页面）</li>
+</ul>
+<h3 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h3><h4 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h4><ul>
+<li>网页向客户端提出下载的请求</li>
+<li>客户端提供了下载的功能，由客户端向服务的请求数据，完成下载，并回调给网页进度和状态</li>
+<li><a target="_blank" rel="noopener" href="https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts">https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts</a></li>
+<li>JSSDK的注入是通过preload scripts</li>
+</ul>
+<h3 id="网页端"><a href="#网页端" class="headerlink" title="网页端"></a>网页端</h3><ul>
+<li>babel 是可以配置 electron兼容的</li>
+<li><a target="_blank" rel="noopener" href="https://babeljs.io/docs/en/options#targets">https://babeljs.io/docs/en/options#targets</a><br>“@babel/preset-env”,<pre><code>&#123;
+  &quot;targets&quot;: &#123;
+    &quot;electron&quot;: &quot;9&quot;,
+  &#125;
+&#125;
+</code></pre>
+</li>
+</ul>
+<h2 id="sentry"><a href="#sentry" class="headerlink" title="sentry"></a>sentry</h2><h4 id="EXCEPTION-ACCESS-VIOLATION-READ"><a href="#EXCEPTION-ACCESS-VIOLATION-READ" class="headerlink" title="EXCEPTION_ACCESS_VIOLATION_READ"></a>EXCEPTION_ACCESS_VIOLATION_READ</h4><p><a target="_blank" rel="noopener" href="https://source.chromium.org/chromium#chromium/src/v8/src/deoptimizer.cc&amp;sq=package:chromium&amp;l=680">https://source.chromium.org/chromium#chromium/src/v8/src/deoptimizer.cc&amp;sq=package:chromium&amp;l=680</a><br><a target="_blank" rel="noopener" href="https://github.com/electron/electron/issues/3241">https://github.com/electron/electron/issues/3241</a></p>
+<h3 id="其他产品"><a href="#其他产品" class="headerlink" title="其他产品"></a>其他产品</h3><ul>
+<li>语雀的客户端(<a target="_blank" rel="noopener" href="https://www.yuque.com/download">https://www.yuque.com/download</a>)</li>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/seeconf/2022/kr8mdw">https://www.yuque.com/seeconf/2022/kr8mdw</a>  - 开发的分享 - 如何打造高质量的基于electron的客户端</li>
+</ul>
+<h3 id="electron-builder"><a href="#electron-builder" class="headerlink" title="electron-builder"></a>electron-builder</h3><p>electron-builder 自身不对 Python 的版本有直接的要求，因为它是用 JavaScript 编写的。<br>然而，有些依赖可能需要 Python。例如，一些原生模块可能使用 node-gyp 进行构建，而 node-gyp 需要 Python 2.7（注意不是 Python 3）。<br>因此，在使用 electron-builder 时，虽然 electron-builder 自身对 Python 的版本没有直接要求，但如果你正在使用的项目中有需要 node-gyp 来构建的模块，那么就需要确保你的环境中安装了 Python 2.7。<br>不过，如果在构建过程中遇到与 Python 相关的问题，建议检查你的环境设置以及项目的依赖，并确保它们与 Python 的版本兼容。</p>
+<h3 id="level"><a href="#level" class="headerlink" title="level"></a>level</h3><p><code>leveldown</code>是一个为LevelDB编写的Node.js模块，LevelDB是谷歌开发的一种快速键值存储系统。<code>leveldown</code>充当LevelDB和Node.js之间的接口，使LevelDB的功能可以用JavaScript进行操作。</p>
+<p>具体来说，<code>leveldown</code>允许数据的存储、查询、删除和更新。它可用于处理大量数据，因为LevelDB设计用于处理高速大容量数据存储。</p>
+<p>此包通常与<code>levelup</code>包一起使用，<code>levelup</code>在<code>leveldown</code>之上添加了一些额外的功能，如数据编码和解码，以及读写流。</p>
+<p>LevelDB 是 Google 开发的一款高效的键值对存储库，它提供了接口来处理大型数据。LevelDB 使用 log-structured merge-tree（LSM树）数据结构，这样可以提供高速的读和写途径。因此，LevelDB 特别适合于处理大量数据的场景。</p>
+<p>一些主要特点包括：</p>
+<ol>
+<li><p>自动数据压缩：LevelDB 使用谷歌的 Snappy 数据压缩库来减少存储占用的空间。</p>
+</li>
+<li><p>原子批处理：LevelDB 支持“批处理”操作，这样可以保证一系列操作作为一个单元进行，要么全部成功，要么全部失败，这就是所谓的“原子性”。</p>
+</li>
+<li><p>快速查找：由于 LSM 树的数据结构特性，LevelDB 提供非常快速的键值对查找。</p>
+</li>
+</ol>
+<p>LevelDB 在很多领域有广泛应用，包括网页索引、用户数据存储、缓存等场景。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        patch-package-practice - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E9%97%AE%E9%A2%98"><span class="toc-text">处理问题</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        patch-package-practice
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-11-07 13:37:20</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="处理问题"><a href="#处理问题" class="headerlink" title="处理问题"></a>处理问题</h2><p><a target="_blank" rel="noopener" href="https://github.com/ds300/patch-package">https://github.com/ds300/patch-package</a></p>
+<ul>
+<li>依赖的第三方包代码有问题，需要更新，最便捷的的方式</li>
+</ul>
+<p><code>patch-package</code> 是在依赖包中进行小规模更改后，可以用来记录并复制这些更改的工具。以下是使用<code>patch-package</code>的最佳实践：</p>
+<ol>
+<li><p>安装patch-package: 可以使用npm或yarn进行安装。</p>
+<p>使用npm: <code>npm i patch-package postinstall-postinstall</code></p>
+<p>使用yarn: <code>yarn add patch-package postinstall-postinstall</code></p>
+</li>
+<li><p>创建补丁: 先进行对依赖包的修改，然后运行<code>npx patch-package package-name</code>。</p>
+</li>
+<li><p>尽可能小的改动: 不要尝试使用patch-package进行大规模的更改。这可能导致版本升级时patch失败，甚至可能违反包的许可证。</p>
+</li>
+<li><p>使用git版本控制: 在使用patch-package之前，最好首先进行一次git commit，以便在产生一个补丁文件后，可以清楚地看到新增的更改。</p>
+</li>
+<li><p>在<code>postinstall</code>脚本中运行<code>patch-package</code>: 在<code>package.json</code>的<code>scripts</code>属性中添加一项 <code>&quot;postinstall&quot;: &quot;patch-package&quot;</code>。这样做可以确保每次安装或更新依赖后都会自动应用补丁。</p>
+</li>
+<li><p>应用<code>yarn.lock</code> 或 <code>package-lock.json</code>: 这样做以确保将来的构建将使用相同的依赖项版本，并且补丁将应用。</p>
+</li>
+<li><p>切勿修改<code>node_modules</code>中包的源代码: 使用<code>patch-package</code>之前，一定要先在源代码中进行修改，然后再创建补丁文件。</p>
+</li>
+<li><p>提交patch文件到版本控制系统: 这样做以便其他开发者在<code>npm install</code>后能够应用同样的补丁。</p>
+</li>
+<li><p>在升级依赖项时小心: 当你升级一个已经打过补丁的包时，确保测试，因为补丁可能不再适用于新版本。</p>
+</li>
+</ol>
+<p>记住，在修改一个包时，最好的选择通常是先提交一个pull请求到上游项目。然而，如果你需要快速修复问题，或者你的更改不太可能被上游项目接受，那么<code>patch-package</code>是一个非常有用的工具。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

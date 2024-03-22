@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        响应式 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-text">名词解释:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E7%89%88%E5%BA%94%E7%94%A8%E5%88%86%E4%B8%BA%E4%B8%89%E7%B1%BB%EF%BC%9A"><span class="toc-text">手机版应用分为三类：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Webapp%E6%89%8B%E6%9C%BA%E7%BD%91%E9%A1%B5%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-text">Webapp手机网页特点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E7%89%88CSS3%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">手机版CSS3全局样式初始化:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E9%A1%B5%E9%9D%A2%E5%88%B6%E4%BD%9C"><span class="toc-text">响应式页面制作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mediascreen%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%EF%BC%9A"><span class="toc-text">@mediascreen查询语句：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E5%87%8F%E5%BC%B1%E6%A3%80%E6%B5%8B"><span class="toc-text">动画减弱检测</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex"><span class="toc-text">flex</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF"><span class="toc-text">场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#display%EF%BC%9Ainline-flex-%E4%BC%9A%E6%B6%88%E9%99%A4%E5%AE%B9%E5%99%A8%E7%9A%84%E5%9D%97%E7%8A%B6%E5%B1%9E%E6%80%A7"><span class="toc-text">display：inline-flex 会消除容器的块状属性</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        响应式
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2016-09-12 10:45:59</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#很久以前系列" title="很久以前系列">很久以前系列</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#HTML" title="HTML">HTML</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#响应式" title="响应式">响应式</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>目前做的都是复杂的web应用，其实不太会有响应式的需求，如果有要对端的支持，权衡成本收益，对投入端的开发，对开发的组件包的设计，具体的可能会做一些适配，大屏，中屏，小屏。</p>
+</blockquote>
+<ul>
+<li>文章指路：<a target="_blank" rel="noopener" href="https://www.alistapart.com/articles/responsive-web-design/">https://www.alistapart.com/articles/responsive-web-design/</a></li>
+</ul>
+<h4 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释:"></a>名词解释:</h4><ul>
+<li>portrait-横屏</li>
+<li>landscape-竖屏</li>
+<li>flexible layout-弹性布局</li>
+</ul>
+<ul>
+<li>一篇较好的文章指路：<a target="_blank" rel="noopener" href="http://beforweb.com/node/6/page/0/2">http://beforweb.com/node/6/page/0/2</a></li>
+</ul>
+<blockquote>
+<p>下面是以前实习时候，所里的一次小培训，让服务提供商讲的，天气很热，不太好吃的食堂，记的乱乱的笔记<br>comment: 现在看来不太具有参考意义了，但是能看出前端发展的进程</p>
+</blockquote>
+<ul>
+<li>名词：自适应、响应式</li>
+<li>手机版WebAPP页面制作</li>
+</ul>
+<h4 id="手机版应用分为三类："><a href="#手机版应用分为三类：" class="headerlink" title="手机版应用分为三类："></a>手机版应用分为三类：</h4><ul>
+<li>WebApp（html5技术；又叫wap版；全平台通用）</li>
+<li>NativeApp （android、ios专用开发平台，安装在手机上）</li>
+<li>HybridApp （nativeapp+webapp）</li>
+</ul>
+<ul>
+<li>comment:谁能想到后来到小程序呢，引流情况下的首选场景</li>
+<li>comment:hybrid的模式总归是会存在的</li>
+</ul>
+<h4 id="Webapp手机网页特点："><a href="#Webapp手机网页特点：" class="headerlink" title="Webapp手机网页特点："></a>Webapp手机网页特点：</h4><ul>
+<li><p>Html5按照横向320倍率等比放大页面全部元素，声明及页面信息如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>无标题文档<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre>
+Iphone的放大倍率：
+4-4s 326dpi (2x) 640 x 960  16：11接近4：3   2倍
+5-5s 326dpi (2x) 640 x 1136   16：9   2倍
+6 326dpi 750 x 1334   16：9   约2.3倍
+6plus 401dpi 1080 x 1920   16：9   约3.4倍
+</pre>
+</li>
+<li><p>要做成宽度自适应页面，考虑手机横屏问题。</p>
+</li>
+<li><p>设计师在设计时为了保证图片的清晰度会设计640px甚至更高分辨率的页面，制作时切图按照设计师提供的分辨率切图片，写html是将图片高度换算成320px，对于背景是重复显示还是拉伸根据图片情况而定，会用到css3的background-size属性。</p>
+</li>
+<li><p>Js交互要符合手机操作方式 swiper3.0  （<a target="_blank" rel="noopener" href="http://www.swiper.com.cn/%EF%BC%89">http://www.swiper.com.cn/）</a></p>
+</li>
+<li><p>手机字体使用px，请根据设计分辨率换算成基准320分辨率下的字号，行距一般为字号的两倍。</p>
+</li>
+</ul>
+<ul>
+<li>comment:iphone已经11pro了，swiper已经6.0了（ <a target="_blank" rel="noopener" href="https://swiperjs.com/%EF%BC%89">https://swiperjs.com/）</a></li>
+<li>comment:hybrid的模式总归是会存在的</li>
+<li>comment:手机屏幕的尺寸也有了变革，也多了刘海儿</li>
+</ul>
+<h4 id="手机版CSS3全局样式初始化"><a href="#手机版CSS3全局样式初始化" class="headerlink" title="手机版CSS3全局样式初始化:"></a>手机版CSS3全局样式初始化:</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span>, <span class="selector-tag">div</span>, <span class="selector-tag">span</span>, applet, <span class="selector-tag">object</span>, <span class="selector-tag">iframe</span>, <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">p</span>, <span class="selector-tag">blockquote</span>, pre, <span class="selector-tag">a</span>, <span class="selector-tag">abbr</span>, acronym, <span class="selector-tag">address</span>, big, <span class="selector-tag">cite</span>, <span class="selector-tag">code</span>, <span class="selector-tag">del</span>, <span class="selector-tag">dfn</span>, <span class="selector-tag">em</span>, <span class="selector-tag">img</span>, <span class="selector-tag">ins</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">q</span>, s, <span class="selector-tag">samp</span>, small, strike, <span class="selector-tag">strong</span>, sub, <span class="selector-tag">sup</span>, tt, <span class="selector-tag">var</span>, <span class="selector-tag">b</span>, u, <span class="selector-tag">i</span>, center, <span class="selector-tag">dl</span>, <span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">li</span>, <span class="selector-tag">fieldset</span>, <span class="selector-tag">form</span>, <span class="selector-tag">label</span>, <span class="selector-tag">legend</span>, <span class="selector-tag">table</span>, <span class="selector-tag">caption</span>, <span class="selector-tag">tbody</span>, <span class="selector-tag">tfoot</span>, <span class="selector-tag">thead</span>, <span class="selector-tag">tr</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span>,</span><br><span class="line"><span class="selector-tag">article</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">canvas</span>, <span class="selector-tag">details</span>, embed, <span class="selector-tag">figure</span>, <span class="selector-tag">figcaption</span>, <span class="selector-tag">footer</span>, <span class="selector-tag">header</span>, <span class="selector-tag">hgroup</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">nav</span>, output, ruby, <span class="selector-tag">section</span>, <span class="selector-tag">summary</span>, <span class="selector-tag">time</span>, <span class="selector-tag">mark</span>, <span class="selector-tag">audio</span>, <span class="selector-tag">video</span> &#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; <span class="attribute">border</span>: <span class="number">0</span>;&#125; <span class="selector-tag">a</span>,area&#123;blr:<span class="built_in">expression</span>(this.onFocus=this.<span class="built_in">blur</span>())&#125; <span class="selector-tag">a</span> &#123; <span class="attribute">text-decoration</span>:none;&#125; <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">text-decoration</span>:none;&#125; <span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123; <span class="attribute">font-family</span>:Helvetica,<span class="string">&quot;微软雅黑&quot;</span>; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none; text-size-adjust:none; &#125; <span class="comment">/*Reset Android and IOS font*/</span> <span class="selector-tag">input</span> &#123; <span class="attribute">border-radius</span>:<span class="number">0</span>; &#125; <span class="comment">/*Reset IOS input style*/</span> <span class="selector-tag">div</span>, <span class="selector-tag">span</span>, <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">p</span>, <span class="selector-tag">a</span>, <span class="selector-tag">img</span>, <span class="selector-tag">dl</span>, <span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">li</span>, <span class="selector-tag">form</span> &#123; <span class="attribute">list-style</span>:none; &#125; <span class="keyword">@-webkit-viewport</span> &#123; <span class="attribute">width</span>:device-width; &#125; <span class="keyword">@-moz-viewport</span> &#123; <span class="attribute">width</span>:device-width; &#125; <span class="keyword">@-ms-viewport</span> &#123; <span class="attribute">width</span>:device-width; &#125; <span class="keyword">@-o-viewport</span> &#123; <span class="attribute">width</span>:device-width; &#125; <span class="keyword">@viewport</span> &#123; <span class="attribute">width</span>:device-width; &#125; <span class="selector-class">.boxcenter</span> &#123; <span class="attribute">margin</span>:<span class="number">0</span> auto;&#125; <span class="selector-class">.fl_all</span> &#123; <span class="attribute">float</span><span class="selector-pseudo">:left</span>; <span class="attribute">display</span>:inline-block &#125; <span class="selector-class">.fr_all</span> &#123; <span class="attribute">float</span><span class="selector-pseudo">:right</span>; <span class="attribute">display</span>:inline-block &#125;</span><br><span class="line">&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>comment:其实是不推荐这种的，对样式的初始化，会造成之后的一些问题，这种全局的覆盖样式，如果自己写了组件包，包的表现形态会收到影响</li>
+</ul>
+<h4 id="响应式页面制作"><a href="#响应式页面制作" class="headerlink" title="响应式页面制作"></a>响应式页面制作</h4><p>Html5页面 + 手机版meta页面信息声明 + CSS3（兼容性问题，IE7-8可通过第三方插件兼容响应式）</p>
+<ul>
+<li>comment:ie的问题现在除了特殊的行业和需要支持的场景，一般不再需要考虑了，有趣的是，一个做直播的朋友，PC端的，说其实他们还是需要支持IE，想到了乡土中国这本书，很有意思。</li>
+</ul>
+<h4 id="mediascreen查询语句："><a href="#mediascreen查询语句：" class="headerlink" title="@mediascreen查询语句："></a>@mediascreen查询语句：</h4><ul>
+<li>常用写法：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123; <span class="attribute">max-width</span>:<span class="number">1200px</span>; <span class="attribute">min-width</span>:<span class="number">980px</span>; &#125;</span><br><span class="line"><span class="selector-class">.fl_pc</span> &#123; <span class="attribute">float</span><span class="selector-pseudo">:left</span>; <span class="attribute">display</span>:inline-block &#125;</span><br><span class="line"><span class="selector-class">.fr_pc</span> &#123; <span class="attribute">float</span><span class="selector-pseudo">:right</span>; <span class="attribute">display</span>:inline-block &#125;</span><br><span class="line"><span class="selector-class">.col_2in1</span> &#123; <span class="attribute">width</span>:<span class="number">50%</span>; *<span class="attribute">width</span>:<span class="number">49.9%</span> &#125;</span><br><span class="line"><span class="selector-class">.col_3in1</span> &#123; <span class="attribute">width</span>:<span class="number">33.3%</span> &#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123; <span class="attribute">background</span>:<span class="number">#fff</span>; &#125; <span class="comment">/*正常 白色 */</span></span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>:<span class="number">992px</span>)&#123; <span class="selector-tag">body</span>&#123; <span class="attribute">background</span>:red; &#125; &#125; <span class="comment">/*高度小于992px时 红色 */</span></span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">768px</span>) <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">991px</span>)&#123; <span class="selector-tag">body</span>&#123; <span class="attribute">background</span>:black; &#125; &#125; <span class="comment">/*高度大于768px小于991时 黑色 */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>:<span class="number">767px</span>) <span class="keyword">and</span> (<span class="attribute">orientation</span>: landscape)&#123;<span class="selector-tag">body</span>&#123; <span class="attribute">background</span>:green; &#125; &#125; <span class="comment">/*高度小于767px且为竖屏时 绿色 适用于pad竖屏查询*/</span> 注意从上至下顺序，越往下优先级越高！</span><br></pre></td></tr></table></figure>
+<ul>
+<li>CSS3初始化，在手机版基础上增加如下内容：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.col_4in1</span> &#123; <span class="attribute">width</span>:<span class="number">25%</span>; *<span class="attribute">width</span>:<span class="number">24.9%</span> &#125;</span><br><span class="line"><span class="selector-class">.col_5in1</span> &#123; <span class="attribute">width</span>:<span class="number">20%</span>; *<span class="attribute">width</span>:<span class="number">19.9%</span> &#125;</span><br><span class="line"><span class="selector-class">.col_6in1</span> &#123; <span class="attribute">width</span>:<span class="number">16.6%</span> &#125; <span class="selector-class">.pchide</span> &#123; <span class="attribute">display</span>:none; &#125; <span class="selector-class">.mhide</span> &#123; <span class="attribute">display</span>:block; &#125;</span><br><span class="line"><span class="comment">/* screen 992 */</span></span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>:<span class="number">992px</span>)&#123; <span class="selector-class">.container</span> &#123; <span class="attribute">max-width</span>:<span class="number">990px</span>; <span class="attribute">min-width</span>:<span class="number">300px</span>; <span class="attribute">padding</span>:<span class="number">0</span>; &#125; <span class="selector-class">.fl_pc</span> &#123; <span class="attribute">float</span>:none; <span class="attribute">display</span>:block &#125; <span class="selector-class">.fr_pc</span> &#123; <span class="attribute">float</span>:none; <span class="attribute">display</span>:block &#125; <span class="selector-class">.col_2in1</span> &#123; <span class="attribute">width</span>:auto; *<span class="attribute">width</span>:auto &#125; <span class="selector-class">.col_3in1</span> &#123; <span class="attribute">width</span>:auto  &#125; <span class="selector-class">.col_4in1</span> &#123; <span class="attribute">width</span>:auto; *<span class="attribute">width</span>:auto &#125; <span class="selector-class">.col_5in1</span> &#123; <span class="attribute">width</span>:auto; *<span class="attribute">width</span>:auto &#125; <span class="selector-class">.col_6in1</span> &#123; <span class="attribute">width</span>:auto &#125; <span class="selector-class">.pchide</span> &#123; <span class="attribute">display</span>:block; &#125; <span class="selector-class">.mhide</span> &#123; <span class="attribute">display</span>:none; &#125; &#125;</span><br></pre></td></tr></table></figure></li>
+<li>由手机清晰度引发的兼容性问题，ie8以下对css3不兼容：<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-size</span>  解决办法，避免使用背景或使用<span class="keyword">@media</span> hack： <span class="keyword">@media</span> \<span class="number">0s</span>creen\,screen\<span class="number">9</span> &#123; <span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>:<span class="number">992px</span>)&#123;   .....   &#125; &#125;</span><br></pre></td></tr></table></figure></li>
+<li>ie8以下对响应式不兼容：<!--[if lt IE 9]> <script type="text/javascript" src="js/respond.js"></script> <![endif]-->
+a. 必须写在<link href="css/style.css" rel="stylesheet" type="text/css" />所有样式表的下边，才能生效！<br>b. 必须放到web服务器上才能生效。</li>
+<li>respond.js（<a target="_blank" rel="noopener" href="https://github.com/scottjehl/Respond/%EF%BC%89">https://github.com/scottjehl/Respond/）</a></li>
+</ul>
+<ul>
+<li>comment: 14年基本上就停止更新了，后面做了两次patch</li>
+</ul>
+<h4 id="动画减弱检测"><a href="#动画减弱检测" class="headerlink" title="动画减弱检测"></a>动画减弱检测</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-reduced-motion">https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-reduced-motion</a><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">prefers-reduced-motion</span>: no-preference) &#123;</span><br><span class="line">  <span class="selector-class">.App-logo</span> &#123;</span><br><span class="line">    <span class="attribute">animation</span>: App-logo-spin infinite <span class="number">20s</span> linear;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><ul>
+<li>flexible box</li>
+<li>flex container | flex item<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3></li>
+<li>小程序开发</li>
+<li>（View）容器默认宽度100%，高度自适应</li>
+<li>主轴 ｜ 交叉轴</li>
+<li>flex-direction: row | column | row-reverse | column-reverse</li>
+<li>justify-content: center | space-between平均分布 | space-around等距分布</li>
+</ul>
+<h3 id="display：inline-flex-会消除容器的块状属性"><a href="#display：inline-flex-会消除容器的块状属性" class="headerlink" title="display：inline-flex 会消除容器的块状属性"></a>display：inline-flex 会消除容器的块状属性</h3>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

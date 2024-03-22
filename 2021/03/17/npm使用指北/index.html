@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        npm使用指北 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-text">问题处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#error"><span class="toc-text">error</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#peer-dep"><span class="toc-text">peer dep</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#n"><span class="toc-text">n</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npx"><span class="toc-text">npx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yarn"><span class="toc-text">yarn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-modules-bin"><span class="toc-text">node_modules&#x2F;.bin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npmrc"><span class="toc-text">.npmrc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pnpm"><span class="toc-text">pnpm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#peerDependencies"><span class="toc-text">peerDependencies</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#difference"><span class="toc-text">difference</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86"><span class="toc-text">项目管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#init"><span class="toc-text">init</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#package-json"><span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="toc-text">技术选型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-cache"><span class="toc-text">npm-cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%93verbose"><span class="toc-text">–verbose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-info"><span class="toc-text">npm info</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-%E5%8F%91%E5%B8%83-%E6%99%AE%E9%80%9A%E6%A8%A1%E5%9D%97%EF%BD%9C%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%A8%A1%E5%9D%97"><span class="toc-text">npm 发布(普通模块｜二进制模块)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#packages"><span class="toc-text">packages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#process-argv-%E8%A7%A3%E6%9E%90"><span class="toc-text">process.argv 解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npmignore"><span class="toc-text">.npmignore</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#postinstall"><span class="toc-text">postinstall</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#usr-local-bin-pnpm-line-8-33087-Killed-9"><span class="toc-text">usr&#x2F;local&#x2F;bin&#x2F;pnpm: line 8: 33087 Killed: 9</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%93exact"><span class="toc-text">–exact</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#update"><span class="toc-text">update</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache"><span class="toc-text">cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-version"><span class="toc-text">npm version</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        npm使用指北
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-17 14:48:34</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>查看全局安装的包的版本</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> list -g --depth <span class="number">0</span> | grep @vue/cli</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题处理"><a href="#问题处理" class="headerlink" title="问题处理"></a>问题处理</h3><p>(node:50731) ExperimentalWarning: Package name self resolution is an experimental feature. This feature could change at any time<br>94% after seal[hardsource:a9cf9509] Could not freeze ./src/router/index.js: Cannot read property ‘hash’ of undefined<br>98% after emitting</p>
+<h3 id="error"><a href="#error" class="headerlink" title="error"></a>error</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">UNMET</span> PEER DEPENDENCY webpack@<span class="number">4</span>.x.x || <span class="number">5</span>.x.x</span><br><span class="line"></span><br><span class="line"><span class="attribute">npm</span> ERR! peer dep missing: webpack@<span class="number">4</span>.x.x || <span class="number">5</span>.x.x, required by webpack-cli@<span class="number">4</span>.<span class="number">9</span>.<span class="number">2</span></span><br><span class="line"><span class="attribute">npm</span> ERR! peer dep missing: webpack@<span class="number">4</span>.x.x || <span class="number">5</span>.x.x, required by @webpack-cli/configtest@<span class="number">1</span>.<span class="number">1</span>.<span class="number">1</span></span><br><span class="line"><span class="attribute">npm</span> ERR! extraneous: which@<span class="number">2</span>.<span class="number">0</span>.<span class="number">2</span> /Users/xxxxx/node_modules/cross-spawn/node_modules/which</span><br></pre></td></tr></table></figure>
+<h4 id="peer-dep"><a href="#peer-dep" class="headerlink" title="peer dep"></a>peer dep</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.domenic.me/peer-dependencies/">https://blog.domenic.me/peer-dependencies/</a></li>
+</ul>
+<h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>n升级到lts的时候出了问题</p>
+<p>node -v<br>dyld: initializer function 0x0 not in mapped image for /usr/local/bin/node</p>
+<p>brew uninstall –force node<br>brew uninstall icu4c &amp;&amp; brew install icu4c<br>brew unlink icu4c &amp;&amp; brew link icu4c –force<br>brew install node</p>
+<p>I recently encountered a similar issue (after doing brew switch node 9.8.0 to downgrade to a previous version of node)</p>
+<p>dyld: Library not loaded:<br>/usr/local/opt/icu4c/lib/libicui18n.60.dylib<br>  Referenced from: /usr/local/bin/node<br>  Reason: image not found<br>Abort trap: 6<br>The issue is that node is picky about which version of icu4c it’s looking for, and the version I had installed (62) was higher than node was expecting.</p>
+<p>To fix, I made sure I had version 60 of icu4c selected.</p>
+<p>First I found which versions I had with brew info icu4c, then did brew switch icu4c 60.2 to select the one node was expecting.</p>
+<p>重新官网下载了node,解决的<br><a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+<h3 id="npx"><a href="#npx" class="headerlink" title="npx"></a>npx</h3><p>可以通过npx,去执行cli命令，不需要额外的安装<br>比如：</p>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npx</span> <span class="built_in">create-next-app</span> <span class="string">test-demo</span></span><br><span class="line"><span class="string">npx</span> <span class="built_in">create-react-app</span> <span class="string">test-app</span></span><br><span class="line">(<span class="string">If</span> <span class="string">you</span><span class="string">&#x27;ve previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app or yarn global remove create-react-app to ensure that npx always uses the latest version.)</span></span><br></pre></td></tr></table></figure>
+<p>npx主要用于命令行寻址等辅助功能上</p>
+<ul>
+<li>可以和degit(<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/degit)%E9%85%8D%E5%90%88%E7%9D%80%E4%BD%BF%E7%94%A8%EF%BC%8C%E6%AF%94%E5%A6%82%EF%BC%9Ahttps://github.com/antfu/vitesse/blob/main/README.zh-CN.md">https://www.npmjs.com/package/degit)配合着使用，比如：https://github.com/antfu/vitesse/blob/main/README.zh-CN.md</a><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx degit antfu/vitesse <span class="keyword">my</span>-vitesse-app</span><br><span class="line">cd <span class="keyword">my</span>-vitesse-app</span><br><span class="line">pnpm i <span class="comment"># 如果你没装过 pnpm, 可以先运行: npm install -g pnpm</span></span><br></pre></td></tr></table></figure></li>
+<li>expo 用npx使用<br>npx expo start (ok)<br>npx run ios (wrong)</li>
+</ul>
+<h3 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h3><p>可以通过homebrew安装，也可以通过npm安装<br><a target="_blank" rel="noopener" href="https://yarnpkg.com/getting-started">https://yarnpkg.com/getting-started</a><br>yarn autoclean 功能可以试试</p>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/jonlabelle/c082700c1c249d986faecbd5abf7d65b">https://gist.github.com/jonlabelle/c082700c1c249d986faecbd5abf7d65b</a><br><a target="_blank" rel="noopener" href="https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc">https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc</a><br>这篇文章提供npm和yarn的对比：<br>官方也有简单的vs：<br><a target="_blank" rel="noopener" href="https://classic.yarnpkg.com/en/docs/migrating-from-npm">https://classic.yarnpkg.com/en/docs/migrating-from-npm</a></p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="operator">=</span><span class="operator">=</span><span class="operator">=</span> yarn</span><br><span class="line">npm installl testpackage --save <span class="operator">=</span><span class="operator">=</span><span class="operator">=</span> yarn add testpackage</span><br><span class="line">npm uninstall testpackage --save <span class="operator">=</span><span class="operator">=</span><span class="operator">=</span> yarn remove testpackage</span><br><span class="line">npm install testpackage --save-dev <span class="operator">=</span><span class="operator">=</span><span class="operator">=</span> yarn add testpackage --dev</span><br><span class="line">npm update --save <span class="operator">=</span><span class="operator">=</span><span class="operator">=</span> yarn upgrade</span><br></pre></td></tr></table></figure>
+<figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 都一样的</span><br><span class="line">init | link | outdated | publish | run | cache clean | login | test</span><br></pre></td></tr></table></figure>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// yarn 有npm没有的</span></span><br><span class="line">yarn licenses list</span><br><span class="line">yarn why lodash</span><br></pre></td></tr></table></figure>
+
+<h3 id="node-modules-bin"><a href="#node-modules-bin" class="headerlink" title="node_modules/.bin"></a>node_modules/.bin</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">通过npm启动的脚本，会默认把node_modules/.bin加到PATH环境变量中</span><br><span class="line">https:<span class="regexp">//</span>docs.npmjs.com<span class="regexp">/cli/</span>v7<span class="regexp">/commands/</span>npm-run-script</span><br><span class="line"></span><br><span class="line">当某个模块配置了 bin 定义时，就会被安装的时候，自动软链了过去</span><br><span class="line">https:<span class="regexp">//</span>docs.npmjs.com<span class="regexp">/cli/</span>v7<span class="regexp">/configuring-npm/</span>package-json/<span class="comment">#bin</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="npmrc"><a href="#npmrc" class="headerlink" title=".npmrc"></a>.npmrc</h3><p>可以先看下<code>npm config ls -l</code><br><a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v7/configuring-npm/npmrc">https://docs.npmjs.com/cli/v7/configuring-npm/npmrc</a></p>
+<pre>
+具体项目：
+registry 可以在这个里面设置
+
+可以设置
+package-lock=false
+koa就是这么设置的
+// 说明:如果设置为false，那么在安装时将忽略package-lock.json文件
+package-lock
+Default: true
+Type: Boolean
+If set to false, then ignore package-lock.json files when installing. This will also prevent writing package-lock.json if save is true.
+
+When package package-locks are disabled, automatic pruning of extraneous modules will also be disabled. To remove extraneous modules with package-locks disabled use npm prune.
+</pre>
+
+<h3 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://pnpm.io/zh/motivation">https://pnpm.io/zh/motivation</a></li>
+<li>pnpm - 依赖项将存储在一个内容可寻址的仓库中</li>
+<li>npm - 依赖都会被提升到模块的根目录 - 扁平化结构</li>
+<li>pnpm - 使用软链的方式将项目的直接依赖添加进模块文件夹的根目录。 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">树形的问题：</span><br><span class="line">This approach had <span class="literal">two</span> serious issues:</span><br><span class="line">- frequently packages were creating too deep dependency trees, which caused <span class="keyword">long</span> <span class="built_in">directory</span> paths issue <span class="keyword">on</span> <span class="title">Windows</span></span><br><span class="line">- packages were copy pasted several times when they were required <span class="keyword">in</span> different dependencies</span><br><span class="line">To solve these issues, npm rethought <span class="keyword">the</span> node_modules structure <span class="keyword">and</span> came up <span class="keyword">with</span> flattening. </span><br></pre></td></tr></table></figure></li>
+<li>推荐阅读：<a target="_blank" rel="noopener" href="https://www.kochan.io/">https://www.kochan.io/</a> 这个里面写了几篇文章</li>
+<li>vue-next用pnpm,还在preinstall里面加了验证</li>
+<li>vite - only allow pnpm<h4 id="peerDependencies"><a href="#peerDependencies" class="headerlink" title="peerDependencies"></a>peerDependencies</h4></li>
+<li>npm中 ： <a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v9/configuring-npm/package-json#peerdependencies">https://docs.npmjs.com/cli/v9/configuring-npm/package-json#peerdependencies</a></li>
+<li>pnpm: <a target="_blank" rel="noopener" href="https://pnpm.io/zh/how-peers-are-resolved">https://pnpm.io/zh/how-peers-are-resolved</a><h3 id="difference"><a href="#difference" class="headerlink" title="difference"></a>difference</h3></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4MTYwMzY1Mw==&amp;mid=2247496601&amp;idx=1&amp;sn=4c3bc00c37163e1dca152ebb8f723619&amp;source=41#wechat_redirect">https://mp.weixin.qq.com/s?__biz=Mzg4MTYwMzY1Mw==&amp;mid=2247496601&amp;idx=1&amp;sn=4c3bc00c37163e1dca152ebb8f723619&amp;source=41#wechat_redirect</a></li>
+</ul>
+<h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><ul>
+<li><code>npm init</code></li>
+</ul>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>见<code>谈一谈package-json文件</code>博文</p>
+<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://npmtrends.com/">https://npmtrends.com/</a></li>
+<li>可以看trends参考</li>
+</ul>
+<h3 id="npm-cache"><a href="#npm-cache" class="headerlink" title="npm-cache"></a>npm-cache</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v8/commands/npm-cache">https://docs.npmjs.com/cli/v8/commands/npm-cache</a></li>
+<li>clean: Delete all data out of the cache folder. Note that this is typically unnecessary, as npm’s cache is self-healing and resistant to data corruption issues.</li>
+</ul>
+<h3 id="–verbose"><a href="#–verbose" class="headerlink" title="–verbose"></a>–verbose</h3><ul>
+<li>在较慢的网络上, 最好使用 –verbose 标志来显示下载进度: <code>npm install --verbose electron</code></li>
+<li>在运行 npm install electron 时，有些用户会偶尔遇到安装问题。在大多数情况下，这些错误都是由网络问题导致，而不是因为 electron npm 包的问题。 如 ELIFECYCLE、EAI_AGAIN、ECONNRESET 和 ETIMEDOUT 等错误都是此类网络问题的标志。 最佳的解决方法是尝试切换网络，或是稍后再尝试安装</li>
+</ul>
+<h3 id="npm-info"><a href="#npm-info" class="headerlink" title="npm info"></a>npm info</h3><h3 id="npm-发布-普通模块｜二进制模块"><a href="#npm-发布-普通模块｜二进制模块" class="headerlink" title="npm 发布(普通模块｜二进制模块)"></a>npm 发布(普通模块｜二进制模块)</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> login</span><br><span class="line">nrm use <span class="built_in">npm</span></span><br><span class="line"><span class="built_in">npm</span> publish</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g <span class="built_in">np</span></span><br><span class="line"><span class="built_in">np</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="packages"><a href="#packages" class="headerlink" title="packages"></a>packages</h3><ul>
+<li>kp is a tool for kill process by server port. it can be used on mac &amp;&amp; linux &amp;&amp; window</li>
+<li>mongo-here</li>
+</ul>
+<h3 id="process-argv-解析"><a href="#process-argv-解析" class="headerlink" title="process.argv 解析"></a>process.argv 解析</h3><ul>
+<li>clipanion</li>
+<li>commander.js</li>
+<li>yargs</li>
+</ul>
+<h3 id="npmignore"><a href="#npmignore" class="headerlink" title=".npmignore"></a>.npmignore</h3><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">`.npmignore` 文件是在发布 npm 包时排除不必要文件的一种方法。排除这些文件有助于减小包的体积，从而提高安装速度并减少磁盘空间占用。以下是一些建议的最佳实践：</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>. **基本规则**：通过将通配符（例如 `*`）或文件/文件夹名称添加到 `.npmignore`，您可以从发布的 npm 包中排除这些特定文件或文件夹。</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. **将测试文件排除在外**：通常，用户不需要您的测试文件。将测试文件夹添加到 `.npmignore` 中（如 `test/`, `__tests__/` 等）。</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. **排除配置文件和工具**：开发工具、构建工具和测试工具的配置文件不应包含在发布的 npm 包中。可能的文件包括：`.eslintrc`, `.prettierrc`, `.editorconfig`, `.gitignore` 等。</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. **排除文档和代码示例**：文档和示例代码可以用来进一步解释包的使用方法，但在发布时应排除。文件夹名称可能包括：`docs/`, `examples/`, `samples/` 等。</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>. **排除源代码和构建产物**：如果您的项目使用了编译步骤（如使用 TypeScript、Babel 或构建工具），请排除源代码和生成的构建产物。可能的文件包括 `src/`, `dist/`, `build/`，但如果 `dist/` 或 `build/` 中的文件是最终用户需要的，则不要排除它们。</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>. **优先使用 `.npmignore` 而非 `files` 属性**：虽然 `package.json` 中的 `files` 属性可以指定要发布的文件，但使用 `.npmignore` 更方便管理排除列表。对于大型项目，`.npmignore` 的管理成本较低。</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>. **保留 LICENSE 和 README**：即使这些文件不是绝对必要的，我们还是建议您将许可证（LICENSE）和自述文件（README.md）包含在发布的 npm 包中，因为这些文件提供了关于您软件的许可、使用和贡献的重要信息。</span><br><span class="line"></span><br><span class="line"><span class="number">8</span>. **使用 `.gitignore` 作为备选方案**：如果您没有提供 `.npmignore` 文件，npm 会默认使用 `.gitignore` 来确定要排除哪些文件。这也是合理的选择，但最好明确提供 `.npmignore` 文件以避免潜在的配置混淆。</span><br><span class="line"></span><br><span class="line">根据您的项目需求进行调整可能的文件/文件夹，确保发布的 npm 包尽可能小且只包含所需的内容。</span><br></pre></td></tr></table></figure>
+<h3 id="postinstall"><a href="#postinstall" class="headerlink" title="postinstall"></a>postinstall</h3><p>Create React App：Facebook 出品的 React 脚手架工具， postinstall 用于提示用户将其加入到 PATH 环境变量中。</p>
+<p>Gatsby：一个用于构建静态网站和应用程序的开源框架，它在 postinstall 中检查 Gatsby CLI 是否已经安装，若没有，则提示用户如何安装。</p>
+<p>Angular CLI：Angular 官方推出的命令行工具，它使用 postinstall 创建提交时的拦截器，用于在提交代码时运行携带 –commit 模式。</p>
+<p>sharp：一个高性能的 Node.js 图像处理库，在 postinstall 脚本中自动下载和安装预编译的二进制文件。</p>
+<p>node-sass：Node.js 版本的 Sass 编译器，其 postinstall 用于处理跨平台安装，并在安装过程中下载对应平台所需的二进制文件。</p>
+<p><code>npm postinstall</code> 是一个 npm 生命周期钩子，它在安装包及其依赖项之后运行。这是一个强大的钩子，您可以利用它执行一些在安装后需要进行的操作。以下是在使用 <code>npm postinstall</code> 时要遵循的一些建议和最佳实践：</p>
+<ol>
+<li><p><strong>避免过度使用</strong>: 尽管 <code>postinstall</code> 具有很大的灵活性，但应避免将其用于不必要的操作。它最适合用于编译/构建代码、生成配置文件或执行其他需要在安装包之后执行的操作。</p>
+</li>
+<li><p><strong>将操作过程告知用户</strong>: 在执行 <code>postinstall</code> 期间，如果有可能的话，请向用户显示操作进度、实时日志或相关提示。这有助于用户了解在安装过程中发生了什么，以及如何解决可能出现的问题。</p>
+</li>
+<li><p><strong>确保脚本可移植</strong>: 在不同的操作系统和环境下，<code>postinstall</code> 脚本可能会表现不同。避免使用特定平台的命令或工具，以确保在各种环境中都能正常工作。</p>
+</li>
+<li><p><strong>优雅地处理错误</strong>: 如果 <code>postinstall</code> 脚本无法执行某些操作，优雅地处理这些错误，并向用户提供有关发生问题的原因和可能的解决方案的信息。</p>
+</li>
+<li><p><strong>尽量提前中断</strong>: 当检测到可能导致<code>postinstall</code>无法正常执行的问题时，尽量提前中断脚本。例如，通常应确保所有依赖项可用，然后再执行其他操作。</p>
+</li>
+<li><p><strong>考虑在安装某些可选依赖时使用 <code>postinstall</code></strong>: 如果某些依赖项是可选，可以利用 <code>postinstall</code>脚本来根据用户环境或需求进行下载。这将有助于减小初始安装文件的大小。</p>
+</li>
+<li><p><strong>避免进行不必要的网络活动</strong>: 在<code>postinstall</code>过程中不建议下载或上传大量不必要的数据。仅在需要时才执行此类操作，以减少安装时间和带宽占用。</p>
+</li>
+<li><p><strong>确保兼容性</strong>: 请确保您的 <code>postinstall</code> 脚本与不同版本的 Node.js 和 npm 兼容。如果必须要求特定版本，请在 <code>package.json</code> 中指定所需的 Node.js 和 npm 版本范围。</p>
+</li>
+<li><p><strong>不要破坏用户环境</strong>: 不要在 <code>postinstall</code> 脚本中修改全局的 Node.js 安装和环境，并确保不要破坏用户设备上的其他软件和配置。</p>
+</li>
+<li><p><strong>在开发环境和生产环境之间做出区分</strong>：根据需要，可以使用 <code>NODE_ENV</code> 环境变量来了解当前处于生产环境还是开发环境。在不同环境中选择相应的行为，如避免在生产环境中包含只在开发环境中才需要的文件。</p>
+</li>
+</ol>
+<p>遵循以上最佳实践，可以确保 <code>postinstall</code> 脚本在各种环境中正常工作，提供良好的用户体验，并避免对用户的环境产生不良影响。</p>
+<h3 id="usr-local-bin-pnpm-line-8-33087-Killed-9"><a href="#usr-local-bin-pnpm-line-8-33087-Killed-9" class="headerlink" title="usr/local/bin/pnpm: line 8: 33087 Killed: 9"></a>usr/local/bin/pnpm: line 8: 33087 Killed: 9</h3><p>pnpm 进程在执行时被意外终止（Killed: 9）</p>
+<ol>
+<li>内存不足：系统可能由于资源限制（如内存不足）终止了进程。确保你的系统有足够的可用内存。</li>
+<li>权限问题：确保你有正确的权限运行 pnpm。根据你提供的路径（<code>/usr/local/bin/pnpm</code>），它应该是全局安装的。尝试以管理员身份（使用 sudo）运行 pnpm 命令，例如：<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pnpm <span class="keyword">install</span></span><br></pre></td></tr></table></figure></li>
+<li>确保正确安装了 Node.js 和 pnpm。运行以下命令以检查 Node.js 和 pnpm 的版本：<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">pnpm -v</span><br></pre></td></tr></table></figure>
+如果你看到这些命令中的任何一个调用失败或给出错误，请先解决这些错误。</li>
+<li>重新安装 pnpm，因为它可能已损坏或不完整。<br>首先卸载 pnpm：<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> uninstall -g pnpm</span><br></pre></td></tr></table></figure>
+然后重新全局安装 pnpm：<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> -g pnpm</span><br></pre></td></tr></table></figure>
+用n装npm也是，也会给提示，也是权限问题；</li>
+</ol>
+<h3 id="–exact"><a href="#–exact" class="headerlink" title="–exact"></a>–exact</h3><p><code>npm install --exact</code> 命令是用于安装 Node.js 项目的依赖项，并确保安装的包版本与 <code>package.json</code> 文件中指定的版本完全匹配。<code>--exact</code> 标志表示安装的版本将不受 <a target="_blank" rel="noopener" href="https://semver.org/">语义化版本</a> 约束，而是严格遵循 package.json 中指定的确切版本。</p>
+<p>例如，如果你需要安装一个名为 <code>my-package</code> 的依赖项，可以使用以下命令：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --exact <span class="keyword">my</span>-<span class="keyword">package</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><ul>
+<li>npm update -g @nestjs/cli</li>
+<li>npx nest new 项目名 (不用update)</li>
+</ul>
+<h3 id="cache"><a href="#cache" class="headerlink" title="cache"></a>cache</h3><p><code>_cache</code>目录是一个包含Node.js类库(metadata)缓存的目录。其中用SHA1哈希值命名文件夹来存储某个特定版本的软件包。在npm 5及以上版本中，由于使用了Content Addressable方式对缓存进行存储，因此<code>content-v2</code>目录才开始出现。</p>
+<p>让我们看一下缓存目录的结构：</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.npm</span><br><span class="line">└─ _cacache</span><br><span class="line">   └─ content-v<span class="number">2</span></span><br><span class="line">      ├─ sha<span class="number">1</span></span><br><span class="line">      │  ├─ aa</span><br><span class="line">      │  │  └─ <span class="number">0115</span><span class="keyword">c</span><span class="number">9</span>b<span class="number">19</span>af<span class="number">2</span><span class="keyword">c</span><span class="number">6784</span><span class="keyword">c</span><span class="number">200</span>fa<span class="number">612</span>de</span><br><span class="line">      │  └─ bb</span><br><span class="line">      │     └─ <span class="number">0715</span><span class="keyword">c</span><span class="number">9</span>b<span class="number">19</span>af<span class="number">2</span><span class="keyword">c</span><span class="number">6891</span><span class="keyword">c</span><span class="number">105</span>fa<span class="number">612</span>de</span><br><span class="line">      ├─ sha<span class="number">256</span></span><br><span class="line">      │  ├─ aa</span><br><span class="line">      │  │  └─ <span class="number">0115</span><span class="keyword">c</span><span class="number">9</span>b<span class="number">19</span>af<span class="number">2</span><span class="keyword">c</span><span class="number">6784</span><span class="keyword">c</span><span class="number">200</span>fa<span class="number">612</span>de</span><br><span class="line">      │  └─ bb</span><br><span class="line">      │     └─ <span class="number">0715</span><span class="keyword">c</span><span class="number">9</span>b<span class="number">19</span>af<span class="number">2</span><span class="keyword">c</span><span class="number">6891</span><span class="keyword">c</span><span class="number">105</span>fa<span class="number">612</span>de</span><br></pre></td></tr></table></figure>
+
+<p>在这个结构中，</p>
+<ul>
+<li><code>content-v2</code>文件夹包含两个子文件夹，分别基于两种不同的哈希算法：<code>sha1</code>和<code>sha256</code>。</li>
+<li>每个哈希算法文件夹下，按文件哈希值的前两个字符分类存储，比如：<code>aa</code>, <code>bb</code>。</li>
+<li>具体的缓存文件则存在于以上分类文件夹中。</li>
+</ul>
+<p>这种方式的好处在于与其他包中重复的文件只会缓存一次，避免了重复存储相同内容，从而节省了磁盘空间。</p>
+<p>要注意的是，你应该不需要直接操作<code>.npm/_cacache</code>目录。你可以使用npm CLI的内置缓存命令（例如<code>npm cache verify</code>）来管理、清除和验证缓存。更多关于npm缓存请参考官方文档：<a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v8/commands/npm-cache">https://docs.npmjs.com/cli/v8/commands/npm-cache</a></p>
+<h3 id="npm-version"><a href="#npm-version" class="headerlink" title="npm version"></a>npm version</h3><p><code>npm version</code> 命令：使用 <code>npm version</code> 命令来更新 <code>package.json</code> 文件中的版本号。这个命令也可以自动创建一个新的 Git 标签。<br><code>^</code> 和 <code>~</code>字符：在 <code>package.json</code> 文件中，可以使用这些字符来指定一个版本范围，使项目能够自动接收 bug 修复和小更新，但不会突然接收到大的更新。<br><code>npm outdated</code>：这个命令可以检查所有依赖项的当前版本和最新版本，有助于跟踪哪些依赖包需要更新。<br><code>npm audit</code>：这个命令可以检查项目依赖项中的安全漏洞。如果发现有安全问题的依赖，可以使用 <code>npm audit fix</code> 来自动更新这些依赖包。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

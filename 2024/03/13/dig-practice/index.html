@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        dig-practice - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#A%E8%AE%B0%E5%BD%95"><span class="toc-text">A记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        dig-practice
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-03-13 11:39:15</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p><code>dig</code>是一个DNS查询工具，它用于向DNS服务器发送类型查询，并接收和显示响应。以下是<code>dig</code>命令返回结果的一些主要部分的解析：</p>
+<ol>
+<li><code>QUESTION SECTION</code>：这是你发送给DNS服务器的问题，通常包含你想要查询的域名和查询类型。</li>
+<li><code>ANSWER SECTION</code>：这是DNS服务器返回的答案，包含域名对应的记录。如果你查询的是A记录，那么这个部分会显示该域名对应的IP地址。</li>
+<li><code>AUTHORITY SECTION</code>：这个部分显示了为这个DNS查询提供权威答案的服务器。</li>
+<li><code>ADDITIONAL SECTION</code>：这个部分显示了额外的记录，如域名对应的mail exchange（MX）服务器等。</li>
+<li><code>Query time</code>：这个数字显示了整个查询过程所花费的毫秒数。</li>
+<li><code>SERVER</code>：这是你查询的DNS服务器的IP地址。</li>
+<li><code>WHEN</code>：这是查询的时间和日期。</li>
+<li><code>MSG SIZE</code>：这是DNS查询消息的大小，单位是字节。</li>
+</ol>
+<p>使用<code>dig</code>命令时，可以使用各种查询类型，如A（寻找IPv4地址）、AAAA（寻找IPv6地址）、MX（寻找mail exchange服务器）、NS（寻找命名服务器）等。只需在<code>dig</code>命令后面加上查询类型和域名即可，例如：<code>dig A www.example.com</code>。</p>
+<h3 id="A记录"><a href="#A记录" class="headerlink" title="A记录"></a>A记录</h3><p>当你使用CDN（内容分发网络）服务时，你的站点内容被复制到全球各地的许多数据中心。当用户请求你的站点时，DNS会将他们指向离他们最近的那个数据中心，从而加速内容的加载。</p>
+<p>为了实现这个功能，CDN提供商通常会为你的域名配置多个A记录，每个记录都指向不同的数据中心的IP地址。当用户进行DNS查询时，DNS服务器会根据一些算法（如地理位置、网络拥塞、服务器负载等）从这些A记录中选择一个返回，以确保用户被指向最优的数据中心。</p>
+<p>因此，使用了CDN服务的域名通常会有很多A记录，这也是为什么你会看到有很多A记录的原因。这就是CDN加速的基本工作原理之一。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>前端域名被cname到一个负载均衡的域名上了</p>
+<p>这是一种常见的设置。在云计算或大型网络环境中，经常会看到这样的设置。这种情况下，CNAME记录被用来把一个域名（常常是一个易于记忆的域名，或者是符合某种命名约定的域名）映射到一个可能会经常变化的IP地址上。</p>
+<p>少数情况下，如果你的网站托管在多个服务器上以增加稳定性和可用性，负载均衡器会被用于在这些服务器之间均衡流量。在这种情况下，你可能会有一个负载均衡的域名，该域名会解析到负载均衡器的IP地址。然后，你可以使用CNAME记录将你的主要域名映射到这个负载均衡器域名，而不是直接映射到一个特定的IP地址。这样，如果负载均衡器的IP地址需要更改，你只需要更新负载均衡器域名的A记录，而不需要改动与你的主要域名相关的DNS记录。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

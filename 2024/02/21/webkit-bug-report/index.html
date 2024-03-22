@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        webkit-bug-report - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%89%E5%8F%8A%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E8%8E%B7%E5%8F%96%E8%A7%86%E9%A2%91%E5%92%8C%E9%BA%A6%E5%85%8B%E9%A3%8E%E8%8E%B7%E5%8F%96%E9%9F%B3%E9%A2%91%E6%B5%81%E7%9A%84%E4%B8%9A%E5%8A%A1"><span class="toc-text">涉及获取摄像头获取视频和麦克风获取音频流的业务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#createStream"><span class="toc-text">createStream</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        webkit-bug-report
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-02-21 10:43:56</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="涉及获取摄像头获取视频和麦克风获取音频流的业务"><a href="#涉及获取摄像头获取视频和麦克风获取音频流的业务" class="headerlink" title="涉及获取摄像头获取视频和麦克风获取音频流的业务"></a>涉及获取摄像头获取视频和麦克风获取音频流的业务</h3><p><a target="_blank" rel="noopener" href="https://bugs.webkit.org/buglist.cgi?quicksearch=OverConstrainedError">https://bugs.webkit.org/buglist.cgi?quicksearch=OverConstrainedError</a><br><a target="_blank" rel="noopener" href="https://bugs.webkit.org/show_bug.cgi?id=176349">https://bugs.webkit.org/show_bug.cgi?id=176349</a></p>
+<ul>
+<li><p>sentry收到报错，只有一条，设备信息为macos，Safari浏览器</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://itecnote.com/tecnote/javascript-how-to-resolve-ios-11-safari-getusermedia-invalid-constraint-issue/">https://itecnote.com/tecnote/javascript-how-to-resolve-ios-11-safari-getusermedia-invalid-constraint-issue/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getDisplayMedia#%E5%BC%82%E5%B8%B8">https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getDisplayMedia#%E5%BC%82%E5%B8%B8</a></p>
+</li>
+<li><p>MediaDevices.getDisplayMedia()</p>
+</li>
+</ul>
+<h3 id="createStream"><a href="#createStream" class="headerlink" title="createStream"></a>createStream</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream">https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream</a><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">createStream</span>(streamConfig) → &#123;<span class="built_in">Stream</span>&#125;</span><br><span class="line">创建一个本地流 <span class="built_in">Stream</span> 对象，本地流 <span class="built_in">Stream</span> 对象通过 <span class="built_in">publish</span>() 方法发布本地音视频流。</span><br><span class="line"></span><br><span class="line">注意：一个音视频流 <span class="built_in">Stream</span> 中最多只能包含一个音频 track 和一个视频 track。</span><br><span class="line"></span><br><span class="line">本地音视频流可以</span><br><span class="line"></span><br><span class="line">从摄像头和麦克风采集获得，适用于一般的音视频通话。</span><br><span class="line">从屏幕分享源采集获得，适用于进行屏幕分享。</span><br><span class="line">从开发者通过 audioSource/videoSource 指定的 MediaStreamTrack 获得， 使用这种方式业务层可先对音视频进行前处理，比如，对音频进行混音，或者对视频进行美颜处理，亦或者通过这种方式向远端用户推送一个正在播放的音视频文件。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

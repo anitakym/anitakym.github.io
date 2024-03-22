@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        nodejs-doc - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#centos-%E5%AE%89%E8%A3%85"><span class="toc-text">centos 安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#latest"><span class="toc-text">latest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nodejs-path"><span class="toc-text">nodejs-path</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%8C%87%E5%8C%97%EF%BC%9A"><span class="toc-text">文档指北：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C"><span class="toc-text">项目经验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#globals"><span class="toc-text">globals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Module"><span class="toc-text">Module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#querystring"><span class="toc-text">querystring</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84%EF%BC%88%E5%8E%9F%E7%90%86%EF%BC%89"><span class="toc-text">基础架构（原理）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#api"><span class="toc-text">api</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vm"><span class="toc-text">vm</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm"><span class="toc-text">npm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#easy-sock"><span class="toc-text">easy_sock</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#https-www-npmjs-com-package-protocol-buffers"><span class="toc-text">https:&#x2F;&#x2F;www.npmjs.com&#x2F;package&#x2F;protocol-buffers</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slides-ryan-dahl-%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E5%9C%A8conf%E9%87%8C%E9%9D%A2%E7%9A%84%E6%BC%94%E8%AE%B2%EF%BC%8C%E4%B8%8D%E5%90%8C%E9%98%B6%E6%AE%B5%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%8E%BBYTB%E4%B8%8A%E9%9D%A2%E7%9C%8B"><span class="toc-text">slides - ryan dahl 的一系列在conf里面的演讲，不同阶段，可以去YTB上面看</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#perf-hooks"><span class="toc-text">perf_hooks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cases"><span class="toc-text">cases</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fetch-%E5%92%8Cnodejs%E7%9A%84%E7%89%88%E6%9C%AC%E7%9B%B8%E5%85%B3"><span class="toc-text">fetch - 和nodejs的版本相关</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#addon"><span class="toc-text">addon</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#error"><span class="toc-text">error</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        nodejs-doc
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-04 12:12:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#node" title="node">node</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="centos-安装"><a href="#centos-安装" class="headerlink" title="centos 安装"></a>centos 安装</h3><ul>
+<li>rpm</li>
+<li>yum (install | clean all) 如果版本安装有问题，记得按照官方distribution的文档里面写的，做好处理，不然会被缓存影响</li>
+<li>或者直接通过nvm安装 - <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm/tree/v0.39.3">https://github.com/nvm-sh/nvm/tree/v0.39.3</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash</span><br><span class="line">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash</span><br><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">&quot;<span class="subst">$([ -z <span class="string">&quot;<span class="variable">$&#123;XDG_CONFIG_HOME-&#125;</span>&quot;</span> ] &amp;&amp; printf %s <span class="string">&quot;<span class="variable">$&#123;HOME&#125;</span>/.nvm&quot;</span> || printf %s <span class="string">&quot;<span class="variable">$&#123;XDG_CONFIG_HOME&#125;</span>/nvm&quot;</span>)</span>&quot;</span></span><br><span class="line">[ -s <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span> ] &amp;&amp; \. <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span> <span class="comment"># This loads nvm</span></span><br></pre></td></tr></table></figure></li>
+<li>centos7不支持nodejs18的安装，会提示依赖有问题，具体可见github上面的issue<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">机器版本：</span><br><span class="line">CentOS Linux release 7.9.2009 (Core)</span><br><span class="line">用户issue：</span><br><span class="line">https://github.com/nodejs/node/issues/43246</span><br><span class="line">官方支持声明：</span><br><span class="line">Supported CentOS versions:</span><br><span class="line">* CentOS 7 (64-bit) WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+</span><br><span class="line">* CentOS 8 (64-bit)</span><br><span class="line">* CentOS 8 Stream (64-bit)</span><br><span class="line"></span><br><span class="line">因已知及潜在兼容性问题，和官方支持声明，所以安装16+版本，提供nvm进行切换</span><br><span class="line"></span><br><span class="line">安装：</span><br><span class="line">走rpm装18的时候的报错</span><br><span class="line"></span><br><span class="line">curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -</span><br><span class="line"><span class="keyword">Error: </span>Package: 2:nodejs<span class="string">-18</span>.14.2<span class="string">-1</span>nodesource.x86_64 (nodesource)</span><br><span class="line">           Requires: libstdc++.so.6(GLIBCXX_3.4.21)(64bit)</span><br><span class="line"><span class="keyword">Error: </span>Package: 2:nodejs<span class="string">-18</span>.14.2<span class="string">-1</span>nodesource.x86_64 (nodesource)</span><br><span class="line">           Requires: libm.so.6(GLIBC_2.27)(64bit)</span><br><span class="line"><span class="keyword">Error: </span>Package: 2:nodejs<span class="string">-18</span>.14.2<span class="string">-1</span>nodesource.x86_64 (nodesource)</span><br><span class="line">           Requires: libstdc++.so.6(GLIBCXX_3.4.20)(64bit)</span><br><span class="line"><span class="keyword">Error: </span>Package: 2:nodejs<span class="string">-18</span>.14.2<span class="string">-1</span>nodesource.x86_64 (nodesource)</span><br><span class="line">           Requires: libstdc++.so.6(CXXABI_1.3.9)(64bit)</span><br><span class="line"><span class="keyword">Error: </span>Package: 2:nodejs<span class="string">-18</span>.14.2<span class="string">-1</span>nodesource.x86_64 (nodesource)</span><br><span class="line">           Requires: libc.so.6(GLIBC_2.28)(64bit)</span><br><span class="line"> You could try using --skip-broken to work around the problem</span><br><span class="line"> You could try running: rpm -Va --nofiles --nodigest</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="latest"><a href="#latest" class="headerlink" title="latest"></a>latest</h2><ul>
+<li>corepack - <a target="_blank" rel="noopener" href="https://github.com/nodejs/corepack">https://github.com/nodejs/corepack</a></li>
+<li>undici WG - <a target="_blank" rel="noopener" href="https://github.com/nodejs/undici">https://github.com/nodejs/undici</a></li>
+<li>diagnostics WG - 门槛更低的诊断能力</li>
+<li>Node-API WG - 现代化，API稳定的Addon API</li>
+<li>strategic-initiatives - <a target="_blank" rel="noopener" href="https://github.com/nodejs/node/blob/main/doc/contributing/strategic-initiatives.md">https://github.com/nodejs/node/blob/main/doc/contributing/strategic-initiatives.md</a></li>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/calendar">https://nodejs.org/calendar</a><h2 id="nodejs-path"><a href="#nodejs-path" class="headerlink" title="nodejs-path"></a>nodejs-path</h2><h3 id="文档指北："><a href="#文档指北：" class="headerlink" title="文档指北："></a>文档指北：</h3><a target="_blank" rel="noopener" href="https://nodejs.org/api/path.html#path_path">https://nodejs.org/api/path.html#path_path</a><br><a target="_blank" rel="noopener" href="http://nodejs.cn/api/path.html">http://nodejs.cn/api/path.html</a><br>还是推荐dash,可以快速搜索，然后选择右上角copy online page</li>
+</ul>
+<h3 id="项目经验"><a href="#项目经验" class="headerlink" title="项目经验"></a>项目经验</h3><p>node服务项目<br>electron项目</p>
+<h3 id="globals"><a href="#globals" class="headerlink" title="globals"></a>globals</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/api/globals.html">https://nodejs.org/api/globals.html</a></li>
+</ul>
+<h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/api/packages.html">https://nodejs.org/api/packages.html</a></li>
+</ul>
+<h3 id="querystring"><a href="#querystring" class="headerlink" title="querystring"></a>querystring</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/dist/latest-v16.x/docs/api/querystring.html">https://nodejs.org/dist/latest-v16.x/docs/api/querystring.html</a><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"><span class="bullet"> *</span> The <span class="code">`querystring`</span> module provides utilities for parsing and formatting URL</span><br><span class="line"><span class="bullet"> *</span> query strings. It can be accessed using:</span><br><span class="line"><span class="bullet"> *</span></span><br><span class="line"> * <span class="code">```js</span></span><br><span class="line"><span class="code"> * const querystring = require(&#x27;querystring&#x27;);</span></span><br><span class="line"><span class="code"> * ```</span></span><br><span class="line"><span class="bullet"> *</span></span><br><span class="line"> * The <span class="code">`querystring`</span> API is considered Legacy. While it is still maintained,</span><br><span class="line"><span class="bullet"> *</span> new code should use the <span class="code">`URLSearchParams`</span> API instead.</span><br><span class="line"><span class="bullet"> *</span> @deprecated Legacy</span><br><span class="line"><span class="bullet"> *</span> @see [<span class="string">source</span>](<span class="link">https://github.com/nodejs/node/blob/v18.0.0/lib/querystring.js</span>)</span><br><span class="line"> <span class="emphasis">*/</span></span><br></pre></td></tr></table></figure></li>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/dist/latest-v16.x/docs/api/url.html#class-urlsearchparams">https://nodejs.org/dist/latest-v16.x/docs/api/url.html#class-urlsearchparams</a></li>
+</ul>
+<h3 id="基础架构（原理）"><a href="#基础架构（原理）" class="headerlink" title="基础架构（原理）"></a>基础架构（原理）</h3><h3 id="api"><a href="#api" class="headerlink" title="api"></a>api</h3><h4 id="vm"><a href="#vm" class="headerlink" title="vm"></a>vm</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/api/vm.html">https://nodejs.org/api/vm.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=u81pS05W1JY">https://www.youtube.com/watch?v=u81pS05W1JY</a></li>
+<li><a target="_blank" rel="noopener" href="https://pwnisher.gitlab.io/nodejs/sandbox/2019/02/21/sandboxing-nodejs-is-hard.html">https://pwnisher.gitlab.io/nodejs/sandbox/2019/02/21/sandboxing-nodejs-is-hard.html</a><br>用这个实现基于ES6模版字符串语法语法的模版引擎</li>
+<li>通过VM模块编译JS形成函数<ul>
+<li>include子模版</li>
+<li>XSS过滤、模版helper函数</li>
+</ul>
+</li>
+</ul>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><h4 id="easy-sock"><a href="#easy-sock" class="headerlink" title="easy_sock"></a>easy_sock</h4><h4 id="https-www-npmjs-com-package-protocol-buffers"><a href="#https-www-npmjs-com-package-protocol-buffers" class="headerlink" title="https://www.npmjs.com/package/protocol-buffers"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/protocol-buffers">https://www.npmjs.com/package/protocol-buffers</a></h4><h3 id="slides-ryan-dahl-的一系列在conf里面的演讲，不同阶段，可以去YTB上面看"><a href="#slides-ryan-dahl-的一系列在conf里面的演讲，不同阶段，可以去YTB上面看" class="headerlink" title="slides - ryan dahl 的一系列在conf里面的演讲，不同阶段，可以去YTB上面看"></a>slides - ryan dahl 的一系列在conf里面的演讲，不同阶段，可以去YTB上面看</h3><ul>
+<li>nodejs ry@tinyclouds 2009 - 最初的设计，为什么这么设计</li>
+<li><a target="_blank" rel="noopener" href="https://www.slideshare.net/JSFestUA/js-fest-2019-ryan-dahl-deno-a-new-way-to-javascript">https://www.slideshare.net/JSFestUA/js-fest-2019-ryan-dahl-deno-a-new-way-to-javascript</a></li>
+</ul>
+<h4 id="perf-hooks"><a href="#perf-hooks" class="headerlink" title="perf_hooks"></a>perf_hooks</h4><p>perf_hooks<br>解决这个报warining的问题<br>先新建一个项目，引入perf_hooks,没有任何问题<br>看了不同版本的代码，发现引入的问题，升级了版本即可<br><a target="_blank" rel="noopener" href="http://nodejs.cn/api/perf_hooks.html">http://nodejs.cn/api/perf_hooks.html</a></p>
+<h3 id="cases"><a href="#cases" class="headerlink" title="cases"></a>cases</h3><h4 id="fetch-和nodejs的版本相关"><a href="#fetch-和nodejs的版本相关" class="headerlink" title="fetch - 和nodejs的版本相关"></a>fetch - 和nodejs的版本相关</h4><p>RequestInit: duplex option is required when sending a body #46221<br><a target="_blank" rel="noopener" href="https://github.com/nodejs/node/issues/46221">https://github.com/nodejs/node/issues/46221</a></p>
+<h3 id="addon"><a href="#addon" class="headerlink" title="addon"></a>addon</h3><p>Node.js 的 addon 允许本地（C/C++）库与 JavaScript 代码进行交互</p>
+<ul>
+<li><p>图像处理<br>OpenCV（Open Source Computer Vision Library）使用 OpenCV 进行实时视频处理、人脸识别和物体追踪等高性能操作</p>
+</li>
+<li><p>加密和解密<br>加密和解密通常需要执行大量计算，本地库（如 OpenSSL）在这方面的执行效果通常比纯 JavaScript 更高效</p>
+</li>
+<li><p>文件系统操作<br>进行文件压缩与解压缩操作时，本地库（如 zlib）的性能可能优于纯 JavaScript 实现</p>
+</li>
+<li><p>数值计算与科学计算<br>LAPACK - Linear Algebra PACKage、FFTW - Fastest Fourier Transform in the West）</p>
+</li>
+<li><p>机器学习、深度学习及人工智能<br>TensorFlow,C++</p>
+</li>
+</ul>
+<h3 id="error"><a href="#error" class="headerlink" title="error"></a>error</h3><figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  opensslErrorStack: [ <span class="symbol">&#x27;error</span>:<span class="number">03000086</span>:digital envelope routines::initialization error&#x27; ],</span><br><span class="line">  library: <span class="symbol">&#x27;digital</span> envelope routines&#x27;,</span><br><span class="line">  reason: <span class="symbol">&#x27;unsupported&#x27;</span>,</span><br><span class="line">  code: <span class="symbol">&#x27;ERR_OSSL_EVP_UNSUPPORTED&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>nodejs 版本过高<br>vue-cli的项目，降级nodejs到16.x能用，18，20都报错</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

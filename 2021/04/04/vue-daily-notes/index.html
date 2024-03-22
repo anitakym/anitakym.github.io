@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        vue-daily-notes - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%A6%82%E8%A7%88"><span class="toc-text">文档概览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E7%89%88%E8%AF%AD%E6%B3%95"><span class="toc-text">模版语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-text">指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6"><span class="toc-text">组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E6%A7%BD"><span class="toc-text">插槽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6-%E5%9C%A8guide%E7%9A%84%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%88%AB%E4%B8%8B"><span class="toc-text">单文件组件(在guide的工具类别下)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9FDOM"><span class="toc-text">虚拟DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E6%9B%B4%E6%96%B0%E7%9A%84%E8%A7%A6%E5%8F%91"><span class="toc-text">组件更新的触发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API"><span class="toc-text">API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80"><span class="toc-text">组件基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6"><span class="toc-text">动态组件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#options-API"><span class="toc-text">options API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#options-State"><span class="toc-text">options: State</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E7%BB%84%E4%BB%B6"><span class="toc-text">内置组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#KeepAlive"><span class="toc-text">KeepAlive</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        vue-daily-notes
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-04 16:14:11</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="文档概览"><a href="#文档概览" class="headerlink" title="文档概览"></a>文档概览</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/installation.html">https://cn.vuejs.org/v2/guide/installation.html</a></p>
+<ul>
+<li>注意不同版本最合适用的场景（开发，生产）</li>
+</ul>
+<h3 id="模版语法"><a href="#模版语法" class="headerlink" title="模版语法"></a>模版语法</h3><ul>
+<li>数据绑定最常见的形式就是使用“Mustache”语法 (双大括号) 的文本插值（<a target="_blank" rel="noopener" href="https://mustache.github.io/%EF%BC%89">https://mustache.github.io/）</a></li>
+</ul>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li>可以简单不严谨的理解为有点像标志位，Vue底层根据标记做对应处理</li>
+<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/syntax.html#%E6%8C%87%E4%BB%A4">https://cn.vuejs.org/v2/guide/syntax.html#%E6%8C%87%E4%BB%A4</a></li>
+<li>v-if/v-else/v-for（因为模版语法只能表达式，无法语句，所以提供这些指令）</li>
+</ul>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components.html#%E7%BB%84%E4%BB%B6%E7%9A%84%E7%BB%84%E7%BB%87">https://cn.vuejs.org/v2/guide/components.html#%E7%BB%84%E4%BB%B6%E7%9A%84%E7%BB%84%E7%BB%87</a></li>
+<li>解决的问题：复用</li>
+<li>页面抽象成组件树</li>
+<li>Vue.component()，如果通过这个注册组件，name要唯一的</li>
+<li>注意组件中的data(function返回的对象)，vm中的data(对象) —— 因为组件要复用，一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝</li>
+<li>template —— 模版字符串</li>
+<li>Prop 是你可以在组件上注册的一些自定义 attribute。当一个值传递给一个 prop attribute 的时候，它就变成了那个组件实例的一个 property。</li>
+<li>如果没有props声明的一些属性，会默认挂在template的最外层（根）结点上</li>
+<li>why<ul>
+<li>当method里面逻辑过多，相似逻辑 =&gt; 拆分成独立的方法</li>
+<li>当html类似，重复 =&gt; 拆分html</li>
+<li>同上，样式</li>
+</ul>
+</li>
+</ul>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/events.html">https://cn.vuejs.org/v2/guide/events.html</a></li>
+<li><code>v-on:click=&quot;statement&quot;</code></li>
+<li>事件修饰符：在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。尽管我们可以在方法中轻松实现这点，但更好的方式是：方法只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。为了解决这个问题，Vue.js 为 v-on 提供了事件修饰符。（<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%89">https://cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6）</a></li>
+<li>按键修饰符，按键码</li>
+<li>自定义事件：<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-custom-events.html">https://cn.vuejs.org/v2/guide/components-custom-events.html</a></li>
+<li>鼠标事件，移动端的事件</li>
+</ul>
+<h3 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-slots.html">https://cn.vuejs.org/v2/guide/components-slots.html</a></li>
+<li>Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Components 规范草案，将 <slot> 元素作为承载分发内容的出口。</li>
+<li>注意2.6语法：v-slot</li>
+<li>可以当成较为复杂的属性来看，复杂的属性没法直接写在传递信息里面，所以利用插槽的方式传递复杂内容</li>
+<li>具名插槽</li>
+<li>作用域插槽：本质上是传递的是返回组件的函数</li>
+</ul>
+<h3 id="单文件组件-在guide的工具类别下"><a href="#单文件组件-在guide的工具类别下" class="headerlink" title="单文件组件(在guide的工具类别下)"></a>单文件组件(在guide的工具类别下)</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/single-file-components.html">https://cn.vuejs.org/v2/guide/single-file-components.html</a></li>
+<li>@vue/cli <ul>
+<li>vue –version</li>
+<li>vue create test</li>
+<li>Vue 3 =&gt; @vue/cli v4.5 =&gt; vue updrage –next</li>
+<li>可以自己设置选项</li>
+</ul>
+</li>
+<li>components =&gt; 注册，作用域只在这个文件</li>
+<li>scoped，会在样式上面带上hash [data-xxxx]</li>
+<li>v-model 语法糖，简写 :value=”message” @input=”handleChange”,本质上还是单向数据流(<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model">https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model</a>)</li>
+<li>.sync(可关注Vue3的差异)</li>
+</ul>
+<h3 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h3><ul>
+<li>jquery(事件，DOM =&gt; 随着逻辑的复杂，会比较乱)</li>
+<li>vue(事件，state，DOM) =&gt; Virtual DOM(state+template=&gt;DOM树) =&gt; Virtual DOM Diff(时间复杂度) </li>
+<li>算法 =&gt; 时间复杂度，通用性</li>
+<li>同层级节点比较 =&gt; 移动节点 ｜ 删除新建 | 更新删除新建(无key) | 移动(有key) | 插入(有key) =&gt; 有key就有唯一标识符了，就可以把一些更新删除新建的问题改成了移动和插入的问题 =&gt; index的问题：如果是自定义的组件，简单的展示问题不大，但是list如果有删除添加排序，就会有问题</li>
+</ul>
+<h3 id="组件更新的触发"><a href="#组件更新的触发" class="headerlink" title="组件更新的触发"></a>组件更新的触发</h3><ul>
+<li>数据驱动</li>
+<li>没有特殊情况不要操作DOM！！！=&gt; review代码的时候经常发现这个问题</li>
+<li>数据来源(单向的)<ul>
+<li>来自父元素的<code>属性</code>-外部数据(<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-props.html#%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81">https://cn.vuejs.org/v2/guide/components-props.html#%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81</a>)</li>
+<li>来自组件自身的<code>状态</code>data-内部数据(<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#data">https://cn.vuejs.org/v2/api/#data</a>)</li>
+<li>来自状态管理器-vuex|Vue.observable(<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#Vue-observable">https://cn.vuejs.org/v2/api/#Vue-observable</a>)</li>
+</ul>
+</li>
+</ul>
+<p>TIPS：</p>
+<ul>
+<li>调试<pre>
+开发中，我们可以用console里面
+var vm = new Vue({...})
+修改 vm.testdata.testattr 
+对实例进行修改调试
+</pre>
+
+
+</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h3><h4 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h4><ul>
+<li>有的需求会想要在两个组件间来回切换，比如 Tab 界面</li>
+<li>当使用 <component :is="..."> 来在多个组件间作切换时，组件会在被切换掉后卸载。我们可以通过 <KeepAlive> 组件强制不活跃的组件仍然保持“存活”的状态<h3 id="options-API"><a href="#options-API" class="headerlink" title="options API"></a>options API</h3><h4 id="options-State"><a href="#options-State" class="headerlink" title="options: State"></a>options: State</h4></li>
+<li>一个返回组件实例初始响应式状态的函数</li>
+<li>data : A function that returns the initial reactive state for the component instance.</li>
+<li>定义为一个函数而不是对象 =&gt; 因为对象会互相影响</li>
+<li><a target="_blank" rel="noopener" href="https://staging-cn.vuejs.org/api/options-state.html#data">https://staging-cn.vuejs.org/api/options-state.html#data</a><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">ComponentOptions</span> &#123;</span><br><span class="line">  <span class="keyword">data</span>?(</span><br><span class="line">    <span class="keyword">this</span>: ComponentPublicInstance,</span><br><span class="line">    vm: ComponentPublicInstance</span><br><span class="line">  ): <span class="keyword">object</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="内置组件"><a href="#内置组件" class="headerlink" title="内置组件"></a>内置组件</h3><h4 id="KeepAlive"><a href="#KeepAlive" class="headerlink" title="KeepAlive"></a>KeepAlive</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://staging-cn.vuejs.org/guide/built-ins/keep-alive.html#basic-usage">https://staging-cn.vuejs.org/guide/built-ins/keep-alive.html#basic-usage</a></li>
+<li>可以用include正则匹配</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

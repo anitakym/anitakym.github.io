@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        SQL学习笔记之不同数据库中的执行 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Oracle%E4%B8%ADSQL%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="toc-text">Oracle中SQL的执行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E8%AF%AD%E5%8F%A5"><span class="toc-text">SQL语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E7%A1%AC%E8%A7%A3%E6%9E%90%EF%BC%8C%E4%BD%BF%E7%94%A8%E8%BD%AF%E8%A7%A3%E6%9E%90%EF%BC%9F"><span class="toc-text">如何避免硬解析，使用软解析？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-database-VS-create-schema"><span class="toc-text">create database VS create schema</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        SQL学习笔记之不同数据库中的执行
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-01-07 13:57:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#SQL" title="SQL">SQL</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="Oracle中SQL的执行"><a href="#Oracle中SQL的执行" class="headerlink" title="Oracle中SQL的执行"></a>Oracle中SQL的执行</h3><h4 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h4><pre><code>- 语法检查
+    - 检查SQL拼写
+- 语义检查
+    - 检查SQL中国内地访问对象是否存在
+- 权限检查
+    - 看用户是否具备访问该数据的权限
+- 共享池检查
+    - shared pool 内存池
+        - 库缓存
+            - 决定SQL语句是否需要进行硬解析
+            - 如何避免硬解析——绑定变量：在SQL语句中使用变量，通过不同变量取值来改变SQL的执行结果
+        - 数据字典缓冲区
+            - 对象定义
+            - 表，视图，索引等对象
+            - 对SQL语句进行解析对适合，如果需要相关数据，会从数据字典缓冲区中提取
+        - 缓存SQL语句和该语句的执行计划
+    - Oracle通过检查是否存在SQL语句的执行计划，来判断进行软解析还是硬解析
+    - 执行（软解析）
+- 优化器（硬解析）
+    - 决定怎么做，比如创建解析树，生成执行计划
+    - 执行
+- 执行器
+    - 基于解析树+执行计划
+    - 在执行器中执行语句
+</code></pre>
+<h4 id="如何避免硬解析，使用软解析？"><a href="#如何避免硬解析，使用软解析？" class="headerlink" title="如何避免硬解析，使用软解析？"></a>如何避免硬解析，使用软解析？</h4><p>oracle 绑定变量</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> a <span class="keyword">where</span> a_id = <span class="number">10001</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> a <span class="keyword">where</span> a_id = :a_id</span><br></pre></td></tr></table></figure>
+<p>但是动态SQL因为参数不同，SQL的执行效率也不同，给SQL优化带来了困难</p>
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><p>C/S架构<br>• 连接层<br>• SQL层<br>• 存储引擎层</p>
+<h3 id="create-database-VS-create-schema"><a href="#create-database-VS-create-schema" class="headerlink" title="create database VS create schema"></a>create database VS create schema</h3><ul>
+<li><p>mysql</p>
+<ul>
+<li>CREATE DATABASE creates a database with the given name. To use this statement, you need the CREATE privilege for the database. </li>
+<li>CREATE SCHEMA is a synonym for CREATE DATABASE.</li>
+<li> <a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/create-database.html">https://dev.mysql.com/doc/refman/8.0/en/create-database.html</a></li>
+</ul>
+</li>
+<li><p>SQL Server</p>
+</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

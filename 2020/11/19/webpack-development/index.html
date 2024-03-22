@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        webpack-development - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack-dev-server"><span class="toc-text">webpack-dev-server</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#alias"><span class="toc-text">alias</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sass-loader"><span class="toc-text">sass-loader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HardSourceWebpackPlugin"><span class="toc-text">HardSourceWebpackPlugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-text">构建性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#official-doc"><span class="toc-text">official - doc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Warning"><span class="toc-text">Warning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E7%94%A8-%EF%BD%9C-%E5%BC%80%E5%8F%91-%EF%BD%9C%E7%94%9F%E4%BA%A7"><span class="toc-text">通用 ｜ 开发 ｜生产</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reference"><span class="toc-text">reference</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chokidar"><span class="toc-text">chokidar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-cli"><span class="toc-text">webpack-cli</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7cli"><span class="toc-text">命令行工具cli</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#build-process-JavaScript-Bundler"><span class="toc-text">build process - JavaScript Bundler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Rollup"><span class="toc-text">Rollup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#microbundle"><span class="toc-text">microbundle</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#snowpack"><span class="toc-text">snowpack</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Parcel"><span class="toc-text">Parcel</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#source"><span class="toc-text">source</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#create-react-app"><span class="toc-text">create-react-app</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#after-eject"><span class="toc-text">after eject</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#lint"><span class="toc-text">lint</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#test"><span class="toc-text">test</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less"><span class="toc-text">less</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#better-scripts"><span class="toc-text">better-scripts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lint%E9%9C%80%E8%A6%81%E5%86%8D%E9%85%8D%E7%BD%AE"><span class="toc-text">lint需要再配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mini-css-extract-plugin-Conflicting-order"><span class="toc-text">mini-css-extract-plugin Conflicting order</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#history"><span class="toc-text">history</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dif"><span class="toc-text">dif</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        webpack-development
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-11-19 18:44:52</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#webpack" title="webpack">webpack</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h4 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h4><p>webpack-dev-server是一个小型的Node.js Express服务器,它使用webpack-dev-middleware来服务于webpack的包,除此自外，它还有一个通过Sock.js来连接到服务器的微型运行时.</p>
+<p>sock.js(<a target="_blank" rel="noopener" href="https://github.com/sockjs/sockjs-client">https://github.com/sockjs/sockjs-client</a>):</p>
+<h3 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h3><h3 id="sass-loader"><a href="#sass-loader" class="headerlink" title="sass-loader"></a>sass-loader</h3><p><a target="_blank" rel="noopener" href="https://github.com/webpack-contrib/sass-loader#imports">https://github.com/webpack-contrib/sass-loader#imports</a> </p>
+<pre>
+Using ~ is deprecated and can be removed from your code (we recommend it), but we still support it for historical reasons. Why you can remove it? The loader will first try to resolve @import as relative, if it cannot be resolved, the loader will try to resolve @import inside node_modules. Just prepend them with a ~ which tells webpack to look up the modules.
+
+@import "~bootstrap";
+It's important to only prepend it with ~, because ~/ resolves to the home directory. Webpack needs to distinguish between bootstrap and ~bootstrap because CSS and Sass files have no special syntax for importing relative files. Writing @import "style.scss" is the same as @import "./style.scss";
+
+
+</pre>
+
+<p>旧的版本，如果不加 ～<br>Module build failed (from ./node_modules/sass-loader/lib/loader.js):</p>
+<p>undefined<br> ^<br>      File to import not found or unreadable: @/views/plan/publish/publish.scss.</p>
+<p>issues:<br><a target="_blank" rel="noopener" href="https://github.com/teambit/bit/issues/1103">https://github.com/teambit/bit/issues/1103</a></p>
+<pre>
+webpack provides an advanced mechanism to resolve files. The sass-loader uses Sass's custom importer feature to pass all queries to the webpack resolving engine. Thus you can import your Sass modules from node_modules. Just prepend them with a ~ to tell webpack that this is not a relative import:
+
+@import "~bootstrap/dist/css/bootstrap";
+It's important to only prepend it with ~, because ~/ resolves to the home directory. webpack needs to distinguish between bootstrap and ~bootstrap because CSS and Sass files have no special syntax for importing relative files. Writing @import "file" is the same as @import "./file";
+
+</pre>
+
+<h3 id="HardSourceWebpackPlugin"><a href="#HardSourceWebpackPlugin" class="headerlink" title="HardSourceWebpackPlugin"></a>HardSourceWebpackPlugin</h3><p>4里面可以用来优化<br>5里面直接放进去了</p>
+<p>现有问题：<br><a target="_blank" rel="noopener" href="https://github.com/mzgoddard/hard-source-webpack-plugin/issues/416">https://github.com/mzgoddard/hard-source-webpack-plugin/issues/416</a></p>
+<h3 id="构建性能优化"><a href="#构建性能优化" class="headerlink" title="构建性能优化"></a>构建性能优化</h3><h4 id="official-doc"><a href="#official-doc" class="headerlink" title="official - doc"></a>official - doc</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://webpack.docschina.org/guides/build-performance/">https://webpack.docschina.org/guides/build-performance/</a></li>
+</ul>
+<blockquote>
+<p>将 Node.js 更新到最新版本，也有助于提高性能。除此之外，将你的 package 管理工具（例如 npm 或者 yarn）更新到最新版本，也有助于提高性能。较新的版本能够建立更高效的模块树以及提高解析速度。 - doc</p>
+</blockquote>
+<ul>
+<li>loader | bootstrap | 解析 ｜ dll | smaller = faster | worker pool | 持久化缓存 ｜ 自定义的plugin和loader分析</li>
+</ul>
+<h4 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a>Warning</h4><ul>
+<li><p>worker 池(worker pool) </p>
+</li>
+<li><p>thread-loader 可以将非常消耗资源的 loader 分流给一个 worker pool。</p>
+</li>
+<li><p>不要使用太多的 worker，因为 Node.js 的 runtime 和 loader 都有启动开销。最小化 worker 和 main process(主进程) 之间的模块传输。进程间通讯(IPC, inter process communication)是非常消耗资源的。需要谨慎使用～</p>
+</li>
+</ul>
+<h4 id="通用-｜-开发-｜生产"><a href="#通用-｜-开发-｜生产" class="headerlink" title="通用 ｜ 开发 ｜生产"></a>通用 ｜ 开发 ｜生产</h4><ul>
+<li>不同环境的优化</li>
+</ul>
+<h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><ul>
+<li><a target="_blank" rel="noopener" href="http://webpack.wuhaolin.cn/4%E4%BC%98%E5%8C%96/">http://webpack.wuhaolin.cn/4%E4%BC%98%E5%8C%96/</a><h3 id="chokidar"><a href="#chokidar" class="headerlink" title="chokidar"></a>chokidar</h3></li>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/chokidar">https://www.npmjs.com/package/chokidar</a></li>
+<li>Minimal and efficient cross-platform file watching library</li>
+<li>webpack-dev-server 的依赖</li>
+<li>比如说这个博客，基于hexo,hexo-fs也依赖chokidar</li>
+<li>chokidar中有个依赖-fsevents</li>
+</ul>
+<h3 id="webpack-cli"><a href="#webpack-cli" class="headerlink" title="webpack-cli"></a>webpack-cli</h3><h4 id="命令行工具cli"><a href="#命令行工具cli" class="headerlink" title="命令行工具cli"></a>命令行工具cli</h4><ul>
+<li>可以在处理node时候，模块这部分，命令行编译</li>
+<li>npx webpack [command] [options]</li>
+<li>可以免安装</li>
+<li>注意webpack版本和对应的用法</li>
+<li><code>npx webpack --no-devtool --mode development --target node14.5</code></li>
+</ul>
+<h2 id="build-process-JavaScript-Bundler"><a href="#build-process-JavaScript-Bundler" class="headerlink" title="build process - JavaScript Bundler"></a>build process - JavaScript Bundler</h2><h4 id="Rollup"><a href="#Rollup" class="headerlink" title="Rollup"></a>Rollup</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/rollup/rollup">https://github.com/rollup/rollup</a></li>
+<li><a target="_blank" rel="noopener" href="https://rollupjs.org/guide/en/#tools">https://rollupjs.org/guide/en/#tools</a> - 和其他工具的集成<h4 id="microbundle"><a href="#microbundle" class="headerlink" title="microbundle"></a>microbundle</h4><h4 id="snowpack"><a href="#snowpack" class="headerlink" title="snowpack"></a>snowpack</h4><h4 id="Parcel"><a href="#Parcel" class="headerlink" title="Parcel"></a>Parcel</h4></li>
+<li>简单好用</li>
+</ul>
+<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.google.com/presentation/d/1hFtMCMo62DgOIc-9OwgaVwPZHwv1cgMELArHcMbXlSI">https://docs.google.com/presentation/d/1hFtMCMo62DgOIc-9OwgaVwPZHwv1cgMELArHcMbXlSI</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/thelarkinn/webpack-workshop-2018">https://github.com/thelarkinn/webpack-workshop-2018</a></li>
+</ul>
+<h2 id="create-react-app"><a href="#create-react-app" class="headerlink" title="create-react-app"></a>create-react-app</h2><h3 id="after-eject"><a href="#after-eject" class="headerlink" title="after eject"></a>after eject</h3><h4 id="lint"><a href="#lint" class="headerlink" title="lint"></a>lint</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Parsing error: <span class="selector-attr">[BABEL]</span> /Users/kuangyimin/Documents/公司/新东方/进行项目/yy/react-playground/scripts/build<span class="selector-class">.js</span>: Using `babel-preset-react-app` requires that you specify `NODE_ENV` or `BABEL_ENV` environment variables. Valid values are <span class="string">&quot;development&quot;</span>, <span class="string">&quot;test&quot;</span>, and <span class="string">&quot;production&quot;</span>. Instead, received: undefined.</span><br><span class="line"></span><br><span class="line">所以需要指定下</span><br><span class="line">NODE_ENV=development BABEL_ENV=development eslint . <span class="attr">--ext</span> <span class="selector-class">.js</span>,<span class="selector-class">.jsx</span>,<span class="selector-class">.ts</span>,<span class="selector-class">.tsx</span> <span class="attribute">src</span></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="test"><a href="#test" class="headerlink" title="test"></a>test</h4><pre><code>&quot;test&quot;: &quot;node scripts/test.js&quot;,
+</code></pre>
+<ul>
+<li><p>注意node版本</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">因为test的原因，<span class="keyword">node</span><span class="title">版本需要大于14</span>.<span class="number">17.0</span></span><br><span class="line">不然</span><br></pre></td></tr></table></figure>
+<p>import { PatternPrompt, printPatternCaret, printRestoredPatternCaret } from ‘jest-watcher’;</p>
+<pre><code>                      ^^^^^^^^^^^^^^^^^
+</code></pre>
+<p>  SyntaxError: Named export ‘printPatternCaret’ not found. The requested module ‘jest-watcher’ is a CommonJS module, which may not support all module.exports as named exports.<br>  CommonJS modules can always be imported via the default export, for example using:</p>
+<p>  import pkg from ‘jest-watcher’;<br>  const { PatternPrompt, printPatternCaret, printRestoredPatternCaret } = pkg;</p>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- <span class="string">https</span>://<span class="string">github</span>.<span class="string">com</span>/<span class="string">facebook</span>/<span class="built_in">create-react-app/issues/11792</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="less"><a href="#less" class="headerlink" title="less"></a>less</h4></li>
+<li><p>github.com/DocSpring/craco-less</p>
+</li>
+</ul>
+<h4 id="better-scripts"><a href="#better-scripts" class="headerlink" title="better-scripts"></a>better-scripts</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Executing script: build_diy</span><br><span class="line"></span><br><span class="line">to be executed: react-<span class="keyword">app</span>-rewired build </span><br><span class="line">false process.argv.includes(&#x27;--analyze&#x27;)</span><br><span class="line">当前环境为生产环境</span><br><span class="line">Creating <span class="keyword">an</span> optimized production build...</span><br><span class="line"></span><br><span class="line">  `@babel/polyfill` is deprecated. Please, <span class="keyword">use</span> required parts of `core-js`</span><br><span class="line">  and `regenerator-runtime/runtime` separately</span><br><span class="line"></span><br><span class="line">Treating warnings <span class="keyword">as</span> errors because process.env.<span class="keyword">CI</span> = true.</span><br><span class="line">Most <span class="keyword">CI</span> servers <span class="keyword">set</span> it automatically.</span><br><span class="line"></span><br><span class="line">Failed to compile.</span><br><span class="line"></span><br><span class="line">src/component-diy/layout/index.js</span><br><span class="line">  <span class="keyword">Line</span> 9:1:  `@/component/QuestionTools` import should occur after import of `api/ajax-project`  import/<span class="keyword">order</span></span><br><span class="line"></span><br><span class="line">src/component/QuestionTools/components/SingleQuestion/index.js</span><br><span class="line">  <span class="keyword">Line</span> 213:8:  JSX props should not <span class="keyword">use</span> functions  react/jsx-<span class="keyword">no</span>-bind</span><br><span class="line">  <span class="keyword">Line</span> 231:8:  JSX props should not <span class="keyword">use</span> functions  react/jsx-<span class="keyword">no</span>-bind</span><br><span class="line"></span><br><span class="line">src/component/QuestionTypes/GapFillingQuestion/index.js</span><br><span class="line">  <span class="keyword">Line</span> 87:5:  JSX props should not <span class="keyword">use</span> functions  react/jsx-<span class="keyword">no</span>-bind</span><br><span class="line">  <span class="keyword">Line</span> 97:6:  JSX props should not <span class="keyword">use</span> functions  react/jsx-<span class="keyword">no</span>-bind</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">npm <span class="keyword">ERR</span>! code ELIFECYCLE</span><br><span class="line">npm <span class="keyword">ERR</span>! errno 1</span><br><span class="line">npm <span class="keyword">ERR</span>! seal_react_backend_new@0.1.0 build:diy: `better-npm-<span class="keyword">run</span> build_diy`</span><br><span class="line">npm <span class="keyword">ERR</span>! <span class="keyword">Exit</span> status 1</span><br><span class="line">npm <span class="keyword">ERR</span>! </span><br><span class="line">npm <span class="keyword">ERR</span>! Failed at the seal_react_backend_new@0.1.0 build:diy script.</span><br><span class="line">npm <span class="keyword">ERR</span>! This is probably not a problem with npm. There is likely additional logging output above.</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;build_prod&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;CI=false&amp;&amp;react-app-rewired build&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;env&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;REACT_APP_BUILD_TYPE&quot;</span><span class="punctuation">:</span> <span class="string">&quot;online&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p>CI设置为false，避免把warning当成error处理，导致构建直接退出</p>
+<h4 id="lint需要再配置"><a href="#lint需要再配置" class="headerlink" title="lint需要再配置"></a>lint需要再配置</h4><h4 id="mini-css-extract-plugin-Conflicting-order"><a href="#mini-css-extract-plugin-Conflicting-order" class="headerlink" title="mini-css-extract-plugin Conflicting order"></a>mini-css-extract-plugin Conflicting order</h4><ul>
+<li>分离并打包CSS到单独文件</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250">https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/51971857/mini-css-extract-plugin-warning-in-chunk-chunkname-mini-css-extract-plugin-con/67579319#67579319">https://stackoverflow.com/questions/51971857/mini-css-extract-plugin-warning-in-chunk-chunkname-mini-css-extract-plugin-con/67579319#67579319</a></li>
+</ul>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><ul>
+<li><p>Webpack 1.0.0：2014年2月</p>
+<ul>
+<li>此版本是Webpack的首个稳定版本，主要功能是模块打包和资源管理。</li>
+</ul>
+</li>
+<li><p>Webpack 2.2.0：2017年1月17日</p>
+<ul>
+<li>新增了对ES6模块处理的支持，即    import 和 export语法。</li>
+<li>引入了Tree shaking技术，可以实现去除无用代码。</li>
+<li>新增了动态导入功能，即 import()语法。</li>
+</ul>
+</li>
+<li><p>Webpack 3.0.0：2017年6月19日</p>
+<ul>
+<li>具有作用域提升(Scope Hoisting)功能，可以使代码在浏览器端运行更快。</li>
+<li>提供了新的插件系统。</li>
+</ul>
+</li>
+<li><p>Webpack 4.0.0：2018年2月26日</p>
+<ul>
+<li>新增了Mode选项，取代了–optimize-*选项。</li>
+<li>废除了CommonsChunkPlugin，新添加了optimization.splitChunks和optimization.runtimeChunk选项。</li>
+<li>在编译时，可以将 import 和 export 语句转换为 ES5 代码，支持更多的设备和环境。</li>
+</ul>
+</li>
+<li><p>Webpack 5.0.0：2020年10月10日</p>
+<ul>
+<li>默认支持持久缓存，提升了构建性能。</li>
+<li>自动生成文件名，用于长期缓存。</li>
+<li>新增了对模块联邦（Module Federation）的支持，可以实现多个构建共享模块。</li>
+<li>提高了算法和默认配置以减少捆绑包的大小。</li>
+</ul>
+</li>
+</ul>
+<h3 id="dif"><a href="#dif" class="headerlink" title="dif"></a>dif</h3><p>Webpack中的插件（Plugins）和加载器（Loaders）都是Webpack的扩展方式，它们在处理项目时起着不同的作用。这两者的主要区别如下：</p>
+<ol>
+<li><p>负责的工作内容不同：<br>Loader：它是一个转换器，将A文件进行编译形成B文件，这里操作的是文件，比如将A.scss或A.less转化为A.css，单纯的文件转换过程。<br>Plugin：它是一个扩展器，它丰富了webpack本身，针对的是loader结束后，webpack打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听webpack打包过程中的某些节点。</p>
+</li>
+<li><p>使用方式不同：<br>Loader：在module.rules中配置，作为模块的规则存在，类似于一种解析器。<br>Plugin：在plugins中单独配置，作为插件的存在，用来扩展Webpack的功能。</p>
+</li>
+<li><p>作用的文件不同：<br>Loader：在导入某个文件的时候，预处理文件。<br>Plugin：处理的是整个构建过程。</p>
+</li>
+</ol>
+<p>总的来说，Loader 主要用于转换文件内容，而 Plugin 则可以用于执行范围更广的任务。Loaders 是在文件加载时使用，Plugins 更多的是在打包优化和缩小以及重新定义环境中的词等操作。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        sentry-问题处理-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1"><span class="toc-text">1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2"><span class="toc-text">2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sourcemap-%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98"><span class="toc-text">sourcemap 上传问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E6%B3%A8API%E7%9A%84%E5%8F%98%E5%8C%96"><span class="toc-text">关注API的变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sentry-vue"><span class="toc-text">@sentry&#x2F;vue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vendor-components-ts"><span class="toc-text">vendor&#x2F;components.ts</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sentry-react"><span class="toc-text">@sentry&#x2F;react\</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux-%E4%B8%8B%E8%BD%BD"><span class="toc-text">linux 下载</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        sentry-问题处理-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-07-05 17:38:38</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>ResizeObserver loop limit exceeded<br><a target="_blank" rel="noopener" href="https://github.com/ElemeFE/element/issues/11420#issuecomment-898992179">https://github.com/ElemeFE/element/issues/11420#issuecomment-898992179</a><br>el-scrollbar</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">main.js</span><br><span class="line">mounted() &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.native) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">this</span>.$nextTick(<span class="keyword">this</span>.update);</span><br><span class="line">  !<span class="keyword">this</span>.noresize &amp;&amp; addResizeListener(<span class="keyword">this</span>.$refs.resize, <span class="keyword">this</span>.update);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">export <span class="keyword">const</span> addResizeListener = function(element, fn) &#123;</span><br><span class="line">  <span class="keyword">if</span> (isServer) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">if</span> (!element.__resizeListeners__) &#123;</span><br><span class="line">    element.__resizeListeners__ = [];</span><br><span class="line">    element.__ro__ = new ResizeObserver(resizeHandler);</span><br><span class="line">    element.__ro__.observe(element);</span><br><span class="line">  &#125;</span><br><span class="line">  element.__resizeListeners__.push(fn);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p>chrome - 102<br>EvalError: Possible side-effect in debug-evaluate</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/72396527/evalerror-possible-side-effect-in-debug-evaluate-in-google-chrome">https://stackoverflow.com/questions/72396527/evalerror-possible-side-effect-in-debug-evaluate-in-google-chrome</a></p>
+<p>console =&gt; 设置 =&gt; eager evaluation</p>
+<p><a target="_blank" rel="noopener" href="https://chromium-review.googlesource.com/c/v8/v8/+/3557234/">https://chromium-review.googlesource.com/c/v8/v8/+/3557234/</a><br><a target="_blank" rel="noopener" href="https://chromium-review.googlesource.com/c/v8/v8/+/3660253">https://chromium-review.googlesource.com/c/v8/v8/+/3660253</a></p>
+<ul>
+<li>SyntaxError ?(<unknown module>)<br>Unhandled<br>Unexpected end of input<br>在EvalError: Possible side-effect in debug-evaluate 之后</li>
+</ul>
+<h3 id="sourcemap-上传问题"><a href="#sourcemap-上传问题" class="headerlink" title="sourcemap 上传问题"></a>sourcemap 上传问题</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.sentry.io/platforms/javascript/guides/vue/sourcemaps/troubleshooting_js/">https://docs.sentry.io/platforms/javascript/guides/vue/sourcemaps/troubleshooting_js/</a></li>
+<li>sentry-cli 上传的时候</li>
+<li>先排除本身map的问题，及上传的问题（可以通过本地看map的解析及上传log日志里面的信息，sentry管理端上面的文件确认）</li>
+<li>确保路径的匹配，按照上面的文档</li>
+</ul>
+<h3 id="关注API的变化"><a href="#关注API的变化" class="headerlink" title="关注API的变化"></a>关注API的变化</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/getsentry/sentry-javascript/blob/7.47.0/MIGRATION.md/#remove-requirement-for-sentrytracing-package-since-7460">https://github.com/getsentry/sentry-javascript/blob/7.47.0/MIGRATION.md/#remove-requirement-for-sentrytracing-package-since-7460</a></li>
+</ul>
+<h3 id="sentry-vue"><a href="#sentry-vue" class="headerlink" title="@sentry/vue"></a>@sentry/vue</h3><p>相比于 <code>@sentry/browser</code>，<code>@sentry/vue</code> 专为 Vue.js 应用程序量身定制，提供了更好的 Vue.js 集成和错误跟踪。以下是 <code>@sentry/vue</code> 相对于 <code>@sentry/browser</code> 的一些优势：</p>
+<ol>
+<li>Vue 错误处理器</li>
+</ol>
+<p><code>@sentry/vue</code> 提供了一个全局的 Vue 错误处理器，会自动捕获并报告 Vue.js 的渲染错误、生命周期错误和自定义方法中的错误。这意味着您无需手动在组件内部捕获和报告错误。</p>
+<ol start="2">
+<li>Vue 插件集成</li>
+</ol>
+<p><code>@sentry/vue</code> 作为一个插件可以轻松地集成到 Vue 应用程序中。在配置时，只需传入您的 Sentry DSN（数据来源名称），插件就会自动捕获和报告错误。</p>
+<p>示例配置:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> <span class="title class_">Sentry</span> <span class="keyword">from</span> <span class="string">&#x27;@sentry/vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Integrations</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@sentry/tracing&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Sentry</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">  <span class="title class_">Vue</span>: <span class="title class_">Vue</span>,</span><br><span class="line">  <span class="attr">dsn</span>: <span class="string">&#x27;your_sentry_dsn&#x27;</span>,</span><br><span class="line">  <span class="attr">integrations</span>: [</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Integrations</span>.<span class="title class_">BrowserTracing</span>(),</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">tracingOptions</span>: &#123;</span><br><span class="line">    <span class="attr">trackComponents</span>: <span class="literal">true</span>, <span class="comment">// 追踪 Vue 组件性能</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Vue.js 上下文信息</li>
+</ol>
+<p>错误报告中的上下文信息对于调试非常重要。 <code>@sentry/vue</code> 会自动为每个错误报告附加与 Vue 组件相关的附加信息（例如，组件名称，组件层次结构等）。这使得错误报告更有上下文，方便您快速排查问题。</p>
+<ol start="4">
+<li>Vue.js 性能追踪</li>
+</ol>
+<p><code>@sentry/vue</code> 提供了 Vue.js 组件性能追踪功能。通过轻松配置，Sentry 可以追踪和测量组件性能，帮助您了解每个组件的渲染时间和性能瓶颈。</p>
+<p>简而言之，<code>@sentry/vue</code> 在 <code>@sentry/browser</code> 的基础上，提供了适用于 Vue.js 应用程序的专有功能，使得错误报告更加详细和有用。使用 <code>@sentry/vue</code>，您可以轻松地集成 Sentry 到 Vue 应用中，实现准确的错误追踪和性能分析。</p>
+<h4 id="vendor-components-ts"><a href="#vendor-components-ts" class="headerlink" title="vendor/components.ts"></a>vendor/components.ts</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/vuejs/vue/blob/612fb89547711cacb030a3893a0065b785802860/src/core/util/debug.js">https://github.com/vuejs/vue/blob/612fb89547711cacb030a3893a0065b785802860/src/core/util/debug.js</a></li>
+<li>// Vendored from <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue/blob/612fb89547711cacb030a3893a0065b785802860/src/core/util/debug.js">https://github.com/vuejs/vue/blob/612fb89547711cacb030a3893a0065b785802860/src/core/util/debug.js</a></li>
+<li>// with types only changes.</li>
+</ul>
+<h3 id="sentry-react"><a href="#sentry-react" class="headerlink" title="@sentry/react\"></a>@sentry/react\</h3><p>在 <code>@sentry/browser</code> 的基础上，<code>@sentry/react</code> 提供了为 React 应用程序量身定制的附加错误处理和性能跟踪功能。以下是相比于 <code>@sentry/browser</code>，<code>@sentry/react</code> 中提供的一些重要增强功能：</p>
+<ol>
+<li><p><strong>错误边界（ErrorBoundary）</strong>：用于捕获 React 组件树中未捕获的错误。通过使用 <code>withErrorBoundary</code> 高阶组件（HOC）或 <code>&lt;ErrorBoundary&gt;</code> 组件包装 React 组件，可以捕获组件发生的错误，并将它们自动地报告给 Sentry。</p>
+</li>
+<li><p><strong>性能跟踪</strong>： <code>@sentry/react</code> 为 React 应用提供了特定的性能跟踪工具，用于更细粒度地测量组件性能。在 React 应用程序中，<code>@sentry/react</code> 自动为普通的 React 组件测量渲染性能。你只需在应用程序中包含 <code>@sentry/react</code> 插件即可。此外，<code>@sentry/react</code> 还提供了用于手动测量性能的工具，例如：<code>withProfiler</code> 高阶组件（HOC）和 <code>&lt;Profiler&gt;</code> 组件。</p>
+</li>
+<li><p><strong>集成</strong>： <code>@sentry/react</code> 包含了一些与开发环境的 React 扩展的集成。例如，<code>@sentry/react</code> 自动与 <code>create-react-app</code> 进行了集成，以方便地构建和部署错误报告和性能跟踪功能。</p>
+</li>
+</ol>
+<p>下面是一个简单的错误边界示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; withErrorBoundary &#125; <span class="keyword">from</span> <span class="string">&#x27;@sentry/react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">MyComponent</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// Your component logic...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">withErrorBoundary</span>(<span class="title class_">MyComponent</span>, &#123;</span><br><span class="line">  <span class="attr">fallback</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Oops! An error occurred.<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>,</span><br><span class="line">  <span class="attr">showDialog</span>: <span class="literal">true</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这片代码在 React 组件中引入了错误边界，当组件发生错误时，会自动报告给 Sentry 并显示一个默认的降级 UI。</p>
+<h3 id="linux-下载"><a href="#linux-下载" class="headerlink" title="linux 下载"></a>linux 下载</h3><ul>
+<li>切下源<br>npm set ENTRYCLI_CDNURL=<a target="_blank" rel="noopener" href="https://cdn.npm.taobao.org/dist/sentry-cli">https://cdn.npm.taobao.org/dist/sentry-cli</a><br>npm set sentrycli_cdnurl=<a target="_blank" rel="noopener" href="https://cdn.npm.taobao.org/dist/sentry-cli">https://cdn.npm.taobao.org/dist/sentry-cli</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

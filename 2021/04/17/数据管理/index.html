@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        数据管理 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%98%85%E8%AF%BB%EF%BC%9A"><span class="toc-text">参考阅读：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E8%AE%BA%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">方法论总结：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zustand"><span class="toc-text">zustand</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useSyncExternalStore"><span class="toc-text">useSyncExternalStore</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        数据管理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-17 15:09:42</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li><p>history<br>终端性能+网速</p>
+</li>
+<li><p>MVC<br>backbone(路由在前端)—— <a target="_blank" rel="noopener" href="https://github.com/jashkenas/backbone">https://github.com/jashkenas/backbone</a></p>
+</li>
+<li><p>MVVM(由state决定UI)</p>
+<ul>
+<li>UI层和数据层的绑定</li>
+</ul>
+</li>
+<li><p>组件间数据通讯</p>
+<ul>
+<li>业务数据｜状态数据（和UI相关）</li>
+<li>react - 木偶组件 - Element/AntDesign</li>
+<li>跨组件的状态数据 - 三级联动 - 机制=&gt;父子和兄弟通信</li>
+<li>父子=&gt;props 子父=&gt;react(处理函数)  兄弟 =&gt; 父子，子父问题的结合</li>
+</ul>
+</li>
+<li><p>组件间数据通信加强版（eventbus）</p>
+<ul>
+<li>额外的全局对象(可以加一些事件，log)</li>
+</ul>
+</li>
+<li><p>单向数据流(redux &amp; vuex)</p>
+<ul>
+<li>组件是树状结构，但是eventbus是网状结构</li>
+<li>flux =&gt; 核心是store（状态管理方法论）=&gt; 单向数据流方案</li>
+<li>redux =&gt; state应该被保存在单个store中 &amp;&amp; state不能被直接更改，只能通过触发action改变 &amp;&amp; pure function(reducer来处理数据修改逻辑，不依赖于全局变量，只依赖于传入的参数，不修改传入的参数，返回的是一个全新的对象)</li>
+<li>严格，限制</li>
+<li>immutable</li>
+<li>使用一定有场景=&gt;解决问题</li>
+<li>中间件（大逻辑的拆分）—— 异步放在了中间件处理</li>
+<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/state-management.html#%E7%AE%80%E5%8D%95%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E8%B5%B7%E6%AD%A5%E4%BD%BF%E7%94%A8">https://cn.vuejs.org/v2/guide/state-management.html#%E7%AE%80%E5%8D%95%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E8%B5%B7%E6%AD%A5%E4%BD%BF%E7%94%A8</a></li>
+</ul>
+</li>
+<li><p>MobX —— <a target="_blank" rel="noopener" href="https://mobx.js.org/README.html">https://mobx.js.org/README.html</a></p>
+<ul>
+<li>Reactive，响应式数据流方案，MobX是代表</li>
+<li>observable state / actions / computeds / reactions</li>
+<li>面向事件的设计｜面向数据的设计</li>
+</ul>
+</li>
+<li><p>异步数据和rxjs</p>
+<ul>
+<li>teambition(<a target="_blank" rel="noopener" href="https://www.teambition.com/">https://www.teambition.com/</a>)</li>
+<li>大量相互依赖的异步数据 =&gt; 对复杂的部分抽个中间层处理 =&gt; 也没有根本解决问题</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/23305264">https://zhuanlan.zhihu.com/p/23305264</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lilnong.top/static/pdf/B-4-RxJS%E5%9C%A8React%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-%E9%BE%99%E9%80%B8%E6%A5%A0_.pdf">https://www.lilnong.top/static/pdf/B-4-RxJS%E5%9C%A8React%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-%E9%BE%99%E9%80%B8%E6%A5%A0_.pdf</a></li>
+<li>期望长期稳定的异步流程</li>
+<li>reactive/lodash for events/observable/stream-based</li>
+<li>rxjs - 钉钉桌面端 - 用rxjs 的Observable可以更好的描述（渐进式业务及需要cancel的异步API），减少复杂的异步API调用中少犯错</li>
+<li>渐进式业务（搜索｜文件上传下载｜profile详情-基本-&gt;完整）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>应用场景=&gt;需要优化的问题（imperative?no =&gt; more 流程化）<br>组件间/组件对端/组件对数据层/数据层和端  关系处理</p>
+</blockquote>
+<ul>
+<li><p>很多实时更新的数据？</p>
+<ul>
+<li>做个截流层（node/前端框架）</li>
+<li>保证进入缓存层的数据可控</li>
+</ul>
+</li>
+<li><p>模块的拆分 =&gt; 基于工程实践，逐步抽象</p>
+</li>
+<li><p>数据管理：前端/后端 差异</p>
+</li>
+<li><p>token可以本地持久化存，数据前端肯定不能明文存</p>
+</li>
+</ul>
+<h3 id="参考阅读："><a href="#参考阅读：" class="headerlink" title="参考阅读："></a>参考阅读：</h3><ul>
+<li><p>dva(React应用框架) = React-Router + Redux + Redux-saga(将这三个React工具库保证在一起，简化了API)</p>
+</li>
+<li><p>dva之入门课：</p>
+<ul>
+<li>React没有解决的问题</li>
+<li>通信问题</li>
+<li>数据流问题</li>
+<li>目前流行的数据流方案</li>
+</ul>
+</li>
+<li><p>地址：<a target="_blank" rel="noopener" href="https://dvajs.com/guide/introduce-class.html#react-%E6%B2%A1%E6%9C%89%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98">https://dvajs.com/guide/introduce-class.html#react-%E6%B2%A1%E6%9C%89%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98</a></p>
+</li>
+<li><p>文档还是值得读一读的，讲了为什么，怎么实现的</p>
+</li>
+</ul>
+<h3 id="方法论总结："><a href="#方法论总结：" class="headerlink" title="方法论总结："></a>方法论总结：</h3><p>补：最近又熟悉了一门语言和对应的应用的生态，当然，也离不开状态的管理；对于第三方或者官方提供的状态管理工具，了解的时候可以分为一下几个方面：</p>
+<ul>
+<li>解决了什么问题，应用的场景是什么</li>
+<li>横向比较，和同类比起来，好处和坏处</li>
+<li>基本机制，核心思想</li>
+<li>关注下作者和库的动态（如果觉得还不错的话）</li>
+<li>跑下demo，用一用，能解决的问题会产生的问题也就都出来了；</li>
+</ul>
+<h3 id="zustand"><a href="#zustand" class="headerlink" title="zustand"></a>zustand</h3><h3 id="useSyncExternalStore"><a href="#useSyncExternalStore" class="headerlink" title="useSyncExternalStore"></a>useSyncExternalStore</h3><p>react18 中新提供的api useSyncExternalStore，它用来帮助库的开发和维护者更好地管理外部状态。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

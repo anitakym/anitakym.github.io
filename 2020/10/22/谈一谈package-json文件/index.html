@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        谈一谈package-json文件 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#version"><span class="toc-text">version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#main-%E5%B1%9E%E6%80%A7"><span class="toc-text">main 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scripts"><span class="toc-text">scripts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#keywords-author-license"><span class="toc-text">keywords | author | license</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TIPS"><span class="toc-text">TIPS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6"><span class="toc-text">中文字符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json"><span class="toc-text">json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lock%E6%96%87%E4%BB%B6"><span class="toc-text">-lock文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#files"><span class="toc-text">files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lock"><span class="toc-text">lock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-dep"><span class="toc-text">peer dep</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        谈一谈package-json文件
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-10-22 11:06:19</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>官方文档指南：<a target="_blank" rel="noopener" href="https://docs.npmjs.com/files/package.json">https://docs.npmjs.com/files/package.json</a></p>
+</blockquote>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><ul>
+<li>semver - 见<code>软件版本</code>博文<h3 id="main-属性"><a href="#main-属性" class="headerlink" title="main 属性"></a>main 属性</h3></li>
+<li>项目入口 （被import｜require，默认入口main指定）</li>
+<li>如果不填的话，默认是找文件夹根目录下的index<pre>
+The main field is a module ID that is the primary entry point to your program. That is, if your package is named foo, and a user installs it, and then does require("foo"), then your main module’s exports object will be returned.
+
+</li>
+</ul>
+<p>This should be a module ID relative to the root of your package folder.</p>
+<p>For most modules, it makes the most sense to have a main script and often not much else.<br></pre></p>
+<ul>
+<li>一般用于对外提供调用功能的API入口</li>
+</ul>
+<h3 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h3><ul>
+<li>带有命令行的node模块，不需要全局安装，scripts中定义的脚本根据node_modules找到对应模块并启动脚本指令</li>
+</ul>
+<h3 id="keywords-author-license"><a href="#keywords-author-license" class="headerlink" title="keywords | author | license"></a>keywords | author | license</h3><h3 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h3><h4 id="中文字符"><a href="#中文字符" class="headerlink" title="中文字符"></a>中文字符</h4><ul>
+<li>Package.json 里面不要出现中文，不然会出现解析错误</li>
+<li>项目标题不要大写字母，要全小写</li>
+</ul>
+<h3 id="json"><a href="#json" class="headerlink" title="json"></a>json</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.json.org/json-zh.html">https://www.json.org/json-zh.html</a><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A <span class="built_in">value</span> can be <span class="keyword">a</span> <span class="keyword">string</span> <span class="keyword">in</span> double quotes, <span class="keyword">or</span> <span class="keyword">a</span> <span class="built_in">number</span>, <span class="keyword">or</span> <span class="literal">true</span> <span class="keyword">or</span> <span class="literal">false</span> <span class="keyword">or</span> <span class="literal">null</span>, <span class="keyword">or</span> <span class="keyword">an</span> object <span class="keyword">or</span> <span class="keyword">an</span> array. These structures can be nested.</span><br></pre></td></tr></table></figure></li>
+<li>注意double quotes,双引号</li>
+</ul>
+<h3 id="lock文件"><a href="#lock文件" class="headerlink" title="-lock文件"></a>-lock文件</h3><p>如果没有强制配 –registry，registry会走lock文件里面的，即使强制配置了–registry还是会走lock<br>我这边会ignore -lock文件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm WARN <span class="keyword">old</span> lockfile </span><br><span class="line">npm WARN <span class="keyword">old</span> lockfile The package<span class="operator">-</span>lock.json file was created <span class="keyword">with</span> an <span class="keyword">old</span> version <span class="keyword">of</span> npm,</span><br><span class="line">npm WARN <span class="keyword">old</span> lockfile so supplemental metadata must be fetched <span class="keyword">from</span> the registry.</span><br><span class="line">npm WARN <span class="keyword">old</span> lockfile </span><br><span class="line">npm WARN <span class="keyword">old</span> lockfile This <span class="keyword">is</span> a <span class="keyword">one</span><span class="operator">-</span><span class="type">time</span> fix<span class="operator">-</span>up, please be patient...</span><br><span class="line">npm WARN <span class="keyword">old</span> lockfile </span><br></pre></td></tr></table></figure>
+<p>切换了node版本后，lockfile也会被重写</p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! code ERESOLVE</span><br><span class="line">npm ERR! ERESOLVE unable to resolve dependency tree</span><br><span class="line">npm ERR! </span><br><span class="line">npm ERR! While resolving: xxx</span><br><span class="line">npm ERR! Found: react@<span class="number">17.0</span>.<span class="number">2</span></span><br><span class="line">npm ERR! node_modules/react</span><br><span class="line">npm ERR!   react@<span class="string">&quot;^17.0.1&quot;</span> from the root project</span><br><span class="line">npm ERR! </span><br><span class="line">npm ERR! Could not resolve dependency:</span><br><span class="line">npm ERR! peer react@<span class="string">&quot;^0.14.0 || ^15.0.0 || ^16.0.0-0&quot;</span> from react-html-parser@<span class="number">2.0</span>.<span class="number">2</span></span><br><span class="line">npm ERR! node_modules/react-html-parser</span><br><span class="line">npm ERR!   react-html-parser@<span class="string">&quot;^2.0.2&quot;</span> from the root project</span><br><span class="line">npm ERR! </span><br><span class="line">npm ERR! Fix the upstream dependency conflict, or retry</span><br><span class="line">npm ERR! this command with --force, or --legacy-peer-deps</span><br><span class="line">npm ERR! to accept an incorrect (and potentially broken) dependency resolution.</span><br></pre></td></tr></table></figure>
+<p>这个是因为node版本切换高了</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; ttf2woff2@<span class="number">3.0</span>.<span class="number">0</span> install <span class="regexp">/home/</span>xxx<span class="regexp">/Documents/</span>xxx<span class="regexp">/current/</span>seal_pdf_server<span class="regexp">/node_modules/</span>ttf2woff2</span><br><span class="line">&gt; ((node-gyp configure &amp;&amp; node-gyp build) &gt; builderror.log) || (<span class="keyword">exit</span> <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">make: g++: No such file or directory</span><br><span class="line">make: *** [addon.target.mk:<span class="number">137</span>: Release<span class="regexp">/obj.target/</span>addon<span class="regexp">/csrc/</span>addon.o] Error <span class="number">127</span></span><br><span class="line">gyp ERR! build error </span><br><span class="line">gyp ERR! stack Error: `make` failed with <span class="keyword">exit</span> code: <span class="number">2</span></span><br><span class="line">gyp ERR! stack     at ChildProcess.onExit (<span class="regexp">/home/</span>xxx<span class="regexp">/.nvm/</span>versions<span class="regexp">/node/</span>v14.<span class="number">20.0</span><span class="regexp">/lib/</span>node_modules<span class="regexp">/npm/</span>node_modules<span class="regexp">/node-gyp/</span>lib/build.js:<span class="number">194</span>:<span class="number">23</span>)</span><br><span class="line">gyp ERR! stack     at ChildProcess.emit (events.js:<span class="number">400</span>:<span class="number">28</span>)</span><br><span class="line">gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="number">285</span>:<span class="number">12</span>)</span><br><span class="line">gyp ERR! System Linux <span class="number">5.18</span>.<span class="number">11</span>-<span class="number">200</span>.fc36.x86_64</span><br><span class="line">gyp ERR! command <span class="string">&quot;/home/xxx/.nvm/versions/node/v14.20.0/bin/node&quot;</span> <span class="string">&quot;/home/xxx/.nvm/versions/node/v14.20.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js&quot;</span> <span class="string">&quot;build&quot;</span></span><br><span class="line">gyp ERR! cwd <span class="regexp">/home/</span>xxx<span class="regexp">/Documents/</span>xxx<span class="regexp">/current/</span>seal_pdf_server<span class="regexp">/node_modules/</span>ttf2woff2</span><br><span class="line">gyp ERR! node -v v14.<span class="number">20.0</span></span><br><span class="line">gyp ERR! node-gyp -v v5.<span class="number">1.0</span></span><br><span class="line">gyp ERR! not ok</span><br></pre></td></tr></table></figure>
+<p>用的之前的lockfile,报了这个错误；删除之前lockfile之后依然还是有这个错误</p>
+<ul>
+<li>This is a NodeJS wrapper for the Google WOFF2 project. If the C++ wrapper compilation fail, it fallbacks to an Emscripten build.</li>
+<li><a target="_blank" rel="noopener" href="https://insertafter.com/en/blog/native-node-module.html">https://insertafter.com/en/blog/native-node-module.html</a><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Gracefully fail compilation</span><br><span class="line">So, now we have our Emscripten build, let&#x27;s fallback to him when the native NodeJS<span class="built_in"> add-on </span>compilation goes wrong. First, we must ensure that any failure won&#x27;t impeach the module to install. We&#x27;re basically doing this by overriding the default installation script to exit with a 0 code whatever result the compiler gives.</span><br><span class="line"></span><br><span class="line">Then, as a main JavaScript file we will ensure failing to bind to the native<span class="built_in"> add-on </span>will result in requiring the Emscripten fallback. It is simply done by catching exceptions when requiring the bindings.</span><br></pre></td></tr></table></figure></li>
+<li>这样就确保任何失败都不会影响模块的安装 - 通过覆盖默认的安装脚本来做到这一点，无论编译器给出什么结果，都以0代码退出</li>
+<li>然后，绑定时通过捕捉异常回退到Emscripten</li>
+</ul>
+<h3 id="files"><a href="#files" class="headerlink" title="files"></a>files</h3><ul>
+<li>如果不写的话，所有文件都会被打包进去</li>
+<li>写的话，就是当我们的包作为依赖包被安装时候，被包括的条目</li>
+</ul>
+<h3 id="lock"><a href="#lock" class="headerlink" title="lock"></a>lock</h3><p><code>package-lock.json</code> 文件是在 Node.js 项目中使用 npm 包管理器时自动生成的。 它记录了关于项目依赖项（如名称、版本、来源等信息）的确切版本。<code>lockfileVersion</code> 是表示锁定文件版本的属性。</p>
+<p>每个 <code>lockfileVersion</code> 版本都对应一个 npm 版本。 在 <code>lockfileVersion</code> 不同之间，主要区别在于文件和解析方式的细微差别</p>
+<ol>
+<li><p><code>lockfileVersion: 1</code></p>
+<ul>
+<li>对应于 npm v5 和 v6。</li>
+<li>此版本的主要目标是确保具有兼容性，使那些正在使用较旧版本的用户不受升级项目依赖版本和生成新锁定文件影响。</li>
+<li>使用此版本时，项目依赖性树在 <code>package-lock.json</code> 中以层次结构表示。</li>
+</ul>
+</li>
+<li><p><code>lockfileVersion: 2</code></p>
+<ul>
+<li>对应于 npm v7 之后的版本。</li>
+<li>包含新的项目依赖关系解析算法。</li>
+<li>包含对 <code>workspaces</code> 的支持。</li>
+<li>使用此版本时，项目依赖性树使用扁平列表表示，而不是层次结构。 这使得锁定文件更紧凑，并有助于减小文件大小。</li>
+</ul>
+</li>
+</ol>
+<p>除了 <code>lockfileVersion</code>，<code>package-lock.json</code> 中还包括以下属性：</p>
+<ul>
+<li><code>name</code> 和 <code>version</code>：补充 <code>package.json</code> 中项目名称和版本的信息。</li>
+<li><code>requires</code>：到处都是，作为所有依赖。 这些依赖在 <code>dependencies</code> 下的该依赖对象中。</li>
+<li><code>dependencies</code>：项目的所有第三方依赖，包括直接和间接依赖。 每个依赖包含名称、版本、来源等信息。 还可以包括指向子依赖项的 <code>requires</code> 和 <code>dependencies</code>。</li>
+</ul>
+<p>维护 <code>package-lock.json</code> 文件的最佳实践是将它包含在您的版本控制系统中。 这样可以确保所有团队成员和不同环境之间使用相同的依赖项版本。</p>
+<h3 id="peer-dep"><a href="#peer-dep" class="headerlink" title="peer dep"></a>peer dep</h3><p>在 npm 中，<code>npm i</code>（或 <code>npm install</code>）命令用于安装项目的依赖项。<code>--legacy-peer-deps</code> 是一个命令行选项，用于在安装依赖项时使用旧版的 peer 依赖处理逻辑。</p>
+<p>当您使用 npm v7 及更高版本时，默认情况下，peer 依赖项将自动安装，并在遇到冲突时中止安装并报错。这是为了确保所有依赖项与其 peer 依赖项完全兼容，避免后续的问题。</p>
+<p>然而，某些情况下，自动安装并检查 peer 依赖()可能会导致错误，或者与现有项目的配置不兼容。在这种情况下，使用 <code>--legacy-peer-deps</code> 选项可以按照旧版 npm（v6 及以下版本）的逻辑处理 peer 依赖。也就是说，npm 将不会自动安装 peer 依赖项，也不会因 peer 依赖项冲突而中止安装过程。</p>
+<p>一个使用 <code>--legacy-peer-deps</code> 的例子：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> <span class="attr">--legacy-peer-deps</span></span><br></pre></td></tr></table></figure>
+
+<p>该命令将使用旧版 npm 的逻辑来处理和安装项目的依赖项及其 peer 依赖。当您在更新一个较旧的项目时，或者遇到 peer 依赖冲突导致无法安装新依赖时，这个选项可能会有所帮助。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        内存管理 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E8%BF%B0"><span class="toc-text">总述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">内存管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E5%86%85%E5%AD%98-stack"><span class="toc-text">栈内存-stack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%86%85%E5%AD%98-heap"><span class="toc-text">堆内存-heap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="toc-text">内存泄漏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript"><span class="toc-text">JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC%E5%9B%9B%E7%89%88%EF%BC%89"><span class="toc-text">JavaScript高级程序设计（第四版）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E5%B0%8F%E7%BB%93"><span class="toc-text">4.4 小结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-13-%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96"><span class="toc-text">10.13 尾调用优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B"><span class="toc-text">11.1 异步编程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dart"><span class="toc-text">Dart</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java"><span class="toc-text">Java</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86"><span class="toc-text">堆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8Java8-%E5%AE%9E%E6%88%98"><span class="toc-text">引用Java8 实战</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        内存管理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-07-23 11:47:37</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h2><ul>
+<li>C这种底层语言，一般有内存管理的接口，malloc(),free()</li>
+<li>现代高级语言一般不直接管理内存</li>
+<li>程序使用的两种不同类型的内存： 局部变量，全局变量</li>
+</ul>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><h3 id="栈内存-stack"><a href="#栈内存-stack" class="headerlink" title="栈内存-stack"></a>栈内存-stack</h3><ul>
+<li>CPU管理栈空间</li>
+<li>栈主要用于保存执行当前函数的本地上下文数据</li>
+<li>栈的大小受操作系统的限制</li>
+</ul>
+<h3 id="堆内存-heap"><a href="#堆内存-heap" class="headerlink" title="堆内存-heap"></a>堆内存-heap</h3><ul>
+<li>应用程序管理堆内存</li>
+<li>一般用来保存全局变量和状态或者栈中指针引指向的时机数据</li>
+<li>堆内存可以动态的增加，只要服务器上有空闲的内存</li>
+<li>大的局部变量也可能保存在堆空间，只在栈中保存指针</li>
+</ul>
+<h3 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h3><ul>
+<li>在堆内存空间中持续增加保存全局变量而没有变量释放出来</li>
+<li>so, 变量生命周期管理-确保变量在不被使用时被释放</li>
+<li>处理方法-退出整个进程，释放内存，用新的进程替换来处理内存泄漏（PHP-FPM）- <a target="_blank" rel="noopener" href="https://php-fpm.org/">https://php-fpm.org/</a><h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management</a></li>
+</ul>
+<h3 id="JavaScript高级程序设计（第四版）"><a href="#JavaScript高级程序设计（第四版）" class="headerlink" title="JavaScript高级程序设计（第四版）"></a>JavaScript高级程序设计（第四版）</h3><h4 id="4-4-小结"><a href="#4-4-小结" class="headerlink" title="4.4 小结"></a>4.4 小结</h4><pre>
+JavaScript变量可以保存两种类型的值：原始值和引用值。原始值可能是以下6种原始数据类型之一：Undefined、Null、Boolean、Number、String和Symbol。原始值和引用值有以下特点。
+- 原始值大小固定，因此保存在栈内存上。
+- 引用值是对象，存储在堆内存上。
+任何变量（不管包含的是原始值还是引用值）都存在于某个执行上下文中（也称为作用域）。这个上下文（作用域）决定了变量的生命周期，以及它们可以访问代码的哪些部分。执行上下文可以总结如下。
+- 变量的执行上下文用于确定什么时候释放内存。
+JavaScript是使用垃圾回收的编程语言，开发者不需要操心内存分配和回收。
+</pre>
+<h4 id="10-13-尾调用优化"><a href="#10-13-尾调用优化" class="headerlink" title="10.13 尾调用优化"></a>10.13 尾调用优化</h4><pre>
+尾调用优化的条件就是确定外部栈帧真的没有必要存在了。涉及的条件如下：
+- 代码在严格模式下执行；
+- 外部函数的返回值是对尾调用函数的调用；
+- 尾调用函数返回后不需要执行额外的逻辑；
+- 尾调用函数不是引用外部函数作用域中自由变量的闭包。
+这个优化在递归场景下的效果是最明显的，因为递归代码最容易在栈内存中迅速产生大量栈帧。
+</pre>
+<h4 id="11-1-异步编程"><a href="#11-1-异步编程" class="headerlink" title="11.1 异步编程"></a>11.1 异步编程</h4><pre>
+JavaScript引擎会在创建期约时尽可能保留完整的调用栈。在抛出错误时，调用栈可以由运行时的错误处理逻辑获取，因而就会出现在栈追踪信息中。当然，这意味着栈追踪信息会占用内存，从而带来一些计算和存储成本。
+</pre>
+
+
+<h2 id="Dart"><a href="#Dart" class="headerlink" title="Dart"></a>Dart</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>存取速度较快，栈数据可共享，数据大小和生存周期是确定的</p>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>在运行时动态分配内存的（从而存取速度慢点）</p>
+<h3 id="引用Java8-实战"><a href="#引用Java8-实战" class="headerlink" title="引用Java8 实战"></a>引用Java8 实战</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Java8 实战</span><br><span class="line">Java类型要么是引用类型（比如<span class="keyword">Byte</span>、Integer、Object、List），要么是原始类型（比如<span class="keyword">int</span>、<span class="keyword">double</span>、<span class="keyword">byte</span>、<span class="keyword">char</span>）。但是泛型（比如Consumer&lt;T&gt;中的T）只能绑定到引用类型。这是由泛型内部的实现方式造成的。[插图]因此，在Java里有一个将原始类型转换为对应的引用类型的机制。这个机制叫作装箱（boxing）。相反的操作，也就是将引用类型转换为对应的原始类型，叫作拆箱（unboxing）。Java还有一个自动装箱机制来帮助程序员执行这一任务：装箱和拆箱操作是自动完成的。比如，这就是为什么下面的代码是有效的（一个<span class="keyword">int</span>被装箱成为Integer）：但这在性能方面是要付出代价的。装箱后的值本质上就是把原始类型包裹起来，并保存在堆里。因此，装箱后的值需要更多的内存，并需要额外的内存搜索来获取被包裹的原始值。</span><br><span class="line"></span><br><span class="line">实例变量都存储在堆中，而局部变量则保存在栈上。如果Lambda可以直接访问局部变量，而且Lambda是在一个线程中使用的，则使用Lambda的线程，可能会在分配该变量的线程将这个变量收回之后，去访问该变量。因此，Java在访问自由局部变量时，实际上是在访问它的副本，而不是访问原始变量。如果局部变量仅仅赋值一次那就没有什么区别了——因此就有了这个限制。（Lambda可以没有限制地捕获（也就是在其主体中引用）实例变量和静态变量。但局部变量必须显式声明为<span class="keyword">final</span>，或事实上是<span class="keyword">final</span>。换句话说，Lambda表达式只能捕获指派给它们的局部变量一次。）</span><br><span class="line"></span><br><span class="line">你可能已经听说过闭包（closure，不要和Clojure编程语言混淆）这个词，你可能会想Lambda是否满足闭包的定义。用科学的说法来说，闭包就是一个函数的实例，且它可以无限制地访问那个函数的非本地变量。例如，闭包可以作为参数传递给另一个函数。它也可以访问和修改其作用域之外的变量。现在，Java <span class="number">8</span>的Lambda和匿名类可以做类似于闭包的事情：它们可以作为参数传递给方法，并且可以访问其作用域之外的变量。但有一个限制：它们不能修改定义Lambda的方法的局部变量的内容。这些变量必须是隐式最终的。可以认为Lambda是对值封闭，而不是对变量封闭。如前所述，这种限制存在的原因在于局部变量保存在栈上，并且隐式表示它们仅限于其所在线程。如果允许捕获可改变的局部变量，就会引发造成线程不安全的新的可能性，而这是我们不想看到的（实例变量可以，因为它们保存在堆中，而堆是在线程之间共享的）。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">1965</span>年，英国一位名为Tony Hoare的计算机科学家在设计ALGOL W语言时提出了<span class="keyword">null</span>引用的想法。ALGOL W是第一批在堆上分配记录的类型语言之一。Hoare选择<span class="keyword">null</span>引用这种方式，“只是因为这种方法实现起来非常容易”。虽然他的设计初衷就是要“通过编译器的自动检测机制，确保所有使用引用的地方都是绝对安全的”，他还是决定为<span class="keyword">null</span>引用开个绿灯，因为他认为这是为“不存在的值”建模最容易的方式。很多年后，他开始为自己曾经做过这样的决定而后悔不迭，把它称为“我价值百万的重大失误”。我们已经看到它带来的后果——程序员对对象的字段进行检查，判断它的值是否为期望的格式，最终却发现我们查看的并不是一个对象，而是一个空指针，它会立即抛出一个让人厌烦的NullPointerException异常。</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

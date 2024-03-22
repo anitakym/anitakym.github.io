@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        松本行弘的程序世界-文字编码-正则-整数小数-阅读笔记 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E7%BC%96%E7%A0%81"><span class="toc-text">文字编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E7%BC%96%E7%A0%81%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-text">文字编码的种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E6%96%87%E5%AD%97%E5%A4%84%E7%90%86"><span class="toc-text">程序中的文字处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80"><span class="toc-text">正则表达式基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%E4%B8%8E%E9%AC%BC%E8%BD%A6"><span class="toc-text">正则表达式的应用实例与鬼车</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E5%92%8C%E6%B5%AE%E7%82%B9%E5%B0%8F%E6%95%B0"><span class="toc-text">整数和浮点小数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%A5%A5%E7%9A%84%E6%95%B4%E6%95%B0%E4%B8%96%E7%95%8C"><span class="toc-text">深奥的整数世界</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%91%E6%9C%94%E8%BF%B7%E7%A6%BB%E7%9A%84%E6%B5%AE%E7%82%B9%E5%B0%8F%E6%95%B0%E6%97%B6%E9%97%B4"><span class="toc-text">扑朔迷离的浮点小数时间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#others"><span class="toc-text">others</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99notes"><span class="toc-text">正则notes</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        松本行弘的程序世界-文字编码-正则-整数小数-阅读笔记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-29 14:47:17</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="文字编码"><a href="#文字编码" class="headerlink" title="文字编码"></a>文字编码</h2><h3 id="文字编码的种类"><a href="#文字编码的种类" class="headerlink" title="文字编码的种类"></a>文字编码的种类</h3><h3 id="程序中的文字处理"><a href="#程序中的文字处理" class="headerlink" title="程序中的文字处理"></a>程序中的文字处理</h3><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h3 id="正则表达式基础"><a href="#正则表达式基础" class="headerlink" title="正则表达式基础"></a>正则表达式基础</h3><h3 id="正则表达式的应用实例与鬼车"><a href="#正则表达式的应用实例与鬼车" class="headerlink" title="正则表达式的应用实例与鬼车"></a>正则表达式的应用实例与鬼车</h3><h2 id="整数和浮点小数"><a href="#整数和浮点小数" class="headerlink" title="整数和浮点小数"></a>整数和浮点小数</h2><ul>
+<li>Floating Point Numbers</li>
+<li><a target="_blank" rel="noopener" href="https://floating-point-gui.de/formats/fp/">https://floating-point-gui.de/formats/fp/</a></li>
+<li><a target="_blank" rel="noopener" href="https://softwareengineering.stackexchange.com/questions/280648/why-is-negative-zero-important/">https://softwareengineering.stackexchange.com/questions/280648/why-is-negative-zero-important/</a></li>
+</ul>
+<h3 id="深奥的整数世界"><a href="#深奥的整数世界" class="headerlink" title="深奥的整数世界"></a>深奥的整数世界</h3><h3 id="扑朔迷离的浮点小数时间"><a href="#扑朔迷离的浮点小数时间" class="headerlink" title="扑朔迷离的浮点小数时间"></a>扑朔迷离的浮点小数时间</h3><h2 id="others"><a href="#others" class="headerlink" title="others"></a>others</h2><h3 id="正则notes"><a href="#正则notes" class="headerlink" title="正则notes"></a>正则notes</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">正则表达式——是一个特殊的字符序列，一个字符串是否与我们所设定的字符序列相匹配</span><br><span class="line">（爬虫）</span><br><span class="line">快速检索文本，实现一些替换文本的操作</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span>检查一串数字是否是电话号码</span><br><span class="line"><span class="number">2.</span>检测一个字符串是否符合email</span><br><span class="line"><span class="number">3.</span>把一个文本里指定的单词替换为另外一个单词】】】</span><br><span class="line"></span><br><span class="line"><span class="type">JSON</span>（<span class="type">XML</span>）数据交互格式</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a.<span class="keyword">index</span>(<span class="string">&#x27;Python&#x27;</span>) &gt; <span class="number">-1</span></span><br><span class="line"><span class="string">&#x27;python&#x27;</span> <span class="keyword">in</span> a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">Import</span> re</span><br><span class="line"></span><br><span class="line">re.findall(<span class="string">&#x27;Python&#x27;</span>,a)</span><br><span class="line"></span><br><span class="line">所有字符串的问题都能用<span class="keyword">for</span> <span class="keyword">in</span> 循环解决</span><br><span class="line"></span><br><span class="line"><span class="number">00</span>:<span class="number">15</span>:<span class="number">57</span></span><br><span class="line"></span><br><span class="line">普通字符 <span class="string">&#x27;python&#x27;</span></span><br><span class="line">元字符 <span class="string">&#x27;\d&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">普通字符可以帮助定界</span><br><span class="line">字符集</span><br><span class="line">[]或</span><br><span class="line">[ ] 里面是或关系</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[^]</span><br><span class="line"></span><br><span class="line">[a-d]</span><br><span class="line"></span><br><span class="line"><span class="number">00</span>:<span class="number">31</span>:<span class="number">32</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">概括字符集</span><br><span class="line">\d \D </span><br><span class="line">\w 单词字符 [A-Za-z0<span class="number">-9</span>_] \W</span><br><span class="line">\s 空白字符 \S</span><br><span class="line">. 匹配除换行符\n之外其他所有字符</span><br><span class="line"></span><br><span class="line">匹配单一的字符</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">数量词：</span><br><span class="line"></span><br><span class="line">[a-z]&#123;<span class="number">3</span>,<span class="number">6</span>&#125;</span><br><span class="line">贪婪，非贪婪</span><br><span class="line">默认倾向于贪婪的匹配方式</span><br><span class="line"></span><br><span class="line">[a-z]&#123;<span class="number">3</span>,<span class="number">6</span>&#125;? 非贪婪</span><br><span class="line"></span><br><span class="line">匹配*前的字符<span class="number">0</span>次或者无限多次</span><br><span class="line">匹配+前的字符<span class="number">1</span>次或者无限多次</span><br><span class="line">匹配？前的字符<span class="number">0</span>次或者<span class="number">1</span>次</span><br><span class="line"></span><br><span class="line">边界匹配！！！</span><br><span class="line">^ $</span><br><span class="line"></span><br><span class="line">组</span><br><span class="line">() 里面是且的关系</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">模式</span><br><span class="line">模式参数</span><br><span class="line">re.I | re.S</span><br><span class="line"></span><br><span class="line">re.sub(<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="keyword">language</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">第二个参数可以是函数(设计方式，开放逻辑编写给用户)</span><br><span class="line"></span><br><span class="line">可以根据匹配内容的不同，做判断，做字符的重新组合</span><br><span class="line"></span><br><span class="line"><span class="keyword">Value</span>.<span class="keyword">group</span>()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">re.match</span><br><span class="line">re.<span class="keyword">search</span> </span><br><span class="line"></span><br><span class="line">.<span class="keyword">group</span>()</span><br><span class="line">.span()</span><br><span class="line"></span><br><span class="line">.<span class="keyword">group</span>(<span class="number">0</span>) 完整匹配结果</span><br><span class="line"></span><br><span class="line">.<span class="keyword">groups</span>()</span><br><span class="line"></span><br><span class="line">很好用的工具</span><br><span class="line"></span><br><span class="line">解决字符串相关的问题</span><br><span class="line"></span><br><span class="line">爬虫，校验</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

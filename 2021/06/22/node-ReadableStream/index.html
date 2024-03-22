@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        node-ReadableStream - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#readablestream"><span class="toc-text">readablestream</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#web"><span class="toc-text">web</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#diff"><span class="toc-text">diff</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        node-ReadableStream
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-06-22 11:03:47</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="readablestream"><a href="#readablestream" class="headerlink" title="readablestream"></a>readablestream</h3><ul>
+<li>在 JavaScript 中, Streams API 的 ReadableStream 允许你在一段长时间内读取一段数据而不是一次性获取所有数据。这对于处理网络响应、文件读写等提供了极大的便利，特别是在处理大文件或者实时数据时，我们可以边读边处理，提高性能并提升用户体验。</li>
+</ul>
+<p>ReadableStream 非常适合配合 <code>for await...of</code> 循环进行异步迭代。以下面这个从网络获取文本的例子来说明：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">logChunks</span>(<span class="params">readableStream</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> reader = readableStream.<span class="title function_">getReader</span>();</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">const</span> chunk <span class="keyword">of</span> reader) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(chunk);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    reader.<span class="title function_">releaseLock</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;https://some.url/&#x27;</span>)</span><br><span class="line">.<span class="title function_">then</span>(<span class="function">(<span class="params">response</span>) =&gt;</span> <span class="title function_">logChunks</span>(response.<span class="property">body</span>));</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们创建了一个 <code>ReadableStream</code> 的 reader，并在 <code>for await...of</code> 中异步迭代这个 reader。每个 chunk 是 <code>ReadableStream</code> 中的一部分数据。我们打印出每个 chunk，直到我们处理完所有的数据。</p>
+<p>注意，一旦我们处理完所有数据，或者发生错误，我们需要调用 <code>reader.releaseLock()</code> 来释放对 <code>ReadableStream</code> 的锁定，以便后续的代码可以继续使用这个 <code>ReadableStream</code>。</p>
+<p>上述例子中的 <code>for await...of</code> 会等待每次迭代的 promises 完成，所以我们会按照流中数据的顺序来处理数据。如果因为某种原因我们需要停止读取流，我们可以简单地 <code>break</code> 掉 <code>for await...of</code> 循环，这将会释放流的锁定。</p>
+<h4 id="web"><a href="#web" class="headerlink" title="web"></a>web</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://chromestatus.com/feature/5143121161879552?context=myfeatures">https://chromestatus.com/feature/5143121161879552?context=myfeatures</a></li>
+</ul>
+<h3 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h3><p>在 Node.js 和浏览器环境中，ReadableStream 的异步迭代处理会有些差异。</p>
+<ol>
+<li>浏览器环境：</li>
+</ol>
+<p>在浏览器环境中，你可以直接利用 Streams API 的 ReadableStream 进行异步迭代。这是因为 Streams API 是 Web 平台的一部分，所以在浏览器原生支持。</p>
+<p>例如，当你从网络获取数据时，你可以如下操作：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">processData</span>(<span class="params">readableStream</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> reader = readableStream.<span class="title function_">getReader</span>();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">const</span> chunk <span class="keyword">of</span> reader.<span class="title function_">read</span>()) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(chunk);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span>(err)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;Error:&quot;</span>, err);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        reader.<span class="title function_">releaseLock</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;https://example.com/&#x27;</span>)</span><br><span class="line">     .<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> <span class="title function_">processData</span>(response.<span class="property">body</span>))</span><br><span class="line">     .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">error</span>(err));</span><br></pre></td></tr></table></figure>
+<p>这种方式的优势在于，你可以立即开始处理数据，而不必等到所有数据下载完成。</p>
+<ol start="2">
+<li>Node.js 环境：</li>
+</ol>
+<p>Node.js 利用的是 Stream 模块，它与浏览器中的 Streams API 略有不同，但是设计的初衷是类似的。Node.js 中的 readable stream 也支持异步迭代。</p>
+<p>例如，如果你正在从文件中读取数据，你可以这样操作：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">readStream</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> readableStream = fs.<span class="title function_">createReadStream</span>(<span class="string">&#x27;example.txt&#x27;</span>, &#123; <span class="attr">encoding</span>: <span class="string">&#x27;utf8&#x27;</span>, <span class="attr">highWaterMark</span>: <span class="number">1024</span> &#125;);</span><br><span class="line">  <span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">const</span> chunk <span class="keyword">of</span> readableStream) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(chunk);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">readStream</span>();</span><br></pre></td></tr></table></figure>
+<p>在这个示例中，我们使用 <code>fs.createReadStream</code> 创建了一个 readable stream，然后使用异步迭代进行读取。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

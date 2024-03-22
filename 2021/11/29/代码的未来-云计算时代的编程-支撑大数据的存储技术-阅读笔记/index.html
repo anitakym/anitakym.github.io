@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        代码的未来-云计算时代的编程-支撑大数据的存储技术-阅读笔记 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7"><span class="toc-text">可扩展性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C10K%E9%97%AE%E9%A2%98"><span class="toc-text">C10K问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashFold"><span class="toc-text">HashFold</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="toc-text">进程间通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rack%E4%B8%8EUnicorn"><span class="toc-text">Rack与Unicorn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%AE-%E5%80%BC%E5%AD%98%E5%82%A8"><span class="toc-text">键-值存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL"><span class="toc-text">NoSQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8Ruby%E6%93%8D%E4%BD%9CMongoDB"><span class="toc-text">用Ruby操作MongoDB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%8F%8D%E5%87%BB"><span class="toc-text">SQL数据库的反击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#memcached%E5%92%8C%E5%AE%83%E7%9A%84%E4%BC%99%E4%BC%B4%E4%BB%AC"><span class="toc-text">memcached和它的伙伴们</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">布隆过滤器</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        代码的未来-云计算时代的编程-支撑大数据的存储技术-阅读笔记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-29 14:39:18</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>云计算时代的编程</p>
+</blockquote>
+<h2 id="可扩展性"><a href="#可扩展性" class="headerlink" title="可扩展性"></a>可扩展性</h2><h2 id="C10K问题"><a href="#C10K问题" class="headerlink" title="C10K问题"></a>C10K问题</h2><h2 id="HashFold"><a href="#HashFold" class="headerlink" title="HashFold"></a>HashFold</h2><h2 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h2><h2 id="Rack与Unicorn"><a href="#Rack与Unicorn" class="headerlink" title="Rack与Unicorn"></a>Rack与Unicorn</h2><blockquote>
+<p>支撑大数据的数据存储技术</p>
+</blockquote>
+<h2 id="键-值存储"><a href="#键-值存储" class="headerlink" title="键-值存储"></a>键-值存储</h2><h2 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h2><h2 id="用Ruby操作MongoDB"><a href="#用Ruby操作MongoDB" class="headerlink" title="用Ruby操作MongoDB"></a>用Ruby操作MongoDB</h2><h2 id="SQL数据库的反击"><a href="#SQL数据库的反击" class="headerlink" title="SQL数据库的反击"></a>SQL数据库的反击</h2><h2 id="memcached和它的伙伴们"><a href="#memcached和它的伙伴们" class="headerlink" title="memcached和它的伙伴们"></a>memcached和它的伙伴们</h2><h2 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h2><p>布隆过滤器（Bloom Filter）是一种空间效率极高的概率型数据结构，用于检测一个元素是不是集合的成员。布隆过滤器可以判断元素绝对不在集合中或可能在集合中，也就是说，它存在一定的误判概率。但是，布隆过滤器的这种“猜测”错误只会是在声明元素存在时，而如果布隆过滤器说元素不存在，那就肯定不存在。</p>
+<p>布隆过滤器主要应用于大数据和分布式系统，例如Google的大表和Hadoop的Hbase，以减小误判造成的I/O操作，也可以用于网络爬虫中对URL的重复过滤，防止爬虫陷入死循环等。</p>
+<p>这种数据结构最早是由Burton Howard Bloom在1970年提出的，之所以命名为“布隆过滤器”，就是以他的名字命名的。</p>
+<p>如需深入学习，以下是我为您推荐的一些论文：</p>
+<p>“Space/time trade-offs in hash coding with allowable errors” by Bloom, Burton H. 1970.<br>“Bloom Filters in Probabilistic Verification” by Peter C. Dillinger and Panagiotis Manolios, 2004.<br>“Network Applications of Bloom Filters: A Survey” by Broder and Mitzenmacher, 2002.</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

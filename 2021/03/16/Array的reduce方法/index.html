@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Array的reduce方法 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MDN%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97%EF%BC%9A"><span class="toc-text">MDN文档指南：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-text">使用实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%98%85%E8%AF%BB%E6%9D%90%E6%96%99%EF%BC%9A"><span class="toc-text">参考阅读材料：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%82%E8%B0%88"><span class="toc-text">杂谈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flat"><span class="toc-text">flat</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Array的reduce方法
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-16 17:37:41</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="MDN文档指南："><a href="#MDN文档指南：" class="headerlink" title="MDN文档指南："></a>MDN文档指南：</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce</a></p>
+<h3 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h3><p>ListNode的数据结构，如果我想把一个数组，转成ListNode的结构：</p>
+<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// leetcode2.两数相加</span></span><br><span class="line"></span><br><span class="line"><span class="operator">/**</span></span><br><span class="line"> <span class="operator">*</span> Definition <span class="keyword">for</span> singly<span class="operator">-</span>linked list.</span><br><span class="line"> <span class="operator">*</span> <span class="keyword">function</span> ListNode(<span class="keyword">val</span>, next) &#123;</span><br><span class="line"> <span class="operator">*</span>     this.<span class="keyword">val</span> <span class="operator">=</span> (<span class="keyword">val</span><span class="operator">===</span>undefined <span class="operator">?</span> <span class="number">0</span> <span class="operator">:</span> <span class="keyword">val</span>)</span><br><span class="line"> <span class="operator">*</span>     this.next <span class="operator">=</span> (next<span class="operator">===</span>undefined <span class="operator">?</span> <span class="literal">null</span> <span class="operator">:</span> next)</span><br><span class="line"> <span class="operator">*</span> &#125;</span><br><span class="line"> <span class="operator">*/</span></span><br><span class="line"><span class="keyword">let</span> sum <span class="operator">=</span> <span class="number">324</span></span><br><span class="line"><span class="keyword">let</span> arr <span class="operator">=</span> [<span class="operator">...</span>sum.toString()]</span><br><span class="line">arr.reduce((acc,v)<span class="operator">=&gt;</span>(&#123;<span class="keyword">val</span><span class="operator">:</span> v, next<span class="operator">:</span> acc&#125;), <span class="literal">null</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="参考阅读材料："><a href="#参考阅读材料：" class="headerlink" title="参考阅读材料："></a>参考阅读材料：</h3><ul>
+<li><p>深入浅出RxJS——6.1.3:规约统计（虽然讲的是rxjs中的reduce，但是对理解JavaScript中的reduce很有帮助）</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">无论是JavaScript数组原生支持的<span class="built_in">reduce</span>，还是RxJS中的<span class="built_in">reduce</span>操作符，都接受一个函数参数，这个函数参数就是“规约函数”，规约函数的形式如下：</span><br><span class="line"><span class="keyword">function</span>(<span class="params">accumulation,current</span>)&#123;</span><br><span class="line">  <span class="comment">//accumulation是当前累计值，current是当前数据</span></span><br><span class="line">  <span class="comment">//函数应该返回最新的累计值</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">reduce</span>的功能就是对一个集合中所有元素依次调用这个规约函数，这个规约函数可以返回一个“累积”的结果，然后这个“累积”的结果会作为参数和数据集合的下一个元素一起成为规约函数下次被调用的参数，如此遍历集合中所有的元素，因为规约函数可以任意定义，所以最后得到的“累积”结果也就完全可定制。</span><br><span class="line"></span><br><span class="line">程墨. 深入浅出RxJS (实战) (Chinese Edition) (Kindle Locations <span class="number">2496</span><span class="number">-2502</span>). Kindle Edition. </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JavaScript高级程序设计——5.2.9缩小方法</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ECMAScript5还新增了两个缩小数组的方法：<span class="built_in">reduce</span>()和<span class="built_in">reduceRight</span>()。这两个方法都会迭代数组的所有项，然后构建一个最终返回的值。</span><br><span class="line">其中，<span class="built_in">reduce</span>()方法从数组的第一项开始，逐个遍历到最后。</span><br><span class="line">而<span class="built_in">reduceRight</span>()则从数组的最后一项开始，向前遍历到第一项。</span><br><span class="line">这两个方法都接收两个参数：一个在每一项上调用的函数和（可选的）作为缩小基础的初始值。</span><br><span class="line">传给<span class="built_in">reduce</span>()和<span class="built_in">reduceRight</span>()的函数接收<span class="number">4</span>个参数：前一个值、当前值、项的索引和数组对象。这个函数返回的任何值都会作为第一个参数自动传给下一项。第一次迭代发生在数组的第二项上，因此第一个参数是数组的第一项，第二个参数就是数组的第二项。</span><br><span class="line"></span><br><span class="line">泽卡斯(Zakas. Nicholas C.). JavaScript高级程序设计(第<span class="number">3</span>版) (图灵程序设计丛书) (Chinese Edition) (Kindle Locations <span class="number">3555</span>-<span class="number">3562</span>). 人民邮电出版社. Kindle Edition. </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>深入理解ES6<br>箭头函数和数组：<br>箭头函数的语法简洁，非常适用于数组处理。<br>诸如sort()、map()及reduce()这些可以接受回调函数的数组方法，都可以通过箭头函数语法简化编码过程并减少编码量。</p>
+</li>
+</ul>
+<p>刘振涛. 深入理解ES6 (Chinese Edition) (Kindle Location 1196). Kindle Edition.<br>在线版本(<a target="_blank" rel="noopener" href="https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions">https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions</a>)</p>
+<h3 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a>杂谈</h3><blockquote>
+<p>函数式编程的一个重要洞见就是，大部分操作都可以归结成列表转换，其中，最核心的列表转换就是 map、filter 和 reduce<br>python中的正则表达参考了Perl，而内置函数lambada,map,reduce,filter等参考了lisp</p>
+</blockquote>
+<h3 id="flat"><a href="#flat" class="headerlink" title="flat"></a>flat</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat</a><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 展开一层数组</span></span><br><span class="line">arr.flat();</span><br><span class="line"><span class="comment">// 等效于</span></span><br><span class="line">arr.<span class="built_in">reduce</span>(<span class="function">(<span class="params">acc, val</span>) =&gt;</span> acc.concat(val), []);</span><br><span class="line"><span class="comment">// [1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用扩展运算符 ...</span></span><br><span class="line">const flattened = <span class="function"><span class="params">arr</span> =&gt;</span> [].concat(...arr);</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

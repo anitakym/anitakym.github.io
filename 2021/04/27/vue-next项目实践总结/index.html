@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        vue-next项目实践总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#devtools"><span class="toc-text">devtools</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#basic"><span class="toc-text">basic</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6"><span class="toc-text">单文件组件&lt;&#x2F;h4&gt;&lt;ul&gt;
+&lt;li&gt;普通的 &lt;script&gt; 只在组件被首次引入的时候执行一次&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;script setup&gt; 中的代码会在每次组件实例被创建的时候执行&lt;&#x2F;li&gt;
+&lt;li&gt;顶层的绑定会被暴露给模版&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;v3&lt;br&gt;1-7 12 14&lt;&#x2F;p&gt;
+&lt;h2 id&#x3D;&quot;其他&quot;&gt;&lt;a href&#x3D;&quot;#其他&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;其他&quot;&gt;&lt;&#x2F;a&gt;其他&lt;&#x2F;h2&gt;&lt;ul&gt;
+&lt;li&gt;字体问题&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.zhangxinxu.com&#x2F;wordpress&#x2F;2018&#x2F;02&#x2F;js-detect-suppot-font-family&#x2F;&quot;&gt;https:&#x2F;&#x2F;www.zhangxinxu.com&#x2F;wordpress&#x2F;2018&#x2F;02&#x2F;js-detect-suppot-font-family&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;检测系统是否带目标字体，如果不带，引导用户安装&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id&#x3D;&quot;样式相关&quot;&gt;&lt;a href&#x3D;&quot;#样式相关&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;样式相关&quot;&gt;&lt;&#x2F;a&gt;样式相关&lt;&#x2F;h2&gt;&lt;p&gt;&lt;code&gt;::v-deep&lt;&#x2F;code&gt;作为组合器的使用在Vue.js 3.0.0-beta.1之后就被弃用了。这是因为这种使用方式与CSS伪元素冲突，可能会引发不必要的混淆和错误。&lt;&#x2F;p&gt;
+&lt;p&gt;就像在Vue.js的RFCS中所建议的那样，以前的&lt;code&gt;::v-deep&lt;&#x2F;code&gt;、&lt;code&gt;&#x2F;deep&#x2F;&lt;&#x2F;code&gt;、&lt;code&gt;&gt;&gt;&gt;&lt;&#x2F;code&gt;现在都推荐使用&lt;code&gt;:deep()&lt;&#x2F;code&gt;进行替代。新的&lt;code&gt;:deep()&lt;&#x2F;code&gt;修饰符提供了一种更明确、更直观的方式来控制后代组件的样式。例如，&lt;code&gt;.a :deep(.b) &amp;#123; color: red &amp;#125;&lt;&#x2F;code&gt;这段代码将会被处理为&lt;code&gt;.a .b &amp;#123; color: red &amp;#125;&lt;&#x2F;code&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;而以前的&lt;code&gt;::v-deep&lt;&#x2F;code&gt;、&lt;code&gt;&#x2F;deep&#x2F;&lt;&#x2F;code&gt;或&lt;code&gt;&gt;&gt;&gt;&lt;&#x2F;code&gt;可能会让开发者误认为他们在使用一个真正的CSS压缩器，但实际上它们并不能在所有的CSS预处理器中正常工作。而新的&lt;code&gt;:deep()&lt;&#x2F;code&gt;修饰符将会更准确地描述其行为：它不是一个真正的CSS组合器，而是Vue的一个scoped CSS特性。&lt;&#x2F;p&gt;
+</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        vue-next项目实践总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-27 15:50:15</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>起源Nov.2018 VueConf TO (Evan You) - Vue 3.0 Updates (faster,smaller,more maintainable,easier to target native)</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">尽可能兼容<span class="number">2.0</span> 的API</span><br><span class="line">之前Virtual DOM会有蛮多运行时开销的</span><br><span class="line">生成更易被JS引擎优化的代码</span><br><span class="line"></span><br><span class="line">判断原生还是组件</span><br><span class="line">Component path fast</span><br><span class="line"></span><br><span class="line">生成虚拟node的时候，函数尽量一致</span><br><span class="line">优化slots生成</span><br><span class="line"><span class="number">2.0</span> 基于ES5的 <span class="keyword">getter</span>，<span class="keyword">setter</span> 进行 </span><br><span class="line"></span><br><span class="line">Lazy by <span class="keyword">default</span></span><br><span class="line">直接暴露给用户<span class="variable language_">this</span> </span><br><span class="line">API不动</span><br><span class="line"></span><br><span class="line">Vue本身runtime更小</span><br><span class="line"></span><br><span class="line">按需引入</span><br><span class="line"></span><br><span class="line">最最基本的代码在<span class="number">10</span>KB左右</span><br><span class="line">降低源码阅读难度</span><br><span class="line"></span><br><span class="line">Vetur</span><br><span class="line">Vue hooks</span><br><span class="line"></span><br><span class="line">框架做js计算-》浏览器主线程block-》无法响应用户事件</span><br><span class="line"></span><br><span class="line"><span class="number">16</span>ms（一frames）</span><br><span class="line">明年下半年发布</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在一个业务简单，逻辑清晰的项目里面，Vue-next作为开发框架<br><a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/guide/introduction.html">https://v3.cn.vuejs.org/guide/introduction.html</a></p>
+</blockquote>
+<h3 id="devtools"><a href="#devtools" class="headerlink" title="devtools"></a>devtools</h3><p>商店里面下载Vue devtools 的 beta 版本，然后把之前的版本卸载掉<br>这个时候重新打开之前的Vue3的页面即可</p>
+<p>项目里面配置：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 打开浏览器工具</span></span><br><span class="line"><span class="keyword">if</span> (process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;development&#x27;</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="string">&#x27;__VUE_DEVTOOLS_GLOBAL_HOOK__&#x27;</span> <span class="keyword">in</span> <span class="variable language_">window</span>) &#123;</span><br><span class="line">    <span class="comment">// 这里__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue赋值一个createApp实例</span></span><br><span class="line">    ;(<span class="variable language_">window</span> <span class="keyword">as</span> <span class="built_in">any</span>).<span class="property">__VUE_DEVTOOLS_GLOBAL_HOOK__</span>.<span class="property">Vue</span> = app</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> <span class="attr">config</span>: <span class="built_in">any</span> = app.<span class="property">config</span></span><br><span class="line">  config.<span class="property">devtools</span> = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个是cli初始化项目时候带的</p>
+<h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2><blockquote>
+<p>其实都是文档上写了的</p>
+</blockquote>
+<h4 id="单文件组件"><a href="#单文件组件" class="headerlink" title="单文件组件"></a>单文件组件<script setup></h4><ul>
+<li>普通的 <script> 只在组件被首次引入的时候执行一次</li>
+<li><script setup> 中的代码会在每次组件实例被创建的时候执行</li>
+<li>顶层的绑定会被暴露给模版</li>
+</ul>
+<p>v3<br>1-7 12 14</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>字体问题</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2018/02/js-detect-suppot-font-family/">https://www.zhangxinxu.com/wordpress/2018/02/js-detect-suppot-font-family/</a></li>
+<li>检测系统是否带目标字体，如果不带，引导用户安装</li>
+</ul>
+<h2 id="样式相关"><a href="#样式相关" class="headerlink" title="样式相关"></a>样式相关</h2><p><code>::v-deep</code>作为组合器的使用在Vue.js 3.0.0-beta.1之后就被弃用了。这是因为这种使用方式与CSS伪元素冲突，可能会引发不必要的混淆和错误。</p>
+<p>就像在Vue.js的RFCS中所建议的那样，以前的<code>::v-deep</code>、<code>/deep/</code>、<code>&gt;&gt;&gt;</code>现在都推荐使用<code>:deep()</code>进行替代。新的<code>:deep()</code>修饰符提供了一种更明确、更直观的方式来控制后代组件的样式。例如，<code>.a :deep(.b) &#123; color: red &#125;</code>这段代码将会被处理为<code>.a .b &#123; color: red &#125;</code>。</p>
+<p>而以前的<code>::v-deep</code>、<code>/deep/</code>或<code>&gt;&gt;&gt;</code>可能会让开发者误认为他们在使用一个真正的CSS压缩器，但实际上它们并不能在所有的CSS预处理器中正常工作。而新的<code>:deep()</code>修饰符将会更准确地描述其行为：它不是一个真正的CSS组合器，而是Vue的一个scoped CSS特性。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

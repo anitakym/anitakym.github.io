@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        react-intro - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#basic"><span class="toc-text">basic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="toc-text">实践项目中遇到的一些问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#creat-react-app"><span class="toc-text">creat-react-app</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#versions"><span class="toc-text">versions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#problems"><span class="toc-text">problems</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9PORT%EF%BC%8CHOST"><span class="toc-text">修改PORT，HOST</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Framework"><span class="toc-text">Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ice"><span class="toc-text">ice</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lazy-loadable"><span class="toc-text">lazy loadable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stric-mode"><span class="toc-text">stric mode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reportWebVitals"><span class="toc-text">reportWebVitals</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#conf"><span class="toc-text">conf</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#readings"><span class="toc-text">readings</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        react-intro
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-15 13:30:33</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li>参考文档：<br><a target="_blank" rel="noopener" href="https://btholt.github.io/complete-intro-to-react-v4/">https://btholt.github.io/complete-intro-to-react-v4/</a><br><a target="_blank" rel="noopener" href="https://btholt.github.io/complete-intro-to-react-v5/">https://btholt.github.io/complete-intro-to-react-v5/</a></li>
+</ul>
+<h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2><ul>
+<li>声明式UI，组件化</li>
+<li>解决应用的主要问题|用户界面的问题（工作量）</li>
+<li>2015.8 - facebook F8</li>
+<li>react - UI库</li>
+<li>定义（代码偏向声明式）一次用户界面，用在多个地方</li>
+<li>状态（state） =&gt; 自动反应，更新界面</li>
+<li>只维护应用的状态</li>
+</ul>
+<h2 id="实践项目中遇到的一些问题"><a href="#实践项目中遇到的一些问题" class="headerlink" title="实践项目中遇到的一些问题"></a>实践项目中遇到的一些问题</h2><blockquote>
+<p>因为react相关项目是另外一个组负责，组间评审的时候，会看下项目，下面为遇到的一些问题</p>
+</blockquote>
+<h3 id="creat-react-app"><a href="#creat-react-app" class="headerlink" title="creat-react-app"></a>creat-react-app</h3><h4 id="versions"><a href="#versions" class="headerlink" title="versions"></a>versions</h4><h4 id="problems"><a href="#problems" class="headerlink" title="problems"></a>problems</h4><p><a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app/issues/10161">https://github.com/facebook/create-react-app/issues/10161</a><br>关于eslintcache文件产生的位置问题(4.0.1)</p>
+<p>eslint –cache false可以本地起效，但是不是解决方案</p>
+<p>move .eslintcache into node_modules/.cache<br><a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app/pull/10346">https://github.com/facebook/create-react-app/pull/10346</a><br>react team 的哥们回复<br><a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app/pull/9977">https://github.com/facebook/create-react-app/pull/9977</a></p>
+<p>eslint: {<br>    cache: false,<br>  },</p>
+<p>4.0.2</p>
+<p>to ignore a file already tracked you also need to run git rm –cached .eslintcache<br>gitignore</p>
+<h3 id="修改PORT，HOST"><a href="#修改PORT，HOST" class="headerlink" title="修改PORT，HOST"></a>修改PORT，HOST</h3><p>直接<br>.env<br>PORT = 3003<br>HOST = ‘127.0.0.1’</p>
+<h2 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h2><h3 id="ice"><a href="#ice" class="headerlink" title="ice"></a>ice</h3><ul>
+<li>可视化页面构建</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/alibaba/ice">https://github.com/alibaba/ice</a></li>
+<li>时效性较强页面</li>
+<li>后端路由服务</li>
+<li>产出 - 当前布局与内容的DSL（JSON）</li>
+<li>组件间的通信 - 将不同组件通过自定义的钩子hook起来<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">FetchData</span> <span class="title">extends</span> <span class="title">Components</span> &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    <span class="keyword">data</span>: &#123;&#125;,</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; componentApi &#125; = <span class="keyword">this</span>.props</span><br><span class="line">    api.<span class="keyword">get</span>(componentApi)</span><br><span class="line">      .then((response) =&gt; &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">          <span class="keyword">data</span>: response,</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;WrappedComponent &#123;..props&#125; <span class="keyword">data</span>=&#123;<span class="keyword">this</span>.state.<span class="keyword">data</span>&#125; /&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="lazy-loadable"><a href="#lazy-loadable" class="headerlink" title="lazy loadable"></a>lazy loadable</h2>React.lazy and Suspense are not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we recommend Loadable Components. It has a nice guide for bundle splitting with server-side rendering.</li>
+</ul>
+<h2 id="stric-mode"><a href="#stric-mode" class="headerlink" title="stric mode"></a>stric mode</h2><ul>
+<li>Suggested: We strongly suggest you enable Strict Mode in your Next.js application to better prepare your application for the future of React.</li>
+<li>还是建议使用的，如果是新项目的话，能更好的适应React后续的发展</li>
+<li>16.3引入的，且对生产环境毫无影响，能在console中打印有用的警告信息</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/react/issues/17786">https://github.com/facebook/react/issues/17786</a> - 一个有意思的issue</li>
+</ul>
+<h2 id="reportWebVitals"><a href="#reportWebVitals" class="headerlink" title="reportWebVitals"></a>reportWebVitals</h2><ul>
+<li>web-vitals</li>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/web-vitals">https://www.npmjs.com/package/web-vitals</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/149662237">https://zhuanlan.zhihu.com/p/149662237</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.chromium.org/2020/05/introducing-web-vitals-essential-metrics.html">https://blog.chromium.org/2020/05/introducing-web-vitals-essential-metrics.html</a></li>
+<li>essential metrics for a healthy site</li>
+<li><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/measuring-performance/">https://create-react-app.dev/docs/measuring-performance/</a></li>
+</ul>
+<h3 id="conf"><a href="#conf" class="headerlink" title="conf"></a>conf</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">React conf <span class="number">2018</span></span><br><span class="line"></span><br><span class="line">Sophie Alpert</span><br><span class="line"></span><br><span class="line"><span class="number">1.25</span>M developer</span><br><span class="line"></span><br><span class="line">Renewable energy</span><br><span class="line"></span><br><span class="line">Make it easier to build great UIs.</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">Code</span> splitting</span><br><span class="line"></span><br><span class="line"><span class="number">1</span><span class="selector-class">.simplify</span> hard <span class="built_in">stuff</span>(suspense)</span><br><span class="line"><span class="number">2</span><span class="selector-class">.performance</span>(time slicing)</span><br><span class="line"><span class="number">2</span><span class="selector-class">.developer</span> <span class="built_in">tooling</span>(profiler)</span><br><span class="line"></span><br><span class="line">What still sucks</span><br><span class="line">Reusing logic<span class="attr">--Wrapper</span> hell</span><br><span class="line">Giant components</span><br><span class="line">Confusing <span class="built_in">classes</span>(hard for humans,machines,hot roloading)</span><br></pre></td></tr></table></figure>
+
+<h4 id="readings"><a href="#readings" class="headerlink" title="readings"></a>readings</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.oyanglul.us/javascript/react-cookbook-mini">https://blog.oyanglul.us/javascript/react-cookbook-mini</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.oyanglul.us/javascript/understand-prototype">https://blog.oyanglul.us/javascript/understand-prototype</a></li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

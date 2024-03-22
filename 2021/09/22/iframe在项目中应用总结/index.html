@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        iframe在项目中应用总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%B2%E8%90%BD%E5%9C%B0%E7%9A%84%E5%A4%9A%E7%A7%8D%E9%A1%B9%E7%9B%AE%E5%BD%A2%E5%BC%8F"><span class="toc-text">已落地的多种项目形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E9%83%A8%E9%97%A8%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C"><span class="toc-text">跨部门团队协作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8%EF%BC%9F%E6%80%8E%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="toc-text">什么时候用？怎么用？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%82%B9"><span class="toc-text">基础点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iframe"><span class="toc-text">iframe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hack"><span class="toc-text">hack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-text">通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#postMessage"><span class="toc-text">postMessage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-text">线上问题处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CSP"><span class="toc-text">CSP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx"><span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E9%97%AE%E9%A2%98"><span class="toc-text">视频自动播放问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%85%B6%E5%AE%83%E7%9A%84%E7%BB%93%E5%B1%80%E6%96%B9%E6%A1%88"><span class="toc-text">一些其它的结局方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6"><span class="toc-text">微前端框架</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        iframe在项目中应用总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-09-22 18:28:21</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="已落地的多种项目形式"><a href="#已落地的多种项目形式" class="headerlink" title="已落地的多种项目形式"></a>已落地的多种项目形式</h3><ul>
+<li>富文本编辑器-结合业务的输出</li>
+<li>公式编辑器</li>
+</ul>
+<h3 id="跨部门团队协作"><a href="#跨部门团队协作" class="headerlink" title="跨部门团队协作"></a>跨部门团队协作</h3><ul>
+<li>XXX-客户端，嵌入iframe</li>
+<li>报告对接</li>
+<li>中台系统-业务模块输出</li>
+</ul>
+<h3 id="什么时候用？怎么用？"><a href="#什么时候用？怎么用？" class="headerlink" title="什么时候用？怎么用？"></a>什么时候用？怎么用？</h3><h2 id="基础点"><a href="#基础点" class="headerlink" title="基础点"></a>基础点</h2><h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe</a></li>
+</ul>
+<h3 id="hack"><a href="#hack" class="headerlink" title="hack"></a>hack</h3><ul>
+<li>基于iframe的src,提供下载资源功能<h3 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h3><h4 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h4></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage</a></li>
+</ul>
+<h3 id="线上问题处理"><a href="#线上问题处理" class="headerlink" title="线上问题处理"></a>线上问题处理</h3><h4 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</a></li>
+<li>Specifies valid parents that may embed a page using <frame>, <iframe>, <object>, <embed>, or <applet></li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不允许被嵌入</span></span><br><span class="line"><span class="section">Content-Security-Policy: frame-ancestors &#x27;none&#x27;</span></span><br><span class="line"><span class="comment"># 只允许被同源的页面嵌入</span></span><br><span class="line"><span class="section">Content-Security-Policy: frame-ancestors &#x27;self&#x27;</span></span><br><span class="line"><span class="comment"># 只允许被白名单内的页面嵌入</span></span><br><span class="line"><span class="section">Content-Security-Policy: frame-ancestors www.example.com</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 不允许被嵌入</span></span><br><span class="line"><span class="section">X-Frame-Options: deny</span></span><br><span class="line"><span class="comment"># 只允许被同源的页面嵌入</span></span><br><span class="line"><span class="section">X-Frame-Options: sameorigin</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h3><p>如果一个域名xxx.xxx.xxx  /abc/ 路径下部署了前端服务</p>
+<ul>
+<li>iframe 里面嵌入 xxx.xxx.xxx/abc</li>
+<li>如果是xxx.xxx.xxx/abc 会被重定向，nginx , 这样会有问题，请求https，会被转为http</li>
+<li>Nginx 内部重定向规则会被启动，例如，当 URL 指向一个目录并且在最后没有包含“/”时，Nginx 内部会自动的做一个 301 重定向</li>
+<li>需要xxx.xxx.xxx/abc/ ，这样才能匹配到，从而不被重定向</li>
+</ul>
+<h3 id="视频自动播放问题"><a href="#视频自动播放问题" class="headerlink" title="视频自动播放问题"></a>视频自动播放问题</h3><p><a target="_blank" rel="noopener" href="https://developer.chrome.com/blog/autoplay/#iframe-delegation">https://developer.chrome.com/blog/autoplay/#iframe-delegation</a><br>如果是跨域的站点，又希望能自动播放，需要再加上这个属性</p>
+<h2 id="一些其它的结局方案"><a href="#一些其它的结局方案" class="headerlink" title="一些其它的结局方案"></a>一些其它的结局方案</h2><h3 id="微前端框架"><a href="#微前端框架" class="headerlink" title="微前端框架"></a>微前端框架</h3><ul>
+<li>qiankun</li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6938207400457404430">https://juejin.cn/post/6938207400457404430</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

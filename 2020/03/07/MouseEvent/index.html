@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        MouseEvent - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#concept"><span class="toc-text">concept</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KeyboardEvent"><span class="toc-text">KeyboardEvent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FocusEvent"><span class="toc-text">FocusEvent</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        MouseEvent
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-03-07 09:56:56</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Event" title="Event">Event</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>鼠标事件（The MouseEvent interface represents events that occur due to the user interacting with a pointing device (such as a mouse).）</p>
+</blockquote>
+<ul>
+<li>MDN指路：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent">https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent</a></li>
+</ul>
+<p>MouseEvent 包括</p>
+<ul>
+<li>click</li>
+<li>dblclick</li>
+<li>mouseup</li>
+<li>mousedown</li>
+</ul>
+<p>MouseEvent derives from UIEvent<br>UIEvent derives from Event</p>
+<p>一些具体的事件都派生自 MouseEvent：WheelEvent 和DragEvent。</p>
+<p>Properties<br>This interface also inherits properties of its parents, UIEvent and Event.</p>
+<p>其中：</p>
+<ul>
+<li>MouseEvent.clientX Read only<br>The X coordinate of the mouse pointer in local (DOM content) coordinates.</li>
+<li>MouseEvent.clientY Read only<br>The Y coordinate of the mouse pointer in local (DOM content) coordinates.</li>
+<li>MouseEvent.offsetX Read only<br>The X coordinate of the mouse pointer relative to the position of the padding edge of the target node.</li>
+<li>MouseEvent.offsetY Read only<br>The Y coordinate of the mouse pointer relative to the position of the padding edge of the target node.</li>
+<li>MouseEvent.pageX Read only<br>The X coordinate of the mouse pointer relative to the whole document.</li>
+<li>MouseEvent.pageY Read only<br>The Y coordinate of the mouse pointer relative to the whole document.</li>
+<li>MouseEvent.screenX Read only<br>The X coordinate of the mouse pointer in global (screen) coordinates.</li>
+<li>MouseEvent.screenY Read only<br>The Y coordinate of the mouse pointer in global (screen) coordinates.</li>
+</ul>
+<h4 id="concept"><a href="#concept" class="headerlink" title="concept"></a>concept</h4><p> screenX/screenY：相对屏幕区域左上角定位，若发生滚动行为，则相对该区域定位<br> pageX/pageY：相对网页区域左上角定位<br> clientX/clientY：相对浏览器可视区域左上角定位<br> offsetX/offsetY：相对父节点区域左上角定位，若无父节点则相对<html>或<body>定位</p>
+<h2 id="KeyboardEvent"><a href="#KeyboardEvent" class="headerlink" title="KeyboardEvent"></a>KeyboardEvent</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent</a></li>
+<li>键盘事件是由焦点系统控制的，一般来说，操作系统也会提供一套焦点系统，但是现代浏览器一般都选择在自己的系统内覆盖原本的焦点系统</li>
+<li>焦点系统认为整个 UI 系统中，有且仅有一个“聚焦”的元素，所有的键盘事件的目标元素都是这个聚焦元素</li>
+<li>浏览器也提供的API来处理焦点，focus,blur</li>
+<li>键盘事件为了跟 pointer 设备保持一致，也规定了从外向内传播的捕获过程<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Note: KeyboardEvent events just indicate what interaction the <span class="keyword">user</span> had <span class="keyword">with</span> a key <span class="keyword">on</span> the keyboard at a low <span class="keyword">level</span>, providing <span class="keyword">no</span> contextual meaning <span class="keyword">to</span> that interaction. <span class="keyword">When</span> you need <span class="keyword">to</span> handle <span class="type">text</span> <span class="keyword">input</span>, use the <span class="keyword">input</span> event <span class="keyword">instead</span>. Keyboard events may <span class="keyword">not</span> be fired <span class="keyword">if</span> the <span class="keyword">user</span> <span class="keyword">is</span> <span class="keyword">using</span> an alternate means <span class="keyword">of</span> entering <span class="type">text</span>, such <span class="keyword">as</span> a handwriting <span class="keyword">system</span> <span class="keyword">on</span> a tablet <span class="keyword">or</span> graphics tablet.</span><br></pre></td></tr></table></figure></li>
+<li>key | code    keyCode ()</li>
+</ul>
+<h2 id="FocusEvent"><a href="#FocusEvent" class="headerlink" title="FocusEvent"></a>FocusEvent</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent">https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent</a></li>
+<li><a target="_blank" rel="noopener" href="https://javascript.info/focus-blur">https://javascript.info/focus-blur</a></li>
+<li><a target="_blank" rel="noopener" href="https://w3c.github.io/uievents/#events-focusevent-doc-focus">https://w3c.github.io/uievents/#events-focusevent-doc-focus</a></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

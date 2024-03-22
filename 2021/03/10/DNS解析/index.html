@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        DNS解析 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9FDNS"><span class="toc-text">传统DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTPDNS"><span class="toc-text">HTTPDNS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1"><span class="toc-text">设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cases"><span class="toc-text">cases</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dig"><span class="toc-text">dig</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="toc-text">一些问题</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        DNS解析
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-10 10:44:15</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#tencent-cloud" title="tencent-cloud">tencent-cloud</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#DNS" title="DNS">DNS</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>由腾讯云的DNSPod文档讲起</p>
+</blockquote>
+<p>文档指南：<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/302/3449">https://cloud.tencent.com/document/product/302/3449</a></p>
+<p>各记录类型的设置：</p>
+<ul>
+<li><p>通过添加 A 记录可将域名指向一个 IP 地址（外网地址）</p>
+</li>
+<li><p>如果需要将域名指向另一个域名，再由另一个域名提供 IP 地址，就需要添加 CNAME 记录，最常用到 CNAME 的场景包括做 CDN、做企业邮箱。</p>
+</li>
+<li><p>如果需要设置邮箱，让邮箱能收到邮件，就需要添加 MX 记录。</p>
+</li>
+<li><p>如果需要将子域名交给其他 DNS 服务商解析，则需要添加 NS 记录。</p>
+</li>
+<li><p>通过添加 AAAA 记录可将域名指向一个 IPv6 地址。</p>
+</li>
+<li><p>SRV 记录用来标识某台服务器使用了某个服务，常见于微软系统的目录管理。</p>
+</li>
+<li><p>如果希望对域名进行标识和说明，可以使用 TXT 记录，绝大多数的 TXT 记录是用来做 SPF 记录（反垃圾邮件）。</p>
+</li>
+<li><p>将一个域名指向另外一个已经存在的站点时，需要添加 URL 记录。</p>
+<ul>
+<li>隐性转发：用的是 iframe 框架技术、非重定向技术，效果为浏览器地址栏输入 <a target="_blank" rel="noopener" href="http://a.com/">http://a.com</a> 回车，打开网站内容是目标地址 <a target="_blank" rel="noopener" href="http://cloud.tencent.com/">http://cloud.tencent.com/</a> 的网站内容，但地址栏显示当前地址 <a target="_blank" rel="noopener" href="http://a.com/">http://a.com</a> 。</li>
+<li>显性转发：用的是301重定向技术，效果为浏览器地址栏输入 <a target="_blank" rel="noopener" href="http://a.com/">http://a.com</a> 回车，打开网站内容是目标地址 <a target="_blank" rel="noopener" href="http://cloud.tencent.com/">http://cloud.tencent.com/</a> 的网站内容，且地址栏显示目标地址 <a target="_blank" rel="noopener" href="http://cloud.tencent.com/%E3%80%82">http://cloud.tencent.com/。</a></li>
+<li>添加 URL 转发记录时，涉及到的两个域名已完成备案。未经备案的域名无法添加 URL 转发。</li>
+<li>备案内容要和Document title一致</li>
+</ul>
+<h3 id="传统DNS"><a href="#传统DNS" class="headerlink" title="传统DNS"></a>传统DNS</h3><ul>
+<li>域名缓存</li>
+<li>域名转发</li>
+<li>出口NAT（网络地址转换）</li>
+<li>域名更新</li>
+</ul>
+</li>
+</ul>
+<h3 id="HTTPDNS"><a href="#HTTPDNS" class="headerlink" title="HTTPDNS"></a>HTTPDNS</h3><h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ul>
+<li><p>手机端嵌入SDK</p>
+</li>
+<li><p>解决本地DNS服务缓存更新不及时的问题</p>
+<h4 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h4></li>
+<li><p>缓存设计</p>
+<ul>
+<li>客户端SDK，本地缓存，HTTPDNS服务器</li>
+<li>缓存的过期，更新，不一致的问题</li>
+<li>同步更新-Cache-Aside</li>
+<li>异步更新-Refresh-Ahead （Guava Cache）</li>
+</ul>
+</li>
+<li><p>调度设计</p>
+<h4 id="cases"><a href="#cases" class="headerlink" title="cases"></a>cases</h4></li>
+<li><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7200278589874782265">https://juejin.cn/post/7200278589874782265</a></p>
+</li>
+</ul>
+<h4 id="dig"><a href="#dig" class="headerlink" title="dig"></a>dig</h4><p> 查DNS的问题<br> 一般做了CDN缓存，可以用这个看看，或者新上的域名，运维配置有没有问题；</p>
+<h3 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h3><p> Alpine - 可能会有dns解析超时问题<br>虽然 Alpine Linux 由于其小差异、安全和简单性而受到许多 Docker 用户的喜爱，但它确实存在一些问题，其中之一就是 DNS 解析问题。</p>
+<p>关于 DNS 解析问题，大多是由于 Alpine 使用的是 musl libc，而不是 glibc。此差异可能会引起一些特定的问题，尤其是在 DNS 解析和网络中。</p>
+<p>如果你的应用依赖于特定的 glibc 功能，或者你发现了 Alpine 引导的问题，那么使用更大的基础镜像（如 debian 或 ubuntu）可能会更好。即使它们占用的空间更多一些，但它们可能避免了一些潜在的问题。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

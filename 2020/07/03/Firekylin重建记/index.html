@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Firekylin重建记 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E7%9A%84%EF%BC%9A"><span class="toc-text">重装系统之后，安装基础的：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#firekylin-%E6%9C%AC%E8%BA%AB%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%E5%8A%A0%E5%BC%BA%EF%BC%9Aurl-legacy-amp-amp-whatwg-url"><span class="toc-text">firekylin 本身安全问题加强：url legacy &amp;&amp; whatwg url</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#firekylin-startup%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="toc-text">firekylin startup代码解析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSDN%E5%8D%9A%E5%AE%A2%E5%AF%BC%E5%87%BA%E5%88%B0firekylin%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="toc-text">CSDN博客导出到firekylin的思路</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Firekylin重建记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-07-03 16:38:35</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#安全篇" title="安全篇">安全篇</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <ol>
+<li><p>博客因为mysql部分开放了远程访问，密码过于简单，导致被清库了；无库备份，或者sql执行语句的日志，所以之前的都没了。</p>
+</li>
+<li><p>之后每篇博客都先notability里面写好，再上传firekylin的管理端</p>
+</li>
+<li><p>give me a lesson:安全很重要，备份很重要；自己搭的博客系统里面，不要使用自己的通用密码等信息，防止被攻击后，泄露重要信息；赶紧给自己的notability也给做了个备份，万一iCloud出问题了，可就真的是所有资料都没有了</p>
+</li>
+<li><p>也借着这个机会，重新整理下博客，提高质量</p>
+</li>
+</ol>
+<blockquote>
+<p>Continue—-</p>
+</blockquote>
+<ol>
+<li>删除了mysql远程可登陆的账号后，还是又被清了库，推测被植入了程序，准备重装机器</li>
+</ol>
+<h4 id="重装系统之后，安装基础的："><a href="#重装系统之后，安装基础的：" class="headerlink" title="重装系统之后，安装基础的："></a>重装系统之后，安装基础的：</h4><ol>
+<li>nodejs<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl --silent --<span class="keyword">location</span> <span class="title">https</span>://rpm.nodesource.com/setup_8.x | sudo bash -</span><br><span class="line">yum -y install nodejs</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>然后<br><code>npm i -g n</code></p>
+<p>n lts</p>
+<ol start="2">
+<li>pm2<br><code>npm install pm2 -g</code></li>
+</ol>
+<ol start="3">
+<li>mysql<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://dev.mysql.com/<span class="keyword">get</span>/mysql-community-<span class="keyword">release</span>-el7<span class="number">-5.</span>noarch.rpm</span><br><span class="line">rpm -ivh mysql-community-<span class="keyword">release</span>-el7<span class="number">-5.</span>noarch.rpm</span><br><span class="line">yum install mysql-community-<span class="keyword">server</span> -y</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>启动mysql服务：<br><code>service mysqld restart</code></p>
+<p>设置root密码：<br><code>/usr/bin/mysqladmin -u root password &#39;hahaGG89@Firekylin&#39;</code></p>
+<ol start="4">
+<li>安装nginx:<br>yum install nginx -y</li>
+</ol>
+<ol start="5">
+<li>安装git:<br>yum install git -y</li>
+</ol>
+<p>走仓库版安装：<br><a target="_blank" rel="noopener" href="https://github.com/firekylin/firekylin/wiki/%E4%BB%93%E5%BA%93%E7%89%88%E5%AE%89%E8%A3%85">https://github.com/firekylin/firekylin/wiki/%E4%BB%93%E5%BA%93%E7%89%88%E5%AE%89%E8%A3%85</a></p>
+<p>放弃本地所有提交：<br>git checkout .</p>
+<h4 id="firekylin-本身安全问题加强：url-legacy-amp-amp-whatwg-url"><a href="#firekylin-本身安全问题加强：url-legacy-amp-amp-whatwg-url" class="headerlink" title="firekylin 本身安全问题加强：url legacy &amp;&amp; whatwg url"></a>firekylin 本身安全问题加强：url legacy &amp;&amp; whatwg url</h4><p> （代码提交变更）</p>
+<h4 id="firekylin-startup代码解析"><a href="#firekylin-startup代码解析" class="headerlink" title="firekylin startup代码解析"></a>firekylin startup代码解析</h4><p> 启动完成后，在浏览器里输入 <a target="_blank" rel="noopener" href="http://localhost:8360/">http://localhost:8360/</a> 即可访问首页填写配置信息<br>使用浏览器直接访问你的Blog地址即可看到 Firekylin 的安装程序。填入你的 MySQL 信息并设置好管理员账号后点击完成。</p>
+<p>基于firekylin的代码对这个过程进行一个详细解析：</p>
+<h4 id="CSDN博客导出到firekylin的思路"><a href="#CSDN博客导出到firekylin的思路" class="headerlink" title="CSDN博客导出到firekylin的思路"></a>CSDN博客导出到firekylin的思路</h4><p>看了看有64篇，因为想导出很久以前这个系列，保留发布时间，对内容做一些删减，所以找一个快速的方法来处理</p>
+<p>1.比较老的文章，在文章管理点开是富文本编辑器<br>2.新一点的，在文章管理点开是md文件</p>
+<p>拿到的东西<br>1.最优：直接处理了直接插库<br>2.拿到格式合适的一篇篇的添加文章（那还不如直接复制粘贴加审阅）</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

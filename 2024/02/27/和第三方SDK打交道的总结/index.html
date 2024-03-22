@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        和第三方SDK打交道的总结 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        和第三方SDK打交道的总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-02-27 14:10:27</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>在不修改原型链、BOM和DOM对象的情况下，我们可以通过使用帮助函数（helper function）或者通常被称为“wrapper”的方式，对第三方 SDK 打非侵入式的补丁或者说是进行封装。</p>
+<p>具体的方法如下：</p>
+<ol>
+<li><strong>建立包装函数（Wrapper Function）：</strong> 创建一个新的函数，该函数内部调用第三方 SDK 的相关方法，并额外添加我们需要的功能。例如：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第三方 SDK 方法</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">thirdPartyMethod</span>(<span class="params">a, b</span>) &#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 包装函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">wrappedMethod</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="comment">// 在调用原有方法前执行新逻辑...</span></span><br><span class="line">    </span><br><span class="line">    <span class="title function_">thirdPartyMethod</span>(a, b);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 在调用原有方法后执行新逻辑...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式的优势是可以在不触碰原有功能的情况下添加新的功能或行为。</p>
+<ol start="2">
+<li><strong>使用代理（Proxy）：</strong> JavaScript的 Proxy 对象可以创建一个对象的代理，从而可以拦截该对象的某些操作。比如你可以拦截对一个对象的函数调用，然后在函数调用前后执行自己的逻辑。</li>
+</ol>
+<p>以下是一个使用 Proxy 的示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> thirdPartyObject = &#123;</span><br><span class="line">    <span class="attr">thirdPartyMethod</span>: <span class="keyword">function</span>(<span class="params">a, b</span>) &#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> proxy = <span class="keyword">new</span> <span class="title class_">Proxy</span>(thirdPartyObject, &#123;</span><br><span class="line">    <span class="attr">get</span>: <span class="keyword">function</span>(<span class="params">target, prop</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> target[prop] === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">                <span class="comment">// 在调用原有方法前执行新逻辑...</span></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">let</span> result = target[prop](...args);</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 在调用原有方法后执行新逻辑...</span></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> target[prop];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>此时，通过 <code>proxy.thirdPartyMethod(a, b)</code> 调用方法，就会执行我们的新逻辑，同时不会更改原有的对象和方法，算是一种非侵入式的补丁方式。</p>
+<p>请注意，对于 Proxy 的方式，由于 Proxy 是 ES6 的一个特性，对于不支持 ES6 的环境，这种方式则无法使用。</p>
+<p>总体而言，要非侵入式地对第三方 SDK 打补丁，建立一个包装或者代理层是一个比较有效的方式。这种方式可以让我们添加自己的代码逻辑，又不修改或者侵入第三方 SDK 的原有逻辑。</p>
+<p>JavaScript的Proxy对象可以通过polyfill来实现。但是这只适用于ES5和以后的版本，因为早期版本的JavaScript并未提供能够完全模拟Proxy对象的功能。</p>
+<p>示例代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="title class_">Proxy</span> !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    <span class="title class_">Proxy</span> = <span class="keyword">function</span>(<span class="params">target, handler</span>) &#123;</span><br><span class="line">        <span class="comment">//<span class="doctag">TODO:</span> add logic here </span></span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这只是一个非常简单的示例，真正实现一个完整的Proxy polyfill会非常复杂且困难。在实际应用中，最好的方法可能是检查浏览器是否支持Proxy，并且在不支持的情况下提供备用策略，因为除了某些边缘情况，很难编写出一个与原生Proxy功能完全一致的polyfill。</p>
+<p>需要注意的是，由于Proxy对象涉及许多底层操作，不可能完全地在不支持它的JavaScript环境中模拟出来，所以并不存在一个完整且可靠的Proxy polyfill。实际上，最好尽量在支持Proxy的环境中使用它，并且考虑它的可用性和兼容性问题。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

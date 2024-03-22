@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        complete-intro-to-containers-study-notes - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99"><span class="toc-text">推荐学习资料:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Welcome"><span class="toc-text">Welcome</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Crafting-Containers-By-Hand"><span class="toc-text">Crafting Containers By Hand</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#What-Are-Containers-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%EF%BC%9F"><span class="toc-text">What Are Containers? (什么是容器？)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chroot-%E9%9A%94%E7%A6%BB%E5%9C%A8chroot%E7%8E%AF%E5%A2%83%E4%B8%AD%EF%BC%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E5%BD%BC%E6%AD%A4%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">chroot 隔离在chroot环境中，看不见彼此的文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Namespaces-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%AE%83%E8%A2%AB%E9%9A%94%E7%A6%BB%E5%9C%A8%E7%B3%BB%E7%BB%9F%E4%B8%AD%EF%BC%8C%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84PID%E3%80%81%E6%8C%82%E8%BD%BD%EF%BC%88%E5%A6%82%E5%AD%98%E5%82%A8%E5%92%8C%E5%8D%B7%EF%BC%89%E5%92%8C%E7%BD%91%E7%BB%9C%E6%A0%88%EF%BC%8C%E9%81%BF%E5%85%8D%E5%AE%B9%E5%99%A8%E9%97%B4%E8%BF%9B%E7%A8%8B%E7%AD%89%E5%BD%BC%E6%AD%A4%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="toc-text">Namespaces (命名空间) - 创建一个新的环境，它被隔离在系统中，有自己的PID、挂载（如存储和卷）和网络栈，避免容器间进程等彼此可见性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cgroups-%E7%89%A9%E7%90%86%E8%B5%84%E6%BA%90%E9%9A%94%E7%A6%BB%E9%99%90%E5%88%B6"><span class="toc-text">cgroups - 物理资源隔离限制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker"><span class="toc-text">Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Getting-Set-Up-with-Docker-%E4%BD%BF%E7%94%A8Docker%E8%BF%9B%E8%A1%8C%E8%AE%BE%E7%BD%AE"><span class="toc-text">Getting Set Up with Docker (使用Docker进行设置)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Images-without-Docker"><span class="toc-text">Docker Images without Docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Images-with-Docker"><span class="toc-text">Docker Images with Docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Node-js-on-Docker"><span class="toc-text">Node.js on Docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tags-%E6%A0%87%E7%AD%BE"><span class="toc-text">Tags (标签)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-CLI"><span class="toc-text">Docker CLI</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Dockerfile"><span class="toc-text">The Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Intro-to-Dockerfiles-Dockerfiles%E4%BB%8B%E7%BB%8D"><span class="toc-text">Intro to Dockerfiles (Dockerfiles介绍)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Build-a-Node-js-App-%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AANode-js%E5%BA%94%E7%94%A8"><span class="toc-text">Build a Node.js App (构建一个Node.js应用)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-More-Complicated-Node-js-App-%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84Node-js%E5%BA%94%E7%94%A8"><span class="toc-text">A More Complicated Node.js App (一个更复杂的Node.js应用)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-Note-on-EXPOSE-%E5%85%B3%E4%BA%8EEXPOSE%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="toc-text">A Note on EXPOSE (关于EXPOSE的说明)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Layers"><span class="toc-text">Layers</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Making-Tiny-Containers"><span class="toc-text">Making Tiny Containers</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Alpine-Linux"><span class="toc-text">Alpine Linux</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Making-Our-Own-Alpine-Node-js-Container-%E5%88%B6%E4%BD%9C%E6%88%91%E4%BB%AC%E8%87%AA%E5%B7%B1%E7%9A%84Alpine-Node-js%E5%AE%B9%E5%99%A8"><span class="toc-text">Making Our Own Alpine Node.js Container (制作我们自己的Alpine Node.js容器)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multi-Stage-Builds"><span class="toc-text">Multi Stage Builds</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Static-Assets-Project"><span class="toc-text">Static Assets Project</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Features-in-Docker"><span class="toc-text">Features in Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Bind-Mounts"><span class="toc-text">Bind Mounts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Volumes"><span class="toc-text">Volumes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-Containers-for-your-Dev-Environment-%E5%9C%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8"><span class="toc-text">Using Containers for your Dev Environment (在开发环境中使用容器)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dev-Containers-with-Visual-Studio-Code"><span class="toc-text">Dev Containers with Visual Studio Code</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Networking-with-Docker"><span class="toc-text">Networking with Docker</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-Container-Projects-%E5%A4%9A%E5%AE%B9%E5%99%A8%E9%A1%B9%E7%9B%AE"><span class="toc-text">Multi Container Projects (多容器项目)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Compose"><span class="toc-text">Docker Compose</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubernetes"><span class="toc-text">Kubernetes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kompose"><span class="toc-text">Kompose</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OCI-Non-Docker-Containers-%EF%BC%88OCI-%E9%9D%9EDocker-%E5%AE%B9%E5%99%A8%EF%BC%89"><span class="toc-text">OCI (Non-Docker) Containers （OCI(非Docker)容器）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Buildah"><span class="toc-text">Buildah</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Podman"><span class="toc-text">Podman</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wrapping-Up-%E6%94%B6%E5%B0%BE%E5%B7%A5%E4%BD%9C"><span class="toc-text">Wrapping Up (收尾工作)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Conclusion-%E7%BB%93%E8%AE%BA"><span class="toc-text">Conclusion (结论)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#words-notes"><span class="toc-text">words notes:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#intro"><span class="toc-text">intro</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#what-are-containers"><span class="toc-text">what are containers</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dockerfile"><span class="toc-text">Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Daemon"><span class="toc-text">Docker Daemon</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E4%BC%98%E5%8C%96"><span class="toc-text">构建优化</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        complete-intro-to-containers-study-notes
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-10 18:51:11</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="推荐学习资料"><a href="#推荐学习资料" class="headerlink" title="推荐学习资料:"></a>推荐学习资料:</h2><p>一定要点开，完整而全面 —— 也是frontend masters上面的一门课<br><a target="_blank" rel="noopener" href="https://btholt.github.io/complete-intro-to-containers/">https://btholt.github.io/complete-intro-to-containers/</a></p>
+<p>下面是简单翻译：<br>TABLE OF CONTENTS（目录）</p>
+<h3 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h3><h4 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h4><h3 id="Crafting-Containers-By-Hand"><a href="#Crafting-Containers-By-Hand" class="headerlink" title="Crafting Containers By Hand"></a>Crafting Containers By Hand</h3><h4 id="What-Are-Containers-什么是容器？"><a href="#What-Are-Containers-什么是容器？" class="headerlink" title="What Are Containers? (什么是容器？)"></a>What Are Containers? (什么是容器？)</h4><h4 id="chroot-隔离在chroot环境中，看不见彼此的文件"><a href="#chroot-隔离在chroot环境中，看不见彼此的文件" class="headerlink" title="chroot 隔离在chroot环境中，看不见彼此的文件"></a>chroot 隔离在chroot环境中，看不见彼此的文件</h4><ul>
+<li>chroot - run command or interactive shell with special root directory<ul>
+<li>容器环境：安全性</li>
+</ul>
+</li>
+<li>docker run -it –name docker-host –rm –privileged ubuntu:bionic<ul>
+<li>注意拉取时候，如果报拉取错误，可以处理下代理配置</li>
+<li>docker run意味着我们要在容器中运行一些命令，而-it意味着我们要使shell交互式（所以我们可以像普通终端一样使用它）</li>
+<li>执行完这个命令后：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 我们可以查下ubuntu的版本</span></span><br><span class="line">root@3595a31d9cad:/<span class="comment"># cat /etc/issue</span></span><br><span class="line"><span class="built_in">mkdir</span> /my-new-root</span><br><span class="line"><span class="built_in">cd</span> /my-new-root</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;my super secret thing&quot;</span> &gt;&gt; /my-new-root/secret.txt</span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> /my-new-root/bin</span><br><span class="line"><span class="built_in">cp</span> /bin/bash /bin/ls /my-new-root/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># ldd - print shared object dependencies,列出bash依赖的库，copy到我们新的环境</span></span><br><span class="line">ldd /bin/bash</span><br><span class="line"><span class="built_in">cp</span> /lib/x86_64-linux-gnu/libtinfo.so.5 /lib/x86_64-linux-gnu/libdl.so.2 /lib/x86_64-linux-gnu/libc.so.6 /my-new-root/lib</span><br><span class="line"><span class="built_in">cp</span> /lib64/ld-linux-x86-64.so.2 /my-new-root/lib64</span><br><span class="line">ldd /bin/ls</span><br><span class="line"><span class="built_in">cp</span> /lib/x86_64-linux-gnu/libselinux.so.1 /lib/x86_64-linux-gnu/libpcre.so.3 /lib/x86_64-linux-gnu/libpthread.so.0 /my-new-root/lib</span><br><span class="line"></span><br><span class="line"><span class="built_in">chroot</span> /my-new-root bash</span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="built_in">cat</span> secret.txt</span><br><span class="line">Ctrl + D <span class="comment">#exit</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Namespaces-命名空间-创建一个新的环境，它被隔离在系统中，有自己的PID、挂载（如存储和卷）和网络栈，避免容器间进程等彼此可见性"><a href="#Namespaces-命名空间-创建一个新的环境，它被隔离在系统中，有自己的PID、挂载（如存储和卷）和网络栈，避免容器间进程等彼此可见性" class="headerlink" title="Namespaces (命名空间) - 创建一个新的环境，它被隔离在系统中，有自己的PID、挂载（如存储和卷）和网络栈，避免容器间进程等彼此可见性"></a>Namespaces (命名空间) - 创建一个新的环境，它被隔离在系统中，有自己的PID、挂载（如存储和卷）和网络栈，避免容器间进程等彼此可见性</h4></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>我有一个大服务器，空间卖给几个人</li>
+<li>如果将用户限制在chroot的环境中，他们看不见彼此的文件，但是依然可以看到（or kill or hijack）所有的进程</li>
+<li>如果再给每个chroot环境提供不同的命名空间，他们就看不到对方的进程了</li>
+<li>刚刚说的是UTS（or UNIX Timesharing）命名空间；还有更多的命名空间可以帮助容器保持相互隔离</li>
+</ol>
+<ul>
+<li>安全性的试验<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在一个终端里面chroot到我们的环境 - terminal session 1</span></span><br><span class="line"><span class="comment"># 在另外一个终端</span></span><br><span class="line">docker <span class="built_in">exec</span> -it docker-host bash <span class="comment"># terminal session 2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">tail</span> -f /my-new-root/secret.txt &amp; <span class="comment"># ts 2 在后台启动一个无限运行的进程</span></span><br><span class="line">ps <span class="comment"># 2</span></span><br><span class="line"><span class="built_in">kill</span> &lt;PID you just copied&gt; <span class="comment"># 1 </span></span><br></pre></td></tr></table></figure>
+我们可以从chroot环境中，kill掉tail进程，这说明我们不仅仅需要文件系统的隔离</li>
+</ul>
+<p>因此，我们使用unshare来创建一个使用namespace来隔离的chroot环境</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">exit <span class="comment"># 从之前的chroot环境</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 debootstrap</span></span><br><span class="line">apt-get update -y</span><br><span class="line">apt-get install debootstrap -y</span><br><span class="line">debootstrap <span class="params">--variant=minbase</span> bionic <span class="string">/better-root</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入新的命名空间和chroot环境</span></span><br><span class="line">unshare <span class="params">--mount</span> <span class="params">--uts</span> <span class="params">--ipc</span> <span class="params">--net</span> <span class="params">--pid</span> <span class="params">--fork</span> <span class="params">--user</span> <span class="params">--map-root-user</span> chroot <span class="string">/better-root</span> bash <span class="comment"># this also chroot&#x27;s for us</span></span><br><span class="line">mount -t proc none <span class="string">/proc</span> <span class="comment"># process namespace</span></span><br><span class="line">mount -t sysfs none <span class="string">/sys</span> <span class="comment"># filesystem</span></span><br><span class="line">mount -t tmpfs none <span class="string">/tmp</span> <span class="comment"># filesystem</span></span><br></pre></td></tr></table></figure>
+<p>这将创建一个新的环境，它被隔离在系统中，有自己的PID、挂载（如存储和卷）和网络栈。现在，我们看不到任何进程了。<br>PIDs + mounts(like storage and volumes, network stack)</p>
+<p>可以再试试刚刚的安全试验</p>
+<p>我们可以用namespace来限制容器相互干扰的能力（也可以试试其他的namespace）</p>
+<h4 id="cgroups-物理资源隔离限制"><a href="#cgroups-物理资源隔离限制" class="headerlink" title="cgroups - 物理资源隔离限制"></a>cgroups - 物理资源隔离限制</h4><p>我们还有一个问题，每个隔离的环境都可以访问服务器所有的资源。环境之间的物理组件没有做隔离。<br>Google在建立基础设施的时候，也遇到了这个问题，于是提出了cgroup;这个隔离环境只能得到这么多的CPU，内存，一旦用完了，就不会再得到更多了。</p>
+<ul>
+<li>Linux Cgroups - Linux Control Group - 限制一个进程组能够使用的资源上限（CPU，内存，磁盘，网络带宽）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在unshare&#x27;d环境之外，我们先安装下需要的工具</span></span><br><span class="line">apt-get install -y cgroup-tools htop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新的 cgroups</span></span><br><span class="line">cgcreate -g cpu,memory,blkio,devices,freezer:/sandbox</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将我们的 unshare&#x27;d 环境添加到 cgroup 中</span></span><br><span class="line">ps aux <span class="comment"># 拿到 紧跟在 the unshare 环境之后的 the bash PID </span></span><br><span class="line">cgclassify -g cpu,memory,blkio,devices,freezer:sandbox &lt;PID&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出与沙盒cpu组相关的任务，我们可以看到上面的PID</span></span><br><span class="line"><span class="built_in">cat</span> /sys/fs/cgroup/cpu/sandbox/tasks</span><br><span class="line"></span><br><span class="line"><span class="comment"># 看下沙盒cpu组的cpu份额，这个数字决定了竞争资源之间的优先级，越高的优先级就越高</span></span><br><span class="line"><span class="built_in">cat</span> /sys/fs/cgroup/cpu/sandbox/cpu.shares</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果需要的话，kill所有沙盒的进程</span></span><br><span class="line"><span class="comment"># kill -9 $(cat /sys/fs/cgroup/cpu/sandbox/tasks)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 对于多核系统，将使用率限制在5%</span></span><br><span class="line">cgset -r cpu.cfs_period_us=100000 -r cpu.cfs_quota_us=$[ 5000 * $(getconf _NPROCESSORS_ONLN) ] sandbox</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置一个80M的限制</span></span><br><span class="line">cgset -r memory.limit_in_bytes=80M sandbox</span><br><span class="line"><span class="comment"># 获取cgroup使用的内存统计信息</span></span><br><span class="line">cgget -r memory.stat sandbox</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在终端会话 #2 中，在unshare 环境之外</span></span><br><span class="line">htop <span class="comment"># 将允许我们通过一个漂亮的可视化工具查看资源使用情况</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在终端会话 #2 中，在unshare 环境中</span></span><br><span class="line"><span class="built_in">yes</span> &gt; /dev/null </span><br><span class="line"><span class="comment"># 这将迅速消耗核心的CPU功率</span></span><br><span class="line"><span class="comment"># 注意它只占用5%的CPU，就像我们设定的那样</span></span><br><span class="line"><span class="comment"># 如果你愿意，可以运行上面的docker exec来获得第三个会话，看看上面的命令是否占用了100%的可用资源</span></span><br><span class="line"><span class="comment"># CTRL+C随时停止上述操作</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在终端会话#1中，在unshared的环境中</span></span><br><span class="line"><span class="built_in">yes</span> | <span class="built_in">tr</span> \\n x | <span class="built_in">head</span> -c 1048576000 | grep n <span class="comment"># 这将加速消耗 ~1GB 的内存</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意在 htop 中，由于我们的 cgroup，它将保持内存接近 80MB</span></span><br><span class="line"><span class="comment"># 如上所述，用第三个终端连接，看看上面的命令在cgroup之外的工作情况</span></span><br></pre></td></tr></table></figure>
+所以，尽管这是最基本意义上的容器，但我们还没有触及更多高级的话题，比如网络、部署、绑定，或者其他Docker为我们提供的服务。但现在你已经知道在最基本的层面上，容器是什么，它做什么，以及我们如何自己实现这些。<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h4 id="Getting-Set-Up-with-Docker-使用Docker进行设置"><a href="#Getting-Set-Up-with-Docker-使用Docker进行设置" class="headerlink" title="Getting Set Up with Docker (使用Docker进行设置)"></a>Getting Set Up with Docker (使用Docker进行设置)</h4><h4 id="Docker-Images-without-Docker"><a href="#Docker-Images-without-Docker" class="headerlink" title="Docker Images without Docker"></a>Docker Images without Docker</h4><h4 id="Docker-Images-with-Docker"><a href="#Docker-Images-with-Docker" class="headerlink" title="Docker Images with Docker"></a>Docker Images with Docker</h4><h4 id="Node-js-on-Docker"><a href="#Node-js-on-Docker" class="headerlink" title="Node.js on Docker"></a>Node.js on Docker</h4><h4 id="Tags-标签"><a href="#Tags-标签" class="headerlink" title="Tags (标签)"></a>Tags (标签)</h4><h4 id="Docker-CLI"><a href="#Docker-CLI" class="headerlink" title="Docker CLI"></a>Docker CLI</h4><h3 id="The-Dockerfile"><a href="#The-Dockerfile" class="headerlink" title="The Dockerfile"></a>The Dockerfile</h3><h4 id="Intro-to-Dockerfiles-Dockerfiles介绍"><a href="#Intro-to-Dockerfiles-Dockerfiles介绍" class="headerlink" title="Intro to Dockerfiles (Dockerfiles介绍)"></a>Intro to Dockerfiles (Dockerfiles介绍)</h4><h4 id="Build-a-Node-js-App-构建一个Node-js应用"><a href="#Build-a-Node-js-App-构建一个Node-js应用" class="headerlink" title="Build a Node.js App (构建一个Node.js应用)"></a>Build a Node.js App (构建一个Node.js应用)</h4><h4 id="A-More-Complicated-Node-js-App-一个更复杂的Node-js应用"><a href="#A-More-Complicated-Node-js-App-一个更复杂的Node-js应用" class="headerlink" title="A More Complicated Node.js App (一个更复杂的Node.js应用)"></a>A More Complicated Node.js App (一个更复杂的Node.js应用)</h4><h4 id="A-Note-on-EXPOSE-关于EXPOSE的说明"><a href="#A-Note-on-EXPOSE-关于EXPOSE的说明" class="headerlink" title="A Note on EXPOSE (关于EXPOSE的说明)"></a>A Note on EXPOSE (关于EXPOSE的说明)</h4><h4 id="Layers"><a href="#Layers" class="headerlink" title="Layers"></a>Layers</h4><h3 id="Making-Tiny-Containers"><a href="#Making-Tiny-Containers" class="headerlink" title="Making Tiny Containers"></a>Making Tiny Containers</h3><h4 id="Alpine-Linux"><a href="#Alpine-Linux" class="headerlink" title="Alpine Linux"></a>Alpine Linux</h4><h4 id="Making-Our-Own-Alpine-Node-js-Container-制作我们自己的Alpine-Node-js容器"><a href="#Making-Our-Own-Alpine-Node-js-Container-制作我们自己的Alpine-Node-js容器" class="headerlink" title="Making Our Own Alpine Node.js Container (制作我们自己的Alpine Node.js容器)"></a>Making Our Own Alpine Node.js Container (制作我们自己的Alpine Node.js容器)</h4><h4 id="Multi-Stage-Builds"><a href="#Multi-Stage-Builds" class="headerlink" title="Multi Stage Builds"></a>Multi Stage Builds</h4><h4 id="Static-Assets-Project"><a href="#Static-Assets-Project" class="headerlink" title="Static Assets Project"></a>Static Assets Project</h4><h3 id="Features-in-Docker"><a href="#Features-in-Docker" class="headerlink" title="Features in Docker"></a>Features in Docker</h3><h4 id="Bind-Mounts"><a href="#Bind-Mounts" class="headerlink" title="Bind Mounts"></a>Bind Mounts</h4><h4 id="Volumes"><a href="#Volumes" class="headerlink" title="Volumes"></a>Volumes</h4><h4 id="Using-Containers-for-your-Dev-Environment-在开发环境中使用容器"><a href="#Using-Containers-for-your-Dev-Environment-在开发环境中使用容器" class="headerlink" title="Using Containers for your Dev Environment (在开发环境中使用容器)"></a>Using Containers for your Dev Environment (在开发环境中使用容器)</h4><h4 id="Dev-Containers-with-Visual-Studio-Code"><a href="#Dev-Containers-with-Visual-Studio-Code" class="headerlink" title="Dev Containers with Visual Studio Code"></a>Dev Containers with Visual Studio Code</h4><h4 id="Networking-with-Docker"><a href="#Networking-with-Docker" class="headerlink" title="Networking with Docker"></a>Networking with Docker</h4><h3 id="Multi-Container-Projects-多容器项目"><a href="#Multi-Container-Projects-多容器项目" class="headerlink" title="Multi Container Projects (多容器项目)"></a>Multi Container Projects (多容器项目)</h3><h4 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h4>docker-compose up -d=&gt;在后台运行<h4 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h4><h4 id="Kompose"><a href="#Kompose" class="headerlink" title="Kompose"></a>Kompose</h4><h3 id="OCI-Non-Docker-Containers-（OCI-非Docker-容器）"><a href="#OCI-Non-Docker-Containers-（OCI-非Docker-容器）" class="headerlink" title="OCI (Non-Docker) Containers （OCI(非Docker)容器）"></a>OCI (Non-Docker) Containers （OCI(非Docker)容器）</h3><h4 id="Buildah"><a href="#Buildah" class="headerlink" title="Buildah"></a>Buildah</h4><h4 id="Podman"><a href="#Podman" class="headerlink" title="Podman"></a>Podman</h4><h3 id="Wrapping-Up-收尾工作"><a href="#Wrapping-Up-收尾工作" class="headerlink" title="Wrapping Up (收尾工作)"></a>Wrapping Up (收尾工作)</h3><h4 id="Conclusion-结论"><a href="#Conclusion-结论" class="headerlink" title="Conclusion (结论)"></a>Conclusion (结论)</h4></li>
+</ul>
+<p>PS：把材料放到github,也是因为文本材料的错误不可能完全无一点错误，所以放到github上，大家都可以提issue（问题），这样后续的人，就能方便查到了；而材料也能在这个过程中不断得完善; video课程收费，但是材料开源;</p>
+<h3 id="words-notes"><a href="#words-notes" class="headerlink" title="words notes:"></a>words notes:</h3><h4 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h4><ul>
+<li>Course Objective 课程目标</li>
+<li>The objective of this course is demystify what containers are  本课程的目的是解开什么是容器的神秘面纱</li>
+<li>demystify 使明白易懂 ｜diˈmɪstəˌfaɪ｜</li>
+<li>and now it’s not just a tool for ops, it’s a tool for developers 现在它不仅仅是运维的工具，也是开发人员的工具</li>
+<li>on a regular basis 经常</li>
+<li>a developer demographic 开发者群体</li>
+<li>the code will be incidental to the concepts being taught 代码是次要的</li>
+<li>incidental 1.次要的 2.不可避免的，伴随而来的 3.附带的</li>
+<li>to be incidental to sth 伴随某事物而来</li>
+<li>a very basic grasp of 非常基本的掌握</li>
+<li>be your first exposure to 第一次接触</li>
+<li>For set up instructions, refer here 关于设置说明，请参考这里</li>
+<li>File Issues 提交问题</li>
+<li>Previous to that 在此之前</li>
+<li>I love to teach. It’s a challenging task that forces you to peel back all the knowledge you’ve gained so you can approach someone who lacks the same experience and terminology you have. It forces you to take amorphous(shapeless,confused) concepts floating in your brain and crystalize them into solid concepts that you can describe. It forces you to acknowledge(admit) your gaps(空白，空缺，欠缺) in knowledge because you’ll begin to question things you know others will question. For me to ever master a concept, I have to teach it to someone else.</li>
+<li>incentive 激励</li>
+</ul>
+<h4 id="what-are-containers"><a href="#what-are-containers" class="headerlink" title="what are containers"></a>what are containers</h4><ul>
+<li><p>I was very intimidated by the concept of what containers were 我对容器的概念感到非常恐惧</p>
+</li>
+<li><p>super-versed in Linux and sysadmin type activties 超级精通Linux和系统管理员类型的人</p>
+</li>
+<li><p>a few features of the Linux kernel duct-taped together 将Linux内核的一些功能duct-taped在一起</p>
+</li>
+<li><p>Honestly, there’s no single concept of a “container”: it’s just using a few features of Linux together to achieve isolation. That’s it. 说实话，”容器 “并没有一个单一的概念：它只是把Linux的几个功能用在一起实现隔离。仅此而已。</p>
+</li>
+<li><p>assume wizardry(skill) with bash or zsh </p>
+</li>
+<li><p> “bare metal” 裸机 </p>
+</li>
+<li><p> This is great if you’re extremely performance sensitive and you have ample and competent staffing to take care of these servers.如果你对性能非常敏感，而且你有足够的和有能力的人员来照顾这些服务器，这是很好的。</p>
+</li>
+<li><p> Need to spin up another server</p>
+</li>
+<li><p> web traffic 网络流量</p>
+</li>
+<li><p> all the drivers connecting to the hardware 驱动程序连接到硬件</p>
+</li>
+<li><p> Virtual Machines 虚拟机</p>
+</li>
+<li><p> one beefy server 一个强大的服务器</p>
+</li>
+<li><p> lease a server from 租用了一台服务器</p>
+</li>
+<li><p>  drop a fork bomb and devour（毁灭） all the resources</p>
+</li>
+<li><p>  nefarious 恶毒的</p>
+</li>
+<li><p>  a shared-tenant server 共享租户服务器</p>
+</li>
+<li><p>  hum 嗯</p>
+</li>
+<li><p>  All these above features come at the cost of a bit of performance. 以上这些功能都是以牺牲一点性能为代价的</p>
+</li>
+<li><p>  Public Cloud 公有云</p>
+</li>
+<li><p>  So, as alluded to above 因此，如上所述</p>
+</li>
+<li><p>  manage all the software, networking, provisioning, updating, etc.管理所有这些服务器的软件、网络、配置、更新等。</p>
+</li>
+<li><p>  We’re still paying the cost of running a whole operating system in the cloud inside of a host operating system. It’d be nice if we could just run the code inside the host OS without the additional expenditure of guest OSs.</p>
+</li>
+<li><p>  Containers 容器</p>
+</li>
+<li><p>  divine 凭直觉发现，guess</p>
+</li>
+<li><p>  As you may have divined, containers give us many of the security and resource-management features of VMs but without the cost of having to run a whole other operating system. It instead usings chroot, namespace, and cgroup to separate a group of processes from each other. </p>
+</li>
+<li><p>  flimsy (feeable,weak)</p>
+</li>
+<li><p>  But I assure you a lot of very smart people have worked out the kinks and containers are the future of deploying code.但我向你保证，很多非常聪明的人已经解决了这些问题，容器是部署代码的未来。</p>
+</li>
+<li><p>容器技术的核心 - 通过约束和修改进程的动态表现，从而为其创造出一个边界</p>
+</li>
+<li><p>在Linux内核中，很多资源和对象是不能被namespace化的，比如时间</p>
+</li>
+</ul>
+<h3 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><h4 id="Docker-Daemon"><a href="#Docker-Daemon" class="headerlink" title="Docker Daemon"></a>Docker Daemon</h4><ul>
+<li>Docker Engine（包括 Docker Daemon）、Docker 镜像和 Docker 容器组成。</li>
+<li>Docker Daemon（dockerd）是一个在主机上持续运行的后台进程，它用于管理 Docker 容器，负责构建、运行和监控容器。Docker Daemon 还会与其他 Docker Daemon 通信，以便协同工作。Docker CLI 和 Docker API 是与 Docker Daemon 进行通信的主要方式。<br>一些与 Docker Daemon 交互的操作包括：</li>
+</ul>
+<ol>
+<li>从 Docker Hub 或其他注册表拉取镜像。</li>
+<li>构建新的 Docker 镜像。</li>
+<li>创建、启动、监控和停止容器。</li>
+<li>在容器之间移动文件。</li>
+<li>访问容器的日志和资源使用情况等信息。</li>
+<li>管理容器网络。</li>
+<li>管理容器存储。</li>
+</ol>
+<p>要启动 Docker Daemon，请在您的终端中输入以下命令（请注意，您可能需要 root 权限来运行这些命令）：</p>
+<p>对于 Linux 系统：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<p>对于 macOS 和 Windows，等，请使用 Docker Desktop：</p>
+<p>下载并安装 Docker Desktop，然后按照提示启动它。这将自动启动 Docker Daemon，并在系统托盘中提供一个 docker 图标，用于访问设置和其他选项。</p>
+<p>确保 Docker 已启动，运行以下命令以检查 Docker Daemon 是否正在运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info</span><br></pre></td></tr></table></figure>
+
+<p>此命令将返回有关 Docker Daemon 和容器的详细信息。如果能够看到输出的信息，说明 Docker Daemon 正在运行。</p>
+<h3 id="构建优化"><a href="#构建优化" class="headerlink" title="构建优化"></a>构建优化</h3><p>docker build 的时候会把构建上下文的所有文件打包发送给 docker deamon 来构建镜像。</p>
+<p>可以通过 .dockerignore 指定哪些文件不发送，这样能加快构建时间，减小镜像体积。</p>
+<p>多阶段构建也能减小镜像体积，也就是 build 一个镜像、production 一个镜像，最终保留下 production 的镜像。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

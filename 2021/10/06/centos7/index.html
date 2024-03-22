@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        centos7 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#history"><span class="toc-text">history</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%8E%87"><span class="toc-text">使用率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#basic"><span class="toc-text">basic</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%8F%98%E6%9B%B4"><span class="toc-text">基础变更</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hostname"><span class="toc-text">hostname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#file-dir"><span class="toc-text">file | dir</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#timezone"><span class="toc-text">timezone</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3"><span class="toc-text">网络接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="toc-text">自动补全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%86%85%E5%AD%98"><span class="toc-text">系统内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E7%8A%B6%E6%80%81%E6%9F%A5%E7%9C%8B"><span class="toc-text">端口状态查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP"><span class="toc-text">TCP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Systemd"><span class="toc-text">Systemd</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#basic-1"><span class="toc-text">basic</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#systemctl"><span class="toc-text">systemctl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#target"><span class="toc-text">target</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#service"><span class="toc-text">service</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83"><span class="toc-text">自定义服务单元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Timers"><span class="toc-text">Timers</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Journal"><span class="toc-text">Journal</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Firewalld"><span class="toc-text">Firewalld</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC"><span class="toc-text">基本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%91%E7%9B%98"><span class="toc-text">云盘</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        centos7
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-10-06 13:50:26</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>Unix（FreeBSD） - 贝尔实验室<br>Minix - 安德鲁<br>Linux - Linus Benedict Torvalds - (Redhat -&gt; Centos | Ubuntu )</p>
+<h2 id="使用率"><a href="#使用率" class="headerlink" title="使用率"></a>使用率</h2><h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2><h4 id="基础变更"><a href="#基础变更" class="headerlink" title="基础变更"></a>基础变更</h4><ul>
+<li>文件系统 - xfs</li>
+<li>/etc/hostname - 修改主机名 | timedatectl set-timezone - 时区设置 | ip - ip信息查看| ss - 端口查看 ｜ firewalld - 防火墙 | systemd - 服务管理 ｜ chrony - 时间同步</li>
+<li>默认支持docker - 内核支持：OverlayFS ｜ Repo源支持</li>
+<li>不再支持32位操作系统</li>
+<li>GNOME 3.x</li>
+<li>centos7 - systemd 不断完善，强大 (ubuntu等也在不断加强使用)</li>
+</ul>
+<h4 id="hostname"><a href="#hostname" class="headerlink" title="hostname"></a>hostname</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>hostname</span><br><span class="line">直接改里面的名字</span><br><span class="line">reboot <span class="comment"># reboot 之后，永久修改才会生效</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="file-dir"><a href="#file-dir" class="headerlink" title="file | dir"></a>file | dir</h4><ul>
+<li>树状结构<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/bin = User BINaries </span><br><span class="line">/sbin = Superuser BINaries </span><br><span class="line">/etc = ETCetera - configuration files</span><br><span class="line">/dev = DEVices files</span><br><span class="line">/<span class="keyword">proc</span> =<span class="title"> PROCesses</span> information -<span class="title"> top命令</span></span><br><span class="line">/lib =<span class="title"> LIBrary</span> -<span class="title"> system</span> libraries</span><br><span class="line">/tmp =<span class="title"> TeMPorary</span> </span><br><span class="line">/usr =<span class="title"> Unix</span> Shared<span class="title"> Resources</span>  -<span class="title"> user</span> programs</span><br><span class="line">/boot =<span class="title"> Boot</span> loader<span class="title"> files</span></span><br><span class="line">/var =<span class="title"> VARiable</span> </span><br><span class="line">/opt =<span class="title"> optional</span> add-on<span class="title"> apps</span></span><br><span class="line">/mnt =<span class="title"> mount</span> directory</span><br><span class="line">/media =<span class="title"> removable</span> devices</span><br><span class="line">/src =<span class="title"> service</span> data</span><br></pre></td></tr></table></figure>
+有时候查问题的时候，注意6/7的文件目录结构的变更</li>
+<li>bin -&gt; usr/bin (7链接到了usr/bin下)</li>
+<li>sbin -&gt; usr/sbin</li>
+<li>lib | lib64 等同上</li>
+<li>centos7 里面多了run目录<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /;<span class="keyword">ls</span> <span class="string">./</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="timezone"><a href="#timezone" class="headerlink" title="timezone"></a>timezone</h4><ul>
+<li>中国 - +8</li>
+<li>时区不准确，会导致系统时间有问题，即使配置了时间同步<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">date</span> -<span class="string">R</span></span><br><span class="line"><span class="string">cat</span> /<span class="string">etc</span>/<span class="string">local</span></span><br><span class="line"><span class="string">cat</span> /<span class="string">ect</span>/<span class="string">localtime</span></span><br><span class="line"><span class="string">time</span></span><br><span class="line"><span class="string">timedatectl</span> <span class="comment"># ntp的协议进行时间同步的｜RTC - 本地主板时间</span></span><br><span class="line"><span class="string">timedatectl</span> <span class="built_in">set-timezone</span> <span class="string">Asia</span>/<span class="string">Shanghai</span></span><br><span class="line"><span class="string">timedatectl</span> <span class="built_in">set-local-rtc</span> <span class="string">1</span> <span class="comment"># 将硬件时间调整成和本地时间（local time zone）一致</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="网络接口"><a href="#网络接口" class="headerlink" title="网络接口"></a>网络接口</h4><ul>
+<li>默认命名规则</li>
+<li>centos6，如果是Dell的，可能会有em0等出现</li>
+<li>centos7 - net.ifnames 命名全自动，可预知，但是命名比较难读 ｜ biosdevname = 提供给Dell部分</li>
+<li>/etc/sysconfig/grub -&gt; GRUB_CMDLE_LINUX</li>
+<li>ifconfig - 阿里云的有这个命令，这个命令在（centos7-minimal安装）里面就默认没有了</li>
+<li>ip还是很强大的，推荐使用<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ip <span class="keyword">a</span> <span class="comment"># a - addr </span></span><br><span class="line">ip <span class="keyword">a</span> <span class="built_in">add</span>|del <span class="comment"># 修改ip地址信息</span></span><br><span class="line">ip link <span class="built_in">set</span> dev eth1 down|up <span class="comment"># 关闭｜启用网络接口</span></span><br><span class="line"><span class="comment"># 策略路由配置</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h4><ul>
+<li>tab （一下｜两下）</li>
+<li>名字 ｜ 参数 - 安装bash-completion,然后重新登入主机</li>
+</ul>
+<h4 id="系统内存"><a href="#系统内存" class="headerlink" title="系统内存"></a>系统内存</h4><ul>
+<li>操作系统内存 - 应用程序 ｜ buffers ｜ cached ｜ 未使用</li>
+<li>shared 是很小的，不同程序间的共享内存</li>
+<li>Buffers - 存储速度｜优先级 - 不同的设备之间传输数据的缓存区域</li>
+<li>Cached - CPU读取数据文件缓存的存储缓存区域</li>
+<li>Buffers ｜ Cache 部分可以回收，来提供给应用程序使用</li>
+<li>操作系统内存耗尽，触发OOM机制（out of memory），导致系统自动重启</li>
+<li>swap原理要理解 - 操作系统内存不够，会用swap -其实解决不了根本问题- mongoDB等还会产生问题</li>
+<li>Used到60%-80% 要注意<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">top</span> <span class="comment"># 1 | shift + M | shift + P</span></span><br><span class="line">free <span class="comment"># 内存</span></span><br><span class="line">free -m <span class="comment"># 单位 M，free是未被分配的内存，Used-应用程序使用的</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="端口状态查看"><a href="#端口状态查看" class="headerlink" title="端口状态查看"></a>端口状态查看</h4><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ss - centos7 - 执行快（比netstat）- /proc/net/</span></span><br><span class="line"><span class="comment"># netstat - centos6 - /proc/-遍历</span></span><br><span class="line"><span class="comment"># ECS里面这两个默认都有</span></span><br><span class="line">netstat|ss -luntp <span class="comment"># 查看正在监听的端口</span></span><br><span class="line">netstat -an | grep <span class="number">80</span> <span class="comment"># 查看使用某个端口的情况</span></span><br><span class="line"><span class="comment"># umount /proc/ -l 再用netstat或者ss，就会提示，提取不到信息了</span></span><br><span class="line">ss -ltn <span class="comment"># 查看tcp对应的</span></span><br><span class="line">ss -lun <span class="comment"># 查看udp对应的</span></span><br><span class="line"><span class="comment"># ss 可以通过各种参数配置，查看各种状态，判断问题</span></span><br><span class="line">ss <span class="keyword">state</span> established | wc -l</span><br><span class="line">ss -s <span class="comment"># 概览，做一个大概判断 ｜ synrecv如果很高，可能遭受攻击</span></span><br><span class="line">ss -an sport eq <span class="number">22</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><ul>
+<li>listen | established | fin_wait1 | close_wait | fin_wait2 |last_ack | “time_wait” | closed</li>
+<li>syn_sent | syn_recv</li>
+<li>三次握手｜四次挥手</li>
+</ul>
+<h2 id="Systemd"><a href="#Systemd" class="headerlink" title="Systemd"></a>Systemd</h2><h4 id="basic-1"><a href="#basic-1" class="headerlink" title="basic"></a>basic</h4><ul>
+<li>Systemd - centos7 - 新采用的管理体系，对比sysVini(centos6)</li>
+<li>服务管理｜启动项管理｜系统启动级别｜定时任务｜日志管理</li>
+<li>centos6 - service|chkconfig|init|cron|syslog</li>
+<li>centos7 - systemctl|systemctl|systemctl|timer|Systemd-journal</li>
+<li>支持并行启动<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以提高开机启动速度(case，找一台中间机器，比较下速度)</span></span><br><span class="line"><span class="attribute">yun</span> install vsftpd</span><br><span class="line"><span class="comment"># 对于不同的6,7的，进行reboot，从中间机器上，看下联通情况</span></span><br><span class="line">systemctl enable vsftpd <span class="comment"># 加入开机启动-7</span></span><br><span class="line">chkconfig vsftpd <span class="literal">on</span> <span class="comment"># 加入开机启动-6</span></span><br><span class="line"></span><br><span class="line">watch <span class="string">&#x27;echo exit|nc xxx.xxx.xxx.xxx 21&#x27;</span> <span class="comment"># 中间机器</span></span><br></pre></td></tr></table></figure></li>
+<li>centos7 关机只关闭正在运行的服务</li>
+<li>对于服务的挂历不需要init.d下的脚本</li>
+<li>Service ｜ Syslog - 原有问题解决</li>
+</ul>
+<h4 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h4><ul>
+<li>文件扩展名 - 管理单元<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">systemctl</span> -<span class="string">t</span> <span class="string">help</span> <span class="comment"># 查看支持哪些单元的管理</span></span><br><span class="line"><span class="string">df</span> -<span class="string">h</span></span><br><span class="line"><span class="string">systemctl</span> <span class="built_in">list-unit</span> | <span class="string">grep</span> <span class="string">&#x27;boot&#x27;</span> </span><br><span class="line"><span class="string">systemctl</span> <span class="string">start</span>|<span class="string">stop</span> <span class="string">nginx</span> <span class="comment"># service</span></span><br></pre></td></tr></table></figure></li>
+<li>如果无扩展名，systemctl默认会把扩展名当成.service</li>
+<li><code>systemctl list-units | --failed | list-unit-files | deamon-reload</code></li>
+<li>单元管理命令 - start|stop|restart|reload|status|is-enabled</li>
+<li>基本命令 enable|disable|mask|unmask</li>
+<li>systemctl [options] command [name]</li>
+<li>systemctl -h</li>
+</ul>
+<h4 id="target"><a href="#target" class="headerlink" title="target"></a>target</h4><ul>
+<li>SysVinit vs Systemd</li>
+<li>系统启动运行级别 - 0～6<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SysVinit</span></span><br><span class="line"><span class="string">cat</span> /<span class="string">etc</span>/<span class="string">rc</span>.<span class="string">d</span>/<span class="string">rc3</span>.<span class="string">d</span></span><br><span class="line"><span class="string">runlevel</span></span><br><span class="line"><span class="string">init</span>|<span class="string">telinit</span> <span class="string">6</span> <span class="comment"># 非永久</span></span><br><span class="line"><span class="comment"># Systemd</span></span><br><span class="line"><span class="string">systemctl</span> <span class="built_in">get-default</span></span><br><span class="line"><span class="string">systemctl</span> <span class="built_in">set-default|isolate</span> <span class="string">xxx</span>.<span class="string">target</span></span><br><span class="line"><span class="string">reboot</span></span><br></pre></td></tr></table></figure></li>
+<li><code>systemctl list-dependencies</code> # 看到关联关系</li>
+<li><code>systemctl --reverse list-dependencies xxx.service</code></li>
+</ul>
+<h4 id="service"><a href="#service" class="headerlink" title="service"></a>service</h4><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SysVinit</span></span><br><span class="line">service name start|<span class="string">stop</span>|<span class="string">restart</span>|<span class="string">reload</span>|<span class="string">status</span>|condrestart</span><br><span class="line"><span class="comment"># Systemd</span></span><br><span class="line">systemctl start|<span class="string">stop</span>|<span class="string">restart</span>|<span class="string">reload</span>|<span class="string">status</span>|<span class="string">condrestart name</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">rpm -ql nginx</span><br><span class="line">rpm -qa nginx</span><br><span class="line">vim nginx.service</span><br><span class="line"><span class="params">system</span>ctl start nginx.service</span><br><span class="line"><span class="params">system</span>ctl status nginx.service</span><br><span class="line"><span class="params">system</span>ctl reload nginx.service <span class="comment"># 不希望重启，只是重载下配置文件，这样几乎不会影响用户访问</span></span><br><span class="line"><span class="params">system</span>ctl restart nginx.service <span class="comment"># 如果有用户正在使用，会有影响</span></span><br><span class="line">cat nginx.service 或 <span class="params">system</span>ctl cat nginx</span><br><span class="line"><span class="comment"># [unit] - 单元的说明及依赖相关的设置 (wants|requires区别)</span></span><br><span class="line"><span class="comment"># [service] - define - 单元的管理方式(type=simple-该服务将立刻启动|forking-当该服务进程fork,且父进程退出后服务启动成功｜oneshot|notify|dbus|idle)</span></span><br><span class="line"><span class="comment"># [install] - define - 加入到target单元中</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>软件包安装的单元 - /usr/lib/systemd/system/</li>
+<li>系统管理员安装的单元 - /etc/systemd/system/</li>
+</ul>
+<h4 id="自定义服务单元"><a href="#自定义服务单元" class="headerlink" title="自定义服务单元"></a>自定义服务单元</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> $$ &gt; /var/run/xxx.pid</span><br><span class="line"><span class="keyword">while</span> :</span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;hello,&quot;</span>$(<span class="built_in">date</span>) &gt;&gt; /tmp/xxx.res</span><br><span class="line">    <span class="built_in">sleep</span> 1</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tail</span> -f /tmp/xxx.res</span><br><span class="line"><span class="built_in">cp</span> nginx.service xxx.service <span class="comment"># 改一下拷过来的配置文件</span></span><br><span class="line"><span class="comment"># :! ls /path 可以测试路径是否正确</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">systemctl</span> daemon-reload <span class="comment"># 每次改完配置文件，要reload</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Timers"><a href="#Timers" class="headerlink" title="Timers"></a>Timers</h4><ul>
+<li>替代cron,定时控制服务事件（.service文件）</li>
+<li>定时任务 = service服务单元 + timer定时单元</li>
+<li>单调定时器 - 从一个时间点过一段时间后激活定时任务｜ 实时定时器 - 类比crontab(OnCalendar=<em>-</em>-* 00:00:00)</li>
+<li>[Unit][Timer][Install]</li>
+<li><a target="_blank" rel="noopener" href="https://fedoramagazine.org/systemd-timers-for-scheduling-tasks/">https://fedoramagazine.org/systemd-timers-for-scheduling-tasks/</a><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">systemctl list-timers</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="Journal"><a href="#Journal" class="headerlink" title="Journal"></a>Journal</h4><ul>
+<li>Systemd的日志管理</li>
+<li>/etc/systemd/journald.conf</li>
+<li>RAM - tmpfs /run (df -h)</li>
+<li>/run/log/journal/  - 重启之后不会存在</li>
+<li><code>journalctl</code></li>
+<li>操作系统日志级别 - 0～7</li>
+<li><code>journalctl [options] [matches]</code></li>
+<li>notice|warning - 粗体 error-红色</li>
+<li><code>journalctl -n</code> # -n最后20行, -f实时，-p级别,-u具体单元</li>
+</ul>
+<h4 id="Firewalld"><a href="#Firewalld" class="headerlink" title="Firewalld"></a>Firewalld</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://firewalld.org/">https://firewalld.org/</a></li>
+<li>iptables - centos6</li>
+<li>底层调用的iptables</li>
+<li>区域管理</li>
+<li>默认区域 - public</li>
+<li>活跃｜非活跃 区域</li>
+<li>ls /usr/lib/firewalld/zones/</li>
+<li>systemctl start firewalld.service</li>
+<li><code>fiewall-cmd --list-all</code></li>
+<li><code>ip a</code></li>
+<li>外部访问服务器，默认阻止，服务器访问外部默认允许<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一个网卡接口只能属于一个zone,一个zone可以有多个网卡接口</span></span><br><span class="line"><span class="comment"># 配置了网络接口的区域是活跃区域（或者源地址配置add-source）</span></span><br><span class="line">systemctl status</span><br><span class="line">ip <span class="keyword">a</span></span><br><span class="line">firewall-cmd <span class="comment">--get-active-zones</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 端口白名单配置</span></span><br><span class="line">ss -lntp</span><br><span class="line">telnet xxx.xxx.xx.x 21 <span class="comment"># 本机测试端口连通性</span></span><br><span class="line">firewall-cmd <span class="params">--zone=public</span> <span class="params">--add-port=21/tcp</span></span><br><span class="line">firewall-cmd <span class="params">--list-all</span></span><br><span class="line">firewall-cmd <span class="params">--reload</span> <span class="comment"># 动态加载新规则，在规则修改后，要执行这个，来使规则生效</span></span><br><span class="line">firewall-cmd <span class="params">--complete-reload</span></span><br><span class="line">firewall-cmd <span class="params">--zone=public</span> <span class="params">--add-port=21/tcp</span> <span class="params">--permanent</span></span><br><span class="line"><span class="comment"># 服务白名单配置</span></span><br><span class="line">firewall-cmd <span class="params">--zone=public</span> <span class="params">--add-service=http</span></span><br></pre></td></tr></table></figure></li>
+<li>区域规则结合，可以得出想要的最终配置<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># default 设置为drop</span></span><br><span class="line">firewall-cmd <span class="attribute">--zone</span>=trusted <span class="attribute">--add-source</span>=xxx.xxx.xxx.xx/24</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><ul>
+<li>装载 - 分区 - 格式化 =&gt; 文件系统</li>
+<li>c6 - ext4,ext3,ext2   c7 - xfs  c7-ecs-ext4</li>
+<li>xfs - 扩展性支持能力高于ext4</li>
+</ul>
+<h4 id="云盘"><a href="#云盘" class="headerlink" title="云盘"></a>云盘</h4><ul>
+<li><p>ECS存储空间</p>
+</li>
+<li><p>数据隔离</p>
+</li>
+<li><p>提升性能</p>
+</li>
+<li><p>/dev/vda ext4 /系统目录</p>
+</li>
+<li><p>/dev/vd* xfs /应用目录</p>
+</li>
+<li><p>fdisk /dev/vdb</p>
+</li>
+<li><p>mount </p>
+</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

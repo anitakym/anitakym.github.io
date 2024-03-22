@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        nestjs-design-pattern-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#adapter"><span class="toc-text">adapter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nest-cli"><span class="toc-text">nest-cli</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nestjs-schematics"><span class="toc-text">@nestjs&#x2F;schematics</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#builder"><span class="toc-text">builder</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#doc"><span class="toc-text">doc</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        nestjs-design-pattern-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-06-15 17:44:19</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="adapter"><a href="#adapter" class="headerlink" title="adapter"></a>adapter</h3><h3 id="nest-cli"><a href="#nest-cli" class="headerlink" title="nest-cli"></a>nest-cli</h3><p>command-line interface tool<br>initialize, develop, and maintain your Nest applications<br>scaffolding the project<br>serving it in development mode<br>building and bundling the application for production distribution<br>It embodies best-practice architectural patterns to encourage well-structured apps</p>
+<h4 id="nestjs-schematics"><a href="#nestjs-schematics" class="headerlink" title="@nestjs/schematics"></a>@nestjs/schematics</h4><ul>
+<li>Nest architecture element generation based on Angular schematics </li>
+</ul>
+<h3 id="builder"><a href="#builder" class="headerlink" title="builder"></a>builder</h3><h2 id="doc"><a href="#doc" class="headerlink" title="doc"></a>doc</h2><ul>
+<li>哲学 - 提供了应用程序“架构”</li>
+<li>安装（$ npm i –save @nestjs/core @nestjs/common rxjs reflect-metadata - 核心和支持文件）<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rxjs - A reactive programming library for <span class="keyword">JavaScript </span>- Reactive <span class="keyword">Extensions </span>Library for <span class="keyword">JavaScript</span></span><br><span class="line"><span class="keyword"></span>RxJS 是一个使用 Observables 进行反应式编程的库，可让异步或基于回调的代码更容易编写。</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">reflect-metadata是一个用于装饰器的元数据反射<span class="variable constant_">API</span>。这是一种在<span class="title class_">Javascript</span>中实现元数据反射操作的工具，可以用于增强对象和函数等的功能。</span><br><span class="line"><span class="number">1.</span> 安装导入</span><br><span class="line">   npm i reflect-metadata</span><br><span class="line">   <span class="keyword">import</span> <span class="string">&#x27;reflect-metadata&#x27;</span>;</span><br><span class="line"><span class="number">2.</span> 使用装饰器：装饰器可以使用元数据来改进类、属性、方法等</span><br><span class="line">   @<span class="title class_">Reflect</span>.<span class="title function_">metadata</span>(metadataKey, metadataValue)</span><br><span class="line">   <span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="number">3.</span> 查询元数据：</span><br><span class="line">   <span class="keyword">let</span> data = <span class="title class_">Reflect</span>.<span class="title function_">getMetadata</span>(metadataKey, target);</span><br><span class="line">   <span class="keyword">let</span> ownData = <span class="title class_">Reflect</span>.<span class="title function_">getOwnMetadata</span>(metadataKey, target);</span><br><span class="line"><span class="number">4.</span> 避免全局污染：<span class="string">`reflect-metadata`</span>库会污染全局环境，因此应该只在你的应用或库的主要入口点导入一次。它不应该被导入到内部模块中。</span><br><span class="line"><span class="number">5.</span> 配置<span class="title class_">TypeScript</span>：要在<span class="title class_">TypeScript</span>中使用元数据反射，你需要在tsconfig.<span class="property">json</span>文件中启用<span class="string">`emitDecoratorMetadata`</span>和<span class="string">`experimentalDecorators`</span>选项。</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="string">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line">           <span class="string">&quot;target&quot;</span>: <span class="string">&quot;ES5&quot;</span>,</span><br><span class="line">           <span class="string">&quot;module&quot;</span>: <span class="string">&quot;commonjs&quot;</span>,</span><br><span class="line">           <span class="string">&quot;experimentalDecorators&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">           <span class="string">&quot;emitDecoratorMetadata&quot;</span>: <span class="literal">true</span></span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="number">6.</span> 明确元数据键：应该使用<span class="title class_">Symbol</span>而不是字符串作为元数据键，以避免冲突。</span><br><span class="line"><span class="number">7.</span> 测试：使用<span class="string">`reflect-metadata`</span>时应确保进行适当的单元测试，在大型项目上可以考虑用<span class="title class_">Mock</span>来模拟这些元数据</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

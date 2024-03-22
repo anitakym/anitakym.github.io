@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        nodejs来一打C++扩展-精读 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        nodejs来一打C++扩展-精读
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-05-13 01:57:05</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>nodejs来一打C++扩展-死月</p>
+</blockquote>
+<ul>
+<li>Node.js 的模块机制<ul>
+<li>CommonJS 的模块规范</li>
+<li>Node.js 的模块</li>
+</ul>
+</li>
+<li>Node.js 的包机制<ul>
+<li>CommonJS 的包规范</li>
+<li>Node.js / NPM 下的包</li>
+</ul>
+</li>
+<li>NPM 与 CNPM(cnpm: npm client for China mirror of npm registry.npmmirror.com)</li>
+<li>Node.js 依赖<ul>
+<li>Chrome V8</li>
+<li>libuv</li>
+<li>其他依赖</li>
+</ul>
+</li>
+<li>C++ 扩展开发的准备工作<ul>
+<li>编辑器 / IDE</li>
+<li>node-gyp (<a target="_blank" rel="noopener" href="https://github.com/nodejs/node-gyp#installation">https://github.com/nodejs/node-gyp#installation</a>)</li>
+<li>其他构建工具</li>
+</ul>
+</li>
+<li>C++ 模块原理简析</li>
+<li>为什么要写 C++ 模块<ul>
+<li>C++ 比 JavaScript 解释器高效</li>
+<li>已有的 C++ 轮子</li>
+</ul>
+</li>
+<li>什么是 C++ 扩展<ul>
+<li>C++ 模块本质</li>
+<li>Node.js 模块加载原理</li>
+</ul>
+</li>
+<li>Chrome V8 基础<ul>
+<li>Node.js 与 Chrome V8</li>
+<li>基本概念(内存机制,隔离实例（Isolate）,上下文（Context）,脚本（Script）)</li>
+<li>句柄（Handle）(本地句柄（Local）持久句柄（Persistent）永生句柄（Eternal）待实本地句柄（Maybe Local）)</li>
+<li>句柄作用域(一般句柄作用域（Handle Scope）可逃句柄作用域（Escapable Handle Scope）)</li>
+<li>上下文（Context）</li>
+<li>模板（Template）</li>
+<li>函数模板（Function Template）</li>
+<li>对象模板（Object Template）</li>
+<li>对象模板的访问器（Accessor）与拦截器（Interceptor）</li>
+<li>对象模板的内置字段（Internal Field）</li>
+<li>函数模板的继承（Inherit）</li>
+<li>常用数据类型 </li>
+<li>基值（Value） </li>
+<li>字符串（String）</li>
+<li>数值类型</li>
+<li>布尔类型（Boolean）</li>
+<li>对象（Object）</li>
+<li>函数(Function)</li>
+<li>数组（Array）</li>
+<li>JSON 解析器</li>
+<li>函数回调信息（Function Callback Info）</li>
+<li>函数返回值（Return Value）</li>
+<li>隔离实例(Isolate)</li>
+<li>异常机制</li>
+<li>try-catch</li>
+<li>抛出异常</li>
+<li>异常生成类（Exception）</li>
+</ul>
+</li>
+<li>C++ 扩展实战初探<ul>
+<li>binding.gyp</li>
+<li>惊鸿一瞥</li>
+<li>binding.gyp 基础结构</li>
+<li>GYP 文件</li>
+<li>常用字段</li>
+<li>牛刀小试</li>
+<li>又是 Hello World</li>
+<li>函数参数</li>
+<li>回调函数</li>
+<li>函数返回</li>
+<li>循序渐进</li>
+<li>C++ 与 JavaScript 类封装</li>
+<li>实例化 C++ 类封装对象的函数</li>
+<li>将 C++ 类封装对象传来传去</li>
+<li>进程退出钩子</li>
+</ul>
+</li>
+<li>Node.js 原生抽象——NAN<ul>
+<li>Node.js 原生模块开发方式的变迁<ul>
+<li>以不变应万变</li>
+<li>时代在召唤</li>
+</ul>
+</li>
+<li>基础开发<ul>
+<li>什么是 NAN</li>
+<li>安装和配置</li>
+<li>先睹为快——搭上NAN 的快车</li>
+<li>基础帮助函数和宏</li>
+<li>忽略 node_modules</li>
+</ul>
+</li>
+<li>JavaScript 函数<ul>
+<li>函数参数类型</li>
+<li>函数声明</li>
+<li>函数设置</li>
+</ul>
+</li>
+<li>常用帮助类与函数<ul>
+<li>句柄相关</li>
+<li>创建数据对象</li>
+<li>与数据对象“玩耍”</li>
+<li>封装一个类</li>
+<li>异常处理</li>
+</ul>
+</li>
+<li>NAN 中的异步机制<ul>
+<li>Nan::AsyncQueueWorker</li>
+<li>Nan::Callback</li>
+<li>Nan::AsyncWorker</li>
+<li>Nan::AsyncProgressWorker</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>异步之旅——libuv<ul>
+<li>基础概念<ul>
+<li>事件循环</li>
+<li>句柄（Handle）与请求（Request）</li>
+<li>尝尝甜头</li>
+</ul>
+</li>
+<li>libuv 的跨线程编程基础<ul>
+<li>libuv 的线程</li>
+<li>同步原语（Synchronization Primitive）</li>
+<li>工作队列</li>
+</ul>
+</li>
+<li>跨线程通信<ul>
+<li>uv_async_t 句柄</li>
+<li>Watchdog 半成品实战解析</li>
+<li>Watchdog 试运行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实战——文件监视器<ul>
+<li>准备工作<ul>
+<li>功能规划</li>
+<li>文件系统监听库——efsw</li>
+</ul>
+</li>
+<li>核心设计<ul>
+<li>API 设计</li>
+<li>EFSWCore 的血肉之躯</li>
+<li>EFSWCore 的灵魂</li>
+</ul>
+</li>
+<li>编写JavaScript 类<ul>
+<li>类的设计</li>
+<li>核心逻辑</li>
+<li>简单容错</li>
+</ul>
+</li>
+<li>进一步完善<ul>
+<li>C++ 代码的完善</li>
+<li>JavaScript 代码的完善</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实战——现有包剖析<ul>
+<li>字符串哈希模块——Bling Hashes<ul>
+<li>文件设定</li>
+<li>C++ 源码剖析</li>
+<li>JavaScript 源码剖析</li>
+</ul>
+</li>
+<li>类 Proxy 包——Auto Object<ul>
+<li>Proxy</li>
+<li>Auto Object 使用范例</li>
+<li>代码剖析</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>N-API——下一代 Node.js C++ 扩展开发方式<ul>
+<li>浅尝辄止<ul>
+<li>实现一个 Echo 函数</li>
+<li>尝试运行 N-API 扩展</li>
+<li>向下兼容</li>
+<li>N-API Package——C++ 封装</li>
+</ul>
+</li>
+<li>基本数据类型与错误处理<ul>
+<li>基本数据类型</li>
+<li>与作用域及生命周期相关的数据类型</li>
+<li>回调数据类型</li>
+<li>错误处理</li>
+<li>模块注册</li>
+</ul>
+</li>
+<li>对象与函数<ul>
+<li>对象</li>
+<li>函数</li>
+<li>类的封装</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>.cc和.cpp都是C++源文件的扩展名，它们在功能上是没有区别的，都是用于存放C++编程代码。</p>
+<p>这两种扩展名的使用主要取决于开发者的习惯或者团队的命名规范，以及所使用的编译器和开发环境。比如，GNU的C++编译器（g++）默认的源文件扩展名是.cc，而在很多Windows开发环境中，如Visual Studio，默认的扩展名是.cpp。</p>
+<p>无论使用.cc还是.cpp，都不会影响源代码的编译和运行。一个比较好的实践就是在一个项目或者团队内部保持一致的命名规范，这样可以帮助提高代码的可读性和可维护性。</p>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/node-addon-api">https://www.npmjs.com/package/node-addon-api</a></p>
+<p>Node-addon-api和N-API是 Node.js 在尝试链接到C++代码时使用的工具集。</p>
+<ol>
+<li><p>N-API：N-API是Node.js运行时提供的预构建的API，它能直接在JavaScript中调用，且无需重新编译，即使是在不同版本的Node.js上也可以使用。N-API的设计目标是消除在Node.js生态系统中的第三方扩展插件的维护负担和碎片化问题。通过这种方式，本地模块可以在不同版本和可能在未来的Node.js中无缝运行。</p>
+</li>
+<li><p>Node-addon-api：Node-addon-api是N-API的包装器，它是一个更高级别、更易于使用的API，其基于C++，提供了针对N-API的面向对象的抽象。 在大多数情况下，你会使用这个比N-API更高阶的 API, 因为它更易于构建和管理代码。</p>
+</li>
+</ol>
+<p>N-API的目标是提供稳定的Node API用于本地插件，而不受底层JavaScript运行时的改变影响，并且它对所有Node.js LTS版本提供支持。而Node-addon-api是为了简化C++版本的N-API的使用，提供了更友好和简洁的API。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

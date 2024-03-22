@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        SQL学习笔记之基础介绍 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-text">引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL"><span class="toc-text">SQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-text">数据库管理系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE"><span class="toc-text">参考学习项目</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        SQL学习笔记之基础介绍
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-12-22 16:48:30</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#sql" title="sql">sql</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>1946_ENIAC_Electronic Numerical Integrator And Computer_第一台通用电子计算机</p>
+</blockquote>
+<h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><ul>
+<li>I/O 是DBMS最容易出现瓶颈的地方<ul>
+<li>数据库操作中大量时间花在了I/O 上面</li>
+<li>参考文档：<a target="_blank" rel="noopener" href="https://docs.oracle.com/cd/B28359_01/server.111/b28274/iodesign.htm#PFGRF015">https://docs.oracle.com/cd/B28359_01/server.111/b28274/iodesign.htm#PFGRF015</a></li>
+</ul>
+</li>
+<li>降低CPU的计算量<ul>
+<li>在SQL语句中使用GROUP BY ，ORDER BY 等语句会消耗大量CPU计算资源</li>
+<li>参考文档：<a target="_blank" rel="noopener" href="https://use-the-index-luke.com/sql/sorting-grouping">https://use-the-index-luke.com/sql/sorting-grouping</a></li>
+</ul>
+</li>
+<li>内存使用情况</li>
+</ul>
+<ul>
+<li>EXISTS  / IN  查询</li>
+</ul>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> A <span class="keyword">WHERE</span> cc <span class="keyword">IN</span> (<span class="keyword">SELECT</span> cc <span class="keyword">FROM</span> B)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> A <span class="keyword">WHERE</span> <span class="keyword">EXISTS</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> cc <span class="keyword">FROM</span> B <span class="keyword">WHERE</span> B.cc=A.cc)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>有索引<ul>
+<li>表A比表B大，IN子查询的效率比EXISTS子查询效率高</li>
+</ul>
+</li>
+</ul>
+<p>比如最大生命值大于 7000 的法师英雄都有谁，那么你会怎么做呢？</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> heros <span class="keyword">WHERE</span> hp_max &gt;= <span class="number">7000</span> <span class="keyword">AND</span> <span class="keyword">role</span> = <span class="string">&#x27;法师&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+<p> 7 天内的新增用户数有多少，该怎么做呢？</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> COUNT(*) <span class="keyword">as</span> num <span class="keyword">FROM</span> new_user <span class="keyword">WHERE</span> TO_DAYS(NOW())-TO_DAYS(regist_time)&lt;=<span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>基于数据的各种技术中也会用到 SQL<ul>
+<li>OLTP（联机事务处理过程）</li>
+<li>OLAP（联机分析处理过程）</li>
+<li>RDBMS（对象关系型数据库管理系统）</li>
+<li>在 NoSQL 的阵营上，如今也在使用类似 SQL 的操作，要知道，提出 NoSQL 这个概念的初衷就是远离 SQL，但如今人们更愿意把 NoSQL 定义为 Not Only SQL（不只是 SQL）</li>
+<li>在 XML、JSON 等数据格式中，都存在着各种 SQL，比如用于 XML 的 SQL、用于 JSON 的 SQL 等</li>
+<li>用于记录地理位置信息的 SQL、用于搜索的 SQL、用于时间序列数据的 SQL、用于流的 SQL 等</li>
+</ul>
+</li>
+</ul>
+<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><ul>
+<li>TIPS<ul>
+<li>TIOBE(<a target="_blank" rel="noopener" href="https://www.tiobe.com/tiobe-index/">https://www.tiobe.com/tiobe-index/</a>)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>历史<ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/SQL">https://zh.wikipedia.org/wiki/SQL</a></li>
+<li>在1970年代初，由IBM公司San Jose,California研究实验室的埃德加·科德发表将资料组成表格的应用原则（Codd’s Relational Algebra）。</li>
+<li>1974年，同一实验室的D.D.Chamberlin和R.F. Boyce对Codd’s Relational Algebra在研制关系数据库管理系统System R中，研制出一套规范语言-SEQUEL（Structured English Query Language），并在1976年11月的IBM Journal of R&amp;D上公布新版本的SQL（叫SEQUEL/2）。</li>
+<li>1980年改名为SQL。</li>
+<li>目前，所有主要的关系数据库管理系统支持某些形式的SQL，大部分数据库至少遵守ANSI SQL89标准。</li>
+<li>ANSI SQL92标准在交叉连接（cross join）和内部连接之上，新增加了外部连接，并支持在FROM子句中写连接表达式。支持集合的并运算、交运算。支持Case (SQL)表达式。支持CHECK约束。创建临时表。支持cursor。支持事务隔离。</li>
+<li>SQL99</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>按功能划分（语句分类）<ul>
+<li>DDL<ul>
+<li>Data Definition Language</li>
+<li>数据定义</li>
+<li>定义数据库对象<ul>
+<li>数据库</li>
+<li>数据表和列</li>
+</ul>
+</li>
+<li>我们可以创建，修改和删除数据库和表的结构</li>
+</ul>
+</li>
+<li>DML<ul>
+<li>Data Manipulation Language</li>
+<li>数据操控</li>
+<li>操作和数据库相关的记录</li>
+<li>增，删，改数据表中的记录</li>
+<li>INSERT UPDATE DELETE</li>
+</ul>
+</li>
+<li>DCL<ul>
+<li>Data Control Language</li>
+<li>定义访问权限和安全级别</li>
+</ul>
+</li>
+<li>DQL<ul>
+<li>Data Query Language</li>
+<li>数据查询</li>
+<li>SELECT</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>声明性语言</p>
+<ul>
+<li>不需要制定具体的执行步骤</li>
+</ul>
+</li>
+<li><p>SQL语言定义了我们的需求</p>
+</li>
+<li><p>不同的DBMS会按照指定的SQL帮我们提取想要的结果</p>
+</li>
+<li><p>RDBMS</p>
+<ul>
+<li><p>实体关系模型（Entity-Relationship Model），简称E-R Model，是陈品山（Peter P.S Chen）博士于1976年提出的一套数据库的设计工具，他运用真实世界中事物与关系的观念，来解释数据库中的抽象的资料架构。实体关系模型利用图形的方式（实体-关系图（Entity-Relationship Diagram））来表示数据库的概念设计，有助于设计过程中的构思及沟通讨论。</p>
+</li>
+<li><p>设计—— ER图（Entity Relationship Diagram）实体——关系图</p>
+<ul>
+<li>用来描述现实世界的概念模型</li>
+<li>要素：实体——要管理的对象，属性——标识每个实体的属性，关系——对象之间的关系</li>
+</ul>
+</li>
+<li><p>ER图评审通过，用SQL语句或者可视化管理工具创建数据表-</p>
+</li>
+</ul>
+</li>
+<li><p>SQL大小写</p>
+<ul>
+<li>表名，表别名，字段名，字段别名——小写</li>
+<li>SQL保留字，函数名，绑定变量——大写</li>
+</ul>
+</li>
+<li><p>数据表的字段名——下划线命名</p>
+</li>
+</ul>
+<h3 id="数据库管理系统"><a href="#数据库管理系统" class="headerlink" title="数据库管理系统"></a>数据库管理系统</h3><ul>
+<li><p>DBS</p>
+<ul>
+<li>DataBase System，数据库系统<ul>
+<li>包括数据库、数据库管理系统以及数据库管理人员 DBA</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>DBMS</p>
+<ul>
+<li>DataBase Management System，数据库管理系统</li>
+<li>实际上它可以对多个数据库进行管理， DBMS = 多个数据库（DB） + 管理程序</li>
+</ul>
+</li>
+<li><p>排名</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://db-engines.com/en/">https://db-engines.com/en/</a></li>
+<li><a target="_blank" rel="noopener" href="https://db-engines.com/en/ranking">https://db-engines.com/en/ranking</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>NoSQL泛指非关系型数据库——<ul>
+<li>键值型数据库<ul>
+<li>key-value的方式来存储数据</li>
+<li>key:唯一标识符</li>
+<li>查找速度快，但无法自由的使用条件过滤</li>
+<li>使用场景——作为内容缓存</li>
+<li>例如：redis</li>
+</ul>
+</li>
+<li>文档型数据库<ul>
+<li>文档作为处理信息的基本单位</li>
+<li>一个文档相当于一条记录</li>
+<li>例如：mongoDB</li>
+</ul>
+</li>
+<li>搜索引擎<ul>
+<li>全文索引，核心原理是“倒排索引”</li>
+<li>例如：Elasticsearch,Splunk,Solr</li>
+</ul>
+</li>
+<li>列式数据库<ul>
+<li>相对于行式（Row-based:Oracle，MySQL，SQL Server）</li>
+<li>大量降低系统IO</li>
+<li>适合分布式文件系统</li>
+<li>不足在于功能相对有限</li>
+</ul>
+</li>
+<li>图形数据库<ul>
+<li>用图存储实体之间的关系</li>
+<li>数据模型以节点和边（关系）来实现</li>
+<li>能高效的解决负责的关系问题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Oracle<ul>
+<li>第一个商用RDBMS</li>
+</ul>
+</li>
+<li>MySQL<ul>
+<li>1995</li>
+<li>开源数据库管理系统</li>
+<li>2008，被SUN收购，2010，SUN被Oracle收购</li>
+<li>MariaDB</li>
+</ul>
+</li>
+<li>SQL Server<ul>
+<li>微软，1989</li>
+<li>微软还有Access（2G）—— 轻量级桌面数据库</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>NoSQL最早是想远离SQL，随着发展，越来越离不开SQL; NoSQL是对SQL很好的补充</p>
+</blockquote>
+<h3 id="参考学习项目"><a href="#参考学习项目" class="headerlink" title="参考学习项目"></a>参考学习项目</h3><ul>
+<li>mybatis-3<ul>
+<li>MyBatis SQL mapper framework for Java —— mybatis.github.io/mybatis-3/<ul>
+<li>数据持久化</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mybatis/mybatis-3">https://github.com/mybatis/mybatis-3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MyBatis-Plus是一个对MyBatis的增强工具，在MyBatis的基础上只做增强，不做改变，为简化开发、提高效率而生。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/baomidou/mybatis-plus">https://github.com/baomidou/mybatis-plus</a></li>
+</ul>
+<ol>
+<li>自动化SQL语句处理：它提供了一些增删查改的通用方法，能够自动构造SQL语句，对常见的增删查改操作能节省大量的编码工作，简化代码。</li>
+<li>条件构造器：简化了复杂条件查询，提供了丰富的表达式，满足大部分的查询需求。</li>
+<li>支持ActiveRecord模式：ActiveRecord是一种Active Record模式，它将数据库记录映射为对象，这是一种领域模型模式，行为和数据被封装在对象中。  </li>
+<li>完全兼容MyBatis：和MyBatis无缝结合，可以灵活读写分离等等。</li>
+<li>支持自定义全局通用操作：插入、修改、删除及查询，提供全局通用方法做基础操作，提供通用接口Iselect为非通用系操作。</li>
+</ol>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

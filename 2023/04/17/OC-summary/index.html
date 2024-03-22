@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        OC-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E9%9D%A2%E4%B8%8E%E5%AE%9E%E7%8E%B0-%E7%BC%96%E5%86%99"><span class="toc-text">介面与实现 - 编写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E4%BB%8B%E9%9D%A2-interface"><span class="toc-text">类的介面 - interface</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E5%AE%9E%E7%8E%B0-implementation"><span class="toc-text">类的实现 - implementation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#h"><span class="toc-text">.h</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m"><span class="toc-text">.m</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">对象与构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95"><span class="toc-text">函数方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-text">成员变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%8F%98%E9%87%8F"><span class="toc-text">访问变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#property%E5%B1%9E%E6%80%A7"><span class="toc-text">@property属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE-protocol"><span class="toc-text">协议 @protocol</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%A2%9E%E5%88%A0%E6%94%B9%E6%96%B9%E6%B3%95-gt-runtime-oc%E9%BB%91%E9%AD%94%E6%B3%95"><span class="toc-text">动态增删改方法 -&gt; runtime, oc黑魔法</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        OC-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-04-17 18:05:24</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="介面与实现-编写"><a href="#介面与实现-编写" class="headerlink" title="介面与实现 - 编写"></a>介面与实现 - 编写</h3><h4 id="类的介面-interface"><a href="#类的介面-interface" class="headerlink" title="类的介面 - interface"></a>类的介面 - interface</h4><ul>
+<li>只有声明，没有实现</li>
+<li>可以声明：属性，变量，方法</li>
+</ul>
+<h4 id="类的实现-implementation"><a href="#类的实现-implementation" class="headerlink" title="类的实现 - implementation"></a>类的实现 - implementation</h4><ul>
+<li><p>需要实现介面声明的方法</p>
+</li>
+<li><p>可添加介面没有的：变量，方法（私有）</p>
+</li>
+<li><p>在 TypeScript 中，类定义是使用关键字 class 来声明的，而不是 Objective-C 中的 @interface 或 @implementation。</p>
+</li>
+</ul>
+<h4 id="h"><a href="#h" class="headerlink" title=".h"></a>.h</h4><ul>
+<li>可被.h/.m引入</li>
+<li>@interface可写在.h/.m<h4 id="m"><a href="#m" class="headerlink" title=".m"></a>.m</h4></li>
+<li>不可被引入</li>
+<li>@implementation可写在.m</li>
+</ul>
+<h3 id="对象与构造函数"><a href="#对象与构造函数" class="headerlink" title="对象与构造函数"></a>对象与构造函数</h3><ul>
+<li>创建对象</li>
+<li>override父类的构造函数</li>
+<li>声明，实现带参数的构造函数</li>
+</ul>
+<h3 id="函数方法"><a href="#函数方法" class="headerlink" title="函数方法"></a>函数方法</h3><ul>
+<li>声明</li>
+<li>实现</li>
+<li>方法调用 - 实例方法，静态方法</li>
+</ul>
+<h3 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h3><ul>
+<li>interface变量</li>
+<li>implementation 变量</li>
+<li>外部透过对象访问公开成员变量</li>
+<li>内部可以访问公开和私有成员变量</li>
+</ul>
+<h3 id="访问变量"><a href="#访问变量" class="headerlink" title="访问变量"></a>访问变量</h3><ul>
+<li>公开Get/Set方法</li>
+<li>_私有变量</li>
+</ul>
+<h3 id="property属性"><a href="#property属性" class="headerlink" title="@property属性"></a>@property属性</h3><ul>
+<li>属性特性</li>
+</ul>
+<h3 id="协议-protocol"><a href="#协议-protocol" class="headerlink" title="协议 @protocol"></a>协议 @protocol</h3><ul>
+<li>语法</li>
+</ul>
+<h3 id="动态增删改方法-gt-runtime-oc黑魔法"><a href="#动态增删改方法-gt-runtime-oc黑魔法" class="headerlink" title="动态增删改方法 -&gt; runtime, oc黑魔法"></a>动态增删改方法 -&gt; runtime, oc黑魔法</h3>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

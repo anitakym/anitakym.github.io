@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        leetcode-shell-4道题 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#192-%E7%BB%9F%E8%AE%A1%E8%AF%8D%E9%A2%91"><span class="toc-text">192.统计词频</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#193-%E6%9C%89%E6%95%88%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81"><span class="toc-text">193.有效电话号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#194-%E8%BD%AC%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">194.转置文件</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        leetcode-shell-4道题
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-11 13:21:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="192-统计词频"><a href="#192-统计词频" class="headerlink" title="192.统计词频"></a>192.统计词频</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-frequency/">https://leetcode-cn.com/problems/word-frequency/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> words.txt | <span class="built_in">tr</span> -s <span class="string">&#x27; &#x27;</span> <span class="string">&#x27;\n&#x27;</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c | <span class="built_in">sort</span> -r | awk <span class="string">&#x27;&#123;print $2, $1&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>命令说明：（man cmd）</p>
+<ul>
+<li>cat – concatenate(link (things) together in a chain or series) and print files<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(The cat utility reads files sequentially, writing them to the standard output.)</span></span><br></pre></td></tr></table></figure></li>
+<li>tr – translate characters<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(The tr utility copies the standard input to the standard output with<span class="built_in"> sub-stitution </span>or deletion of selected characters.)</span><br><span class="line">(-s      Squeeze multiple occurrences of the characters listed in the last</span><br><span class="line">             operand (either string1<span class="built_in"> or </span>string2) in the input into a single</span><br><span class="line">            <span class="built_in"> instance </span>of the character.  This occurs after all deletion<span class="built_in"> and</span></span><br><span class="line"><span class="built_in"></span>             translation is completed.)</span><br></pre></td></tr></table></figure></li>
+<li>sort – sort or merge records (lines) of text and binary files<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-r, --<span class="built_in">reverse</span></span><br><span class="line">             <span class="built_in">Sort</span> in <span class="built_in">reverse</span> order.</span><br></pre></td></tr></table></figure></li>
+<li>uniq – report or filter out repeated lines in a file<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-c      Precede <span class="keyword">each</span> output <span class="built_in">line</span> <span class="keyword">with</span> <span class="keyword">the</span> count <span class="keyword">of</span> <span class="keyword">the</span> <span class="built_in">number</span> <span class="keyword">of</span> times</span><br><span class="line">             <span class="keyword">the</span> <span class="built_in">line</span> occurred <span class="keyword">in</span> <span class="keyword">the</span> input, followed <span class="keyword">by</span> <span class="keyword">a</span> single <span class="literal">space</span>.</span><br></pre></td></tr></table></figure></li>
+<li>awk - pattern-directed scanning and processing language（很强大，只用他也能完成这个任务，不过如果是只用这个的话，也可以用编写起来更趁手的python或者node来处理了）</li>
+</ul>
+<p>分词这一步<code>tr -s &#39; &#39; &#39;\n&#39;</code>也可以替换成<code>xargs -n1</code></p>
+<h3 id="193-有效电话号码"><a href="#193-有效电话号码" class="headerlink" title="193.有效电话号码"></a>193.有效电话号码</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-phone-numbers/">https://leetcode-cn.com/problems/valid-phone-numbers/</a></p>
+<ul>
+<li>分析正则</li>
+<li>使用grep/awk/gawk都可<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">grep</span> -P &#x27;^([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;-|\([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;\) )[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;-[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">4</span>&#125;$&#x27; file.txt</span><br><span class="line"><span class="attribute">awk</span> &#x27;/^([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;-|\([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;\) )[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;-[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">4</span>&#125;$/&#x27; file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="194-转置文件"><a href="#194-转置文件" class="headerlink" title="194.转置文件"></a>194.转置文件</h3><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/transpose-file/">https://leetcode-cn.com/problems/transpose-file/</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Read from the file file.txt and print its transposed content to stdout.</span></span><br><span class="line">columns=$(<span class="built_in">cat</span> file.txt | <span class="built_in">head</span> -n 1 | <span class="built_in">wc</span> -w)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(<span class="built_in">seq</span> 1 <span class="variable">$columns</span>)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">awk <span class="string">&#x27;&#123;print $&#x27;</span><span class="string">&#x27;&#x27;</span><span class="variable">$i</span><span class="string">&#x27;&#x27;</span><span class="string">&#x27;&#125;&#x27;</span> file.txt | xargs</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

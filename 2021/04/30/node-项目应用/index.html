@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        node-项目应用 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%8F%A5basic-%E8%AF%B4%E6%98%8E"><span class="toc-text">三句basic 说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#usage"><span class="toc-text">usage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#basic"><span class="toc-text">basic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#global"><span class="toc-text">global</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filename-dirname"><span class="toc-text">__filename | __dirname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Err"><span class="toc-text">Err</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#EMFILE-Too-many-open-files"><span class="toc-text">EMFILE - Too many open files</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Process"><span class="toc-text">Process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Module"><span class="toc-text">Module</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#browser"><span class="toc-text">browser</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#commonJS"><span class="toc-text">commonJS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Doc"><span class="toc-text">Doc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Details"><span class="toc-text">Details</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#recommend"><span class="toc-text">recommend</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#chalk"><span class="toc-text">chalk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E5%85%B3"><span class="toc-text">网关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E9%97%B4%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8"><span class="toc-text">服务间接口调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#windows"><span class="toc-text">windows</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node-test%E6%A1%86%E6%9E%B6%E6%8E%A8%E8%8D%90"><span class="toc-text">node - test框架推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#preventing-sql-injection-in-node-js"><span class="toc-text">preventing-sql-injection-in-node-js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problems-BFF"><span class="toc-text">problems - BFF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cases"><span class="toc-text">cases</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BFF"><span class="toc-text">BFF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#config"><span class="toc-text">config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%A9%E5%AD%90"><span class="toc-text">钩子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98"><span class="toc-text">端口冲突问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-demo"><span class="toc-text">node-demo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-jiti"><span class="toc-text">node-jiti</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        node-项目应用
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-30 23:26:27</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>事件驱动学习; 很多东西，不同阶段再去听去看，会有不同收获，因为基础认知不同，才能理解到一些细节</p>
+</blockquote>
+<h3 id="三句basic-说明"><a href="#三句basic-说明" class="headerlink" title="三句basic 说明"></a>三句basic 说明</h3><ul>
+<li>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.</li>
+<li>As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications. </li>
+<li>Almost no function in Node.js directly performs I/O, so the process never blocks except when the I/O is performed using synchronous methods of Node.js standard library. </li>
+</ul>
+<h3 id="usage"><a href="#usage" class="headerlink" title="usage"></a>usage</h3><ul>
+<li>web应用场景</li>
+<li>SSR-搜索引擎优化，首屏速度</li>
+<li>前后端同构（PDF预览打印场景<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">前后端同构</span><br><span class="line">浏览器端 <span class="meta">&amp;&amp; nodejs端 =&gt; 同构代码</span></span><br><span class="line">ReactDomServer.renderToString()</span><br><span class="line">VueServerRenderer.renderToString()</span><br><span class="line">R<span class="meta">&amp;V最大难题在于数据部分</span></span><br><span class="line"></span><br><span class="line">同构的core</span><br><span class="line">- 注重职责分离</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>构建工具（早期的 gulp,webpack，后面不用说了，奏是这个生态）</li>
+<li>Backend for Frontend(HTTP, RPC调用)<h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2></li>
+</ul>
+<h3 id="global"><a href="#global" class="headerlink" title="global"></a>global</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame</a></li>
+<li>setImmediate</li>
+</ul>
+<h3 id="filename-dirname"><a href="#filename-dirname" class="headerlink" title="__filename | __dirname"></a>__filename | __dirname</h3><h3 id="Err"><a href="#Err" class="headerlink" title="Err"></a>Err</h3><h4 id="EMFILE-Too-many-open-files"><a href="#EMFILE-Too-many-open-files" class="headerlink" title="EMFILE - Too many open files"></a>EMFILE - Too many open files</h4><h3 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h3><ul>
+<li>argv</li>
+<li>env</li>
+<li>kill </li>
+<li>exit</li>
+<li>hrtime</li>
+<li>cpuUsage</li>
+<li>memoryUsage</li>
+</ul>
+<h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><h4 id="browser"><a href="#browser" class="headerlink" title="browser"></a>browser</h4><ul>
+<li><script /></li>
+<li>脚本加载顺序 </li>
+<li>脚本之间逻辑调用，借助全局变量</li>
+</ul>
+<h4 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h4><ul>
+<li>也影响了browser端</li>
+</ul>
+<h4 id="Doc"><a href="#Doc" class="headerlink" title="Doc"></a>Doc</h4><ul>
+<li><a target="_blank" rel="noopener" href="http://nodejs.cn/api/process.html">http://nodejs.cn/api/process.html</a><h4 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h4></li>
+<li>process 对象是 EventEmitter 的实例</li>
+<li>doc<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;beforeExit&#x27;</span> 事件<span class="comment">#</span></span><br><span class="line">中英对照</span><br><span class="line"></span><br><span class="line">新增于: v0.<span class="number">11.12</span></span><br><span class="line">当 Node.js 清空其事件循环并且没有额外的工作要安排时，则会触发 <span class="string">&#x27;beforeExit&#x27;</span> 事件。 通常情况下，当没有工作要调度时，Node.js 进程会退出，但是注册在 <span class="string">&#x27;beforeExit&#x27;</span> 事件上的监听器可以进行异步的调用，从而使 Node.js 进程继续。</span><br><span class="line"></span><br><span class="line">调用监听器回调函数时将 process.exitCode 的值作为唯一的参数传入。</span><br><span class="line"></span><br><span class="line">对于导致显式终止的条件，例如调用 process.<span class="keyword">exit</span>() 或未捕获的异常，则不会触发 <span class="string">&#x27;beforeExit&#x27;</span> 事件。</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;beforeExit&#x27;</span> 不应用作 <span class="string">&#x27;exit&#x27;</span> 事件的替代，除非打算安排额外的工作。</span><br><span class="line"></span><br><span class="line">import process from <span class="string">&#x27;process&#x27;</span>;</span><br><span class="line"></span><br><span class="line">process.on(<span class="string">&#x27;beforeExit&#x27;</span>, (code) =&gt; &#123;</span><br><span class="line">  console.log(<span class="string">&#x27;Process beforeExit event with code: &#x27;</span>, code);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">process.on(<span class="string">&#x27;exit&#x27;</span>, (code) =&gt; &#123;</span><br><span class="line">  console.log(<span class="string">&#x27;Process exit event with code: &#x27;</span>, code);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(<span class="string">&#x27;This message is displayed first.&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> 打印:</span><br><span class="line"><span class="regexp">//</span> This message is displayed first.</span><br><span class="line"><span class="regexp">//</span> Process beforeExit event with code: <span class="number">0</span></span><br><span class="line"><span class="regexp">//</span> Process <span class="keyword">exit</span> event with code: <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;exit&#x27;</span> 事件<span class="comment">#</span></span><br><span class="line">中英对照</span><br><span class="line"></span><br><span class="line">新增于: v0.<span class="number">1.7</span></span><br><span class="line">code &lt;integer&gt;</span><br><span class="line">当 Node.js 进程由于以下任一原因即将退出时，则会触发 <span class="string">&#x27;exit&#x27;</span> 事件：</span><br><span class="line"></span><br><span class="line">process.<span class="keyword">exit</span>() 方法被显式调用；</span><br><span class="line">Node.js 事件循环不再需要执行任何额外的工作。</span><br><span class="line">此时没有办法阻止事件循环的退出，一旦所有 <span class="string">&#x27;exit&#x27;</span> 监听器都运行完毕，则 Node.js 进程将终止。</span><br><span class="line"></span><br><span class="line">监听器回调函数使用 process.exitCode 属性指定的退出码或传给 process.<span class="keyword">exit</span>() 方法的 exitCode 参数调用。</span><br><span class="line"></span><br><span class="line">import process from <span class="string">&#x27;process&#x27;</span>;</span><br><span class="line"></span><br><span class="line">process.on(<span class="string">&#x27;exit&#x27;</span>, (code) =&gt; &#123;</span><br><span class="line">  console.log(`About to <span class="keyword">exit</span> with code: <span class="variable">$&#123;code&#125;</span>`);</span><br><span class="line">&#125;);</span><br><span class="line">监听器函数必须只执行同步的操作。 Node.js 进程将在调用 <span class="string">&#x27;exit&#x27;</span> 事件监听器之后立即退出，从而使任何仍在事件循环中排队的其他工作被丢弃。 例如，在以下示例中，超时永远不会发生：</span><br><span class="line"></span><br><span class="line">import process from <span class="string">&#x27;process&#x27;</span>;</span><br><span class="line"></span><br><span class="line">process.on(<span class="string">&#x27;exit&#x27;</span>, (code) =&gt; &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;This will not run&#x27;</span>);</span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">- SIGINT       P1990      Term    Interrupt <span class="keyword">from</span> keyboard</span><br><span class="line">- https://man7.org/linux/man-pages/man7/signal<span class="number">.7</span>.html</span><br><span class="line"></span><br><span class="line">信号事件<span class="comment">#</span></span><br><span class="line">中英对照</span><br><span class="line"></span><br><span class="line">当 Node.js 进程收到信号时，则将触发信号事件。 有关标准 POSIX 信号名称（例如 <span class="string">&#x27;SIGINT&#x27;</span>、<span class="string">&#x27;SIGHUP&#x27;</span> 等）的列表，请参阅 signal(<span class="number">7</span>)。</span><br><span class="line"></span><br><span class="line">信号在 Worker 线程上不可用。</span><br><span class="line"></span><br><span class="line">信号句柄将接收信号的名称（<span class="string">&#x27;SIGINT&#x27;</span>、<span class="string">&#x27;SIGTERM&#x27;</span> 等）作为第一个参数。</span><br><span class="line"></span><br><span class="line">每个事件的名称将是信号的大写通用名称（例如 <span class="string">&#x27;SIGINT&#x27;</span> 表示 SIGINT 信号）。</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> process <span class="keyword">from</span> <span class="string">&#x27;process&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> 从标准输入开始读取，因此进程不会退出。</span><br><span class="line">process.stdin.resume();</span><br><span class="line"></span><br><span class="line">process.<span class="literal">on</span>(<span class="string">&#x27;SIGINT&#x27;</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  console.log(<span class="string">&#x27;Received SIGINT. Press Control-D to exit.&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> 使用单个函数处理多个信号</span><br><span class="line">function handle(signal) &#123;</span><br><span class="line">  console.log(`<span class="language-javascript"><span class="title class_">Received</span> $&#123;signal&#125;</span>`);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">process.<span class="literal">on</span>(<span class="string">&#x27;SIGINT&#x27;</span>, handle);</span><br><span class="line">process.<span class="literal">on</span>(<span class="string">&#x27;SIGTERM&#x27;</span>, handle);</span><br><span class="line"><span class="string">&#x27;SIGUSR1&#x27;</span> 由 Node.js 预留以启动调试器。 可以安装监听器，但这样做可能会干扰调试器。</span><br><span class="line"><span class="string">&#x27;SIGTERM&#x27;</span> 和 <span class="string">&#x27;SIGINT&#x27;</span> 在非 Windows 平台上具有默认的句柄，其在使用代码 <span class="number">128</span> + signal number 退出之前重置终端模式。 如果这些信号之一安装了监听器，则其默认行为将被删除（Node.js 将不再退出）。</span><br><span class="line"><span class="string">&#x27;SIGPIPE&#x27;</span> 默认情况下忽略。 它可以安装监听器。</span><br><span class="line"><span class="string">&#x27;SIGHUP&#x27;</span> 在 Windows 上是在关闭控制台窗口时生成，在其他平台上是在各种类似条件下生成。 参见 signal(<span class="number">7</span>)。 它可以安装监听器，但是 Node.js 将在大约 <span class="number">10</span> 秒后被 Windows 无条件地终止。 在非 Windows 平台上，SIGHUP 的默认行为是终止 Node.js，但一旦安装了监听器，则其默认行为将被删除。</span><br><span class="line"><span class="string">&#x27;SIGTERM&#x27;</span> Windows 上不支持，可以监听。</span><br><span class="line">所有平台都支持来自终端的 <span class="string">&#x27;SIGINT&#x27;</span>，通常可以使用 Ctrl+C 生成（但是这是可配置的）。 当启用终端原始模式并使用 Ctrl+C 时不会生成它。</span><br><span class="line"><span class="string">&#x27;SIGBREAK&#x27;</span> 在 Windows 上，当按下 Ctrl+Break 时会发送。 在非 Windows 平台上，它可以被监听，但无法发送或生成它。</span><br><span class="line"><span class="string">&#x27;SIGWINCH&#x27;</span> 当调整控制台大小时会发送。 在 Windows 上，这只会发生在当光标移动时写入控制台，或者当在原始模式下使用可读的终端时。</span><br><span class="line"><span class="string">&#x27;SIGKILL&#x27;</span> 不能安装监听器，它会无条件地终止所有平台上的 Node.js。</span><br><span class="line"><span class="string">&#x27;SIGSTOP&#x27;</span> 不能安装监听器。</span><br><span class="line"><span class="string">&#x27;SIGBUS&#x27;</span>、<span class="string">&#x27;SIGFPE&#x27;</span>、<span class="string">&#x27;SIGSEGV&#x27;</span> 和 <span class="string">&#x27;SIGILL&#x27;</span>，当没有使用 kill(<span class="number">2</span>) 人为引发时，本质上会使进程处于调用 JS 监听器不安全的状态。 这样做可能会导致进程停止响应。</span><br><span class="line"><span class="number">0</span> 可以发送来测试进程是否存在，如果进程存在则没影响，如果进程不存在则抛出错误。</span><br><span class="line">Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.js 提供了一些对 process.kill() 和 subprocess.kill() 的模拟：</span><br><span class="line"></span><br><span class="line">发送 SIGINT、SIGTERM、和 SIGKILL 会导致目标进程无条件的终止，之后子进程会报告进程被信号终止。</span><br><span class="line">发送信号 <span class="number">0</span> 可以作为独立于平台的方式来测试进程是否存在。</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="recommend"><a href="#recommend" class="headerlink" title="recommend"></a>recommend</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/101917567">https://zhuanlan.zhihu.com/p/101917567</a> - 语雀</li>
+</ul>
+<h3 id="chalk"><a href="#chalk" class="headerlink" title="chalk"></a>chalk</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/chalk">https://www.npmjs.com/package/chalk</a></li>
+<li>调试时候可以用，这样比较显眼</li>
+</ul>
+<h3 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/nWKCX1INkP7uKGONzW7CPg">https://mp.weixin.qq.com/s/nWKCX1INkP7uKGONzW7CPg</a></li>
+<li>大规模 Node.js 网关的架构设计与工程实践</li>
+</ul>
+<h3 id="服务间接口调用"><a href="#服务间接口调用" class="headerlink" title="服务间接口调用"></a>服务间接口调用</h3><ul>
+<li>consul 测试环境 ip+端口号</li>
+<li>cluster IP + 80 线上环境</li>
+<li>没有用域名做代理，当然会存在cluster ip更换的问题，不过相对稳定</li>
+<li></li>
+</ul>
+<h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><p>系统属性里面的环境变量设置</p>
+<h2 id="node-test框架推荐"><a href="#node-test框架推荐" class="headerlink" title="node - test框架推荐"></a>node - test框架推荐</h2><ul>
+<li>ava这个框架</li>
+</ul>
+<h2 id="preventing-sql-injection-in-node-js"><a href="#preventing-sql-injection-in-node-js" class="headerlink" title="preventing-sql-injection-in-node-js"></a>preventing-sql-injection-in-node-js</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/15778572/preventing-sql-injection-in-node-js">https://stackoverflow.com/questions/15778572/preventing-sql-injection-in-node-js</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mysqljs/mysql#escaping-query-values">https://github.com/mysqljs/mysql#escaping-query-values</a></li>
+</ul>
+<h2 id="problems-BFF"><a href="#problems-BFF" class="headerlink" title="problems - BFF"></a>problems - BFF</h2><h2 id="cases"><a href="#cases" class="headerlink" title="cases"></a>cases</h2><h3 id="BFF"><a href="#BFF" class="headerlink" title="BFF"></a>BFF</h3><ul>
+<li>Java服务提供数据 - RPC通信</li>
+<li>模版渲染</li>
+<li>API服务 - restful（易读，快速启动，数据聚合劣势）- github的v3 API的实现</li>
+<li>API服务 - GraphQL（专注数据聚合，返回前端需要的）</li>
+</ul>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/node-config/node-config">https://github.com/node-config/node-config</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/yaml">https://www.npmjs.com/package/yaml</a></li>
+<li>package.json - config - process.env.npm_package_config_port - npm config set aaa:xxx 80</li>
+</ul>
+<h3 id="钩子"><a href="#钩子" class="headerlink" title="钩子"></a>钩子</h3><ul>
+<li>在node_modules/.hooks/{eventname}中放置一个可执行文件，所有根目录下的package.json文件在运行到该生命周期节点时都会被执行</li>
+<li>husky</li>
+</ul>
+<h3 id="端口冲突问题"><a href="#端口冲突问题" class="headerlink" title="端口冲突问题"></a>端口冲突问题</h3><ul>
+<li>lsof -i:3000 | xargs killall</li>
+<li>npm i -g kp  -  kp 3000</li>
+</ul>
+<h3 id="node-demo"><a href="#node-demo" class="headerlink" title="node-demo"></a>node-demo</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/hua1995116/node-demo">https://github.com/hua1995116/node-demo</a><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span><span class="title">文件上传详解</span></span><br><span class="line"><span class="title">node-rpc</span>调用详解</span><br><span class="line">跨域 demo</span><br><span class="line">重拾css[一]伪元素、包含块和高度坍塌</span><br><span class="line">React Hooks中这样写HTTP请求可以避免内存泄漏</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="node-jiti"><a href="#node-jiti" class="headerlink" title="node-jiti"></a>node-jiti</h3><p>“Node-jiti”是一个Node.js库，可在运行时（JIT）转译并加载ECMAScript模块。以下是使用”node-jiti”的一些最佳实践：</p>
+<ol>
+<li><p><strong>选择正确的环境</strong>：“node-jiti”是一个在Node.js环境中运行的库，因此你应该确保你的项目是在Node.js环境中运行的。</p>
+</li>
+<li><p><strong>使用包管理器</strong>： 使用npm或者yarn这种包管理器来安装和管理“node-jiti”，这样可以确保你总是使用最新、最稳定的版本。</p>
+</li>
+<li><p><strong>适当的错误处理</strong>：“node-jiti”在加载或解析JS文件时可能会出现错误，因此应该适当地使用try…catch语句来处理可能采食的错误。</p>
+</li>
+<li><p><strong>理解ESM和CJS的区别</strong>：“node-jiti”旨在使那些在运用时还不支持ESM的Node.js版本能够使用ESM，因此你需要对ESM和CJS两种模块系统有所了解。</p>
+</li>
+<li><p><strong>合理使用动态导入</strong>：“node-jiti”允许你动态地导入JS文件，这是一种有用但需要谨慎使用的工具。因为过度使用动态导入可能会使代码难以理解和保持。</p>
+</li>
+</ol>
+<p>举例：简单的使用 <code>node-jiti</code> 加载一个模块：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入 node-jiti</span></span><br><span class="line"><span class="keyword">const</span> jiti = <span class="built_in">require</span>(<span class="string">&#x27;jiti&#x27;</span>)(__dirname)</span><br><span class="line"><span class="comment">// 使用 node-jiti 加载模块</span></span><br><span class="line"><span class="keyword">const</span> myModule = <span class="title function_">jiti</span>(<span class="string">&#x27;./myModule&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这是一个简单的示例，<code>jiti</code> 将加载并处理名为 <code>myModule.js</code> 的文件，此文件应该位于您的项目的根目录中。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

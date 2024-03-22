@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        代码静态分析 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-text">腾讯云静态分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-text">部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#why"><span class="toc-text">why</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#what"><span class="toc-text">what</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#example"><span class="toc-text">example</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#how"><span class="toc-text">how</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Dart-Analyzer"><span class="toc-text">Dart Analyzer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#typescript"><span class="toc-text">typescript</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tools"><span class="toc-text">tools</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E-AST-%E7%9A%84%E4%BB%A3%E7%A0%81%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">基于 AST 的代码处理工具工作流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Parsing%EF%BC%88%E8%A7%A3%E6%9E%90%EF%BC%89"><span class="toc-text">Parsing（解析）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Traversing%EF%BC%88%E9%81%8D%E5%8E%86%EF%BC%89"><span class="toc-text">Traversing（遍历）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transforming%EF%BC%88%E4%BF%AE%E6%94%B9%EF%BC%89"><span class="toc-text">Transforming（修改）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Printing%EF%BC%88%E8%BE%93%E5%87%BA%EF%BC%89"><span class="toc-text">Printing（输出）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8-Parser"><span class="toc-text">编译器 Parser</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cases"><span class="toc-text">cases</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E8%B0%83%E7%94%A8%E5%88%86%E6%9E%90"><span class="toc-text">依赖调用分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E6%88%90%E5%88%86%E6%9E%90%E6%A8%A1%E5%9E%8B-%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA"><span class="toc-text">抽象成分析模型 - 如何设计解决问题的通用方法论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E8%B0%83%E7%94%A8%E5%88%86%E6%9E%90%E6%A8%A1%E5%9E%8B"><span class="toc-text">依赖调用分析模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#codeAnalysis"><span class="toc-text">codeAnalysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E8%8C%83%E5%BC%8F"><span class="toc-text">分析范式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E8%80%A6%E6%80%A7%E3%80%81%E6%8B%93%E5%B1%95%E6%80%A7%E3%80%81%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="toc-text">解耦性、拓展性、可用性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%9E%90-Import-%E8%8A%82%E7%82%B9"><span class="toc-text">分析 Import 节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E5%AE%9AAPI%E8%B0%83%E7%94%A8"><span class="toc-text">判定API调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#API%E8%B0%83%E7%94%A8%E4%BF%A1%E6%81%AF%E7%BB%9F%E8%AE%A1"><span class="toc-text">API调用信息统计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Method-API-%E5%88%86%E6%9E%90"><span class="toc-text">Method API 分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-API-%E5%88%86%E6%9E%90"><span class="toc-text">Type API 分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%96%B9%E6%A1%88"><span class="toc-text">插件方案</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        代码静态分析
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-04-28 18:02:37</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="腾讯云静态分析"><a href="#腾讯云静态分析" class="headerlink" title="腾讯云静态分析"></a>腾讯云静态分析</h3><ul>
+<li>TCA, Tencent Cloud Code Analysis  code-named: CodeDog</li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/tcap">https://cloud.tencent.com/product/tcap</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Tencent/CodeAnalysis">https://github.com/Tencent/CodeAnalysis</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Tencent/CodeAnalysis/blob/main/README_ZH.md">https://github.com/Tencent/CodeAnalysis/blob/main/README_ZH.md</a></li>
+</ul>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://tencent.github.io/CodeAnalysis/zh/quickStarted/dockerDeploy.html">https://tencent.github.io/CodeAnalysis/zh/quickStarted/dockerDeploy.html</a></li>
+</ul>
+<h3 id="why"><a href="#why" class="headerlink" title="why"></a>why</h3><ul>
+<li>制定了规则之后</li>
+<li>定时收集分析 + 检查 -》 了解并管控</li>
+<li>API文档无法表述真实的依赖关系（有问题的API调用，hack行为等 =》 API提供方-被动向后兼容）</li>
+</ul>
+<h3 id="what"><a href="#what" class="headerlink" title="what"></a>what</h3><ul>
+<li>代码静态分析是指在不实际执行程序的情况下，对代码语义和行为进行分析</li>
+</ul>
+<h4 id="example"><a href="#example" class="headerlink" title="example"></a>example</h4><ul>
+<li>eslint - 定位语法错误</li>
+<li>git hook + gitlab CI</li>
+<li>应用分析report</li>
+<li>应用分析platform</li>
+</ul>
+<h3 id="how"><a href="#how" class="headerlink" title="how"></a>how</h3><h4 id="Dart-Analyzer"><a href="#Dart-Analyzer" class="headerlink" title="Dart Analyzer"></a>Dart Analyzer</h4><ul>
+<li>Flutter针对Android Studio和VS Code开发的插件，使用Android Studio或者VS Code进行开发，不需要配置就可以看到Dart Analyzer工具提供的静态分析结果</li>
+<li>Dart Analyzer工具会使用默认的analysis_options.yaml文件中的内容执行代码静态分析</li>
+</ul>
+<h4 id="typescript"><a href="#typescript" class="headerlink" title="typescript"></a>typescript</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://jkchao.github.io/typescript-book-chinese/compiler/scanner.html#%E8%A7%A3%E6%9E%90%E5%99%A8%E5%AF%B9%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8">https://jkchao.github.io/typescript-book-chinese/compiler/scanner.html#%E8%A7%A3%E6%9E%90%E5%99%A8%E5%AF%B9%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8</a><h4 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h4></li>
+<li><a target="_blank" rel="noopener" href="https://www.softwaresecured.com/">https://www.softwaresecured.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.veracode.com/products/binary-static-analysis-sast">https://www.veracode.com/products/binary-static-analysis-sast</a></li>
+<li><a target="_blank" rel="noopener" href="https://embold.io/">https://embold.io/</a></li>
+<li><a target="_blank" rel="noopener" href="https://deepscan.io/">https://deepscan.io/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.codacy.com/">https://www.codacy.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.sonarsource.com/products/sonarqube/">https://www.sonarsource.com/products/sonarqube/</a></li>
+<li><a target="_blank" rel="noopener" href="https://deepsource.com/">https://deepsource.com/</a></li>
+</ul>
+<h3 id="基于-AST-的代码处理工具工作流程"><a href="#基于-AST-的代码处理工具工作流程" class="headerlink" title="基于 AST 的代码处理工具工作流程"></a>基于 AST 的代码处理工具工作流程</h3><h4 id="Parsing（解析）"><a href="#Parsing（解析）" class="headerlink" title="Parsing（解析）"></a>Parsing（解析）</h4><p>这个过程由编译器实现，会经过词法分析和语法分析两个过程，生成 AST</p>
+<h4 id="Traversing（遍历）"><a href="#Traversing（遍历）" class="headerlink" title="Traversing（遍历）"></a>Traversing（遍历）</h4><p>深度优先遍历 AST ，访问树上各个节点的信息</p>
+<h4 id="Transforming（修改）"><a href="#Transforming（修改）" class="headerlink" title="Transforming（修改）"></a>Transforming（修改）</h4><p>在遍历的过程中可对节点信息进行修改/转化，生成新的 AST</p>
+<h4 id="Printing（输出）"><a href="#Printing（输出）" class="headerlink" title="Printing（输出）"></a>Printing（输出）</h4><p>将转化后新的 AST 输出成新的代码块</p>
+<h3 id="编译器-Parser"><a href="#编译器-Parser" class="headerlink" title="编译器 Parser"></a>编译器 Parser</h3><ul>
+<li>Parser 的 API 可以帮助我们完成代码的词法分析与语法分析，并返回对应的 AST 对象</li>
+<li>JS Parser： esprima、 acorn、 espree、@babel/parser。</li>
+<li>TS Parser：typescript (<a target="_blank" rel="noopener" href="https://github.com/microsoft/TypeScript/">https://github.com/microsoft/TypeScript/</a>)</li>
+</ul>
+<h2 id="cases"><a href="#cases" class="headerlink" title="cases"></a>cases</h2><h3 id="依赖调用分析"><a href="#依赖调用分析" class="headerlink" title="依赖调用分析"></a>依赖调用分析</h3><ul>
+<li><p>遍历其所有 import 节点，分析并记录从目标依赖引入的 API 信息，并排除非目标依赖项的干扰。</p>
+</li>
+<li><p>判定引入的 API 在具体代码中是否有调用，过程中还需要排除局部同名变量等一系列干扰。</p>
+</li>
+<li><p>根据分析指标如用途识别等对该 API 调用进行指标判定分析，命中则记录到指定 Map 中。</p>
+</li>
+<li><p>依次遍历所有项目中指定的 TS(JS) 文件，就可以得到全部应用对于特定依赖的 API 调用分析数据了，最后根据使用场景（告警、评分、代码报告、代码建议等）对分析数据进行标记，二次整理，即可输出最终的分析结</p>
+</li>
+</ul>
+<h3 id="抽象成分析模型-如何设计解决问题的通用方法论"><a href="#抽象成分析模型-如何设计解决问题的通用方法论" class="headerlink" title="抽象成分析模型 - 如何设计解决问题的通用方法论"></a>抽象成分析模型 - 如何设计解决问题的通用方法论</h3><h4 id="依赖调用分析模型"><a href="#依赖调用分析模型" class="headerlink" title="依赖调用分析模型"></a>依赖调用分析模型</h4><ul>
+<li>依赖调用方</li>
+<li>依赖提供方</li>
+<li>面向对象编程<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Webpack - Compiler</span></span><br></pre></td></tr></table></figure></li>
+<li>生成一个基础类<h3 id="codeAnalysis"><a href="#codeAnalysis" class="headerlink" title="codeAnalysis"></a>codeAnalysis</h3></li>
+<li>Webpack：把依赖调用分析过程中涉及的方法，属性都封装在名为 codeAnalysis 的基础类中</li>
+<li>依赖调用分析流程的抽象，在生成分析实例后，通过实例来驱动整个分析流程</li>
+<li>基础类中包括扫描代码文件、解析 AST、遍历 AST、统计信息、安装插件、执行插件、链式检查、黑名单标记和代码评分等在内的一系列方法，重要属性</li>
+</ul>
+<h3 id="分析范式"><a href="#分析范式" class="headerlink" title="分析范式"></a>分析范式</h3><ul>
+<li>执行时序 -&gt; 执行生命周期（分析范式）</li>
+<li>根据分析范式步骤完善基础类的过程就是实现代码分析工具的过程</li>
+</ul>
+<h3 id="解耦性、拓展性、可用性"><a href="#解耦性、拓展性、可用性" class="headerlink" title="解耦性、拓展性、可用性"></a>解耦性、拓展性、可用性</h3><ul>
+<li>辅助模块</li>
+<li>架构设计: 解耦性、拓展性、可用性</li>
+</ul>
+<h4 id="分析-Import-节点"><a href="#分析-Import-节点" class="headerlink" title="分析 Import 节点"></a>分析 Import 节点</h4><ul>
+<li> Import 模块是一种特殊的声明语句，isImportDeclaration</li>
+<li>局部导入 named import</li>
+<li>默认全局导入 default import</li>
+<li>局部别名导入 namespaced import </li>
+<li>全局别名导入 namespaced import </li>
+<li>每种导入类型都存在唯一的判定条件</li>
+<li>moduleSpecifier.text</li>
+<li>自上而下的分析（先找到所有的 Import 节点，然后通过观察不同导入方式下 AST 及其子节点结构特征，总结出了各种导入方式的唯一性判断条件，然后根据这些判定条件完成了分析逻辑）</li>
+</ul>
+<h4 id="判定API调用"><a href="#判定API调用" class="headerlink" title="判定API调用"></a>判定API调用</h4><ul>
+<li>遍历 Identifier 节点</li>
+<li>排除 Import 中同名节点干扰（pos 与 end  identifierPos 和 identifierEnd）</li>
+<li>排除局部声明的同名节点干扰（symbolPos symbolEnd ）</li>
+<li>检测链式调用</li>
+<li>自下而上的分析（以 identifier 这种处于 AST 末端的节点作为切入点来实现判定逻辑）</li>
+</ul>
+<h4 id="API调用信息统计"><a href="#API调用信息统计" class="headerlink" title="API调用信息统计"></a>API调用信息统计</h4><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// context : codeAnalysis分析实例上下文</span></span><br><span class="line"><span class="comment">// tsCompiler : typescript编译器</span></span><br><span class="line"><span class="comment">// node : 基准分析节点baseNode</span></span><br><span class="line"><span class="comment">// depth : 链式调用深度</span></span><br><span class="line"><span class="comment">// apiName : api完整调用名（含链式调用）</span></span><br><span class="line"><span class="comment">// matchImportItem : API调用在import节点中的声明信息</span></span><br><span class="line"><span class="comment">// filePath : 代码文件路径</span></span><br><span class="line"><span class="comment">// projectName : 待分析代码文件所在的项目名称</span></span><br><span class="line"><span class="comment">// line : API调用所在代码文件中的行信息</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Method-API-分析"><a href="#Method-API-分析" class="headerlink" title="Method API 分析"></a>Method API 分析</h3><ul>
+<li>CallExpression</li>
+<li>需要排除被当成方法入参调用的场景</li>
+</ul>
+<h3 id="Type-API-分析"><a href="#Type-API-分析" class="headerlink" title="Type API 分析"></a>Type API 分析</h3><ul>
+<li>不论是普通类型还是泛型，都可以通过判断其基准节点的父级节点是否为 TypeReference 类型来判定该 API 是否属于类型调用<h3 id="插件方案"><a href="#插件方案" class="headerlink" title="插件方案"></a>插件方案</h3></li>
+<li>通过插件方案来解决主程序与子程序之间的代码结构问题</li>
+<li>插件模式来管理可拓展能力(webpack, eslint)</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        MacOS使用Tips - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">查看版本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pbcopy-pbpaste"><span class="toc-text">pbcopy&#x2F;pbpaste</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mdfind-%E5%AF%B9%E6%A0%87spotlight"><span class="toc-text">mdfind 对标spotlight</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mdls-list-metadata-such-as-photo-EXIF-info"><span class="toc-text">mdls  list metadata (such as photo EXIF info)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E6%89%93%E5%BC%80finder"><span class="toc-text">命令行中打开finder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%8C%BA%E5%88%86"><span class="toc-text">文件名大小写区分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#brew"><span class="toc-text">brew</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#screencapture"><span class="toc-text">screencapture</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%97%ADmac%E8%BE%93%E5%85%A5%E6%B3%95%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99"><span class="toc-text">关闭mac输入法首字母大写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE"><span class="toc-text">共享目录访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6"><span class="toc-text">浏览器中打开文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93"><span class="toc-text">查找系统安装字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90app"><span class="toc-text">推荐app</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%89%8B%E5%86%99%E7%AD%BE%E5%90%8D"><span class="toc-text">文档手写签名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%94%E7%A9%BA%E6%8A%95%E9%80%81"><span class="toc-text">隔空投送</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%BB%E5%8A%A8%E7%9B%91%E8%A7%86%E5%99%A8"><span class="toc-text">活动监视器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows-%E5%85%AC%E5%8F%B8%E6%97%A0%E7%BA%BFedu"><span class="toc-text">windows - 公司无线edu</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CLT"><span class="toc-text">CLT</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        MacOS使用Tips
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-04-06 16:35:36</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#MacOS" title="MacOS">MacOS</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>写在开头：macOS是基于BSD Unix的，所以很多命令和Linux有细微的差别，如（ps, ls, tail, awk, sed）,比如我们<code>man ps</code>,会显示：BSD General Commands Manual。如果我们写跨平台的bash脚本的时候，需要注意一些命令，仔细的做好测试</p>
+</blockquote>
+<h4 id="查看版本信息"><a href="#查看版本信息" class="headerlink" title="查看版本信息"></a>查看版本信息</h4><p>sw_vers</p>
+<h4 id="pbcopy-pbpaste"><a href="#pbcopy-pbpaste" class="headerlink" title="pbcopy/pbpaste"></a>pbcopy/pbpaste</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> ~ | pbcopy</span><br><span class="line">pbcopy &lt; <span class="keyword">test</span>.txt</span><br><span class="line">curl xxx | pbcopy</span><br><span class="line">pbpaste &gt;&gt; <span class="keyword">test</span>.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="mdfind-对标spotlight"><a href="#mdfind-对标spotlight" class="headerlink" title="mdfind 对标spotlight"></a>mdfind 对标spotlight</h4><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdfind -onlyin ~<span class="string">/Documents</span> xxx</span><br></pre></td></tr></table></figure>
+<h4 id="mdls-list-metadata-such-as-photo-EXIF-info"><a href="#mdls-list-metadata-such-as-photo-EXIF-info" class="headerlink" title="mdls  list metadata (such as photo EXIF info)"></a>mdls  list metadata (such as photo EXIF info)</h4><h4 id="命令行中打开finder"><a href="#命令行中打开finder" class="headerlink" title="命令行中打开finder"></a>命令行中打开finder</h4><p><code>open .</code><br>//打开应用<br><code>open -a /Applications/Whatever.app</code></p>
+<h4 id="文件名大小写区分"><a href="#文件名大小写区分" class="headerlink" title="文件名大小写区分"></a>文件名大小写区分</h4><p>windows 和 mac<br>系统里面文件名不区分大小写</p>
+<p>Linux里面则会区分大小写</p>
+<p>case-sensitive-paths-webpack-plugin</p>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/case-sensitive-paths-webpack-plugin">https://www.npmjs.com/package/case-sensitive-paths-webpack-plugin</a></p>
+<p>(vue项目本身，文件和文件夹命名，都是kebab-case的，这样也直接避免了这个问题)</p>
+<h4 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h4><p>brew -ls<br>brew - 下载不带界面的命令行的工具和第三方库<br>brew cask - 下载带界面的应用软件<br>brew install curl<br>brew cask install chrome </p>
+<h4 id="screencapture"><a href="#screencapture" class="headerlink" title="screencapture"></a>screencapture</h4><p>cmd+shift+3/4<br>（3全屏，4选择器）<br>cmd+shift+4+Space（窗口）<br><code>screencapture --help</code></p>
+<h4 id="关闭mac输入法首字母大写"><a href="#关闭mac输入法首字母大写" class="headerlink" title="关闭mac输入法首字母大写"></a>关闭mac输入法首字母大写</h4><p>系统偏好设置<br>键盘<br>文本</p>
+<p>去掉首字母大写的即可</p>
+<h4 id="共享目录访问"><a href="#共享目录访问" class="headerlink" title="共享目录访问"></a>共享目录访问</h4><p>1.打开finder<br>2.cmd+K<br>3.smb://xxxx/xxx</p>
+<h4 id="浏览器中打开文件"><a href="#浏览器中打开文件" class="headerlink" title="浏览器中打开文件"></a>浏览器中打开文件</h4><p>cmd + O<br>选择文件即可</p>
+<h4 id="查找系统安装字体"><a href="#查找系统安装字体" class="headerlink" title="查找系统安装字体"></a>查找系统安装字体</h4><p>brew install fontconfig<br>fc-list :zang-zh<br>fc-list : file family | grep /Library</p>
+<p>搜索：字体册<br>Font Book.app</p>
+<h4 id="推荐app"><a href="#推荐app" class="headerlink" title="推荐app"></a>推荐app</h4><p>可参考：<a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md">https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md</a></p>
+<p>翻译类：<br>Google DeepL translator - <a target="_blank" rel="noopener" href="https://www.deepl.com/app/thanks">https://www.deepl.com/app/thanks</a><br>极光词典（Mac和IOS都可以使用）<br>工具类：<br>magnet（<a target="_blank" rel="noopener" href="https://magnet.crowdcafe.com/?utm_source=help%EF%BC%89%E2%80%94%E2%80%94">https://magnet.crowdcafe.com/?utm_source=help）——</a> 分窗口软件<br>shadowsocks<br>charles（抓包）<br>dash（查文档）<br>vscode（代码编辑）<br>Alfred（全局搜索）<br>SwitchHosts（host配置）- 或者编辑/etc/hosts文件<br>Notability（笔记）<br>命令行：<br>pandoc（文件格式转换）</p>
+<h4 id="文档手写签名"><a href="#文档手写签名" class="headerlink" title="文档手写签名"></a>文档手写签名</h4><p>用预览功能：<br>打开PDF文档后，点击工具=&gt;注解=&gt;签名（管理签名），</p>
+<h4 id="隔空投送"><a href="#隔空投送" class="headerlink" title="隔空投送"></a>隔空投送</h4><ul>
+<li>修改本机名称：系统偏好设置=&gt;共享，修改即可；</li>
+</ul>
+<h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><p>cmd + M 最小化窗口<br>cmd + T 新Tab<br>cmd + W 关闭窗口<br>cmd + Q 退出程序<br>cmd + Space 切换输入法<br>cmd + 拖动非最前面窗口，可以避免拖动导致的激活<br>cmd + Del 移到废纸篓<br>ctrl + cmd + Space 输入emoji</p>
+<h4 id="活动监视器"><a href="#活动监视器" class="headerlink" title="活动监视器"></a>活动监视器</h4><p>activity monitor （spotlight里面搜索）</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><blockquote>
+<p>因为想把有道云笔记迁移到notability上，但是有道云笔记只支持在PC客户端进行全部导出到操作，所以需要从PC快速分享文件到Mac上</p>
+</blockquote>
+<p>首先保证windows电脑和Mac 在同一局域网</p>
+<ul>
+<li>window上： 运行-&gt; cmd -&gt; ifconfig -&gt; 得到本机在局域网到ip</li>
+<li>window上： 右键文件夹-&gt; 属性 -&gt;共享-&gt; 高级 -&gt; 共享此文件夹 -&gt; 确定</li>
+<li>Mac 上: 在 Finder 到前往里面选择’连接服务器’, 输入 smb://10.200.170.52（你获得的windows电脑的ip）,点连接， 然后输入windows的管理员的名称和密码即可（在windows的设置-&gt;账户信息里面可以查到）。</li>
+</ul>
+<h2 id="windows-公司无线edu"><a href="#windows-公司无线edu" class="headerlink" title="windows - 公司无线edu"></a>windows - 公司无线edu</h2><ul>
+<li>网络和共享中心-设置新的连接和网络-手动连接到无线网络</li>
+<li>网络名一定得为EDU，不然搜索不到</li>
+<li>网络名-EDU + 安全类型-WPA2-企业 —— 加密类型AES</li>
+<li>下一步 - 更改连接设置</li>
+<li>安全 - 设置 - 取消掉通过高验证证书来验证服务器的身份｜ 取消自动用Windows的账号登录</li>
+<li>安全 - 高级设置 - 802.1X设置 - 选择“指定身份验证模式（P）”<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//baike.baidu.com/item/WPA2/4913331</span></span><br><span class="line">WPA<span class="number">2</span> = IEEE <span class="number">802.11</span>i = IEEE <span class="number">802.1</span>X/EAP + WEP<span class="comment">(选择性项目)</span>/TKIP/CCMP</span><br><span class="line"></span><br><span class="line">大多数企业和许多新的住宅 Wi-Fi 产品都支持 WPA<span class="number">2</span>。截止到 <span class="number">2006</span> 年 <span class="number">03</span> 月，WPA<span class="number">2</span> 已经成为一种强制性的标准。WPA<span class="number">2</span> 需要采用高级加密标准 <span class="comment">(AES)</span> 的芯片组来支持。</span><br><span class="line">WPA<span class="number">2</span> 有两种风格：WPA<span class="number">2</span> 个人版和 WPA<span class="number">2</span> 企业版。WPA<span class="number">2</span> 企业版需要一台具有 IEEE <span class="number">802.1</span>X 功能的 RADIUS <span class="comment">(远程用户拨号认证系统)</span> 服务器。没有 RADIUS 服务器的 SOHO 用户可以使用 WPA<span class="number">2</span> 个人版，其口令长度为 <span class="number">20</span> 个以上的随机字符，或者使用 McAfee 无线安全或者 Witopia Secure MyWiFi 等托管的 RADIUS 服务。</span><br></pre></td></tr></table></figure>
+(<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">http://en.wikipedia.org/wiki/Advanced_Encryption_Standard</a>) - AES<h3 id="CLT"><a href="#CLT" class="headerlink" title="CLT"></a>CLT</h3>Command Line Tools (CLT) 是一个适用于 macOS 的开发者工具集，它包含了许多编程语言的编译器、二进制库以及开发者基础模板等一系列必备工具，如 git、gcc、make、ld 等。它可以让开发人员在 macOS 上轻松构建与运行他们的项目。</li>
+</ul>
+<p>CLT 的一个替代品是 Xcode – 一个完整的 macOS/iOS 原生软件开发套件。不过，如果你不需要 Xcode 中包含的精细 UI 和 IDE 功能，只需使用基本的命令行工具，那么安装 CLT 是个更轻量级的选择。</p>
+<p>要在 macOS 上为 Xcode 安装 Command Line Tools，可以根据以下步骤操作：</p>
+<ol>
+<li><p>打开“终端”（位于“实用工具”文件夹内，或使用“Spotlight”快速搜索“Terminal”。</p>
+</li>
+<li><p>在终端输入以下命令安装 CLT：</p>
+</li>
+</ol>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>将会弹出一个提示窗口，询问是否需要安装 Command Line Tools。点击“安装”以开始安装过程。</p>
+</li>
+<li><p>安装过程需要一段时间（取决于你的网络速度和系统资源）。安装完成后，终端将显示一个消息通知。</p>
+</li>
+<li><p>安装完成后，可以运行以下命令确认安装成功和检查已安装的 CLT 版本：</p>
+</li>
+</ol>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> -p</span><br></pre></td></tr></table></figure>
+
+<p>请注意，为了保持项目与工具的最新版本，并确保安全性和稳定性，建议您在可能的情况下将 Xcode 和 CLT 更新到最新版本。当 macOS 或 Xcode 有新版本可用时，通常会跟随推出更新的 Command Line Tools。更新 CLT 大部分情况下跟随 Xcode 的更新，或者在 Xcode 中可以单独更新。如果你单纯地使用 CLT 而不安装 Xcode，可以通过运行 <code>xcode-select --install</code> 命令来更新。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

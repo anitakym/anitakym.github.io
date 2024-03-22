@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        聊聊lodash - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#debounce"><span class="toc-text">debounce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html-webpack-plugin"><span class="toc-text">html-webpack-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD"><span class="toc-text">类型判断</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        聊聊lodash
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-03-17 18:11:22</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="debounce"><a href="#debounce" class="headerlink" title="debounce"></a>debounce</h3><p>项目中写的</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export <span class="keyword">function</span> <span class="title function_">debounce</span><span class="params">(fn, ms)</span> &#123;</span><br><span class="line">  let debounceTimer = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="params">(<span class="rest_arg">...args</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (debounceTimer) clearTimeout(debounceTimer)</span><br><span class="line">    debounceTimer = setTimeout(() =&gt; &#123;</span><br><span class="line">      fn.apply(<span class="keyword">this</span>, args)</span><br><span class="line">    &#125;, ms);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>lodash中</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//gi</span>thub.com/lodash</span><br><span class="line">https:<span class="regexp">//gi</span>thub.com<span class="regexp">/lodash/</span>lodash<span class="regexp">/blob/m</span>aster/debounce.js</span><br><span class="line">代码不摘录了</span><br></pre></td></tr></table></figure>
+
+<h3 id="html-webpack-plugin"><a href="#html-webpack-plugin" class="headerlink" title="html-webpack-plugin"></a>html-webpack-plugin</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/html-webpack-plugin">https://www.npmjs.com/package/html-webpack-plugin</a></li>
+</ul>
+<p>options - useroptions<br>Options: You can pass a hash of configuration options to html-webpack-plugin. Allowed values are as follows:</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  entry: <span class="string">&#x27;index.js&#x27;</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: __dirname + <span class="string">&#x27;/dist&#x27;</span>,</span><br><span class="line">    filename: <span class="string">&#x27;index_bundle.js&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      title: <span class="string">&#x27;My App&#x27;</span>, <span class="comment">// options</span></span><br><span class="line">      filename: <span class="string">&#x27;assets/admin.html&#x27;</span>  <span class="comment">// options</span></span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The following part renders the template with lodash as a minimalistic loader</span></span><br><span class="line">const template = _.template(<span class="keyword">source</span>, &#123; interpolate: <span class="regexp">/&lt;%=([\s\S]+?)%&gt;/g</span>, variable: <span class="string">&#x27;data&#x27;</span>, ...<span class="keyword">options</span> &#125;);</span><br></pre></td></tr></table></figure>
+<p>里面变量替换加渲染，默认的是基于loadash的template使用的<br><a target="_blank" rel="noopener" href="https://lodash.com/docs/4.17.15#template">https://lodash.com/docs/4.17.15#template</a></p>
+<h3 id="类型判断"><a href="#类型判断" class="headerlink" title="类型判断"></a>类型判断</h3><ul>
+<li>里面提供了一些类型判断的方法</li>
+<li>哈哈哈，但是呢，还有一个项目</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore">https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore</a></li>
+<li>可见下面的is系列-在lodash里面grep is<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">isArguments.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isArrayBuffer.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isArrayLike.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isArrayLikeObject.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isBoolean.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isBuffer.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isDate.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isElement.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isEmpty.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isEqualWith.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isError.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isFunction.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isLength.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isMap.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isMatch.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isMatchWith.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isNative.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isNil.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isNull.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isNumber.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isObject.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isObjectLike.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isPlainObject.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isRegExp.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isSet.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isString.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isSymbol.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isTypedArray.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isUndefined.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isWeakMap.<span class="keyword">js</span></span><br><span class="line"><span class="keyword"></span>isWeakSet.<span class="keyword">js</span></span><br></pre></td></tr></table></figure></li>
+<li>同样，可以看看You-Dont-Need-Lodash-Underscore里面给出的原生方法可以给到的实现</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

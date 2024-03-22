@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        metadata-reflection-summary - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Decorators"><span class="toc-text">Decorators</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        metadata-reflection-summary
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-12-28 14:33:54</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>Metadata Reflection API 是 TypeScript 提供的一种机制，它允许在运行时访问类、接口或者类型的元数据。这对于某些开发工作，如装饰器、DI框架（依赖注入框架）、对象映射等，非常有帮助。</p>
+<p>这个 API 采用于 ECMAScript 的装饰器提案，它有以下三个主要的部分：</p>
+<ol>
+<li>Reflect.metadata：用于添加指定的元数据到类的定义上。</li>
+<li>Reflect.defineMetadata：用于在一个对象上定义新的元数据。</li>
+<li>Reflect.getMetadata：用于获取已定义的元数据。</li>
+</ol>
+<p>要使用这个 API，你需要在 tsconfig.json 文件里，把 “emitDecoratorMetadata” 设置为 true。</p>
+<p>以下是一个例子，演示了如何使用 Metadata Reflection API：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个装饰器</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">logType</span>(<span class="params">target : <span class="built_in">any</span>, key : <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> t = <span class="title class_">Reflect</span>.<span class="title function_">getMetadata</span>(<span class="string">&quot;design:type&quot;</span>, target, key);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;key&#125;</span> type: <span class="subst">$&#123;t.name&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">  <span class="meta">@logType</span> <span class="comment">// 应用装饰器</span></span><br><span class="line">  <span class="keyword">public</span> attr1 : <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出：attr1 type: String</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，”logType” 装饰器使用了 Reflect.getMetadata 函数来取得 “attr1” 的类型，然后输出的结果就是 “attr1 type: String”。</p>
+<p>总的来说，Metadata Reflection API 提供了在运行时访问类型信息的功能，这使得 TypeScript 在很多场景下更具灵活性和强大的动态编程能力。</p>
+<p>这段话的意思是，现在Decorators和Decorator Metadata已经在TC39中达到了第三阶段，以下提出的API不再被考虑作为标准化。然而，这个包将继续支持那些利用TypeScript的遗留–experimentalDecorators选项的项目，因为一些项目可能无法迁移到使用标准的装饰器。</p>
+<p>TC39是JavaScript标准化组织。它通过阶段（共4个阶段）对JavaScript的特性进行标准化讨论。需要注意的是，达到第三阶段，表示该特性已经接近最终确定并将在未来的版本中作为标准特性出现。</p>
+<p>这个段落是告诉你，虽然Decorator和Decorator Metadata已经基本确定为标准特性，但是在这个包中还将继续支持TypeScript早期的—experimentalDecorators选项，以保证后向兼容性，并且方便那些还使用旧版TypeScript的项目。</p>
+<h3 id="Decorators"><a href="#Decorators" class="headerlink" title="Decorators"></a>Decorators</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/decorators.html">https://www.typescriptlang.org/docs/handbook/decorators.html</a><br>NOTE  This document refers to an experimental stage 2 decorators implementation. Stage 3 decorator support is available since Typescript 5.0. See: Decorators in Typescript 5.0</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#decorators">https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#decorators</a></p>
+</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        database开源学习之complete-intro-to-databases - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E6%8C%87%E8%B7%AF"><span class="toc-text">网站指路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Welcome"><span class="toc-text">Welcome</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NoSQL"><span class="toc-text">NoSQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL"><span class="toc-text">SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Graph"><span class="toc-text">Graph</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Key-Value-Store"><span class="toc-text">Key-Value Store</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PostgreSQL-vs-mysql"><span class="toc-text">PostgreSQL vs mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PostgreSQL-vs-oracle"><span class="toc-text">PostgreSQL vs oracle</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        database开源学习之complete-intro-to-databases
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-04-12 20:37:54</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="网站指路"><a href="#网站指路" class="headerlink" title="网站指路"></a>网站指路</h2><p><a target="_blank" rel="noopener" href="https://btholt.github.io/complete-intro-to-databases/">https://btholt.github.io/complete-intro-to-databases/</a><br>(这种开源资源，可以过一遍之后，当成search的参考资料来用)</p>
+<h2 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h2><ol>
+<li><p>Introduction</p>
+</li>
+<li><p>Installation Notes</p>
+</li>
+<li><p>Terminology</p>
+<h2 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h2></li>
+<li><p>NoSQL<br>mongodb是基于文档对象模型的，曾经有段时间因为丢数据的问题，饱受争议，但是现在是相对稳定的啦</p>
+</li>
+<li><p>MongoDB</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="comment">--name test-mongo -dit -p 27017:27017 --rm mongo:4.4.1</span></span><br><span class="line">docker exec -it test-mongo mongo</span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> dbs</span><br><span class="line">use adoption</span><br><span class="line">db.pets.insertOne(&#123;<span class="type">name</span>: &quot;Luna&quot;, <span class="keyword">type</span>: &quot;dog&quot;, breed: &quot;Havanese&quot;, age: <span class="number">8</span>&#125;)</span><br><span class="line">db.pets.help()</span><br><span class="line">db.pets.findOne()</span><br><span class="line">db.pets.count()</span><br><span class="line">db.pets.insertMany(</span><br><span class="line">  <span class="keyword">Array</span>.<span class="keyword">from</span>(&#123; length: <span class="number">10000</span> &#125;).map((_, <span class="keyword">index</span>) =&gt; (&#123;</span><br><span class="line">    <span class="type">name</span>: [</span><br><span class="line">      &quot;Luna&quot;,</span><br><span class="line">      &quot;Fido&quot;,</span><br><span class="line">      &quot;Fluffy&quot;,</span><br><span class="line">      &quot;Carina&quot;,</span><br><span class="line">      &quot;Spot&quot;,</span><br><span class="line">      &quot;Beethoven&quot;,</span><br><span class="line">      &quot;Baxter&quot;,</span><br><span class="line">      &quot;Dug&quot;,</span><br><span class="line">      &quot;Zero&quot;,</span><br><span class="line">      &quot;Santa&#x27;s Little Helper&quot;,</span><br><span class="line">      &quot;Snoopy&quot;,</span><br><span class="line">    ][<span class="keyword">index</span> % <span class="number">9</span>],</span><br><span class="line">    <span class="keyword">type</span>: [&quot;dog&quot;, &quot;cat&quot;, &quot;bird&quot;, &quot;reptile&quot;][<span class="keyword">index</span> % <span class="number">4</span>],</span><br><span class="line">    age: (<span class="keyword">index</span> % <span class="number">18</span>) + <span class="number">1</span>,</span><br><span class="line">    breed: [</span><br><span class="line">      &quot;Havanese&quot;,</span><br><span class="line">      &quot;Bichon Frise&quot;,</span><br><span class="line">      &quot;Beagle&quot;,</span><br><span class="line">      &quot;Cockatoo&quot;,</span><br><span class="line">      &quot;African Gray&quot;,</span><br><span class="line">      &quot;Tabby&quot;,</span><br><span class="line">      &quot;Iguana&quot;,</span><br><span class="line">    ][<span class="keyword">index</span> % <span class="number">7</span>],</span><br><span class="line">    <span class="keyword">index</span>: <span class="keyword">index</span>,</span><br><span class="line">  &#125;))</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Querying MongoDB</p>
+<pre>
+$gt - greater than
+$gte - greater than or equal to
+$lt - less than
+$lte - less than or equal to
+$eq - equals (usually not necessary)
+$ne - not equals
+$in - has the value in the array (MongoDB can store arrays and objects too!)
+$nin - does not have the value in the array
+</pre>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># findone</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">findOne</span>()</span><br><span class="line">db.pets.<span class="title function_ invoke__">findOne</span>(&#123; <span class="attr">index</span>: <span class="number">1337</span> &#125;);</span><br><span class="line"><span class="comment"># find</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;);</span><br><span class="line">it</span><br><span class="line">it</span><br><span class="line"><span class="comment"># count , limit , and toArray</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">count</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;); <span class="comment">// probably pretty big number</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;).<span class="title function_ invoke__">limit</span>(<span class="number">40</span>);</span><br><span class="line">it; <span class="comment">// after this the cursor will end</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;).<span class="title function_ invoke__">limit</span>(<span class="number">40</span>).<span class="title function_ invoke__">toArray</span>();</span><br><span class="line"><span class="comment"># query operators</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">count</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;cat&quot;</span>, <span class="attr">age</span>: &#123; <span class="variable">$gt</span>: <span class="number">12</span> &#125; &#125;);</span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123;</span><br><span class="line">  <span class="attr">type</span>: &#123; <span class="variable">$ne</span>: <span class="string">&quot;dog&quot;</span> &#125;,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Fido&quot;</span>,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment"># logical operators</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="string">&quot;bird&quot;</span>,</span><br><span class="line">  <span class="variable">$and</span>: [&#123; <span class="attr">age</span>: &#123; <span class="variable">$gte</span>: <span class="number">4</span> &#125; &#125;, &#123; <span class="attr">age</span>: &#123; <span class="variable">$lte</span>: <span class="number">8</span> &#125; &#125;],</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment"># special operators , like $type $exists</span></span><br><span class="line"><span class="comment"># sorts 1:ascending -1: descending</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;).<span class="title function_ invoke__">sort</span>(&#123; <span class="attr">age</span>: -<span class="number">1</span> &#125;);</span><br><span class="line"><span class="comment"># projections</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;, &#123; <span class="attr">name</span>: <span class="number">1</span>, <span class="attr">breed</span>: <span class="number">1</span> &#125;);</span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;, &#123; <span class="attr">name</span>: <span class="number">1</span>, <span class="attr">breed</span>: <span class="number">1</span>, <span class="attr">_id</span>: <span class="number">0</span> &#125;);</span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;, &#123; <span class="attr">name</span>: <span class="literal">true</span>, <span class="attr">breed</span>: <span class="literal">true</span>, <span class="attr">_id</span>: <span class="literal">false</span> &#125;); <span class="comment">// note that true and false work too</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">find</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;, &#123; <span class="attr">_id</span>: <span class="number">0</span> &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Updating MongoDB</p>
+</li>
+</ol>
+<ul>
+<li>insert本质上是做了（insertOne,insertMany）的工作；但是one/many的好处是，如果我们给了错误的输入，他会报错并让我们修正</li>
+<li>delete deleteMany deleteOne / update updateMany/updateOne 也同上</li>
+<li>replaceOne 会删除在更新对象中省略的，但存在与原有文档中但任何字段<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># updates 第一个对象是查询，第二个对象是更新对象</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">updateOne</span>(</span><br><span class="line">  &#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span>, <span class="attr">name</span>: <span class="string">&quot;Luna&quot;</span>, <span class="attr">breed</span>: <span class="string">&quot;Havanese&quot;</span> &#125;,</span><br><span class="line">  &#123; <span class="variable">$set</span>: &#123; <span class="attr">owner</span>: <span class="string">&quot;Brian Holt&quot;</span> &#125; &#125;</span><br><span class="line">);</span><br><span class="line"><span class="comment"># 可用的更新操作符 https://docs.mongodb.com/manual/reference/operator/update/#id1</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">updateMany</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span> &#125;, &#123; <span class="variable">$inc</span>: &#123; <span class="attr">age</span>: <span class="number">1</span> &#125; &#125;); </span><br><span class="line"><span class="comment"># upsert - option 如果存在就更新，如果不存在，就创建一个新记录</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">updateOne</span>(</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;Sudo&quot;</span>,</span><br><span class="line">    <span class="attr">breed</span>: <span class="string">&quot;Wheaten&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="variable">$set</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="string">&quot;dog&quot;</span>,</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&quot;Sudo&quot;</span>,</span><br><span class="line">      <span class="attr">breed</span>: <span class="string">&quot;Wheaten&quot;</span>,</span><br><span class="line">      <span class="attr">age</span>: <span class="number">5</span>,</span><br><span class="line">      <span class="attr">index</span>: <span class="number">10000</span>,</span><br><span class="line">      <span class="attr">owner</span>: <span class="string">&quot;Sarah Drasner&quot;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">upsert</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"><span class="comment"># deletes 工作原理和查找类似</span></span><br><span class="line">db.pets.<span class="title function_ invoke__">deleteMany</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;reptile&quot;</span>, <span class="attr">breed</span>: <span class="string">&quot;Havanese&quot;</span> &#125;);</span><br><span class="line"><span class="comment"># findAnd* （Update/Replace/Delete） </span></span><br><span class="line"><span class="comment"># bulkWrite 大规模写入</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="5">
+<li><p>Indexes in MongoDB</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Aggregation</p>
+</li>
+<li><p>Write a Node.js app with MongoDB</p>
+</li>
+<li><p>MongoDB Ops</p>
+</li>
+</ol>
+<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><ol>
+<li>Intro to SQL Database</li>
+<li>PostgreSQL</li>
+<li>Querying PostgreSQL</li>
+<li>Complex SQL Queries</li>
+<li>JSON in PostgreSQL</li>
+<li>Indexes in PostgreSQL</li>
+<li>Node.js App with PostgreSQL</li>
+<li>Hasura</li>
+<li>PostgreSQL Ops</li>
+</ol>
+<h2 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h2><ol>
+<li>Graph Databases</li>
+<li>12Neo4j</li>
+<li>Neo4j Browser</li>
+<li>Complex Neo4j Queries</li>
+<li>Indexes in Neo4j</li>
+<li>Node.js App with Neo4j</li>
+<li>Neo4j Ops<h2 id="Key-Value-Store"><a href="#Key-Value-Store" class="headerlink" title="Key-Value Store"></a>Key-Value Store</h2></li>
+<li>Key-Value Store</li>
+<li>Redis</li>
+<li>Redis Command Options</li>
+<li>Redis Data Types</li>
+<li>More Redis Concepts</li>
+<li>Node.js App with Redis</li>
+<li>Redis Ops<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2></li>
+<li>Conclusion</li>
+</ol>
+<h2 id="PostgreSQL-vs-mysql"><a href="#PostgreSQL-vs-mysql" class="headerlink" title="PostgreSQL vs mysql"></a>PostgreSQL vs mysql</h2><p>postgis<br>instagram - python + PostgreSQL</p>
+<h2 id="PostgreSQL-vs-oracle"><a href="#PostgreSQL-vs-oracle" class="headerlink" title="PostgreSQL vs oracle"></a>PostgreSQL vs oracle</h2>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

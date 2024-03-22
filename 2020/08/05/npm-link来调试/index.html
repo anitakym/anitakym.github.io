@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        npm-link来调试 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#tips-%E6%9F%A5%E7%9C%8Bprefix"><span class="toc-text">tips:查看prefix</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-text">最佳实践</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        npm-link来调试
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-08-05 16:59:13</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#npm 系列" title="npm 系列">npm 系列</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>主体项目拆分出了UI库和核心逻辑js库，在UI库里面调试阶段，除了example，可能还得连具体代码，所以利用npm link进行调试</p>
+</blockquote>
+<p>在被引用的包项目里面运行，执行之后，被引用的包会被链接到全局，路径是 {prefix}/lib/node_modules/<package></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="built_in">link</span></span><br></pre></td></tr></table></figure>
+<p>在用包的项目里面运行,这样被引用的包会被链接到用包项目的node_modules下面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="built_in">link</span> seal_topic_ui</span><br></pre></td></tr></table></figure>
+
+<p>之后，只要在被引用包里面有修改，修改会直接生效</p>
+<h4 id="tips-查看prefix"><a href="#tips-查看prefix" class="headerlink" title="tips:查看prefix"></a>tips:查看prefix</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="built_in">get</span> prefix</span><br></pre></td></tr></table></figure>
+
+<h4 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h4><p><code>npm link</code> 是一个非常有用的命令，它可以帮助开发者在本地开发和测试 Node.js 的模块或者 CLI 工具。<code>npm link</code> 可以在全局和本地项目之间创建一个符号链接，这使得开发者可以在不发布和安装 npm 包的情况下进行开发和测试。下面是一些使用 <code>npm link</code> 的最佳实践。</p>
+<ol>
+<li><p>在开发模块时使用<code>npm link</code>：</p>
+<p>首先，导航到要链接的项目目录：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="regexp">/path/</span>to<span class="regexp">/your/m</span>odule</span><br></pre></td></tr></table></figure>
+
+<p>然后，在项目根目录下运行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="built_in">link</span></span><br></pre></td></tr></table></figure>
+
+<p>这将在全局 node_modules 目录下创建一个符号链接。（你可以通过运行 <code>npm root -g</code> 查找全局 node_modules 目录。）</p>
+<p>接下来，在你的依赖模块项目中使用 <code>npm link your-module</code> 来创建一个指向刚刚链接的模块的符号链接。将 <code>your-module</code> 替换为模块的名称。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/dependent/project</span><br><span class="line">npm <span class="built_in">link</span> your-module</span><br></pre></td></tr></table></figure>
+
+<p>现在，在依赖项项目中，更改模块的代码和功能都会实时反映出来。</p>
+</li>
+<li><p>在开发 CLI 工具时使用<code>npm link</code>：</p>
+<p>如果你正在开发一个 CLI 工具，则可以将其链接到全局路径，使其能够在本地生效。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/cli/tool</span><br><span class="line">npm <span class="built_in">link</span></span><br></pre></td></tr></table></figure>
+
+<p>这时，你就可以在终端中使用这个命令（CLI 工具）了，任何对工具的更改都会即时更新。</p>
+</li>
+<li><p>从全局环境中取消链接：</p>
+<p>如果你想从全局环境中删除链接，可以在 <code>npm link</code> 的反向操作中使用 <code>npm unlink</code> 命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/module</span><br><span class="line">npm <span class="built_in">unlink</span></span><br></pre></td></tr></table></figure>
+
+<p>然后，在依赖目录中取消链接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/dependent/project</span><br><span class="line">npm <span class="built_in">unlink</span> your-module</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 .npmrc 配置文件：</p>
+</li>
+</ol>
+<p>使用 <code>.npmrc</code> 配置文件可以轻松地将有关链接的配置应用于所需项目。例如，在全局 node_modules 目录中指定一个特定的位置。</p>
+<p>在以上示例中，在全局 npm 配置文件（你可以用 <code>npm config ls</code> 或者 <code>npm config edit</code> 找到它）的路径下添加以下行：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">prefix</span> <span class="operator">=</span> <span class="regexp">/path/</span>to<span class="regexp">/your/</span>custom</span><br><span class="line">     </span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><p><code>npm link</code> 时请注意版本冲突。因为 <code>npm link</code> 是在全局环境中创建了链接，确保在多个项目之间共享同一份代码时，不会引入不同版本的包。</p>
+</li>
+<li><p>为了避免安全问题，请不要在生产环境下使用 <code>npm link</code>。当你在生产环境部署代码时，请始终使用 <code>npm install</code>。<code>npm link</code> 的主要目的是为了在开发过程中提高效率和便利性。</p>
+</li>
+</ol>
+<p>遵循这些最佳实践，你可以更高效地使用 <code>npm link</code> 进行 Node.js 项目的开发和测试。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

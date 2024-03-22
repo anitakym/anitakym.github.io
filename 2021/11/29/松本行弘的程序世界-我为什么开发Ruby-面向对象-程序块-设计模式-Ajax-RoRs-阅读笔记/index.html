@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        松本行弘的程序世界-我为什么开发Ruby-面向对象-程序块-设计模式-Ajax-RoRs-阅读笔记 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80%E5%8F%91Ruby"><span class="toc-text">我为什么开发Ruby</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Lines"><span class="toc-text">Lines</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-text">设计原则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">编程和面向对象的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8A%BD%E8%B1%A1%E5%92%8C%E7%BB%A7%E6%89%BF"><span class="toc-text">数据抽象和继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E7%BB%A7%E6%89%BF%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-text">多重继承的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E8%AF%AF%E8%A7%A3"><span class="toc-text">两个误解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#duck-Typing%E8%AF%9E%E7%94%9F%E4%B9%8B%E5%89%8D"><span class="toc-text">duck Typing诞生之前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%BC%96%E7%A8%8B"><span class="toc-text">元编程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%9D%97"><span class="toc-text">程序块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%9D%97%E7%9A%84%E5%A8%81%E5%8A%9B"><span class="toc-text">程序块的威力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E5%9D%97%E5%81%9A%E5%BE%AA%E7%8E%AF"><span class="toc-text">用块做循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%BE%E9%80%9A%E9%9B%86%E5%90%88%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">精通集合的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax"><span class="toc-text">Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fetch-%E6%96%B0%E7%9A%84API"><span class="toc-text">fetch - 新的API</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ruby-on-Rails"><span class="toc-text">Ruby on Rails</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC-%E5%92%8C-Ruby-on-Rails"><span class="toc-text">MVC 和 Ruby on Rails</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E7%B1%BB%E5%92%8C%E7%8C%B4%E5%AD%90%E8%A1%A5%E4%B8%81"><span class="toc-text">开放类和猴子补丁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        松本行弘的程序世界-我为什么开发Ruby-面向对象-程序块-设计模式-Ajax-RoRs-阅读笔记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-29 14:46:23</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="我为什么开发Ruby"><a href="#我为什么开发Ruby" class="headerlink" title="我为什么开发Ruby"></a>我为什么开发Ruby</h2><blockquote>
+<p>因为它给我带来了快乐<br>松本行弘. 松本行弘的程序世界 (图灵程序设计丛书) (Chinese Edition) (Kindle位置116). 人民邮电出版社. Kindle 版本. </p>
+</blockquote>
+<h3 id="Lines"><a href="#Lines" class="headerlink" title="Lines"></a>Lines</h3><ul>
+<li>语言体现了人类思考的本质</li>
+<li>程序员由于使用的编程语言不同，他的思考方法和编写出来的代码都会受到编程语言的很大影响。</li>
+<li>Ruby编程语言的设计目标是，让作为语言设计者的我能够轻松编程，进而提高开发效率。<h4 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h4></li>
+<li>简洁性</li>
+<li>Lisp(Paul Graham - 简洁就是力量)</li>
+<li>Ruby不进行明确的数据类型定义，不必要的声明都可以省略</li>
+<li>如果可以把伪码中非实质的东西去掉，只保留描述算法的部分就直接运行，那么这种编程语言不就是最好的吗？Ruby的目标就是成为开发效率高、“能直接运行的伪码式编程语言”</li>
+<li>扩展性</li>
+<li>实现扩展性的一个重要方法是抽象化</li>
+<li>很多面向对象或者函数式的现代编程语言，都在抽象化方面做得很好</li>
+<li>关于扩展性，有一点是不能忽视的，即“不要因为想当然而加入无谓的限制”。比如说，刚开始开发Unicode时，开发者想当然地认为16位（65535个字符）就足够容纳世界上所有的文字了；同样，Y2K问题也是因为想当然地认为用2位数表示日期就够了才导致的。从某种角度说，编程的历史就是因为想当然而失败的历史。而Ruby对整数范围不做任何限定，尽最大努力排除“想当然”。</li>
+<li>稳定性</li>
+<li>拒绝了宏</li>
+<li>稳定的语法</li>
+</ul>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="编程和面向对象的关系"><a href="#编程和面向对象的关系" class="headerlink" title="编程和面向对象的关系"></a>编程和面向对象的关系</h3><h3 id="数据抽象和继承"><a href="#数据抽象和继承" class="headerlink" title="数据抽象和继承"></a>数据抽象和继承</h3><h3 id="多重继承的缺点"><a href="#多重继承的缺点" class="headerlink" title="多重继承的缺点"></a>多重继承的缺点</h3><h3 id="两个误解"><a href="#两个误解" class="headerlink" title="两个误解"></a>两个误解</h3><h3 id="duck-Typing诞生之前"><a href="#duck-Typing诞生之前" class="headerlink" title="duck Typing诞生之前"></a>duck Typing诞生之前</h3><h3 id="元编程"><a href="#元编程" class="headerlink" title="元编程"></a>元编程</h3><h2 id="程序块"><a href="#程序块" class="headerlink" title="程序块"></a>程序块</h2><h3 id="程序块的威力"><a href="#程序块的威力" class="headerlink" title="程序块的威力"></a>程序块的威力</h3><h3 id="用块做循环"><a href="#用块做循环" class="headerlink" title="用块做循环"></a>用块做循环</h3><h3 id="精通集合的使用"><a href="#精通集合的使用" class="headerlink" title="精通集合的使用"></a>精通集合的使用</h3><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX">https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest">https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest</a></li>
+<li>90年代末 - MS Outlook =&gt;IE (XMLHttp) | 其他浏览器XMLHttpRequest =&gt; 使浏览器能从JavaScript中发出Http请求</li>
+<li>2005 =&gt; Jesse James Garrentt =&gt; <a target="_blank" rel="noopener" href="https://courses.cs.washington.edu/courses/cse490h/07sp/readings/ajax_adaptive_path.pdf">https://courses.cs.washington.edu/courses/cse490h/07sp/readings/ajax_adaptive_path.pdf</a> =&gt; 本质：用XHR获取数据，然后修改当前页面</li>
+<li>创建XHR对象 - 告诉该对象要请求什么信息，设置成功或错误处理程序，然后实际地发送请求（new | open | onload | onerror | send）<h4 id="fetch-新的API"><a href="#fetch-新的API" class="headerlink" title="fetch - 新的API"></a>fetch - 新的API</h4></li>
+<li>基于promise</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API">https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API</a></li>
+</ul>
+<h2 id="Ruby-on-Rails"><a href="#Ruby-on-Rails" class="headerlink" title="Ruby on Rails"></a>Ruby on Rails</h2><h3 id="MVC-和-Ruby-on-Rails"><a href="#MVC-和-Ruby-on-Rails" class="headerlink" title="MVC 和 Ruby on Rails"></a>MVC 和 Ruby on Rails</h3><h3 id="开放类和猴子补丁"><a href="#开放类和猴子补丁" class="headerlink" title="开放类和猴子补丁"></a>开放类和猴子补丁</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>etching bundler-2.3.26.gem<br>ERROR: While executing gem … (Gem::FilePermissionError)<br>You don’t have write permissions for the /Library/Ruby/Gems/2.6.0 directory.<br>这个错误意味着你没有足够的权限来向这个目录写入文件。这在OS X上是常见的问题，因为这个目录是由系统拥有的。</p>
+<p>要解决这个问题，你有两个选择。</p>
+<p>第一个选择是使用sudo命令来运行gem install：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install bundler -v 2.3.26</span><br></pre></td></tr></table></figure>
+
+<p>这将给你足够的权限来安装gem，但是这可能会让你的系统环境被修改，这是一种不推荐的做法。</p>
+<p>第二个更好的选择是安装一个版本管理器，例如RVM或RBENV。这些版本管理器为你的Ruby版本和Gem创建了一个单独的环境，这样你就可以在不修改系统环境的情况下安装它们。</p>
+<p>例如，你可以通过下面的步骤安装RVM和新版本的Ruby：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\curl -sSL https://get.rvm.io | bash -s stable</span><br><span class="line">rvm install 2.7.0</span><br><span class="line">rvm use 2.7.0</span><br><span class="line">gem install bundler -v 2.3.26</span><br></pre></td></tr></table></figure>
+
+<p>这将安装RVM，然后使用RVM安装Ruby 2.7.0，然后切换到这个新版本的Ruby，最后安装所需版本的bundler。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Kotlin-Andriod现有项目引入 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-text">官方文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3"><span class="toc-text">项目相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS"><span class="toc-text">JS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kotlin-android-extensions%E6%8F%92%E4%BB%B6%E5%9C%A8%E8%BE%83%E6%96%B0%E7%9A%84Kotlin%E7%89%88%E6%9C%AC%E4%B8%AD%E5%B7%B2%E8%A2%AB%E5%BC%83%E7%94%A8%EF%BC%8C%E6%82%A8%E7%8E%B0%E5%9C%A8%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8viewBinding%E6%88%96dataBinding%E6%9D%A5%E6%9B%BF%E4%BB%A3%E3%80%82"><span class="toc-text">kotlin-android-extensions插件在较新的Kotlin版本中已被弃用，您现在需要使用viewBinding或dataBinding来替代。</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Kotlin-Andriod现有项目引入
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-01-18 16:18:59</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>最近看android项目的提交，发现，诶，kt文件多了起来，梳理下；</p>
+</blockquote>
+<h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.android.com/kotlin/first">https://developer.android.com/kotlin/first</a></li>
+</ul>
+<h2 id="项目相关"><a href="#项目相关" class="headerlink" title="项目相关"></a>项目相关</h2><h3 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h3><p>现有的Android项目，用Java开发，有个老师之前用Kotlin，所以他负责的模块kotlin写的比较多</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.kotlincn.net/docs/reference/js-overview.html">https://www.kotlincn.net/docs/reference/js-overview.html</a></li>
+</ul>
+<h3 id="kotlin-android-extensions插件在较新的Kotlin版本中已被弃用，您现在需要使用viewBinding或dataBinding来替代。"><a href="#kotlin-android-extensions插件在较新的Kotlin版本中已被弃用，您现在需要使用viewBinding或dataBinding来替代。" class="headerlink" title="kotlin-android-extensions插件在较新的Kotlin版本中已被弃用，您现在需要使用viewBinding或dataBinding来替代。"></a>kotlin-android-extensions插件在较新的Kotlin版本中已被弃用，您现在需要使用viewBinding或dataBinding来替代。</h3><p>移除kotlin-android-extensions插件的步骤如下：</p>
+<ol>
+<li><p>打开您项目根目录下的 <code>build.gradle</code>（或 <code>build.gradle.kts</code>）文件，找到该行并移除：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">&quot;kotlin-android-extensions&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果您使用的是 <code>build.gradle.kts</code>，移除：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply(plugin = <span class="string">&quot;kotlin-android-extensions&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找到 <code>dependencies</code> 下的 <code>implementation &quot;org.jetbrains.kotlinx:kotlinx-android-extensions:$version&quot;</code> 并移除。</p>
+</li>
+<li><p>使用View Binding或Data Binding来替代。</p>
+</li>
+</ol>
+<p>例如，如果您要使用View Binding，需要在每个模块的 <code>build.gradle</code> 文件中启用它，如下所示：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    ...</span><br><span class="line">    viewBinding &#123;</span><br><span class="line">        enabled = <span class="keyword">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后更新你的代码来使用View Binding。这通常包括使用 <code>binding</code> 对象代替 <code>findViewById</code> 或Kotlin Android Extensions 的synthetic properties。例如：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyActivity</span> : <span class="type">AppCompatActivity</span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> binding: ActivityMyBinding</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        binding = ActivityMyBinding.inflate(layoutInflater)</span><br><span class="line">        <span class="keyword">val</span> view = binding.root</span><br><span class="line">        setContentView(view)</span><br><span class="line">        </span><br><span class="line">        binding.myButton.setOnClickListener &#123; <span class="comment">/*...*/</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>“kotlin-android-extensions” 和 “kotlin-android” 是Kotlin在Android中的两个不同插件，它们都为Android开发人员提供了一些便利的工具和功能。</p>
+<ol>
+<li><p>“kotlin-android” 插件： 这是在Android项目中使用Kotlin语言的必要插件。它包含了一些在Android Studio IDE中进行Kotlin开发必要的特性，比如Kotlin代码文件的处理，与安卓SDK的交互等。如果移除了这个插件，那么你将不能在你的Android应用项目中使用Kotlin。</p>
+</li>
+<li><p>“kotlin-android-extensions” 插件： 这个插件扩展了当初”Kotlin-android”的功能，提供了额外的功能如视图绑定等。之前，开发人员经常利用这个插件通过ID直接访问视图，无需 <code>findViewById()</code>。然而，Google已经引入了更强大的View Binding和Data Binding，所以”kotlin-android-extensions”已经被弃用。如果你移除这个插件，也可以正常开发，你只需要替换原有的代码到新的视图绑定方式。</p>
+</li>
+</ol>
+<p>总的来说，这两个插件的区别在于，”kotlin-android” 是使用Kotlin语言在Android项目中进行开发的基础插件，而 “kotlin-android-extensions” 插件则提供了一些方便的扩展功能。目前，在更新的Android开发实践中，”kotlin-android-extensions” 插件已不再需要。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

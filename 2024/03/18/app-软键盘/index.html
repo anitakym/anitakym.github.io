@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        app-软键盘 - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-text">参考文章</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        app-软键盘
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-03-18 14:40:02</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>在应用开发中，调用软键盘通常与输入框相关。当用户需要输入某些信息时，应用程序需要调用软键盘供用户输入。下面是如何在Android和iOS应用中调用软键盘：</p>
+<ol>
+<li>Android：</li>
+</ol>
+<p>在Android中，通常我们不需要显式调用软键盘，只需要设置EditText获取焦点即可。如果确实需要显式调用，可以使用InputMethodManager类来做到。</p>
+<p>如下面的示例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取InputMethodManager的实例</span></span><br><span class="line"><span class="type">InputMethodManager</span> <span class="variable">imm</span> <span class="operator">=</span> (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE); </span><br><span class="line"><span class="comment">//请求显示软键盘</span></span><br><span class="line">imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);</span><br></pre></td></tr></table></figure>
+<p>同样的，如果需要显式关闭软键盘，可以使用hideSoftInputFromWindow函数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取当前焦点的View</span></span><br><span class="line"><span class="type">View</span> <span class="variable">currentFocusView</span> <span class="operator">=</span> getCurrentFocus();</span><br><span class="line"><span class="comment">//请求隐藏软键盘</span></span><br><span class="line"><span class="keyword">if</span> (currentFocusView != <span class="literal">null</span>) &#123;</span><br><span class="line">      imm.hideSoftInputFromWindow(currentFocusView.getWindowToken(), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>iOS：</li>
+</ol>
+<p>在iOS中，若要调用软键盘，也是以UIKit中的输入控件(UITextField, UITextView)获取焦点为主。可以通过将resignFirstResponder设为false来请求键盘出现，设为true来使键盘消失。</p>
+<p>调用软键盘的代码如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 请求键盘</span></span><br><span class="line">textField.becomeFirstResponder()</span><br></pre></td></tr></table></figure>
+<p>隐藏软键盘的代码如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 隐藏键盘</span></span><br><span class="line">textField.resignFirstResponder()</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，某些情况下，我们还需要根据实际业务需求，实现键盘的相关操作，比如在键盘上添加完成按钮或自定义工具栏等。</p>
+<p>在 Android 系统中，可以通过创建一个输入法服务以定制系统软键盘。以下是创建输入法服务的大致步骤：</p>
+<ol>
+<li><p>创建一个 Java 类，该类需要继承自 <code>InputMethodService</code>。<code>InputMethodService</code> 是 Android 提供的用于创建自定义输入法服务的基类。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyInputMethodService</span> <span class="keyword">extends</span> <span class="title class_">InputMethodService</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在这个类中，你需要覆盖并实现以下两个方法：</p>
+<ul>
+<li><code>onCreateInputView()</code>：此方法用于创建键盘的视图。</li>
+<li><code>onCreateInputMethodInterface()</code>：此方法用于创建你的输入法的接口。</li>
+</ul>
+<p>例如：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyInputMethodService</span> <span class="keyword">extends</span> <span class="title class_">InputMethodService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> View <span class="title function_">onCreateInputView</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 创建并加载键盘视图  </span></span><br><span class="line">        <span class="type">View</span> <span class="variable">keyboardView</span> <span class="operator">=</span> getLayoutInflater().inflate(R.layout.keyboard, <span class="literal">null</span>);</span><br><span class="line">        <span class="keyword">return</span> keyboardView;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> AbstractInputMethodService.AbstractInputMethodImpl <span class="title function_">onCreateInputMethodInterface</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 创建并加载键盘的接口</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">super</span>.onCreateInputMethodInterface();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在你的 AndroidManifest.xml 文件中，你需要注册你的输入法服务。</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">&quot;.MyInputMethodService&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:label</span>=<span class="string">&quot;@string/service_name&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:permission</span>=<span class="string">&quot;android.permission.BIND_INPUT_METHOD&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;android.view.InputMethod&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta-data</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">&quot;android.view.im&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:resource</span>=<span class="string">&quot;@xml/method&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>一旦键盘服务创建并启动，用户就可以在设置-&gt;语言和输入法-&gt;输入法列表中找到你的键盘并进行切换。定制软键盘的布局、功能等都在你创建的键盘服务的类中进行。</p>
+<p>在iOS中，你无法直接定制系统的软键盘，这主要是出于安全和隐私的原因。然而，你可以开发一个键盘应用来提供自定义的输入体验，这是被允许的。这被称为“键盘扩展”。</p>
+<p>以下是创建自定义键盘的基本步骤：</p>
+<ol>
+<li><p>在 Xcode 中，创建一个新的 “Keyboard Extension”。你可以选择 “File” &gt; “New” &gt; “Target”，然后从 “Application Extension” 类别找到 “Custom Keyboard Extension”。</p>
+</li>
+<li><p>这样，你就成功创建了一个新的键盘扩展。其中的 “KeyboardViewController.swift” 文件是你需要重点关注的，它负责键盘的展示和用户交互。</p>
+</li>
+<li><p>你可以在 “KeyboardViewController.swift” 文件中重写几个主要方法来实现你自己的键盘布局和逻辑，例如：<code>updateViewConstraints</code>，<code>viewDidLoad</code> 和 <code>textWillChange</code> 等。</p>
+</li>
+</ol>
+<p>需要注意的是，自定义键盘扩展涉及到许多隐私问题，因为键盘能够获知用户所输入的所有内容。出于隐私考虑，iOS 对键盘扩展施加了很多限制，例如无法访问到用户的摄像头、相册等资源，也无法调用网络服务。</p>
+<p>使用自定义键盘扩展，你可以实现一些优化输入体验的功能，如自定义键盘布局、添加表情键等。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>如果你要创建一个自定义键盘并且能在键盘中进行输入，你需要利用iOS在App Extensions（应用扩展）中所提供的Custom Keyboard Extension（自定义键盘扩展）。然后在键盘扩展中处理键盘的输入。</p>
+<p>下面是实现这一功能的基本步骤：</p>
+<ol>
+<li><p>创建键盘扩展：打开Xcode，点击 “File” &gt; “New” &gt; “Target”，然后选择 “Application Extension” &gt; “Custom Keyboard Extension”。</p>
+</li>
+<li><p>实现键盘输入：在你的自定义键盘扩展中，核心的类是UIInputViewController。UIInputViewController类负责接收和处理用户的输入。你需要创建一个扩展了UIInputViewController的类，并且重写它的输入方法。</p>
+</li>
+</ol>
+<p>中文字母输入可以通过<code>self.textDocumentProxy</code>提供的<code>adjustTextPosition(byCharacterOffset:)</code>和<code>insertText(_:)</code>方法来实现。例如，当用户按下一个键时，你可以调用<code>insertText(_:)</code>方法将该键对应的文字插入到文本中。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> proxy <span class="operator">=</span> <span class="keyword">self</span>.textDocumentProxy <span class="keyword">as</span> <span class="type">UITextDocumentProxy</span></span><br><span class="line">proxy.insertText(<span class="string">&quot;你的文字&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建键盘界面：你可以利用Interface Builder来设计键盘的界面，或者在代码中创建。界面可以包含多个UIButton，当按钮被按下时，对应的文字通过上一步的方式输入到文本中。</li>
+</ol>
+<p>记得，在info.plist文件中将RequestsOpenAccess设为YES，这样键盘扩展就可以访问全键盘输入。</p>
+<p>以上就是基础的实现方式，你还可以通过添加更多的交互和动画，来丰富你的键盘应用。</p>
+<p>定义方式可能会因具体需求和应用的独特性而有所不同，我建议查阅Apple开发者文档中关于Custom Keyboard的部分来获取更详细的信息。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html">https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html</a></p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6961757804491178014?searchId=20240314170238D0A68EC648BFF98B340D">https://juejin.cn/post/6961757804491178014?searchId=20240314170238D0A68EC648BFF98B340D</a></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://setcina.github.io/2020/01/20/WebView%E4%B8%8A%E8%BD%AF%E9%94%AE%E7%9B%98%E7%9A%84%E5%85%BC%E5%AE%B9%E6%96%B9%E6%A1%88/">https://setcina.github.io/2020/01/20/WebView%E4%B8%8A%E8%BD%AF%E9%94%AE%E7%9B%98%E7%9A%84%E5%85%BC%E5%AE%B9%E6%96%B9%E6%A1%88/</a></p>
+<p>WebView上软键盘的兼容方案</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904199474397191?searchId=20240314170238D0A68EC648BFF98B340D%EF%BC%88WKWebView%E6%94%AF%E6%8C%81%E4%BB%A3%E7%A0%81focus%E5%94%A4%E8%B5%B7%E9%94%AE%E7%9B%98%EF%BC%89">https://juejin.cn/post/6844904199474397191?searchId=20240314170238D0A68EC648BFF98B340D（WKWebView支持代码focus唤起键盘）</a></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

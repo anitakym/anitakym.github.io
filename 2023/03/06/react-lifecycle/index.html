@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ImaginingMe">
+    <meta name="keyword"  content="frontend">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        react-lifecycle - 前端技术分享 | AnitaK&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> DICHTEN == CONDENSARE </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="http://www.imaginingme.cn/img/avatar.jpeg" />
+        </div>
+        <div class="name">
+            <i>ImaginingMe</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%E9%98%B6%E6%AE%B5"><span class="toc-text">React 阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%98%B6%E6%AE%B5"><span class="toc-text">初始化阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#render%E9%98%B6%E6%AE%B5"><span class="toc-text">render阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#commit%E9%98%B6%E6%AE%B5-before-mutation-mutation-layout"><span class="toc-text">commit阶段(before mutation | mutation | layout)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E9%98%B6%E6%AE%B5"><span class="toc-text">更新阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%80%E6%AF%81%E9%98%B6%E6%AE%B5"><span class="toc-text">销毁阶段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93API"><span class="toc-text">具体API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#constructor-NaN"><span class="toc-text">constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getDerivedStateFromProps"><span class="toc-text">getDerivedStateFromProps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unsafe"><span class="toc-text">unsafe</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#render"><span class="toc-text">render</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getSnapshotBeforeUpdate"><span class="toc-text">getSnapshotBeforeUpdate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentDidUpdate"><span class="toc-text">componentDidUpdate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentDidMount"><span class="toc-text">componentDidMount</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shouldComponentUpdate"><span class="toc-text">shouldComponentUpdate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentWillUnmount"><span class="toc-text">componentWillUnmount</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6"><span class="toc-text">函数组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-text">API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#useEffect"><span class="toc-text">useEffect</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#useLayoutEffect"><span class="toc-text">useLayoutEffect</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#useInsertionEffect-v18"><span class="toc-text">useInsertionEffect - v18</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94"><span class="toc-text">对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#componentDidMount-useEffect"><span class="toc-text">componentDidMount | useEffect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#componentWillUnmount-useEffect"><span class="toc-text">componentWillUnmount | useEffect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#componentWillReceiveProps"><span class="toc-text">componentWillReceiveProps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#componentDidUpdate-%E5%90%8C%E6%AD%A5%E6%89%A7%E8%A1%8C%EF%BC%8Ccommit%E9%98%B6%E6%AE%B5"><span class="toc-text">componentDidUpdate - 同步执行，commit阶段</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> DICHTEN == CONDENSARE </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        react-lifecycle
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-03-06 17:43:54</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>React 类组件 - 生命周期钩子函数</p>
+</blockquote>
+<h2 id="React-阶段"><a href="#React-阶段" class="headerlink" title="React 阶段"></a>React 阶段</h2><ul>
+<li>React 在调和( render )阶段会深度遍历 React fiber 树 -&gt; 发现不同( diff )，不同的地方就是接下来需要更新的地方，对于变化的组件，就会执行 render 函数</li>
+<li>在一次调和过程完毕之后，就到了commit 阶段，commit 阶段会创建修改真实的 DOM 节点</li>
+<li>调和的过程中，发现了一个 fiber tag = 1 类组件的情况，就会按照类组件的逻辑来处</li>
+<li>react-reconciler/src/ReactFiberBeginWork.js</li>
+<li>组件初始化 ｜ 组件更新 ｜ 组件销毁<h3 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段"></a>初始化阶段</h3><h4 id="render阶段"><a href="#render阶段" class="headerlink" title="render阶段"></a>render阶段</h4></li>
+<li>constructor（constructClassInstance，mountClassInstance） ｜ getDerivedStateFromProps | componentWillMount | render</li>
+</ul>
+<h4 id="commit阶段-before-mutation-mutation-layout"><a href="#commit阶段-before-mutation-mutation-layout" class="headerlink" title="commit阶段(before mutation | mutation | layout)"></a>commit阶段(before mutation | mutation | layout)</h4><ul>
+<li>更新DOM ｜ componentDidMount（react-reconciler/src/ReactFiberCommitWork.js）</li>
+</ul>
+<h3 id="更新阶段"><a href="#更新阶段" class="headerlink" title="更新阶段"></a>更新阶段</h3><ul>
+<li>componentWillReceiveProps ｜ getDerivedStateFromProps ｜ shouldComponentUpdate ｜ componentWillUpdate ｜ getSnapshotBeforeUpdate ｜ componentDidUpdate</li>
+</ul>
+<h3 id="销毁阶段"><a href="#销毁阶段" class="headerlink" title="销毁阶段"></a>销毁阶段</h3><ul>
+<li>componentWillUnmount</li>
+</ul>
+<h2 id="具体API"><a href="#具体API" class="headerlink" title="具体API"></a>具体API</h2><h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4><ul>
+<li>在类组件创建实例时调用</li>
+<li>初始化state ｜ 对类组件的事件做处理（绑定this，节流，防抖）</li>
+<li>生命周期劫持，渲染劫持（HOC）</li>
+</ul>
+<h4 id="getDerivedStateFromProps"><a href="#getDerivedStateFromProps" class="headerlink" title="getDerivedStateFromProps"></a>getDerivedStateFromProps</h4><ul>
+<li>getDerivedStateFromProps(nextProps,prevState)</li>
+<li>在初始化和更新阶段，接受父组件的 props 数据， 可以对 props 进行格式化，过滤等操作，返回值将作为新的 state 合并到 state 中，供给视图渲染层消费</li>
+<li>componentWillMount 和 componentWillReceiveProps  替代</li>
+</ul>
+<h4 id="unsafe"><a href="#unsafe" class="headerlink" title="unsafe"></a>unsafe</h4><ul>
+<li>React V16.3 componentWillMount ，componentWillReceiveProps ， componentWillUpdate</li>
+<li>在render之前执行</li>
+<li>componentWillReceiveProps（一个思路 - 可以做一个状态提升，数据层托管父组件，子组件无副作用只负责渲染props）</li>
+<li>PureComponent在 componentWillReceiveProps 执行之后浅比较 props 是否发生变化</li>
+<li>getSnapshotBeforeUpdate 来代替 UNSAFE_componentWillUpdate</li>
+</ul>
+<h4 id="render"><a href="#render" class="headerlink" title="render"></a>render</h4><ul>
+<li>一次 render 的过程，就是创建 React.element 元素的过程</li>
+<li>render -&gt; createElement创建元素 , cloneElement 克隆元素 ，React.children 遍历 children 的操作</li>
+</ul>
+<h4 id="getSnapshotBeforeUpdate"><a href="#getSnapshotBeforeUpdate" class="headerlink" title="getSnapshotBeforeUpdate"></a>getSnapshotBeforeUpdate</h4><ul>
+<li>在 commit 阶段的before Mutation ( DOM 修改前)</li>
+<li>配合componentDidUpdate 一起使用，计算形成一个 snapShot 传递给 componentDidUpdate ,保存一次更新前的信息</li>
+</ul>
+<h4 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h4><ul>
+<li>DOM 已经更新，可以直接获取 DOM 最新状态</li>
+<li>如果使用 setState ，一定要加以限制，否则会引起无限循环</li>
+<li>接受 getSnapshotBeforeUpdate 保存的快照信息</li>
+</ul>
+<h4 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h4><ul>
+<li>做一些关于 DOM 操作，比如基于 DOM 的事件监听器</li>
+<li>初始化向服务器请求数据，渲染视图</li>
+</ul>
+<h4 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h4><ul>
+<li>性能优化</li>
+<li>如果有 getDerivedStateFromProps 生命周期 ，它的返回值将合并到 newState ，供 shouldComponentUpdate 使用</li>
+</ul>
+<h4 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h4><ul>
+<li>清除延时器，定时器</li>
+<li>一些基于 DOM 的操作，比如事件监听器</li>
+</ul>
+<h2 id="函数组件"><a href="#函数组件" class="headerlink" title="函数组件"></a>函数组件</h2><h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><h4 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h4><ul>
+<li>异步调用 ，对于每一个 effect 的 callback， React 会放入任务队列，等到主线程任务完成，DOM 更新，js 执行完成，视图绘制完毕，才执行</li>
+<li>effect 回调函数不会阻塞浏览器绘制视图</li>
+</ul>
+<h4 id="useLayoutEffect"><a href="#useLayoutEffect" class="headerlink" title="useLayoutEffect"></a>useLayoutEffect</h4><ul>
+<li>同步执行</li>
+<li>在 DOM 更新之后，浏览器绘制之前</li>
+<li>callback 中代码执行会阻塞浏览器绘制</li>
+</ul>
+<h4 id="useInsertionEffect-v18"><a href="#useInsertionEffect-v18" class="headerlink" title="useInsertionEffect - v18"></a>useInsertionEffect - v18</h4><ul>
+<li>解决 CSS-in-JS 在渲染中注入样式的性能问题</li>
+</ul>
+<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><h3 id="componentDidMount-useEffect"><a href="#componentDidMount-useEffect" class="headerlink" title="componentDidMount | useEffect"></a>componentDidMount | useEffect</h3><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">React.useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">/* 请求数据 ， 事件监听 ， 操纵dom */</span></span><br><span class="line">&#125;,[])  <span class="comment">/* dep = [] */</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="componentWillUnmount-useEffect"><a href="#componentWillUnmount-useEffect" class="headerlink" title="componentWillUnmount | useEffect"></a>componentWillUnmount | useEffect</h3><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> React.useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">/* 请求数据 ， 事件监听 ， 操纵dom ， 增加定时器，延时器 */</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">componentWillUnmount</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="comment">/* 解除事件监听器 ，清除定时器，延时器 */</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;,[])<span class="comment">/* dep = [] */</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps"></a>componentWillReceiveProps</h3><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">React.useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.<span class="built_in">log</span>(<span class="string">&#x27;props变化：componentWillReceiveProps&#x27;</span>)</span><br><span class="line">&#125;,[ props ])</span><br><span class="line">React.useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.<span class="built_in">log</span>(<span class="string">&#x27;props变化：componentWillReceiveProps&#x27;</span>)</span><br><span class="line">&#125;,[ props.abc ])</span><br></pre></td></tr></table></figure>
+
+<h3 id="componentDidUpdate-同步执行，commit阶段"><a href="#componentDidUpdate-同步执行，commit阶段" class="headerlink" title="componentDidUpdate - 同步执行，commit阶段"></a>componentDidUpdate - 同步执行，commit阶段</h3><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">异步执行，commit阶段</span><br><span class="line">React.useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.<span class="built_in">log</span>(<span class="string">&#x27;组件更新完成：componentDidUpdate &#x27;</span>)     </span><br><span class="line">&#125;) <span class="comment">/* 没有 dep 依赖项 */</span></span><br><span class="line"><span class="comment">// 没有第二个参数，那么每一次执行函数组件，都会执行该 effect</span></span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/anitakym">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><p>京ICP备19049908号-1</p></a>
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
