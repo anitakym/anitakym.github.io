@@ -222,3 +222,11 @@ location ~* ^/(qqq|xxx|xxxe|)/(env1|env2|env3|env4)/?(\w*) {
 
 #### 参考阅读
 - https://mp.weixin.qq.com/s/0P8_lnVf2_zMzIBJ20qajA
+
+### 问题
+gpt流式
+由于nginx默认开启了对请求内容的缓存，会导致即使使用了流式请求的方式，依然会在一段时间后一次性获取全部请求结果，所以需要修改链路上的相关配置。
+
+chunked_transfer_encoding off; //禁用缓存
+       proxy_buffering off; //禁用缓存
+       proxy_cache off; //禁用缓存

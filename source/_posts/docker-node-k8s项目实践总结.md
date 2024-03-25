@@ -166,3 +166,28 @@ CMD ["/path/to/your/program", "-arg1", "-arg2", ...]
 4. 自动扩容和自愈：Kubernetes具有自动扩容和自愈的能力，当检测到容器/应用负载过大或者故障时，能够自动进行扩容或重启容器。如果你在容器内使用 PM2 进行进程管理和保活，这可能会影响到 Kubernetes 对容器健康状况的判断与管理。
 
 使用 Kubernetes 时，我们想要松耦合、可迁移的应用程序，并希望能全面利用 Kubernetes 的自动恢复、日志集中、负载均衡和服务发现等特性。而这些与 PM2 提供的功能可能会存在冲突。因此，在 Kubernetes 环境中，我们通常不建议使用 PM2 或其他类似的进程管理器。
+
+
+### ingress
+Ingress是Kubernetes（K8s）的一个API对象，提供了HTTP和HTTPS路由到集群内服务的规则。Ingress可以通过定义规则来对集群提供外部可访问的url，负载均衡，SSL，和基于名称的虚拟主机等。
+
+函数特性包括：
+1. 路由：Ingress可以将HTTP和HTTPS路由到不同的端点，例如，在同一IP地址下使用不同的URI将流量路由到不同的服务。
+2. 名称基础的虚拟主机：Ingress允许使用相同的IP，处理多个主机名称，并且基于主机名称将流量路由到不同的服务。
+3. 负载均衡：Ingress控制器基于负载均衡算法将流量分配到不同的集群Pods。
+4. SSL/TLS终端：Ingress允许你定义SSL/TLS终端，为你的服务提供HTTPS访问。
+
+要注意的是，Ingress只可以在Kubernetes集群配置了Ingress controller之后才可以工作。常用的Ingress controller有Nginx Ingress Controller，Traefik等。配置完成后，我们可以创建Ingress资源对象（通过Ingress yaml文件）来定义相关规则。
+
+
+Ingress Controller如 Nginx Ingress Controller 支持流式服务，并具有消除缓存的能力。这可以通过设置各种 HTTP 和 gRPC 代理参数来实现，特别是通过设置 proxy_buffering 为 "off"。
+
+在 Nginx Ingress Controller 中，可以给 Ingress 对象添加 annotations 来调整相关的配置。比如，你可以添加以下 annotation：
+
+```yaml
+nginx.ingress.kubernetes.io/proxy-buffering: "off"
+```
+
+可以参考 [Nginx Ingress Controller's annotations documentation](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#proxy-buffering) 了解更多信息。
+
+需要注意的是，在一些特殊的流式传输场景下，如 Comet 或 WebSocket，关闭缓冲可能影响性能，应进行充分的性能测试再决定是否关闭。
