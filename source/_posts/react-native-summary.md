@@ -138,3 +138,8 @@ chruby
 
 - apps - opensource
 https://github.com/ReactNativeNews/React-Native-Apps
+
+
+### 网易云音乐 RN 新架构升级实践
+
+https://juejin.cn/post/7312176750591934516
