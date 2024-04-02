@@ -5,3 +5,5 @@ tags:
 ---
 - https://cn.vuejs.org/guide/essentials/reactivity-fundamentals.html#reactive-proxy-vs-original
 - https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+
+不能被完全polyfill
