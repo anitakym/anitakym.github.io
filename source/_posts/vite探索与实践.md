@@ -35,3 +35,11 @@ If you don't have hard reliance on bleeding edge runtime features, it is not tha
 - 1.8.4 有polyfill标准的问题 - 改成 proposalshipped
 - https://cn.vitejs.dev/config/build-options.html
 - https://github.com/vitejs/vite/issues/9794
+
+### 更新-持续中
+Vite 5.2 is out! ⚡️
+🔐 CSP nonce and require-trusted-types-for support
+🧩 import.meta.filename/dirname support in SSR
+🧙‍♂️ shiki+twoslash powered code snippets in docs
+⏩ Update to esbuild 0.20
+🛠️ Significant fixes across the board

@@ -30,3 +30,6 @@ node的benchmark写的还是非常值得学习的
 
 ### reference
 - https://docs.deno.com/runtime/manual/tools/benchmarker
+
+### 
+https://github.com/whoaa512/hyperfine

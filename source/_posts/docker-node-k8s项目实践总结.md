@@ -191,3 +191,21 @@ nginx.ingress.kubernetes.io/proxy-buffering: "off"
 可以参考 [Nginx Ingress Controller's annotations documentation](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#proxy-buffering) 了解更多信息。
 
 需要注意的是，在一些特殊的流式传输场景下，如 Comet 或 WebSocket，关闭缓冲可能影响性能，应进行充分的性能测试再决定是否关闭。
+
+
+### --unsafe-prem
+在Dockerfile中，`FROM mhart/alpine-node:12` 表示我们正在使用的是基于 Alpine Linux 的 Node.js 镜像，而且 Node.js 版本是 12。
+
+`RUN` 指令是用来在这个镜像上执行命令，这个命令可以是安装软件，构建你的应用，设置环境变量等。
+
+`npm i -g hyperfine --unsafe-perm` 是用来全局安装hyperfine的命令。hyperfine是一个命令行基准测试工具。`-g` 选项表示我们想要全局安装它，`--unsafe-perm` 选项是为了允许在以 root 用户身份执行安装时，执行在软件包生命周期脚本中的命令。这个标志在Docker环境中是常见的，因为很多Docker镜像默认使用root用户运行命令。
+
+
+## 参考
+
+- k8s engine 便利蜂容器平台分享
+BKE简介
+容器化背景
+容器化的依赖
+BKE架构
+混合云架构
