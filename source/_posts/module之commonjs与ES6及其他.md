@@ -20,3 +20,6 @@ foreceipt:amd(requirejs)
 ### systemjs
 - https://babeljs.io/docs/babel-plugin-transform-modules-systemjs  This plugin is included in @babel/preset-env under the modules option(@vitejs/plugin-legacy -> @babel/preset-env)
 - vite - legacy - systemjs
+
+- cocos creator里面，对于模块的处理，使用了systemjs
+- https://github.com/systemjs/systemjs/blob/main/docs/system-register.md
