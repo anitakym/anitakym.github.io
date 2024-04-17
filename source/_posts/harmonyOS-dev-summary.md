@@ -37,3 +37,87 @@ UI描述
 
 ArkUI - 声明式表达UI
 ArkTS - ArkTS 是 HarmonyOS 优选的主力应用开发语言。ArkTS 围绕应用开发在 TypeScript（简称 TS）生态基础上做了进一步扩展，继承了 TS 的所有特性，是 TS 的超集。 
+
+```
+1.Basic Setup
+execute install task, component ohpm.zip.
+Unzipping /Applications/DevEco-Studio.app/Contents/tools/ohpm.zip
+Initializing ohpm
+added 106 packages in 3s
+9 packages are looking for funding
+run `npm fund` for details
+execute install task finished, component ohpm.zip.
+ 
+2.SDK Setup
+Install task started: ArkTS 3.2.12.5
+Downloading https://contentcenter-drcn.dbankcdn.cn/pub_1/DevEcoSpace_1_900_9/b7/v3/fMjcKBCJRHKV3-4Mm5H6bQ/P0ryC2BASauqeQgRtik8Zw.zip...
+Unzipping /Users/yiminkuang/Library/Huawei/Sdk/.temp/ets/3.2.12.5/install/P0ryC2BASauqeQgRtik8Zw.zip...
+Installing ArkTS dependencies...
+Running 'npm install'...
+> compilier@0.0.1 postinstall
+> node npm-install.js
+31m 
+added 569 packages in 30s
+38 packages are looking for funding
+  run `npm fund` for details
+39m
+31m 
+added 566 packages in 30s
+36 packages are looking for funding
+  run `npm fund` for details
+39m
+added 570 packages in 1m
+66 packages are looking for funding
+  run `npm fund` for details
+'npm install' executed
+Moving the SDK...
+Install task finished: ArkTS 3.2.12.5
+Install task started: Previewer 3.2.12.5
+Downloading https://contentcenter-drcn.dbankcdn.cn/pub_1/DevEcoSpace_1_900_9/7b/v3/jXnekaGkSUGTjDDGgfHVnQ/-7QEFk9HSG2WzvbcsxmYEQ.zip...
+Unzipping /Users/yiminkuang/Library/Huawei/Sdk/.temp/previewer/3.2.12.5/install/-7QEFk9HSG2WzvbcsxmYEQ.zip...
+Moving the SDK...
+Install task finished: Previewer 3.2.12.5
+Install task started: JS 3.2.12.5
+Downloading https://contentcenter-drcn.dbankcdn.com/pub_1/DevEcoSpace_1_900_9/12/v3/G-bsk1wKTWWP1M-kowQUHg/oAB_lVh9Q8-PM9tLqAzb-Q.zip...
+Unzipping /Users/yiminkuang/Library/Huawei/Sdk/.temp/js/3.2.12.5/install/oAB_lVh9Q8-PM9tLqAzb-Q.zip...
+Installing JS dependencies...
+Running 'npm install'...
+> ace-loader@1.0.11 postinstall
+> node npm-install.js
+31m 
+added 569 packages in 19s
+38 packages are looking for funding
+  run `npm fund` for details
+39m
+31m 
+added 566 packages in 19s
+36 packages are looking for funding
+  run `npm fund` for details
+39m
+added 650 packages in 37s
+87 packages are looking for funding
+  run `npm fund` for details
+'npm install' executed
+Moving the SDK...
+Install task finished: JS 3.2.12.5
+Install task started: Toolchains 3.2.12.5
+Downloading https://contentcenter-drcn.dbankcdn.cn/pub_1/DevEcoSpace_1_900_9/6f/v3/MFHQI6UMQpGuZcNjWyXpkg/pBla6R0BRHiob3fULBVngA.zip...
+Unzipping /Users/yiminkuang/Library/Huawei/Sdk/.temp/toolchains/3.2.12.5/install/pBla6R0BRHiob3fULBVngA.zip...
+Moving the SDK...
+Install task finished: Toolchains 3.2.12.5
+Install task started: Previewer 3.2.3.6
+Downloading https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/cd/v3/6-Eg0KmCSpOpkqSEm-c8_w/previewer-darwin-arm64-3.2.3.6-Release.zip...
+Unzipping /Users/yiminkuang/Library/Huawei/Sdk/.temp/previewer/3.2.3.6/install/previewer-darwin-arm64-3.2.3.6-Release.zip...
+Moving the SDK...
+Install task finished: Previewer 3.2.3.6
+Install task started: Toolchains 3.2.3.6
+Downloading https://update.dbankcdn.com/download/data/pub_13/HWHOTA_hota_900_9/cd/v3/6-Eg0KmCSpOpkqSEm-c8_w/toolchains-darwin-arm64-3.2.3.6-Release.zip...
+Unzipping /Users/yiminkuang/Library/Huawei/Sdk/.temp/toolchains/3.2.3.6/install/toolchains-darwin-arm64-3.2.3.6-Release.zip...
+Disconnecting from HDC
+Moving the SDK...
+Install task finished: Toolchains 3.2.3.6
+ 
+Configuration result:
+Basic setup successful
+SDK setup successful
+```

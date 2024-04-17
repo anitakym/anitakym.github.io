@@ -61,3 +61,13 @@ Note: KeyboardEvent events just indicate what interaction the user had with a ke
 - https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent
 - https://javascript.info/focus-blur
 - https://w3c.github.io/uievents/#events-focusevent-doc-focus
+
+
+https://caniuse.com/?search=pointer-events
+CSS pointer-events (for HTML)  - UNOFF
+This CSS property, when set to "none" allows elements to not receive hover/click events, instead the event will occur on anything behind it.
+当此 CSS 属性设置为“none”时，允许元素不接收悬停/单击事件，而是该事件将发生在其后面的任何内容上。
+
+Pointer events  - REC
+This specification integrates various inputs from mice, touchscreens, and pens, making separate implementations no longer necessary and authoring for cross-device pointers easier. Not to be mistaken with the unrelated "pointer-events" CSS property.
+该规范集成了来自鼠标、触摸屏和笔的各种输入，使不再需要单独的实现，并且更容易为跨设备指针进行创作。不要与不相关的“指针事件”CSS 属性混淆。
