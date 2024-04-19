@@ -87,6 +87,22 @@ NoSuchMethodErrorfeign.RequestTemplate.path（）Ljava / lang / String;
 解决 - 添加流量规则
 Method：http://service-name/path
 ```
+https://sentinelguard.io/zh-cn/docs/introduction.html
+```
+Sentinel 介绍
+随着微服务的流行，服务和服务之间的稳定性变得越来越重要。Sentinel 是面向分布式、多语言异构化服务架构的流量治理组件，主要以流量为切入点，从流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护等多个维度来帮助开发者保障微服务的稳定性。
+
+Sentinel 的历史
+2012 年，Sentinel 诞生，主要功能为入口流量控制。
+2013-2017 年，Sentinel 在阿里巴巴集团内部迅速发展，成为基础技术模块，覆盖了所有的核心场景。Sentinel 也因此积累了大量的流量归整场景以及生产实践。
+2018 年，Sentinel 开源，并持续演进。
+2019 年，Sentinel 朝着多语言扩展的方向不断探索，推出 C++ 原生版本，同时针对 Service Mesh 场景也推出了 Envoy 集群流量控制支持，以解决 Service Mesh 架构下多语言限流的问题。
+2020 年，推出 Sentinel Go 版本，继续朝着云原生方向演进。
+2021 年，Sentinel 正在朝着 2.0 云原生高可用决策中心组件进行演进；同时推出了 Sentinel Rust 原生版本。同时我们也在 Rust 社区进行了 Envoy WASM extension 及 eBPF extension 等场景探索。
+2022 年，Sentinel 品牌升级为流量治理，领域涵盖流量路由/调度、流量染色、流控降级、过载保护/实例摘除等；同时社区将流量治理相关标准抽出到 OpenSergo 标准中，Sentinel 作为流量治理标准实现。
+```
+https://opensergo.io/zh-cn/
+微服务治理
 
 #### C
 okhttp3性能 > httpclient
