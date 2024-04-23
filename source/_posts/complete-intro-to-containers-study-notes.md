@@ -267,3 +267,30 @@ docker build 的时候会把构建上下文的所有文件打包发送给 docker
 可以通过 .dockerignore 指定哪些文件不发送，这样能加快构建时间，减小镜像体积。
 
 多阶段构建也能减小镜像体积，也就是 build 一个镜像、production 一个镜像，最终保留下 production 的镜像。
+
+
+### docker compose
+Best practices for working with environment variables in Docker Compose
+在 Docker Compose 中使用环境变量的最佳实践
+Handle sensitive information securely
+安全地处理敏感信息
+Be cautious about including sensitive data in environment variables. Consider using Secrets for managing sensitive information.
+在环境变量中包含敏感数据时要谨慎。请考虑使用机密来管理敏感信息。
+
+Understand environment variable precedence
+了解环境变量优先级
+Be aware of how Docker Compose handles the precedence of environment variables from different sources (.env files, shell variables, Dockerfiles).
+请注意 Docker Compose 如何处理来自不同来源（ .env 文件、shell 变量、Dockerfile）的环境变量的优先级。
+
+Use specific environment files
+使用特定环境文件
+Consider how your application adapts to different environments. For example development, testing, production, and use different .env files as needed.
+考虑应用程序如何适应不同的环境。例如，开发、测试、生产，并根据需要使用不同的 .env 文件。
+
+Know interpolation 了解插值
+Understand how interpolation works within compose files for dynamic configurations.
+了解插值在动态配置的撰写文件中的工作原理。
+
+Command line overrides 命令行覆盖
+Be aware that you can override environment variables from the command line when starting containers. This is useful for testing or when you have temporary changes.
+请注意，在启动容器时，可以从命令行覆盖环境变量。这对于测试或进行临时更改时非常有用。
