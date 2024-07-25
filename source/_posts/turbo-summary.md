@@ -1,3 +1,10 @@
+<!--
+ * @Author: yimin kuang
+ * @Date: 2024-04-15 10:04:03
+ * @LastEditors: yimin kuang
+ * @LastEditTime: 2024-06-18 09:56:05
+ * @Description: 描述信息
+-->
 ---
 title: turbo-summary
 date: 2023-05-31 09:50:20
@@ -15,3 +22,5 @@ tags:
 
 ### 使用的项目
 - https://github.com/vercel/vercel
+
+### turborepo

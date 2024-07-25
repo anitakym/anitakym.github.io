@@ -1,3 +1,10 @@
+<!--
+ * @Author: yimin kuang
+ * @Date: 2024-04-15 10:04:03
+ * @LastEditors: yimin kuang
+ * @LastEditTime: 2024-06-18 18:13:39
+ * @Description: 描述信息
+-->
 ---
 title: monorepo
 date: 2022-03-18 17:46:25
@@ -23,6 +30,8 @@ We also recommend installing [ni](https://github.com/antfu/ni) to help switching
 
 ## element-plus
 
+## typescript-eslint
+- monorepo
 
 
 ## spectrum
@@ -71,3 +80,38 @@ We also recommend installing [ni](https://github.com/antfu/ni) to help switching
 
 
 ### rushstack
+
+### 
+Setup
+This repo uses pnpm, but should work fine with any of the following:
+
+yarn workspaces
+npm 7 workspaces
+npm < 7 and lerna bootstrap
+I strongly recommend pnpm over the other solutions, not only because it's usually faster, but because it avoids dependency problems caused by hoisting (see https://github.com/NiGhTTraX/ts-monorepo/commit/d93139166b25fab15e9538df58a7d06270b846c9 as an example).
+
+# Install pnpm with your preferred method: https://pnpm.io/installation.
+npm i -g pnpm
+
+# Install all dependencies.
+pnpm i
+
+https://github.com/NiGhTTraX/ts-monorepo/commit/d93139166b25fab15e9538df58a7d06270b846c9
+
+ nvm use v18.20.2 
+Now using node v18.20.2 (npm v10.5.0)
+➜  seal_backend_increase git:(feature/productManage) pnpm -v
+9.1.4
+➜  seal_backend_increase git:(feature/productManage) nvm use v16.19.1 
+
+Now using node v16.19.1 (npm v8.19.3)
+➜  seal_backend_increase git:(feature/productManage) 
+➜  seal_backend_increase git:(feature/productManage) pnpm -v         
+Type Error: URL.canParse is not a function
+    at isSupportedPackageManagerDescriptor (/Users/.nvm/versions/node/v21.7.3/lib/node_modules/corepack/dist/lib/corepack.cjs:23037:15)
+    at Engine.resolveDescriptor (/Users/.nvm/versions/node/v21.7.3/lib/node_modules/corepack/dist/lib/corepack.cjs:23393:10)
+    at executePackageManagerRequest (/Users/.nvm/versions/node/v21.7.3/lib/node_modules/corepack/dist/lib/corepack.cjs:24233:41)
+    at async BinaryCommand.validateAndExecute (/Users/.nvm/versions/node/v21.7.3/lib/node_modules/corepack/dist/lib/corepack.cjs:21173:22)
+    at async _Cli.run (/Users/.nvm/versions/node/v21.7.3/lib/node_modules/corepack/dist/lib/corepack.cjs:22148:18)
+    at async Object.runMain (/Users/.nvm/versions/node/v21.7.3/lib/node_modules/corepack/dist/lib/corepack.cjs:24279:12)
+➜  seal_backend_increase git:(feature/productManage) 
