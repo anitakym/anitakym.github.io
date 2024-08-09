@@ -323,3 +323,16 @@ npm install --exact my-package
 `^` 和 `~`字符：在 `package.json` 文件中，可以使用这些字符来指定一个版本范围，使项目能够自动接收 bug 修复和小更新，但不会突然接收到大的更新。
 `npm outdated`：这个命令可以检查所有依赖项的当前版本和最新版本，有助于跟踪哪些依赖包需要更新。
 `npm audit`：这个命令可以检查项目依赖项中的安全漏洞。如果发现有安全问题的依赖，可以使用 `npm audit fix` 来自动更新这些依赖包。
+
+
+### nrm && nvm
+nvm 切换版本之后，找不到nrm了，nrm跟着npm版本来的，需要重新安装nrm
+这是因为NVM（Node Version Manager）为每个Node.js版本都创建了一个独立的环境。这意味着每个版本的Node.js都有自己的全局npm包。当你使用NVM切换Node.js版本时，你也在切换全局npm包的环境。
+
+如果你想在新的Node.js版本中使用在旧版本中安装的全局npm包，你有两个选择：
+
+1. 重新安装这些包。你可以使用`npm install -g <package-name>`命令来为新的Node.js版本安装你需要的包。
+
+2. 使用NVM的`reinstall-packages`命令来复制旧版本的全局npm包到新版本。例如，如果你从Node.js版本8切换到版本10，你可以运行`nvm reinstall-packages 8`来复制版本8的全局npm包到版本10。
+
+请注意，这些方法只适用于全局npm包。如果你在项目中使用的是局部npm包（即在项目的`package.json`文件中列出的包），那么你只需要在项目目录中运行`npm install`命令，npm就会根据`package.json`文件为你的项目安装所有需要的包，无论你当前使用的是哪个Node.js版本。
