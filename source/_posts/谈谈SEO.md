@@ -58,3 +58,11 @@ robots.txt 文件规定了搜索引擎抓取工具可以访问您网站上的哪
 当然
 
 #### 
+
+#### https://ogp.me/
+参与到 Open Graph Protocol 的好处：　
+
+能够正确被蜘蛛抓取您的内容到百度网页搜索
+帮助您的内容更有效的在百度结构化展现
+应用了 OG 协议将会有更丰富的内容展现
+- https://github.com/lorisleiva/vuepress-plugin-seo
