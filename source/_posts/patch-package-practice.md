@@ -33,3 +33,15 @@ https://github.com/ds300/patch-package
 9. 在升级依赖项时小心: 当你升级一个已经打过补丁的包时，确保测试，因为补丁可能不再适用于新版本。
 
 记住，在修改一个包时，最好的选择通常是先提交一个pull请求到上游项目。然而，如果你需要快速修复问题，或者你的更改不太可能被上游项目接受，那么`patch-package`是一个非常有用的工具。
+
+```
+用户遇到了通常有两种解法
+1）patch-package 临时改
+2）等官方（框架层或 click-to-react-compnent）发版修复
+
+框架层也有几个解法
+1）给 cnpm 提 bug version
+2）Umi 锁版本修复
+
+把 require.resolve('click-to-react-component') 写到了 Umi 插件 Hook 的外面，导致注册时即执行。于是又提了个 PR 修复这个问题，让这个插件的任何功能都不影响生产构建。
+```

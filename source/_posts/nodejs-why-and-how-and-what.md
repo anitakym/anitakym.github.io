@@ -226,6 +226,7 @@ Windows 不支持信号，因此没有等价的使用信号来终止，但 Node.
 ### 动静分离
 - 静态内容-基本不会变动，也不会因为请求参数不同而变化 -> CDN分发，http缓存
 - 动态内容-各种因为请求参数不同而变动，且变种的数量几乎不可枚举 -> 加机器，结合反响代理进行负载均衡
+
 ## Tools
 #### volta - The Hassle-Free JavaScript Tool Manager
 - https://volta.sh/
@@ -236,6 +237,17 @@ curl https://get.volta.sh | bash
 ```bash
 volta install yarn
 ```
+Reproducible environments for collaborators
+为协作者提供可重现的环境
+Volta lets you choose your Node engine and package manager for a project once with one command:
+Volta 允许您使用一个命令为项目选择一次 Node 引擎和包管理器：
+
+volta pin node@20
+Volta saves the exact version of the Node engine in your package.json so you can commit your selection to git. From that point on, every time you run Node inside your project directory, Volta automatically switches to that same version of Node you chose. Similarly, all your collaborators can do the same by installing Volta on their development machine.
+Volta 将 Node 引擎的确切版本保存在您的 package.json 中，以便您可以将选择提交到 git。从那时起，每次在项目目录中运行 Node 时，Volta 都会自动切换到您选择的相同版本的 Node。同样，您的所有协作者都可以通过在他们的开发计算机上安装 Volta 来执行相同的操作。
+
+volta pnpm 
+$ export VOLTA_FEATURE_PNPM=1
 
 
 ## 框架设计和工程化 
