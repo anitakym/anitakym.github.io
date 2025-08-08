@@ -195,3 +195,12 @@ Helm Charts 安装，FeatBit 可以通过 Helm Charts 在本地、云端或混�
 ### growthbook
 GrowthBook is an open source Feature Flagging and Experimentation platform. Built for high performance and to be completely customizable, we help companies easily launch features and figure out their impact using their own data. Available from our Cloud or self-hosted.
 - 自部署，功能要求多的话，可以购买pro或者企业版
+
+### https://www.flipt.io/#pricing
+-Enterprise-ready, Git native feature management solution
+企业级、Git 原生特性管理解决方案
+
+
+### https://github.com/Flagsmith/flagsmith
+Flagsmith is an open source feature flagging and remote config service. Self-host or use our hosted version at https://app.flagsmith.com.
+Flagsmith 是一个开源的功能标志和远程配置服务。可以自行托管或使用我们的托管版本，访问地址为 https://app.flagsmith.com。
