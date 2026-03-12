@@ -298,3 +298,50 @@ yum install git
 
 ## 推荐阅读
 - https://github.com/nnja/advanced-git
+
+## git lfs
+Git LFS（Git Large File Storage）是为 Git 管理大文件（二进制、媒体、模型等）而设计的扩展。它把大文件替换成小的指针文件保存在 Git 仓库内，实际的二进制内容存放在专门的 LFS 存储端点，从而避免仓库体积膨胀、提升 clone/fetch 性能。
+
+要点
+- 工作原理：把匹配的文件用指针（文本）提交到 Git，真实文件上传到 LFS 服务器（如 GitHub/GitLab 的 LFS 服务或自建服务器）。
+- 优点：减少仓库体积、加快克隆、支持大文件版本管理。
+- 限制：需要远端支持（并可能有存储/带宽配额）；某些 CI/托管需额外配置；迁移历史大文件需要工具（git lfs migrate）。
+
+常用命令示例
+````bash
+# 安装并初始化（本地）
+brew install git-lfs        # macOS 示例，或参考平台对应安装方式
+git lfs install
+
+# 跟踪文件类型（会在 .gitattributes 写入规则）
+git lfs track "*.psd"
+git add .gitattributes
+
+# 添加并提交大文件，push 时会把大文件上传到 LFS 服务
+git add path/to/large-file.psd
+git commit -m "add large file"
+git push
+
+# 查看本地 LFS 跟踪的文件
+git lfs ls-files
+
+# 克隆带 LFS 的仓库（如果已克隆，可用 pull 获取 LFS 内容）
+git clone <repo-url>
+git lfs pull
+````
+
+迁移已有历史中的大文件
+````bash
+# 将历史里的指定类型迁移到 LFS（谨慎，需备份）
+git lfs migrate import --include="*.zip,*.bin"
+````
+
+文件锁（协作时避免冲突）
+````bash
+git lfs lock path/to/file.bin
+git lfs unlock path/to/file.bin
+````
+
+小结
+- 若仓库包含大量或频繁变更的大二进制文件，建议使用 Git LFS。  
+- 使用前确认远端托管是否支持 LFS 以及是否有配额限制。
